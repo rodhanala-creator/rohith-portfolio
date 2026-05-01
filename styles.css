@@ -64,9 +64,16 @@ em{font-style:italic;font-family:var(--serif);font-weight:400;color:var(--ink-2)
   padding:9px 16px;border-radius:999px;font-weight:500;
 }
 .nav-cta:hover{background:var(--accent);color:#fff !important}
+.nav-icon{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:50%;
+  color:var(--ink-2);
+  transition: background .2s ease, color .2s ease;
+}
+.nav-icon:hover{background:var(--ink);color:var(--bg)}
 
 @media (max-width:720px){
-  .nav-links a:not(.nav-cta){display:none}
+  .nav-links a:not(.nav-cta):not(.nav-icon){display:none}
   .nav{padding:14px var(--mx)}
 }
 
@@ -395,9 +402,11 @@ em{font-style:italic;font-family:var(--serif);font-weight:400;color:var(--ink-2)
   display:flex;justify-content:space-between;align-items:center;
   font-size:13.5px;
 }
+.foot-links{display:flex;align-items:center;gap:22px}
 .foot a:hover{color:var(--bg)}
 @media (max-width:560px){
-  .foot-inner{flex-direction:column;gap:10px;text-align:center}
+  .foot-inner{flex-direction:column;gap:14px;text-align:center}
+  .foot-links{justify-content:center;flex-wrap:wrap;gap:18px}
 }
 
 /* ---------- Reveal animation ---------- */
