@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Live demo · Dental clinic operations workflow — Rohith Dhanala</title>
+<meta name="description" content="Interactive prototype of an automated patient enquiry → triage → booking workflow for a dental practice." />
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23171513'/><text x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='700' text-anchor='middle' fill='%23f6f2ea'>R</text></svg>" />
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=gambarino@400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../demos.css" />
+<link rel="stylesheet" href="demo-page.css" />
+</head>
+<body>
+<main class="demo-page">
+  <header class="demo-page-head">
+    <div>
+      <a class="demo-back" href="../index.html#work">← Back to portfolio</a>
+      <div class="demo-page-title">
+        <span class="live-pill"><span class="live-dot"></span>Live demo</span>
+        <h1>Dental clinic operations workflow</h1>
+      </div>
+      <p class="demo-page-meta">
+        Watch a patient enquiry move through the automated pipeline in real time.
+        Toggle between <em>before automation</em> and <em>after automation</em> to see how the same enquiry plays out under each system.
+      </p>
+      <p class="demo-page-stack"><strong>Stack</strong> Make.com · Tally · Calendly · Gmail API · Airtable · Twilio · OpenAI</p>
+    </div>
+  </header>
+  <div class="demo-page-content" id="demoMount"></div>
+</main>
+<script src="../demos.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    var mount = document.getElementById('demoMount');
+    mount.appendChild(window.PortfolioDemos.buildDentalDemo());
+    window.PortfolioDemos.startDentalDemo();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BookFlow · Live web app demo — Rohith Dhanala</title>
+<meta name="description" content="A working booking and client management web app for small service businesses. Built with vanilla JavaScript and CSS Grid." />
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23171513'/><text x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='700' text-anchor='middle' fill='%23f6f2ea'>R</text></svg>" />
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=gambarino@400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="demo-page.css" />
+<link rel="stylesheet" href="bookflow.css" />
+</head>
+<body>
+<main class="demo-page bookflow-page">
+  <header class="demo-page-head">
+    <div>
+      <a class="demo-back" href="../index.html#work">← Back to portfolio</a>
+      <div class="demo-page-title">
+        <span class="live-pill"><span class="live-dot"></span>Live web app</span>
+        <h1>BookFlow — bookings &amp; client ops</h1>
+      </div>
+      <p class="demo-page-meta">
+        A real, working web app. Add bookings, move them through stages, search clients, and use the AI panel to draft the next message — every interaction is live and persists in your browser.
+      </p>
+      <p class="demo-page-stack"><strong>Stack</strong> Vanilla JS · CSS Grid · LocalStorage · OpenAI API · Designed in Figma</p>
+    </div>
+  </header>
+
+  <div class="bf-app">
+    <!-- Top bar -->
+    <div class="bf-topbar">
+      <div class="bf-brand">
+        <div class="bf-logo">B</div>
+        <div>
+          <div class="bf-brand-name">BookFlow</div>
+          <div class="bf-brand-sub">Acme Services · Today</div>
+        </div>
+      </div>
+      <div class="bf-search">
+        <input type="text" id="bfSearch" placeholder="Search clients, bookings, or services..." />
+      </div>
+      <button class="bf-add" id="bfAddBtn">+ New booking</button>
+    </div>
+
+    <!-- Main grid: schedule | pipeline | ai panel -->
+    <div class="bf-grid">
+
+      <!-- Left: today's schedule -->
+      <section class="bf-col bf-schedule">
+        <div class="bf-col-head">
+          <h3>Today's schedule</h3>
+          <span class="bf-col-meta" id="bfTodayDate"></span>
+        </div>
+        <div class="bf-schedule-list" id="bfSchedule"></div>
+      </section>
+
+      <!-- Middle: pipeline -->
+      <section class="bf-col bf-pipeline">
+        <div class="bf-col-head">
+          <h3>Booking pipeline</h3>
+          <div class="bf-tabs">
+            <button class="active" data-filter="all">All</button>
+            <button data-filter="this-week">This week</button>
+            <button data-filter="upcoming">Upcoming</button>
+          </div>
+        </div>
+        <div class="bf-pipe-grid">
+          <div class="bf-pipe-col" data-stage="requested">
+            <div class="bf-pipe-head"><span class="dot dot-amber"></span>Requested<span class="bf-pipe-count" data-count="requested">0</span></div>
+            <div class="bf-pipe-body" data-col="requested"></div>
+          </div>
+          <div class="bf-pipe-col" data-stage="confirmed">
+            <div class="bf-pipe-head"><span class="dot dot-blue"></span>Confirmed<span class="bf-pipe-count" data-count="confirmed">0</span></div>
+            <div class="bf-pipe-body" data-col="confirmed"></div>
+          </div>
+          <div class="bf-pipe-col" data-stage="in-progress">
+            <div class="bf-pipe-head"><span class="dot dot-purple"></span>In progress<span class="bf-pipe-count" data-count="in-progress">0</span></div>
+            <div class="bf-pipe-body" data-col="in-progress"></div>
+          </div>
+          <div class="bf-pipe-col" data-stage="done">
+            <div class="bf-pipe-head"><span class="dot dot-green"></span>Done<span class="bf-pipe-count" data-count="done">0</span></div>
+            <div class="bf-pipe-body" data-col="done"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: AI panel + client directory -->
+      <section class="bf-col bf-side">
+        <div class="bf-ai">
+          <div class="bf-col-head">
+            <h3>AI message drafter</h3>
+            <span class="bf-ai-tag">Live</span>
+          </div>
+          <div class="bf-ai-body">
+            <div class="bf-ai-row">
+              <label>Selected booking</label>
+              <div class="bf-ai-selected" id="bfAiSelected">Click a booking to draft a message</div>
+            </div>
+            <div class="bf-ai-row">
+              <label>Tone</label>
+              <div class="bf-ai-tones">
+                <button class="active" data-tone="confirmation">Confirmation</button>
+                <button data-tone="reminder">Reminder</button>
+                <button data-tone="followup">Follow-up</button>
+                <button data-tone="late">Running late</button>
+              </div>
+            </div>
+            <div class="bf-ai-output" id="bfAiOutput">
+              <div class="bf-ai-placeholder">Pick a booking, then a tone — I'll draft the message.</div>
+            </div>
+            <div class="bf-ai-actions">
+              <button class="bf-btn bf-btn-ghost" id="bfAiRegenerate">↻ Regenerate</button>
+              <button class="bf-btn bf-btn-primary" id="bfAiSend">Send</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bf-clients">
+          <div class="bf-col-head">
+            <h3>Clients</h3>
+            <span class="bf-col-meta" id="bfClientCount">0</span>
+          </div>
+          <div class="bf-client-list" id="bfClientList"></div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Stats footer -->
+    <div class="bf-footer-stats">
+      <div class="bf-fstat"><span>Today</span><strong id="bfStatToday">0</strong></div>
+      <div class="bf-fstat"><span>This week</span><strong id="bfStatWeek">0</strong></div>
+      <div class="bf-fstat"><span>Active clients</span><strong id="bfStatClients">0</strong></div>
+      <div class="bf-fstat"><span>Completed</span><strong id="bfStatDone">0</strong></div>
+    </div>
+  </div>
+</main>
+
+<!-- Add booking modal -->
+<div class="bf-modal" id="bfModal" role="dialog" aria-hidden="true">
+  <div class="bf-modal-inner">
+    <div class="bf-modal-head">
+      <h3>New booking</h3>
+      <button class="bf-modal-close" id="bfModalClose">×</button>
+    </div>
+    <form class="bf-form" id="bfForm">
+      <label>Client name<input type="text" name="client" required placeholder="e.g. Sarah Mitchell" /></label>
+      <label>Service<select name="service" required>
+        <option value="">Choose...</option>
+        <option>Boiler service</option>
+        <option>Bathroom installation</option>
+        <option>Routine check-up</option>
+        <option>Emergency repair</option>
+        <option>Consultation</option>
+        <option>Annual maintenance</option>
+      </select></label>
+      <div class="bf-form-row">
+        <label>Date<input type="date" name="date" required /></label>
+        <label>Time<input type="time" name="time" required value="10:00" /></label>
+      </div>
+      <label>Notes<textarea name="notes" rows="2" placeholder="Optional details..."></textarea></label>
+      <div class="bf-form-actions">
+        <button type="button" class="bf-btn bf-btn-ghost" id="bfFormCancel">Cancel</button>
+        <button type="submit" class="bf-btn bf-btn-primary">Add booking</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="bookflow.js"></script>
+</body>
+</html>

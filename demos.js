@@ -1,48 +1,8 @@
 /* ============================================
-   LIVE DEMO LOGIC
+   LIVE DEMO LOGIC (standalone-page version)
    ============================================ */
 (function(){
   'use strict';
-
-  // ---------- Modal control ----------
-  const modal = document.getElementById('demoModal');
-  const modalTitle = document.getElementById('demoTitle');
-  const modalBody = document.getElementById('demoBody');
-  const closeBtn = document.getElementById('demoClose');
-  let activeDemoTeardown = null;
-
-  function openModal(which){
-    if(!modal) return;
-    if(which === 'dental'){
-      modalTitle.textContent = 'Live demo · Dental clinic operations workflow';
-      modalBody.innerHTML = '';
-      modalBody.appendChild(buildDentalDemo());
-      activeDemoTeardown = startDentalDemo();
-    } else if(which === 'lead'){
-      modalTitle.textContent = 'Live demo · Lead capture & follow-up dashboard';
-      modalBody.innerHTML = '';
-      modalBody.appendChild(buildLeadDemo());
-      activeDemoTeardown = startLeadDemo();
-    }
-    modal.classList.add('open');
-    modal.setAttribute('aria-hidden','false');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal(){
-    if(!modal) return;
-    modal.classList.remove('open');
-    modal.setAttribute('aria-hidden','true');
-    document.body.style.overflow = '';
-    if(activeDemoTeardown){activeDemoTeardown(); activeDemoTeardown=null;}
-    setTimeout(()=>{ modalBody.innerHTML=''; }, 250);
-  }
-  if(closeBtn) closeBtn.addEventListener('click', closeModal);
-  if(modal) modal.addEventListener('click', e=>{ if(e.target===modal) closeModal(); });
-  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
-
-  document.querySelectorAll('[data-demo]').forEach(btn=>{
-    btn.addEventListener('click', ()=> openModal(btn.dataset.demo));
-  });
 
   // ============================================
   // DEMO 1: Dental clinic workflow
@@ -511,4 +471,11 @@
     return ()=>{ cancelled = true; clearInterval(i1); clearInterval(i2); };
   }
 
+  // Expose for standalone demo pages
+  window.PortfolioDemos = {
+    buildDentalDemo: buildDentalDemo,
+    startDentalDemo: startDentalDemo,
+    buildLeadDemo: buildLeadDemo,
+    startLeadDemo: startLeadDemo
+  };
 })();
