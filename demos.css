@@ -1,0 +1,370 @@
+/* ============================================
+   LIVE DEMO MODAL + DEMO STYLES
+   ============================================ */
+
+.case-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:24px;padding:12px 22px;
+  background:var(--ink);color:var(--bg);
+  border-radius:999px;font-size:14.5px;font-weight:500;
+  border:none;cursor:pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+.case-cta:hover{background:var(--accent);color:#fff;transform:translateY(-1px)}
+.case-cta .arrow{transition:transform .2s ease}
+.case-cta:hover .arrow{transform:translateX(3px)}
+.case-cta .pulse{
+  width:8px;height:8px;border-radius:50%;background:#34d399;
+  box-shadow:0 0 0 0 rgba(52,211,153,.7);
+  animation:demoPulse 2s infinite;
+}
+@keyframes demoPulse{
+  0%{box-shadow:0 0 0 0 rgba(52,211,153,.7)}
+  70%{box-shadow:0 0 0 8px rgba(52,211,153,0)}
+  100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}
+}
+
+/* ---------- Modal shell ---------- */
+.demo-modal{
+  position:fixed;inset:0;z-index:100;
+  display:none;
+  align-items:flex-start;justify-content:center;
+  background:rgba(23,21,19,.55);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  padding:24px;
+  overflow-y:auto;
+  opacity:0;
+  transition: opacity .25s ease;
+}
+.demo-modal.open{display:flex;opacity:1}
+.demo-modal-inner{
+  background:#fff;
+  border-radius: 18px;
+  width:100%;max-width:1100px;
+  margin:auto;
+  overflow:hidden;
+  box-shadow: 0 30px 80px -20px rgba(0,0,0,.4);
+  transform:translateY(20px) scale(.98);
+  transition: transform .35s cubic-bezier(.22,1,.36,1);
+}
+.demo-modal.open .demo-modal-inner{transform:translateY(0) scale(1)}
+.demo-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 24px;
+  border-bottom:1px solid #eee;
+  background:#fafafa;
+}
+.demo-head-meta{display:flex;align-items:center;gap:12px;font-size:13px;color:#555}
+.demo-head-meta .live-dot{
+  width:8px;height:8px;border-radius:50%;background:#34d399;
+  animation:demoPulse 2s infinite;
+}
+.demo-head h3{
+  margin:0;font-family:var(--serif);font-weight:400;
+  font-size:18px;color:var(--ink);
+}
+.demo-close{
+  background:none;border:none;cursor:pointer;
+  width:36px;height:36px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:22px;line-height:1;color:#666;
+  transition:background .2s ease,color .2s ease;
+}
+.demo-close:hover{background:#f0f0f0;color:#000}
+.demo-body{padding:0;background:#f7f7f8}
+
+/* ============================================
+   DEMO 1: Dental clinic workflow visualizer
+   ============================================ */
+.dental-demo{
+  font-family: var(--sans);
+  background:linear-gradient(180deg,#fafafa 0%,#f0ebe0 100%);
+  padding: 32px;
+}
+.dental-controls{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;margin-bottom:24px;
+}
+.dental-toggle{
+  display:inline-flex;background:#fff;
+  border:1px solid #e5e1d8;border-radius:999px;padding:4px;
+}
+.dental-toggle button{
+  padding:8px 18px;border:none;background:transparent;
+  font:inherit;font-size:13px;color:#666;cursor:pointer;
+  border-radius:999px;transition:all .2s;
+}
+.dental-toggle button.active{background:var(--ink);color:#fff}
+.dental-replay{
+  background:#fff;border:1px solid #e5e1d8;
+  padding:8px 16px;border-radius:999px;
+  font-size:13px;cursor:pointer;color:#333;
+  display:inline-flex;align-items:center;gap:6px;
+  transition:background .2s;
+}
+.dental-replay:hover{background:#f5f0e6}
+
+/* Workflow stage */
+.workflow{
+  position:relative;
+  display:grid;grid-template-columns:repeat(5,1fr);gap:16px;
+  margin-bottom:28px;min-height:140px;
+}
+.wf-node{
+  background:#fff;border:1.5px solid #e5e1d8;
+  border-radius:12px;padding:14px 12px;
+  text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  position:relative;z-index:1;
+  transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+}
+.wf-node.active{
+  border-color:var(--accent);
+  transform:translateY(-3px);
+  box-shadow: 0 8px 20px -10px rgba(182,67,31,.5);
+}
+.wf-node.done{border-color:#34d399;background:#f0fdf4}
+.wf-icon{
+  width:38px;height:38px;border-radius:10px;
+  background:#f5f0e6;color:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;font-weight:600;
+  transition:background .3s,color .3s;
+}
+.wf-node.active .wf-icon{background:var(--accent);color:#fff}
+.wf-node.done .wf-icon{background:#34d399;color:#fff}
+.wf-label{font-size:12px;font-weight:600;color:#222}
+.wf-sub{font-size:10.5px;color:#888;line-height:1.3}
+
+/* Connector lines (drawn behind nodes via SVG layer) */
+.wf-lines{
+  position:absolute;inset:0;pointer-events:none;z-index:0;
+}
+.wf-lines line{
+  stroke:#d9d1c1;stroke-width:2;stroke-dasharray:4 4;
+}
+.wf-lines line.lit{stroke:var(--accent);stroke-dasharray:none}
+
+/* Patient + log split */
+.dental-split{
+  display:grid;grid-template-columns: 1fr 1fr;gap:16px;
+}
+@media (max-width:780px){
+  .workflow{grid-template-columns:repeat(2,1fr)}
+  .dental-split{grid-template-columns:1fr}
+}
+
+.dental-card{
+  background:#fff;border:1px solid #ece7da;border-radius:12px;
+  padding:18px;
+}
+.dental-card h4{
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:#888;margin:0 0 14px;font-weight:600;
+}
+
+/* Patient card */
+.patient-card{
+  display:flex;align-items:center;gap:12px;
+  padding:12px;border:1px solid #ece7da;border-radius:10px;
+  margin-bottom:12px;background:#fafafa;
+}
+.patient-avatar{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--accent);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:600;font-size:14px;
+}
+.patient-info{flex:1}
+.patient-name{font-weight:600;font-size:13.5px;color:#222}
+.patient-msg{font-size:12px;color:#666;line-height:1.4;margin-top:2px}
+.patient-tag{
+  font-size:10.5px;padding:3px 8px;border-radius:999px;
+  background:#fef3c7;color:#92400e;font-weight:500;
+}
+.patient-tag.urgent{background:#fee2e2;color:#991b1b}
+.patient-tag.routine{background:#dbeafe;color:#1e40af}
+
+/* Activity log */
+.log-list{
+  max-height:230px;overflow-y:auto;
+  display:flex;flex-direction:column;gap:8px;
+}
+.log-item{
+  display:flex;gap:10px;padding:9px 10px;
+  background:#fafafa;border:1px solid #f0ece2;border-radius:8px;
+  font-size:12.5px;color:#333;
+  opacity:0;transform:translateY(8px);
+  animation: logIn .4s ease forwards;
+}
+@keyframes logIn{to{opacity:1;transform:none}}
+.log-time{color:#999;font-family:ui-monospace,monospace;font-size:11px;flex-shrink:0;width:46px}
+.log-icon{flex-shrink:0;font-size:14px;width:18px;text-align:center}
+.log-text{flex:1;line-height:1.45}
+.log-text strong{color:#111}
+
+/* Stats */
+.dental-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+  margin-top:20px;
+}
+@media (max-width:560px){.dental-stats{grid-template-columns:repeat(2,1fr)}}
+.stat{
+  background:#fff;border:1px solid #ece7da;border-radius:10px;
+  padding:14px;text-align:left;
+}
+.stat-label{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.stat-value{font-family:var(--serif);font-size:26px;color:var(--ink);line-height:1}
+.stat-delta{font-size:11px;color:#16a34a;margin-top:4px;font-weight:500}
+.stat-delta.bad{color:#dc2626}
+
+/* "Before" mode dimming */
+.dental-demo[data-mode="before"] .wf-node.before-faded{opacity:.4;border-style:dashed}
+.dental-demo[data-mode="before"] .stat-delta{color:#dc2626}
+
+/* ============================================
+   DEMO 2: Lead dashboard
+   ============================================ */
+.lead-demo{
+  font-family: var(--sans);
+  background:#0f1419;
+  color:#e5e7eb;
+  padding:0;
+  min-height:560px;
+}
+.lead-topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 24px;border-bottom:1px solid #1f262e;
+}
+.lead-topbar-left{display:flex;align-items:center;gap:12px}
+.lead-logo{
+  width:32px;height:32px;border-radius:8px;
+  background:linear-gradient(135deg,#b6431f,#e87c54);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-weight:600;color:#fff;font-size:14px;
+}
+.lead-title{font-size:14px;font-weight:600;color:#fff}
+.lead-subtitle{font-size:11.5px;color:#8b95a3;margin-top:1px}
+.lead-search{
+  background:#1a212a;border:1px solid #2a323c;
+  padding:8px 14px;border-radius:8px;font-size:12.5px;color:#c5c9d1;
+  display:none;
+}
+@media(min-width:780px){.lead-search{display:block;width:200px}}
+
+/* KPI strip */
+.lead-kpis{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+  padding:20px 24px 8px;
+}
+@media (max-width:640px){.lead-kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{
+  background:#161c23;border:1px solid #1f262e;border-radius:10px;
+  padding:14px 16px;
+}
+.kpi-label{font-size:11px;color:#7a8290;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.kpi-value{
+  font-family:var(--serif);font-size:24px;color:#fff;line-height:1;
+  display:flex;align-items:baseline;gap:8px;
+}
+.kpi-trend{font-size:11px;color:#34d399;font-weight:500}
+.kpi-trend.warn{color:#fbbf24}
+.kpi-spark{
+  margin-top:8px;height:24px;display:flex;align-items:flex-end;gap:2px;
+}
+.kpi-spark span{
+  flex:1;background:#b6431f;opacity:.7;border-radius:1px;
+  transition: height .6s ease;
+}
+
+/* Pipeline */
+.lead-pipe{
+  padding:20px 24px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+}
+@media (max-width:780px){.lead-pipe{grid-template-columns:repeat(2,1fr)}}
+.pipe-col{
+  background:#161c23;border:1px solid #1f262e;border-radius:12px;
+  padding:14px;min-height:240px;display:flex;flex-direction:column;
+}
+.pipe-head{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:12px;font-size:12px;color:#a3acb8;font-weight:500;
+}
+.pipe-head .count{
+  background:#1f262e;color:#e5e7eb;padding:2px 8px;border-radius:99px;
+  font-size:11px;font-weight:600;
+}
+.pipe-col[data-stage="new"] .pipe-head{color:#fbbf24}
+.pipe-col[data-stage="contacted"] .pipe-head{color:#60a5fa}
+.pipe-col[data-stage="qualified"] .pipe-head{color:#a78bfa}
+.pipe-col[data-stage="booked"] .pipe-head{color:#34d399}
+
+.lead-card{
+  background:#1a212a;border:1px solid #2a323c;border-radius:8px;
+  padding:10px 12px;margin-bottom:8px;
+  font-size:12.5px;
+  cursor:default;
+  transform:translateY(8px);opacity:0;
+  animation: leadIn .45s ease forwards;
+  transition: transform .3s ease, border-color .3s ease;
+  position:relative;
+}
+@keyframes leadIn{to{opacity:1;transform:none}}
+.lead-card:hover{border-color:#3a4250}
+.lead-card.new-lead{border-color:#b6431f;animation: leadIn .45s ease forwards, leadFlash 1.4s ease}
+@keyframes leadFlash{
+  0%{box-shadow:0 0 0 0 rgba(182,67,31,.4)}
+  70%{box-shadow:0 0 0 8px rgba(182,67,31,0)}
+  100%{box-shadow:0 0 0 0 rgba(182,67,31,0)}
+}
+.lead-card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.lead-name{font-weight:600;color:#fff;font-size:12.5px}
+.lead-source{font-size:10px;color:#7a8290;text-transform:uppercase;letter-spacing:.06em}
+.lead-msg{font-size:11.5px;color:#a3acb8;line-height:1.4}
+.lead-meta{
+  display:flex;align-items:center;gap:8px;margin-top:6px;
+  font-size:10.5px;color:#7a8290;
+}
+.lead-meta .auto{
+  background:rgba(182,67,31,.15);color:#f4a574;
+  padding:2px 6px;border-radius:99px;font-weight:500;
+  display:inline-flex;align-items:center;gap:4px;
+}
+.lead-meta .auto::before{content:"";width:5px;height:5px;background:#f4a574;border-radius:50%}
+
+/* Activity feed at bottom */
+.lead-feed{
+  padding:16px 24px 24px;
+  border-top:1px solid #1f262e;
+  background:#0c1015;
+}
+.lead-feed h5{
+  margin:0 0 10px;font-size:11px;color:#7a8290;
+  text-transform:uppercase;letter-spacing:.1em;
+}
+.feed-list{
+  display:flex;flex-direction:column;gap:6px;
+  max-height:120px;overflow-y:auto;
+}
+.feed-item{
+  display:flex;gap:10px;font-size:12px;color:#c5c9d1;
+  padding:6px 0;line-height:1.4;
+  opacity:0;transform:translateX(-6px);
+  animation: feedIn .35s ease forwards;
+}
+@keyframes feedIn{to{opacity:1;transform:none}}
+.feed-time{color:#5a6470;font-family:ui-monospace,monospace;font-size:11px;width:46px;flex-shrink:0}
+.feed-dot{
+  width:6px;height:6px;border-radius:50%;background:#b6431f;
+  margin-top:6px;flex-shrink:0;
+}
+.feed-dot.green{background:#34d399}
+.feed-dot.blue{background:#60a5fa}
+.feed-text strong{color:#fff;font-weight:600}
+
+/* scrollbars */
+.lead-demo *::-webkit-scrollbar,.log-list::-webkit-scrollbar{width:6px}
+.lead-demo *::-webkit-scrollbar-thumb{background:#2a323c;border-radius:3px}
+.log-list::-webkit-scrollbar-thumb{background:#d9d1c1;border-radius:3px}

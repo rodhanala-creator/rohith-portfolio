@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=gambarino@400&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="demos.css" />
 </head>
 <body>
 
@@ -195,6 +196,11 @@
       </div>
 
       <p class="case-foot"><em>Selected project example. Tools: no-code workflow builders, form builders, email automation, calendar/booking tools.</em></p>
+      <button class="case-cta" data-demo="dental" type="button">
+        <span class="pulse" aria-hidden="true"></span>
+        View live demo
+        <span class="arrow" aria-hidden="true">→</span>
+      </button>
     </article>
 
     <!-- CASE 02 -->
@@ -253,6 +259,11 @@
       </div>
 
       <p class="case-foot"><em>Selected project example. Tools: landing page builder, form tool, CRM/tracker, email automation, AI-assisted message drafting.</em></p>
+      <button class="case-cta" data-demo="lead" type="button">
+        <span class="pulse" aria-hidden="true"></span>
+        View live demo
+        <span class="arrow" aria-hidden="true">→</span>
+      </button>
     </article>
   </section>
 
@@ -349,6 +360,20 @@
 
 </main>
 
+<!-- DEMO MODAL -->
+<div class="demo-modal" id="demoModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="demoTitle">
+  <div class="demo-modal-inner" role="document">
+    <div class="demo-head">
+      <div class="demo-head-meta">
+        <span class="live-dot" aria-hidden="true"></span>
+        <h3 id="demoTitle">Live demo</h3>
+      </div>
+      <button class="demo-close" id="demoClose" aria-label="Close demo" type="button">×</button>
+    </div>
+    <div class="demo-body" id="demoBody"></div>
+  </div>
+</div>
+
 <footer class="foot">
   <div class="foot-inner">
     <span>© <span id="yr"></span> Rohith Dhanala. Built with care in the UK.</span>
@@ -385,5 +410,6 @@
     stepObs.observe(stepsEl);
   }
 </script>
+<script src="demos.js" defer></script>
 </body>
 </html>
