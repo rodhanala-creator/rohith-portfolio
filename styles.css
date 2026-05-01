@@ -275,9 +275,10 @@ em{font-style:italic;font-family:var(--serif);font-weight:400;color:var(--ink-2)
   .case-meta{justify-content:flex-start}
 }
 .case-title{
-  font-family:var(--serif);font-weight:400;
+  font-family:var(--serif);font-weight:700;
   font-size:clamp(28px,3.8vw,46px);line-height:1.05;letter-spacing:-.018em;
   margin:0 0 18px;
+  font-synthesis-weight: auto;
 }
 .case-lede{color:var(--ink-2);font-size:17px;max-width:65ch;margin:0 0 30px}
 .case-grid{
