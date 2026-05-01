@@ -5,7 +5,7 @@ One-page portfolio for AI automation and digital operations services for small b
 ## Live
 
 - **GitHub Pages:** https://rohithdhanala.github.io/rohith-portfolio/
-- **Netlify:** https://frolicking-starlight-3e689d.netlify.app/
+- **Netlify:** https://rohithdhnala-portfolio.netlify.app/
 
 ## Stack
 
