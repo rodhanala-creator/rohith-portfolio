@@ -1,3 +1,10 @@
+/* ---------- Color scheme lock ---------- */
+:root{
+  color-scheme: light only;
+  forced-color-adjust: none;
+}
+html, body { color-scheme: light only; forced-color-adjust: none; }
+
 /* ---------- Tokens ---------- */
 :root{
   --bg:#f6f2ea;            /* warm off-white */
@@ -708,3 +715,41 @@ section > *.in{opacity:1;transform:none}
   *,*::before,*::after{animation:none !important;transition:none !important}
   section > *{opacity:1;transform:none}
 }
+
+/* ---------- Defensive light-mode lock (overrides browser auto-dark / forced-colors) ---------- */
+@media (prefers-color-scheme: dark){
+  :root{
+    color-scheme: light only;
+    --bg:#f6f2ea;
+    --bg-2:#efe9dd;
+    --ink:#171513;
+    --ink-2:#3a342d;
+    --muted:#7a7166;
+    --line:#d9d1c1;
+    --accent:#b6431f;
+  }
+  html, body{ background:#f6f2ea !important; color:#171513 !important; }
+}
+
+/* Hard-anchor every surface with explicit colors so auto-dark modes can't strip them */
+body{ background-color:#f6f2ea !important; color:#171513 !important; }
+.nav{ background-color:rgba(246,242,234,.85) !important; }
+.proof{ background-color:#efe9dd !important; }
+.proof-grid > li{ background-color:transparent !important; }
+.who-grid > li{ background-color:#fbf8f1 !important; border-color:#d9d1c1 !important; color:#171513 !important; }
+.who-icon{ background-color:#f0e6d8 !important; color:#b6431f !important; }
+.case{ background-color:#fbf8f1 !important; border-color:#d9d1c1 !important; color:#171513 !important; }
+.service{ background-color:transparent !important; color:#171513 !important; }
+.tag{ background-color:#fbf8f1 !important; border-color:#d9d1c1 !important; color:#3a342d !important; }
+.step-card{ background-color:#fbf8f1 !important; border-color:#d9d1c1 !important; color:#171513 !important; }
+.about{ background-color:#0f0d0c !important; color:#f6f2ea !important; }
+.about p{ color:#d9d1c1 !important; }
+.testimonials{ background-color:#f6f2ea !important; }
+.testimonial{ background-color:#fbf8f1 !important; border-color:#d9d1c1 !important; color:#171513 !important; }
+.contact{ background-color:#efe9dd !important; }
+.btn{ color:inherit; }
+.btn-primary{ background-color:#171513 !important; color:#ffffff !important; }
+.btn-ghost{ background-color:transparent !important; color:#171513 !important; border-color:#171513 !important; }
+.btn-arrow{ background-color:#b6431f !important; color:#ffffff !important; }
+.btn-primary .btn-arrow{ background-color:#ffffff !important; color:#171513 !important; }
+.foot{ background-color:#0f0d0c !important; color:#d9d1c1 !important; }
