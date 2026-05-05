@@ -1,27 +1,88 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Rohith Dhanala | AI Automation, Websites & Digital Operations</title>
+<meta name="description" content="I help small businesses improve lead capture, websites, workflows and digital operations with AI automation, website development and practical systems that save time and improve client experience." />
+<meta name="theme-color" content="#f6f2ea" />
+<meta name="color-scheme" content="light" />
+<meta name="supported-color-schemes" content="light" />
+<meta property="og:title" content="Rohith Dhanala | AI Automation, Websites & Digital Operations" />
+<meta property="og:description" content="Websites, AI automation, lead capture systems, workflow automation, and digital operations setups for small businesses." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231a1a1a'/><text x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='700' text-anchor='middle' fill='%23f6f2ea'>R</text></svg>" />
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=gambarino@400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="demos.css" />
 
-  <title>Rohith Dhanala | AI Automation, Websites & Digital Operations</title>
-  <meta name="description" content="I help small businesses improve lead capture, websites, workflows and digital operations with AI automation, website development and practical systems that save time and improve client experience." />
-  <meta name="theme-color" content="#f6f2ea" />
-  <meta name="color-scheme" content="light" />
-  <meta name="supported-color-schemes" content="light" />
+<style>
+  .insights {
+    padding-block: clamp(4.5rem, 8vw, 7rem);
+  }
 
-  <meta property="og:title" content="Rohith Dhanala | AI Automation, Websites & Digital Operations" />
-  <meta property="og:description" content="Websites, AI automation, and digital operations systems for small businesses. Lead capture, workflow automation, and client operations setups." />
-  <meta property="og:type" content="website" />
+  .insights-list {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid rgba(26, 26, 26, 0.12);
+    margin-top: 2rem;
+  }
 
-  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231a1a1a'/><text x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='700' text-anchor='middle' fill='%23f6f2ea'>R</text></svg>" />
+  .insight {
+    display: grid;
+    grid-template-columns: 72px 1fr auto;
+    gap: 1.5rem;
+    align-items: start;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.12);
+  }
 
-  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=gambarino@400&display=swap" rel="stylesheet" />
+  .insight-num {
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9b6a52;
+    padding-top: 0.35rem;
+  }
 
-  <!-- Your existing styles (keep these files as they are) -->
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="demos.css" />
+  .insight-body h3 {
+    margin: 0 0 0.55rem;
+    font-size: clamp(1.35rem, 2.4vw, 2rem);
+    line-height: 1.15;
+  }
+
+  .insight-body p {
+    margin: 0;
+    max-width: 62ch;
+  }
+
+  .insight-tag {
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(26, 26, 26, 0.55);
+    white-space: nowrap;
+    padding-top: 0.35rem;
+  }
+
+  .contact-note {
+    margin-top: 1rem;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 900px) {
+    .insight {
+      grid-template-columns: 1fr;
+      gap: 0.65rem;
+    }
+
+    .insight-tag,
+    .insight-num {
+      padding-top: 0;
+    }
+  }
+</style>
 </head>
 <body>
 
@@ -33,6 +94,7 @@
     </svg>
     <span class="brand-name">Rohith Dhanala</span>
   </a>
+
   <nav class="nav-links" aria-label="Sections">
     <a href="#services">Services</a>
     <a href="#work">Case Studies</a>
@@ -64,9 +126,8 @@
     </h1>
 
     <p class="hero-sub">
-      I help clinics, salons, service businesses, coaches, and small teams build better websites,
-      capture more leads, and run smoother digital operations — combining web design, apps, and AI automation
-      into systems that quietly support the business.
+      I help service businesses, clinics, salons, coaches, and growing teams build better websites,
+      capture more leads, streamline workflows, and create digital systems that save time and support growth.
     </p>
 
     <div class="hero-cta">
@@ -76,16 +137,19 @@
       </a>
       <a class="btn btn-ghost btn-lg" href="#work">View case studies</a>
     </div>
+
+    <div class="hero-proof">
+      <p><strong>Small business focused</strong> Practical systems, not vague ideas.</p>
+      <p><strong>Web + automation</strong> One person handling design, build, and workflows.</p>
+      <p><strong>Conversion minded</strong> Built to help you win more enquiries and save time.</p>
+    </div>
   </section>
 
   <!-- SERVICES -->
   <section id="services" class="services">
     <header class="section-head">
       <p class="eyebrow">Services</p>
-      <h2>
-        Four ways I help small businesses:
-        <em>clearer websites, better lead capture, fewer manual steps, calmer days.</em>
-      </h2>
+      <h2>Four offerings. One thing in common: <em>better systems, clearer positioning, and less manual work.</em></h2>
     </header>
 
     <div class="service-list">
@@ -94,12 +158,9 @@
         <span class="service-num">01</span>
         <div class="service-body">
           <h3>Websites That Convert</h3>
-          <p>
-            Clean, modern websites that explain what you do, build trust, and turn visitors into real enquiries.
-            Focused on structure, copy, and UX — not just visuals.
-          </p>
+          <p>Clean, modern websites that build trust, explain your offer clearly, and turn visitors into real enquiries. Built for service businesses that need results, not just a nicer layout.</p>
           <ul class="service-tags">
-            <li>Website design</li><li>Landing pages</li><li>Conversion-focused UX</li><li>Service pages</li>
+            <li>Website design</li><li>Landing pages</li><li>Messaging</li><li>Conversion UX</li>
           </ul>
         </div>
         <span class="service-arrow" aria-hidden="true">→</span>
@@ -109,12 +170,9 @@
         <span class="service-num">02</span>
         <div class="service-body">
           <h3>Lead Capture Systems</h3>
-          <p>
-            Turn website visitors and enquiries into booked work. Smart forms, instant AI-drafted replies,
-            and one shared pipeline so nothing falls through the cracks.
-          </p>
+          <p>Turn website visitors and enquiries into booked work. Smart forms, instant AI-drafted replies, and one shared pipeline so nothing falls through the cracks.</p>
           <ul class="service-tags">
-            <li>Smart forms</li><li>AI auto-replies</li><li>Lead pipelines</li><li>Follow-up flows</li>
+            <li>Smart forms</li><li>AI auto-replies</li><li>Pipeline &amp; follow-up</li><li>Lead routing</li>
           </ul>
         </div>
         <span class="service-arrow" aria-hidden="true">→</span>
@@ -124,10 +182,7 @@
         <span class="service-num">03</span>
         <div class="service-body">
           <h3>Workflow Automation</h3>
-          <p>
-            Remove repetitive admin: email triage, booking, reminders, simple reporting, and AI assistants that
-            quietly handle the work your team is doing by hand.
-          </p>
+          <p>Remove the repetitive admin that eats your week. Email triage, booking, reminders, reporting, and AI assistants that quietly handle the work your team is doing by hand.</p>
           <ul class="service-tags">
             <li>Process mapping</li><li>Make.com / Zapier</li><li>AI assistants</li><li>Reporting</li>
           </ul>
@@ -138,13 +193,10 @@
       <article class="service">
         <span class="service-num">04</span>
         <div class="service-body">
-          <h3>Client Operations & Apps</h3>
-          <p>
-            Onboarding, scheduling, task routing, and lightweight web apps built around your workflow.
-            Fewer dropped balls, clearer ownership, and tools your team will actually use.
-          </p>
+          <h3>Client Operations &amp; App Support</h3>
+          <p>Onboarding, scheduling, task routing, internal handoffs, and lightweight digital tools designed once and built to last. Fewer dropped balls and a system your team will actually use.</p>
           <ul class="service-tags">
-            <li>Client ops setup</li><li>Internal workflows</li><li>Client portals</li><li>Web app prototypes</li>
+            <li>Onboarding</li><li>Task routing</li><li>Client portals</li><li>Lightweight web apps</li>
           </ul>
         </div>
         <span class="service-arrow" aria-hidden="true">→</span>
@@ -157,10 +209,9 @@
   <section id="work" class="work">
     <header class="section-head">
       <p class="eyebrow">Selected work</p>
-      <h2>Four projects. Each one removes friction so the team can focus on real work.</h2>
+      <h2>Four projects. Each one quietly removes friction so the team can focus on real work.</h2>
     </header>
 
-    <!-- CASE 01 -->
     <article class="case">
       <div class="case-meta">
         <span class="case-num">Case 01</span>
@@ -196,7 +247,7 @@
         </div>
       </dl>
 
-      <p class="case-stack"><span>Tools</span> Make.com · Tally · Calendly · Gmail API · Airtable · Twilio · OpenAI (intent classification & reply drafting)</p>
+      <p class="case-stack"><span>Tools</span> Make.com · Tally · Calendly · Gmail API · Airtable · Twilio · OpenAI (intent classification &amp; reply drafting)</p>
 
       <a class="case-cta" href="demos/dental.html" target="_blank" rel="noopener">
         <span class="pulse" aria-hidden="true"></span>
@@ -205,7 +256,6 @@
       </a>
     </article>
 
-    <!-- CASE 02 -->
     <article class="case">
       <div class="case-meta">
         <span class="case-num">Case 02</span>
@@ -225,11 +275,11 @@
         </div>
         <div>
           <dt>My role</dt>
-          <dd>Audited the existing intake (three phone screenshots and a 1,400-email inbox), then designed and built the new landing page, shared form, AI auto-acknowledgement, and four-stage pipeline.</dd>
+          <dd>Audited the existing intake, then designed and built the new landing page, shared form, AI auto-acknowledgement, and four-stage pipeline.</dd>
         </div>
         <div>
           <dt>What changed</dt>
-          <dd>One landing page, one shared form, AI-drafted instant acknowledgement, and a New → Contacted → Qualified → Booked board. Drip sequences nudge warm leads; a 30-day re-engagement flow wakes dormant ones.</dd>
+          <dd>One landing page, one shared form, AI-drafted instant acknowledgement, and a New → Contacted → Qualified → Booked board. Drip sequences nudge warm leads; a re-engagement flow wakes dormant ones.</dd>
         </div>
         <div>
           <dt>Outcome</dt>
@@ -241,7 +291,7 @@
         </div>
       </dl>
 
-      <p class="case-stack"><span>Tools</span> Framer · Tally · Airtable · Make.com · Resend · OpenAI (reply drafting & lead qualification) · Slack notifications</p>
+      <p class="case-stack"><span>Tools</span> Framer · Tally · Airtable · Make.com · Resend · OpenAI · Slack notifications</p>
 
       <a class="case-cta" href="demos/leadflow.html" target="_blank" rel="noopener">
         <span class="pulse" aria-hidden="true"></span>
@@ -250,7 +300,6 @@
       </a>
     </article>
 
-    <!-- CASE 03 -->
     <article class="case">
       <div class="case-meta">
         <span class="case-num">Case 03</span>
@@ -266,7 +315,7 @@
       <dl class="case-fields">
         <div>
           <dt>Challenge</dt>
-          <dd>Across two automation projects in the same month, small service teams kept stitching together a calendar, a spreadsheet, a CRM, and a messaging tool — none of which talked to each other.</dd>
+          <dd>Small service teams kept stitching together a calendar, a spreadsheet, a CRM, and a messaging tool — none of which talked to each other.</dd>
         </div>
         <div>
           <dt>My role</dt>
@@ -278,15 +327,15 @@
         </div>
         <div>
           <dt>Outcome</dt>
-          <dd>Adding a booking takes three keystrokes. Marking it done updates the client's history automatically. The whole interface fits on one screen and runs in the browser — no install, no backend lock-in.</dd>
+          <dd>Adding a booking takes three keystrokes. Marking it done updates the client's history automatically. The whole interface fits on one screen and runs in the browser.</dd>
         </div>
         <div>
           <dt>Why it matters</dt>
-          <dd>A focused tool designed around one workflow beats a bloated all-in-one platform every time. This is the shape most small operators actually need.</dd>
+          <dd>A focused tool designed around one workflow beats a bloated all-in-one platform every time.</dd>
         </div>
       </dl>
 
-      <p class="case-stack"><span>Tools</span> Vanilla JS · CSS Grid · LocalStorage persistence · OpenAI API (message drafting) · Designed in Figma</p>
+      <p class="case-stack"><span>Tools</span> Vanilla JS · CSS Grid · LocalStorage persistence · OpenAI API · Designed in Figma</p>
 
       <a class="case-cta" href="demos/bookflow.html" target="_blank" rel="noopener">
         <span class="pulse" aria-hidden="true"></span>
@@ -295,41 +344,39 @@
       </a>
     </article>
 
-    <!-- CASE 04 -->
     <article class="case">
       <div class="case-meta">
         <span class="case-num">Case 04</span>
         <span class="case-tag">Lead generation · India market · Coaching institutes</span>
       </div>
-      <h3 class="case-title">Coaching Institute Lead Flow — helping institutes stop losing enquiries to slow follow-up.</h3>
+      <h3 class="case-title">Coaching Institute Lead Flow — helping coaching centres stop losing enquiries to slow follow-up.</h3>
       <p class="case-summary">
-        A targeted cold-outreach and automation concept for coaching institutes in Mumbai and Delhi,
-        replacing manual WhatsApp follow-ups with a structured lead-capture and response system.
+        A targeted cold-outreach and automation strategy for coaching institutes, replacing manual WhatsApp follow-ups with a structured lead-capture and response system.
       </p>
       <dl class="case-fields">
         <div>
           <dt>Challenge</dt>
-          <dd>Coaching institutes were spending money on ads and getting enquiries, but losing a large share of leads because follow-up was manual, inconsistent, and slow — often taking 24–48 hours to reply.</dd>
+          <dd>Coaching institutes were getting enquiries, but losing many leads because follow-up was manual, inconsistent, and slow.</dd>
         </div>
         <div>
           <dt>My role</dt>
-          <dd>Researched real institutes across Mumbai and Delhi, personalised cold outreach for each, and designed an automated follow-up sequence that can respond to new enquiries within minutes.</dd>
+          <dd>Researched real institutes, personalised outreach for each, and designed an automated follow-up sequence that responds to new enquiries within minutes.</dd>
         </div>
         <div>
           <dt>What changed</dt>
-          <dd>Replaced scattered WhatsApp messages and Excel sheets with a structured pipeline: instant acknowledgement, a short nurture sequence, and a demo-booking CTA — all designed to be automated.</dd>
+          <dd>Replaced scattered WhatsApp messages and Excel sheets with a structured pipeline: instant acknowledgement, nurture sequence, and demo-booking CTA.</dd>
         </div>
         <div>
           <dt>Outcome</dt>
-          <dd>A repeatable lead-flow model that coaching centres can plug into their existing channels to reduce response times dramatically and keep more interested students engaged.</dd>
+          <dd>A repeatable lead-flow model designed to reduce response time and keep more interested students engaged.</dd>
         </div>
         <div>
           <dt>Why it matters</dt>
-          <dd>In a crowded coaching market, institutes competing on fees can win on speed — the first centre to respond professionally often gets the admission.</dd>
+          <dd>In a crowded market, the first institute to respond professionally often wins the admission.</dd>
         </div>
       </dl>
-      <p class="case-stack"><span>Tools</span> Cold email outreach · AI personalisation · Workflow design · Lead nurture sequences · Google Maps research</p>
-      <a class="case-cta" href="mailto:rodhanalarohith@gmail.com">
+      <p class="case-stack"><span>Tools</span> Cold email outreach · AI personalisation · Workflow automation · Lead nurture sequences · Google Maps research</p>
+      <a class="case-cta" href="mailto:rodhanalarohith@gmail.com" rel="noopener">
         <span class="pulse" aria-hidden="true"></span>
         Get this system for your institute
         <span class="arrow" aria-hidden="true">↗</span>
@@ -390,70 +437,60 @@
           <p>
             I started in product design and freelance UI/UX, founded
             <strong>Maxcreepers Design Studio</strong> in 2019, moved into
-            digital project management, and spent time inside UK healthcare
-            operations — watching how real teams actually run.
+            digital project management, and spent time inside healthcare-related operations — watching how real teams actually run.
           </p>
           <p>
             That mix is the whole point. I see both the digital product and the
             operations behind it, and I use AI as a tool — not a gimmick — to
-            cut manual steps, speed up follow-up, and make small businesses
-            easier to run.
+            cut manual steps, speed up follow-up, improve websites, and make small businesses easier to run.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- INSIGHTS / BLOG PREVIEW -->
-  <section id="insights" class="services">
+  <!-- INSIGHTS -->
+  <section id="insights" class="insights">
     <header class="section-head">
       <p class="eyebrow">Insights</p>
-      <h2>Ideas for small businesses that want better websites, leads, and operations.</h2>
+      <h2>Practical ideas for small business growth.</h2>
     </header>
 
-    <div class="service-list">
-      <article class="service">
-        <span class="service-num">01</span>
-        <div class="service-body">
+    <div class="insights-list">
+      <article class="insight">
+        <span class="insight-num">01</span>
+        <div class="insight-body">
           <h3>How Small Businesses Can Save Time With Simple AI Automation</h3>
-          <p>
-            A practical introduction to small automations that reduce admin work, speed up replies,
-            and fit into tools you already use.
-          </p>
+          <p>A clear introduction to practical automations that reduce admin work, improve consistency, and remove unnecessary manual steps.</p>
         </div>
+        <span class="insight-tag">Coming soon</span>
       </article>
 
-      <article class="service">
-        <span class="service-num">02</span>
-        <div class="service-body">
+      <article class="insight">
+        <span class="insight-num">02</span>
+        <div class="insight-body">
           <h3>What a Good Small Business Website Needs to Convert Visitors Into Leads</h3>
-          <p>
-            The structure, messaging, and trust signals that turn your website from an online brochure
-            into a working business asset.
-          </p>
+          <p>The essential structure, messaging, and trust signals that turn a website into a business tool instead of just an online brochure.</p>
         </div>
+        <span class="insight-tag">Coming soon</span>
       </article>
 
-      <article class="service">
-        <span class="service-num">03</span>
-        <div class="service-body">
+      <article class="insight">
+        <span class="insight-num">03</span>
+        <div class="insight-body">
           <h3>5 Manual Tasks Salons and Coaches Can Automate This Month</h3>
-          <p>
-            Concrete examples of where AI and automation can help service businesses save hours each week
-            without changing everything at once.
-          </p>
+          <p>A practical guide to saving time in bookings, follow-ups, forms, and day-to-day client management.</p>
         </div>
+        <span class="insight-tag">Coming soon</span>
       </article>
 
-      <article class="service">
-        <span class="service-num">04</span>
-        <div class="service-body">
-          <h3>How Better Lead Follow-Up Increases Enquiries Without More Ad Spend</h3>
-          <p>
-            Why response time, clarity, and simple sequences matter more than complex funnels —
-            especially for local and service businesses.
-          </p>
+      <article class="insight">
+        <span class="insight-num">04</span>
+        <div class="insight-body">
+          <h3>How Better Lead Follow-Up Can Increase Enquiries Without More Ad Spend</h3>
+          <p>Why response speed and follow-up systems often matter more than getting more traffic.</p>
         </div>
+        <span class="insight-tag">Coming soon</span>
       </article>
     </div>
   </section>
@@ -464,9 +501,11 @@
       <p class="eyebrow">Get started</p>
       <h2>Get a free strategy call.</h2>
       <p class="contact-sub">
-        Tell me what you want to improve — your website, lead capture, or day-to-day operations.
-        I’ll send back a short, honest map of where websites, AI automation, and better workflows can help,
-        and where they won’t.
+        Tell me what is slowing your business down. I will send back a short,
+        honest map of where websites, automation, or better workflows can help — and where they won't.
+      </p>
+      <p class="contact-note">
+        No pressure. No jargon. Just a practical next step.
       </p>
 
       <div class="contact-actions">
@@ -474,9 +513,7 @@
           Book a call
           <span class="btn-arrow" aria-hidden="true">→</span>
         </a>
-        <a class="btn btn-ghost btn-lg" href="mailto:rodhanala@gmail.com?subject=Free%20strategy%20call">
-          Email me
-        </a>
+        <a class="btn btn-ghost btn-lg" href="mailto:rodhanala@gmail.com?subject=Free%20strategy%20call">Email me</a>
       </div>
 
       <ul class="contact-meta">
@@ -509,42 +546,25 @@
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  // Smooth-scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const id = a.getAttribute('href').slice(1);
-      if (!id) return;
-      const el = document.getElementById(id);
-      if (el) {
-        e.preventDefault();
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const id=a.getAttribute('href').slice(1);
+      if(!id) return;
+      const el=document.getElementById(id);
+      if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}
     });
   });
 
-  // Reveal on scroll
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(en => {
-      if (en.isIntersecting) {
-        en.target.classList.add('in');
-        io.unobserve(en.target);
-      }
-    });
-  }, { threshold: 0.12 });
+  const io=new IntersectionObserver(es=>es.forEach(en=>{
+    if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+  }),{threshold:.12});
+  document.querySelectorAll('.reveal, section > *, .step-card').forEach(el=>io.observe(el));
 
-  document.querySelectorAll('.reveal, section > *, .step-card').forEach(el => io.observe(el));
-
-  // Process: trigger connector line + cards when steps list enters view
-  const stepsEl = document.querySelector('.steps');
-  if (stepsEl) {
-    const stepObs = new IntersectionObserver(entries => {
-      entries.forEach(en => {
-        if (en.isIntersecting) {
-          stepsEl.classList.add('in-view');
-          stepObs.unobserve(stepsEl);
-        }
-      });
-    }, { threshold: 0.25 });
+  const stepsEl=document.querySelector('.steps');
+  if(stepsEl){
+    const stepObs=new IntersectionObserver(es=>es.forEach(en=>{
+      if(en.isIntersecting){stepsEl.classList.add('in-view');stepObs.unobserve(stepsEl);}
+    }),{threshold:.25});
     stepObs.observe(stepsEl);
   }
 </script>
