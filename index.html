@@ -14,67 +14,95 @@
 :root{
   --bg:#f6f2ea;
   --paper:#fbf8f2;
-  --card:#fffdf9;
+  --card:#fffdfa;
+  --card-2:#fdf8f1;
   --ink:#171513;
-  --ink-2:#4d463f;
-  --muted:#7f756b;
-  --line:#ddd3c6;
+  --ink-2:#4f463e;
+  --muted:#7d7368;
+  --line:#ddd2c4;
   --accent:#8f5e3b;
-  --accent-2:#b8875b;
-  --shadow:0 10px 30px rgba(23,21,19,.06);
-  --radius:22px;
-  --maxw:1200px;
+  --accent-2:#b88456;
+  --accent-soft:rgba(143,94,59,.08);
+  --success:#488c62;
+  --shadow-xs:0 1px 0 rgba(23,21,19,.03);
+  --shadow-sm:0 14px 32px -26px rgba(23,21,19,.18);
+  --shadow-md:0 30px 70px -34px rgba(23,21,19,.22);
+  --radius-sm:18px;
+  --radius-md:26px;
+  --radius-lg:34px;
+  --maxw:1240px;
   --mx:24px;
   --serif:"Gambarino", Georgia, serif;
   --sans:"Satoshi", Arial, sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
 }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  background:var(--bg);
-  color:var(--ink);
   font-family:var(--sans);
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,.85), transparent 28%),
+    linear-gradient(180deg, #f8f4ed 0%, #f6f2ea 42%, #f4efe7 100%);
+  color:var(--ink);
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
+  overflow-x:hidden;
 }
-img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
-button,input,textarea{font:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-
 body::before{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
-  background:
-    radial-gradient(circle at top left, rgba(255,255,255,.7), transparent 30%),
-    linear-gradient(to bottom, rgba(255,255,255,.18), rgba(255,255,255,0));
-  opacity:.7;
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size:38px 38px;
+  mask-image:linear-gradient(to bottom, rgba(0,0,0,.22), transparent 72%);
+  opacity:.4;
 }
+img,svg{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button,input,textarea{font:inherit}
+button{border:none;background:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.skip{
+  position:absolute;
+  left:-999px;
+  top:12px;
+  background:#000;
+  color:#fff;
+  padding:12px 16px;
+  border-radius:999px;
+  z-index:100;
+}
+.skip:focus{left:12px}
 
 .nav{
   position:sticky;
   top:0;
-  z-index:50;
+  z-index:80;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:24px;
   padding:18px max(24px, calc((100vw - var(--maxw))/2));
-  backdrop-filter:blur(12px);
-  background:rgba(246,242,234,.82);
-  border-bottom:1px solid rgba(221,211,198,.7);
+  backdrop-filter:blur(14px);
+  background:rgba(246,242,234,.72);
+  border-bottom:1px solid rgba(221,210,196,.8);
 }
 .brand{
   display:flex;
   align-items:center;
   gap:12px;
-  min-width:0;
 }
-.brand-mark{color:var(--ink)}
+.brand-mark{
+  color:var(--ink);
+  transition:transform .45s var(--ease);
+}
+.brand:hover .brand-mark{transform:rotate(-8deg) scale(1.04)}
 .brand-name{
   font-weight:700;
   letter-spacing:-.02em;
@@ -85,31 +113,98 @@ body::before{
   gap:18px;
   flex-wrap:wrap;
 }
-.nav-links a{
+.nav-links a,
+.nav-links button{
   color:var(--ink-2);
   font-size:14px;
+  cursor:pointer;
+  transition:color .2s ease, transform .3s var(--ease);
 }
-.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover,
+.nav-links button:hover{
+  color:var(--ink);
+  transform:translateY(-1px);
+}
 .nav-cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
   padding:12px 18px;
   border-radius:999px;
   background:var(--ink);
   color:var(--bg)!important;
   font-weight:700;
+  box-shadow:var(--shadow-sm);
 }
 .nav-cta:hover{background:#000}
 
-.page{
-  display:none;
+.page{display:none}
+.page.active{display:block}
+
+.shell{
+  position:relative;
+  isolation:isolate;
 }
-.page.active{
-  display:block;
+
+.floating-objects{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:-1;
 }
+.orb,
+.panel-float,
+.ring-float{
+  position:absolute;
+  transform-style:preserve-3d;
+  will-change:transform;
+}
+.orb{
+  width:340px;
+  height:340px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.95), rgba(255,255,255,.28) 28%, rgba(184,132,86,.18) 56%, transparent 70%),
+    linear-gradient(135deg, rgba(143,94,59,.22), rgba(255,255,255,0));
+  filter:blur(2px);
+  opacity:.9;
+  box-shadow:inset 0 1px 22px rgba(255,255,255,.8), 0 20px 70px rgba(143,94,59,.08);
+}
+.orb.a{top:120px;right:-90px}
+.orb.b{top:780px;left:-120px;width:280px;height:280px}
+.orb.c{top:1620px;right:6%;width:210px;height:210px}
+.panel-float{
+  width:220px;
+  height:150px;
+  border-radius:26px;
+  border:1px solid rgba(255,255,255,.65);
+  background:linear-gradient(180deg, rgba(255,255,255,.7), rgba(255,255,255,.24));
+  backdrop-filter:blur(10px);
+  box-shadow:0 30px 60px -34px rgba(23,21,19,.16);
+}
+.panel-float.one{top:240px;left:6%;transform:rotate(-12deg)}
+.panel-float.two{top:920px;right:10%;transform:rotate(14deg)}
+.ring-float{
+  width:180px;height:180px;border-radius:50%;
+  border:1px solid rgba(143,94,59,.18);
+  box-shadow:inset 0 0 0 24px rgba(255,255,255,.2);
+}
+.ring-float.one{top:520px;right:18%}
+.ring-float.two{top:1900px;left:8%}
 
 .hero{
   max-width:var(--maxw);
   margin:0 auto;
-  padding:clamp(72px,10vw,140px) var(--mx) 56px;
+  padding:clamp(76px,10vw,144px) var(--mx) 62px;
+  position:relative;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.12fr .88fr;
+  gap:30px;
+  align-items:center;
 }
 .hero-meta{
   display:flex;
@@ -121,26 +216,26 @@ body::before{
 }
 .dot{
   width:10px;height:10px;border-radius:50%;
-  background:#4aa26b;
-  box-shadow:0 0 0 6px rgba(74,162,107,.12);
+  background:var(--success);
+  box-shadow:0 0 0 6px rgba(72,140,98,.13);
 }
 .hero-title{
   margin:0;
   font-family:var(--serif);
-  font-size:clamp(44px,8vw,96px);
-  line-height:.95;
-  letter-spacing:-.04em;
+  font-size:clamp(46px,8vw,98px);
+  line-height:.94;
+  letter-spacing:-.045em;
 }
 .hero-title em{
   font-style:normal;
   color:var(--accent);
 }
 .hero-sub{
-  margin:28px 0 0;
+  margin:26px 0 0;
   max-width:720px;
-  font-size:clamp(18px,2vw,22px);
-  line-height:1.65;
   color:var(--ink-2);
+  font-size:clamp(18px,2vw,22px);
+  line-height:1.7;
 }
 .hero-cta{
   display:flex;
@@ -153,24 +248,27 @@ body::before{
   align-items:center;
   justify-content:center;
   gap:10px;
+  min-height:48px;
   padding:14px 20px;
   border-radius:999px;
   border:1px solid var(--line);
-  transition:.2s ease;
   cursor:pointer;
+  transition:transform .35s var(--ease), background .25s ease, color .25s ease, border-color .25s ease, box-shadow .35s var(--ease);
 }
+.btn:hover{transform:translateY(-2px)}
 .btn-primary{
   background:var(--ink);
   color:var(--bg);
   border-color:var(--ink);
+  box-shadow:var(--shadow-sm);
 }
-.btn-primary:hover{transform:translateY(-1px);background:#000}
+.btn-primary:hover{background:#000}
 .btn-ghost{
-  background:transparent;
+  background:rgba(255,255,255,.45);
   color:var(--ink);
 }
 .btn-ghost:hover{
-  background:rgba(23,21,19,.05);
+  background:rgba(255,255,255,.8);
 }
 .hero-proof{
   display:grid;
@@ -182,16 +280,157 @@ body::before{
 }
 .hero-proof p{
   margin:0;
-  font-size:14px;
   color:var(--ink-2);
-  line-height:1.6;
+  line-height:1.65;
+  font-size:14px;
 }
 .hero-proof strong{color:var(--ink)}
+.hero-scene{
+  perspective:1400px;
+  min-height:540px;
+  position:relative;
+}
+.scene-wrap{
+  position:relative;
+  width:min(100%,520px);
+  margin:0 auto;
+  aspect-ratio:1/1;
+  transform-style:preserve-3d;
+}
+.glass-card{
+  position:absolute;
+  inset:auto;
+  background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.6));
+  border:1px solid rgba(255,255,255,.9);
+  border-radius:30px;
+  backdrop-filter:blur(14px);
+  box-shadow:0 20px 60px -30px rgba(23,21,19,.25);
+  transform-style:preserve-3d;
+}
+.main-dashboard{
+  width:100%;
+  height:72%;
+  left:0;
+  top:11%;
+  padding:24px;
+  transform:rotateX(10deg) rotateY(-12deg) translateZ(0);
+}
+.mini-card{
+  width:46%;
+  height:26%;
+  padding:18px;
+}
+.mini-one{
+  right:-2%;
+  top:2%;
+  transform:rotateX(16deg) rotateY(16deg) translateZ(80px);
+}
+.mini-two{
+  left:-4%;
+  bottom:2%;
+  transform:rotateX(18deg) rotateY(-16deg) translateZ(70px);
+}
+.scene-chip-row{
+  display:flex;
+  gap:8px;
+  margin-bottom:18px;
+}
+.scene-chip{
+  height:12px;
+  border-radius:999px;
+  background:rgba(143,94,59,.12);
+}
+.scene-chip:nth-child(1){width:62px}
+.scene-chip:nth-child(2){width:92px}
+.scene-chip:nth-child(3){width:44px}
+.scene-title{
+  font-family:var(--serif);
+  font-size:34px;
+  line-height:1;
+  margin:0 0 16px;
+}
+.scene-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:14px;
+  height:calc(100% - 74px);
+}
+.scene-col{
+  display:grid;
+  gap:14px;
+}
+.block{
+  border-radius:22px;
+  background:linear-gradient(180deg, rgba(246,242,234,.9), rgba(255,255,255,.85));
+  border:1px solid rgba(221,210,196,.75);
+  padding:16px;
+}
+.kpi{
+  display:grid;
+  gap:10px;
+}
+.kpi strong{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:var(--muted);
+}
+.kpi-value{
+  font-family:var(--serif);
+  font-size:42px;
+  line-height:1;
+}
+.bars{
+  display:grid;
+  gap:10px;
+  margin-top:8px;
+}
+.bars span{
+  display:block;
+  height:10px;
+  border-radius:999px;
+  background:linear-gradient(90deg, rgba(143,94,59,.85), rgba(184,132,86,.28));
+}
+.bars span:nth-child(1){width:78%}
+.bars span:nth-child(2){width:56%}
+.bars span:nth-child(3){width:88%}
+.lines{
+  display:grid;
+  gap:10px;
+}
+.lines span{
+  display:block;
+  height:11px;
+  border-radius:999px;
+  background:rgba(23,21,19,.08);
+}
+.lines span:nth-child(1){width:82%}
+.lines span:nth-child(2){width:64%}
+.lines span:nth-child(3){width:76%}
+.lines span:nth-child(4){width:54%}
+.scene-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.84);
+  border:1px solid rgba(221,210,196,.8);
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+  position:absolute;
+  right:2%;
+  bottom:-2%;
+  box-shadow:var(--shadow-sm);
+}
 
 .section{
   max-width:var(--maxw);
   margin:0 auto;
-  padding:clamp(66px,8vw,110px) var(--mx);
+  padding:clamp(70px,8vw,118px) var(--mx);
 }
 .section-head{
   display:grid;
@@ -201,29 +440,26 @@ body::before{
 .eyebrow{
   margin:0;
   font-size:12px;
-  text-transform:uppercase;
   letter-spacing:.2em;
+  text-transform:uppercase;
   color:var(--accent);
   font-weight:700;
 }
 .section-head h2{
   margin:0;
   font-family:var(--serif);
-  font-size:clamp(34px,5vw,58px);
+  font-size:clamp(34px,5vw,60px);
+  line-height:1.01;
+  letter-spacing:-.035em;
   font-weight:400;
-  line-height:1.02;
-  letter-spacing:-.03em;
-  max-width:900px;
+  max-width:920px;
 }
-.section-head h2 em{
-  font-style:normal;
-  color:var(--accent);
-}
+.section-head h2 em{font-style:normal;color:var(--accent)}
 .section-head p:last-child{
   margin:0;
   max-width:760px;
   color:var(--ink-2);
-  line-height:1.7;
+  line-height:1.75;
 }
 
 .service-list{
@@ -234,14 +470,14 @@ body::before{
 .service{
   display:grid;
   grid-template-columns:70px 1fr auto;
-  gap:22px;
-  padding:26px 0;
-  border-bottom:1px solid var(--line);
+  gap:24px;
   align-items:start;
+  padding:28px 0;
+  border-bottom:1px solid var(--line);
 }
 .service-num{
   font-family:var(--serif);
-  font-size:24px;
+  font-size:25px;
   color:var(--accent);
 }
 .service-body h3{
@@ -249,169 +485,244 @@ body::before{
   font-family:var(--serif);
   font-size:clamp(28px,3vw,38px);
   font-weight:400;
-  line-height:1.08;
+  line-height:1.07;
 }
 .service-body p{
   margin:0;
-  max-width:70ch;
+  max-width:72ch;
   color:var(--ink-2);
-  line-height:1.75;
+  line-height:1.76;
   font-size:16.5px;
 }
 .service-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
   list-style:none;
   padding:0;
   margin:18px 0 0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
 }
 .service-tags li{
   padding:10px 14px;
-  border:1px solid var(--line);
   border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.52);
   font-size:12px;
+  letter-spacing:.1em;
   text-transform:uppercase;
-  letter-spacing:.09em;
   color:var(--muted);
-  background:rgba(255,255,255,.62);
 }
 .service-arrow{
   font-size:24px;
   color:var(--muted);
-  padding-top:6px;
+  padding-top:8px;
 }
 
-.work-preview{
+.work-wrap{
   display:grid;
-  grid-template-columns:1.15fr .85fr;
   gap:24px;
-  align-items:start;
+}
+.work-header-bar{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+}
+.work-header-bar p{
+  margin:0;
+  max-width:620px;
+  color:var(--ink-2);
+  line-height:1.75;
 }
 .work-grid{
   display:grid;
-  gap:18px;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
-.work-card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:26px;
-  box-shadow:var(--shadow);
+.project-card{
+  position:relative;
+  min-height:360px;
+  padding:24px;
+  border-radius:30px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.75)),
+    linear-gradient(135deg, rgba(184,132,86,.08), transparent 48%);
+  border:1px solid rgba(221,210,196,.9);
+  box-shadow:var(--shadow-xs), var(--shadow-sm);
+  overflow:hidden;
+  cursor:pointer;
+  transform-style:preserve-3d;
+  transition:transform .6s var(--ease), box-shadow .5s var(--ease), border-color .3s ease;
 }
-.work-card-meta{
+.project-card:hover{
+  transform:translateY(-8px) rotateX(5deg) rotateY(-5deg);
+  box-shadow:0 24px 60px -30px rgba(23,21,19,.24);
+  border-color:rgba(184,132,86,.4);
+}
+.project-card::before{
+  content:"";
+  position:absolute;
+  inset:-30% -20% auto auto;
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(184,132,86,.18), transparent 65%);
+  transform:translateZ(10px);
+}
+.project-card::after{
+  content:"";
+  position:absolute;
+  inset:auto -40px -40px auto;
+  width:160px;
+  height:160px;
+  border-radius:24px;
+  background:linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.05));
+  border:1px solid rgba(255,255,255,.7);
+  transform:rotate(18deg) translateZ(18px);
+  opacity:.6;
+}
+.project-top{
+  position:relative;
+  z-index:2;
   display:flex;
   justify-content:space-between;
   gap:16px;
-  flex-wrap:wrap;
-  margin-bottom:16px;
+  align-items:flex-start;
+  margin-bottom:18px;
 }
-.work-card-meta span:first-child{
+.project-index{
   font-size:12px;
-  letter-spacing:.16em;
+  letter-spacing:.18em;
   text-transform:uppercase;
   color:var(--accent);
   font-weight:700;
 }
-.work-card-meta span:last-child{
+.project-tag{
   font-size:12px;
   letter-spacing:.12em;
   text-transform:uppercase;
   color:var(--muted);
 }
-.work-card h3{
+.project-visual{
+  position:relative;
+  z-index:2;
+  height:118px;
+  border-radius:22px;
+  border:1px solid rgba(221,210,196,.8);
+  background:linear-gradient(180deg, rgba(246,242,234,.9), rgba(255,255,255,.86));
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+  margin-bottom:20px;
+}
+.project-mock{
+  width:86%;
+  height:72%;
+  border-radius:18px;
+  background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(251,246,239,.92));
+  border:1px solid rgba(221,210,196,.88);
+  box-shadow:0 18px 34px -28px rgba(23,21,19,.24);
+  transform:rotateX(12deg) rotateY(-14deg);
+  padding:12px;
+}
+.project-mock.topline::before,
+.project-mock.topline::after{
+  content:"";
+  display:block;
+  height:10px;
+  border-radius:999px;
+  background:rgba(23,21,19,.08);
+  margin-bottom:8px;
+}
+.project-mock.topline::after{width:58%}
+.project-bars{
+  display:grid;
+  gap:8px;
+  margin-top:10px;
+}
+.project-bars span{
+  display:block;
+  height:9px;
+  border-radius:999px;
+  background:linear-gradient(90deg, rgba(143,94,59,.82), rgba(184,132,86,.22));
+}
+.project-bars span:nth-child(1){width:75%}
+.project-bars span:nth-child(2){width:54%}
+.project-bars span:nth-child(3){width:88%}
+.project-card h3{
+  position:relative;
+  z-index:2;
   margin:0 0 12px;
   font-family:var(--serif);
   font-size:clamp(28px,3vw,40px);
   line-height:1.06;
   font-weight:400;
+  letter-spacing:-.02em;
 }
-.work-card p{
+.project-card p{
+  position:relative;
+  z-index:2;
   margin:0;
   color:var(--ink-2);
-  line-height:1.75;
-  font-size:16px;
+  line-height:1.72;
 }
-.work-metrics{
+.project-footer{
+  position:relative;
+  z-index:2;
   display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:18px;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:22px;
 }
-.work-metrics span{
+.project-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
   padding:10px 12px;
   border-radius:999px;
-  background:rgba(143,94,59,.08);
+  background:var(--accent-soft);
   color:var(--accent);
   font-size:12px;
-  letter-spacing:.08em;
   text-transform:uppercase;
+  letter-spacing:.08em;
   font-weight:700;
 }
-.work-side{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:28px;
-  box-shadow:var(--shadow);
-  position:sticky;
-  top:98px;
-}
-.work-side h3{
-  margin:0 0 12px;
-  font-family:var(--serif);
-  font-size:clamp(30px,3vw,42px);
-  font-weight:400;
-  line-height:1.06;
-}
-.work-side p{
-  margin:0 0 16px;
-  color:var(--ink-2);
-  line-height:1.75;
-}
-.work-side ul{
-  list-style:none;
-  padding:0;
-  margin:0 0 24px;
-  display:grid;
-  gap:14px;
-}
-.work-side li{
-  color:var(--ink-2);
-  line-height:1.65;
-  padding-left:18px;
-  position:relative;
-}
-.work-side li::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:.8em;
-  width:8px;
-  height:1px;
-  background:var(--accent);
+.project-link{
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  color:var(--ink);
+  font-weight:700;
 }
 
 .templates-grid{
   display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:24px;
+  grid-template-columns:1.12fr .88fr;
+  gap:22px;
 }
-.template-card,.template-note{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
+.template-card,.template-note,
+.about-card,.contact-card,
+.case-detail{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.72)),
+    linear-gradient(180deg, rgba(184,132,86,.04), transparent 42%);
+  border:1px solid rgba(221,210,196,.95);
+  border-radius:30px;
   padding:28px;
-  box-shadow:var(--shadow);
+  box-shadow:var(--shadow-xs), var(--shadow-sm);
 }
-.template-card h3,.template-note h3{
+.template-card h3,.template-note h3,
+.about-card h3,.contact-card h3{
   margin:0 0 12px;
   font-family:var(--serif);
   font-size:clamp(30px,4vw,42px);
+  line-height:1.06;
   font-weight:400;
-  line-height:1.08;
 }
-.template-card p,.template-note p{
+.template-card p,.template-note p,
+.about-card p,.contact-card p{
   margin:0 0 14px;
   color:var(--ink-2);
   line-height:1.75;
@@ -420,16 +731,17 @@ body::before{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
-  margin:18px 0 24px;
+  margin:18px 0 22px;
 }
 .template-pill{
-  border:1px solid var(--line);
-  border-radius:999px;
   padding:10px 14px;
+  border-radius:999px;
+  border:1px solid var(--line);
   font-size:12px;
-  letter-spacing:.08em;
+  letter-spacing:.09em;
   text-transform:uppercase;
   color:var(--muted);
+  background:rgba(255,255,255,.55);
 }
 .template-list{
   list-style:none;
@@ -439,8 +751,8 @@ body::before{
   gap:14px;
 }
 .template-list li{
-  padding-top:14px;
   border-top:1px solid var(--line);
+  padding-top:14px;
 }
 .template-list strong{
   display:block;
@@ -448,10 +760,11 @@ body::before{
 }
 .template-list span{
   color:var(--ink-2);
-  line-height:1.7;
+  line-height:1.68;
   font-size:15.5px;
 }
-.template-actions{
+.template-actions,
+.contact-actions{
   display:flex;
   flex-wrap:wrap;
   gap:12px;
@@ -464,17 +777,20 @@ body::before{
   gap:18px;
 }
 .process-card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
   padding:24px;
-  box-shadow:var(--shadow);
+  border-radius:28px;
+  border:1px solid rgba(221,210,196,.92);
+  background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.7));
+  box-shadow:var(--shadow-xs), var(--shadow-sm);
+  transform-style:preserve-3d;
+  transition:transform .45s var(--ease);
 }
+.process-card:hover{transform:translateY(-6px)}
 .process-card span{
   display:inline-block;
   margin-bottom:14px;
   font-size:12px;
-  letter-spacing:.16em;
+  letter-spacing:.18em;
   text-transform:uppercase;
   color:var(--accent);
   font-weight:700;
@@ -488,29 +804,9 @@ body::before{
 .process-card p{
   margin:0;
   color:var(--ink-2);
-  line-height:1.7;
+  line-height:1.72;
 }
 
-.about-card,
-.contact-card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:32px;
-  box-shadow:var(--shadow);
-}
-.about-card p,
-.contact-card p{
-  margin:0 0 14px;
-  color:var(--ink-2);
-  line-height:1.8;
-}
-.contact-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:22px;
-}
 .contact-meta{
   list-style:none;
   padding:0;
@@ -545,75 +841,67 @@ body::before{
 .case-page-hero{
   max-width:var(--maxw);
   margin:0 auto;
-  padding:clamp(64px,9vw,120px) var(--mx) 30px;
+  padding:clamp(66px,9vw,118px) var(--mx) 20px;
 }
 .back-link{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  color:var(--accent);
-  font-weight:700;
   margin-bottom:24px;
 }
-.case-layout{
+.case-detail-wrap{
   max-width:var(--maxw);
   margin:0 auto;
-  padding:0 var(--mx) 90px;
+  padding:0 var(--mx) 100px;
   display:grid;
-  gap:20px;
+  gap:18px;
 }
-.case-study{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:30px;
-  box-shadow:var(--shadow);
+.case-detail{
+  display:none;
 }
-.case-top{
+.case-detail.active{display:block}
+.case-detail-top{
   display:flex;
   align-items:flex-start;
   justify-content:space-between;
-  gap:18px;
+  gap:16px;
   flex-wrap:wrap;
   margin-bottom:16px;
 }
-.case-top span:first-child{
+.case-detail-top span:first-child{
   font-size:12px;
-  letter-spacing:.16em;
   text-transform:uppercase;
+  letter-spacing:.18em;
   color:var(--accent);
   font-weight:700;
 }
-.case-top span:last-child{
+.case-detail-top span:last-child{
   font-size:12px;
-  letter-spacing:.12em;
   text-transform:uppercase;
+  letter-spacing:.12em;
   color:var(--muted);
 }
-.case-study h2{
+.case-detail h2{
   margin:0 0 14px;
   font-family:var(--serif);
-  font-size:clamp(34px,5vw,54px);
+  font-size:clamp(36px,5vw,58px);
+  line-height:1.02;
   font-weight:400;
-  line-height:1.03;
   letter-spacing:-.03em;
+  max-width:950px;
 }
 .case-summary{
-  margin:0 0 18px;
+  margin:0 0 24px;
   max-width:74ch;
   color:var(--ink-2);
+  line-height:1.82;
   font-size:17px;
-  line-height:1.8;
 }
 .case-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:16px 24px;
-  margin-top:22px;
+  gap:16px 22px;
 }
 .case-block{
-  padding-top:16px;
   border-top:1px solid var(--line);
+  padding-top:16px;
 }
 .case-block h3{
   margin:0 0 8px;
@@ -637,42 +925,74 @@ body::before{
   padding:10px 12px;
   border-radius:999px;
   border:1px solid var(--line);
-  background:rgba(255,255,255,.7);
-  font-size:12px;
+  background:rgba(255,255,255,.55);
   color:var(--muted);
+  font-size:12px;
   text-transform:uppercase;
   letter-spacing:.08em;
 }
+.case-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:26px;
+}
 
-@media (max-width:1024px){
-  .work-preview,
+.reveal{
+  opacity:0;
+  transform:translateY(26px);
+  transition:opacity .8s var(--ease), transform .8s var(--ease);
+}
+.reveal.in{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation:none!important;
+    transition:none!important;
+  }
+  .reveal{opacity:1;transform:none}
+}
+
+@media (max-width:1120px){
+  .hero-grid,
   .templates-grid,
+  .work-grid,
   .process-grid,
   .case-grid{
     grid-template-columns:1fr;
   }
-  .work-side{position:relative;top:auto}
+  .hero-scene{
+    min-height:420px;
+    margin-top:10px;
+  }
 }
 @media (max-width:820px){
   .nav{padding-inline:18px}
-  .nav-links{gap:12px}
   .hero-proof{grid-template-columns:1fr}
   .service{grid-template-columns:1fr;gap:10px}
   .service-arrow{display:none}
-  .work-card,.work-side,.template-card,.template-note,.about-card,.contact-card,.case-study{padding:22px}
+  .template-card,.template-note,.about-card,.contact-card,.case-detail{padding:22px}
+  .project-card{min-height:320px}
 }
 @media (max-width:640px){
   .brand-name{display:none}
-  .nav-links a:not(.nav-cta){display:none}
-  .hero-title{font-size:clamp(38px,14vw,62px)}
-  .section-head h2{font-size:clamp(30px,10vw,44px)}
+  .nav-links a:not(.nav-cta),
+  .nav-links button:not(.nav-cta){display:none}
+  .hero-title{font-size:clamp(40px,14vw,66px)}
+  .section-head h2{font-size:clamp(32px,10vw,46px)}
+  .scene-wrap{width:100%}
 }
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip">Skip to content</a>
 
-<header class="nav">
-  <a href="#top" class="brand" data-go="home">
+<header class="nav" aria-label="Primary">
+  <a href="#top" class="brand" data-go="home" aria-label="Rohith Dhanala home">
     <svg class="brand-mark" viewBox="0 0 40 40" width="32" height="32" fill="none" aria-hidden="true">
       <rect x="1" y="1" width="38" height="38" rx="8" stroke="currentColor" stroke-width="1.5"/>
       <path d="M12 28V12h8a5 5 0 0 1 2.4 9.4L28 28h-4l-4.8-6H16v6h-4Zm4-9.5h3.5a2.5 2.5 0 0 0 0-5H16v5Z" fill="currentColor"/>
@@ -680,9 +1000,9 @@ body::before{
     <span class="brand-name">Rohith Dhanala</span>
   </a>
 
-  <nav class="nav-links">
+  <nav class="nav-links" aria-label="Sections">
     <a href="#services" data-scroll="services">Services</a>
-    <a href="#featured-work" data-scroll="featured-work">Work</a>
+    <button type="button" data-open-case-page>Case Studies</button>
     <a href="#templates" data-scroll="templates">Templates</a>
     <a href="#about" data-scroll="about">About</a>
     <a href="#contact" data-scroll="contact">Contact</a>
@@ -690,407 +1010,479 @@ body::before{
   </nav>
 </header>
 
-<main>
+<main id="main-content">
+  <div class="shell">
+    <div class="floating-objects" aria-hidden="true">
+      <div class="orb a floatable"></div>
+      <div class="orb b floatable"></div>
+      <div class="orb c floatable"></div>
+      <div class="panel-float one floatable"></div>
+      <div class="panel-float two floatable"></div>
+      <div class="ring-float one floatable"></div>
+      <div class="ring-float two floatable"></div>
+    </div>
 
-  <section class="page active" id="home-page">
-    <section class="hero" id="top">
-      <div class="hero-meta">
-        <span class="dot" aria-hidden="true"></span>
-        <span>Available for projects · Based in Southampton, UK</span>
-      </div>
-
-      <h1 class="hero-title">
-        AI Automation,<br>
-        <em>Websites</em> and Digital<br>
-        Operations for small businesses.
-      </h1>
-
-      <p class="hero-sub">
-        I help salons, clinics, coaches, consultants, and local service businesses build better websites,
-        capture more leads, streamline workflows, and launch digital systems that actually reduce admin.
-      </p>
-
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Book a free strategy call</a>
-        <button class="btn btn-ghost" type="button" data-open-cases>View case studies</button>
-      </div>
-
-      <div class="hero-proof">
-        <p><strong>Small business focused</strong> Practical systems, not vague tech talk.</p>
-        <p><strong>Templates + custom builds</strong> Faster launches when speed matters.</p>
-        <p><strong>Conversion minded</strong> Built to bring enquiries and reduce manual work.</p>
-      </div>
-    </section>
-
-    <section class="section" id="services">
-      <header class="section-head">
-        <p class="eyebrow">Services</p>
-        <h2>Four ways I help businesses create <em>clearer websites, better lead capture, and calmer operations.</em></h2>
-      </header>
-
-      <div class="service-list">
-        <article class="service">
-          <span class="service-num">01</span>
-          <div class="service-body">
-            <h3>Websites That Convert</h3>
-            <p>Clear, modern websites that explain what you do, build trust quickly, and turn visitors into real enquiries instead of passive page views.</p>
-            <ul class="service-tags">
-              <li>Website design</li><li>Landing pages</li><li>UX structure</li><li>Conversion copy</li>
-            </ul>
-          </div>
-          <span class="service-arrow">→</span>
-        </article>
-
-        <article class="service">
-          <span class="service-num">02</span>
-          <div class="service-body">
-            <h3>Lead Capture Systems</h3>
-            <p>Smarter forms, faster replies, shared pipelines, and simple enquiry systems so leads stop getting lost across email, WhatsApp, and social.</p>
-            <ul class="service-tags">
-              <li>Lead forms</li><li>Auto replies</li><li>Pipelines</li><li>Follow-up flows</li>
-            </ul>
-          </div>
-          <span class="service-arrow">→</span>
-        </article>
-
-        <article class="service">
-          <span class="service-num">03</span>
-          <div class="service-body">
-            <h3>Workflow Automation</h3>
-            <p>Reduce repetitive admin through practical automations around booking, reminders, intake, task routing, and simple AI-assisted communication.</p>
-            <ul class="service-tags">
-              <li>Make.com</li><li>Zapier</li><li>AI helpers</li><li>Admin reduction</li>
-            </ul>
-          </div>
-          <span class="service-arrow">→</span>
-        </article>
-
-        <article class="service">
-          <span class="service-num">04</span>
-          <div class="service-body">
-            <h3>Digital Operations Support</h3>
-            <p>Lightweight systems for onboarding, task flow, client communication, and internal clarity so the business runs more smoothly day to day.</p>
-            <ul class="service-tags">
-              <li>Ops setup</li><li>Client flow</li><li>Web apps</li><li>Process design</li>
-            </ul>
-          </div>
-          <span class="service-arrow">→</span>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="featured-work">
-      <header class="section-head">
-        <p class="eyebrow">Featured work</p>
-        <h2>A shorter homepage. Stronger focus. <em>Detailed case studies live on their own page.</em></h2>
-        <p>Instead of making visitors scroll through every full project on the homepage, this version highlights the outcomes first and lets interested people open the full case studies separately.</p>
-      </header>
-
-      <div class="work-preview">
-        <div class="work-grid">
-          <article class="work-card">
-            <div class="work-card-meta">
-              <span>Case 01</span>
-              <span>Healthcare ops</span>
+    <section class="page active" id="home-page">
+      <section class="hero" id="top">
+        <div class="hero-grid">
+          <div class="hero-copy reveal">
+            <div class="hero-meta">
+              <span class="dot" aria-hidden="true"></span>
+              <span>Available for projects · Based in Southampton, UK</span>
             </div>
-            <h3>The dental practice with slow intake and overloaded admin.</h3>
-            <p>A shared intake and automation flow reduced first-response time dramatically and removed hours of manual coordination each week.</p>
-            <div class="work-metrics">
-              <span>Faster response</span>
-              <span>Lower admin load</span>
-              <span>Better routing</span>
+
+            <h1 class="hero-title">
+              AI Automation,<br>
+              <em>Websites</em> and Digital<br>
+              Operations for small businesses.
+            </h1>
+
+            <p class="hero-sub">
+              I help salons, clinics, coaches, consultants, and local service businesses build better websites,
+              capture more leads, streamline workflows, and launch digital systems that reduce admin instead of adding more tools.
+            </p>
+
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Book a free strategy call</a>
+              <button class="btn btn-ghost" type="button" data-open-case-page>Explore case studies</button>
             </div>
+
+            <div class="hero-proof">
+              <p><strong>Small business focused</strong> Practical systems, not vague tech language.</p>
+              <p><strong>Templates + custom builds</strong> Fast launches when speed matters.</p>
+              <p><strong>Conversion minded</strong> Built to bring enquiries and reduce manual work.</p>
+            </div>
+          </div>
+
+          <div class="hero-scene reveal" aria-hidden="true">
+            <div class="scene-wrap" id="sceneWrap">
+              <div class="glass-card main-dashboard">
+                <div class="scene-chip-row">
+                  <span class="scene-chip"></span>
+                  <span class="scene-chip"></span>
+                  <span class="scene-chip"></span>
+                </div>
+                <h2 class="scene-title">Calm systems.<br>Clear actions.</h2>
+                <div class="scene-grid">
+                  <div class="scene-col">
+                    <div class="block kpi">
+                      <strong>Lead response</strong>
+                      <div class="kpi-value">2 min</div>
+                      <div class="bars">
+                        <span></span><span></span><span></span>
+                      </div>
+                    </div>
+                    <div class="block">
+                      <div class="lines">
+                        <span></span><span></span><span></span><span></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="scene-col">
+                    <div class="block">
+                      <div class="lines">
+                        <span style="width:88%"></span>
+                        <span style="width:48%"></span>
+                        <span style="width:70%"></span>
+                      </div>
+                    </div>
+                    <div class="block kpi">
+                      <strong>Admin saved</strong>
+                      <div class="kpi-value">7 hrs</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="glass-card mini-card mini-one">
+                <div class="lines">
+                  <span style="width:70%"></span>
+                  <span style="width:56%"></span>
+                  <span style="width:84%"></span>
+                </div>
+              </div>
+
+              <div class="glass-card mini-card mini-two">
+                <div class="bars">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+
+              <div class="scene-badge">Interactive portfolio layer</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="services">
+        <header class="section-head">
+          <p class="eyebrow">Services</p>
+          <h2>Built around what businesses actually need: <em>clearer websites, better lead flow, and lower admin load.</em></h2>
+        </header>
+
+        <div class="service-list">
+          <article class="service">
+            <span class="service-num">01</span>
+            <div class="service-body">
+              <h3>Websites That Convert</h3>
+              <p>Clean, modern websites that explain what you do, build trust quickly, and turn interest into enquiries instead of passive browsing.</p>
+              <ul class="service-tags">
+                <li>Website design</li><li>Landing pages</li><li>UX structure</li><li>Conversion copy</li>
+              </ul>
+            </div>
+            <span class="service-arrow" aria-hidden="true">→</span>
           </article>
 
-          <article class="work-card">
-            <div class="work-card-meta">
-              <span>Case 02</span>
-              <span>Lead generation</span>
+          <article class="service">
+            <span class="service-num">02</span>
+            <div class="service-body">
+              <h3>Lead Capture Systems</h3>
+              <p>Smarter forms, quicker replies, shared pipelines, and clear next steps so leads stop getting lost across inboxes and messaging apps.</p>
+              <ul class="service-tags">
+                <li>Lead forms</li><li>Auto replies</li><li>Pipelines</li><li>Follow-up flows</li>
+              </ul>
             </div>
-            <h3>The plumbing business that had leads, but no clean follow-up system.</h3>
-            <p>A new landing flow, shared pipeline, and instant acknowledgement process made incoming enquiries easier to handle and easier to convert.</p>
-            <div class="work-metrics">
-              <span>Lead clarity</span>
-              <span>Quicker follow-up</span>
-              <span>Higher conversion</span>
-            </div>
+            <span class="service-arrow" aria-hidden="true">→</span>
           </article>
 
-          <article class="work-card">
-            <div class="work-card-meta">
-              <span>Case 03</span>
-              <span>Template product</span>
+          <article class="service">
+            <span class="service-num">03</span>
+            <div class="service-body">
+              <h3>Workflow Automation</h3>
+              <p>Reduce repetitive work through practical automation around booking, reminders, intake, task routing, and AI-supported communication.</p>
+              <ul class="service-tags">
+                <li>Make.com</li><li>Zapier</li><li>AI helpers</li><li>Admin reduction</li>
+              </ul>
             </div>
-            <h3>The salon template built as a reusable product and client offer.</h3>
-            <p>A ready-made salon website that helps beauty businesses launch quickly while also acting as portfolio proof and a productized service entry point.</p>
-            <div class="work-metrics">
-              <span>Fast launch</span>
-              <span>Productized offer</span>
-              <span>WhatsApp flow</span>
+            <span class="service-arrow" aria-hidden="true">→</span>
+          </article>
+
+          <article class="service">
+            <span class="service-num">04</span>
+            <div class="service-body">
+              <h3>Digital Operations Support</h3>
+              <p>Lightweight digital systems for onboarding, internal clarity, and smoother day-to-day operations without enterprise complexity.</p>
+              <ul class="service-tags">
+                <li>Ops setup</li><li>Client flow</li><li>Web apps</li><li>Process design</li>
+              </ul>
             </div>
+            <span class="service-arrow" aria-hidden="true">→</span>
           </article>
         </div>
+      </section>
 
-        <aside class="work-side">
-          <h3>Why this structure works better</h3>
-          <p>The homepage should sell the offer, not force every visitor to read the full backstory of every project.</p>
-          <ul>
-            <li>Faster scanning for clients and recruiters.</li>
-            <li>Less scroll fatigue on mobile.</li>
-            <li>Full case studies still available for serious viewers.</li>
-            <li>Cleaner separation between conversion page and proof page.</li>
+      <section class="section reveal" id="featured-work">
+        <header class="section-head">
+          <p class="eyebrow">Featured work</p>
+          <h2>Clickable project stories with live demos, sharper outcomes, and a more <em>editorial, interactive feel.</em></h2>
+        </header>
+
+        <div class="work-wrap">
+          <div class="work-header-bar">
+            <p>
+              Each card opens a full case study view, and every project includes a dedicated CTA so visitors can either read the story or jump straight into the live demo.
+            </p>
+            <button class="btn btn-ghost" type="button" data-open-case-page>Open all case studies</button>
+          </div>
+
+          <div class="work-grid">
+            <article class="project-card" tabindex="0" data-case="dental" aria-label="Open dental practice case study">
+              <div class="project-top">
+                <span class="project-index">Case 01</span>
+                <span class="project-tag">Healthcare ops</span>
+              </div>
+              <div class="project-visual">
+                <div class="project-mock topline">
+                  <div class="project-bars">
+                    <span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+              <h3>The dental practice that needed a calmer front desk.</h3>
+              <p>A fragmented intake became a clearer system with faster response handling and less admin pressure.</p>
+              <div class="project-footer">
+                <span class="project-pill">Open case study</span>
+                <span class="project-link">View story →</span>
+              </div>
+            </article>
+
+            <article class="project-card" tabindex="0" data-case="plumber" aria-label="Open plumbing lead flow case study">
+              <div class="project-top">
+                <span class="project-index">Case 02</span>
+                <span class="project-tag">Lead generation</span>
+              </div>
+              <div class="project-visual">
+                <div class="project-mock topline" style="transform:rotateX(10deg) rotateY(12deg)">
+                  <div class="project-bars">
+                    <span style="width:82%"></span>
+                    <span style="width:60%"></span>
+                    <span style="width:72%"></span>
+                  </div>
+                </div>
+              </div>
+              <h3>The plumber that had leads — but no smooth follow-up.</h3>
+              <p>A clearer landing path and shared pipeline made lead handling simpler, faster, and easier to convert.</p>
+              <div class="project-footer">
+                <span class="project-pill">Open case study</span>
+                <span class="project-link">View story →</span>
+              </div>
+            </article>
+
+            <article class="project-card" tabindex="0" data-case="salon" aria-label="Open salon template case study">
+              <div class="project-top">
+                <span class="project-index">Case 03</span>
+                <span class="project-tag">Productized template</span>
+              </div>
+              <div class="project-visual">
+                <div class="project-mock topline" style="transform:rotateX(11deg) rotateY(-10deg)">
+                  <div class="project-bars">
+                    <span style="width:74%"></span>
+                    <span style="width:46%"></span>
+                    <span style="width:90%"></span>
+                  </div>
+                </div>
+              </div>
+              <h3>The salon template built as both a product and a service offer.</h3>
+              <p>A reusable website system that helps salons launch quickly while strengthening the portfolio and offer stack.</p>
+              <div class="project-footer">
+                <span class="project-pill">Open case study</span>
+                <span class="project-link">View story →</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="templates">
+        <header class="section-head">
+          <p class="eyebrow">Templates</p>
+          <h2>Ready-made systems for service businesses that want to launch <em>faster and smarter.</em></h2>
+        </header>
+
+        <div class="templates-grid">
+          <div class="template-card">
+            <h3>Salon Booking Template</h3>
+            <p>A prebuilt salon website for beauty businesses that need a professional web presence, a clearer service structure, and a direct booking or WhatsApp enquiry flow.</p>
+            <p>This helps small businesses go live quickly and gives you a stronger productized offer instead of starting from zero every time.</p>
+
+            <div class="template-pill-row">
+              <span class="template-pill">Responsive build</span>
+              <span class="template-pill">WhatsApp booking</span>
+              <span class="template-pill">Fast setup</span>
+              <span class="template-pill">Customisable</span>
+            </div>
+
+            <ul class="template-list">
+              <li>
+                <strong>Template only</strong>
+                <span>For buyers who want the ready-made code and will edit it themselves.</span>
+              </li>
+              <li>
+                <strong>Template + customisation</strong>
+                <span>For salons that want their own services, images, and details added in properly.</span>
+              </li>
+              <li>
+                <strong>Template + automation setup</strong>
+                <span>For businesses that want the site connected to enquiry or booking workflows.</span>
+              </li>
+            </ul>
+
+            <div class="template-actions">
+              <a class="btn btn-primary" href="https://rodhanala-creator.github.io/salon-template/#" target="_blank" rel="noopener noreferrer">View live template</a>
+              <a class="btn btn-ghost" href="mailto:rodhanala@gmail.com?subject=Salon%20template%20enquiry">Enquire to buy</a>
+            </div>
+          </div>
+
+          <aside class="template-note">
+            <h3>Why templates matter</h3>
+            <p>Not every business needs a fully custom build on day one. A strong template gives them a faster route to market and gives you a repeatable offer you can sell again.</p>
+            <p>That means less time spent reinventing layouts and more time spent on positioning, customisation, and automation, which is where your value is higher.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section reveal" id="process">
+        <header class="section-head">
+          <p class="eyebrow">Process</p>
+          <h2>Designed to feel premium, but built around a very simple four-step workflow.</h2>
+        </header>
+
+        <div class="process-grid">
+          <article class="process-card">
+            <span>01</span>
+            <h3>Discover</h3>
+            <p>We identify what is slowing the business down and where the first practical gain sits.</p>
+          </article>
+          <article class="process-card">
+            <span>02</span>
+            <h3>Map</h3>
+            <p>I structure the user journey, website flow, or workflow path so the friction becomes visible.</p>
+          </article>
+          <article class="process-card">
+            <span>03</span>
+            <h3>Build</h3>
+            <p>I create the site, system, or automation using tools that fit the business rather than overcomplicate it.</p>
+          </article>
+          <article class="process-card">
+            <span>04</span>
+            <h3>Refine</h3>
+            <p>We improve the live version, tighten weak spots, and shape it into something easier to run.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="about">
+        <header class="section-head">
+          <p class="eyebrow">About</p>
+          <h2>Design eye. Operations instinct. AI used as the quiet layer behind better work.</h2>
+        </header>
+
+        <div class="about-card">
+          <h3>Built from both design and operations.</h3>
+          <p>I started in product design and freelance UI/UX, founded Maxcreepers Design Studio in 2019, moved into digital project management, and spent time around real operational work where process problems show up fast.</p>
+          <p>That mix is why my work sits between websites, systems, and practical business improvement. I do not use AI as decoration — I use it where it reduces admin, improves follow-up, and helps small businesses run more smoothly.</p>
+        </div>
+      </section>
+
+      <section class="section reveal" id="contact">
+        <header class="section-head">
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s identify the best next digital move for your business.</h2>
+        </header>
+
+        <div class="contact-card">
+          <h3>Start with the part that hurts most.</h3>
+          <p>Tell me what you want to improve — your website, lead flow, automation, or digital operations — and I’ll help you identify the most practical next step.</p>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Book a call</a>
+            <a class="btn btn-ghost" href="mailto:rodhanala@gmail.com?subject=Project%20enquiry">Email me</a>
+          </div>
+
+          <ul class="contact-meta">
+            <li><span>Email:</span> rodhanala@gmail.com</li>
+            <li><span>Location:</span> Southampton, United Kingdom</li>
+            <li><span>Availability:</span> Freelance projects, retainers, and contract work</li>
           </ul>
-          <button class="btn btn-primary" type="button" data-open-cases>Open full case studies</button>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section" id="templates">
-      <header class="section-head">
-        <p class="eyebrow">Templates</p>
-        <h2>Ready-made systems for service businesses that want to launch <em>faster and smarter.</em></h2>
-      </header>
-
-      <div class="templates-grid">
-        <div class="template-card">
-          <h3>Salon Booking Template</h3>
-          <p>A prebuilt salon website for beauty businesses that need a professional web presence, a clear service layout, and a direct booking or WhatsApp enquiry flow.</p>
-          <p>This helps small businesses go live faster and gives you a stronger productized offer instead of starting every project from zero.</p>
-
-          <div class="template-pill-row">
-            <span class="template-pill">Responsive build</span>
-            <span class="template-pill">WhatsApp booking</span>
-            <span class="template-pill">Fast setup</span>
-            <span class="template-pill">Customisable</span>
-          </div>
-
-          <ul class="template-list">
-            <li>
-              <strong>Template only</strong>
-              <span>For buyers who want the ready-made code and will edit it themselves.</span>
-            </li>
-            <li>
-              <strong>Template + customisation</strong>
-              <span>For salons that want their own services, photos, and contact details added in.</span>
-            </li>
-            <li>
-              <strong>Template + automation setup</strong>
-              <span>For businesses that want the website connected to enquiry, follow-up, or booking workflows.</span>
-            </li>
-          </ul>
-
-          <div class="template-actions">
-            <a class="btn btn-primary" href="https://rodhanala-creator.github.io/salon-template/#" target="_blank" rel="noopener noreferrer">View live template</a>
-            <a class="btn btn-ghost" href="mailto:rodhanala@gmail.com?subject=Salon%20template%20enquiry">Enquire to buy</a>
-          </div>
         </div>
-
-        <aside class="template-note">
-          <h3>Why templates matter</h3>
-          <p>Not every business needs a fully custom build on day one. A strong template gives them a faster route to market and gives you a repeatable offer you can sell again.</p>
-          <p>That means less time spent reinventing layout and more time spent on positioning, customisation, and automation where your value is higher.</p>
-        </aside>
-      </div>
+      </section>
     </section>
 
-    <section class="section" id="process">
-      <header class="section-head">
-        <p class="eyebrow">Process</p>
-        <h2>A simple four-step way of working.</h2>
-      </header>
+    <section class="page" id="case-page">
+      <section class="case-page-hero reveal">
+        <button class="btn btn-ghost back-link" type="button" data-go-home>← Back to homepage</button>
+        <header class="section-head" style="margin-bottom:0">
+          <p class="eyebrow">Case studies</p>
+          <h2>Project stories designed to be explored, not dumped into one long scroll.</h2>
+          <p>Select a case study card from the homepage, or browse the full stories here. Each project includes a direct CTA to view the live demo or the most relevant next step.</p>
+        </header>
+      </section>
 
-      <div class="process-grid">
-        <article class="process-card">
-          <span>01</span>
-          <h3>Discover</h3>
-          <p>We identify what is slowing the business down and what needs fixing first.</p>
+      <section class="case-detail-wrap">
+        <article class="case-detail active reveal" id="case-dental">
+          <div class="case-detail-top">
+            <span>Case 01</span>
+            <span>Healthcare ops</span>
+          </div>
+          <h2>The dental practice that was drowning in admin.</h2>
+          <p class="case-summary">A five-chair dental practice was receiving enquiries across phone, email, walk-ins, and social, but the process behind those enquiries was fragmented. The result was delay, stress, and missed urgency. The solution was a shared intake flow with triage logic, better routing, and automated reminders.</p>
+          <div class="case-grid">
+            <div class="case-block">
+              <h3>Challenge</h3>
+              <p>Patient enquiries arrived in multiple channels with no single source of truth. Urgent items could easily get buried.</p>
+            </div>
+            <div class="case-block">
+              <h3>My role</h3>
+              <p>Mapped touchpoints, redesigned intake, and structured the automation logic behind routing and follow-up.</p>
+            </div>
+            <div class="case-block">
+              <h3>What changed</h3>
+              <p>Every enquiry entered one shared system. Routine requests received faster acknowledgement and urgent items surfaced sooner.</p>
+            </div>
+            <div class="case-block">
+              <h3>Outcome</h3>
+              <p>Less admin load, quicker first-response handling, and a calmer front-desk workflow.</p>
+            </div>
+          </div>
+          <div class="case-tools">
+            <span>Make.com</span><span>Tally</span><span>Calendly</span><span>Airtable</span><span>OpenAI</span>
+          </div>
+          <div class="case-actions">
+            <a class="btn btn-primary" href="demos/dental.html" target="_blank" rel="noopener noreferrer">View live demo</a>
+            <button class="btn btn-ghost" type="button" data-go-home>Back to homepage</button>
+          </div>
         </article>
-        <article class="process-card">
-          <span>02</span>
-          <h3>Map</h3>
-          <p>I map the workflow, website, or enquiry journey and find the friction points.</p>
+
+        <article class="case-detail reveal" id="case-plumber">
+          <div class="case-detail-top">
+            <span>Case 02</span>
+            <span>Lead generation</span>
+          </div>
+          <h2>A plumbing business with plenty of leads — and nowhere to put them.</h2>
+          <p class="case-summary">The business had incoming demand from ads, the website, Facebook, and word of mouth, but follow-up was inconsistent. The key issue was not traffic, but lack of structure after the lead arrived. A cleaner landing flow and shared pipeline made the system much easier to run.</p>
+          <div class="case-grid">
+            <div class="case-block">
+              <h3>Challenge</h3>
+              <p>Lead response depended on manual checking and delayed replies, which weakened conversion.</p>
+            </div>
+            <div class="case-block">
+              <h3>My role</h3>
+              <p>Audited the intake process, redesigned the landing path, and structured the follow-up flow.</p>
+            </div>
+            <div class="case-block">
+              <h3>What changed</h3>
+              <p>One landing page, one form, one shared lead board, and faster acknowledgement after enquiry.</p>
+            </div>
+            <div class="case-block">
+              <h3>Outcome</h3>
+              <p>A simpler system with better visibility, quicker first contact, and stronger conversion potential.</p>
+            </div>
+          </div>
+          <div class="case-tools">
+            <span>Framer</span><span>Tally</span><span>Airtable</span><span>Make.com</span><span>Resend</span>
+          </div>
+          <div class="case-actions">
+            <a class="btn btn-primary" href="demos/leadflow.html" target="_blank" rel="noopener noreferrer">View live demo</a>
+            <button class="btn btn-ghost" type="button" data-go-home>Back to homepage</button>
+          </div>
         </article>
-        <article class="process-card">
-          <span>03</span>
-          <h3>Build</h3>
-          <p>I create the website, automation, or digital system using practical tools that fit the business.</p>
+
+        <article class="case-detail reveal" id="case-salon">
+          <div class="case-detail-top">
+            <span>Case 03</span>
+            <span>Productized template</span>
+          </div>
+          <h2>The salon template built as both a product and a service offer.</h2>
+          <p class="case-summary">This project was designed as more than a demo. It is a reusable salon website template that can be sold digitally, customised for clients, and used as proof that productized services can sit alongside custom work. It combines clean presentation, direct booking intent, and a fast-launch structure.</p>
+          <div class="case-grid">
+            <div class="case-block">
+              <h3>Challenge</h3>
+              <p>Many salons still rely on Instagram DMs and informal enquiry handling instead of a proper website flow.</p>
+            </div>
+            <div class="case-block">
+              <h3>My role</h3>
+              <p>Designed and developed the template as a repeatable product that also strengthens the portfolio itself.</p>
+            </div>
+            <div class="case-block">
+              <h3>What changed</h3>
+              <p>A salon can go live quickly with a stronger digital front door and room for future automation.</p>
+            </div>
+            <div class="case-block">
+              <h3>Outcome</h3>
+              <p>The project supports both lead generation and digital product sales while reducing build-from-scratch effort.</p>
+            </div>
+          </div>
+          <div class="case-tools">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub Pages</span><span>WhatsApp flow</span>
+          </div>
+          <div class="case-actions">
+            <a class="btn btn-primary" href="https://rodhanala-creator.github.io/salon-template/#" target="_blank" rel="noopener noreferrer">View live demo</a>
+            <button class="btn btn-ghost" type="button" data-go-home>Back to homepage</button>
+          </div>
         </article>
-        <article class="process-card">
-          <span>04</span>
-          <h3>Refine</h3>
-          <p>We improve the live version, tighten weak spots, and make the setup easier to run.</p>
-        </article>
-      </div>
+      </section>
     </section>
-
-    <section class="section" id="about">
-      <header class="section-head">
-        <p class="eyebrow">About</p>
-        <h2>Design eye. Operations instinct. AI as the quiet layer behind better work.</h2>
-      </header>
-
-      <div class="about-card">
-        <p>I started in product design and freelance UI/UX, founded Maxcreepers Design Studio in 2019, moved into digital project management, and spent time around real operational work where process problems show up fast.</p>
-        <p>That mix is why my work sits between websites, systems, and practical business improvement. I do not use AI as decoration — I use it where it reduces admin, improves follow-up, and helps small businesses run more smoothly.</p>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <header class="section-head">
-        <p class="eyebrow">Contact</p>
-        <h2>Let’s look at what needs fixing first.</h2>
-      </header>
-
-      <div class="contact-card">
-        <p>Tell me what you want to improve — your website, lead flow, automation, or digital operations — and I’ll help you identify the most practical next step.</p>
-
-        <div class="contact-actions">
-          <a class="btn btn-primary" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Book a call</a>
-          <a class="btn btn-ghost" href="mailto:rodhanala@gmail.com?subject=Project%20enquiry">Email me</a>
-        </div>
-
-        <ul class="contact-meta">
-          <li><span>Email:</span> rodhanala@gmail.com</li>
-          <li><span>Location:</span> Southampton, United Kingdom</li>
-          <li><span>Availability:</span> Freelance projects, retainers, and contract work</li>
-        </ul>
-      </div>
-    </section>
-  </section>
-
-  <section class="page" id="case-page">
-    <section class="case-page-hero">
-      <button class="back-link btn btn-ghost" type="button" data-go-home>← Back to homepage</button>
-      <header class="section-head" style="margin-bottom:0">
-        <p class="eyebrow">Case studies</p>
-        <h2>Full project stories in one separate view.</h2>
-        <p>This keeps the homepage lighter while still giving recruiters and clients a place to go deeper into your thinking, process, and outcomes.</p>
-      </header>
-    </section>
-
-    <section class="case-layout">
-      <article class="case-study">
-        <div class="case-top">
-          <span>Case 01</span>
-          <span>Healthcare ops</span>
-        </div>
-        <h2>The dental practice that was drowning in admin.</h2>
-        <p class="case-summary">A five-chair dental practice was receiving enquiries across phone, email, walk-ins, and social, but the process behind those enquiries was fragmented. The result was delay, stress, and missed urgency. The solution was a shared intake flow with triage logic, better routing, and automated reminders.</p>
-        <div class="case-grid">
-          <div class="case-block">
-            <h3>Challenge</h3>
-            <p>Patient enquiries arrived in multiple channels with no single source of truth. Urgent items could easily get buried.</p>
-          </div>
-          <div class="case-block">
-            <h3>My role</h3>
-            <p>Mapped touchpoints, redesigned intake, and structured the automation logic behind routing and follow-up.</p>
-          </div>
-          <div class="case-block">
-            <h3>What changed</h3>
-            <p>Every enquiry entered one shared system. Routine requests received faster acknowledgement and urgent items surfaced sooner.</p>
-          </div>
-          <div class="case-block">
-            <h3>Outcome</h3>
-            <p>Less admin load, quicker first-response handling, and a calmer front-desk workflow.</p>
-          </div>
-        </div>
-        <div class="case-tools">
-          <span>Make.com</span><span>Tally</span><span>Calendly</span><span>Airtable</span><span>OpenAI</span>
-        </div>
-      </article>
-
-      <article class="case-study">
-        <div class="case-top">
-          <span>Case 02</span>
-          <span>Lead generation</span>
-        </div>
-        <h2>A plumbing business with plenty of leads — and nowhere to put them.</h2>
-        <p class="case-summary">The business had incoming demand from ads, the website, Facebook, and word of mouth, but follow-up was inconsistent. The key issue was not traffic, but lack of structure after the lead arrived. A cleaner landing flow and shared pipeline made the system much easier to run.</p>
-        <div class="case-grid">
-          <div class="case-block">
-            <h3>Challenge</h3>
-            <p>Lead response depended on manual checking and delayed replies, which weakened conversion.</p>
-          </div>
-          <div class="case-block">
-            <h3>My role</h3>
-            <p>Audited the intake process, redesigned the landing path, and structured the follow-up flow.</p>
-          </div>
-          <div class="case-block">
-            <h3>What changed</h3>
-            <p>One landing page, one form, one shared lead board, and faster acknowledgement after enquiry.</p>
-          </div>
-          <div class="case-block">
-            <h3>Outcome</h3>
-            <p>A simpler system with better visibility, quicker first contact, and stronger conversion potential.</p>
-          </div>
-        </div>
-        <div class="case-tools">
-          <span>Framer</span><span>Tally</span><span>Airtable</span><span>Make.com</span><span>Resend</span>
-        </div>
-      </article>
-
-      <article class="case-study">
-        <div class="case-top">
-          <span>Case 03</span>
-          <span>Template product</span>
-        </div>
-        <h2>The salon template built as both a product and a service offer.</h2>
-        <p class="case-summary">This project was designed as more than a demo. It is a reusable salon website template that can be sold digitally, customised for clients, and used as proof that productized services can sit alongside custom work. It combines clean presentation, direct booking intent, and a fast-launch structure.</p>
-        <div class="case-grid">
-          <div class="case-block">
-            <h3>Challenge</h3>
-            <p>Many salons still rely on Instagram DMs and informal enquiry handling instead of a proper web presence.</p>
-          </div>
-          <div class="case-block">
-            <h3>My role</h3>
-            <p>Designed and developed the template as a repeatable product that also strengthens the portfolio itself.</p>
-          </div>
-          <div class="case-block">
-            <h3>What changed</h3>
-            <p>A salon can go live quickly with a stronger digital front door and room for future automation.</p>
-          </div>
-          <div class="case-block">
-            <h3>Outcome</h3>
-            <p>The project supports both lead generation and product sales while reducing build-from-scratch effort.</p>
-          </div>
-        </div>
-        <div class="case-tools">
-          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub Pages</span><span>WhatsApp flow</span>
-        </div>
-      </article>
-
-      <article class="case-study">
-        <div class="case-top">
-          <span>Case 04</span>
-          <span>Education lead flow</span>
-        </div>
-        <h2>Coaching institute follow-up built for speed and consistency.</h2>
-        <p class="case-summary">Many institutes lose potential students because response handling is slow and scattered. This concept focused on a faster first-reply structure and clearer lead nurturing sequence so interested students had a better path to booking or admission discussion.</p>
-        <div class="case-grid">
-          <div class="case-block">
-            <h3>Challenge</h3>
-            <p>High enquiry volume but weak manual follow-up meant interest often cooled before action happened.</p>
-          </div>
-          <div class="case-block">
-            <h3>My role</h3>
-            <p>Researched the market, structured outreach logic, and designed a more reliable response sequence.</p>
-          </div>
-          <div class="case-block">
-            <h3>What changed</h3>
-            <p>The system moved from scattered replies toward a structured lead flow with clearer next steps.</p>
-          </div>
-          <div class="case-block">
-            <h3>Outcome</h3>
-            <p>A stronger operating model for institutions that need speed, consistency, and less manual chasing.</p>
-          </div>
-        </div>
-        <div class="case-tools">
-          <span>Outreach</span><span>AI personalisation</span><span>Lead nurture</span><span>Workflow design</span>
-        </div>
-      </article>
-    </section>
-  </section>
-
+  </div>
 </main>
 
 <footer class="footer">
@@ -1105,8 +1497,27 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 const homePage = document.getElementById('home-page');
 const casePage = document.getElementById('case-page');
-const openCaseButtons = document.querySelectorAll('[data-open-cases]');
+const cards = document.querySelectorAll('.project-card');
+const caseDetails = document.querySelectorAll('.case-detail');
+const openCasePageButtons = document.querySelectorAll('[data-open-case-page]');
 const goHomeButtons = document.querySelectorAll('[data-go-home], [data-go="home"]');
+const revealEls = document.querySelectorAll('.reveal');
+const sceneWrap = document.getElementById('sceneWrap');
+const floatables = document.querySelectorAll('.floatable');
+
+function activateCase(caseId){
+  caseDetails.forEach(item => item.classList.remove('active'));
+  const target = document.getElementById('case-' + caseId);
+  if(target) target.classList.add('active');
+}
+
+function showCases(caseId = 'dental', push = true){
+  activateCase(caseId);
+  casePage.classList.add('active');
+  homePage.classList.remove('active');
+  if(push) history.pushState({page:'cases', caseId}, '', '#case-' + caseId);
+  window.scrollTo({top:0, behavior:'smooth'});
+}
 
 function showHome(push = true){
   homePage.classList.add('active');
@@ -1115,19 +1526,22 @@ function showHome(push = true){
   window.scrollTo({top:0, behavior:'smooth'});
 }
 
-function showCases(push = true){
-  casePage.classList.add('active');
-  homePage.classList.remove('active');
-  if(push) history.pushState({page:'cases'}, '', '#case-studies');
-  window.scrollTo({top:0, behavior:'smooth'});
-}
+cards.forEach(card => {
+  card.addEventListener('click', () => showCases(card.dataset.case));
+  card.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter' || e.key === ' '){
+      e.preventDefault();
+      showCases(card.dataset.case);
+    }
+  });
+});
 
-openCaseButtons.forEach(btn => {
-  btn.addEventListener('click', showCases);
+openCasePageButtons.forEach(btn => {
+  btn.addEventListener('click', () => showCases('dental'));
 });
 
 goHomeButtons.forEach(btn => {
-  btn.addEventListener('click', function(e){
+  btn.addEventListener('click', (e) => {
     e.preventDefault();
     showHome();
   });
@@ -1145,16 +1559,69 @@ document.querySelectorAll('[data-scroll]').forEach(link => {
   });
 });
 
-window.addEventListener('popstate', (e) => {
-  if(location.hash === '#case-studies'){
-    showCases(false);
+window.addEventListener('popstate', () => {
+  const hash = location.hash.replace('#','');
+  if(hash.startsWith('case-')){
+    showCases(hash.replace('case-',''), false);
   } else {
     showHome(false);
   }
 });
 
-if(location.hash === '#case-studies'){
-  showCases(false);
+if(location.hash.replace('#','').startsWith('case-')){
+  showCases(location.hash.replace('#case-',''), false);
+}
+
+if('IntersectionObserver' in window){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  },{threshold:.12});
+  revealEls.forEach(el => io.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('in'));
+}
+
+let mouseX = 0, mouseY = 0;
+window.addEventListener('mousemove', (e) => {
+  mouseX = (e.clientX / window.innerWidth) - 0.5;
+  mouseY = (e.clientY / window.innerHeight) - 0.5;
+
+  if(sceneWrap){
+    sceneWrap.style.transform = `rotateX(${mouseY * -8}deg) rotateY(${mouseX * 12}deg)`;
+  }
+
+  floatables.forEach((el, i) => {
+    const depth = (i + 1) * 8;
+    const x = mouseX * depth;
+    const y = mouseY * depth;
+    el.style.transform += '';
+    if(el.classList.contains('panel-float') && el.classList.contains('one')){
+      el.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(-12deg)`;
+    } else if(el.classList.contains('panel-float') && el.classList.contains('two')){
+      el.style.transform = `translate3d(${x * -1}px, ${y * -1}px, 0) rotate(14deg)`;
+    } else {
+      el.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    }
+  });
+});
+
+let tick = 0;
+function floatLoop(){
+  tick += 0.012;
+  document.querySelectorAll('.orb').forEach((el, i) => {
+    const y = Math.sin(tick + i) * 10;
+    const x = Math.cos(tick + i * 1.3) * 8;
+    el.style.margin = `${y}px 0 0 ${x}px`;
+  });
+  requestAnimationFrame(floatLoop);
+}
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  floatLoop();
 }
 </script>
 </body>
