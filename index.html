@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Rohith Dhanala | AI Automation, Websites & Digital Operations</title>
-<meta name="description" content="AI automation freelancer helping service businesses improve websites, lead capture, workflows, digital operations, and ready-made templates." />
+<title>Rohith Dhanala | Digital Product Design, Project Management & AI Automation</title>
+<meta name="description" content="Freelance digital partner for service and product businesses — offering digital product design and development, digital project management, and AI systems and automation." />
 <meta name="theme-color" content="#0f0e0c" />
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=gambarino@400&display=swap" rel="stylesheet" />
@@ -22,12 +22,6 @@
   --accent-2:#9a5e22;
   --accent-soft:rgba(184,115,51,.1);
   --accent-highlight:#fff8f0;
-  --dark-bg:#0f0e0c;
-  --dark-surface:#171512;
-  --dark-surface-2:#1e1c19;
-  --dark-line:#2e2b26;
-  --dark-ink:#f0ede8;
-  --dark-ink-2:#9e9186;
   --radius-sm:16px;
   --radius-md:24px;
   --radius-lg:32px;
@@ -219,36 +213,22 @@ button{border:none;background:none;cursor:pointer}
 }
 .case-home-cta:hover{background:rgba(184,115,51,.18);box-shadow:var(--shadow-sm)}
 
-/* ── TEMPLATES ───────────────────────── */
-.templates-grid,.process-grid{display:grid;gap:18px}
-.templates-grid{grid-template-columns:1.1fr .9fr}
-.process-grid{grid-template-columns:repeat(4,1fr)}
-
-.card,.template-card,.template-note,.about-card,.contact-card,.case-story,.case-detail-card{
+/* ── CARDS / PROCESS / ABOUT / CONTACT ── */
+.process-grid{display:grid;gap:18px;grid-template-columns:repeat(4,1fr)}
+.card,.about-card,.contact-card,.case-detail-card{
   background:linear-gradient(160deg, rgba(255,255,255,.97) 0%, rgba(255,255,255,.88) 100%);
   border:1px solid var(--line);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);
 }
-.template-card,.template-note,.about-card,.contact-card,.case-detail-card{padding:28px}
-
-.template-card h3,.template-note h3,.about-card h3,.contact-card h3{
+.about-card,.contact-card,.case-detail-card{padding:28px}
+.about-card h3,.contact-card h3{
   margin:0 0 12px;font-family:var(--serif);font-weight:400;
   font-size:clamp(26px,3.5vw,38px);line-height:1.08;
 }
-.template-card p,.template-note p,.about-card p,.contact-card p{
+.about-card p,.contact-card p{
   margin:0 0 13px;color:var(--ink-2);line-height:1.75;
 }
-.template-pill-row{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0 20px}
-.template-pill{
-  padding:8px 13px;border-radius:999px;border:1px solid var(--line);
-  font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);background:#fff;
-}
-.template-list{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:13px}
-.template-list li{border-top:1px solid var(--line);padding-top:13px}
-.template-list strong{display:block;margin-bottom:5px;font-size:15px}
-.template-list span{display:block;color:var(--ink-2);line-height:1.68;font-size:14.5px}
-.template-actions,.contact-actions,.case-detail-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.contact-actions,.case-detail-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 
-/* ── PROCESS ─────────────────────────── */
 .process-card{padding:22px}
 .process-card span{
   display:inline-block;margin-bottom:12px;font-size:11px;
@@ -275,10 +255,6 @@ button{border:none;background:none;cursor:pointer}
 
 /* ── CASES PAGE ──────────────────────── */
 .case-page-hero{max-width:var(--maxw);margin:0 auto;padding:clamp(56px,8vw,100px) var(--mx) 20px}
-
-/* Story list is hidden by default on cases page — only detail shows */
-.case-story-list{display:none}
-
 .case-detail-wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--mx) 100px}
 .case-detail-card{display:none}
 .case-detail-card.active{display:block}
@@ -346,7 +322,7 @@ button{border:none;background:none;cursor:pointer}
   .reveal{opacity:1;transform:none}
 }
 @media (max-width:1100px){
-  .hero-inner,.templates-grid,.process-grid,.case-grid{grid-template-columns:1fr}
+  .hero-inner,.process-grid,.case-grid{grid-template-columns:1fr}
   .case-home-item{grid-template-columns:68px 1fr;align-items:start}
   .case-home-side,.case-home-cta{grid-column:2/-1}
 }
@@ -354,7 +330,7 @@ button{border:none;background:none;cursor:pointer}
   .nav{padding-inline:16px}
   .service{grid-template-columns:1fr;gap:9px}
   .service-arrow{display:none}
-  .template-card,.template-note,.about-card,.contact-card,.case-detail-card{padding:20px}
+  .about-card,.contact-card,.case-detail-card{padding:20px}
 }
 @media (max-width:640px){
   .brand-name{display:none}
@@ -364,7 +340,7 @@ button{border:none;background:none;cursor:pointer}
   .section{padding:48px var(--mx)}
   .section-head h2{font-size:clamp(28px,10vw,40px)}
   .btn,.case-home-cta{width:100%}
-  .hero-cta,.template-actions,.contact-actions,.case-detail-actions{flex-direction:column}
+  .hero-cta,.contact-actions,.case-detail-actions{flex-direction:column}
   .case-home-item{grid-template-columns:1fr;gap:12px}
   .case-home-side,.case-home-cta{grid-column:auto}
   .whatsapp-float{right:14px;bottom:14px;padding:12px 16px;font-size:13px}
@@ -385,7 +361,7 @@ button{border:none;background:none;cursor:pointer}
   <nav class="nav-links" aria-label="Sections">
     <a href="#services" data-scroll="services">Services</a>
     <button type="button" data-open-cases>Case Studies</button>
-    <a href="#templates" data-scroll="templates">Templates</a>
+    <a href="#process" data-scroll="process">Process</a>
     <a href="#about" data-scroll="about">About</a>
     <a href="#contact" data-scroll="contact">Contact</a>
     <a class="nav-cta" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Book a call</a>
@@ -402,15 +378,15 @@ button{border:none;background:none;cursor:pointer}
         <div class="reveal">
           <div class="hero-meta">
             <span class="hero-dot" aria-hidden="true"></span>
-            <span>Available for projects · Southampton, UK</span>
+            <span>Available for freelance projects · Southampton, UK</span>
           </div>
           <h1 class="hero-title">
-            AI Automation,<br>
-            <em>Websites</em> &amp; Digital<br>
-            Operations.
+            Digital products,<br>
+            <em>project delivery</em> &amp; AI<br>
+            systems that scale.
           </h1>
           <p class="hero-sub">
-            I build calmer digital systems for service businesses — reducing manual work, missed enquiries, and the daily friction that makes running a business feel harder than it should.
+            I help service and product businesses design better digital experiences, manage delivery more clearly, and build practical AI systems and automation that reduce manual work.
           </p>
           <div class="hero-cta">
             <a class="btn btn-primary" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Book a free strategy call</a>
@@ -419,16 +395,16 @@ button{border:none;background:none;cursor:pointer}
         </div>
 
         <aside class="hero-panel reveal">
-          <h2>Digital work that starts with what already feels heavy.</h2>
-          <p>Most businesses don't need more software. They need less friction — fewer missed enquiries, clearer next steps, and fewer things that rely on someone remembering to chase.</p>
+          <h2>Digital support that connects design, delivery, and smarter systems.</h2>
+          <p>Some businesses need a better product experience. Others need stronger project structure. Others are spending too much time on repetitive manual work. The right solution depends on what is slowing the business down most right now.</p>
           <div class="hero-notes">
             <div class="hero-note">
-              <strong>What usually hurts</strong>
-              <span>Slow replies, scattered enquiries, repetitive admin, and websites that don't guide people to a clear action.</span>
+              <strong>Where I help</strong>
+              <span>Digital product design and development, project coordination and delivery, AI systems, workflow automation, and internal process improvement.</span>
             </div>
             <div class="hero-note">
-              <strong>What I build instead</strong>
-              <span>Lean websites, smarter intake flows, and targeted automations that take the daily load off the business.</span>
+              <strong>What the work is for</strong>
+              <span>Clearer user experiences, smoother delivery, less operational drag, and systems that actually support growth instead of slowing it down.</span>
             </div>
           </div>
         </aside>
@@ -439,49 +415,41 @@ button{border:none;background:none;cursor:pointer}
     <section class="section reveal" id="services">
       <header class="section-head">
         <p class="eyebrow">Services</p>
-        <h2>Digital work built to reduce pressure, not add to it.</h2>
+        <h2>Three service lines built around digital clarity, delivery, and scale.</h2>
+        <p>I work across product, operations, and implementation — helping businesses improve the way they design, ship, and run digital systems.</p>
       </header>
       <div class="service-list">
         <article class="service">
           <span class="service-num">01</span>
           <div class="service-body">
-            <h3>Websites That Convert</h3>
-            <p>Clear, well-structured websites that explain the offer, build trust quickly, and guide visitors to a real next step — not just a pretty page that leaves people unsure.</p>
+            <h3>Digital Product Design &amp; Development</h3>
+            <p>From UX structure and interface design to practical front-end builds, I help businesses shape clearer digital products, customer journeys, landing pages, and internal tools that are easier to use and easier to grow.</p>
             <ul class="service-tags">
-              <li>Website design</li><li>Landing pages</li><li>UX structure</li><li>Conversion copy</li>
+              <li>UI/UX design</li><li>Product flows</li><li>Wireframes</li><li>Front-end builds</li>
             </ul>
           </div>
           <span class="service-arrow" aria-hidden="true">→</span>
         </article>
+
         <article class="service">
           <span class="service-num">02</span>
           <div class="service-body">
-            <h3>Lead Capture Systems</h3>
-            <p>Cleaner forms, faster replies, and organised pipelines so genuine enquiries don't slip through the cracks while the team is focused elsewhere.</p>
+            <h3>Digital Project Management</h3>
+            <p>I support teams with project coordination, planning, documentation, task tracking, and stakeholder communication so digital work moves forward with more structure, fewer bottlenecks, and clearer ownership.</p>
             <ul class="service-tags">
-              <li>Lead forms</li><li>Auto replies</li><li>Pipelines</li><li>Follow-up flows</li>
+              <li>Project delivery</li><li>Stakeholder coordination</li><li>Documentation</li><li>Execution support</li>
             </ul>
           </div>
           <span class="service-arrow" aria-hidden="true">→</span>
         </article>
+
         <article class="service">
           <span class="service-num">03</span>
           <div class="service-body">
-            <h3>Workflow Automation</h3>
-            <p>Practical automations for booking, intake, reminders, and task routing — applied only where they genuinely reduce effort rather than add another system to manage.</p>
+            <h3>AI Systems &amp; Automation</h3>
+            <p>I design and implement practical AI and automation systems that reduce repetitive work, improve internal workflows, and help teams respond, route, and operate more efficiently without adding unnecessary complexity.</p>
             <ul class="service-tags">
-              <li>Make.com</li><li>Zapier</li><li>Admin reduction</li><li>Process support</li>
-            </ul>
-          </div>
-          <span class="service-arrow" aria-hidden="true">→</span>
-        </article>
-        <article class="service">
-          <span class="service-num">04</span>
-          <div class="service-body">
-            <h3>Templates &amp; Productized Builds</h3>
-            <p>Ready-made digital products that help businesses launch faster — and give you a repeatable offer that's easier to sell and quicker to deploy.</p>
-            <ul class="service-tags">
-              <li>Templates</li><li>Customisation</li><li>Launch systems</li><li>Offer design</li>
+              <li>Workflow automation</li><li>AI assistants</li><li>Process design</li><li>System integration</li>
             </ul>
           </div>
           <span class="service-arrow" aria-hidden="true">→</span>
@@ -493,97 +461,54 @@ button{border:none;background:none;cursor:pointer}
     <section class="section reveal" id="featured-work">
       <header class="section-head">
         <p class="eyebrow">Selected Work</p>
-        <h2>Work shaped by clarity, care, and quieter systems.</h2>
-        <p>Each project started with a business under real pressure. Click any story to read the full case study.</p>
+        <h2>Examples of work shaped by product thinking, delivery structure, and practical systems.</h2>
+        <p>Each project solved a different kind of digital problem — from workflow friction to customer journey clarity to reusable digital delivery.</p>
       </header>
       <div class="case-home-wrap">
         <div class="case-home-intro">
-          <p>Three projects, each solving a different kind of digital friction. Click to open the full story.</p>
+          <p>Three examples that show how the work connects design, coordination, and systems thinking.</p>
           <button class="btn btn-ghost" type="button" data-open-cases>View all case studies</button>
         </div>
         <div class="case-home-list">
-          <article class="case-home-item" tabindex="0" data-case-link="dental" aria-label="Open dental case study">
+          <article class="case-home-item" tabindex="0" data-case-link="dental" aria-label="Open healthcare workflow case study">
             <div class="case-home-number">01</div>
             <div class="case-home-main">
-              <h3>A dental practice trying to stay responsive while the front desk felt overloaded.</h3>
-              <p>Enquiries from multiple channels, staff under pressure — the fix was a calmer intake that made urgency easier to see.</p>
+              <h3>A healthcare environment that needed clearer intake and less pressure on first-response workflows.</h3>
+              <p>A process-focused piece of work aimed at making incoming requests easier to route, manage, and act on consistently.</p>
             </div>
             <div class="case-home-side">
               <span class="case-label">What changed</span>
-              <span class="case-quote">"Fewer things slipping through the cracks, less pressure on the team handling first contact."</span>
+              <span class="case-quote">"Better visibility, clearer routing, and less mental load on the team handling first contact."</span>
             </div>
             <span class="case-home-cta">Read the case study</span>
           </article>
-          <article class="case-home-item" tabindex="0" data-case-link="plumber" aria-label="Open plumber case study">
+
+          <article class="case-home-item" tabindex="0" data-case-link="plumber" aria-label="Open lead workflow case study">
             <div class="case-home-number">02</div>
             <div class="case-home-main">
-              <h3>A plumbing business getting leads, but losing momentum after the first enquiry.</h3>
-              <p>Demand wasn't the problem. What happened after first contact was. A cleaner path made the difference.</p>
+              <h3>A business getting demand, but needing a cleaner digital path from enquiry to follow-up.</h3>
+              <p>The work focused on improving visibility, reducing manual lead handling, and creating a smoother response flow.</p>
             </div>
             <div class="case-home-side">
               <span class="case-label">What changed</span>
-              <span class="case-quote">"Incoming leads became clearer to manage and easier to respond to without delay."</span>
+              <span class="case-quote">"Lead handling became easier to manage, faster to act on, and more consistent."</span>
             </div>
             <span class="case-home-cta">Read the case study</span>
           </article>
-          <article class="case-home-item" tabindex="0" data-case-link="salon" aria-label="Open salon case study">
+
+          <article class="case-home-item" tabindex="0" data-case-link="product" aria-label="Open digital product case study">
             <div class="case-home-number">03</div>
             <div class="case-home-main">
-              <h3>A salon template designed to help beauty businesses launch without starting from scratch.</h3>
-              <p>Built for the salon owner who needs something polished fast, and the freelancer who needs a repeatable product.</p>
+              <h3>A reusable digital product approach designed to speed up delivery without sacrificing clarity.</h3>
+              <p>This work shows how product thinking, interface design, and structured delivery can create more repeatable digital outcomes.</p>
             </div>
             <div class="case-home-side">
               <span class="case-label">What changed</span>
-              <span class="case-quote">"A reusable product that supports both quicker launches and a stronger service offer."</span>
+              <span class="case-quote">"A stronger delivery model, clearer product direction, and a more scalable way to build."</span>
             </div>
             <span class="case-home-cta">Read the case study</span>
           </article>
         </div>
-      </div>
-    </section>
-
-    <!-- TEMPLATES -->
-    <section class="section reveal" id="templates">
-      <header class="section-head">
-        <p class="eyebrow">Templates</p>
-        <h2>Ready-made products for businesses that need a stronger digital start — without the wait.</h2>
-      </header>
-      <div class="templates-grid">
-        <div class="template-card">
-          <h3>Salon Booking Template</h3>
-          <p>A complete, prebuilt website for beauty businesses — professional presence, direct booking path, WhatsApp integration, and live within days not weeks.</p>
-          <p>Works as a standalone digital product to sell, or as a foundation for custom client work when more is needed.</p>
-          <div class="template-pill-row">
-            <span class="template-pill">Responsive</span>
-            <span class="template-pill">WhatsApp booking</span>
-            <span class="template-pill">2-hour setup</span>
-            <span class="template-pill">Fully customisable</span>
-          </div>
-          <ul class="template-list">
-            <li>
-              <strong>Template only</strong>
-              <span>Ready-made code for buyers who want to handle their own setup.</span>
-            </li>
-            <li>
-              <strong>Template + customisation</strong>
-              <span>Services, imagery, branding, and copy added properly for the specific salon.</span>
-            </li>
-            <li>
-              <strong>Template + automation setup</strong>
-              <span>The site connected to enquiry flows, WhatsApp routing, or booking automation.</span>
-            </li>
-          </ul>
-          <div class="template-actions">
-            <a class="btn btn-primary" href="https://rodhanala-creator.github.io/salon-template/#" target="_blank" rel="noopener noreferrer">View live template</a>
-            <a class="btn btn-ghost" href="mailto:rodhanala@gmail.com?subject=Salon%20template%20enquiry">Enquire to buy</a>
-          </div>
-        </div>
-        <aside class="template-note">
-          <h3>Why templates matter.</h3>
-          <p>Not every client is ready for a full custom build. A strong template gets them live faster, at a lower entry cost — and keeps the door open for more work later.</p>
-          <p>For you, it means a product you build once and sell repeatedly. Less time quoting. More time delivering.</p>
-          <p>The salon template is the first. More are coming — each targeting a specific service business type with the same level of care.</p>
-        </aside>
       </div>
     </section>
 
@@ -591,28 +516,28 @@ button{border:none;background:none;cursor:pointer}
     <section class="section reveal" id="process">
       <header class="section-head">
         <p class="eyebrow">Process</p>
-        <h2>Four steps. Each one focused on reducing what already feels heavy.</h2>
+        <h2>A simple process for turning digital problems into buildable solutions.</h2>
       </header>
       <div class="process-grid">
         <article class="card process-card">
           <span>01</span>
-          <h3>Listen</h3>
-          <p>Start with what feels slow, scattered, or too easy to miss right now — not what the software says you need.</p>
+          <h3>Understand</h3>
+          <p>Start by clarifying what is actually slowing the business down — product friction, delivery gaps, manual work, or disconnected systems.</p>
         </article>
         <article class="card process-card">
           <span>02</span>
-          <h3>Map</h3>
-          <p>Lay the actual journey out clearly so friction points become visible and fixable rather than just frustrating.</p>
+          <h3>Structure</h3>
+          <p>Map the workflow, user journey, or project path clearly so priorities, gaps, and dependencies become visible.</p>
         </article>
         <article class="card process-card">
           <span>03</span>
           <h3>Build</h3>
-          <p>Build the website, system, or automation in a way simple enough to use confidently every day — not just at launch.</p>
+          <p>Design, coordinate, or implement the right solution — whether that means product work, project support, or AI and automation setup.</p>
         </article>
         <article class="card process-card">
           <span>04</span>
-          <h3>Refine</h3>
-          <p>Improve what's live based on real use — reducing friction that only becomes visible once people start using it.</p>
+          <h3>Improve</h3>
+          <p>Refine the system based on real use so the work stays useful in practice, not just in theory.</p>
         </article>
       </div>
     </section>
@@ -621,12 +546,13 @@ button{border:none;background:none;cursor:pointer}
     <section class="section reveal" id="about">
       <header class="section-head">
         <p class="eyebrow">About</p>
-        <h2>Design-led, operations-aware, and focused on digital work that removes pressure rather than adding it.</h2>
+        <h2>Built across product design, project delivery, and real operational environments.</h2>
       </header>
       <div class="about-card">
-        <h3>Built from design and operations — not just one or the other.</h3>
-        <p>Work started in product design and freelance UI/UX, with Maxcreepers Design Studio founded in 2019. That moved into digital project management and real operational environments — where process problems show up quickly and the consequences of bad systems are tangible.</p>
-        <p>That combination is why the work sits between websites, systems, and practical business improvement. The goal is never a more complex setup. The goal is a business that feels easier to run at the end of the week than it did at the start.</p>
+        <h3>A cross-functional digital partner, not just one narrow service.</h3>
+        <p>My background combines freelance product and UI/UX design, startup product work, digital project coordination, and hands-on experience inside operational environments where structure, communication, and follow-through matter every day.</p>
+        <p>That mix is what shapes the work now. I sit between design, delivery, and systems — helping businesses improve digital products, manage work more clearly, and introduce AI and automation in ways that are practical, useful, and easier to maintain.</p>
+        <p>The goal is not to add more tools for the sake of it. The goal is to make digital work easier to understand, easier to deliver, and easier to scale.</p>
       </div>
     </section>
 
@@ -634,11 +560,11 @@ button{border:none;background:none;cursor:pointer}
     <section class="section reveal" id="contact">
       <header class="section-head">
         <p class="eyebrow">Contact</p>
-        <h2>If something in the business feels harder than it should — that's usually the right place to start.</h2>
+        <h2>If your business needs clearer product thinking, stronger delivery, or better systems, that is the right place to start.</h2>
       </header>
       <div class="contact-card">
-        <h3>Let's find the clearest next step.</h3>
-        <p>Share what you want to improve — website, lead flow, automation, or day-to-day operations — and the conversation starts with the part that would make the most practical difference first.</p>
+        <h3>Let's find the most useful next step.</h3>
+        <p>Whether you need support with digital product design and development, freelance digital project management, or AI systems and automation, the first step is understanding where the current friction is and what would create the most practical impact.</p>
         <div class="contact-actions">
           <a class="btn btn-primary" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Book a call</a>
           <a class="btn btn-ghost" href="https://wa.me/447311470011?text=Hi%20Rohith%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
@@ -648,7 +574,7 @@ button{border:none;background:none;cursor:pointer}
           <li><span>Email:</span> rodhanala@gmail.com</li>
           <li><span>WhatsApp:</span> +44 7311 470011</li>
           <li><span>Location:</span> Southampton, United Kingdom</li>
-          <li><span>Availability:</span> Freelance projects, retainers, and contract work</li>
+          <li><span>Availability:</span> Freelance projects, retainers, and contract digital support</li>
         </ul>
       </div>
     </section>
@@ -670,30 +596,30 @@ button{border:none;background:none;cursor:pointer}
       <article class="case-detail-card reveal" id="case-dental">
         <div class="case-detail-top">
           <span>Case 01</span>
-          <span>Healthcare ops</span>
+          <span>Healthcare workflow</span>
         </div>
-        <h2>The dental practice that needed a calmer front desk.</h2>
-        <p class="case-summary">This project started with a team doing its best to stay responsive, but patient enquiries were arriving through too many channels at once. The pressure wasn't caused by a lack of effort — it came from a system that asked staff to constantly remember, interpret, and chase too much manually.</p>
+        <h2>The healthcare workflow that needed a calmer intake process.</h2>
+        <p class="case-summary">This project started with a team doing its best to stay responsive, but incoming requests were arriving through too many channels at once. The pressure was not caused by a lack of effort — it came from a system that asked staff to remember, interpret, and chase too much manually.</p>
         <div class="case-feeling">
-          <strong>What the business was feeling</strong>
-          <p>The front desk was carrying unnecessary mental load. Urgent enquiries could blend into routine ones, and the team needed a process that felt calmer and more reliable day to day.</p>
+          <strong>What the team was feeling</strong>
+          <p>First-response work carried unnecessary mental load. Different types of requests could blend together, and the team needed a clearer process that felt more reliable day to day.</p>
         </div>
         <div class="case-grid">
           <div class="case-block">
             <h3>Challenge</h3>
-            <p>Enquiries were scattered across phone, email, social, and in-person — making it harder to route and prioritise them consistently.</p>
+            <p>Requests were scattered across multiple channels, making it harder to route and prioritise them consistently.</p>
           </div>
           <div class="case-block">
             <h3>Approach</h3>
-            <p>The intake journey was mapped, simplified, and reorganised so all first contact entered one clearer shared flow.</p>
+            <p>The intake journey was mapped, simplified, and reorganised so first contact entered one clearer shared flow.</p>
           </div>
           <div class="case-block">
             <h3>What changed</h3>
-            <p>Routine requests became easier to process, urgent cases became easier to surface, and the team had less manual checking to do.</p>
+            <p>Routine requests became easier to process, urgent issues became easier to surface, and the team had less manual checking to do.</p>
           </div>
           <div class="case-block">
             <h3>Result</h3>
-            <p>A calmer first-response process, better visibility across all incoming contact, and less daily pressure on the team.</p>
+            <p>A calmer first-response process, better visibility across incoming contact, and less daily pressure on the team.</p>
           </div>
         </div>
         <div class="case-tools">
@@ -709,13 +635,13 @@ button{border:none;background:none;cursor:pointer}
       <article class="case-detail-card reveal" id="case-plumber">
         <div class="case-detail-top">
           <span>Case 02</span>
-          <span>Lead generation</span>
+          <span>Lead workflow</span>
         </div>
-        <h2>The plumbing business getting interest — but losing rhythm after the enquiry.</h2>
-        <p class="case-summary">The business wasn't struggling to be found. People were reaching out. The real problem started after that moment — when follow-up relied too much on memory, manual checking, and fragmented communication. The task was to remove the drag between "someone is interested" and "someone receives a clear response."</p>
+        <h2>The business losing rhythm after first enquiry.</h2>
+        <p class="case-summary">The business was not struggling to be found. People were reaching out. The real problem started after that moment — when follow-up relied too much on memory, manual checking, and fragmented communication. The task was to remove the drag between interest and clear response.</p>
         <div class="case-feeling">
           <strong>What the business was feeling</strong>
-          <p>Enough demand to stay busy, but not enough structure to handle every lead with the same speed. That inconsistency made the whole process heavier than it needed to be.</p>
+          <p>There was enough demand to stay busy, but not enough structure to handle every lead with the same speed. That inconsistency made the whole process heavier than it needed to be.</p>
         </div>
         <div class="case-grid">
           <div class="case-block">
@@ -728,7 +654,7 @@ button{border:none;background:none;cursor:pointer}
           </div>
           <div class="case-block">
             <h3>What changed</h3>
-            <p>The business gained a simpler way to see new opportunities, respond faster, and reduce the friction in early follow-up.</p>
+            <p>The business gained a simpler way to see new opportunities, respond faster, and reduce friction in early follow-up.</p>
           </div>
           <div class="case-block">
             <h3>Result</h3>
@@ -744,41 +670,40 @@ button{border:none;background:none;cursor:pointer}
         </div>
       </article>
 
-      <!-- SALON -->
-      <article class="case-detail-card reveal" id="case-salon">
+      <!-- PRODUCT -->
+      <article class="case-detail-card reveal" id="case-product">
         <div class="case-detail-top">
           <span>Case 03</span>
-          <span>Productized template</span>
+          <span>Digital product delivery</span>
         </div>
-        <h2>The salon template built to make launching feel less intimidating.</h2>
-        <p class="case-summary">Many smaller salons rely heavily on Instagram DMs, informal enquiry handling, or a digital presence that doesn't reflect the quality of the service they actually provide. This project was designed to give salon owners a polished, professional starting point — without asking them to begin from scratch or wait months for a bespoke build.</p>
+        <h2>A reusable digital product approach built for faster, clearer delivery.</h2>
+        <p class="case-summary">This work focused on creating a more repeatable digital delivery model — one that combined interface thinking, product structure, and implementation logic so new builds could move faster without becoming generic or messy.</p>
         <div class="case-feeling">
-          <strong>What the business was feeling</strong>
-          <p>Launching online felt expensive, confusing, and too dependent on finding the right developer at the right time. The template was designed to reduce that pressure and create a faster, clearer path to being visible and bookable online.</p>
+          <strong>What the work needed to solve</strong>
+          <p>The challenge was not only design quality, but repeatability. The goal was to create a digital product approach that could speed up delivery while still leaving room for business-specific adaptation.</p>
         </div>
         <div class="case-grid">
           <div class="case-block">
             <h3>Challenge</h3>
-            <p>Small salons need a professional website, but not the cost, delay, or complexity of a full bespoke build from scratch.</p>
+            <p>Starting from scratch every time slows delivery, but rigid outputs can limit usefulness. The balance had to be structure without losing flexibility.</p>
           </div>
           <div class="case-block">
             <h3>Approach</h3>
-            <p>A reusable, well-designed template was built to balance launch speed, visual quality, and flexibility for later customisation.</p>
+            <p>A reusable product framework was shaped around clear UX structure, implementation logic, and easier customisation for future digital use cases.</p>
           </div>
           <div class="case-block">
             <h3>What changed</h3>
-            <p>Salon owners gained a faster path to launch. The template also became a productized asset that supports ongoing client work.</p>
+            <p>The work became easier to adapt, quicker to deliver, and more consistent in how design and build decisions were handled.</p>
           </div>
           <div class="case-block">
             <h3>Result</h3>
-            <p>A more accessible digital starting point for salons and a stronger, repeatable service offer on the freelance side.</p>
+            <p>A stronger foundation for repeatable digital product work and a more scalable way to support future client delivery.</p>
           </div>
         </div>
         <div class="case-tools">
-          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub Pages</span><span>WhatsApp flow</span>
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>UX structure</span><span>Product thinking</span>
         </div>
         <div class="case-detail-actions">
-          <a class="btn btn-primary" href="https://rodhanala-creator.github.io/salon-template/#" target="_blank" rel="noopener noreferrer">View live template</a>
           <button class="btn btn-ghost" type="button" data-go-home>Back to homepage</button>
         </div>
       </article>
@@ -795,7 +720,7 @@ button{border:none;background:none;cursor:pointer}
       <a href="mailto:rodhanala@gmail.com">Email</a>
       <a href="https://wa.me/447311470011" target="_blank" rel="noopener noreferrer">WhatsApp</a>
     </div>
-    <span>AI automation · websites · digital operations</span>
+    <span>Digital product design · project management · AI systems & automation</span>
   </div>
 </footer>
 
@@ -824,37 +749,32 @@ const casePageSub   = document.getElementById('case-page-sub');
 const detailCards = document.querySelectorAll('.case-detail-card');
 const revealEls   = document.querySelectorAll('.reveal');
 
-// ── Core: open a specific case, hide all others ──
 function openCase(caseId, push){
-  // Deactivate all cards
   detailCards.forEach(c => c.classList.remove('active'));
 
-  // Activate the requested one
   const target = document.getElementById('case-' + caseId);
   if(target) target.classList.add('active');
 
-  // Update hero text to reflect the selected case
   const titles = {
-    dental:  'The dental practice that needed a calmer front desk.',
-    plumber: 'The plumbing business losing rhythm after first enquiry.',
-    salon:   'The salon template built to make launching easier.'
+    dental:  'The healthcare workflow that needed a calmer intake process.',
+    plumber: 'The business losing rhythm after first enquiry.',
+    product: 'A reusable digital product approach built for faster delivery.'
   };
   const subs = {
     dental:  'A closer look at the challenge, the approach, and why the change mattered.',
     plumber: 'From scattered leads to a cleaner, faster follow-up system.',
-    salon:   'A productized template serving both salon owners and freelancers.'
+    product: 'How product structure and repeatability created a stronger delivery model.'
   };
-  if(casePageTitle) casePageTitle.textContent = titles[caseId] || 'Work presented as stories, not just projects.';
-  if(casePageSub)   casePageSub.textContent   = subs[caseId]   || 'A closer look at the challenge, the approach, and why the change mattered.';
 
-  // Switch pages
+  if(casePageTitle) casePageTitle.textContent = titles[caseId] || 'Work presented as stories, not just projects.';
+  if(casePageSub) casePageSub.textContent = subs[caseId] || 'A closer look at the challenge, the approach, and why the change mattered.';
+
   homePage.classList.remove('active');
   casesPage.classList.add('active');
 
   if(push !== false) history.pushState({page:'cases', caseId}, '', '#case-studies');
   window.scrollTo({top:0, behavior:'smooth'});
 
-  // Trigger reveals on newly visible elements
   setTimeout(() => {
     casesPage.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in'));
   }, 80);
@@ -868,25 +788,27 @@ function goHome(push){
   window.scrollTo({top:0, behavior:'smooth'});
 }
 
-// ── "View all case studies" → open dental by default ──
 document.querySelectorAll('[data-open-cases]').forEach(btn => {
   btn.addEventListener('click', () => openCase('dental'));
 });
 
-// ── Home page case items → open specific case ──
 document.querySelectorAll('[data-case-link]').forEach(item => {
   item.addEventListener('click', () => openCase(item.dataset.caseLink));
   item.addEventListener('keydown', e => {
-    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openCase(item.dataset.caseLink); }
+    if(e.key === 'Enter' || e.key === ' '){
+      e.preventDefault();
+      openCase(item.dataset.caseLink);
+    }
   });
 });
 
-// ── Back home buttons ──
 document.querySelectorAll('[data-go-home], [data-go="home"]').forEach(btn => {
-  btn.addEventListener('click', e => { e.preventDefault(); goHome(); });
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    goHome();
+  });
 });
 
-// ── Smooth scroll nav links ──
 document.querySelectorAll('[data-scroll]').forEach(link => {
   link.addEventListener('click', function(e){
     e.preventDefault();
@@ -899,17 +821,18 @@ document.querySelectorAll('[data-scroll]').forEach(link => {
   });
 });
 
-// ── Browser back/forward ──
 window.addEventListener('popstate', () => {
   if(location.hash === '#case-studies') openCase('dental', false);
   else goHome(false);
 });
 
-// ── Scroll reveal ──
 if('IntersectionObserver' in window){
   const io = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); }
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
     });
   }, {threshold:0.1});
   revealEls.forEach(el => io.observe(el));
