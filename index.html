@@ -1,1617 +1,2015 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Rohith Dhanala | AI Automation, Digital Projects & Modern Web Systems</title>
-<meta name="description" content="Freelance digital partner helping startups, small businesses, and product teams with AI automation, digital project management, modern websites, product design, and client-ready systems." />
-<meta name="theme-color" content="#0f1115" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rohith Dhanala | AI Automation, Digital Projects & Modern Web Systems</title>
+  <meta name="description" content="Freelance digital partner helping startups, small businesses, and product teams with AI automation, digital project management, modern websites, and practical digital systems." />
+  <meta name="theme-color" content="#0f1115" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-<style>
-:root,
-[data-theme="light"]{
-  --bg:#f6f2eb;
-  --surface:#fcfaf6;
-  --surface-2:#f0ebe3;
-  --surface-3:#e7dfd3;
-  --line:#d6cdbf;
-  --text:#17130f;
-  --text-soft:#665a4d;
-  --text-faint:#978b7d;
-  --accent:#b86c38;
-  --accent-2:#965427;
-  --accent-soft:rgba(184,108,56,.11);
-  --green:#2f7a57;
-  --blue:#3b6d9c;
-  --purple:#6e5ab3;
-  --radius-sm:16px;
-  --radius-md:26px;
-  --radius-lg:38px;
-  --shadow-sm:0 1px 2px rgba(0,0,0,.04),0 12px 30px -18px rgba(0,0,0,.12);
-  --shadow-md:0 18px 50px -22px rgba(0,0,0,.18);
-  --font-display:"Fraunces", Georgia, serif;
-  --font-body:"Inter", system-ui, sans-serif;
-  --maxw:1280px;
-  --mx:clamp(18px,4vw,40px);
-  --ease:cubic-bezier(.16,1,.3,1);
-}
-[data-theme="dark"]{
-  --bg:#0f1115;
-  --surface:#151922;
-  --surface-2:#1b212c;
-  --surface-3:#242c38;
-  --line:#2d3542;
-  --text:#f3efe8;
-  --text-soft:#c4baae;
-  --text-faint:#8d857a;
-  --accent:#dc8d57;
-  --accent-2:#f0a572;
-  --accent-soft:rgba(220,141,87,.14);
-  --green:#64a57d;
-  --blue:#5a93cd;
-  --purple:#a18ae8;
-  --shadow-sm:0 1px 2px rgba(0,0,0,.26),0 10px 28px -18px rgba(0,0,0,.4);
-  --shadow-md:0 20px 60px -24px rgba(0,0,0,.55);
-}
-*,
-*::before,
-*::after{box-sizing:border-box;margin:0;padding:0}
-html{
-  scroll-behavior:smooth;
-  -webkit-text-size-adjust:none;
-  text-size-adjust:none;
-}
-body{
-  min-height:100dvh;
-  font-family:var(--font-body);
-  font-size:16px;
-  line-height:1.65;
-  color:var(--text);
-  background:
-    radial-gradient(circle at top right, rgba(220,141,87,.1), transparent 28%),
-    radial-gradient(circle at top left, rgba(90,147,205,.08), transparent 24%),
-    var(--bg);
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-  overflow-x:hidden;
-}
-a{text-decoration:none;color:inherit}
-img,svg,video,canvas{display:block;max-width:100%;height:auto}
-button,input,textarea,select{font:inherit;color:inherit}
-button{cursor:pointer;border:none;background:none}
-::selection{background:rgba(220,141,87,.24);color:var(--text)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:10px}
+  <style>
+    :root,
+    [data-theme="light"]{
+      --bg:#f6f2eb;
+      --surface:#fcfaf6;
+      --surface-2:#f0ebe3;
+      --surface-3:#e5ddd0;
+      --line:#d7cebf;
+      --text:#17130f;
+      --text-soft:#665a4d;
+      --text-faint:#978b7d;
+      --accent:#b96f3a;
+      --accent-2:#955426;
+      --accent-soft:rgba(185,111,58,.11);
+      --green:#2f7a57;
+      --blue:#3b6d9c;
+      --purple:#6e5ab3;
+      --radius-sm:16px;
+      --radius-md:26px;
+      --radius-lg:38px;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.04),0 12px 30px -18px rgba(0,0,0,.12);
+      --shadow-md:0 20px 55px -26px rgba(0,0,0,.18);
+      --font-display:"Fraunces", Georgia, serif;
+      --font-body:"Inter", system-ui, sans-serif;
+      --maxw:1280px;
+      --mx:clamp(18px,4vw,40px);
+      --ease:cubic-bezier(.16,1,.3,1);
+    }
 
-.skip{
-  position:absolute;
-  left:-999px;
-  top:12px;
-  padding:10px 16px;
-  border-radius:999px;
-  background:#000;color:#fff;
-  z-index:200;
-}
-.skip:focus{left:12px}
+    [data-theme="dark"]{
+      --bg:#0f1115;
+      --surface:#151922;
+      --surface-2:#1b212c;
+      --surface-3:#232a36;
+      --line:#2d3542;
+      --text:#f3efe8;
+      --text-soft:#c5bbaf;
+      --text-faint:#91887d;
+      --accent:#dc8d57;
+      --accent-2:#f0a572;
+      --accent-soft:rgba(220,141,87,.14);
+      --green:#64a57d;
+      --blue:#5a93cd;
+      --purple:#a18ae8;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.26),0 10px 28px -18px rgba(0,0,0,.4);
+      --shadow-md:0 24px 70px -30px rgba(0,0,0,.55);
+    }
 
-.shell{max-width:var(--maxw);margin:0 auto;padding:0 var(--mx)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{
+      scroll-behavior:smooth;
+      -webkit-text-size-adjust:none;
+      text-size-adjust:none;
+    }
+    body{
+      min-height:100dvh;
+      font-family:var(--font-body);
+      font-size:16px;
+      line-height:1.65;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(220,141,87,.1), transparent 28%),
+        radial-gradient(circle at top left, rgba(90,147,205,.08), transparent 24%),
+        var(--bg);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    img,svg,video,canvas{display:block;max-width:100%;height:auto}
+    button,input,textarea,select{font:inherit;color:inherit}
+    button{cursor:pointer;border:none;background:none}
+    ::selection{background:rgba(220,141,87,.24);color:var(--text)}
+    :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:10px}
 
-.topbar{
-  position:sticky;top:0;z-index:90;
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
-  background:color-mix(in srgb, var(--bg) 80%, transparent);
-  border-bottom:1px solid color-mix(in srgb, var(--line) 86%, transparent);
-}
-.topbar-inner{
-  max-width:var(--maxw);margin:0 auto;padding:14px var(--mx);
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-}
-.brand{display:flex;align-items:center;gap:12px;min-width:0}
-.brand-mark{
-  width:38px;height:38px;flex:0 0 38px;
-  display:grid;place-items:center;
-  border-radius:12px;border:1px solid var(--line);
-  background:linear-gradient(180deg,var(--surface),var(--surface-2));
-  box-shadow:var(--shadow-sm);
-}
-.brand-mark svg{width:20px;height:20px}
-.brand-text{line-height:1.05}
-.brand-name{font-size:14px;font-weight:800;letter-spacing:.02em}
-.brand-role{font-size:11px;color:var(--text-faint);letter-spacing:.1em;text-transform:uppercase}
-.nav{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.nav a,.nav button{
-  font-size:14px;color:var(--text-soft);
-  transition:color .2s,transform .2s;
-}
-.nav a:hover,.nav button:hover{color:var(--text);transform:translateY(-1px)}
-.nav-actions{display:flex;align-items:center;gap:10px}
-.theme-toggle{
-  width:42px;height:42px;border-radius:999px;border:1px solid var(--line);
-  background:var(--surface);display:inline-flex;align-items:center;justify-content:center;
-  box-shadow:var(--shadow-sm);
-}
+    .skip{
+      position:absolute;
+      left:-999px;
+      top:12px;
+      padding:10px 16px;
+      border-radius:999px;
+      background:#000;color:#fff;
+      z-index:200;
+    }
+    .skip:focus{left:12px}
 
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  min-height:48px;padding:12px 20px;border-radius:999px;border:1px solid var(--line);
-  transition:transform .25s var(--ease),background .2s,border-color .2s,box-shadow .25s var(--ease),color .2s;
-}
-.btn:hover{transform:translateY(-2px)}
-.btn-primary{
-  background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:var(--shadow-sm);
-}
-.btn-primary:hover{background:var(--accent-2);border-color:var(--accent-2);box-shadow:var(--shadow-md)}
-.btn-secondary{background:var(--surface);color:var(--text)}
-.btn-secondary:hover{background:var(--surface-2);box-shadow:var(--shadow-sm)}
+    .shell{max-width:var(--maxw);margin:0 auto;padding:0 var(--mx)}
 
-.page{display:none}
-.page.active{display:block}
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:90;
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+      background:color-mix(in srgb, var(--bg) 80%, transparent);
+      border-bottom:1px solid color-mix(in srgb, var(--line) 86%, transparent);
+    }
+    .topbar-inner{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:14px var(--mx);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
 
-.hero{padding:clamp(42px,7vw,92px) 0 48px}
-.hero-grid{
-  display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.72fr);
-  gap:28px;align-items:end;
-}
-.kicker{
-  display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;
-  font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-faint);
-}
-.kicker-dot{
-  width:8px;height:8px;border-radius:50%;background:var(--accent);
-  box-shadow:0 0 0 6px rgba(220,141,87,.12);
-}
-.hero h1{
-  font-family:var(--font-display);
-  font-size:clamp(52px,10vw,112px);
-  line-height:.92;letter-spacing:-.05em;font-weight:500;
-  max-width:10.5ch;
-}
-.hero h1 .accent{color:var(--accent)}
-.hero-copy p{
-  margin-top:24px;max-width:760px;color:var(--text-soft);
-  font-size:clamp(17px,2vw,20px);line-height:1.85;
-}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+    .brand-mark{
+      width:38px;height:38px;flex:0 0 38px;
+      display:grid;place-items:center;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,var(--surface),var(--surface-2));
+      box-shadow:var(--shadow-sm);
+    }
+    .brand-mark svg{width:20px;height:20px}
+    .brand-text{line-height:1.05}
+    .brand-name{font-size:14px;font-weight:800;letter-spacing:.02em}
+    .brand-role{font-size:11px;color:var(--text-faint);letter-spacing:.1em;text-transform:uppercase}
 
-.hero-panel{
-  position:relative;overflow:hidden;
-  border:1px solid var(--line);border-radius:var(--radius-lg);
-  background:linear-gradient(180deg,color-mix(in srgb,var(--surface) 92%, transparent),var(--surface-2));
-  padding:28px;box-shadow:var(--shadow-md);
-}
-.hero-panel::before{
-  content:"";position:absolute;right:-50px;top:-50px;
-  width:200px;height:200px;border-radius:50%;
-  background:radial-gradient(circle, rgba(220,141,87,.18), transparent 72%);
-  pointer-events:none;
-}
-.hero-panel h2{
-  position:relative;
-  font-family:var(--font-display);font-size:clamp(28px,4vw,42px);
-  line-height:1;font-weight:500;margin-bottom:14px;
-}
-.hero-panel p{
-  position:relative;
-  color:var(--text-soft);line-height:1.82;margin-bottom:18px;
-}
-.hero-notes{display:grid;gap:12px;position:relative}
-.hero-note{
-  padding:14px 16px;border-radius:20px;border:1px solid var(--line);
-  background:color-mix(in srgb,var(--surface) 74%, transparent);
-}
-.hero-note strong{
-  display:block;margin-bottom:6px;
-  font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
-}
-.hero-note span{color:var(--text-soft);font-size:14.5px;line-height:1.62}
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    .nav a,.nav button{
+      font-size:14px;
+      color:var(--text-soft);
+      transition:color .2s,transform .2s;
+    }
+    .nav a:hover,.nav button:hover{color:var(--text);transform:translateY(-1px)}
 
-.section{padding:clamp(56px,8vw,104px) 0}
-.section-head{display:grid;gap:14px;margin-bottom:34px}
-.section-eyebrow{
-  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
-  font-weight:800;color:var(--accent);
-}
-.section-head h2{
-  font-family:var(--font-display);
-  font-size:clamp(34px,5vw,62px);
-  line-height:.98;letter-spacing:-.04em;font-weight:500;
-  max-width:13ch;
-}
-.section-head p{
-  max-width:830px;color:var(--text-soft);line-height:1.85;
-}
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
 
-.metrics{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px;
-}
-.metric{
-  border:1px solid var(--line);border-radius:26px;padding:22px;
-  background:linear-gradient(180deg,var(--surface),var(--surface-2));
-  box-shadow:var(--shadow-sm);
-}
-.metric strong{
-  display:block;font-family:var(--font-display);
-  font-size:clamp(28px,4vw,44px);line-height:1;margin-bottom:8px;
-}
-.metric span{color:var(--text-soft);font-size:14px;line-height:1.6}
+    .theme-toggle{
+      width:42px;height:42px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--surface);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:var(--shadow-sm);
+    }
 
-.services{display:grid;gap:18px}
-.service{
-  border:1px solid var(--line);border-radius:32px;padding:24px;
-  background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface-2) 88%, transparent));
-  box-shadow:var(--shadow-sm);
-  display:grid;grid-template-columns:72px 1fr auto;gap:20px;align-items:start;
-}
-.service-index{
-  font-family:var(--font-display);font-size:42px;line-height:.9;color:var(--accent);
-}
-.service h3{
-  font-family:var(--font-display);font-size:clamp(28px,4vw,42px);
-  line-height:1;font-weight:500;margin-bottom:8px;
-}
-.service p{color:var(--text-soft);line-height:1.82;max-width:76ch}
-.service-tags{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.service-tags li{
-  padding:8px 12px;border-radius:999px;border:1px solid var(--line);
-  background:var(--surface);color:var(--text-faint);
-  font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
-}
-.service-arrow{color:var(--text-faint);font-size:20px;padding-top:6px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:48px;
+      padding:12px 20px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      transition:transform .25s var(--ease),background .2s,border-color .2s,box-shadow .25s var(--ease),color .2s;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{
+      background:var(--accent);
+      color:#fff;
+      border-color:var(--accent);
+      box-shadow:var(--shadow-sm);
+    }
+    .btn-primary:hover{
+      background:var(--accent-2);
+      border-color:var(--accent-2);
+      box-shadow:var(--shadow-md);
+    }
+    .btn-secondary{
+      background:var(--surface);
+      color:var(--text);
+    }
+    .btn-secondary:hover{
+      background:var(--surface-2);
+      box-shadow:var(--shadow-sm);
+    }
 
-.projects-grid{display:grid;gap:18px}
-.project-card{
-  border:1px solid var(--line);border-radius:34px;padding:26px;
-  background:linear-gradient(180deg,var(--surface),var(--surface-2));
-  box-shadow:var(--shadow-sm);
-  display:grid;grid-template-columns:84px minmax(0,1.18fr) minmax(220px,.8fr) auto;gap:22px;align-items:start;
-  cursor:pointer;
-  transition:transform .28s var(--ease),box-shadow .28s var(--ease),border-color .2s;
-}
-.project-card:hover{
-  transform:translateY(-4px);
-  box-shadow:var(--shadow-md);
-  border-color:color-mix(in srgb, var(--accent) 36%, var(--line));
-}
-.project-no{
-  font-family:var(--font-display);font-size:42px;line-height:.9;color:var(--accent);
-}
-.project-main h3{
-  font-family:var(--font-display);font-size:clamp(28px,4vw,42px);
-  line-height:1;font-weight:500;margin-bottom:8px;
-}
-.project-main p{color:var(--text-soft);line-height:1.78}
-.project-meta{display:grid;gap:10px}
-.project-meta-row{display:grid;gap:4px}
-.project-meta-label{
-  font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-faint);
-}
-.project-meta-value{font-size:14.5px;color:var(--text);line-height:1.55}
-.project-pill{
-  display:inline-flex;align-items:center;justify-content:center;
-  min-height:42px;padding:10px 14px;border-radius:999px;
-  background:var(--accent-soft);color:var(--accent);
-  border:1px solid rgba(220,141,87,.22);
-  font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;
-}
+    .page{display:none}
+    .page.active{display:block}
 
-.stack-grid,.proof-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
-}
-.panel{
-  border:1px solid var(--line);border-radius:28px;padding:24px;
-  background:linear-gradient(180deg,var(--surface),var(--surface-2));
-  box-shadow:var(--shadow-sm);
-}
-.panel h3{
-  font-family:var(--font-display);font-size:32px;line-height:1;font-weight:500;margin-bottom:10px;
-}
-.panel p{color:var(--text-soft);line-height:1.78}
-.pill-list{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.pill-list li{
-  padding:8px 12px;border-radius:999px;border:1px solid var(--line);
-  background:var(--surface);color:var(--text-faint);
-  font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
-}
+    .hero{padding:clamp(42px,7vw,96px) 0 50px}
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.08fr) minmax(320px,.72fr);
+      gap:28px;
+      align-items:end;
+    }
 
-.case-hero{padding:clamp(42px,6vw,80px) 0 18px}
-.case-wrap{display:grid;gap:18px}
-.case-card{
-  display:none;
-  border:1px solid var(--line);border-radius:36px;padding:28px;
-  background:linear-gradient(180deg,var(--surface),var(--surface-2));
-  box-shadow:var(--shadow-md);
-}
-.case-card.active{display:block}
-.case-top{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:26px;
-}
-.case-meta{
-  border:1px solid var(--line);border-radius:18px;padding:16px 18px;background:var(--surface);
-}
-.case-meta span{
-  display:block;margin-bottom:6px;color:var(--text-faint);
-  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
-}
-.case-meta strong{font-size:14.5px;line-height:1.55}
-.case-title{
-  font-family:var(--font-display);font-size:clamp(40px,6vw,80px);
-  line-height:.93;letter-spacing:-.05em;font-weight:500;
-  max-width:13ch;margin-bottom:16px;
-}
-.case-summary{
-  max-width:84ch;color:var(--text-soft);font-size:17px;line-height:1.9;margin-bottom:28px;
-}
-.case-section{padding:26px 0;border-top:1px solid var(--line)}
-.case-section:first-of-type{border-top:none;padding-top:0}
-.case-section h3{
-  font-family:var(--font-display);font-size:clamp(28px,4vw,40px);
-  line-height:1;font-weight:500;margin-bottom:14px;
-}
-.case-section p{max-width:84ch;color:var(--text-soft);line-height:1.85;margin-bottom:12px}
-.case-highlight{
-  margin-top:14px;padding:18px 20px;border-radius:22px;border:1px solid var(--line);
-  background:color-mix(in srgb,var(--surface) 74%, transparent);
-}
-.case-highlight strong{
-  display:block;margin-bottom:8px;color:var(--accent);
-  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
-}
-.case-list{list-style:none;display:grid;gap:12px;margin-top:16px}
-.case-list li{
-  position:relative;padding-left:18px;color:var(--text-soft);line-height:1.75;
-}
-.case-list li::before{
-  content:"";position:absolute;left:0;top:.74em;
-  width:7px;height:7px;border-radius:50%;background:var(--accent);
-}
-.case-grid{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px;
-}
-.case-block{
-  border:1px solid var(--line);border-radius:24px;padding:18px;background:var(--surface);
-}
-.case-block h4{
-  margin-bottom:10px;color:var(--text-faint);
-  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
-}
-.case-block p{margin:0;font-size:14.5px;line-height:1.72}
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:22px;
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--text-faint);
+      flex-wrap:wrap;
+    }
+    .kicker-dot{
+      width:8px;height:8px;
+      border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 0 6px rgba(220,141,87,.12);
+    }
 
-.demo-grid{
-  display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-top:20px;
-}
-.demo-card{
-  border:1px solid var(--line);border-radius:28px;overflow:hidden;
-  background:linear-gradient(180deg,var(--surface),var(--surface-2));
-  box-shadow:var(--shadow-sm);
-}
-.demo-head{
-  display:flex;align-items:center;justify-content:space-between;gap:10px;
-  padding:14px 16px;border-bottom:1px solid var(--line);
-}
-.demo-head strong{font-size:13px}
-.demo-head span{
-  font-size:11px;color:var(--text-faint);letter-spacing:.16em;text-transform:uppercase;
-}
-.demo-body{padding:18px}
+    .hero h1{
+      font-family:var(--font-display);
+      font-size:clamp(52px,10vw,112px);
+      line-height:.92;
+      letter-spacing:-.05em;
+      font-weight:600;
+      max-width:10.3ch;
+    }
+    .hero h1 .accent{color:var(--accent)}
+    .hero-copy p{
+      margin-top:24px;
+      max-width:760px;
+      color:var(--text-soft);
+      font-size:clamp(17px,2vw,20px);
+      line-height:1.85;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:30px;
+    }
 
-.browser{
-  border:1px solid var(--line);border-radius:22px;overflow:hidden;min-height:320px;background:#0d1016;
-}
-.browser-top{
-  display:flex;align-items:center;justify-content:space-between;gap:10px;
-  padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.07);background:#131722;
-}
-.browser-dots{display:flex;gap:6px}
-.browser-dots span{width:8px;height:8px;border-radius:50%;background:#5d6675}
-.browser-url{
-  min-height:30px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.06);
-  color:#cbd2de;font-size:12px;display:inline-flex;align-items:center;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-}
-.browser-screen{
-  padding:18px;display:grid;gap:12px;
-  background:
-    radial-gradient(circle at top right, rgba(90,147,205,.12), transparent 28%),
-    radial-gradient(circle at bottom left, rgba(161,138,232,.10), transparent 30%),
-    #0d1016;
-}
+    .hero-panel{
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      background:linear-gradient(180deg,color-mix(in srgb,var(--surface) 92%, transparent),var(--surface-2));
+      padding:28px;
+      box-shadow:var(--shadow-md);
+    }
+    .hero-panel::before{
+      content:"";
+      position:absolute;
+      right:-50px;
+      top:-50px;
+      width:200px;height:200px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(220,141,87,.18), transparent 72%);
+      pointer-events:none;
+    }
+    .hero-panel h2{
+      position:relative;
+      font-family:var(--font-display);
+      font-size:clamp(28px,4vw,42px);
+      line-height:1;
+      font-weight:600;
+      margin-bottom:14px;
+    }
+    .hero-panel p{
+      position:relative;
+      color:var(--text-soft);
+      line-height:1.82;
+      margin-bottom:18px;
+    }
 
-.app-shell{
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:20px;overflow:hidden;background:rgba(19,23,34,.94);
-}
-.app-toolbar{
-  display:flex;justify-content:space-between;align-items:center;gap:10px;
-  padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.07);
-}
-.app-title{color:#eef2f9;font-weight:700;font-size:14px}
-.app-badge{
-  padding:8px 10px;border-radius:999px;
-  background:rgba(220,141,87,.14);color:#ffb98f;border:1px solid rgba(255,185,143,.18);
-  font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
-}
-.app-grid{
-  display:grid;grid-template-columns:220px 1fr;min-height:230px;
-}
-.app-sidebar{
-  border-right:1px solid rgba(255,255,255,.07);
-  padding:16px;display:grid;gap:10px;align-content:start;
-}
-.app-nav{
-  height:11px;border-radius:999px;
-  background:linear-gradient(90deg, rgba(255,255,255,.18), transparent);
-}
-.app-content{padding:16px;display:grid;gap:12px}
-.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.kpi{
-  min-height:78px;border-radius:16px;
-  border:1px solid rgba(255,255,255,.07);
-  background:rgba(255,255,255,.04);
-  padding:12px;display:grid;gap:8px;align-content:start;
-}
-.kpi strong{color:#fff;font-size:22px;line-height:1}
-.kpi span{color:#aab4c2;font-size:12px}
-.board{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.board-col{
-  min-height:120px;border-radius:16px;padding:10px;
-  border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03);
-  display:grid;gap:8px;align-content:start;
-}
-.board-col strong{
-  color:#d3d9e5;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
-}
-.board-card{
-  min-height:42px;border-radius:12px;background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.05);
-}
-.flow-visual{display:grid;gap:10px}
-.flow-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.flow-node{
-  min-height:86px;border-radius:18px;border:1px solid var(--line);
-  background:var(--surface);padding:14px 12px;
-}
-.flow-node strong{
-  display:block;margin-bottom:7px;color:var(--accent);
-  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-}
-.flow-node span{color:var(--text-soft);font-size:13.5px;line-height:1.58}
+    .hero-notes{
+      display:grid;
+      gap:12px;
+      position:relative;
+    }
+    .hero-note{
+      padding:14px 16px;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:color-mix(in srgb,var(--surface) 74%, transparent);
+    }
+    .hero-note strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--accent);
+    }
+    .hero-note span{
+      color:var(--text-soft);
+      font-size:14.5px;
+      line-height:1.62;
+    }
 
-.tools{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
-.tools span{
-  padding:9px 12px;border-radius:999px;border:1px solid var(--line);
-  background:var(--surface);color:var(--text-faint);
-  font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
-}
+    .section{padding:clamp(56px,8vw,104px) 0}
+    .section-head{
+      display:grid;
+      gap:14px;
+      margin-bottom:34px;
+    }
+    .section-eyebrow{
+      font-size:11px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      font-weight:800;
+      color:var(--accent);
+    }
+    .section-head h2{
+      font-family:var(--font-display);
+      font-size:clamp(34px,5vw,62px);
+      line-height:.98;
+      letter-spacing:-.04em;
+      font-weight:600;
+      max-width:13ch;
+    }
+    .section-head p{
+      max-width:830px;
+      color:var(--text-soft);
+      line-height:1.85;
+    }
 
-.contact-card{
-  border:1px solid var(--line);border-radius:34px;padding:28px;
-  background:linear-gradient(180deg,var(--surface),var(--surface-2));
-  box-shadow:var(--shadow-md);
-}
-.contact-card h3{
-  font-family:var(--font-display);font-size:clamp(30px,4vw,44px);
-  line-height:1;font-weight:500;margin-bottom:12px;
-}
-.contact-card p{max-width:78ch;color:var(--text-soft);line-height:1.85}
-.contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-.contact-meta{list-style:none;display:grid;gap:10px;margin-top:18px}
-.contact-meta li{color:var(--text-soft)}
-.contact-meta span{color:var(--text);font-weight:700;margin-right:8px}
+    .services{
+      display:grid;
+      gap:18px;
+    }
+    .service{
+      border:1px solid var(--line);
+      border-radius:32px;
+      padding:24px;
+      background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface-2) 88%, transparent));
+      box-shadow:var(--shadow-sm);
+      display:grid;
+      grid-template-columns:72px 1fr auto;
+      gap:20px;
+      align-items:start;
+    }
+    .service-index{
+      font-family:var(--font-display);
+      font-size:42px;
+      line-height:.9;
+      color:var(--accent);
+    }
+    .service h3{
+      font-family:var(--font-display);
+      font-size:clamp(28px,4vw,42px);
+      line-height:1;
+      font-weight:600;
+      margin-bottom:8px;
+    }
+    .service p{
+      color:var(--text-soft);
+      line-height:1.82;
+      max-width:76ch;
+    }
+    .service-tags{
+      list-style:none;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:16px;
+    }
+    .service-tags li{
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--surface);
+      color:var(--text-faint);
+      font-size:11.5px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .service-arrow{
+      color:var(--text-faint);
+      font-size:20px;
+      padding-top:6px;
+    }
 
-.footer{border-top:1px solid var(--line);padding:24px var(--mx) 36px}
-.footer-inner{
-  max-width:var(--maxw);margin:0 auto;
-  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
-  color:var(--text-faint);font-size:13px;
-}
-.footer-links{display:flex;flex-wrap:wrap;gap:18px}
-.footer-links a:hover{color:var(--text)}
+    .projects-grid{
+      display:grid;
+      gap:18px;
+    }
+    .project-card{
+      border:1px solid var(--line);
+      border-radius:34px;
+      padding:26px;
+      background:linear-gradient(180deg,var(--surface),var(--surface-2));
+      box-shadow:var(--shadow-sm);
+      display:grid;
+      grid-template-columns:84px minmax(0,1.18fr) minmax(220px,.8fr) auto;
+      gap:22px;
+      align-items:start;
+      cursor:pointer;
+      transition:transform .28s var(--ease),box-shadow .28s var(--ease),border-color .2s;
+    }
+    .project-card:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-md);
+      border-color:color-mix(in srgb, var(--accent) 36%, var(--line));
+    }
+    .project-no{
+      font-family:var(--font-display);
+      font-size:42px;
+      line-height:.9;
+      color:var(--accent);
+    }
+    .project-main h3{
+      font-family:var(--font-display);
+      font-size:clamp(28px,4vw,42px);
+      line-height:1;
+      font-weight:600;
+      margin-bottom:8px;
+    }
+    .project-main p{color:var(--text-soft);line-height:1.78}
+    .project-meta{
+      display:grid;
+      gap:10px;
+    }
+    .project-meta-row{
+      display:grid;
+      gap:4px;
+    }
+    .project-meta-label{
+      font-size:11px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--text-faint);
+    }
+    .project-meta-value{
+      font-size:14.5px;
+      color:var(--text);
+      line-height:1.55;
+    }
+    .project-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:var(--accent);
+      border:1px solid rgba(220,141,87,.22);
+      font-size:11.5px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-weight:800;
+    }
 
-.float-wa{
-  position:fixed;right:20px;bottom:22px;z-index:100;
-  display:inline-flex;align-items:center;gap:9px;
-  padding:13px 18px;border-radius:999px;background:#25D366;color:#fff!important;
-  font-weight:800;font-size:14px;
-  box-shadow:0 10px 28px rgba(37,211,102,.34);
-  transition:transform .2s,box-shadow .2s;
-}
-.float-wa:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(37,211,102,.44)}
-.float-wa svg{width:19px;height:19px;flex:0 0 19px}
+    .proof-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .panel{
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:24px;
+      background:linear-gradient(180deg,var(--surface),var(--surface-2));
+      box-shadow:var(--shadow-sm);
+    }
+    .panel h3{
+      font-family:var(--font-display);
+      font-size:32px;
+      line-height:1;
+      font-weight:600;
+      margin-bottom:10px;
+    }
+    .panel p{
+      color:var(--text-soft);
+      line-height:1.78;
+    }
+    .pill-list{
+      list-style:none;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:16px;
+    }
+    .pill-list li{
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--surface);
+      color:var(--text-faint);
+      font-size:11.5px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
 
-.reveal{
-  opacity:0;clip-path:inset(12% 0 0 0);
-  transition:opacity .65s var(--ease),clip-path .65s var(--ease);
-}
-.reveal.in{opacity:1;clip-path:inset(0 0 0 0)}
+    .contact-card{
+      border:1px solid var(--line);
+      border-radius:34px;
+      padding:28px;
+      background:linear-gradient(180deg,var(--surface),var(--surface-2));
+      box-shadow:var(--shadow-md);
+    }
+    .contact-card h3{
+      font-family:var(--font-display);
+      font-size:clamp(30px,4vw,44px);
+      line-height:1;
+      font-weight:600;
+      margin-bottom:12px;
+    }
+    .contact-card p{
+      max-width:78ch;
+      color:var(--text-soft);
+      line-height:1.85;
+    }
+    .contact-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:22px;
+    }
+    .contact-meta{
+      list-style:none;
+      display:grid;
+      gap:10px;
+      margin-top:18px;
+    }
+    .contact-meta li{color:var(--text-soft)}
+    .contact-meta span{
+      color:var(--text);
+      font-weight:700;
+      margin-right:8px;
+    }
 
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .reveal{opacity:1;clip-path:none}
-}
+    .case-hero{padding:clamp(42px,6vw,80px) 0 18px}
+    .case-wrap{display:grid;gap:18px}
+    .case-card{
+      display:none;
+      border:1px solid var(--line);
+      border-radius:36px;
+      padding:28px;
+      background:linear-gradient(180deg,var(--surface),var(--surface-2));
+      box-shadow:var(--shadow-md);
+    }
+    .case-card.active{display:block}
+    .case-top{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin-bottom:26px;
+    }
+    .case-meta{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px 18px;
+      background:var(--surface);
+    }
+    .case-meta span{
+      display:block;
+      margin-bottom:6px;
+      color:var(--text-faint);
+      font-size:11px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+    .case-meta strong{
+      font-size:14.5px;
+      line-height:1.55;
+    }
+    .case-title{
+      font-family:var(--font-display);
+      font-size:clamp(40px,6vw,80px);
+      line-height:.93;
+      letter-spacing:-.05em;
+      font-weight:600;
+      max-width:13ch;
+      margin-bottom:16px;
+    }
+    .case-summary{
+      max-width:84ch;
+      color:var(--text-soft);
+      font-size:17px;
+      line-height:1.9;
+      margin-bottom:28px;
+    }
+    .case-section{
+      padding:26px 0;
+      border-top:1px solid var(--line);
+    }
+    .case-section:first-of-type{
+      border-top:none;
+      padding-top:0;
+    }
+    .case-section h3{
+      font-family:var(--font-display);
+      font-size:clamp(28px,4vw,40px);
+      line-height:1;
+      font-weight:600;
+      margin-bottom:14px;
+    }
+    .case-section p{
+      max-width:84ch;
+      color:var(--text-soft);
+      line-height:1.85;
+      margin-bottom:12px;
+    }
+    .case-highlight{
+      margin-top:14px;
+      padding:18px 20px;
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:color-mix(in srgb,var(--surface) 74%, transparent);
+    }
+    .case-highlight strong{
+      display:block;
+      margin-bottom:8px;
+      color:var(--accent);
+      font-size:11px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+    .case-list{
+      list-style:none;
+      display:grid;
+      gap:12px;
+      margin-top:16px;
+    }
+    .case-list li{
+      position:relative;
+      padding-left:18px;
+      color:var(--text-soft);
+      line-height:1.75;
+    }
+    .case-list li::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:.74em;
+      width:7px;height:7px;
+      border-radius:50%;
+      background:var(--accent);
+    }
 
-@media (max-width:1200px){
-  .project-card{grid-template-columns:80px 1fr}
-  .project-meta,.project-pill{grid-column:2/-1}
-}
-@media (max-width:1100px){
-  .hero-grid,.metrics,.stack-grid,.proof-grid,.case-top,.case-grid,.demo-grid{grid-template-columns:1fr}
-}
-@media (max-width:900px){
-  .service{grid-template-columns:1fr}
-  .service-arrow{display:none}
-  .app-grid,.kpi-row,.board,.flow-row{grid-template-columns:1fr}
-}
-@media (max-width:720px){
-  .brand-role{display:none}
-  .nav a:not(.nav-cta),.nav button:not(.nav-cta){display:none}
-  .hero h1{max-width:100%;font-size:clamp(42px,14vw,68px)}
-  .project-card{grid-template-columns:1fr}
-  .project-meta,.project-pill{grid-column:auto}
-  .btn{width:100%}
-  .hero-actions,.contact-actions{flex-direction:column}
-  .section-head h2,.case-title{max-width:100%}
-  .float-wa{right:14px;bottom:14px;padding:12px 16px;font-size:13px}
-}
-</style>
+    .case-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+      margin-top:18px;
+    }
+    .case-block{
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:18px;
+      background:var(--surface);
+    }
+    .case-block h4{
+      margin-bottom:10px;
+      color:var(--text-faint);
+      font-size:11px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+    .case-block p{
+      margin:0;
+      font-size:14.5px;
+      line-height:1.72;
+    }
+
+    .demo-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
+      margin-top:20px;
+    }
+    .demo-card{
+      border:1px solid var(--line);
+      border-radius:28px;
+      overflow:hidden;
+      background:linear-gradient(180deg,var(--surface),var(--surface-2));
+      box-shadow:var(--shadow-sm);
+    }
+    .demo-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:14px 16px;
+      border-bottom:1px solid var(--line);
+    }
+    .demo-head strong{font-size:13px}
+    .demo-head span{
+      font-size:11px;
+      color:var(--text-faint);
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+    .demo-body{padding:18px}
+
+    .browser{
+      border:1px solid var(--line);
+      border-radius:22px;
+      overflow:hidden;
+      min-height:320px;
+      background:#0d1016;
+    }
+    .browser-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:12px 14px;
+      border-bottom:1px solid rgba(255,255,255,.07);
+      background:#131722;
+    }
+    .browser-dots{display:flex;gap:6px}
+    .browser-dots span{
+      width:8px;height:8px;
+      border-radius:50%;
+      background:#5d6675;
+    }
+    .browser-url{
+      min-height:30px;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      color:#cbd2de;
+      font-size:12px;
+      display:inline-flex;
+      align-items:center;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .browser-screen{
+      padding:18px;
+      display:grid;
+      gap:12px;
+      background:
+        radial-gradient(circle at top right, rgba(90,147,205,.12), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(161,138,232,.10), transparent 30%),
+        #0d1016;
+    }
+
+    .app-shell{
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:20px;
+      overflow:hidden;
+      background:rgba(19,23,34,.94);
+    }
+    .app-toolbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      padding:14px 16px;
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+    .app-title{color:#eef2f9;font-weight:700;font-size:14px}
+    .app-badge{
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(220,141,87,.14);
+      color:#ffb98f;
+      border:1px solid rgba(255,185,143,.18);
+      font-size:11px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-weight:700;
+    }
+    .app-grid{
+      display:grid;
+      grid-template-columns:220px 1fr;
+      min-height:230px;
+    }
+    .app-sidebar{
+      border-right:1px solid rgba(255,255,255,.07);
+      padding:16px;
+      display:grid;
+      gap:10px;
+      align-content:start;
+    }
+    .app-nav{
+      height:11px;
+      border-radius:999px;
+      background:linear-gradient(90deg, rgba(255,255,255,.18), transparent);
+    }
+    .app-content{
+      padding:16px;
+      display:grid;
+      gap:12px;
+    }
+    .kpi-row{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+    }
+    .kpi{
+      min-height:78px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.07);
+      background:rgba(255,255,255,.04);
+      padding:12px;
+      display:grid;
+      gap:8px;
+      align-content:start;
+    }
+    .kpi strong{color:#fff;font-size:22px;line-height:1}
+    .kpi span{color:#aab4c2;font-size:12px}
+    .board{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+    }
+    .board-col{
+      min-height:120px;
+      border-radius:16px;
+      padding:10px;
+      border:1px solid rgba(255,255,255,.07);
+      background:rgba(255,255,255,.03);
+      display:grid;
+      gap:8px;
+      align-content:start;
+    }
+    .board-col strong{
+      color:#d3d9e5;
+      font-size:11px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .board-card{
+      min-height:42px;
+      border-radius:12px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.05);
+    }
+
+    .flow-visual{display:grid;gap:10px}
+    .flow-row{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+    }
+    .flow-node{
+      min-height:86px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:var(--surface);
+      padding:14px 12px;
+    }
+    .flow-node strong{
+      display:block;
+      margin-bottom:7px;
+      color:var(--accent);
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    .flow-node span{
+      color:var(--text-soft);
+      font-size:13.5px;
+      line-height:1.58;
+    }
+
+    .tools{
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+      margin-top:18px;
+    }
+    .tools span{
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--surface);
+      color:var(--text-faint);
+      font-size:11.5px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .footer{
+      border-top:1px solid var(--line);
+      padding:24px var(--mx) 36px;
+    }
+    .footer-inner{
+      max-width:var(--maxw);
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      color:var(--text-faint);
+      font-size:13px;
+    }
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+    }
+    .footer-links a:hover{color:var(--text)}
+
+    .float-wa{
+      position:fixed;
+      right:20px;
+      bottom:22px;
+      z-index:100;
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      padding:13px 18px;
+      border-radius:999px;
+      background:#25D366;
+      color:#fff !important;
+      font-weight:800;
+      font-size:14px;
+      box-shadow:0 10px 28px rgba(37,211,102,.34);
+      transition:transform .2s,box-shadow .2s;
+    }
+    .float-wa:hover{
+      transform:translateY(-2px);
+      box-shadow:0 14px 36px rgba(37,211,102,.44);
+    }
+    .float-wa svg{
+      width:19px;height:19px;
+      flex:0 0 19px;
+    }
+
+    .reveal{
+      opacity:0;
+      clip-path:inset(12% 0 0 0);
+      transition:opacity .65s var(--ease),clip-path .65s var(--ease);
+    }
+    .reveal.in{
+      opacity:1;
+      clip-path:inset(0 0 0 0);
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation:none!important;transition:none!important}
+      .reveal{opacity:1;clip-path:none}
+    }
+
+    @media (max-width:1200px){
+      .project-card{grid-template-columns:80px 1fr}
+      .project-meta,.project-pill{grid-column:2/-1}
+    }
+
+    @media (max-width:1100px){
+      .hero-grid,.proof-grid,.case-top,.case-grid,.demo-grid{grid-template-columns:1fr}
+    }
+
+    @media (max-width:900px){
+      .service{grid-template-columns:1fr}
+      .service-arrow{display:none}
+      .app-grid,.kpi-row,.board,.flow-row{grid-template-columns:1fr}
+    }
+
+    @media (max-width:720px){
+      .brand-role{display:none}
+      .nav a:not(.nav-cta),.nav button:not(.nav-cta){display:none}
+      .hero h1{max-width:100%;font-size:clamp(42px,14vw,68px)}
+      .project-card{grid-template-columns:1fr}
+      .project-meta,.project-pill{grid-column:auto}
+      .btn{width:100%}
+      .hero-actions,.contact-actions{flex-direction:column}
+      .section-head h2,.case-title{max-width:100%}
+      .float-wa{
+        right:14px;
+        bottom:14px;
+        padding:12px 16px;
+        font-size:13px;
+      }
+    }
+  </style>
 </head>
 <body>
-<a href="#main-content" class="skip">Skip to content</a>
+  <a href="#main-content" class="skip">Skip to content</a>
 
-<header class="topbar" aria-label="Primary">
-  <div class="topbar-inner">
-    <a href="#top" class="brand" data-go-home aria-label="Rohith Dhanala home">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-          <path d="M5 19V5h6.7c3.4 0 5.3 1.6 5.3 4.5 0 2.1-1.1 3.6-3.2 4.3L18.8 19h-3.8l-4.1-4.4H8V19H5Z"/>
-        </svg>
-      </span>
-      <span class="brand-text">
-        <span class="brand-name">Rohith Dhanala</span><br>
-        <span class="brand-role">AI automation · digital projects · modern web systems</span>
-      </span>
-    </a>
+  <header class="topbar" aria-label="Primary">
+    <div class="topbar-inner">
+      <a href="#top" class="brand" data-go-home aria-label="Rohith Dhanala home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M5 19V5h6.7c3.4 0 5.3 1.6 5.3 4.5 0 2.1-1.1 3.6-3.2 4.3L18.8 19h-3.8l-4.1-4.4H8V19H5Z"></path>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Rohith Dhanala</span><br />
+          <span class="brand-role">AI automation · digital projects · modern web systems</span>
+        </span>
+      </a>
 
-    <nav class="nav" aria-label="Sections">
-      <a href="#services" data-scroll="services">Services</a>
-      <button type="button" data-open-projects>Projects</button>
-      <a href="#capabilities" data-scroll="capabilities">Skills</a>
-      <a href="#proof" data-scroll="proof">Why me</a>
-      <a href="#about" data-scroll="about">About</a>
-      <a href="#contact" data-scroll="contact">Contact</a>
-    </nav>
+      <nav class="nav" aria-label="Sections">
+        <a href="#services" data-scroll="services">Services</a>
+        <button type="button" data-open-projects>Projects</button>
+        <a href="#capabilities" data-scroll="capabilities">Capabilities</a>
+        <a href="#about" data-scroll="about">About</a>
+        <a href="#contact" data-scroll="contact">Contact</a>
+      </nav>
 
-    <div class="nav-actions">
-      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z"></path>
-        </svg>
-      </button>
-      <a class="btn btn-primary nav-cta" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Book a call</a>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <a class="btn btn-primary nav-cta" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Book a call</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main id="main-content">
+  <main id="main-content">
+    <section class="page active" id="home-page">
+      <div class="shell">
+        <section class="hero" id="top">
+          <div class="hero-grid">
+            <div class="hero-copy reveal">
+              <div class="kicker">
+                <span class="kicker-dot" aria-hidden="true"></span>
+                <span>Available for freelance work · startups, small businesses and product teams</span>
+              </div>
 
-  <section class="page active" id="home-page">
-    <div class="shell">
-      <section class="hero" id="top">
-        <div class="hero-grid">
-          <div class="hero-copy reveal">
-            <div class="kicker">
-              <span class="kicker-dot" aria-hidden="true"></span>
-              <span>Available for freelance work · startups, small businesses & product teams</span>
+              <h1>I help businesses turn <span class="accent">messy digital work</span> into clear systems, stronger websites, and smarter automation.</h1>
+
+              <p>
+                I work with startups, small businesses, and product-led teams that need more than just code or design in isolation. My work brings together AI automation, digital project management, modern websites, and practical product thinking to create digital systems that are useful, well-structured, and built to support real business growth.
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Start a project</a>
+                <button class="btn btn-secondary" type="button" data-open-projects>View projects</button>
+              </div>
             </div>
-            <h1>I help businesses turn <span class="accent">messy digital work</span> into clear systems, better websites, and smarter automation.</h1>
-            <p>
-              I work with startups, small businesses, and modern service brands that need more than just design or code in isolation. My work brings together AI automation, digital project management, product thinking, UX structure, and modern web development to create tools and systems that are useful, practical, and easier to grow.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Start a project</a>
-              <button class="btn btn-secondary" type="button" data-open-projects>See projects & demos</button>
-            </div>
+
+            <aside class="hero-panel reveal">
+              <h2>A freelance partner for teams that need clarity, execution, and modern digital thinking.</h2>
+              <p>
+                Some clients need a better website. Some need more structure around delivery. Others need practical AI and automation to reduce repetitive work. My value is in connecting those needs so the final result feels like one coherent system rather than a collection of disconnected fixes.
+              </p>
+
+              <div class="hero-notes">
+                <div class="hero-note">
+                  <strong>Best fit</strong>
+                  <span>Startups, service businesses, small teams, and product-based businesses looking for sharper digital systems without building a large in-house function first.</span>
+                </div>
+                <div class="hero-note">
+                  <strong>What I help with</strong>
+                  <span>AI automation, modern business websites, client-facing systems, workflow improvement, and freelance digital project support.</span>
+                </div>
+              </div>
+            </aside>
           </div>
+        </section>
 
-          <aside class="hero-panel reveal">
-            <h2>The kind of freelance partner early-stage teams actually need.</h2>
+        <section class="section reveal" id="services">
+          <header class="section-head">
+            <p class="section-eyebrow">Services</p>
+            <h2>Services shaped around practical digital outcomes.</h2>
             <p>
-              Some clients need a strong website. Some need help making delivery clearer. Others need AI or automation to reduce repeated admin. My value is being able to connect these things, so the final result feels like one well-thought-out system instead of disconnected fixes.
+              My work is designed for businesses that want better digital systems without unnecessary complexity. I focus on solutions that improve how a business presents itself, manages work, and uses technology in a way that feels practical and commercially useful.
             </p>
-            <div class="hero-notes">
-              <div class="hero-note">
-                <strong>Best fit clients</strong>
-                <span>Startups, founders, small businesses, product-based teams, and service businesses that want modern digital systems without building a huge internal team first.</span>
+          </header>
+
+          <div class="services">
+            <article class="service">
+              <span class="service-index">01</span>
+              <div>
+                <h3>AI automation and workflow systems</h3>
+                <p>
+                  I build practical AI-powered systems that help businesses handle enquiries better, reduce repeated admin, improve internal workflows, and create more consistent day-to-day operations. The focus is always on useful automation, not novelty.
+                </p>
+                <ul class="service-tags">
+                  <li>AI workflows</li>
+                  <li>Automation systems</li>
+                  <li>Lead handling</li>
+                  <li>Operational improvement</li>
+                </ul>
               </div>
-              <div class="hero-note">
-                <strong>What I work on</strong>
-                <span>AI services, modern websites, workflow automation, client and internal tools, digital project coordination, and lightweight product systems that solve real business problems.</span>
+              <span class="service-arrow" aria-hidden="true">→</span>
+            </article>
+
+            <article class="service">
+              <span class="service-index">02</span>
+              <div>
+                <h3>Modern websites and digital products</h3>
+                <p>
+                  I design and build modern websites and focused digital products that help businesses look more credible, communicate more clearly, and create better online experiences for clients or users. That could mean a premium business website, a startup launch site, a client portal, or a lightweight internal tool.
+                </p>
+                <ul class="service-tags">
+                  <li>Business websites</li>
+                  <li>Startup launches</li>
+                  <li>Web products</li>
+                  <li>Client portals</li>
+                </ul>
               </div>
-            </div>
-          </aside>
-        </div>
+              <span class="service-arrow" aria-hidden="true">→</span>
+            </article>
 
-        <div class="metrics reveal">
-          <article class="metric">
-            <strong>AI</strong>
-            <span>Practical AI automation and assistant-style systems designed to save time and improve workflows for smaller teams. [cite:16][cite:18]</span>
-          </article>
-          <article class="metric">
-            <strong>Web</strong>
-            <span>Modern business websites, product pages, internal tools, and client-facing digital experiences aligned with your broader service direction. [cite:16][file:1]</span>
-          </article>
-          <article class="metric">
-            <strong>PM</strong>
-            <span>Freelance digital project management and execution support are part of your stated positioning, so the site now reflects that clearly. [cite:16][cite:18]</span>
-          </article>
-          <article class="metric">
-            <strong>Client-ready</strong>
-            <span>This portfolio is meant to be sent directly to real clients and framed around believable, commercially useful project work. [cite:17]</span>
-          </article>
-        </div>
-      </section>
+            <article class="service">
+              <span class="service-index">03</span>
+              <div>
+                <h3>Freelance digital project management</h3>
+                <p>
+                  I help teams organise digital work more clearly through planning, documentation, coordination, and delivery support. This is especially valuable when a founder or small team has too many moving parts and needs someone who can bring structure while still understanding the product and technical side.
+                </p>
+                <ul class="service-tags">
+                  <li>Project coordination</li>
+                  <li>Planning support</li>
+                  <li>Documentation</li>
+                  <li>Execution structure</li>
+                </ul>
+              </div>
+              <span class="service-arrow" aria-hidden="true">→</span>
+            </article>
+          </div>
+        </section>
 
-      <section class="section reveal" id="services">
-        <header class="section-head">
-          <p class="section-eyebrow">Services</p>
-          <h2>Services built around your actual freelance direction.</h2>
-          <p>
-            Your current freelance goal is broader than one niche: AI services, digital project management, and the rest of the practical digital skills reflected in your experience and CV direction. [cite:16][cite:18] So this site positions you as someone who can help smaller businesses and startup teams improve digital presence, manage work better, and use new technology in practical ways. [cite:16][cite:17]
-          </p>
-        </header>
+        <section class="section reveal" id="projects">
+          <header class="section-head">
+            <p class="section-eyebrow">Projects</p>
+            <h2>Selected work that reflects the kind of clients I want to help.</h2>
+            <p>
+              These projects are designed to feel commercially relevant, technically credible, and well suited to startups, small businesses, and growing service brands. Each case study includes a live product-style demo so the work feels closer to a real digital experience than a static portfolio mock-up.
+            </p>
+          </header>
 
-        <div class="services">
-          <article class="service">
-            <span class="service-index">01</span>
-            <div>
-              <h3>AI automation for everyday business work</h3>
-              <p>
-                I build practical AI-powered systems that help businesses respond faster, reduce repetitive admin, qualify leads, organise enquiries, and make everyday operations smoother. This is especially useful for smaller teams that want the benefit of AI without adding confusion or overcomplicating their process.
-              </p>
-              <ul class="service-tags">
-                <li>AI assistants</li>
-                <li>Lead handling</li>
-                <li>Workflow automation</li>
-                <li>Operational systems</li>
+          <div class="projects-grid">
+            <article class="project-card" tabindex="0" data-case-link="salonflow" aria-label="Open SalonFlow case study">
+              <div class="project-no">01</div>
+              <div class="project-main">
+                <h3>SalonFlow</h3>
+                <p>A modern salon website and booking workflow designed to help beauty businesses present services clearly, improve enquiries, and run appointments with more structure.</p>
+              </div>
+              <div class="project-meta">
+                <div class="project-meta-row">
+                  <span class="project-meta-label">Project type</span>
+                  <span class="project-meta-value">Website plus lightweight business system</span>
+                </div>
+                <div class="project-meta-row">
+                  <span class="project-meta-label">Focus</span>
+                  <span class="project-meta-value">Service experience, bookings, WhatsApp-friendly workflow</span>
+                </div>
+              </div>
+              <span class="project-pill">Open project</span>
+            </article>
+
+            <article class="project-card" tabindex="0" data-case-link="receptiq" aria-label="Open Receptiq AI case study">
+              <div class="project-no">02</div>
+              <div class="project-main">
+                <h3>Receptiq AI</h3>
+                <p>An AI receptionist and enquiry intake system for service businesses that captures requests, handles routine questions, and routes conversations more clearly from the first contact.</p>
+              </div>
+              <div class="project-meta">
+                <div class="project-meta-row">
+                  <span class="project-meta-label">Project type</span>
+                  <span class="project-meta-value">AI service system for smaller teams</span>
+                </div>
+                <div class="project-meta-row">
+                  <span class="project-meta-label">Focus</span>
+                  <span class="project-meta-value">Intake quality, routing, response consistency</span>
+                </div>
+              </div>
+              <span class="project-pill">Open project</span>
+            </article>
+
+            <article class="project-card" tabindex="0" data-case-link="launchdesk" aria-label="Open LaunchDesk case study">
+              <div class="project-no">03</div>
+              <div class="project-main">
+                <h3>LaunchDesk</h3>
+                <p>A startup-friendly project and launch dashboard that helps founders organise tasks, timelines, assets, and approvals without needing a heavy project management stack.</p>
+              </div>
+              <div class="project-meta">
+                <div class="project-meta-row">
+                  <span class="project-meta-label">Project type</span>
+                  <span class="project-meta-value">Project coordination tool for lean teams</span>
+                </div>
+                <div class="project-meta-row">
+                  <span class="project-meta-label">Focus</span>
+                  <span class="project-meta-value">Clarity, delivery visibility, launch support</span>
+                </div>
+              </div>
+              <span class="project-pill">Open project</span>
+            </article>
+
+            <article class="project-card" tabindex="0" data-case-link="clienthub" aria-label="Open ClientHub case study">
+              <div class="project-no">04</div>
+              <div class="project-main">
+                <h3>ClientHub</h3>
+                <p>A client portal concept for freelancers and small agencies to manage onboarding, files, approvals, and project updates in a more premium and organised way.</p>
+              </div>
+              <div class="project-meta">
+                <div class="project-meta-row">
+                  <span class="project-meta-label">Project type</span>
+                  <span class="project-meta-value">Client-facing web product</span>
+                </div>
+                <div class="project-meta-row">
+                  <span class="project-meta-label">Focus</span>
+                  <span class="project-meta-value">Client experience, approvals, visibility, delivery flow</span>
+                </div>
+              </div>
+              <span class="project-pill">Open project</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="capabilities">
+          <header class="section-head">
+            <p class="section-eyebrow">Capabilities</p>
+            <h2>A cross-functional skill set built for modern digital work.</h2>
+            <p>
+              I sit across strategy, execution, and implementation. That means I can help shape the right digital solution, build the front-end experience, improve the workflow behind it, and support the structure needed to keep the project moving well.
+            </p>
+          </header>
+
+          <div class="proof-grid">
+            <article class="panel">
+              <h3>AI and automation</h3>
+              <p>I design practical AI and automation flows that support businesses with lead handling, structured intake, internal efficiency, and repetitive operational tasks.</p>
+              <ul class="pill-list">
+                <li>AI systems</li>
+                <li>Workflow logic</li>
+                <li>Automation strategy</li>
+                <li>Operational design</li>
               </ul>
-            </div>
-            <span class="service-arrow" aria-hidden="true">→</span>
-          </article>
+            </article>
 
-          <article class="service">
-            <span class="service-index">02</span>
-            <div>
-              <h3>Modern websites and digital product builds</h3>
-              <p>
-                I design and build clean, modern websites and lightweight web products that help startups and small businesses present themselves better, work more clearly, and create stronger digital experiences for clients or users. That can mean a polished business website, a startup landing product, a client portal, or a focused internal tool.
-              </p>
-              <ul class="service-tags">
-                <li>Business websites</li>
-                <li>Startup landing pages</li>
-                <li>Client portals</li>
-                <li>Web products</li>
+            <article class="panel">
+              <h3>Web and product</h3>
+              <p>I build modern digital experiences with strong visual structure, clear user journeys, and a practical balance between design quality and business usefulness.</p>
+              <ul class="pill-list">
+                <li>Web design</li>
+                <li>Front-end builds</li>
+                <li>UX structure</li>
+                <li>Product thinking</li>
               </ul>
-            </div>
-            <span class="service-arrow" aria-hidden="true">→</span>
-          </article>
+            </article>
 
-          <article class="service">
-            <span class="service-index">03</span>
-            <div>
-              <h3>Freelance digital project management</h3>
-              <p>
-                I also help teams organise digital work better through planning, documentation, coordination, workflow structure, and clearer project movement. That is useful when a founder or small team has too many moving parts and needs somebody who can bring more clarity to the project while still understanding the product and technical side.
-              </p>
-              <ul class="service-tags">
-                <li>Project coordination</li>
-                <li>Task structure</li>
+            <article class="panel">
+              <h3>Delivery and coordination</h3>
+              <p>I bring clarity to digital projects through planning, documentation, communication, and execution support, helping work move with less friction and more ownership.</p>
+              <ul class="pill-list">
+                <li>Project management</li>
+                <li>Documentation</li>
+                <li>Coordination</li>
                 <li>Delivery support</li>
-                <li>Digital execution</li>
               </ul>
-            </div>
-            <span class="service-arrow" aria-hidden="true">→</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="section reveal" id="projects">
-        <header class="section-head">
-          <p class="section-eyebrow">Projects</p>
-          <h2>Projects that fit your profile, your services, and the clients you want.</h2>
-          <p>
-            The project direction is now more suitable for your real positioning: smaller-business automation, startup-friendly products, modern service systems, and practical web tools instead of very large enterprise-style platforms. [cite:16][cite:17][cite:20][cite:21] These project choices are also closer to the product ideas you have actually been exploring, including salon tools, AI receptionist systems, and practical digital service products. [cite:20][cite:21]
-          </p>
-        </header>
-
-        <div class="projects-grid">
-          <article class="project-card" tabindex="0" data-case-link="salonflow" aria-label="Open SalonFlow case study">
-            <div class="project-no">01</div>
-            <div class="project-main">
-              <h3>SalonFlow</h3>
-              <p>A modern salon operations website and booking workspace designed to help beauty businesses handle appointments, service visibility, enquiries, and WhatsApp communication in a more professional way.</p>
-            </div>
-            <div class="project-meta">
-              <div class="project-meta-row">
-                <span class="project-meta-label">Why this fits</span>
-                <span class="project-meta-value">Directly aligned with your existing salon product direction and small-business automation focus. [cite:20]</span>
-              </div>
-              <div class="project-meta-row">
-                <span class="project-meta-label">Type</span>
-                <span class="project-meta-value">Website + lightweight business system</span>
-              </div>
-            </div>
-            <span class="project-pill">Open case study</span>
-          </article>
-
-          <article class="project-card" tabindex="0" data-case-link="receptiq" aria-label="Open Receptiq case study">
-            <div class="project-no">02</div>
-            <div class="project-main">
-              <h3>Receptiq AI</h3>
-              <p>An AI receptionist and enquiry intake system for service businesses that captures requests, answers common questions, and routes conversations more clearly from the first contact.</p>
-            </div>
-            <div class="project-meta">
-              <div class="project-meta-row">
-                <span class="project-meta-label">Why this fits</span>
-                <span class="project-meta-value">Matches your research and premium offering direction around AI receptionist products. [cite:21]</span>
-              </div>
-              <div class="project-meta-row">
-                <span class="project-meta-label">Type</span>
-                <span class="project-meta-value">AI service system for small teams</span>
-              </div>
-            </div>
-            <span class="project-pill">Open case study</span>
-          </article>
-
-          <article class="project-card" tabindex="0" data-case-link="launchdesk" aria-label="Open LaunchDesk case study">
-            <div class="project-no">03</div>
-            <div class="project-main">
-              <h3>LaunchDesk</h3>
-              <p>A startup-ready project and launch dashboard that helps founders organise tasks, assets, timelines, feedback, and rollout steps without needing a heavy project management setup.</p>
-            </div>
-            <div class="project-meta">
-              <div class="project-meta-row">
-                <span class="project-meta-label">Why this fits</span>
-                <span class="project-meta-value">Supports your digital project management positioning for startups and growing businesses. [cite:16][cite:18]</span>
-              </div>
-              <div class="project-meta-row">
-                <span class="project-meta-label">Type</span>
-                <span class="project-meta-value">Startup project coordination tool</span>
-              </div>
-            </div>
-            <span class="project-pill">Open case study</span>
-          </article>
-
-          <article class="project-card" tabindex="0" data-case-link="clienthub" aria-label="Open ClientHub case study">
-            <div class="project-no">04</div>
-            <div class="project-main">
-              <h3>ClientHub</h3>
-              <p>A clean client portal concept for freelancers and small agencies to manage onboarding, files, updates, approvals, and communication in a more premium and organised way.</p>
-            </div>
-            <div class="project-meta">
-              <div class="project-meta-row">
-                <span class="project-meta-label">Why this fits</span>
-                <span class="project-meta-value">Reflects your mix of web, product, and digital coordination skills in a believable service business use case. [cite:16][file:1]</span>
-              </div>
-              <div class="project-meta-row">
-                <span class="project-meta-label">Type</span>
-                <span class="project-meta-value">Client-facing web product</span>
-              </div>
-            </div>
-            <span class="project-pill">Open case study</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="section reveal" id="capabilities">
-        <header class="section-head">
-          <p class="section-eyebrow">Skills</p>
-          <h2>The skill mix this site now reflects properly.</h2>
-          <p>
-            Your direction is not only “developer” and not only “designer.” It combines AI services, digital product and web work, and freelance digital project management. [cite:16][cite:18][file:1] That is why the site content below presents you as a cross-functional digital partner for smaller teams rather than someone claiming an overly narrow or overly senior enterprise niche. [cite:16][file:1]
-          </p>
-        </header>
-
-        <div class="stack-grid">
-          <article class="panel">
-            <h3>AI & automation</h3>
-            <p>I can help businesses explore and implement practical AI workflows, assistant-style systems, and automation ideas that save time and improve the way work moves day to day.</p>
-            <ul class="pill-list">
-              <li>AI services</li>
-              <li>Automation thinking</li>
-              <li>Intake systems</li>
-              <li>Workflow design</li>
-            </ul>
-          </article>
-
-          <article class="panel">
-            <h3>Web & product</h3>
-            <p>I build modern websites and focused digital products with attention to usability, structure, and presentation quality, especially for service businesses and early-stage teams.</p>
-            <ul class="pill-list">
-              <li>Web design</li>
-              <li>Front-end builds</li>
-              <li>UX structure</li>
-              <li>Product thinking</li>
-            </ul>
-          </article>
-
-          <article class="panel">
-            <h3>Project & delivery</h3>
-            <p>I bring clarity to moving parts through digital project planning, coordination, and support, which is useful for founders and small teams working across multiple priorities at once.</p>
-            <ul class="pill-list">
-              <li>Project management</li>
-              <li>Documentation</li>
-              <li>Coordination</li>
-              <li>Execution support</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="section reveal" id="proof">
-        <header class="section-head">
-          <p class="section-eyebrow">Why me</p>
-          <h2>Why this positioning works better for your real freelance goal.</h2>
-          <p>
-            Your freelance direction is aimed at winning practical work from businesses that need help with AI services, digital systems, websites, and project delivery, including small and product-based businesses. [cite:16][cite:18] So the strongest portfolio story is someone who can make digital work clearer and more modern, not someone pretending to be an enterprise-only systems architect. [cite:16][file:1]
-          </p>
-        </header>
-
-        <div class="proof-grid">
-          <article class="panel">
-            <h3>Broad enough to solve real problems</h3>
-            <p>You are positioned to help with multiple related needs: websites, automation, project clarity, digital structure, and product-minded builds. [cite:16][cite:18]</p>
-          </article>
-          <article class="panel">
-            <h3>Specific enough to feel believable</h3>
-            <p>The revised project choices now look more like work a startup or small business would realistically hire you for based on your current trajectory. [cite:20][cite:21][file:1]</p>
-          </article>
-          <article class="panel">
-            <h3>Stronger for clients and jobs</h3>
-            <p>Your LinkedIn, CV, and portfolio have all been moving toward a combined freelancing and opportunity-focused positioning, so this content now supports that better. [cite:19][cite:24][cite:26]</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section reveal" id="about">
-        <header class="section-head">
-          <p class="section-eyebrow">About</p>
-          <h2>A more accurate introduction to who you are and the work you want.</h2>
-          <p>
-            I’m a freelance digital partner focused on helping startups, small businesses, and modern teams improve the way they present, manage, and run digital work. My work sits between AI automation, modern web development, product thinking, and digital project management, which means I can help both with what gets built and how it gets organised.
-          </p>
-          <p>
-            I’m especially interested in projects where new technology can solve practical problems without becoming overwhelming — things like smarter enquiry systems, better small-business websites, cleaner project workflows, and lightweight digital products that help teams work more clearly. That combination is what I want this portfolio to represent.
-          </p>
-        </header>
-      </section>
-
-      <section class="section reveal" id="contact">
-        <div class="contact-card">
-          <h3>If you need better digital systems, not just more digital noise, we should talk.</h3>
-          <p>
-            I work best with founders, startups, and small businesses that want to improve how they look online, how they manage digital work, or how they use AI and automation in a practical way. Whether you need a polished website, a workflow system, a project support partner, or a small product build, I can help shape the right next step.
-          </p>
-          <div class="contact-actions">
-            <a class="btn btn-primary" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Book a call</a>
-            <a class="btn btn-secondary" href="https://wa.me/447311470011?text=Hi%20Rohith%2C%20I%20saw%20your%20website%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
-            <a class="btn btn-secondary" href="mailto:rodhanala@gmail.com?subject=Project%20enquiry">Email me</a>
+            </article>
           </div>
-          <ul class="contact-meta">
-            <li><span>Email:</span> rodhanala@gmail.com</li>
-            <li><span>WhatsApp:</span> +44 7311 470011</li>
-            <li><span>Focus:</span> AI services, modern websites, digital project management, product-minded systems [cite:16][cite:18]</li>
-            <li><span>Best fit:</span> Startups, small businesses, product-based companies, and service brands [cite:16][cite:18]</li>
-          </ul>
-        </div>
-      </section>
+        </section>
+
+        <section class="section reveal" id="about">
+          <header class="section-head">
+            <p class="section-eyebrow">About</p>
+            <h2>I work where modern digital execution meets practical business need.</h2>
+            <p>
+              I am a freelance digital partner focused on helping startups, service businesses, and product-oriented teams improve the way they present, manage, and run digital work. My approach combines AI automation, digital project management, modern websites, and product-minded thinking so that the final result feels commercially useful, not just visually polished.
+            </p>
+            <p>
+              I am most interested in work where new technology can solve practical problems without adding unnecessary complexity. That includes clearer enquiry systems, better small-business websites, structured project workflows, and lightweight digital tools that make work easier for teams and clients alike.
+            </p>
+          </header>
+        </section>
+
+        <section class="section reveal" id="contact">
+          <div class="contact-card">
+            <h3>If your business needs sharper digital systems, we should talk.</h3>
+            <p>
+              I work best with founders, startups, and small businesses that want to improve how they show up online, organise digital work, or use AI and automation in a practical way. Whether you need a strong website, a workflow system, project support, or a focused digital product, I can help shape the right next step.
+            </p>
+
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Book a call</a>
+              <a class="btn btn-secondary" href="https://wa.me/447311470011?text=Hi%20Rohith%2C%20I%20saw%20your%20website%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+              <a class="btn btn-secondary" href="mailto:rodhanala@gmail.com?subject=Project%20enquiry">Email me</a>
+            </div>
+
+            <ul class="contact-meta">
+              <li><span>Email:</span> rodhanala@gmail.com</li>
+              <li><span>WhatsApp:</span> +44 7311 470011</li>
+              <li><span>Location:</span> Southampton, United Kingdom</li>
+              <li><span>Focus:</span> AI automation, modern websites, digital project management, and practical web systems</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="page" id="cases-page">
+      <div class="shell">
+        <section class="case-hero reveal">
+          <button class="btn btn-secondary" type="button" data-go-home style="margin-bottom:24px">← Back to homepage</button>
+          <header class="section-head" style="margin-bottom:0">
+            <p class="section-eyebrow">Projects</p>
+            <h2 id="case-page-title">Selected projects with live demo views.</h2>
+            <p id="case-page-sub">Each project is structured to show the business problem, the thinking behind the solution, and a product-style live demo that makes the idea feel real.</p>
+          </header>
+        </section>
+
+        <section class="case-wrap">
+
+          <article class="case-card reveal active" id="case-salonflow">
+            <div class="case-top">
+              <div class="case-meta"><span>Project</span><strong>SalonFlow</strong></div>
+              <div class="case-meta"><span>Role</span><strong>Web designer · systems-focused builder</strong></div>
+              <div class="case-meta"><span>Type</span><strong>Salon website and booking workflow</strong></div>
+              <div class="case-meta"><span>Audience</span><strong>Beauty and service businesses</strong></div>
+            </div>
+
+            <h2 class="case-title">A modern salon website and booking workflow designed to make a small service business look stronger and run better.</h2>
+            <p class="case-summary">
+              SalonFlow was created as a digital concept for salons and beauty businesses that want a more premium online presence without losing practical usability. The project combines strong service presentation, clearer enquiry handling, and a lightweight workflow view that supports everyday appointments and follow-up.
+            </p>
+
+            <section class="case-section">
+              <h3>The opportunity</h3>
+              <p>
+                Many small salons rely on fragmented booking journeys, informal messaging, or websites that do not support the business properly. The opportunity here was to create a cleaner digital experience that feels polished to clients while still being genuinely useful for the team behind the business.
+              </p>
+              <ul class="case-list">
+                <li>Service presentation was often unclear or inconsistent.</li>
+                <li>Booking and enquiry routes lacked structure.</li>
+                <li>WhatsApp communication mattered, but the experience around it felt loose.</li>
+                <li>The business needed a stronger digital first impression without a heavy custom platform.</li>
+              </ul>
+            </section>
+
+            <section class="case-section">
+              <h3>Solution direction</h3>
+              <p>
+                I approached the project as a hybrid of a premium service website and a light operational layer. The experience makes services easier to understand, improves the path to booking or enquiry, and adds a more organised view of appointments and client communication.
+              </p>
+              <div class="case-highlight">
+                <strong>What this project shows</strong>
+                <p>Modern service-business web design, booking-focused UX, practical operational thinking, and a stronger connection between presentation and workflow.</p>
+              </div>
+            </section>
+
+            <section class="case-section">
+              <h3>Live demo</h3>
+              <p>
+                The demo below is built as a product-style interface rather than a flat placeholder, giving the project more presence and making the idea easier to understand at a glance.
+              </p>
+
+              <div class="demo-grid">
+                <div class="demo-card">
+                  <div class="demo-head">
+                    <strong>Live demo view</strong>
+                    <span>Salon website + dashboard</span>
+                  </div>
+                  <div class="demo-body">
+                    <div class="browser">
+                      <div class="browser-top">
+                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                        <div class="browser-url">salonflow.demo/live</div>
+                      </div>
+                      <div class="browser-screen">
+                        <div class="app-shell">
+                          <div class="app-toolbar">
+                            <span class="app-title">SalonFlow / Appointments</span>
+                            <span class="app-badge">Today</span>
+                          </div>
+                          <div class="app-grid">
+                            <aside class="app-sidebar">
+                              <div class="app-nav"></div>
+                              <div class="app-nav"></div>
+                              <div class="app-nav"></div>
+                              <div class="app-nav"></div>
+                            </aside>
+                            <div class="app-content">
+                              <div class="kpi-row">
+                                <div class="kpi"><strong>18</strong><span>Bookings today</span></div>
+                                <div class="kpi"><strong>6</strong><span>New enquiries</span></div>
+                                <div class="kpi"><strong>4.9</strong><span>Average rating</span></div>
+                              </div>
+                              <div class="board">
+                                <div class="board-col"><strong>Morning</strong><div class="board-card"></div><div class="board-card"></div></div>
+                                <div class="board-col"><strong>Afternoon</strong><div class="board-card"></div><div class="board-card"></div></div>
+                                <div class="board-col"><strong>Messages</strong><div class="board-card"></div><div class="board-card"></div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="demo-card">
+                  <div class="demo-head">
+                    <strong>Workflow direction</strong>
+                    <span>Client journey</span>
+                  </div>
+                  <div class="demo-body">
+                    <div class="flow-visual">
+                      <div class="flow-row">
+                        <div class="flow-node"><strong>Discover</strong><span>Clients land on a premium service-focused site.</span></div>
+                        <div class="flow-node"><strong>Choose</strong><span>Services and availability are easy to understand.</span></div>
+                        <div class="flow-node"><strong>Enquire</strong><span>Booking or WhatsApp contact happens quickly.</span></div>
+                      </div>
+                      <div class="flow-row">
+                        <div class="flow-node"><strong>Confirm</strong><span>The business receives more structured details.</span></div>
+                        <div class="flow-node"><strong>Manage</strong><span>Appointments and follow-ups stay more organised.</span></div>
+                        <div class="flow-node"><strong>Retain</strong><span>A smoother experience supports repeat business.</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="case-section">
+              <h3>Build detail</h3>
+              <div class="case-grid">
+                <div class="case-block">
+                  <h4>Website layer</h4>
+                  <p>Premium service pages, clearer conversion paths, mobile-friendly contact actions, and a stronger digital identity for the business.</p>
+                </div>
+                <div class="case-block">
+                  <h4>Workflow layer</h4>
+                  <p>Light appointment visibility, cleaner enquiry handling, and a structure that fits how a smaller salon team actually works.</p>
+                </div>
+                <div class="case-block">
+                  <h4>Business value</h4>
+                  <p>A stronger first impression, easier contact, clearer service presentation, and a more organised booking experience.</p>
+                </div>
+                <div class="case-block">
+                  <h4>Portfolio value</h4>
+                  <p>A commercially believable project that speaks directly to modern service businesses and demonstrates both design and systems thinking.</p>
+                </div>
+              </div>
+              <div class="tools">
+                <span>Web design</span><span>Service UX</span><span>Bookings</span><span>WhatsApp flow</span><span>Small business</span>
+              </div>
+            </section>
+          </article>
+
+          <article class="case-card reveal" id="case-receptiq">
+            <div class="case-top">
+              <div class="case-meta"><span>Project</span><strong>Receptiq AI</strong></div>
+              <div class="case-meta"><span>Role</span><strong>AI systems designer · workflow strategist</strong></div>
+              <div class="case-meta"><span>Type</span><strong>AI receptionist and enquiry intake system</strong></div>
+              <div class="case-meta"><span>Audience</span><strong>Service businesses and lean teams</strong></div>
+            </div>
+
+            <h2 class="case-title">An AI receptionist concept designed to make first-contact workflows faster, clearer, and more consistent.</h2>
+            <p class="case-summary">
+              Receptiq AI was developed as a practical business system for smaller service teams that spend too much time repeating the same conversations. The concept focuses on better enquiry capture, clearer routing, and a more professional digital first response without removing human judgement where it matters.
+            </p>
+
+            <section class="case-section">
+              <h3>The problem</h3>
+              <p>
+                Many service businesses deal with repeated questions, inconsistent lead quality, and enquiry threads that arrive with missing context. The challenge is not only speed. It is also structure, clarity, and the quality of the handoff into the business.
+              </p>
+              <ul class="case-list">
+                <li>Enquiries often arrived without the right details.</li>
+                <li>Teams repeated the same qualifying questions again and again.</li>
+                <li>Response quality varied depending on who handled the message first.</li>
+                <li>Routing decisions were slower and less consistent than they should be.</li>
+              </ul>
+            </section>
+
+            <section class="case-section">
+              <h3>Solution direction</h3>
+              <p>
+                I positioned the product as a structured AI front desk for smaller teams. The system helps capture intent, collect better information, identify the right route, and give staff a cleaner starting point before human follow-up is needed.
+              </p>
+              <div class="case-highlight">
+                <strong>What this project shows</strong>
+                <p>AI workflow design, intake UX, automation strategy, operational clarity, and a grounded approach to applying new technology inside a real business context.</p>
+              </div>
+            </section>
+
+            <section class="case-section">
+              <h3>Live demo</h3>
+              <p>
+                The demo below presents the system as a real working interface with lead states, qualification flow, and operator visibility.
+              </p>
+
+              <div class="demo-grid">
+                <div class="demo-card">
+                  <div class="demo-head">
+                    <strong>Live demo view</strong>
+                    <span>AI intake system</span>
+                  </div>
+                  <div class="demo-body">
+                    <div class="browser">
+                      <div class="browser-top">
+                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                        <div class="browser-url">receptiq.demo/inbox</div>
+                      </div>
+                      <div class="browser-screen">
+                        <div class="app-shell">
+                          <div class="app-toolbar">
+                            <span class="app-title">Receptiq AI / Front Desk</span>
+                            <span class="app-badge">Active</span>
+                          </div>
+                          <div class="app-grid">
+                            <aside class="app-sidebar">
+                              <div class="app-nav"></div>
+                              <div class="app-nav"></div>
+                              <div class="app-nav"></div>
+                              <div class="app-nav"></div>
+                            </aside>
+                            <div class="app-content">
+                              <div class="kpi-row">
+                                <div class="kpi"><strong>32</strong><span>Enquiries today</span></div>
+                                <div class="kpi"><strong>21</strong><span>Auto-qualified</span></div>
+                                <div class="kpi"><strong>7</strong><span>Needs review</span></div>
+                              </div>
+                              <div class="board">
+                                <div class="board-col"><strong>New</strong><div class="board-card"></div><div class="board-card"></div></div>
+                                <div class="board-col"><strong>Qualified</strong><div class="board-card"></div><div class="board-card"></div></div>
+                                <div class="board-col"><strong>Escalated</strong><div class="board-card"></div><div class="board-card"></div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="demo-card">
+                  <div class="demo-head">
+                    <strong>System flow</strong>
+                    <span>Reception logic</span>
+                  </div>
+                  <div class="demo-body">
+                    <div class="flow-visual">
+                      <div class="flow-row">
+                        <div class="flow-node"><strong>Greet</strong><span>Handle the first interaction in a clear, natural way.</span></div>
+                        <div class="flow-node"><strong>Collect</strong><span>Capture the details the business actually needs.</span></div>
+                        <div class="flow-node"><strong>Classify</strong><span>Identify urgency, service type, and next path.</span></div>
+                      </div>
+                      <div class="flow-row">
+                        <div class="flow-node"><strong>Route</strong><span>Send the enquiry to the right action or person.</span></div>
+                        <div class="flow-node"><strong>Support</strong><span>Give staff better context before they respond.</span></div>
+                        <div class="flow-node"><strong>Improve</strong><span>Refine the system based on real usage patterns.</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="case-section">
+              <h3>Build detail</h3>
+              <div class="case-grid">
+                <div class="case-block">
+                  <h4>Customer side</h4>
+                  <p>Faster answers, fewer dead ends, and clearer next steps from the first interaction.</p>
+                </div>
+                <div class="case-block">
+                  <h4>Business side</h4>
+                  <p>Better intake quality, less repeated messaging, and more consistent routing across the team.</p>
+                </div>
+                <div class="case-block">
+                  <h4>Business value</h4>
+                  <p>Improved response quality, reduced manual repetition, and a more professional experience for incoming leads.</p>
+                </div>
+                <div class="case-block">
+                  <h4>Portfolio value</h4>
+                  <p>A strong AI project that feels practical, commercially relevant, and grounded in real service-business needs.</p>
+                </div>
+              </div>
+              <div class="tools">
+                <span>AI systems</span><span>Automation</span><span>Intake UX</span><span>Service workflows</span><span>Lead routing</span>
+              </div>
+            </section>
+          </article>
+
+          <article class="case-card reveal" id="case-launchdesk">
+            <div class="case-top">
+              <div class="case-meta"><span>Project</span><strong>LaunchDesk</strong></div>
+              <div class="case-meta"><span>Role</span><strong>Digital project partner · product-minded coordinator</strong></div>
+              <div class="case-meta"><span>Type</span><strong>Startup launch and delivery dashboard</strong></div>
+              <div class="case-meta"><span>Audience</span><strong>Founders and small product teams</strong></div>
+            </div>
+
+            <h2 class="case-title">A lean launch dashboard designed to help small teams manage delivery without the weight of a full PM platform.</h2>
+            <p class="case-summary">
+              LaunchDesk was created for startup teams that need visibility, ownership, and momentum, but do not want a heavy project management setup. The concept focuses on the essentials: what is in progress, what is blocked, what needs approval, and what should happen next.
+            </p>
+
+            <section class="case-section">
+              <h3>The problem</h3>
+              <p>
+                Early-stage teams often run digital launches through a patchwork of chats, docs, and task boards. That can work for a while, but it creates friction as timelines, dependencies, and approvals begin to overlap.
+              </p>
+              <ul class="case-list">
+                <li>Tasks and launch steps were spread across too many places.</li>
+                <li>Founders lacked one clear view of what needed attention next.</li>
+                <li>Feedback and assets were often disconnected from the work.</li>
+                <li>Project movement felt messy even when the scope was relatively focused.</li>
+              </ul>
+            </section>
+
+            <section class="case-section">
+              <h3>Solution direction</h3>
+              <p>
+                I designed the project as a calm launch workspace with a clear hierarchy around phases, approvals, tasks, and blocked items. The goal was to create something lighter than a traditional PM system while still giving a small team real operational clarity.
+              </p>
+              <div class="case-highlight">
+                <strong>What this project shows</strong>
+                <p>Digital project management thinking, startup-friendly product design, execution structure, and a practical understanding of how lean teams manage launches.</p>
+              </div>
+            </section>
+
+            <section class="case-section">
+              <h3>Live demo</h3>
+              <p>
+                The demo below presents the idea as a product workspace for a small team preparing a website, campaign, or product release.
+              </p>
+
+              <div class="demo-grid">
+                <div class="demo-card">
+                  <div class="demo-head">
+                    <strong>Live demo view</strong>
+                    <span>Launch workspace</span>
+                  </div>
+                  <div class="demo-body">
+                    <div class="browser">
+                      <div class="browser-top">
+                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                        <div class="browser-url">launchdesk.demo/workspace</div>
+                      </div>
+                      <div class="browser-screen">
+                        <div class="app-shell">
+                          <div class="app-toolbar">
+                            <span class="app-title">LaunchDesk / Product Release</span>
+                            <span class="app-badge">Week 3</span>
+                          </div>
+                          <div class="app-grid">
+                            <aside class="app-sidebar">
+                              <div class="app-nav"></div>
+                              <div class="app-nav"></div>
+                              <div class="app-nav"></div>
+                              <div class="app-nav"></div>
+                            </aside>
+                            <div class="app-content">
+                              <div class="kpi-row">
+                                <div class="kpi"><strong>12</strong><span>Open tasks</span></div>
+                                <div class="kpi"><strong>4</strong><span>Pending approvals</span></div>
+                                <div class="kpi"><strong>3</strong><span>Blocked items</span></div>
+                              </div>
+                              <div class="board">
+                                <div class="board-col"><strong>To do</strong><div class="board-card"></div><div class="board-card"></div></div>
+                                <div class="board-col"><strong>In progress</strong><div class="board-card"></div><div class="board-card"></div></div>
+                                <div class="board-col"><strong>Ready</strong><div class="board-card"></div><div class="board-card"></div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="demo-card">
+                  <div class="demo-head">
+                    <strong>Execution flow</strong>
+                    <span>Launch structure</span>
+                  </div>
+                  <div class="demo-body">
+                    <div class="flow-visual">
+                      <div class="flow-row">
+                        <div class="flow-node"><strong>Plan</strong><span>Define stages, owners, and priorities clearly.</span></div>
+                        <div class="flow-node"><strong>Track</strong><span>Keep tasks, files, and feedback in one place.</span></div>
+                        <div class="flow-node"><strong>Review</strong><span>Surface approvals and blockers early.</span></div>
+                      </div>
+                      <div class="flow-row">
+                        <div class="flow-node"><strong>Prepare</strong><span>Bring assets and delivery items together.</span></div>
+                        <div class="flow-node"><strong>Launch</strong><span>Move to release with fewer surprises.</span></div>
+                        <div class="flow-node"><strong>Support</strong><span>Track fixes and follow-up after launch.</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="case-section">
+              <h3>Build detail</h3>
+              <div class="case-grid">
+                <div class="case-block">
+                  <h4>Founder value</h4>
+                  <p>A clearer view of what is happening, what is stuck, and what needs action next.</p>
+                </div>
+                <div class="case-block">
+                  <h4>Team value</h4>
+                  <p>Better visibility around ownership, approvals, and launch progression across the work.</p>
+                </div>
+                <div class="case-block">
+                  <h4>Business value</h4>
+                  <p>Less delivery friction, cleaner collaboration, and a more reliable structure for shipping focused digital work.</p>
+                </div>
+                <div class="case-block">
+                  <h4>Portfolio value</h4>
+                  <p>A project that presents digital project management as a modern, product-aware capability rather than an administrative one.</p>
+                </div>
+              </div>
+              <div class="tools">
+                <span>Project management</span><span>Startups</span><span>Launch planning</span><span>Delivery support</span><span>Internal tools</span>
+              </div>
+            </section>
+          </article>
+
+          <article class="case-card reveal" id="case-clienthub">
+            <div class="case-top">
+              <div class="case-meta"><span>Project</span><strong>ClientHub</strong></div>
+              <div class="case-meta"><span>Role</span><strong>Web product designer · delivery systems builder</strong></div>
+              <div class="case-meta"><span>Type</span><strong>Client portal for freelancers and small agencies</strong></div>
+              <div class="case-meta"><span>Audience</span><strong>Service-led digital businesses</strong></div>
+            </div>
+
+            <h2 class="case-title">A client portal concept designed to make freelance and agency delivery feel more premium, organised, and easier to manage.</h2>
+            <p class="case-summary">
+              ClientHub was built around a common service-business problem: projects often run through a mix of email, chat, folders, and scattered updates, even when the underlying work is strong. The concept creates one clean space for onboarding, visibility, approvals, and communication.
+            </p>
+
+            <section class="case-section">
+              <h3>The problem</h3>
+              <p>
+                Freelancers and smaller agencies often deliver good work through processes that still feel fragmented to the client. The opportunity was to create a clearer, more premium experience without adding operational weight.
+              </p>
+              <ul class="case-list">
+                <li>Clients had no single place to review progress and files.</li>
+                <li>Onboarding and approvals often happened across multiple tools.</li>
+                <li>Communication could feel less structured than the service itself.</li>
+                <li>The overall delivery experience lacked a stronger sense of polish.</li>
+              </ul>
+            </section>
+
+            <section class="case-section">
+              <h3>Solution direction</h3>
+              <p>
+                I framed the project as a lightweight service product: a simple portal where clients can see updates, review files, approve work, and stay aligned without unnecessary complexity. The result is a system that improves both the delivery experience and the perceived value of the service.
+              </p>
+              <div class="case-highlight">
+                <strong>What this project shows</strong>
+                <p>Client experience design, modern web product thinking, service operations structure, and a stronger link between digital delivery and business perception.</p>
+              </div>
+            </section>
+
+            <section class="case-section">
+              <h3>Live demo</h3>
+              <p>
+                The demo below shows the portal as a working client-facing product with project status, files, approvals, and communication all visible within one interface.
+              </p>
+
+              <div class="demo-grid">
+                <div class="demo-card">
+                  <div class="demo-head">
+                    <strong>Live demo view</strong>
+                    <span>Client portal</span>
+                  </div>
+                  <div class="demo-body">
+                    <div class="browser">
+                      <div class="browser-top">
+                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                        <div class="browser-url">clienthub.demo/portal</div>
+                      </div>
+                      <div class="browser-screen">
+                        <div class="app-shell">
+                          <div class="app-toolbar">
+                            <span class="app-title">ClientHub / Website Redesign</span>
+                            <span class="app-badge">Review phase</span>
+                          </div>
+                          <div class="app-grid">
+                            <aside class="app-sidebar">
+                              <div class="app-nav"></div>
+                              <div class="app-nav"></div>
+                              <div class="app-nav"></div>
+                              <div class="app-nav"></div>
+                            </aside>
+                            <div class="app-content">
+                              <div class="kpi-row">
+                                <div class="kpi"><strong>78%</strong><span>Project complete</span></div>
+                                <div class="kpi"><strong>3</strong><span>Files to review</span></div>
+                                <div class="kpi"><strong>1</strong><span>Approval needed</span></div>
+                              </div>
+                              <div class="board">
+                                <div class="board-col"><strong>Updates</strong><div class="board-card"></div><div class="board-card"></div></div>
+                                <div class="board-col"><strong>Files</strong><div class="board-card"></div><div class="board-card"></div></div>
+                                <div class="board-col"><strong>Approvals</strong><div class="board-card"></div><div class="board-card"></div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="demo-card">
+                  <div class="demo-head">
+                    <strong>Portal flow</strong>
+                    <span>Client journey</span>
+                  </div>
+                  <div class="demo-body">
+                    <div class="flow-visual">
+                      <div class="flow-row">
+                        <div class="flow-node"><strong>Onboard</strong><span>Clients start in a clearer shared project space.</span></div>
+                        <div class="flow-node"><strong>Update</strong><span>Progress stays visible without scattered messages.</span></div>
+                        <div class="flow-node"><strong>Review</strong><span>Files and deliverables are easier to approve.</span></div>
+                      </div>
+                      <div class="flow-row">
+                        <div class="flow-node"><strong>Communicate</strong><span>Conversations stay more structured and easier to track.</span></div>
+                        <div class="flow-node"><strong>Deliver</strong><span>The service feels more premium and well managed.</span></div>
+                        <div class="flow-node"><strong>Retain</strong><span>A better experience supports stronger long-term client trust.</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="case-section">
+              <h3>Build detail</h3>
+              <div class="case-grid">
+                <div class="case-block">
+                  <h4>Client value</h4>
+                  <p>A calmer project experience with clearer visibility, smoother reviews, and less confusion around the work.</p>
+                </div>
+                <div class="case-block">
+                  <h4>Business value</h4>
+                  <p>Less back-and-forth, cleaner approvals, and a more premium delivery model for service-led businesses.</p>
+                </div>
+                <div class="case-block">
+                  <h4>Operational value</h4>
+                  <p>Better structure around updates, files, and milestones without needing a complicated internal setup.</p>
+                </div>
+                <div class="case-block">
+                  <h4>Portfolio value</h4>
+                  <p>A project that connects modern web design, product thinking, and real service-business delivery needs.</p>
+                </div>
+              </div>
+              <div class="tools">
+                <span>Client portals</span><span>Service UX</span><span>Approvals</span><span>Delivery systems</span><span>Web products</span>
+              </div>
+            </section>
+          </article>
+
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Rohith Dhanala</span>
+      <div class="footer-links">
+        <a href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Book a call</a>
+        <a href="mailto:rodhanala@gmail.com">Email</a>
+        <a href="https://wa.me/447311470011" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+      <span>AI automation, modern websites, digital project management, and practical web systems</span>
     </div>
-  </section>
+  </footer>
 
-  <section class="page" id="cases-page">
-    <div class="shell">
-      <section class="case-hero reveal">
-        <button class="btn btn-secondary" type="button" data-go-home style="margin-bottom:24px">← Back to homepage</button>
-        <header class="section-head" style="margin-bottom:0">
-          <p class="section-eyebrow">Projects</p>
-          <h2 id="case-page-title">Detailed case studies with live product-style demos.</h2>
-          <p id="case-page-sub">Each project below is designed to feel believable for your profile and useful to the kinds of clients you want to attract. [cite:17][cite:20][cite:21]</p>
-        </header>
-      </section>
+  <a
+    href="https://wa.me/447311470011?text=Hi%20Rohith%2C%20I%20saw%20your%20website%20and%20want%20to%20discuss%20a%20project."
+    class="float-wa"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp"
+  >
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path fill="currentColor" d="M19.11 17.23c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.14-1.13-.42-2.15-1.33-.79-.71-1.33-1.58-1.49-1.85-.16-.27-.02-.41.12-.54.12-.12.27-.31.41-.47.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.47-.07-.14-.61-1.47-.84-2.02-.22-.53-.44-.45-.61-.46h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.26 0 1.33.97 2.62 1.11 2.8.14.18 1.91 2.91 4.63 4.08.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.6-.65 1.82-1.27.22-.63.22-1.16.16-1.27-.07-.11-.25-.18-.52-.32z"></path>
+      <path fill="currentColor" d="M16.03 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.25.58 4.45 1.69 6.4L3.2 28.8l6.57-1.69a12.76 12.76 0 0 0 6.26 1.61h.01c7.06 0 12.79-5.73 12.79-12.8 0-3.43-1.34-6.65-3.77-9.08A12.72 12.72 0 0 0 16.03 3.2zm0 23.38h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-3.9 1 1.04-3.8-.25-.39a10.64 10.64 0 0 1-1.63-5.65c0-5.89 4.79-10.68 10.68-10.68 2.85 0 5.53 1.11 7.54 3.13a10.6 10.6 0 0 1 3.12 7.55c0 5.89-4.79 10.68-10.67 10.68z"></path>
+    </svg>
+    <span>WhatsApp</span>
+  </a>
 
-      <section class="case-wrap">
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-        <article class="case-card reveal active" id="case-salonflow">
-          <div class="case-top">
-            <div class="case-meta"><span>Project</span><strong>SalonFlow</strong></div>
-            <div class="case-meta"><span>Role</span><strong>Web designer · automation-minded product builder</strong></div>
-            <div class="case-meta"><span>Type</span><strong>Salon website + service workflow system</strong></div>
-            <div class="case-meta"><span>Fit</span><strong>Beauty businesses and service-led small teams</strong></div>
-          </div>
+    const root = document.documentElement;
+    const themeToggle = document.querySelector('[data-theme-toggle]');
+    let currentTheme = 'dark';
 
-          <h2 class="case-title">A modern salon website and booking workflow built for businesses that want to look better and run smoother.</h2>
-          <p class="case-summary">
-            SalonFlow is a more realistic and commercially strong project for your portfolio because it connects directly with the kind of pre-built salon product work you have already been exploring. [cite:20] The idea was to create something that is not just visually polished, but genuinely useful for a salon or beauty business trying to improve bookings, service visibility, enquiry handling, and client experience.
-          </p>
-
-          <section class="case-section">
-            <h3>The opportunity</h3>
-            <p>
-              Many small salons have either basic social-media-led booking journeys or websites that do not support the business properly. They often need something that looks more premium, explains services clearly, makes it easy to enquire or book, and creates a smoother connection between clients and staff.
-            </p>
-            <ul class="case-list">
-              <li>Service presentation was often too weak or inconsistent.</li>
-              <li>Booking and enquiry flows were not always clear.</li>
-              <li>WhatsApp communication was important but loosely connected.</li>
-              <li>The business needed a more premium digital presence without a heavy custom platform.</li>
-            </ul>
-          </section>
-
-          <section class="case-section">
-            <h3>What I designed</h3>
-            <p>
-              I framed the project as a hybrid of a premium service website and a lightweight business workflow system. The experience combines polished service presentation, appointment-focused actions, a clear contact path, and simple operational visibility that would make sense for a smaller business.
-            </p>
-            <div class="case-highlight">
-              <strong>What this project demonstrates</strong>
-              <p>Modern web design, small-business product thinking, service UX, digital credibility, and a practical link between visual presentation and business workflow. [cite:20]</p>
-            </div>
-          </section>
-
-          <section class="case-section">
-            <h3>Live demo</h3>
-            <p>
-              The demo below is built as a live product-style preview rather than a flat placeholder, so it feels closer to a real portfolio example with a working front-end direction.
-            </p>
-
-            <div class="demo-grid">
-              <div class="demo-card">
-                <div class="demo-head">
-                  <strong>Live demo view</strong>
-                  <span>Salon website + dashboard</span>
-                </div>
-                <div class="demo-body">
-                  <div class="browser">
-                    <div class="browser-top">
-                      <div class="browser-dots"><span></span><span></span><span></span></div>
-                      <div class="browser-url">salonflow.demo/live</div>
-                    </div>
-                    <div class="browser-screen">
-                      <div class="app-shell">
-                        <div class="app-toolbar">
-                          <span class="app-title">SalonFlow / Appointments</span>
-                          <span class="app-badge">Today</span>
-                        </div>
-                        <div class="app-grid">
-                          <aside class="app-sidebar">
-                            <div class="app-nav"></div><div class="app-nav"></div><div class="app-nav"></div><div class="app-nav"></div>
-                          </aside>
-                          <div class="app-content">
-                            <div class="kpi-row">
-                              <div class="kpi"><strong>18</strong><span>Bookings today</span></div>
-                              <div class="kpi"><strong>6</strong><span>New enquiries</span></div>
-                              <div class="kpi"><strong>4.9</strong><span>Average rating</span></div>
-                            </div>
-                            <div class="board">
-                              <div class="board-col"><strong>Morning</strong><div class="board-card"></div><div class="board-card"></div></div>
-                              <div class="board-col"><strong>Afternoon</strong><div class="board-card"></div><div class="board-card"></div></div>
-                              <div class="board-col"><strong>Messages</strong><div class="board-card"></div><div class="board-card"></div></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="demo-card">
-                <div class="demo-head">
-                  <strong>Workflow direction</strong>
-                  <span>Client journey</span>
-                </div>
-                <div class="demo-body">
-                  <div class="flow-visual">
-                    <div class="flow-row">
-                      <div class="flow-node"><strong>Discover</strong><span>Client lands on a polished service-focused website.</span></div>
-                      <div class="flow-node"><strong>Choose</strong><span>Services and availability are easy to understand.</span></div>
-                      <div class="flow-node"><strong>Enquire</strong><span>Booking or WhatsApp contact happens quickly.</span></div>
-                    </div>
-                    <div class="flow-row">
-                      <div class="flow-node"><strong>Confirm</strong><span>Business receives structured booking details.</span></div>
-                      <div class="flow-node"><strong>Manage</strong><span>Appointments and follow-up stay more organised.</span></div>
-                      <div class="flow-node"><strong>Retain</strong><span>Better experience supports repeat business.</span></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="case-section">
-            <h3>Build detail</h3>
-            <div class="case-grid">
-              <div class="case-block">
-                <h4>Website layer</h4>
-                <p>Premium service pages, strong visual hierarchy, service menus, clear calls to action, mobile-friendly booking paths, and trust-building content sections.</p>
-              </div>
-              <div class="case-block">
-                <h4>Business layer</h4>
-                <p>Lightweight appointment visibility, enquiry capture, WhatsApp-friendly lead handling, and a cleaner daily workflow for a smaller team.</p>
-              </div>
-              <div class="case-block">
-                <h4>Why it suits your profile</h4>
-                <p>It feels sellable, modern, and close to a real service-business offer you could confidently discuss with clients. [cite:20]</p>
-              </div>
-              <div class="case-block">
-                <h4>Client value</h4>
-                <p>A better digital first impression, clearer service flow, easier contact, and a more organised day-to-day booking experience.</p>
-              </div>
-            </div>
-            <div class="tools">
-              <span>Web design</span><span>UX structure</span><span>Salon systems</span><span>WhatsApp flow</span><span>Small business</span>
-            </div>
-          </section>
-        </article>
-
-        <article class="case-card reveal" id="case-receptiq">
-          <div class="case-top">
-            <div class="case-meta"><span>Project</span><strong>Receptiq AI</strong></div>
-            <div class="case-meta"><span>Role</span><strong>AI systems thinker · workflow designer</strong></div>
-            <div class="case-meta"><span>Type</span><strong>AI receptionist and enquiry intake tool</strong></div>
-            <div class="case-meta"><span>Fit</span><strong>Service businesses and smaller teams</strong></div>
-          </div>
-
-          <h2 class="case-title">An AI receptionist concept built to make first-contact workflows faster, clearer, and less repetitive.</h2>
-          <p class="case-summary">
-            This project directly reflects the AI receptionist direction you have already researched as a premium offer. [cite:21] Rather than presenting AI as something abstract, Receptiq AI frames it as a practical business system that helps smaller service businesses answer common questions, capture structured details, and route enquiries more consistently.
-          </p>
-
-          <section class="case-section">
-            <h3>The problem</h3>
-            <p>
-              Service businesses often lose time repeating the same conversations: pricing questions, appointment availability, service fit, location, and next steps. The challenge is not only response speed. It is also consistency and handoff quality.
-            </p>
-            <ul class="case-list">
-              <li>Enquiries arrived with missing context.</li>
-              <li>Staff repeated basic questions too often.</li>
-              <li>Response quality varied across channels.</li>
-              <li>Leads needed better routing into the business.</li>
-            </ul>
-          </section>
-
-          <section class="case-section">
-            <h3>What I designed</h3>
-            <p>
-              I positioned the product as a structured AI front desk for small teams. The system captures intent, guides the user through the right questions, suggests next steps, and gives the business a cleaner handoff instead of another messy conversation thread.
-            </p>
-            <div class="case-highlight">
-              <strong>What this project demonstrates</strong>
-              <p>AI service design, automation thinking, intake UX, business process improvement, and human-friendly workflow structure. [cite:21]</p>
-            </div>
-          </section>
-
-          <section class="case-section">
-            <h3>Live demo</h3>
-            <p>
-              The demo below presents the tool as a real client-facing and operator-facing system with enquiry states, response support, and routing logic.
-            </p>
-
-            <div class="demo-grid">
-              <div class="demo-card">
-                <div class="demo-head">
-                  <strong>Live demo view</strong>
-                  <span>AI intake system</span>
-                </div>
-                <div class="demo-body">
-                  <div class="browser">
-                    <div class="browser-top">
-                      <div class="browser-dots"><span></span><span></span><span></span></div>
-                      <div class="browser-url">receptiq.demo/inbox</div>
-                    </div>
-                    <div class="browser-screen">
-                      <div class="app-shell">
-                        <div class="app-toolbar">
-                          <span class="app-title">Receptiq AI / Front Desk</span>
-                          <span class="app-badge">Active</span>
-                        </div>
-                        <div class="app-grid">
-                          <aside class="app-sidebar">
-                            <div class="app-nav"></div><div class="app-nav"></div><div class="app-nav"></div><div class="app-nav"></div>
-                          </aside>
-                          <div class="app-content">
-                            <div class="kpi-row">
-                              <div class="kpi"><strong>32</strong><span>Enquiries today</span></div>
-                              <div class="kpi"><strong>21</strong><span>Auto-qualified</span></div>
-                              <div class="kpi"><strong>7</strong><span>Needs review</span></div>
-                            </div>
-                            <div class="board">
-                              <div class="board-col"><strong>New</strong><div class="board-card"></div><div class="board-card"></div></div>
-                              <div class="board-col"><strong>Qualified</strong><div class="board-card"></div><div class="board-card"></div></div>
-                              <div class="board-col"><strong>Escalated</strong><div class="board-card"></div><div class="board-card"></div></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="demo-card">
-                <div class="demo-head">
-                  <strong>System flow</strong>
-                  <span>Reception logic</span>
-                </div>
-                <div class="demo-body">
-                  <div class="flow-visual">
-                    <div class="flow-row">
-                      <div class="flow-node"><strong>Greet</strong><span>Answer first-contact questions in a natural way.</span></div>
-                      <div class="flow-node"><strong>Collect</strong><span>Capture structured information the business needs.</span></div>
-                      <div class="flow-node"><strong>Classify</strong><span>Identify urgency, service type, and next path.</span></div>
-                    </div>
-                    <div class="flow-row">
-                      <div class="flow-node"><strong>Route</strong><span>Send to booking, team review, or follow-up queue.</span></div>
-                      <div class="flow-node"><strong>Support</strong><span>Give staff better context before they respond.</span></div>
-                      <div class="flow-node"><strong>Improve</strong><span>Refine flows from repeated user questions.</span></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="case-section">
-            <h3>Build detail</h3>
-            <div class="case-grid">
-              <div class="case-block">
-                <h4>Customer side</h4>
-                <p>Fast enquiry experience, fewer dead ends, clearer next steps, and a more professional digital first impression.</p>
-              </div>
-              <div class="case-block">
-                <h4>Business side</h4>
-                <p>Better intake quality, less repeated messaging, more consistent routing, and easier review when human follow-up is needed.</p>
-              </div>
-              <div class="case-block">
-                <h4>Why it suits your profile</h4>
-                <p>It is modern, practical, and directly linked to an AI product angle you have already been considering for real offers. [cite:21]</p>
-              </div>
-              <div class="case-block">
-                <h4>Commercial value</h4>
-                <p>Smaller businesses can understand the value of this project quickly, which makes it stronger for freelance positioning than a more abstract AI concept.</p>
-              </div>
-            </div>
-            <div class="tools">
-              <span>AI workflows</span><span>Automation</span><span>Intake UX</span><span>Service businesses</span><span>Enquiry systems</span>
-            </div>
-          </section>
-        </article>
-
-        <article class="case-card reveal" id="case-launchdesk">
-          <div class="case-top">
-            <div class="case-meta"><span>Project</span><strong>LaunchDesk</strong></div>
-            <div class="case-meta"><span>Role</span><strong>Digital project partner · product-minded coordinator</strong></div>
-            <div class="case-meta"><span>Type</span><strong>Startup launch and delivery dashboard</strong></div>
-            <div class="case-meta"><span>Fit</span><strong>Founders and small product teams</strong></div>
-          </div>
-
-          <h2 class="case-title">A lightweight startup launch dashboard for founders who need clarity more than complexity.</h2>
-          <p class="case-summary">
-            This project is a better fit for your profile because it connects directly to your freelance digital project management direction and your interest in startup-oriented work. [cite:16][cite:18] Instead of a heavy enterprise PM system, LaunchDesk is framed as a cleaner digital workspace for small teams managing a launch, a website build, or an early product release.
-          </p>
-
-          <section class="case-section">
-            <h3>The problem</h3>
-            <p>
-              Small teams often do not need a massive project management tool. What they need is a clearer way to organise tasks, approvals, timelines, assets, and rollout priorities without turning the process into more admin.
-            </p>
-            <ul class="case-list">
-              <li>Tasks and launch steps were spread across too many tools.</li>
-              <li>Founders needed clearer visibility on what was blocking progress.</li>
-              <li>Feedback and assets were often disconnected from the work itself.</li>
-              <li>Project movement felt messy even when the work was relatively simple.</li>
-            </ul>
-          </section>
-
-          <section class="case-section">
-            <h3>What I designed</h3>
-            <p>
-              I approached it as a calm launch workspace where the most important information stays visible: current phase, open tasks, assets, approvals, and next actions. The interface is intentionally lighter than a full PM suite because the audience is a small team that values speed and clarity.
-            </p>
-            <div class="case-highlight">
-              <strong>What this project demonstrates</strong>
-              <p>Digital project management thinking, startup-friendly product design, lightweight internal tooling, and practical execution structure. [cite:16][cite:18]</p>
-            </div>
-          </section>
-
-          <section class="case-section">
-            <h3>Live demo</h3>
-            <p>
-              The live demo section below shows how the product could look as a working launch dashboard for a small team preparing a site, product, or campaign rollout.
-            </p>
-
-            <div class="demo-grid">
-              <div class="demo-card">
-                <div class="demo-head">
-                  <strong>Live demo view</strong>
-                  <span>Launch workspace</span>
-                </div>
-                <div class="demo-body">
-                  <div class="browser">
-                    <div class="browser-top">
-                      <div class="browser-dots"><span></span><span></span><span></span></div>
-                      <div class="browser-url">launchdesk.demo/workspace</div>
-                    </div>
-                    <div class="browser-screen">
-                      <div class="app-shell">
-                        <div class="app-toolbar">
-                          <span class="app-title">LaunchDesk / Product Release</span>
-                          <span class="app-badge">Week 3</span>
-                        </div>
-                        <div class="app-grid">
-                          <aside class="app-sidebar">
-                            <div class="app-nav"></div><div class="app-nav"></div><div class="app-nav"></div><div class="app-nav"></div>
-                          </aside>
-                          <div class="app-content">
-                            <div class="kpi-row">
-                              <div class="kpi"><strong>12</strong><span>Open tasks</span></div>
-                              <div class="kpi"><strong>4</strong><span>Pending approvals</span></div>
-                              <div class="kpi"><strong>3</strong><span>Blocked items</span></div>
-                            </div>
-                            <div class="board">
-                              <div class="board-col"><strong>To do</strong><div class="board-card"></div><div class="board-card"></div></div>
-                              <div class="board-col"><strong>In progress</strong><div class="board-card"></div><div class="board-card"></div></div>
-                              <div class="board-col"><strong>Ready</strong><div class="board-card"></div><div class="board-card"></div></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="demo-card">
-                <div class="demo-head">
-                  <strong>Execution flow</strong>
-                  <span>Launch structure</span>
-                </div>
-                <div class="demo-body">
-                  <div class="flow-visual">
-                    <div class="flow-row">
-                      <div class="flow-node"><strong>Plan</strong><span>Define launch phases, owners, and deadlines.</span></div>
-                      <div class="flow-node"><strong>Track</strong><span>Keep tasks, files, and feedback in one view.</span></div>
-                      <div class="flow-node"><strong>Review</strong><span>Surface approvals and blocked items clearly.</span></div>
-                    </div>
-                    <div class="flow-row">
-                      <div class="flow-node"><strong>Prepare</strong><span>Bring assets and rollout items together.</span></div>
-                      <div class="flow-node"><strong>Launch</strong><span>Move to release with fewer surprises.</span></div>
-                      <div class="flow-node"><strong>Support</strong><span>Track post-launch fixes and updates.</span></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="case-section">
-            <h3>Build detail</h3>
-            <div class="case-grid">
-              <div class="case-block">
-                <h4>Founder value</h4>
-                <p>A simpler way to see what is happening, what is stuck, and what needs attention next without relying on scattered updates.</p>
-              </div>
-              <div class="case-block">
-                <h4>Team value</h4>
-                <p>Better ownership, clearer review moments, and easier collaboration across design, build, and launch tasks.</p>
-              </div>
-              <div class="case-block">
-                <h4>Why it suits your profile</h4>
-                <p>It shows your project-management direction in a way that still feels product-minded and modern, not purely administrative. [cite:16][cite:18]</p>
-              </div>
-              <div class="case-block">
-                <h4>Freelance relevance</h4>
-                <p>This is the kind of problem many startups and small teams actually pay freelancers to help solve.</p>
-              </div>
-            </div>
-            <div class="tools">
-              <span>Project management</span><span>Startups</span><span>Task visibility</span><span>Delivery support</span><span>Launch planning</span>
-            </div>
-          </section>
-        </article>
-
-        <article class="case-card reveal" id="case-clienthub">
-          <div class="case-top">
-            <div class="case-meta"><span>Project</span><strong>ClientHub</strong></div>
-            <div class="case-meta"><span>Role</span><strong>Web product designer · service systems builder</strong></div>
-            <div class="case-meta"><span>Type</span><strong>Client portal for freelancers and small agencies</strong></div>
-            <div class="case-meta"><span>Fit</span><strong>Service-led businesses and digital teams</strong></div>
-          </div>
-
-          <h2 class="case-title">A clean client portal concept for small agencies and freelancers who want a more premium delivery experience.</h2>
-          <p class="case-summary">
-            ClientHub is a good fit for your profile because it sits between website work, product UX, and digital coordination. It is a believable project for someone with your mix of web, delivery, and systems thinking because it solves a common issue for small service businesses: communication, approvals, and updates often feel too fragmented.
-          </p>
-
-          <section class="case-section">
-            <h3>The problem</h3>
-            <p>
-              Many freelancers and agencies still manage projects through a mix of email, chat, folders, and manual status updates. That works, but it often feels less premium than the actual service being delivered.
-            </p>
-            <ul class="case-list">
-              <li>Clients had no single place for updates and approvals.</li>
-              <li>Files and messages were spread across different channels.</li>
-              <li>Onboarding and project communication lacked structure.</li>
-              <li>The overall experience felt less polished than it could be.</li>
-            </ul>
-          </section>
-
-          <section class="case-section">
-            <h3>What I designed</h3>
-            <p>
-              I treated the project as a lightweight service product: a simple portal where clients can see project progress, review files, approve items, and stay updated without needing a complicated system. It is practical, premium-looking, and highly relevant to the kinds of small digital businesses you want to work with.
-            </p>
-            <div class="case-highlight">
-              <strong>What this project demonstrates</strong>
-              <p>Client experience design, modern web product thinking, service operations structure, and a strong understanding of how digital delivery can feel more professional. [cite:16][file:1]</p>
-            </div>
-          </section>
-
-          <section class="case-section">
-            <h3>Live demo</h3>
-            <p>
-              The live demo below presents the idea as a working portal experience with project stages, approvals, assets, and communication flow.
-            </p>
-
-            <div class="demo-grid">
-              <div class="demo-card">
-                <div class="demo-head">
-                  <strong>Live demo view</strong>
-                  <span>Client portal</span>
-                </div>
-                <div class="demo-body">
-                  <div class="browser">
-                    <div class="browser-top">
-                      <div class="browser-dots"><span></span><span></span><span></span></div>
-                      <div class="browser-url">clienthub.demo/portal</div>
-                    </div>
-                    <div class="browser-screen">
-                      <div class="app-shell">
-                        <div class="app-toolbar">
-                          <span class="app-title">ClientHub / Website Redesign</span>
-                          <span class="app-badge">Review phase</span>
-                        </div>
-                        <div class="app-grid">
-                          <aside class="app-sidebar">
-                            <div class="app-nav"></div><div class="app-nav"></div><div class="app-nav"></div><div class="app-nav"></div>
-                          </aside>
-                          <div class="app-content">
-                            <div class="kpi-row">
-                              <div class="kpi"><strong>78%</strong><span>Project complete</span></div>
-                              <div class="kpi"><strong>3</strong><span>Files to review</span></div>
-                              <div class="kpi"><strong>1</strong><span>Approval needed</span></div>
-                            </div>
-                            <div class="board">
-                              <div class="board-col"><strong>Updates</strong><div class="board-card"></div><div class="board-card"></div></div>
-                              <div class="board-col"><strong>Files</strong><div class="board-card"></div><div class="board-card"></div></div>
-                              <div class="board-col"><strong>Approvals</strong><div class="board-card"></div><div class="board-card"></div></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="demo-card">
-                <div class="demo-head">
-                  <strong>Portal flow</strong>
-                  <span>Client experience</span>
-                </div>
-                <div class="demo-body">
-                  <div class="flow-visual">
-                    <div class="flow-row">
-                      <div class="flow-node"><strong>Onboard</strong><span>Client gets a clearer start and shared project space.</span></div>
-                      <div class="flow-node"><strong>Update</strong><span>Progress stays visible without scattered messages.</span></div>
-                      <div class="flow-node"><strong>Review</strong><span>Files and deliverables are easier to approve.</span></div>
-                    </div>
-                    <div class="flow-row">
-                      <div class="flow-node"><strong>Communicate</strong><span>Project conversations stay more organised.</span></div>
-                      <div class="flow-node"><strong>Deliver</strong><span>The service feels more premium and structured.</span></div>
-                      <div class="flow-node"><strong>Retain</strong><span>Better experience supports long-term client trust.</span></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="case-section">
-            <h3>Build detail</h3>
-            <div class="case-grid">
-              <div class="case-block">
-                <h4>UX value</h4>
-                <p>A calmer client journey with fewer scattered updates and a more confident presentation of the service.</p>
-              </div>
-              <div class="case-block">
-                <h4>Business value</h4>
-                <p>Less back-and-forth, smoother approvals, and a more premium delivery process for smaller agencies or freelancers.</p>
-              </div>
-              <div class="case-block">
-                <h4>Why it suits your profile</h4>
-                <p>It combines web, product, and digital coordination in a way that feels very believable for the services you want to offer. [cite:16][file:1]</p>
-              </div>
-              <div class="case-block">
-                <h4>Portfolio value</h4>
-                <p>It helps potential clients imagine you building something modern and useful for their own business without the project feeling too distant from your current path.</p>
-              </div>
-            </div>
-            <div class="tools">
-              <span>Client portals</span><span>Service UX</span><span>Modern websites</span><span>Digital coordination</span><span>Product thinking</span>
-            </div>
-          </section>
-        </article>
-
-      </section>
-    </div>
-  </section>
-</main>
-
-<footer class="footer">
-  <div class="footer-inner">
-    <span>© <span id="year"></span> Rohith Dhanala</span>
-    <div class="footer-links">
-      <a href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Book a call</a>
-      <a href="mailto:rodhanala@gmail.com">Email</a>
-      <a href="https://wa.me/447311470011" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-    </div>
-    <span>AI services, modern websites, digital projects, and startup-friendly systems [cite:16][cite:18]</span>
-  </div>
-</footer>
-
-<a
-  href="https://wa.me/447311470011?text=Hi%20Rohith%2C%20I%20saw%20your%20website%20and%20want%20to%20discuss%20a%20project."
-  class="float-wa"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Chat on WhatsApp"
->
-  <svg viewBox="0 0 32 32" aria-hidden="true">
-    <path fill="currentColor" d="M19.11 17.23c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.14-1.13-.42-2.15-1.33-.79-.71-1.33-1.58-1.49-1.85-.16-.27-.02-.41.12-.54.12-.12.27-.31.41-.47.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.47-.07-.14-.61-1.47-.84-2.02-.22-.53-.44-.45-.61-.46h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.26 0 1.33.97 2.62 1.11 2.8.14.18 1.91 2.91 4.63 4.08.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.6-.65 1.82-1.27.22-.63.22-1.16.16-1.27-.07-.11-.25-.18-.52-.32z"/>
-    <path fill="currentColor" d="M16.03 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.25.58 4.45 1.69 6.4L3.2 28.8l6.57-1.69a12.76 12.76 0 0 0 6.26 1.61h.01c7.06 0 12.79-5.73 12.79-12.8 0-3.43-1.34-6.65-3.77-9.08A12.72 12.72 0 0 0 16.03 3.2zm0 23.38h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-3.9 1 1.04-3.8-.25-.39a10.64 10.64 0 0 1-1.63-5.65c0-5.89 4.79-10.68 10.68-10.68 2.85 0 5.53 1.11 7.54 3.13a10.6 10.6 0 0 1 3.12 7.55c0 5.89-4.79 10.68-10.67 10.68z"/>
-  </svg>
-  <span>WhatsApp</span>
-</a>
-
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-
-const root = document.documentElement;
-const themeToggle = document.querySelector('[data-theme-toggle]');
-let currentTheme = 'dark';
-
-function setTheme(theme){
-  currentTheme = theme;
-  root.setAttribute('data-theme', theme);
-  if(!themeToggle) return;
-  themeToggle.innerHTML = theme === 'dark'
-    ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z"></path></svg>'
-    : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>';
-  themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-}
-setTheme(currentTheme);
-themeToggle?.addEventListener('click', () => setTheme(currentTheme === 'dark' ? 'light' : 'dark'));
-
-const homePage = document.getElementById('home-page');
-const casesPage = document.getElementById('cases-page');
-const caseCards = document.querySelectorAll('.case-card');
-const casePageTitle = document.getElementById('case-page-title');
-const casePageSub = document.getElementById('case-page-sub');
-
-const caseMeta = {
-  salonflow: {
-    title: 'SalonFlow — a modern salon website and booking workflow for smaller service businesses.',
-    sub: 'A practical portfolio case for service websites, salon operations, bookings, and small-business digital systems.'
-  },
-  receptiq: {
-    title: 'Receptiq AI — an AI receptionist and enquiry intake system for modern service teams.',
-    sub: 'A believable AI service project focused on first-contact automation, structured intake, and better routing.'
-  },
-  launchdesk: {
-    title: 'LaunchDesk — a startup-friendly project and launch dashboard for small teams.',
-    sub: 'A digital project management product concept that supports founders, launches, and lighter delivery workflows.'
-  },
-  clienthub: {
-    title: 'ClientHub — a premium client portal for freelancers and small agencies.',
-    sub: 'A service-focused web product built around project visibility, approvals, onboarding, and better client experience.'
-  }
-};
-
-function openCase(caseId, push = true){
-  homePage.classList.remove('active');
-  casesPage.classList.add('active');
-
-  caseCards.forEach(card => card.classList.remove('active'));
-  const target = document.getElementById('case-' + caseId);
-  if(target) target.classList.add('active');
-
-  casePageTitle.textContent = caseMeta[caseId]?.title || 'Detailed case studies with live product-style demos.';
-  casePageSub.textContent = caseMeta[caseId]?.sub || 'Each project below is designed to feel believable for your profile and useful to the kinds of clients you want to attract.';
-
-  if(push) history.pushState({page:'case', caseId}, '', '#case-' + caseId);
-  window.scrollTo({top:0, behavior:'smooth'});
-}
-
-function goHome(push = true){
-  casesPage.classList.remove('active');
-  homePage.classList.add('active');
-  if(push) history.pushState({page:'home'}, '', '#top');
-  window.scrollTo({top:0, behavior:'smooth'});
-}
-
-document.querySelectorAll('[data-case-link]').forEach(card => {
-  card.addEventListener('click', () => openCase(card.dataset.caseLink));
-  card.addEventListener('keydown', e => {
-    if(e.key === 'Enter' || e.key === ' '){
-      e.preventDefault();
-      openCase(card.dataset.caseLink);
+    function setTheme(theme){
+      currentTheme = theme;
+      root.setAttribute('data-theme', theme);
+      if(!themeToggle) return;
+      themeToggle.innerHTML = theme === 'dark'
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z"></path></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>';
+      themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
     }
-  });
-});
+    setTheme(currentTheme);
+    themeToggle?.addEventListener('click', () => setTheme(currentTheme === 'dark' ? 'light' : 'dark'));
 
-document.querySelectorAll('[data-go-home]').forEach(el => {
-  el.addEventListener('click', e => {
-    e.preventDefault();
-    goHome();
-  });
-});
+    const homePage = document.getElementById('home-page');
+    const casesPage = document.getElementById('cases-page');
+    const caseCards = document.querySelectorAll('.case-card');
+    const casePageTitle = document.getElementById('case-page-title');
+    const casePageSub = document.getElementById('case-page-sub');
 
-document.querySelectorAll('[data-open-projects]').forEach(btn => {
-  btn.addEventListener('click', () => openCase('salonflow'));
-});
+    const caseMeta = {
+      salonflow: {
+        title: 'SalonFlow — a modern salon website and booking workflow for service businesses.',
+        sub: 'A project built around service presentation, smoother enquiries, and a more organised appointment experience.'
+      },
+      receptiq: {
+        title: 'Receptiq AI — an AI receptionist and enquiry intake system for modern service teams.',
+        sub: 'A practical AI workflow concept focused on first-contact automation, intake quality, and clearer routing.'
+      },
+      launchdesk: {
+        title: 'LaunchDesk — a startup-friendly launch and delivery dashboard.',
+        sub: 'A lean project workspace designed for clarity, ownership, and momentum across focused digital launches.'
+      },
+      clienthub: {
+        title: 'ClientHub — a premium client portal for freelancers and small agencies.',
+        sub: 'A service-focused product concept built around approvals, project visibility, onboarding, and better client experience.'
+      }
+    };
 
-document.querySelectorAll('[data-scroll]').forEach(link => {
-  link.addEventListener('click', function(e){
-    e.preventDefault();
-    const id = this.dataset.scroll;
-    if(!homePage.classList.contains('active')) goHome(false);
-    setTimeout(() => {
-      document.getElementById(id)?.scrollIntoView({behavior:'smooth', block:'start'});
-    }, 90);
-  });
-});
+    function openCase(caseId, push = true){
+      homePage.classList.remove('active');
+      casesPage.classList.add('active');
 
-window.addEventListener('popstate', () => {
-  const hash = location.hash || '#top';
-  if(hash.startsWith('#case-')){
-    openCase(hash.replace('#case-',''), false);
-  } else {
-    goHome(false);
-  }
-});
+      caseCards.forEach(card => card.classList.remove('active'));
+      const target = document.getElementById('case-' + caseId);
+      if(target) target.classList.add('active');
 
-const revealEls = document.querySelectorAll('.reveal');
-if('IntersectionObserver' in window){
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('in');
-        io.unobserve(entry.target);
+      casePageTitle.textContent = caseMeta[caseId]?.title || 'Selected projects with live demo views.';
+      casePageSub.textContent = caseMeta[caseId]?.sub || 'Each project is structured to show the business problem, the thinking behind the solution, and a product-style live demo that makes the idea feel real.';
+
+      if(push) history.pushState({page:'case', caseId}, '', '#case-' + caseId);
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+
+    function goHome(push = true){
+      casesPage.classList.remove('active');
+      homePage.classList.add('active');
+      if(push) history.pushState({page:'home'}, '', '#top');
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+
+    document.querySelectorAll('[data-case-link]').forEach(card => {
+      card.addEventListener('click', () => openCase(card.dataset.caseLink));
+      card.addEventListener('keydown', e => {
+        if(e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          openCase(card.dataset.caseLink);
+        }
+      });
+    });
+
+    document.querySelectorAll('[data-go-home]').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        goHome();
+      });
+    });
+
+    document.querySelectorAll('[data-open-projects]').forEach(btn => {
+      btn.addEventListener('click', () => openCase('salonflow'));
+    });
+
+    document.querySelectorAll('[data-scroll]').forEach(link => {
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        const id = this.dataset.scroll;
+        if(!homePage.classList.contains('active')) goHome(false);
+        setTimeout(() => {
+          document.getElementById(id)?.scrollIntoView({behavior:'smooth', block:'start'});
+        }, 90);
+      });
+    });
+
+    window.addEventListener('popstate', () => {
+      const hash = location.hash || '#top';
+      if(hash.startsWith('#case-')){
+        openCase(hash.replace('#case-',''), false);
+      } else {
+        goHome(false);
       }
     });
-  }, {threshold:0.12});
-  revealEls.forEach(el => io.observe(el));
-} else {
-  revealEls.forEach(el => el.classList.add('in'));
-}
 
-if(location.hash.startsWith('#case-')){
-  openCase(location.hash.replace('#case-',''), false);
-}
-</script>
+    const revealEls = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, {threshold:0.12});
+      revealEls.forEach(el => io.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add('in'));
+    }
+
+    if(location.hash.startsWith('#case-')){
+      openCase(location.hash.replace('#case-',''), false);
+    }
+  </script>
 </body>
 </html>
