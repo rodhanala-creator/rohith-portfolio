@@ -50,11 +50,9 @@ img,svg{display:block;max-width:100%}
 button,input,textarea{font:inherit}
 button{border:none;background:none;cursor:pointer}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-
 .skip{position:absolute;left:-999px;top:12px;background:#000;color:#fff;padding:10px 16px;border-radius:999px;z-index:200}
 .skip:focus{left:12px}
 
-/* ── NAV ─────────────────────────────── */
 .nav{
   position:sticky;top:0;z-index:90;
   display:flex;align-items:center;justify-content:space-between;
@@ -84,11 +82,9 @@ button{border:none;background:none;cursor:pointer}
 }
 .nav-cta:hover{background:var(--accent-2);transform:translateY(-1px);box-shadow:var(--shadow-md)}
 
-/* ── PAGES ───────────────────────────── */
 .page{display:none}
 .page.active{display:block}
 
-/* ── HERO ────────────────────────────── */
 .hero{max-width:var(--maxw);margin:0 auto;padding:clamp(64px,9vw,128px) var(--mx) 56px}
 .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:end}
 .hero-meta{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px;margin-bottom:22px}
@@ -146,7 +142,6 @@ button{border:none;background:none;cursor:pointer}
 }
 .hero-note span{color:var(--ink-2);line-height:1.65;font-size:14.5px}
 
-/* ── SECTIONS ────────────────────────── */
 .section{max-width:var(--maxw);margin:0 auto;padding:clamp(56px,8vw,96px) var(--mx)}
 .section-head{display:grid;gap:12px;margin-bottom:32px}
 .eyebrow{
@@ -158,10 +153,8 @@ button{border:none;background:none;cursor:pointer}
   font-size:clamp(32px,4.5vw,54px);
   line-height:1.04;font-weight:400;letter-spacing:-.032em;max-width:900px;
 }
-.section-head h2 em{font-style:normal;color:var(--accent)}
 .section-head p:last-child{margin:0;max-width:720px;color:var(--ink-2);line-height:1.75}
 
-/* ── SERVICES ────────────────────────── */
 .service-list{border-top:1px solid var(--line)}
 .service{
   display:grid;grid-template-columns:56px 1fr auto;
@@ -180,7 +173,6 @@ button{border:none;background:none;cursor:pointer}
 }
 .service-arrow{color:var(--muted);font-size:20px;padding-top:6px}
 
-/* ── CASE HOME ITEMS ─────────────────── */
 .case-home-wrap{display:grid;gap:20px}
 .case-home-intro{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;flex-wrap:wrap}
 .case-home-intro p{margin:0;max-width:660px;color:var(--ink-2);line-height:1.75}
@@ -213,21 +205,31 @@ button{border:none;background:none;cursor:pointer}
 }
 .case-home-cta:hover{background:rgba(184,115,51,.18);box-shadow:var(--shadow-sm)}
 
-/* ── CARDS / PROCESS / ABOUT / CONTACT ── */
-.process-grid{display:grid;gap:18px;grid-template-columns:repeat(4,1fr)}
-.card,.about-card,.contact-card,.case-detail-card{
+.examples-grid,.process-grid{display:grid;gap:18px}
+.examples-grid{grid-template-columns:1.1fr .9fr}
+.process-grid{grid-template-columns:repeat(4,1fr)}
+.card,.example-card,.example-note,.about-card,.contact-card,.case-detail-card{
   background:linear-gradient(160deg, rgba(255,255,255,.97) 0%, rgba(255,255,255,.88) 100%);
   border:1px solid var(--line);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);
 }
-.about-card,.contact-card,.case-detail-card{padding:28px}
-.about-card h3,.contact-card h3{
+.example-card,.example-note,.about-card,.contact-card,.case-detail-card{padding:28px}
+.example-card h3,.example-note h3,.about-card h3,.contact-card h3{
   margin:0 0 12px;font-family:var(--serif);font-weight:400;
   font-size:clamp(26px,3.5vw,38px);line-height:1.08;
 }
-.about-card p,.contact-card p{
+.example-card p,.example-note p,.about-card p,.contact-card p{
   margin:0 0 13px;color:var(--ink-2);line-height:1.75;
 }
-.contact-actions,.case-detail-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.example-pill-row{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0 20px}
+.example-pill{
+  padding:8px 13px;border-radius:999px;border:1px solid var(--line);
+  font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);background:#fff;
+}
+.example-list{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:13px}
+.example-list li{border-top:1px solid var(--line);padding-top:13px}
+.example-list strong{display:block;margin-bottom:5px;font-size:15px}
+.example-list span{display:block;color:var(--ink-2);line-height:1.68;font-size:14.5px}
+.example-actions,.contact-actions,.case-detail-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 
 .process-card{padding:22px}
 .process-card span{
@@ -237,12 +239,10 @@ button{border:none;background:none;cursor:pointer}
 .process-card h3{margin:0 0 9px;font-family:var(--serif);font-size:26px;font-weight:400}
 .process-card p{margin:0;color:var(--ink-2);line-height:1.72;font-size:14.5px}
 
-/* ── CONTACT ─────────────────────────── */
 .contact-meta{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:11px}
 .contact-meta li{color:var(--ink-2);font-size:15px}
 .contact-meta span{color:var(--ink);font-weight:700;margin-right:8px}
 
-/* ── FOOTER ──────────────────────────── */
 .footer{border-top:1px solid var(--line);padding:24px var(--mx) 38px}
 .footer-inner{
   max-width:var(--maxw);margin:0 auto;
@@ -253,7 +253,6 @@ button{border:none;background:none;cursor:pointer}
 .footer-links a{color:var(--muted);transition:color .2s}
 .footer-links a:hover{color:var(--ink)}
 
-/* ── CASES PAGE ──────────────────────── */
 .case-page-hero{max-width:var(--maxw);margin:0 auto;padding:clamp(56px,8vw,100px) var(--mx) 20px}
 .case-detail-wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--mx) 100px}
 .case-detail-card{display:none}
@@ -298,7 +297,6 @@ button{border:none;background:none;cursor:pointer}
   background:#fff;color:var(--muted);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;
 }
 
-/* ── WHATSAPP FLOAT ──────────────────── */
 .whatsapp-float{
   position:fixed;right:20px;bottom:22px;z-index:130;
   display:inline-flex;align-items:center;gap:9px;
@@ -311,18 +309,16 @@ button{border:none;background:none;cursor:pointer}
 .whatsapp-float:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(37,211,102,.45)}
 .whatsapp-float svg{width:19px;height:19px;flex:0 0 19px}
 
-/* ── REVEAL ANIMATION ────────────────── */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
 .reveal.in{opacity:1;transform:translateY(0)}
 
-/* ── RESPONSIVE ──────────────────────── */
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
 }
 @media (max-width:1100px){
-  .hero-inner,.process-grid,.case-grid{grid-template-columns:1fr}
+  .hero-inner,.examples-grid,.process-grid,.case-grid{grid-template-columns:1fr}
   .case-home-item{grid-template-columns:68px 1fr;align-items:start}
   .case-home-side,.case-home-cta{grid-column:2/-1}
 }
@@ -330,7 +326,7 @@ button{border:none;background:none;cursor:pointer}
   .nav{padding-inline:16px}
   .service{grid-template-columns:1fr;gap:9px}
   .service-arrow{display:none}
-  .about-card,.contact-card,.case-detail-card{padding:20px}
+  .example-card,.example-note,.about-card,.contact-card,.case-detail-card{padding:20px}
 }
 @media (max-width:640px){
   .brand-name{display:none}
@@ -340,7 +336,7 @@ button{border:none;background:none;cursor:pointer}
   .section{padding:48px var(--mx)}
   .section-head h2{font-size:clamp(28px,10vw,40px)}
   .btn,.case-home-cta{width:100%}
-  .hero-cta,.contact-actions,.case-detail-actions{flex-direction:column}
+  .hero-cta,.example-actions,.contact-actions,.case-detail-actions{flex-direction:column}
   .case-home-item{grid-template-columns:1fr;gap:12px}
   .case-home-side,.case-home-cta{grid-column:auto}
   .whatsapp-float{right:14px;bottom:14px;padding:12px 16px;font-size:13px}
@@ -361,6 +357,7 @@ button{border:none;background:none;cursor:pointer}
   <nav class="nav-links" aria-label="Sections">
     <a href="#services" data-scroll="services">Services</a>
     <button type="button" data-open-cases>Case Studies</button>
+    <a href="#examples" data-scroll="examples">Examples</a>
     <a href="#process" data-scroll="process">Process</a>
     <a href="#about" data-scroll="about">About</a>
     <a href="#contact" data-scroll="contact">Contact</a>
@@ -370,7 +367,6 @@ button{border:none;background:none;cursor:pointer}
 
 <main id="main-content">
 
-  <!-- ══════════════ HOME PAGE ══════════════ -->
   <section class="page active" id="home-page">
 
     <section class="hero" id="top">
@@ -411,7 +407,6 @@ button{border:none;background:none;cursor:pointer}
       </div>
     </section>
 
-    <!-- SERVICES -->
     <section class="section reveal" id="services">
       <header class="section-head">
         <p class="eyebrow">Services</p>
@@ -457,7 +452,6 @@ button{border:none;background:none;cursor:pointer}
       </div>
     </section>
 
-    <!-- SELECTED WORK -->
     <section class="section reveal" id="featured-work">
       <header class="section-head">
         <p class="eyebrow">Selected Work</p>
@@ -470,28 +464,28 @@ button{border:none;background:none;cursor:pointer}
           <button class="btn btn-ghost" type="button" data-open-cases>View all case studies</button>
         </div>
         <div class="case-home-list">
-          <article class="case-home-item" tabindex="0" data-case-link="dental" aria-label="Open healthcare workflow case study">
+          <article class="case-home-item" tabindex="0" data-case-link="healthcare" aria-label="Open healthcare workflow case study">
             <div class="case-home-number">01</div>
             <div class="case-home-main">
-              <h3>A healthcare environment that needed clearer intake and less pressure on first-response workflows.</h3>
-              <p>A process-focused piece of work aimed at making incoming requests easier to route, manage, and act on consistently.</p>
+              <h3>A healthcare-facing workflow that needed calmer intake, clearer routing, and less pressure on first response.</h3>
+              <p>A process-focused project aimed at making incoming requests easier to manage, prioritise, and act on consistently.</p>
             </div>
             <div class="case-home-side">
               <span class="case-label">What changed</span>
-              <span class="case-quote">"Better visibility, clearer routing, and less mental load on the team handling first contact."</span>
+              <span class="case-quote">“Better visibility, clearer routing, and less mental load on the team handling first contact.”</span>
             </div>
             <span class="case-home-cta">Read the case study</span>
           </article>
 
-          <article class="case-home-item" tabindex="0" data-case-link="plumber" aria-label="Open lead workflow case study">
+          <article class="case-home-item" tabindex="0" data-case-link="leadflow" aria-label="Open lead workflow case study">
             <div class="case-home-number">02</div>
             <div class="case-home-main">
-              <h3>A business getting demand, but needing a cleaner digital path from enquiry to follow-up.</h3>
+              <h3>A growing business getting demand, but needing a cleaner digital path from enquiry to follow-up.</h3>
               <p>The work focused on improving visibility, reducing manual lead handling, and creating a smoother response flow.</p>
             </div>
             <div class="case-home-side">
               <span class="case-label">What changed</span>
-              <span class="case-quote">"Lead handling became easier to manage, faster to act on, and more consistent."</span>
+              <span class="case-quote">“Lead handling became easier to manage, faster to act on, and more consistent.”</span>
             </div>
             <span class="case-home-cta">Read the case study</span>
           </article>
@@ -504,7 +498,7 @@ button{border:none;background:none;cursor:pointer}
             </div>
             <div class="case-home-side">
               <span class="case-label">What changed</span>
-              <span class="case-quote">"A stronger delivery model, clearer product direction, and a more scalable way to build."</span>
+              <span class="case-quote">“A stronger delivery model, clearer product direction, and a more scalable way to build.”</span>
             </div>
             <span class="case-home-cta">Read the case study</span>
           </article>
@@ -512,7 +506,49 @@ button{border:none;background:none;cursor:pointer}
       </div>
     </section>
 
-    <!-- PROCESS -->
+    <section class="section reveal" id="examples">
+      <header class="section-head">
+        <p class="eyebrow">Examples</p>
+        <h2>Project examples that support broader digital work, not one narrow niche.</h2>
+      </header>
+      <div class="examples-grid">
+        <div class="example-card">
+          <h3>Project examples and demo directions.</h3>
+          <p>Instead of positioning around one template product, the site now supports broader examples that fit product, project, and automation work more naturally.</p>
+          <p>You can link any real demo, prototype, mini-app, landing page, or internal workflow concept here as proof of how you think and build.</p>
+          <div class="example-pill-row">
+            <span class="example-pill">UX prototypes</span>
+            <span class="example-pill">Landing pages</span>
+            <span class="example-pill">Workflow demos</span>
+            <span class="example-pill">Internal tools</span>
+          </div>
+          <ul class="example-list">
+            <li>
+              <strong>Digital product example</strong>
+              <span>A landing page, dashboard, onboarding flow, or internal interface that shows structure, usability, and implementation thinking.</span>
+            </li>
+            <li>
+              <strong>Project delivery example</strong>
+              <span>A project board, process map, documentation sample, or case-led breakdown that shows planning and coordination ability.</span>
+            </li>
+            <li>
+              <strong>Automation example</strong>
+              <span>A workflow demo showing form intake, routing, notifications, AI assistance, or connected systems working together.</span>
+            </li>
+          </ul>
+          <div class="example-actions">
+            <a class="btn btn-primary" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Discuss a project</a>
+            <a class="btn btn-ghost" href="mailto:rodhanala@gmail.com?subject=Project%20example%20enquiry">Ask for tailored examples</a>
+          </div>
+        </div>
+        <aside class="example-note">
+          <h3>How to use this section well.</h3>
+          <p>Keep this part flexible. If you create a stronger UI/UX concept, a better workflow automation demo, or a sharper product example, you can swap links without changing the whole positioning of the site.</p>
+          <p>That makes the website more future-proof and more credible across multiple digital roles.</p>
+        </aside>
+      </div>
+    </section>
+
     <section class="section reveal" id="process">
       <header class="section-head">
         <p class="eyebrow">Process</p>
@@ -542,7 +578,6 @@ button{border:none;background:none;cursor:pointer}
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section class="section reveal" id="about">
       <header class="section-head">
         <p class="eyebrow">About</p>
@@ -556,14 +591,13 @@ button{border:none;background:none;cursor:pointer}
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section class="section reveal" id="contact">
       <header class="section-head">
         <p class="eyebrow">Contact</p>
         <h2>If your business needs clearer product thinking, stronger delivery, or better systems, that is the right place to start.</h2>
       </header>
       <div class="contact-card">
-        <h3>Let's find the most useful next step.</h3>
+        <h3>Let’s find the most useful next step.</h3>
         <p>Whether you need support with digital product design and development, freelance digital project management, or AI systems and automation, the first step is understanding where the current friction is and what would create the most practical impact.</p>
         <div class="contact-actions">
           <a class="btn btn-primary" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Book a call</a>
@@ -580,7 +614,6 @@ button{border:none;background:none;cursor:pointer}
     </section>
   </section>
 
-  <!-- ══════════════ CASES PAGE ══════════════ -->
   <section class="page" id="cases-page">
     <section class="case-page-hero reveal">
       <button class="btn btn-ghost" type="button" data-go-home style="margin-bottom:24px">← Back to homepage</button>
@@ -592,85 +625,80 @@ button{border:none;background:none;cursor:pointer}
     </section>
 
     <section class="case-detail-wrap">
-      <!-- DENTAL -->
-      <article class="case-detail-card reveal" id="case-dental">
+      <article class="case-detail-card reveal" id="case-healthcare">
         <div class="case-detail-top">
           <span>Case 01</span>
           <span>Healthcare workflow</span>
         </div>
-        <h2>The healthcare workflow that needed a calmer intake process.</h2>
-        <p class="case-summary">This project started with a team doing its best to stay responsive, but incoming requests were arriving through too many channels at once. The pressure was not caused by a lack of effort — it came from a system that asked staff to remember, interpret, and chase too much manually.</p>
+        <h2>A healthcare-facing workflow that needed calmer intake and clearer routing.</h2>
+        <p class="case-summary">This project started with a team doing its best to stay responsive while requests were arriving through multiple paths. The issue was not effort. The issue was a digital flow that depended too heavily on manual interpretation, inconsistent triage, and too much remembering under pressure.</p>
         <div class="case-feeling">
-          <strong>What the team was feeling</strong>
-          <p>First-response work carried unnecessary mental load. Different types of requests could blend together, and the team needed a clearer process that felt more reliable day to day.</p>
+          <strong>What the work needed to solve</strong>
+          <p>Incoming requests needed to become easier to capture, easier to prioritise, and easier to pass through the right path without creating extra mental load for the team handling first response.</p>
         </div>
         <div class="case-grid">
           <div class="case-block">
             <h3>Challenge</h3>
-            <p>Requests were scattered across multiple channels, making it harder to route and prioritise them consistently.</p>
+            <p>Requests were scattered across different channels, which made urgency harder to spot and consistency harder to maintain.</p>
           </div>
           <div class="case-block">
             <h3>Approach</h3>
-            <p>The intake journey was mapped, simplified, and reorganised so first contact entered one clearer shared flow.</p>
+            <p>The intake journey was mapped, simplified, and reorganised so first contact could enter one clearer flow with better routing logic.</p>
           </div>
           <div class="case-block">
             <h3>What changed</h3>
-            <p>Routine requests became easier to process, urgent issues became easier to surface, and the team had less manual checking to do.</p>
+            <p>Routine items became easier to process, higher-priority requests became easier to surface, and the front-end workflow became less reactive.</p>
           </div>
           <div class="case-block">
             <h3>Result</h3>
-            <p>A calmer first-response process, better visibility across incoming contact, and less daily pressure on the team.</p>
+            <p>A calmer first-response process, stronger visibility across incoming requests, and less day-to-day pressure on the people managing the workflow.</p>
           </div>
         </div>
         <div class="case-tools">
-          <span>Make.com</span><span>Tally</span><span>Airtable</span><span>Calendly</span><span>OpenAI</span>
+          <span>Workflow mapping</span><span>Form design</span><span>Routing logic</span><span>Automation thinking</span><span>Process design</span>
         </div>
         <div class="case-detail-actions">
-          <a class="btn btn-primary" href="demos/dental.html" target="_blank" rel="noopener noreferrer">View live demo</a>
           <button class="btn btn-ghost" type="button" data-go-home>Back to homepage</button>
         </div>
       </article>
 
-      <!-- PLUMBER -->
-      <article class="case-detail-card reveal" id="case-plumber">
+      <article class="case-detail-card reveal" id="case-leadflow">
         <div class="case-detail-top">
           <span>Case 02</span>
           <span>Lead workflow</span>
         </div>
-        <h2>The business losing rhythm after first enquiry.</h2>
-        <p class="case-summary">The business was not struggling to be found. People were reaching out. The real problem started after that moment — when follow-up relied too much on memory, manual checking, and fragmented communication. The task was to remove the drag between interest and clear response.</p>
+        <h2>A business getting demand, but losing momentum after the first enquiry.</h2>
+        <p class="case-summary">The business was not struggling to generate interest. People were already reaching out. The friction appeared after that first moment, when follow-up relied too heavily on manual effort, scattered inputs, and unclear next steps. The task was to make the digital response path cleaner and more dependable.</p>
         <div class="case-feeling">
-          <strong>What the business was feeling</strong>
-          <p>There was enough demand to stay busy, but not enough structure to handle every lead with the same speed. That inconsistency made the whole process heavier than it needed to be.</p>
+          <strong>What the work needed to solve</strong>
+          <p>The business needed a more structured path from enquiry to response so opportunities would not feel messy, delayed, or overly dependent on someone remembering what to do next.</p>
         </div>
         <div class="case-grid">
           <div class="case-block">
             <h3>Challenge</h3>
-            <p>Leads were coming in, but the follow-up path depended too heavily on manual effort and often slowed down unnecessarily.</p>
+            <p>Enquiries were coming in, but the response path was too manual and too easy to slow down when attention moved elsewhere.</p>
           </div>
           <div class="case-block">
             <h3>Approach</h3>
-            <p>A cleaner landing path and shared lead structure were built so enquiries had one clear route into the business.</p>
+            <p>A clearer landing and intake path was shaped so requests had one reliable route into the business, with better visibility and cleaner handling.</p>
           </div>
           <div class="case-block">
             <h3>What changed</h3>
-            <p>The business gained a simpler way to see new opportunities, respond faster, and reduce friction in early follow-up.</p>
+            <p>The business gained a simpler way to see new opportunities, respond more consistently, and reduce friction in early follow-up.</p>
           </div>
           <div class="case-block">
             <h3>Result</h3>
-            <p>Better lead visibility, quicker acknowledgement, and stronger consistency throughout the early customer journey.</p>
+            <p>Better lead visibility, quicker acknowledgement, and a stronger customer journey from first contact onward.</p>
           </div>
         </div>
         <div class="case-tools">
-          <span>Framer</span><span>Tally</span><span>Airtable</span><span>Make.com</span><span>Resend</span>
+          <span>Landing flow</span><span>Lead capture</span><span>Response logic</span><span>Project structuring</span><span>Automation support</span>
         </div>
         <div class="case-detail-actions">
-          <a class="btn btn-primary" href="demos/leadflow.html" target="_blank" rel="noopener noreferrer">View live demo</a>
           <button class="btn btn-ghost" type="button" data-go-home>Back to homepage</button>
         </div>
       </article>
 
-      <!-- PRODUCT -->
       <article class="case-detail-card reveal" id="case-product">
         <div class="case-detail-top">
           <span>Case 03</span>
@@ -751,18 +779,17 @@ const revealEls   = document.querySelectorAll('.reveal');
 
 function openCase(caseId, push){
   detailCards.forEach(c => c.classList.remove('active'));
-
   const target = document.getElementById('case-' + caseId);
   if(target) target.classList.add('active');
 
   const titles = {
-    dental:  'The healthcare workflow that needed a calmer intake process.',
-    plumber: 'The business losing rhythm after first enquiry.',
-    product: 'A reusable digital product approach built for faster delivery.'
+    healthcare: 'A healthcare-facing workflow that needed calmer intake and clearer routing.',
+    leadflow: 'A business getting demand, but losing momentum after the first enquiry.',
+    product: 'A reusable digital product approach built for faster, clearer delivery.'
   };
   const subs = {
-    dental:  'A closer look at the challenge, the approach, and why the change mattered.',
-    plumber: 'From scattered leads to a cleaner, faster follow-up system.',
+    healthcare: 'A closer look at the challenge, the approach, and why the change mattered.',
+    leadflow: 'From scattered enquiries to a cleaner and more dependable response path.',
     product: 'How product structure and repeatability created a stronger delivery model.'
   };
 
@@ -789,7 +816,7 @@ function goHome(push){
 }
 
 document.querySelectorAll('[data-open-cases]').forEach(btn => {
-  btn.addEventListener('click', () => openCase('dental'));
+  btn.addEventListener('click', () => openCase('healthcare'));
 });
 
 document.querySelectorAll('[data-case-link]').forEach(item => {
@@ -813,7 +840,7 @@ document.querySelectorAll('[data-scroll]').forEach(link => {
   link.addEventListener('click', function(e){
     e.preventDefault();
     const id = this.getAttribute('data-scroll');
-    if(!homePage.classList.contains('active')){ goHome(false); }
+    if(!homePage.classList.contains('active')) goHome(false);
     setTimeout(() => {
       const el = document.getElementById(id);
       if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
@@ -822,7 +849,7 @@ document.querySelectorAll('[data-scroll]').forEach(link => {
 });
 
 window.addEventListener('popstate', () => {
-  if(location.hash === '#case-studies') openCase('dental', false);
+  if(location.hash === '#case-studies') openCase('healthcare', false);
   else goHome(false);
 });
 
