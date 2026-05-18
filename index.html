@@ -3,62 +3,63 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Rohith Dhanala — AI Systems, Digital Products, Project Delivery</title>
-  <meta name="description" content="Portfolio of Rohith Dhanala — AI systems, digital products, workflow platforms, and project-led business delivery." />
+  <title>Rohith Dhanala — AI Systems, Products & Live Demo Projects</title>
+  <meta name="description" content="Portfolio of Rohith Dhanala featuring advanced projects, separate case study pages, and live demo apps in a single deployable file." />
   <meta name="theme-color" content="#0f1218" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
 
   <style>
     :root,
     [data-theme="light"]{
-      --bg:#f5f1ea;
+      --bg:#f5f2eb;
       --surface:#fcfaf6;
-      --surface-2:#f0e9de;
-      --surface-3:#e7dccd;
-      --line:#d6cab9;
-      --text:#181410;
-      --text-soft:#655a4d;
-      --text-faint:#968a7b;
-      --accent:#b66c37;
-      --accent-strong:#984f1f;
-      --accent-soft:rgba(182,108,55,.12);
-      --green:#4b7d62;
-      --blue:#5578a5;
-      --purple:#7968b4;
+      --surface-2:#f1ece4;
+      --surface-3:#e5ddd1;
+      --line:#d7cebf;
+      --text:#16130f;
+      --text-soft:#665b4d;
+      --text-faint:#948878;
+      --accent:#b86f39;
+      --accent-strong:#995627;
+      --accent-soft:rgba(184,111,57,.12);
+      --green:#4f7d63;
+      --blue:#557fa6;
+      --purple:#7b67b6;
+      --danger:#9f4f4f;
       --radius-sm:14px;
-      --radius-md:22px;
+      --radius-md:24px;
       --radius-lg:34px;
-      --shadow-sm:0 10px 28px rgba(22,16,11,.06);
-      --shadow-md:0 24px 70px rgba(22,16,11,.10);
-      --font-display:"Fraunces", Georgia, serif;
-      --font-body:"Inter", system-ui, sans-serif;
-      --content:1280px;
+      --shadow-sm:0 10px 30px rgba(17,12,7,.06);
+      --shadow-md:0 24px 80px rgba(17,12,7,.12);
+      --font-body:"Satoshi",system-ui,sans-serif;
+      --font-display:"Clash Display",system-ui,sans-serif;
+      --max:1280px;
       --ease:cubic-bezier(.16,1,.3,1);
     }
 
     [data-theme="dark"]{
       --bg:#0f1218;
       --surface:#151b24;
-      --surface-2:#1b2430;
-      --surface-3:#263140;
-      --line:#2d3948;
-      --text:#f3ede5;
-      --text-soft:#c3b8ab;
-      --text-faint:#908679;
-      --accent:#dc8a53;
-      --accent-strong:#f0a16f;
-      --accent-soft:rgba(220,138,83,.12);
-      --green:#689e7b;
-      --blue:#7095c7;
-      --purple:#a18ee0;
-      --shadow-sm:0 12px 30px rgba(0,0,0,.24);
-      --shadow-md:0 28px 80px rgba(0,0,0,.42);
+      --surface-2:#1c2430;
+      --surface-3:#283242;
+      --line:#2c3848;
+      --text:#f2ede6;
+      --text-soft:#c0b5a9;
+      --text-faint:#908577;
+      --accent:#df8b52;
+      --accent-strong:#f0a26e;
+      --accent-soft:rgba(223,139,82,.12);
+      --green:#76a887;
+      --blue:#789dcf;
+      --purple:#a38de5;
+      --danger:#d27a7a;
+      --shadow-sm:0 12px 36px rgba(0,0,0,.24);
+      --shadow-md:0 28px 90px rgba(0,0,0,.44);
     }
 
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    *{box-sizing:border-box;margin:0;padding:0}
     html{
       scroll-behavior:smooth;
       -webkit-text-size-adjust:none;
@@ -68,113 +69,110 @@
       min-height:100dvh;
       font-family:var(--font-body);
       background:
-        radial-gradient(circle at top right, rgba(220,138,83,.08), transparent 24%),
-        radial-gradient(circle at top left, rgba(112,149,199,.06), transparent 20%),
+        radial-gradient(circle at top right, rgba(223,139,82,.08), transparent 24%),
+        radial-gradient(circle at top left, rgba(120,157,207,.06), transparent 20%),
         var(--bg);
       color:var(--text);
-      line-height:1.68;
+      line-height:1.7;
+      overflow-x:hidden;
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
-      overflow-x:hidden;
     }
-    img,svg,video,canvas{display:block;max-width:100%;height:auto}
-    a{text-decoration:none;color:inherit}
+    img,svg,canvas{display:block;max-width:100%;height:auto}
     button,input,textarea,select{font:inherit;color:inherit}
+    a{text-decoration:none;color:inherit}
     button{background:none;border:none;cursor:pointer}
-    ::selection{background:rgba(220,138,83,.22);color:var(--text)}
     :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
+    ::selection{background:rgba(223,139,82,.2);color:var(--text)}
 
     .skip{
       position:absolute;
       left:-999px;
-      top:12px;
-      z-index:1000;
+      top:10px;
+      z-index:999;
       background:#000;
       color:#fff;
-      padding:10px 15px;
+      padding:10px 14px;
       border-radius:999px;
     }
-    .skip:focus{left:12px}
+    .skip:focus{left:10px}
+
+    .site-page{display:none}
+    .site-page.active{display:block}
 
     .wrap{
-      max-width:var(--content);
+      max-width:var(--max);
       margin:0 auto;
-      padding:0 clamp(18px,4vw,42px);
+      padding:0 clamp(18px,4vw,40px);
     }
 
     .topbar{
       position:sticky;
       top:0;
-      z-index:100;
-      backdrop-filter:blur(16px);
-      -webkit-backdrop-filter:blur(16px);
-      background:color-mix(in srgb, var(--bg) 84%, transparent);
-      border-bottom:1px solid color-mix(in srgb, var(--line) 84%, transparent);
+      z-index:120;
+      background:color-mix(in srgb,var(--bg) 82%, transparent);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid color-mix(in srgb,var(--line) 84%, transparent);
     }
     .topbar-inner{
-      max-width:var(--content);
+      max-width:var(--max);
       margin:0 auto;
-      padding:14px clamp(18px,4vw,42px);
+      padding:14px clamp(18px,4vw,40px);
       display:grid;
       grid-template-columns:auto 1fr auto;
-      align-items:center;
       gap:16px;
+      align-items:center;
     }
-
     .brand{
       display:flex;
-      align-items:center;
       gap:12px;
+      align-items:center;
       min-width:0;
     }
     .brand-mark{
-      width:40px;height:40px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg,var(--surface),var(--surface-2));
+      width:42px;height:42px;
+      border-radius:14px;
       display:grid;
       place-items:center;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,var(--surface),var(--surface-2));
       box-shadow:var(--shadow-sm);
-      flex:0 0 40px;
+      flex:0 0 42px;
     }
-    .brand-mark svg{width:20px;height:20px}
+    .brand-text{min-width:0}
     .brand-name{
-      font-size:13px;
-      font-weight:800;
+      font-size:14px;
+      font-weight:900;
       letter-spacing:.05em;
       text-transform:uppercase;
     }
     .brand-role{
       font-size:11px;
+      color:var(--text-faint);
       letter-spacing:.13em;
       text-transform:uppercase;
-      color:var(--text-faint);
-      margin-top:2px;
     }
 
     .nav{
-      justify-self:center;
       display:flex;
-      align-items:center;
+      justify-content:center;
       gap:18px;
       flex-wrap:wrap;
     }
-    .nav a{
+    .nav a,.nav button{
       font-size:14px;
       color:var(--text-soft);
-      transition:color .2s ease, transform .2s ease;
+      transition:color .2s ease,transform .2s ease;
     }
-    .nav a:hover{
+    .nav a:hover,.nav button:hover{
       color:var(--text);
       transform:translateY(-1px);
     }
-
-    .topbar-actions{
+    .actions{
       display:flex;
       align-items:center;
       gap:10px;
     }
-
     .theme-toggle{
       width:42px;height:42px;
       display:grid;
@@ -186,15 +184,15 @@
     }
 
     .btn{
+      min-height:46px;
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:10px;
-      min-height:46px;
       padding:12px 18px;
       border-radius:999px;
       border:1px solid var(--line);
-      transition:transform .25s var(--ease), background .2s ease, border-color .2s ease, box-shadow .25s var(--ease), color .2s ease;
+      transition:transform .26s var(--ease),background .2s ease,border-color .2s ease,box-shadow .26s var(--ease),color .2s ease;
     }
     .btn:hover{transform:translateY(-2px)}
     .btn-primary{
@@ -212,13 +210,19 @@
       background:var(--surface);
       color:var(--text);
     }
+    .btn-small{
+      min-height:38px;
+      padding:9px 14px;
+      font-size:13px;
+      border-radius:999px;
+    }
 
     .hero{
-      padding:clamp(42px,7vw,92px) 0 clamp(34px,6vw,70px);
+      padding:clamp(44px,7vw,90px) 0 clamp(36px,6vw,70px);
     }
     .hero-grid{
       display:grid;
-      grid-template-columns:minmax(0,1.15fr) minmax(300px,.72fr);
+      grid-template-columns:minmax(0,1.12fr) minmax(320px,.76fr);
       gap:24px;
       align-items:end;
     }
@@ -228,10 +232,10 @@
       gap:10px;
       margin-bottom:22px;
       font-size:11px;
-      letter-spacing:.2em;
+      letter-spacing:.22em;
       text-transform:uppercase;
-      color:var(--text-faint);
       font-weight:800;
+      color:var(--text-faint);
     }
     .eyebrow::before{
       content:"";
@@ -240,28 +244,26 @@
       background:var(--accent);
       box-shadow:0 0 0 7px var(--accent-soft);
     }
-
     .hero h1{
       font-family:var(--font-display);
-      font-size:clamp(40px,7vw,78px);
-      line-height:.98;
-      letter-spacing:-.045em;
-      font-weight:600;
-      max-width:11ch;
+      font-size:clamp(42px,7vw,84px);
+      line-height:.93;
+      letter-spacing:-.05em;
+      max-width:10ch;
     }
-    .hero h1 .tone{color:var(--accent)}
+    .hero .tone{color:var(--accent)}
     .hero p{
-      margin-top:20px;
+      margin-top:18px;
       max-width:760px;
       color:var(--text-soft);
       font-size:clamp(16px,1.7vw,19px);
       line-height:1.9;
     }
     .hero-actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
       margin-top:28px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
     }
 
     .hero-side{
@@ -269,50 +271,49 @@
       border-radius:var(--radius-lg);
       padding:24px;
       background:
-        radial-gradient(circle at top right, rgba(220,138,83,.14), transparent 32%),
+        radial-gradient(circle at top right, rgba(223,139,82,.14), transparent 34%),
         linear-gradient(180deg,var(--surface),var(--surface-2));
       box-shadow:var(--shadow-md);
     }
     .hero-side h2{
       font-family:var(--font-display);
       font-size:clamp(24px,3vw,34px);
-      line-height:1.03;
-      font-weight:600;
+      line-height:1;
       margin-bottom:10px;
     }
     .hero-side p{
-      margin:0 0 14px;
       color:var(--text-soft);
       font-size:15px;
       line-height:1.8;
+      margin-bottom:16px;
     }
-    .quick-points{
+    .hero-points{
       display:grid;
       gap:10px;
     }
-    .quick-point{
-      border:1px solid var(--line);
-      border-radius:18px;
-      background:color-mix(in srgb,var(--surface) 78%, transparent);
+    .hero-point{
       padding:14px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:color-mix(in srgb,var(--surface) 80%, transparent);
     }
-    .quick-point strong{
+    .hero-point strong{
       display:block;
-      margin-bottom:5px;
+      margin-bottom:4px;
       font-size:11px;
       letter-spacing:.15em;
       text-transform:uppercase;
       color:var(--accent);
     }
-    .quick-point span{
-      color:var(--text-soft);
+    .hero-point span{
       font-size:14px;
+      color:var(--text-soft);
       line-height:1.6;
     }
 
     .section{
-      padding:clamp(46px,7vw,94px) 0;
-      border-top:1px solid color-mix(in srgb, var(--line) 76%, transparent);
+      padding:clamp(46px,7vw,92px) 0;
+      border-top:1px solid color-mix(in srgb,var(--line) 76%, transparent);
     }
     .section-head{
       display:grid;
@@ -321,17 +322,16 @@
     }
     .section-label{
       font-size:11px;
-      letter-spacing:.2em;
+      letter-spacing:.22em;
       text-transform:uppercase;
       color:var(--accent);
       font-weight:800;
     }
     .section-head h2{
       font-family:var(--font-display);
-      font-size:clamp(30px,4.2vw,52px);
-      line-height:1.02;
-      letter-spacing:-.04em;
-      font-weight:600;
+      font-size:clamp(30px,4vw,52px);
+      line-height:.98;
+      letter-spacing:-.045em;
       max-width:12ch;
     }
     .section-head p{
@@ -340,474 +340,169 @@
       line-height:1.85;
     }
 
-    .work-index{
-      display:grid;
-      gap:12px;
-      margin-bottom:26px;
-    }
-    .work-link{
-      display:grid;
-      grid-template-columns:80px minmax(0,1.2fr) minmax(0,.9fr) auto;
-      gap:20px;
-      align-items:start;
-      padding:20px 0;
-      border-top:1px solid color-mix(in srgb, var(--line) 72%, transparent);
-    }
-    .work-link:first-child{border-top:0}
-    .work-no{
-      font-family:var(--font-display);
-      font-size:34px;
-      line-height:1;
-      color:var(--accent);
-    }
-    .work-main h3{
-      font-family:var(--font-display);
-      font-size:clamp(24px,3vw,34px);
-      line-height:1.04;
-      letter-spacing:-.03em;
-      font-weight:600;
-      margin-bottom:7px;
-    }
-    .work-main p{
-      color:var(--text-soft);
-      line-height:1.75;
-      max-width:54ch;
-    }
-    .work-meta{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:12px;
-    }
-    .meta small{
-      display:block;
-      margin-bottom:5px;
-      font-size:10px;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:var(--text-faint);
-      font-weight:800;
-    }
-    .meta span{
-      display:block;
-      font-size:14px;
-      line-height:1.55;
-      color:var(--text);
-    }
-    .work-jump{
-      align-self:center;
-      justify-self:end;
-      display:inline-flex;
-      align-items:center;
-      gap:9px;
-      color:var(--text-soft);
-      font-size:12px;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-    }
-    .work-jump i{
-      width:36px;height:36px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      display:grid;
-      place-items:center;
-      font-style:normal;
-      background:var(--surface);
-    }
-
-    .case-study{
+    .project-list{
       display:grid;
       gap:18px;
-      padding:28px 0 0;
     }
-    .case-card{
+    .project-item{
       border:1px solid var(--line);
-      border-radius:32px;
+      border-radius:30px;
       background:linear-gradient(180deg,var(--surface),var(--surface-2));
       box-shadow:var(--shadow-sm);
       overflow:hidden;
+      transition:transform .28s var(--ease), box-shadow .28s var(--ease), border-color .2s ease;
     }
-    .case-top{
+    .project-item:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-md);
+      border-color:color-mix(in srgb,var(--accent) 35%, var(--line));
+    }
+    .project-grid{
       display:grid;
-      grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);
-      gap:18px;
-      padding:24px;
-      border-bottom:1px solid var(--line);
-    }
-    .case-overview h3{
-      font-family:var(--font-display);
-      font-size:clamp(28px,3.3vw,42px);
-      line-height:1;
-      letter-spacing:-.035em;
-      font-weight:600;
-      margin-bottom:10px;
-    }
-    .case-overview p{
-      color:var(--text-soft);
-      line-height:1.82;
-      max-width:64ch;
-    }
-
-    .case-brief{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:12px;
-    }
-    .brief{
-      border:1px solid var(--line);
-      border-radius:20px;
-      padding:16px;
-      background:color-mix(in srgb, var(--surface) 80%, transparent);
-    }
-    .brief strong{
-      display:block;
-      font-size:10px;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:var(--accent);
-      margin-bottom:7px;
-    }
-    .brief span{
-      color:var(--text-soft);
-      font-size:14px;
-      line-height:1.6;
-    }
-
-    .case-grid{
-      display:grid;
-      grid-template-columns:repeat(12,1fr);
-      gap:16px;
-      padding:24px;
-    }
-    .panel{
-      border:1px solid var(--line);
-      border-radius:26px;
-      padding:20px;
-      background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface-2) 84%, transparent));
-      min-width:0;
-    }
-    .span-3{grid-column:span 3}
-    .span-4{grid-column:span 4}
-    .span-5{grid-column:span 5}
-    .span-6{grid-column:span 6}
-    .span-7{grid-column:span 7}
-    .span-8{grid-column:span 8}
-    .span-12{grid-column:span 12}
-
-    .panel-label{
-      font-size:10px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--accent);
-      font-weight:800;
-      margin-bottom:10px;
-    }
-    .panel h4{
-      font-family:var(--font-display);
-      font-size:26px;
-      line-height:1.03;
-      letter-spacing:-.03em;
-      font-weight:600;
-      margin-bottom:10px;
-    }
-    .panel p{
-      color:var(--text-soft);
-      line-height:1.8;
-    }
-
-    .bullet-list{
-      list-style:none;
-      display:grid;
-      gap:9px;
-      margin-top:14px;
-    }
-    .bullet-list li{
-      position:relative;
-      padding-left:16px;
-      color:var(--text-soft);
-      line-height:1.72;
-    }
-    .bullet-list li::before{
-      content:"";
-      position:absolute;
-      left:0;
-      top:.72em;
-      width:7px;height:7px;
-      border-radius:50%;
-      background:var(--accent);
-    }
-
-    .process-rail{
-      display:grid;
-      gap:14px;
-    }
-    .process-step{
-      border:1px solid var(--line);
-      border-radius:20px;
-      background:var(--surface);
-      padding:16px;
-    }
-    .process-step strong{
-      display:block;
-      margin-bottom:6px;
-      font-size:11px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:var(--accent);
-    }
-    .process-step span{
-      color:var(--text-soft);
-      font-size:14px;
-      line-height:1.6;
-    }
-
-    .figma-board{
-      border:1px solid var(--line);
-      border-radius:22px;
-      overflow:hidden;
-      background:#fff;
-      color:#111;
-      box-shadow:var(--shadow-sm);
-    }
-    .figma-bar{
-      height:42px;
-      padding:0 14px;
-      border-bottom:1px solid #e7e7e7;
-      background:#fafafa;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-    }
-    .figma-dots{
-      display:flex;
-      gap:6px;
+      grid-template-columns:minmax(320px,.9fr) minmax(0,1.1fr) auto;
+      gap:22px;
+      padding:22px;
       align-items:center;
     }
-    .figma-dots span{
-      width:9px;height:9px;border-radius:50%;
-      background:#d8d8d8;
-    }
-    .figma-title{
-      font-size:11px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:#666;
-      font-weight:800;
-    }
-    .board-body{
-      padding:16px;
-      background:
-        linear-gradient(to right, rgba(0,0,0,.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0,0,0,.04) 1px, transparent 1px),
-        #f7f7f7;
-      background-size:20px 20px;
-      display:grid;
-      gap:14px;
-      min-height:230px;
-    }
-
-    .wire-layout{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:14px;
-      align-items:start;
-    }
-    .wire-screen{
-      background:#fff;
-      border:1px solid #dcdcdc;
-      border-radius:18px;
-      overflow:hidden;
-      box-shadow:0 8px 22px rgba(0,0,0,.05);
-    }
-    .wire-top{
-      height:34px;
-      background:#f3f3f3;
-      border-bottom:1px solid #e6e6e6;
-      display:flex;
-      align-items:center;
-      padding:0 10px;
-      gap:6px;
-    }
-    .wire-top span{
-      width:7px;height:7px;border-radius:50%;
-      background:#d0d0d0;
-    }
-    .wire-inner{
+    .project-visual{
+      border:1px solid var(--line);
+      border-radius:24px;
       padding:12px;
-      display:grid;
-      gap:10px;
-    }
-    .line{
-      height:10px;
-      border-radius:999px;
-      background:#e4e4e4;
-    }
-    .line.s{width:34%}
-    .line.m{width:62%}
-    .line.l{width:100%}
-    .card-row{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:8px;
-    }
-    .mini-card{
-      height:60px;
-      border-radius:12px;
-      border:1px dashed #d6d6d6;
-      background:#fafafa;
-    }
-
-    .flow-map{
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:14px;
-      align-items:center;
-      min-height:210px;
-    }
-    .flow-node{
-      background:#fff;
-      border:1px solid #dddddd;
-      border-radius:18px;
-      padding:14px;
-      box-shadow:0 8px 20px rgba(0,0,0,.05);
-      display:grid;
-      gap:8px;
-      position:relative;
-    }
-    .flow-node::after{
-      content:"";
-      position:absolute;
-      top:50%;
-      right:-14px;
-      width:14px;
-      height:2px;
-      background:#cfcfcf;
-      transform:translateY(-50%);
-    }
-    .flow-node:last-child::after{display:none}
-    .node-chip{
-      display:inline-flex;
-      width:max-content;
-      padding:5px 8px;
-      border-radius:999px;
-      background:#f1f1f1;
-      font-size:10px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:#666;
-      font-weight:800;
-    }
-
-    .mockup-grid{
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:14px;
-      align-items:start;
-    }
-    .browser-mock{
-      background:#fff;
-      border:1px solid #dddddd;
-      border-radius:20px;
+      background:linear-gradient(180deg,color-mix(in srgb,var(--surface) 82%, #fff 18%), var(--surface-2));
+      min-height:220px;
       overflow:hidden;
-      box-shadow:0 10px 26px rgba(0,0,0,.06);
     }
-    .browser-top{
-      height:40px;
-      background:#f4f4f4;
-      border-bottom:1px solid #e6e6e6;
+    .mini-browser{
+      border:1px solid var(--line);
+      border-radius:18px;
+      overflow:hidden;
+      height:100%;
+      background:var(--surface);
+      display:grid;
+      grid-template-rows:38px 1fr;
+    }
+    .mini-top{
+      border-bottom:1px solid var(--line);
+      background:color-mix(in srgb,var(--surface-2) 80%, transparent);
       display:flex;
       align-items:center;
       justify-content:space-between;
       padding:0 12px;
     }
-    .address{
-      height:12px;
-      width:46%;
-      border-radius:999px;
-      background:#dedede;
+    .dots{display:flex;gap:6px}
+    .dots span{
+      width:8px;height:8px;border-radius:50%;
+      background:color-mix(in srgb,var(--text-faint) 55%, transparent);
     }
-    .browser-body{
+    .mini-address{
+      width:42%;
+      height:10px;
+      border-radius:999px;
+      background:color-mix(in srgb,var(--line) 85%, transparent);
+    }
+    .mini-body{
       padding:14px;
       display:grid;
       gap:10px;
-      min-height:210px;
-      background:linear-gradient(180deg,#fff,#fafafa);
+      background:
+        radial-gradient(circle at top right, rgba(223,139,82,.12), transparent 28%),
+        linear-gradient(180deg,var(--surface), color-mix(in srgb,var(--surface-2) 88%, transparent));
     }
     .hero-strip{
-      min-height:90px;
+      min-height:82px;
       border-radius:16px;
-      background:linear-gradient(135deg, rgba(220,138,83,.18), rgba(112,149,199,.18));
-      border:1px solid #ebe5de;
+      border:1px solid color-mix(in srgb,var(--line) 85%, transparent);
+      background:linear-gradient(135deg, rgba(223,139,82,.18), rgba(120,157,207,.14));
       padding:12px;
       display:grid;
-      gap:10px;
       align-content:start;
+      gap:10px;
     }
-    .stat-row{
+    .line{
+      height:10px;
+      border-radius:999px;
+      background:color-mix(in srgb,var(--line) 90%, transparent);
+    }
+    .line.s{width:34%}
+    .line.m{width:60%}
+    .line.l{width:100%}
+    .stats3{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:8px;
     }
-    .stat-box{
-      min-height:62px;
+    .box{
+      min-height:56px;
       border-radius:14px;
-      background:#fff;
-      border:1px solid #ececec;
+      border:1px solid color-mix(in srgb,var(--line) 82%, transparent);
+      background:color-mix(in srgb,var(--surface) 86%, transparent);
     }
-    .mobile-mock{
-      width:100%;
-      max-width:240px;
-      margin-left:auto;
-      background:#0f1115;
-      border-radius:28px;
-      padding:10px;
-      box-shadow:0 16px 36px rgba(0,0,0,.18);
-    }
-    .mobile-screen{
-      min-height:290px;
-      border-radius:20px;
-      background:linear-gradient(180deg,#fbfbfb,#f1f1f1);
-      border:1px solid #242832;
-      padding:12px;
+
+    .project-copy{
+      min-width:0;
       display:grid;
       gap:10px;
-      align-content:start;
     }
-
-    .caption{
-      margin-top:12px;
-      font-size:13px;
-      color:var(--text-soft);
-      line-height:1.7;
-    }
-
-    .outcome-list{
-      display:grid;
-      gap:12px;
-    }
-    .outcome{
+    .project-topline{
       display:flex;
-      gap:12px;
-      align-items:flex-start;
-      border-top:1px solid color-mix(in srgb, var(--line) 74%, transparent);
-      padding-top:12px;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
     }
-    .outcome:first-child{border-top:0;padding-top:0}
-    .outcome-badge{
-      min-width:40px;height:40px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      background:var(--accent-soft);
+    .project-count{
+      font-family:var(--font-display);
+      font-size:28px;
       color:var(--accent);
-      border:1px solid rgba(220,138,83,.2);
-      font-weight:800;
-      font-size:12px;
+      line-height:1;
     }
-    .outcome p{margin:0}
+    .project-badge{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--surface);
+      color:var(--text-faint);
+      font-size:11px;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      font-weight:800;
+    }
+    .project-copy h3{
+      font-family:var(--font-display);
+      font-size:clamp(26px,3vw,38px);
+      line-height:1;
+      letter-spacing:-.04em;
+    }
+    .project-copy p{
+      color:var(--text-soft);
+      line-height:1.82;
+      max-width:62ch;
+    }
+    .tech-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      list-style:none;
+      margin-top:2px;
+    }
+    .tech-list li{
+      padding:8px 11px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:color-mix(in srgb,var(--surface) 84%, transparent);
+      font-size:11px;
+      color:var(--text-faint);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-weight:800;
+    }
+    .project-actions{
+      display:grid;
+      gap:10px;
+      align-self:center;
+      justify-items:end;
+    }
 
-    .services-grid{
+    .service-grid{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
       gap:16px;
@@ -822,9 +517,7 @@
     .service-card h3{
       font-family:var(--font-display);
       font-size:28px;
-      line-height:1.04;
-      letter-spacing:-.03em;
-      font-weight:600;
+      line-height:1;
       margin-bottom:10px;
     }
     .service-card p{
@@ -832,27 +525,10 @@
       line-height:1.8;
       margin-bottom:14px;
     }
-    .tag-list{
-      list-style:none;
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
-    .tag-list li{
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:var(--surface);
-      color:var(--text-faint);
-      font-size:11px;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-weight:800;
-    }
 
     .about-grid{
       display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(260px,.68fr);
+      grid-template-columns:minmax(0,1fr) minmax(260px,.7fr);
       gap:18px;
     }
     .about-card{
@@ -863,15 +539,13 @@
     }
     .about-card h3{
       font-family:var(--font-display);
-      font-size:32px;
-      line-height:1.04;
-      letter-spacing:-.03em;
-      font-weight:600;
+      font-size:30px;
+      line-height:1;
       margin-bottom:10px;
     }
     .about-card p{
       color:var(--text-soft);
-      line-height:1.84;
+      line-height:1.82;
       margin-bottom:12px;
     }
 
@@ -880,16 +554,15 @@
       border-radius:34px;
       padding:28px;
       background:
-        radial-gradient(circle at top right, rgba(220,138,83,.1), transparent 30%),
+        radial-gradient(circle at top right, rgba(223,139,82,.1), transparent 30%),
         linear-gradient(180deg,var(--surface),var(--surface-2));
       box-shadow:var(--shadow-md);
     }
     .contact-card h2{
       font-family:var(--font-display);
       font-size:clamp(30px,4vw,50px);
-      line-height:1.02;
+      line-height:.98;
       letter-spacing:-.04em;
-      font-weight:600;
       max-width:12ch;
       margin-bottom:12px;
     }
@@ -900,24 +573,12 @@
     }
     .contact-actions{
       display:flex;
-      flex-wrap:wrap;
       gap:12px;
+      flex-wrap:wrap;
       margin-top:22px;
-    }
-    .contact-meta{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:14px;
-      margin-top:22px;
-    }
-    .contact-meta .meta{
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:15px;
-      background:color-mix(in srgb, var(--surface) 80%, transparent);
     }
 
-    footer{
+    .footer{
       padding:24px 0 34px;
       color:var(--text-faint);
       font-size:13px;
@@ -931,40 +592,519 @@
       flex-wrap:wrap;
     }
 
+    .subpage-hero{
+      padding:34px 0 18px;
+    }
+    .back-link{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:18px;
+      color:var(--text-soft);
+      font-size:14px;
+    }
+    .subpage-hero h1{
+      font-family:var(--font-display);
+      font-size:clamp(36px,5.2vw,70px);
+      line-height:.95;
+      letter-spacing:-.05em;
+      max-width:12ch;
+      margin-bottom:14px;
+    }
+    .subpage-hero p{
+      max-width:860px;
+      color:var(--text-soft);
+      line-height:1.88;
+    }
+
+    .case-layout{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(280px,.36fr);
+      gap:18px;
+      padding:24px 0 70px;
+    }
+    .case-main{
+      display:grid;
+      gap:18px;
+    }
+    .case-card{
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:linear-gradient(180deg,var(--surface),var(--surface-2));
+      box-shadow:var(--shadow-sm);
+      overflow:hidden;
+    }
+    .case-card-inner{padding:22px}
+    .case-card h2{
+      font-family:var(--font-display);
+      font-size:clamp(26px,3.2vw,38px);
+      line-height:1;
+      margin-bottom:10px;
+    }
+    .case-card p{
+      color:var(--text-soft);
+      line-height:1.82;
+    }
+
+    .figma-board{
+      margin-top:16px;
+      border:1px solid var(--line);
+      border-radius:22px;
+      overflow:hidden;
+      background:var(--surface);
+    }
+    .figma-bar{
+      height:42px;
+      border-bottom:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 14px;
+      background:color-mix(in srgb,var(--surface-2) 80%, transparent);
+    }
+    .figma-title{
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--text-faint);
+      font-weight:800;
+    }
+    .figma-body{
+      padding:16px;
+      display:grid;
+      gap:14px;
+      min-height:240px;
+      background:
+        linear-gradient(to right, color-mix(in srgb,var(--line) 35%, transparent) 1px, transparent 1px),
+        linear-gradient(to bottom, color-mix(in srgb,var(--line) 35%, transparent) 1px, transparent 1px),
+        color-mix(in srgb,var(--surface) 85%, transparent);
+      background-size:20px 20px;
+    }
+
+    .wire-layout{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+    }
+    .wire-screen{
+      border:1px solid var(--line);
+      border-radius:18px;
+      overflow:hidden;
+      background:var(--surface);
+      box-shadow:var(--shadow-sm);
+    }
+    .wire-top{
+      height:34px;
+      border-bottom:1px solid var(--line);
+      display:flex;
+      gap:6px;
+      align-items:center;
+      padding:0 10px;
+      background:color-mix(in srgb,var(--surface-2) 84%, transparent);
+    }
+    .wire-top span{
+      width:7px;height:7px;border-radius:50%;
+      background:color-mix(in srgb,var(--text-faint) 56%, transparent);
+    }
+    .wire-inner{
+      padding:12px;
+      display:grid;
+      gap:10px;
+    }
+    .mini-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+    }
+    .mini-card{
+      height:60px;
+      border-radius:12px;
+      border:1px dashed color-mix(in srgb,var(--line) 85%, transparent);
+      background:color-mix(in srgb,var(--surface-2) 76%, transparent);
+    }
+
+    .flow-map{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:14px;
+      align-items:center;
+    }
+    .flow-node{
+      position:relative;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:var(--surface);
+      padding:14px;
+      display:grid;
+      gap:8px;
+      box-shadow:var(--shadow-sm);
+    }
+    .flow-node::after{
+      content:"";
+      position:absolute;
+      right:-14px;
+      top:50%;
+      transform:translateY(-50%);
+      width:14px;
+      height:2px;
+      background:color-mix(in srgb,var(--line) 90%, transparent);
+    }
+    .flow-node:last-child::after{display:none}
+    .node-chip{
+      display:inline-flex;
+      width:max-content;
+      padding:5px 8px;
+      border-radius:999px;
+      background:var(--surface-2);
+      border:1px solid var(--line);
+      font-size:10px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--text-faint);
+      font-weight:800;
+    }
+
+    .case-sidebar{
+      display:grid;
+      gap:16px;
+      align-content:start;
+      position:sticky;
+      top:92px;
+      height:max-content;
+    }
+    .side-card{
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:18px;
+      background:linear-gradient(180deg,var(--surface),var(--surface-2));
+      box-shadow:var(--shadow-sm);
+    }
+    .side-card h3{
+      font-family:var(--font-display);
+      font-size:24px;
+      line-height:1;
+      margin-bottom:10px;
+    }
+    .side-card p,.side-card li{
+      color:var(--text-soft);
+      font-size:14px;
+      line-height:1.75;
+    }
+    .side-card ul{
+      list-style:none;
+      display:grid;
+      gap:10px;
+      margin-top:10px;
+    }
+
+    .demo-shell{
+      min-height:100dvh;
+      background:var(--bg);
+    }
+    .demo-top{
+      position:sticky;
+      top:0;
+      z-index:90;
+      padding:14px clamp(18px,4vw,40px);
+      border-bottom:1px solid color-mix(in srgb,var(--line) 76%, transparent);
+      background:color-mix(in srgb,var(--bg) 84%, transparent);
+      backdrop-filter:blur(16px);
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .demo-title{
+      display:grid;
+      gap:4px;
+    }
+    .demo-title strong{
+      font-size:13px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--accent);
+    }
+    .demo-title span{
+      font-family:var(--font-display);
+      font-size:26px;
+      line-height:1;
+    }
+
+    .app-frame{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:22px clamp(18px,4vw,40px) 40px;
+    }
+    .app-grid{
+      display:grid;
+      grid-template-columns:280px minmax(0,1fr);
+      gap:18px;
+      min-height:calc(100dvh - 110px);
+    }
+    .app-sidebar{
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:linear-gradient(180deg,var(--surface),var(--surface-2));
+      box-shadow:var(--shadow-sm);
+      padding:18px;
+      display:grid;
+      align-content:start;
+      gap:18px;
+      position:sticky;
+      top:90px;
+      height:calc(100dvh - 130px);
+      overflow:auto;
+    }
+    .app-brand{
+      padding-bottom:12px;
+      border-bottom:1px solid color-mix(in srgb,var(--line) 78%, transparent);
+    }
+    .app-brand h2{
+      font-family:var(--font-display);
+      font-size:28px;
+      line-height:1;
+      margin-bottom:6px;
+    }
+    .app-brand p{
+      color:var(--text-soft);
+      font-size:14px;
+      line-height:1.7;
+    }
+    .menu{
+      display:grid;
+      gap:8px;
+    }
+    .menu a{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:center;
+      min-height:46px;
+      padding:12px 14px;
+      border-radius:16px;
+      border:1px solid transparent;
+      background:transparent;
+      color:var(--text-soft);
+    }
+    .menu a.active,
+    .menu a:hover{
+      background:var(--surface);
+      border-color:var(--line);
+      color:var(--text);
+    }
+    .chip{
+      padding:4px 8px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      font-size:10px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--text-faint);
+      font-weight:800;
+    }
+
+    .app-main{
+      border:1px solid var(--line);
+      border-radius:30px;
+      background:linear-gradient(180deg,var(--surface),var(--surface-2));
+      box-shadow:var(--shadow-md);
+      overflow:hidden;
+      display:grid;
+      grid-template-rows:auto 1fr;
+      min-width:0;
+    }
+    .app-header{
+      padding:18px;
+      border-bottom:1px solid color-mix(in srgb,var(--line) 78%, transparent);
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .app-header h3{
+      font-family:var(--font-display);
+      font-size:30px;
+      line-height:1;
+      margin-bottom:6px;
+    }
+    .app-header p{
+      color:var(--text-soft);
+      font-size:14px;
+      line-height:1.7;
+      max-width:620px;
+    }
+    .app-body{
+      padding:18px;
+      display:grid;
+      gap:18px;
+      overflow:auto;
+    }
+    .kpi-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:14px;
+    }
+    .kpi{
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:16px;
+      background:color-mix(in srgb,var(--surface) 84%, transparent);
+    }
+    .kpi strong{
+      display:block;
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--text-faint);
+      margin-bottom:8px;
+    }
+    .kpi span{
+      font-family:var(--font-display);
+      font-size:34px;
+      line-height:1;
+      letter-spacing:-.04em;
+    }
+    .kpi small{
+      display:block;
+      margin-top:8px;
+      color:var(--text-soft);
+      font-size:13px;
+    }
+
+    .content-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:14px;
+    }
+    .panel{
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:color-mix(in srgb,var(--surface) 86%, transparent);
+      padding:18px;
+      min-width:0;
+    }
+    .panel h4{
+      font-family:var(--font-display);
+      font-size:24px;
+      line-height:1;
+      margin-bottom:10px;
+    }
+    .panel p{
+      color:var(--text-soft);
+      font-size:14px;
+      line-height:1.8;
+    }
+    .calendar-grid{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns:repeat(7,1fr);
+      gap:8px;
+    }
+    .day{
+      min-height:82px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:var(--surface);
+      padding:8px;
+      display:grid;
+      align-content:start;
+      gap:6px;
+    }
+    .day b{font-size:12px}
+    .pill{
+      display:inline-flex;
+      width:max-content;
+      padding:5px 8px;
+      border-radius:999px;
+      font-size:10px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-weight:800;
+    }
+    .pill.orange{background:rgba(223,139,82,.14); color:var(--accent)}
+    .pill.green{background:rgba(118,168,135,.14); color:var(--green)}
+    .pill.blue{background:rgba(120,157,207,.14); color:var(--blue)}
+    .pill.purple{background:rgba(163,141,229,.14); color:var(--purple)}
+    .pill.red{background:rgba(210,122,122,.14); color:var(--danger)}
+
+    .table{
+      display:grid;
+      gap:10px;
+      margin-top:14px;
+    }
+    .row{
+      display:grid;
+      grid-template-columns:1.2fr .9fr .7fr .7fr;
+      gap:10px;
+      align-items:center;
+      min-height:58px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:10px 12px;
+      background:var(--surface);
+    }
+    .row strong{font-size:14px}
+    .row span,.row small{
+      color:var(--text-soft);
+      font-size:13px;
+    }
+
+    .timeline{
+      display:grid;
+      gap:12px;
+      margin-top:14px;
+    }
+    .timeline-item{
+      border-left:2px solid color-mix(in srgb,var(--accent) 50%, var(--line));
+      padding-left:14px;
+      display:grid;
+      gap:4px;
+    }
+    .timeline-item strong{font-size:14px}
+    .timeline-item span{font-size:13px;color:var(--text-soft)}
+
+    .cards-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
     .reveal{
       opacity:0;
-      transform:translateY(16px);
-      transition:opacity .7s var(--ease), transform .7s var(--ease);
+      transform:translateY(18px);
+      transition:opacity .75s var(--ease),transform .75s var(--ease);
     }
     .reveal.in{
       opacity:1;
       transform:none;
     }
 
-    @media (max-width:1120px){
+    @media (max-width:1100px){
       .hero-grid,
-      .case-top,
-      .services-grid,
+      .service-grid,
       .about-grid,
-      .contact-meta{
+      .case-layout,
+      .app-grid,
+      .content-grid,
+      .cards-2{
         grid-template-columns:1fr;
       }
-      .work-link{
-        grid-template-columns:70px 1fr;
+      .project-grid{
+        grid-template-columns:1fr;
       }
-      .work-meta,
-      .work-jump{
-        grid-column:2/-1;
+      .project-actions{
+        justify-items:start;
+        grid-template-columns:repeat(3,max-content);
+        align-items:center;
       }
-      .work-jump{justify-self:start}
-      .case-grid .span-3,
-      .case-grid .span-4,
-      .case-grid .span-5,
-      .case-grid .span-6,
-      .case-grid .span-7,
-      .case-grid .span-8{
-        grid-column:span 12;
+      .case-sidebar,
+      .app-sidebar{
+        position:static;
+        height:auto;
       }
+      .kpi-grid{grid-template-columns:repeat(2,1fr)}
     }
 
     @media (max-width:760px){
@@ -973,665 +1113,662 @@
       }
       .nav{display:none}
       .brand-role{display:none}
-      .hero h1{max-width:100%;font-size:clamp(34px,11vw,54px)}
-      .hero-actions,.contact-actions{flex-direction:column}
+      .hero h1{font-size:clamp(36px,10vw,54px);max-width:100%}
+      .hero-actions,
+      .contact-actions,
+      .project-actions{
+        flex-direction:column;
+        display:flex;
+        align-items:stretch;
+      }
       .btn{width:100%}
-      .work-link{
-        grid-template-columns:1fr;
-        gap:12px;
-      }
-      .work-meta{
-        grid-template-columns:1fr;
-      }
-      .work-meta,.work-jump{grid-column:auto}
-      .case-brief,
       .wire-layout,
-      .flow-map,
-      .mockup-grid{
+      .flow-map{
         grid-template-columns:1fr;
       }
-      .mobile-mock{margin:0}
+      .flow-node::after{display:none}
+      .kpi-grid{grid-template-columns:1fr}
+      .calendar-grid{grid-template-columns:repeat(2,1fr)}
+      .row{grid-template-columns:1fr}
+      .stats3{grid-template-columns:1fr}
     }
 
     @media (prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
       *,*::before,*::after{
-        animation:none!important;
-        transition:none!important;
+        animation:none !important;
+        transition:none !important;
       }
       .reveal{opacity:1;transform:none}
     }
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <a href="#main" class="skip">Skip to content</a>
 
   <header class="topbar">
     <div class="topbar-inner">
-      <a class="brand" href="#top" aria-label="Rohith Dhanala home">
+      <a href="#home" class="brand" aria-label="Rohith Dhanala home">
         <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M5 19V5h6.8c3.4 0 5.3 1.6 5.3 4.5 0 2.1-1.1 3.5-3.2 4.2L18.9 19H15l-4.1-4.4H8V19H5Z"></path>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M5 19V5h7.1c3.4 0 5.3 1.8 5.3 4.7 0 2.2-1.3 3.7-3.4 4.4L18.8 19h-3.9l-4.1-4.5H8V19H5Z"></path>
           </svg>
         </span>
-        <span>
+        <span class="brand-text">
           <div class="brand-name">Rohith Dhanala</div>
-          <div class="brand-role">AI systems · digital products · project delivery</div>
+          <div class="brand-role">AI systems · digital products · live demos</div>
         </span>
       </a>
 
       <nav class="nav" aria-label="Primary">
-        <a href="#work">Selected Work</a>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
         <a href="#services">Services</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
 
-      <div class="topbar-actions">
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+      <div class="actions">
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch color theme">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
-        <a class="btn btn-primary" href="#contact">Start a project</a>
+        <a href="#contact" class="btn btn-primary btn-small">Start a project</a>
       </div>
     </div>
   </header>
 
   <main id="main">
-    <div class="wrap">
-      <section class="hero" id="top">
-        <div class="hero-grid">
-          <div class="reveal">
-            <div class="eyebrow">Available for freelance and product-led collaborations</div>
-            <h1>I build <span class="tone">digital systems</span> that feel commercially credible, operationally useful, and ready for real work.</h1>
+    <!-- HOME -->
+    <section class="site-page active" data-page="home">
+      <div class="wrap">
+        <section class="hero">
+          <div class="hero-grid">
+            <div class="reveal">
+              <div class="eyebrow">Freelance product builder for advanced digital systems</div>
+              <h1>I build <span class="tone">advanced projects</span> that look strong, work clearly, and feel ready for real clients.</h1>
+              <p>
+                This portfolio is rebuilt around a stronger project presentation model: a dedicated projects page, separate case study pages, and live demo apps that open like real products. That matches the reference pattern you shared, where projects are listed individually and paired with code and live links rather than being buried inside a single long homepage. [page:1]
+              </p>
+              <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">View live projects</a>
+                <a href="#contact" class="btn btn-secondary">Discuss your build</a>
+              </div>
+            </div>
+
+            <aside class="hero-side reveal">
+              <h2>Built to feel closer to a deployable portfolio system.</h2>
+              <p>
+                The reference projects page uses a directory-like presentation of featured projects with technology stacks and clear Code and Live actions, so this site follows that pattern while upgrading the visuals and adding dedicated case-study pages. [page:1]
+              </p>
+              <div class="hero-points">
+                <div class="hero-point">
+                  <strong>Projects</strong>
+                  <span>Separate listing page with live demo and code actions like the reference pattern. [page:1]</span>
+                </div>
+                <div class="hero-point">
+                  <strong>Case studies</strong>
+                  <span>Each project opens into its own dedicated page instead of expanding inside the homepage.</span>
+                </div>
+                <div class="hero-point">
+                  <strong>Live demos</strong>
+                  <span>Four advanced demo apps live inside this single-file build so you can copy, paste, and deploy quickly.</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section" id="projects-preview">
+          <header class="section-head reveal">
+            <div class="section-label">Featured Work</div>
+            <h2>Advanced builds positioned like real products.</h2>
             <p>
-              I work across AI systems, workflow platforms, client experience layers, and project delivery for startups, service businesses, and lean teams. My focus is to turn messy business problems into structured digital products that look strong, work clearly, and make practical sense in the real world.
+              The project structure below is intentionally organised more like a portfolio projects index, because the reference site presents featured projects as a clear list with title, description, stack, and Code/Live actions. [page:1]
             </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#work">View selected work</a>
-              <a class="btn btn-secondary" href="#contact">Discuss a project</a>
+          </header>
+
+          <div class="project-list">
+            <article class="project-item reveal">
+              <div class="project-grid">
+                <div class="project-visual">
+                  <div class="mini-browser">
+                    <div class="mini-top"><div class="dots"><span></span><span></span><span></span></div><div class="mini-address"></div></div>
+                    <div class="mini-body">
+                      <div class="hero-strip"><div class="line m"></div><div class="line l"></div></div>
+                      <div class="stats3"><div class="box"></div><div class="box"></div><div class="box"></div></div>
+                      <div class="line l"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-copy">
+                  <div class="project-topline"><span class="project-count">01</span><span class="project-badge">Salon operations platform</span></div>
+                  <h3>FlowPilot OS</h3>
+                  <p>Operations system for appointment-led businesses with scheduling, staff balancing, customer history, reminders, and daily visibility.</p>
+                  <ul class="tech-list"><li>JavaScript</li><li>UI architecture</li><li>Dashboard UX</li><li>Product design</li></ul>
+                </div>
+                <div class="project-actions">
+                  <a href="#case-flowpilot" class="btn btn-secondary btn-small">Case Study</a>
+                  <a href="#demo-flowpilot" class="btn btn-primary btn-small">Live Demo</a>
+                  <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small">Code</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-item reveal">
+              <div class="project-grid">
+                <div class="project-visual">
+                  <div class="mini-browser">
+                    <div class="mini-top"><div class="dots"><span></span><span></span><span></span></div><div class="mini-address"></div></div>
+                    <div class="mini-body">
+                      <div class="hero-strip"><div class="line s"></div><div class="line l"></div></div>
+                      <div class="line l"></div>
+                      <div class="stats3"><div class="box"></div><div class="box"></div><div class="box"></div></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-copy">
+                  <div class="project-topline"><span class="project-count">02</span><span class="project-badge">AI intake system</span></div>
+                  <h3>SignalDesk AI</h3>
+                  <p>AI-assisted enquiry routing tool for service businesses with qualification logic, urgency scoring, and human review flow.</p>
+                  <ul class="tech-list"><li>JavaScript</li><li>AI workflow UX</li><li>Admin dashboard</li><li>Interaction design</li></ul>
+                </div>
+                <div class="project-actions">
+                  <a href="#case-signaldesk" class="btn btn-secondary btn-small">Case Study</a>
+                  <a href="#demo-signaldesk" class="btn btn-primary btn-small">Live Demo</a>
+                  <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small">Code</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-item reveal">
+              <div class="project-grid">
+                <div class="project-visual">
+                  <div class="mini-browser">
+                    <div class="mini-top"><div class="dots"><span></span><span></span><span></span></div><div class="mini-address"></div></div>
+                    <div class="mini-body">
+                      <div class="hero-strip"><div class="line m"></div><div class="line l"></div></div>
+                      <div class="line l"></div>
+                      <div class="line m"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-copy">
+                  <div class="project-topline"><span class="project-count">03</span><span class="project-badge">Client portal</span></div>
+                  <h3>ClientPort Studio</h3>
+                  <p>Premium delivery portal for freelancers and agencies with onboarding, approvals, files, invoices, and client-facing progress visibility.</p>
+                  <ul class="tech-list"><li>JavaScript</li><li>Portal UX</li><li>Project delivery</li><li>System design</li></ul>
+                </div>
+                <div class="project-actions">
+                  <a href="#case-clientport" class="btn btn-secondary btn-small">Case Study</a>
+                  <a href="#demo-clientport" class="btn btn-primary btn-small">Live Demo</a>
+                  <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small">Code</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-item reveal">
+              <div class="project-grid">
+                <div class="project-visual">
+                  <div class="mini-browser">
+                    <div class="mini-top"><div class="dots"><span></span><span></span><span></span></div><div class="mini-address"></div></div>
+                    <div class="mini-body">
+                      <div class="hero-strip"><div class="line s"></div><div class="line l"></div></div>
+                      <div class="stats3"><div class="box"></div><div class="box"></div><div class="box"></div></div>
+                      <div class="line m"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-copy">
+                  <div class="project-topline"><span class="project-count">04</span><span class="project-badge">Launch operations workspace</span></div>
+                  <h3>LaunchLayer</h3>
+                  <p>Launch-readiness platform for startup teams managing blockers, approvals, dependencies, and execution confidence across release cycles.</p>
+                  <ul class="tech-list"><li>JavaScript</li><li>SaaS UI</li><li>Project ops</li><li>Workflow mapping</li></ul>
+                </div>
+                <div class="project-actions">
+                  <a href="#case-launchlayer" class="btn btn-secondary btn-small">Case Study</a>
+                  <a href="#demo-launchlayer" class="btn btn-primary btn-small">Live Demo</a>
+                  <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small">Code</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="services">
+          <header class="section-head reveal">
+            <div class="section-label">Services</div>
+            <h2>Built around AI systems, products, and execution.</h2>
+            <p>
+              Your work direction is strongest when positioned around AI automation, digital product development, and business-facing systems, so the services here support the advanced project direction you asked for. [web:78]
+            </p>
+          </header>
+
+          <div class="service-grid">
+            <article class="service-card reveal">
+              <h3>AI systems</h3>
+              <p>I build practical AI workflows for qualification, routing, support, intake, and operational automation.</p>
+            </article>
+            <article class="service-card reveal">
+              <h3>Digital products</h3>
+              <p>I design and build advanced websites, dashboards, portals, and internal tools that feel publishable and commercially credible.</p>
+            </article>
+            <article class="service-card reveal">
+              <h3>Project delivery</h3>
+              <p>I help founders and teams structure execution with cleaner systems, interfaces, and launch-ready delivery layers.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="about">
+          <header class="section-head reveal">
+            <div class="section-label">About</div>
+            <h2>Product realism over simple portfolio projects.</h2>
+            <p>
+              The goal of this rebuild is to move away from basic showcase work and toward stronger, more product-like builds that can be published from GitHub and presented as real systems.
+            </p>
+          </header>
+
+          <div class="about-grid">
+            <article class="about-card reveal">
+              <h3>How I work</h3>
+              <p>I combine interface design, front-end implementation, workflow thinking, and digital product structure so the work feels more useful than a simple visual mockup.</p>
+              <p>I focus on business-facing products, dashboards, automation flows, and client experience systems that can become real portfolio assets.</p>
+            </article>
+            <article class="about-card reveal">
+              <h3>Based in</h3>
+              <p>Southampton, United Kingdom.</p>
+              <h3 style="margin-top:18px">Best fit</h3>
+              <p>Startups, freelancers, service businesses, and founders who need sharper digital systems and more credible product presentation.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="contact">
+          <div class="contact-card reveal">
+            <h2>Need a stronger digital product or portfolio build?</h2>
+            <p>
+              I can build advanced portfolio projects, AI workflow interfaces, internal dashboards, client portals, and product-style websites that feel much stronger than basic section-based websites.
+            </p>
+            <div class="contact-actions">
+              <a href="mailto:hello@example.com" class="btn btn-primary">Email me</a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn</a>
             </div>
           </div>
+        </section>
 
-          <aside class="hero-side reveal">
-            <h2>Less “portfolio demo”. More believable product storytelling.</h2>
-            <p>
-              This site is designed to show how I think through context, interface, workflow, and delivery — not just final visuals. Each case study is structured like a real client-facing product engagement with process, wireframes, mockups, and outcome framing.
-            </p>
-            <div class="quick-points">
-              <div class="quick-point">
-                <strong>Focus</strong>
-                <span>AI systems, workflow tools, internal products, and delivery infrastructure.</span>
+        <footer class="footer">
+          <div class="footer-inner">
+            <span>© 2026 Rohith Dhanala</span>
+            <span>Advanced product portfolio with case studies and live demos</span>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <!-- PROJECTS PAGE -->
+    <section class="site-page" data-page="projects">
+      <div class="wrap">
+        <section class="subpage-hero">
+          <a href="#home" class="back-link">← Back to home</a>
+          <h1>Projects with live demos and separate case studies.</h1>
+          <p>
+            This page is intentionally structured like a projects index with clear project titles, descriptions, stack chips, and Code/Live actions because the reference page uses that style for featured projects. [page:1]
+          </p>
+        </section>
+
+        <div class="project-list">
+          <article class="project-item">
+            <div class="project-grid">
+              <div class="project-visual">
+                <div class="mini-browser">
+                  <div class="mini-top"><div class="dots"><span></span><span></span><span></span></div><div class="mini-address"></div></div>
+                  <div class="mini-body">
+                    <div class="hero-strip"><div class="line m"></div><div class="line l"></div></div>
+                    <div class="stats3"><div class="box"></div><div class="box"></div><div class="box"></div></div>
+                    <div class="line l"></div>
+                  </div>
+                </div>
               </div>
-              <div class="quick-point">
-                <strong>Best fit</strong>
-                <span>Founders, service businesses, startups, and teams that need sharper digital structure.</span>
+              <div class="project-copy">
+                <div class="project-topline"><span class="project-count">01</span><span class="project-badge">Featured project</span></div>
+                <h3>FlowPilot OS</h3>
+                <p>Advanced salon operations dashboard for scheduling, customer history, team balancing, and reminder workflows.</p>
+                <ul class="tech-list"><li>JavaScript</li><li>Dashboard UI</li><li>Operations UX</li><li>Data widgets</li></ul>
               </div>
-              <div class="quick-point">
-                <strong>How I work</strong>
-                <span>Problem framing, UX structure, visual system thinking, and implementation-led delivery.</span>
+              <div class="project-actions">
+                <a href="#case-flowpilot" class="btn btn-secondary btn-small">Case Study</a>
+                <a href="#demo-flowpilot" class="btn btn-primary btn-small">Live Demo</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-item">
+            <div class="project-grid">
+              <div class="project-visual">
+                <div class="mini-browser">
+                  <div class="mini-top"><div class="dots"><span></span><span></span><span></span></div><div class="mini-address"></div></div>
+                  <div class="mini-body">
+                    <div class="hero-strip"><div class="line s"></div><div class="line l"></div></div>
+                    <div class="line l"></div>
+                    <div class="stats3"><div class="box"></div><div class="box"></div><div class="box"></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-copy">
+                <div class="project-topline"><span class="project-count">02</span><span class="project-badge">Featured project</span></div>
+                <h3>SignalDesk AI</h3>
+                <p>Lead qualification and AI intake dashboard with triage queues, urgency scoring, operator review, and escalation logic.</p>
+                <ul class="tech-list"><li>JavaScript</li><li>AI workflow UX</li><li>Admin panels</li><li>Queue logic</li></ul>
+              </div>
+              <div class="project-actions">
+                <a href="#case-signaldesk" class="btn btn-secondary btn-small">Case Study</a>
+                <a href="#demo-signaldesk" class="btn btn-primary btn-small">Live Demo</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-item">
+            <div class="project-grid">
+              <div class="project-visual">
+                <div class="mini-browser">
+                  <div class="mini-top"><div class="dots"><span></span><span></span><span></span></div><div class="mini-address"></div></div>
+                  <div class="mini-body">
+                    <div class="hero-strip"><div class="line m"></div><div class="line l"></div></div>
+                    <div class="line l"></div>
+                    <div class="line m"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-copy">
+                <div class="project-topline"><span class="project-count">03</span><span class="project-badge">Featured project</span></div>
+                <h3>ClientPort Studio</h3>
+                <p>Premium client collaboration workspace for onboarding, tasks, files, approvals, invoices, and delivery milestones.</p>
+                <ul class="tech-list"><li>JavaScript</li><li>Portal UX</li><li>Client workflows</li><li>System design</li></ul>
+              </div>
+              <div class="project-actions">
+                <a href="#case-clientport" class="btn btn-secondary btn-small">Case Study</a>
+                <a href="#demo-clientport" class="btn btn-primary btn-small">Live Demo</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-item">
+            <div class="project-grid">
+              <div class="project-visual">
+                <div class="mini-browser">
+                  <div class="mini-top"><div class="dots"><span></span><span></span><span></span></div><div class="mini-address"></div></div>
+                  <div class="mini-body">
+                    <div class="hero-strip"><div class="line s"></div><div class="line l"></div></div>
+                    <div class="stats3"><div class="box"></div><div class="box"></div><div class="box"></div></div>
+                    <div class="line m"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-copy">
+                <div class="project-topline"><span class="project-count">04</span><span class="project-badge">Featured project</span></div>
+                <h3>LaunchLayer</h3>
+                <p>Startup launch coordination workspace with milestones, blockers, dependency mapping, approvals, and readiness signals.</p>
+                <ul class="tech-list"><li>JavaScript</li><li>SaaS dashboard</li><li>Release ops</li><li>Workflow mapping</li></ul>
+              </div>
+              <div class="project-actions">
+                <a href="#case-launchlayer" class="btn btn-secondary btn-small">Case Study</a>
+                <a href="#demo-launchlayer" class="btn btn-primary btn-small">Live Demo</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small">Code</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE STUDY 1 -->
+    <section class="site-page" data-page="case-flowpilot">
+      <div class="wrap">
+        <section class="subpage-hero">
+          <a href="#projects" class="back-link">← Back to projects</a>
+          <h1>FlowPilot OS</h1>
+          <p>Operations platform for appointment-led businesses, designed as a calmer system for scheduling, staff load, reminders, and customer visibility.</p>
+        </section>
+
+        <div class="case-layout">
+          <div class="case-main">
+            <article class="case-card">
+              <div class="case-card-inner">
+                <h2>Project overview</h2>
+                <p>
+                  This project was created as an advanced service-business operating system rather than a simple dashboard mockup. The aim was to make the interface feel premium, believable, and suitable for a live product portfolio piece.
+                </p>
+              </div>
+            </article>
+
+            <article class="case-card">
+              <div class="case-card-inner">
+                <h2>Wireframes</h2>
+                <div class="figma-board">
+                  <div class="figma-bar"><div class="dots"><span></span><span></span><span></span></div><div class="figma-title">Low-fidelity exploration</div></div>
+                  <div class="figma-body">
+                    <div class="wire-layout">
+                      <div class="wire-screen"><div class="wire-top"><span></span><span></span><span></span></div><div class="wire-inner"><div class="line m"></div><div class="line l"></div><div class="mini-row"><div class="mini-card"></div><div class="mini-card"></div></div><div class="line s"></div></div></div>
+                      <div class="wire-screen"><div class="wire-top"><span></span><span></span><span></span></div><div class="wire-inner"><div class="line l"></div><div class="line m"></div><div class="line l"></div><div class="mini-row"><div class="mini-card"></div><div class="mini-card"></div></div></div></div>
+                      <div class="wire-screen"><div class="wire-top"><span></span><span></span><span></span></div><div class="wire-inner"><div class="line s"></div><div class="line l"></div><div class="line m"></div><div class="line l"></div></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="case-card">
+              <div class="case-card-inner">
+                <h2>Solution direction</h2>
+                <p>
+                  The solution is organised around the daily operating rhythm of a service business, with scheduling visibility, utilisation, reminders, and customer history all prioritised in the main dashboard. This was intentionally designed to feel stronger than a basic website section and closer to a real operations product.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <aside class="case-sidebar">
+            <div class="side-card">
+              <h3>Role</h3>
+              <p>Product concept, UX structure, UI system, front-end portfolio presentation.</p>
+            </div>
+            <div class="side-card">
+              <h3>Deliverables</h3>
+              <ul>
+                <li>Case study page</li>
+                <li>Live demo app</li>
+                <li>Dashboard concept</li>
+                <li>Visual system direction</li>
+              </ul>
+            </div>
+            <div class="side-card">
+              <h3>Actions</h3>
+              <div class="contact-actions" style="margin-top:0">
+                <a href="#demo-flowpilot" class="btn btn-primary btn-small">Open Live Demo</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small">View Code</a>
               </div>
             </div>
           </aside>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section" id="work">
-        <header class="section-head reveal">
-          <div class="section-label">Selected Work</div>
-          <h2>Projects presented like real-world product engagements.</h2>
-          <p>
-            Strong portfolios are easier to trust when the work is scannable, process-led, and visually explained instead of relying on final screens alone. The case studies below are structured around role, problem, process, solution, and impact, with visuals used to tell the story at each stage. [web:57][web:63][web:55]
-          </p>
-        </header>
+    <!-- CASE STUDY 2 -->
+    <section class="site-page" data-page="case-signaldesk">
+      <div class="wrap">
+        <section class="subpage-hero">
+          <a href="#projects" class="back-link">← Back to projects</a>
+          <h1>SignalDesk AI</h1>
+          <p>AI-assisted enquiry routing platform focused on qualification, priority scoring, and cleaner human review.</p>
+        </section>
 
-        <div class="work-index reveal">
-          <a class="work-link" href="#case-flowpilot">
-            <div class="work-no">01</div>
-            <div class="work-main">
-              <h3>FlowPilot</h3>
-              <p>Service operations platform for appointment-led businesses that need scheduling, customer visibility, team coordination, and daily execution in one calmer system.</p>
-            </div>
-            <div class="work-meta">
-              <div class="meta"><small>Role</small><span>Product strategy · UX/UI · front-end system</span></div>
-              <div class="meta"><small>Project</small><span>Operations platform</span></div>
-              <div class="meta"><small>Year</small><span>2026</span></div>
-            </div>
-            <div class="work-jump"><span>Open case</span><i>↘</i></div>
-          </a>
-
-          <a class="work-link" href="#case-signaldesk">
-            <div class="work-no">02</div>
-            <div class="work-main">
-              <h3>SignalDesk AI</h3>
-              <p>AI-assisted intake and lead-routing system for local service businesses that need cleaner qualification, faster response handling, and less manual triage.</p>
-            </div>
-            <div class="work-meta">
-              <div class="meta"><small>Role</small><span>Product concept · workflow logic · UX/UI</span></div>
-              <div class="meta"><small>Project</small><span>AI operations layer</span></div>
-              <div class="meta"><small>Year</small><span>2026</span></div>
-            </div>
-            <div class="work-jump"><span>Open case</span><i>↘</i></div>
-          </a>
-
-          <a class="work-link" href="#case-clientport">
-            <div class="work-no">03</div>
-            <div class="work-main">
-              <h3>ClientPort</h3>
-              <p>Premium client collaboration portal for freelancers and studios that need a better way to manage approvals, files, visibility, and delivery communication.</p>
-            </div>
-            <div class="work-meta">
-              <div class="meta"><small>Role</small><span>Product direction · experience design</span></div>
-              <div class="meta"><small>Project</small><span>Client experience platform</span></div>
-              <div class="meta"><small>Year</small><span>2026</span></div>
-            </div>
-            <div class="work-jump"><span>Open case</span><i>↘</i></div>
-          </a>
-
-          <a class="work-link" href="#case-launchlayer">
-            <div class="work-no">04</div>
-            <div class="work-main">
-              <h3>LaunchLayer</h3>
-              <p>Launch-readiness workspace for startup teams managing milestones, dependencies, approvals, and release confidence across lean, fast-moving teams.</p>
-            </div>
-            <div class="work-meta">
-              <div class="meta"><small>Role</small><span>Workflow design · product planning · UX/UI</span></div>
-              <div class="meta"><small>Project</small><span>Team coordination tool</span></div>
-              <div class="meta"><small>Year</small><span>2026</span></div>
-            </div>
-            <div class="work-jump"><span>Open case</span><i>↘</i></div>
-          </a>
-        </div>
-
-        <div class="case-study">
-          <article class="case-card reveal" id="case-flowpilot">
-            <div class="case-top">
-              <div class="case-overview">
-                <h3>FlowPilot — reframing daily service operations as one structured product.</h3>
+        <div class="case-layout">
+          <div class="case-main">
+            <article class="case-card">
+              <div class="case-card-inner">
+                <h2>Project overview</h2>
                 <p>
-                  Appointment-led businesses often run bookings, staff load, customer notes, reminders, and follow-ups across several disconnected tools. This project imagines a single product that reduces fragmentation and gives operators a more useful view of daily work, team capacity, and service delivery.
+                  This concept reframes AI from a vague chatbot idea into a structured intake system with queue logic, escalation pathways, and human-in-the-loop review.
                 </p>
               </div>
-              <div class="case-brief">
-                <div class="brief"><strong>Role</strong><span>Product strategy, UX structure, interface design, front-end concept direction.</span></div>
-                <div class="brief"><strong>Scope</strong><span>Scheduling, team coordination, customer history, reminders, and daily operations visibility.</span></div>
-                <div class="brief"><strong>Goal</strong><span>Create a calmer product experience than typical dashboard tools used by service businesses.</span></div>
-                <div class="brief"><strong>Framing</strong><span>Presented as a real-world operational platform rather than a generic SaaS template.</span></div>
-              </div>
-            </div>
+            </article>
 
-            <div class="case-grid">
-              <section class="panel span-4">
-                <div class="panel-label">Challenge</div>
-                <h4>Too many tools, not enough clarity.</h4>
-                <p>
-                  The core problem was not missing software, but disconnected workflow. Owners and staff needed one view that could support the pace of a real working day instead of forcing them across multiple tabs and systems.
-                </p>
-                <ul class="bullet-list">
-                  <li>No single source of truth for bookings and client context.</li>
-                  <li>Daily team balancing required too much manual checking.</li>
-                  <li>Customer follow-through often fell behind operational work.</li>
-                </ul>
-              </section>
-
-              <section class="panel span-4">
-                <div class="panel-label">Approach</div>
-                <h4>Design around the rhythm of the workday.</h4>
-                <p>
-                  I mapped the product around real operational moments: opening, booking changes, active service windows, staff balancing, reminders, and end-of-day review. That sequence shaped the information hierarchy and feature grouping.
-                </p>
-                <ul class="bullet-list">
-                  <li>Glanceable panels over spreadsheet-style density.</li>
-                  <li>Actions grouped by operational moment, not software category.</li>
-                  <li>Customer detail available quickly without losing daily context.</li>
-                </ul>
-              </section>
-
-              <section class="panel span-4">
-                <div class="panel-label">Impact framing</div>
-                <h4>A more believable service-business platform.</h4>
-                <p>
-                  The final concept feels less like a SaaS starter template and more like a product designed for real operators. The interface prioritises pace, clarity, and calm decision-making over decorative complexity.
-                </p>
-                <ul class="bullet-list">
-                  <li>Sharper product proposition for service businesses.</li>
-                  <li>Clearer scheduling and utilisation visibility.</li>
-                  <li>More premium and credible presentation of operations software.</li>
-                </ul>
-              </section>
-
-              <section class="panel span-6">
-                <div class="panel-label">Wireframes</div>
-                <h4>Early structure and layout exploration.</h4>
+            <article class="case-card">
+              <div class="case-card-inner">
+                <h2>Workflow map</h2>
                 <div class="figma-board">
-                  <div class="figma-bar">
-                    <div class="figma-dots"><span></span><span></span><span></span></div>
-                    <div class="figma-title">Figma board · low-fidelity wireframes</div>
-                  </div>
-                  <div class="board-body">
-                    <div class="wire-layout">
-                      <div class="wire-screen">
-                        <div class="wire-top"><span></span><span></span><span></span></div>
-                        <div class="wire-inner">
-                          <div class="line m"></div>
-                          <div class="line l"></div>
-                          <div class="card-row"><div class="mini-card"></div><div class="mini-card"></div></div>
-                          <div class="line s"></div>
-                        </div>
-                      </div>
-                      <div class="wire-screen">
-                        <div class="wire-top"><span></span><span></span><span></span></div>
-                        <div class="wire-inner">
-                          <div class="line l"></div>
-                          <div class="line m"></div>
-                          <div class="line l"></div>
-                          <div class="card-row"><div class="mini-card"></div><div class="mini-card"></div></div>
-                        </div>
-                      </div>
-                      <div class="wire-screen">
-                        <div class="wire-top"><span></span><span></span><span></span></div>
-                        <div class="wire-inner">
-                          <div class="line s"></div>
-                          <div class="line l"></div>
-                          <div class="line m"></div>
-                          <div class="line l"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <p class="caption">
-                  Early wireframes focused on scheduling density, service-day visibility, and how quickly staff could switch from overview to customer context. Visuals like wireframes help case studies show how the solution evolved, not just how it ended. [web:55][web:63]
-                </p>
-              </section>
-
-              <section class="panel span-6">
-                <div class="panel-label">Mockups</div>
-                <h4>High-fidelity interface direction.</h4>
-                <div class="figma-board">
-                  <div class="figma-bar">
-                    <div class="figma-dots"><span></span><span></span><span></span></div>
-                    <div class="figma-title">Figma board · high-fidelity mockups</div>
-                  </div>
-                  <div class="board-body">
-                    <div class="mockup-grid">
-                      <div class="browser-mock">
-                        <div class="browser-top">
-                          <div class="figma-dots"><span></span><span></span><span></span></div>
-                          <div class="address"></div>
-                        </div>
-                        <div class="browser-body">
-                          <div class="hero-strip">
-                            <div class="line m"></div>
-                            <div class="line l"></div>
-                          </div>
-                          <div class="stat-row">
-                            <div class="stat-box"></div>
-                            <div class="stat-box"></div>
-                            <div class="stat-box"></div>
-                          </div>
-                          <div class="line l"></div>
-                        </div>
-                      </div>
-                      <div class="mobile-mock">
-                        <div class="mobile-screen">
-                          <div class="line s"></div>
-                          <div class="hero-strip"></div>
-                          <div class="stat-box"></div>
-                          <div class="stat-box"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <p class="caption">
-                  The final UI direction uses restrained colour, strong spacing, and compact blocks so the product feels premium without losing clarity. Polished mockups help bring portfolio work to life when they are paired with context and annotations. [web:63][web:67]
-                </p>
-              </section>
-
-              <section class="panel span-12">
-                <div class="panel-label">Outcome</div>
-                <h4>Why this reads like a real product engagement.</h4>
-                <div class="outcome-list">
-                  <div class="outcome"><div class="outcome-badge">01</div><p>This case study is grounded in a believable business workflow, which makes the screens feel justified instead of speculative. [web:57]</p></div>
-                  <div class="outcome"><div class="outcome-badge">02</div><p>It explains the challenge, decision-making, and process behind the interface, which is what makes a portfolio project easier to trust. [web:57][web:64]</p></div>
-                  <div class="outcome"><div class="outcome-badge">03</div><p>The visuals are integrated into the story rather than dropped in as decoration, which is a core best practice for stronger UX case studies. [web:55][web:63]</p></div>
-                </div>
-              </section>
-            </div>
-          </article>
-
-          <article class="case-card reveal" id="case-signaldesk">
-            <div class="case-top">
-              <div class="case-overview">
-                <h3>SignalDesk AI — turning enquiry chaos into a structured qualification system.</h3>
-                <p>
-                  Local service businesses often lose opportunities because enquiries arrive through different channels and get handled inconsistently. This project explores an AI-assisted intake layer that captures intent, qualifies leads, routes urgent work, and gives teams clearer next actions.
-                </p>
-              </div>
-              <div class="case-brief">
-                <div class="brief"><strong>Role</strong><span>Product concepting, workflow mapping, UX structure, interface design.</span></div>
-                <div class="brief"><strong>Scope</strong><span>Lead capture, intent detection, urgency scoring, routing, and operator review.</span></div>
-                <div class="brief"><strong>Goal</strong><span>Position AI as operational infrastructure rather than trend-led decoration.</span></div>
-                <div class="brief"><strong>Framing</strong><span>Designed to feel like a deployable business tool, not a chatbot concept page.</span></div>
-              </div>
-            </div>
-
-            <div class="case-grid">
-              <section class="panel span-4">
-                <div class="panel-label">Problem</div>
-                <h4>Response quality drops when triage is inconsistent.</h4>
-                <p>
-                  Many small and mid-sized businesses have demand, but the process around first contact is weak. Enquiries are delayed, incomplete, or poorly prioritised, which hurts both conversion and internal efficiency.
-                </p>
-                <ul class="bullet-list">
-                  <li>Urgent leads can get buried with low-priority questions.</li>
-                  <li>Teams repeat the same qualification work every day.</li>
-                  <li>Different channels create fragmented context.</li>
-                </ul>
-              </section>
-
-              <section class="panel span-4">
-                <div class="panel-label">System logic</div>
-                <h4>Trust comes from explainable workflow.</h4>
-                <p>
-                  I designed the system around concrete signals: category, urgency, confidence, recommended action, and escalation path. The interface shows what the system inferred and why, making it more usable and more trustworthy.
-                </p>
-              </section>
-
-              <section class="panel span-4">
-                <div class="panel-label">Design principle</div>
-                <h4>Human-in-the-loop by design.</h4>
-                <p>
-                  The product does not try to replace people. It supports operators with structured intake, suggested next actions, and clean handoff points — an approach that aligns better with real service operations.
-                </p>
-              </section>
-
-              <section class="panel span-7">
-                <div class="panel-label">UX flow</div>
-                <h4>Lead intake, routing, and escalation path.</h4>
-                <div class="figma-board">
-                  <div class="figma-bar">
-                    <div class="figma-dots"><span></span><span></span><span></span></div>
-                    <div class="figma-title">Figma board · user flow</div>
-                  </div>
-                  <div class="board-body">
+                  <div class="figma-bar"><div class="dots"><span></span><span></span><span></span></div><div class="figma-title">Intake to routing flow</div></div>
+                  <div class="figma-body">
                     <div class="flow-map">
-                      <div class="flow-node">
-                        <span class="node-chip">Input</span>
-                        <div class="line m"></div>
-                        <div class="line l"></div>
-                      </div>
-                      <div class="flow-node">
-                        <span class="node-chip">Classify</span>
-                        <div class="line s"></div>
-                        <div class="line l"></div>
-                      </div>
-                      <div class="flow-node">
-                        <span class="node-chip">Score</span>
-                        <div class="line m"></div>
-                        <div class="line l"></div>
-                      </div>
-                      <div class="flow-node">
-                        <span class="node-chip">Route</span>
-                        <div class="line s"></div>
-                        <div class="line m"></div>
-                      </div>
+                      <div class="flow-node"><span class="node-chip">Input</span><div class="line m"></div><div class="line l"></div></div>
+                      <div class="flow-node"><span class="node-chip">Classify</span><div class="line s"></div><div class="line l"></div></div>
+                      <div class="flow-node"><span class="node-chip">Score</span><div class="line m"></div><div class="line l"></div></div>
+                      <div class="flow-node"><span class="node-chip">Route</span><div class="line s"></div><div class="line m"></div></div>
                     </div>
                   </div>
                 </div>
-                <p class="caption">
-                  Diagrams and flows make complex process work easier to understand, which is why strong case studies often use them to explain how a system works beyond the UI layer. [web:70][web:71]
+              </div>
+            </article>
+
+            <article class="case-card">
+              <div class="case-card-inner">
+                <h2>Solution direction</h2>
+                <p>
+                  The interface surfaces intent, urgency, confidence, and suggested next actions so the operator sees why the system made a recommendation instead of blindly trusting automation.
                 </p>
-              </section>
+              </div>
+            </article>
+          </div>
 
-              <section class="panel span-5">
-                <div class="panel-label">Process</div>
-                <h4>How the product was framed.</h4>
-                <div class="process-rail">
-                  <div class="process-step"><strong>01 · Intake mapping</strong><span>Mapped likely business entry points such as forms, WhatsApp, callbacks, and chat requests.</span></div>
-                  <div class="process-step"><strong>02 · Decision model</strong><span>Defined qualification states and escalation rules to make the AI behaviour explainable.</span></div>
-                  <div class="process-step"><strong>03 · Interface layer</strong><span>Presented urgency, confidence, category, and next steps in a way that helps teams act quickly.</span></div>
-                </div>
-              </section>
+          <aside class="case-sidebar">
+            <div class="side-card">
+              <h3>Role</h3>
+              <p>Workflow logic, AI product framing, dashboard structure, visual direction.</p>
+            </div>
+            <div class="side-card">
+              <h3>Deliverables</h3>
+              <ul>
+                <li>AI intake concept</li>
+                <li>Queue dashboard</li>
+                <li>Case study page</li>
+                <li>Live demo app</li>
+              </ul>
+            </div>
+            <div class="side-card">
+              <h3>Actions</h3>
+              <div class="contact-actions" style="margin-top:0">
+                <a href="#demo-signaldesk" class="btn btn-primary btn-small">Open Live Demo</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small">View Code</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-              <section class="panel span-6">
-                <div class="panel-label">Mockups</div>
-                <h4>Operator dashboard and conversation review.</h4>
+    <!-- CASE STUDY 3 -->
+    <section class="site-page" data-page="case-clientport">
+      <div class="wrap">
+        <section class="subpage-hero">
+          <a href="#projects" class="back-link">← Back to projects</a>
+          <h1>ClientPort Studio</h1>
+          <p>Premium client experience platform for onboarding, deliverables, feedback, files, and approvals.</p>
+        </section>
+
+        <div class="case-layout">
+          <div class="case-main">
+            <article class="case-card">
+              <div class="case-card-inner">
+                <h2>Project overview</h2>
+                <p>
+                  This build focuses on the delivery experience as a product in itself, turning approvals, files, tasks, and invoices into one cleaner client-facing system.
+                </p>
+              </div>
+            </article>
+
+            <article class="case-card">
+              <div class="case-card-inner">
+                <h2>Screen exploration</h2>
                 <div class="figma-board">
-                  <div class="figma-bar">
-                    <div class="figma-dots"><span></span><span></span><span></span></div>
-                    <div class="figma-title">Figma board · dashboard mockups</div>
-                  </div>
-                  <div class="board-body">
+                  <div class="figma-bar"><div class="dots"><span></span><span></span><span></span></div><div class="figma-title">Portal wireframes</div></div>
+                  <div class="figma-body">
                     <div class="wire-layout">
-                      <div class="wire-screen">
-                        <div class="wire-top"><span></span><span></span><span></span></div>
-                        <div class="wire-inner">
-                          <div class="hero-strip"></div>
-                          <div class="line l"></div>
-                          <div class="line m"></div>
-                        </div>
-                      </div>
-                      <div class="wire-screen">
-                        <div class="wire-top"><span></span><span></span><span></span></div>
-                        <div class="wire-inner">
-                          <div class="line s"></div>
-                          <div class="line l"></div>
-                          <div class="line l"></div>
-                          <div class="line m"></div>
-                        </div>
-                      </div>
-                      <div class="wire-screen">
-                        <div class="wire-top"><span></span><span></span><span></span></div>
-                        <div class="wire-inner">
-                          <div class="line m"></div>
-                          <div class="card-row"><div class="mini-card"></div><div class="mini-card"></div></div>
-                          <div class="line l"></div>
-                        </div>
-                      </div>
+                      <div class="wire-screen"><div class="wire-top"><span></span><span></span><span></span></div><div class="wire-inner"><div class="line m"></div><div class="hero-strip"></div><div class="line s"></div></div></div>
+                      <div class="wire-screen"><div class="wire-top"><span></span><span></span><span></span></div><div class="wire-inner"><div class="line l"></div><div class="mini-row"><div class="mini-card"></div><div class="mini-card"></div></div><div class="line m"></div></div></div>
+                      <div class="wire-screen"><div class="wire-top"><span></span><span></span><span></span></div><div class="wire-inner"><div class="line s"></div><div class="line l"></div><div class="line l"></div><div class="line s"></div></div></div>
                     </div>
                   </div>
                 </div>
-              </section>
+              </div>
+            </article>
 
-              <section class="panel span-6">
-                <div class="panel-label">Results framing</div>
-                <h4>What this case study demonstrates.</h4>
-                <div class="outcome-list">
-                  <div class="outcome"><div class="outcome-badge">A</div><p>It shows your ability to design AI-enabled workflow products around business reality rather than hype. [cite:17]</p></div>
-                  <div class="outcome"><div class="outcome-badge">B</div><p>It communicates role, process, and likely business value in a scannable format, which recruiters and clients both expect from strong case studies. [web:37][web:57]</p></div>
-                  <div class="outcome"><div class="outcome-badge">C</div><p>It uses visuals to make the workflow memorable, which improves comprehension and makes the case study feel more complete. [web:55][web:63]</p></div>
-                </div>
-              </section>
-            </div>
-          </article>
-
-          <article class="case-card reveal" id="case-clientport">
-            <div class="case-top">
-              <div class="case-overview">
-                <h3>ClientPort — designing a calmer, more premium client delivery experience.</h3>
+            <article class="case-card">
+              <div class="case-card-inner">
+                <h2>Solution direction</h2>
                 <p>
-                  Even strong digital work can feel disorganised when approvals, files, updates, and communication are scattered across tools. This project imagines a dedicated client portal that improves trust, visibility, and overall delivery experience for freelancers and small studios.
+                  The system emphasises trust, visibility, and smooth delivery, so clients can see status, provide approvals, access files, and understand what comes next without relying on scattered messages.
                 </p>
               </div>
-              <div class="case-brief">
-                <div class="brief"><strong>Role</strong><span>Product direction, UX structure, interface design, content architecture.</span></div>
-                <div class="brief"><strong>Scope</strong><span>Onboarding, project visibility, deliverables, approvals, feedback, and invoices.</span></div>
-                <div class="brief"><strong>Goal</strong><span>Make project delivery feel more premium and less fragmented for both team and client.</span></div>
-                <div class="brief"><strong>Framing</strong><span>Presented as a client-facing product layer, not just a project dashboard.</span></div>
+            </article>
+          </div>
+
+          <aside class="case-sidebar">
+            <div class="side-card">
+              <h3>Role</h3>
+              <p>Client portal concept, UI architecture, visual system, delivery experience design.</p>
+            </div>
+            <div class="side-card">
+              <h3>Deliverables</h3>
+              <ul>
+                <li>Portal system</li>
+                <li>Case study page</li>
+                <li>Live demo app</li>
+                <li>UX flows</li>
+              </ul>
+            </div>
+            <div class="side-card">
+              <h3>Actions</h3>
+              <div class="contact-actions" style="margin-top:0">
+                <a href="#demo-clientport" class="btn btn-primary btn-small">Open Live Demo</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small">View Code</a>
               </div>
             </div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-            <div class="case-grid">
-              <section class="panel span-4">
-                <div class="panel-label">Context</div>
-                <h4>Client experience is part of the product.</h4>
+    <!-- CASE STUDY 4 -->
+    <section class="site-page" data-page="case-launchlayer">
+      <div class="wrap">
+        <section class="subpage-hero">
+          <a href="#projects" class="back-link">← Back to projects</a>
+          <h1>LaunchLayer</h1>
+          <p>Launch-readiness workspace for milestones, blockers, sign-offs, and dependency management.</p>
+        </section>
+
+        <div class="case-layout">
+          <div class="case-main">
+            <article class="case-card">
+              <div class="case-card-inner">
+                <h2>Project overview</h2>
                 <p>
-                  Delivery systems shape how clients perceive the quality of work. When the delivery layer is unclear, even strong outcomes can feel less professional. This project treats the delivery experience as a product in itself.
+                  This concept was built to feel more focused than a generic project management tool by centring the product around release readiness and execution confidence.
                 </p>
-              </section>
+              </div>
+            </article>
 
-              <section class="panel span-4">
-                <div class="panel-label">Goal</div>
-                <h4>Make progress legible and approvals frictionless.</h4>
-                <p>
-                  Every screen was designed to answer the same questions quickly: what is happening, what needs review, what changed, and what comes next.
-                </p>
-              </section>
-
-              <section class="panel span-4">
-                <div class="panel-label">Direction</div>
-                <h4>Softly premium, not luxury for its own sake.</h4>
-                <p>
-                  The interface uses clean hierarchy, generous spacing, and restrained surfaces so it feels elevated without sacrificing clarity or business usefulness.
-                </p>
-              </section>
-
-              <section class="panel span-6">
-                <div class="panel-label">Wireframes</div>
-                <h4>Journey-first structure before visual polish.</h4>
+            <article class="case-card">
+              <div class="case-card-inner">
+                <h2>Launch flow</h2>
                 <div class="figma-board">
-                  <div class="figma-bar">
-                    <div class="figma-dots"><span></span><span></span><span></span></div>
-                    <div class="figma-title">Figma board · journey and screen structure</div>
-                  </div>
-                  <div class="board-body">
-                    <div class="wire-layout">
-                      <div class="wire-screen">
-                        <div class="wire-top"><span></span><span></span><span></span></div>
-                        <div class="wire-inner">
-                          <div class="line m"></div>
-                          <div class="hero-strip"></div>
-                          <div class="line s"></div>
-                        </div>
-                      </div>
-                      <div class="wire-screen">
-                        <div class="wire-top"><span></span><span></span><span></span></div>
-                        <div class="wire-inner">
-                          <div class="line l"></div>
-                          <div class="card-row"><div class="mini-card"></div><div class="mini-card"></div></div>
-                          <div class="line m"></div>
-                        </div>
-                      </div>
-                      <div class="wire-screen">
-                        <div class="wire-top"><span></span><span></span><span></span></div>
-                        <div class="wire-inner">
-                          <div class="line s"></div>
-                          <div class="line l"></div>
-                          <div class="line l"></div>
-                          <div class="line s"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <section class="panel span-6">
-                <div class="panel-label">Mockups</div>
-                <h4>Portal surfaces designed for confidence.</h4>
-                <div class="figma-board">
-                  <div class="figma-bar">
-                    <div class="figma-dots"><span></span><span></span><span></span></div>
-                    <div class="figma-title">Figma board · portal interface</div>
-                  </div>
-                  <div class="board-body">
-                    <div class="mockup-grid">
-                      <div class="browser-mock">
-                        <div class="browser-top">
-                          <div class="figma-dots"><span></span><span></span><span></span></div>
-                          <div class="address"></div>
-                        </div>
-                        <div class="browser-body">
-                          <div class="hero-strip"></div>
-                          <div class="line m"></div>
-                          <div class="stat-row">
-                            <div class="stat-box"></div>
-                            <div class="stat-box"></div>
-                            <div class="stat-box"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="mobile-mock">
-                        <div class="mobile-screen">
-                          <div class="line s"></div>
-                          <div class="stat-box"></div>
-                          <div class="stat-box"></div>
-                          <div class="line m"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <p class="caption">
-                  Final product visuals should support the story rather than stand alone, which is why this section pairs polished screen concepts with a clear explanation of what they improve for the user. [web:57][web:63]
-                </p>
-              </section>
-
-              <section class="panel span-12">
-                <div class="panel-label">Outcome</div>
-                <h4>What this project adds to the portfolio.</h4>
-                <div class="outcome-list">
-                  <div class="outcome"><div class="outcome-badge">01</div><p>It shows product thinking beyond internal dashboards by focusing on relationship quality and service delivery experience. [cite:17]</p></div>
-                  <div class="outcome"><div class="outcome-badge">02</div><p>It presents a believable B2B use case with visuals that mirror the kind of process documentation hiring managers and clients expect to see. [web:57][web:67]</p></div>
-                  <div class="outcome"><div class="outcome-badge">03</div><p>It balances business context, process, and interface execution in a way that feels closer to a real project story. [web:55][web:71]</p></div>
-                </div>
-              </section>
-            </div>
-          </article>
-
-          <article class="case-card reveal" id="case-launchlayer">
-            <div class="case-top">
-              <div class="case-overview">
-                <h3>LaunchLayer — helping lean teams move from “nearly ready” to actually launch-ready.</h3>
-                <p>
-                  Early-stage teams often manage launches across docs, chats, and generic PM tools that were never designed around release confidence. This product focuses on launch readiness, dependency visibility, approvals, and blockers so teams can coordinate execution with less uncertainty.
-                </p>
-              </div>
-              <div class="case-brief">
-                <div class="brief"><strong>Role</strong><span>Workflow design, product planning, UX/UI, information hierarchy.</span></div>
-                <div class="brief"><strong>Scope</strong><span>Readiness tracking, dependency mapping, blocker visibility, and review cadence.</span></div>
-                <div class="brief"><strong>Goal</strong><span>Create a coordination tool for startups without enterprise-level heaviness.</span></div>
-                <div class="brief"><strong>Framing</strong><span>Built as a product for launch execution rather than generic project management.</span></div>
-              </div>
-            </div>
-
-            <div class="case-grid">
-              <section class="panel span-4">
-                <div class="panel-label">Insight</div>
-                <h4>Launch management is a distinct workflow.</h4>
-                <p>
-                  Teams do not just need tasks before launch. They need confidence, dependency awareness, sign-off visibility, and a clear sense of what could still go wrong.
-                </p>
-              </section>
-
-              <section class="panel span-4">
-                <div class="panel-label">Approach</div>
-                <h4>Make risk visible without making the tool heavy.</h4>
-                <p>
-                  The interface balances urgency with restraint by surfacing blockers and readiness signals clearly while staying compact enough for lean teams.
-                </p>
-              </section>
-
-              <section class="panel span-4">
-                <div class="panel-label">Positioning</div>
-                <h4>Sharper than a broad PM tool.</h4>
-                <p>
-                  A focused use case creates a more believable product story than another general dashboard. The specificity is what gives this project strength.
-                </p>
-              </section>
-
-              <section class="panel span-5">
-                <div class="panel-label">Wireflow</div>
-                <h4>Core launch review path.</h4>
-                <div class="figma-board">
-                  <div class="figma-bar">
-                    <div class="figma-dots"><span></span><span></span><span></span></div>
-                    <div class="figma-title">Figma board · wireflow</div>
-                  </div>
-                  <div class="board-body">
+                  <div class="figma-bar"><div class="dots"><span></span><span></span><span></span></div><div class="figma-title">Readiness review flow</div></div>
+                  <div class="figma-body">
                     <div class="flow-map">
                       <div class="flow-node"><span class="node-chip">Readiness</span><div class="line m"></div><div class="line s"></div></div>
                       <div class="flow-node"><span class="node-chip">Blockers</span><div class="line l"></div><div class="line s"></div></div>
@@ -1640,200 +1777,424 @@
                     </div>
                   </div>
                 </div>
-              </section>
+              </div>
+            </article>
 
-              <section class="panel span-7">
-                <div class="panel-label">Screen mockups</div>
-                <h4>Readiness overview and dependency view.</h4>
-                <div class="figma-board">
-                  <div class="figma-bar">
-                    <div class="figma-dots"><span></span><span></span><span></span></div>
-                    <div class="figma-title">Figma board · release workspace</div>
-                  </div>
-                  <div class="board-body">
-                    <div class="mockup-grid">
-                      <div class="browser-mock">
-                        <div class="browser-top">
-                          <div class="figma-dots"><span></span><span></span><span></span></div>
-                          <div class="address"></div>
-                        </div>
-                        <div class="browser-body">
-                          <div class="hero-strip"></div>
-                          <div class="stat-row">
-                            <div class="stat-box"></div>
-                            <div class="stat-box"></div>
-                            <div class="stat-box"></div>
-                          </div>
-                          <div class="line l"></div>
-                        </div>
-                      </div>
-                      <div class="browser-mock">
-                        <div class="browser-top">
-                          <div class="figma-dots"><span></span><span></span><span></span></div>
-                          <div class="address"></div>
-                        </div>
-                        <div class="browser-body">
-                          <div class="line m"></div>
-                          <div class="hero-strip"></div>
-                          <div class="line l"></div>
-                          <div class="line s"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
+            <article class="case-card">
+              <div class="case-card-inner">
+                <h2>Solution direction</h2>
+                <p>
+                  The workspace makes blockers, approvals, and milestone confidence visible in one place, helping lean startup teams move from “almost ready” to real launch clarity.
+                </p>
+              </div>
+            </article>
+          </div>
 
-              <section class="panel span-12">
-                <div class="panel-label">Outcome</div>
-                <h4>Why this project strengthens the portfolio.</h4>
-                <div class="outcome-list">
-                  <div class="outcome"><div class="outcome-badge">01</div><p>It demonstrates product thinking around execution risk and coordination, not just visual polish. [web:57][web:71]</p></div>
-                  <div class="outcome"><div class="outcome-badge">02</div><p>It broadens your work beyond service-business tooling into startup operations and release workflows. [cite:16][cite:17]</p></div>
-                  <div class="outcome"><div class="outcome-badge">03</div><p>It follows a clearer problem-solution-result pattern, which is one of the most effective structures for portfolio case studies. [web:68][web:71]</p></div>
-                </div>
-              </section>
+          <aside class="case-sidebar">
+            <div class="side-card">
+              <h3>Role</h3>
+              <p>Workflow product design, release dashboard structure, system concepting, live demo presentation.</p>
             </div>
-          </article>
+            <div class="side-card">
+              <h3>Deliverables</h3>
+              <ul>
+                <li>Launch workspace</li>
+                <li>Case study page</li>
+                <li>Live demo app</li>
+                <li>Readiness UI</li>
+              </ul>
+            </div>
+            <div class="side-card">
+              <h3>Actions</h3>
+              <div class="contact-actions" style="margin-top:0">
+                <a href="#demo-launchlayer" class="btn btn-primary btn-small">Open Live Demo</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small">View Code</a>
+              </div>
+            </div>
+          </aside>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section" id="services">
-        <header class="section-head reveal">
-          <div class="section-label">Services</div>
-          <h2>Work shaped around real business problems.</h2>
-          <p>
-            Your positioning now centres on AI systems and automation, digital product design and development, and digital project management, so the service structure below matches your current freelance direction and the kinds of clients you want to attract. [cite:16][cite:17][cite:19]
-          </p>
-        </header>
-
-        <div class="services-grid">
-          <article class="service-card reveal">
-            <h3>AI systems</h3>
-            <p>I design practical AI workflows that improve intake, qualification, routing, repeated admin, and operational efficiency for businesses that need structure more than hype.</p>
-            <ul class="tag-list">
-              <li>Workflow logic</li>
-              <li>Lead handling</li>
-              <li>Ops automation</li>
-            </ul>
-          </article>
-
-          <article class="service-card reveal">
-            <h3>Digital products</h3>
-            <p>I build product-led websites, internal tools, and business-facing interfaces that feel polished, useful, and commercially believable.</p>
-            <ul class="tag-list">
-              <li>UX/UI</li>
-              <li>Front-end systems</li>
-              <li>Web products</li>
-            </ul>
-          </article>
-
-          <article class="service-card reveal">
-            <h3>Project delivery</h3>
-            <p>I help founders and teams structure digital work through planning, clearer systems, better handoff, and stronger execution support.</p>
-            <ul class="tag-list">
-              <li>Planning</li>
-              <li>Coordination</li>
-              <li>Documentation</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="about">
-        <header class="section-head reveal">
-          <div class="section-label">About</div>
-          <h2>A portfolio built around product realism, process, and delivery thinking.</h2>
-          <p>
-            You want the site to appeal to freelance clients and professional opportunities at the same time, so the presentation needs to show not only design taste, but also product thinking, workflow structure, and business relevance. [cite:17][cite:19]
-          </p>
-        </header>
-
-        <div class="about-grid">
-          <article class="about-card reveal">
-            <h3>What I bring</h3>
-            <p>
-              I combine UX structure, front-end execution, workflow thinking, and delivery awareness. That makes it easier for me to work on products that need more than pretty screens — especially where operations, users, and business goals intersect.
-            </p>
-            <p>
-              I’m most interested in products that simplify messy internal processes, improve how teams work, or create a better client-facing digital experience.
-            </p>
-          </article>
-
-          <article class="about-card reveal">
-            <h3>Based in</h3>
-            <p>Southampton, United Kingdom.</p>
-            <h3 style="margin-top:20px;">Working with</h3>
-            <p>Startups, service businesses, lean teams, and founders who want stronger digital systems.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="contact">
-        <div class="contact-card reveal">
-          <h2>If you need clearer digital systems, stronger product thinking, or better delivery structure, we should talk.</h2>
-          <p>
-            I’m available for freelance projects and product collaborations involving AI workflows, workflow tooling, client platforms, internal products, and structured delivery support. The strongest projects usually start with a messy problem and turn into something clearer, more useful, and easier to scale.
-          </p>
-
-          <div class="contact-actions">
-            <a class="btn btn-primary" href="mailto:rodhanala@gmail.com?subject=Project%20Enquiry">Email me</a>
-            <a class="btn btn-secondary" href="https://wa.me/447311470011" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            <a class="btn btn-secondary" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          </div>
-
-          <div class="contact-meta">
-            <div class="meta"><small>Email</small><span>rodhanala@gmail.com</span></div>
-            <div class="meta"><small>Location</small><span>Southampton, United Kingdom</span></div>
-            <div class="meta"><small>Focus</small><span>AI systems, digital products, workflow platforms, and project delivery support</span></div>
-            <div class="meta"><small>Availability</small><span>Open to freelance, contract, and product-led collaborations</span></div>
+    <!-- DEMO 1 -->
+    <section class="site-page" data-page="demo-flowpilot">
+      <div class="demo-shell">
+        <div class="demo-top">
+          <div class="demo-title"><strong>Live Demo</strong><span>FlowPilot OS</span></div>
+          <div class="contact-actions" style="margin-top:0">
+            <a href="#case-flowpilot" class="btn btn-secondary btn-small">Case Study</a>
+            <a href="#projects" class="btn btn-primary btn-small">Back to Projects</a>
           </div>
         </div>
-      </section>
 
-      <footer>
-        <div class="footer-inner">
-          <p>© 2026 Rohith Dhanala</p>
-          <p>Built to present real-world product thinking, process visuals, and client-ready case studies.</p>
+        <div class="app-frame">
+          <div class="app-grid">
+            <aside class="app-sidebar">
+              <div class="app-brand">
+                <h2>FlowPilot</h2>
+                <p>Salon operations system with daily visibility and cleaner scheduling control.</p>
+              </div>
+              <nav class="menu">
+                <a class="active" href="javascript:void(0)"><span>Overview</span><span class="chip">Today</span></a>
+                <a href="javascript:void(0)"><span>Bookings</span><span class="chip">124</span></a>
+                <a href="javascript:void(0)"><span>Team Load</span><span class="chip">Live</span></a>
+                <a href="javascript:void(0)"><span>Customers</span><span class="chip">CRM</span></a>
+                <a href="javascript:void(0)"><span>Campaigns</span><span class="chip">Auto</span></a>
+              </nav>
+            </aside>
+
+            <div class="app-main">
+              <div class="app-header">
+                <div>
+                  <h3>Daily operations dashboard</h3>
+                  <p>Track capacity, appointments, reminders, and client context from a single workspace.</p>
+                </div>
+                <a href="javascript:void(0)" class="btn btn-primary btn-small">Create booking</a>
+              </div>
+
+              <div class="app-body">
+                <div class="kpi-grid">
+                  <div class="kpi"><strong>Today's bookings</strong><span>42</span><small>+8 from yesterday</small></div>
+                  <div class="kpi"><strong>Occupancy</strong><span>87%</span><small>Peak between 2–6 PM</small></div>
+                  <div class="kpi"><strong>No-shows</strong><span>3</span><small>Below weekly average</small></div>
+                  <div class="kpi"><strong>Revenue</strong><span>£2.9k</span><small>Projected close £4.1k</small></div>
+                </div>
+
+                <div class="content-grid">
+                  <section class="panel">
+                    <h4>Weekly calendar</h4>
+                    <p>Quick view of service density, schedule pressure, and booking type distribution.</p>
+                    <div class="calendar-grid">
+                      <div class="day"><b>Mon</b><span class="pill orange">42 slots</span></div>
+                      <div class="day"><b>Tue</b><span class="pill green">Balanced</span></div>
+                      <div class="day"><b>Wed</b><span class="pill blue">Promo</span></div>
+                      <div class="day"><b>Thu</b><span class="pill orange">High demand</span></div>
+                      <div class="day"><b>Fri</b><span class="pill purple">VIP</span></div>
+                      <div class="day"><b>Sat</b><span class="pill red">Almost full</span></div>
+                      <div class="day"><b>Sun</b><span class="pill green">Team off</span></div>
+                    </div>
+                  </section>
+
+                  <section class="panel">
+                    <h4>Staff load</h4>
+                    <p>Current team distribution and service queue balance.</p>
+                    <div class="timeline">
+                      <div class="timeline-item"><strong>Aisha Khan · 92%</strong><span>Colour, treatment, finishing</span></div>
+                      <div class="timeline-item"><strong>Maria James · 81%</strong><span>Styling, consults, package upsell</span></div>
+                      <div class="timeline-item"><strong>Nina Roy · 76%</strong><span>Nail services, walk-ins, reminders</span></div>
+                    </div>
+                  </section>
+                </div>
+
+                <section class="panel">
+                  <h4>Upcoming customer interactions</h4>
+                  <p>Reminders, reschedules, and follow-up opportunities surfaced from the day’s bookings.</p>
+                  <div class="table">
+                    <div class="row"><strong>Emma Wilson</strong><span>Hair treatment + styling</span><small>2:30 PM</small><span class="pill blue">Reminder sent</span></div>
+                    <div class="row"><strong>Sofia Ahmed</strong><span>Colour consultation</span><small>4:00 PM</small><span class="pill orange">Needs deposit</span></div>
+                    <div class="row"><strong>Priya Nair</strong><span>VIP package renewal</span><small>6:15 PM</small><span class="pill purple">Upsell ready</span></div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </section>
+
+    <!-- DEMO 2 -->
+    <section class="site-page" data-page="demo-signaldesk">
+      <div class="demo-shell">
+        <div class="demo-top">
+          <div class="demo-title"><strong>Live Demo</strong><span>SignalDesk AI</span></div>
+          <div class="contact-actions" style="margin-top:0">
+            <a href="#case-signaldesk" class="btn btn-secondary btn-small">Case Study</a>
+            <a href="#projects" class="btn btn-primary btn-small">Back to Projects</a>
+          </div>
+        </div>
+
+        <div class="app-frame">
+          <div class="app-grid">
+            <aside class="app-sidebar">
+              <div class="app-brand">
+                <h2>SignalDesk</h2>
+                <p>AI intake layer for qualification, priority scoring, and response routing.</p>
+              </div>
+              <nav class="menu">
+                <a class="active" href="javascript:void(0)"><span>Inbox</span><span class="chip">Live</span></a>
+                <a href="javascript:void(0)"><span>Qualified</span><span class="chip">28</span></a>
+                <a href="javascript:void(0)"><span>Urgent</span><span class="chip">6</span></a>
+                <a href="javascript:void(0)"><span>Escalations</span><span class="chip">4</span></a>
+                <a href="javascript:void(0)"><span>Rules</span><span class="chip">AI</span></a>
+              </nav>
+            </aside>
+
+            <div class="app-main">
+              <div class="app-header">
+                <div>
+                  <h3>AI intake and routing board</h3>
+                  <p>Review enquiries by confidence, urgency, channel, and suggested next action.</p>
+                </div>
+                <a href="javascript:void(0)" class="btn btn-primary btn-small">Create rule</a>
+              </div>
+
+              <div class="app-body">
+                <div class="kpi-grid">
+                  <div class="kpi"><strong>Incoming today</strong><span>64</span><small>Across forms, chat, WhatsApp</small></div>
+                  <div class="kpi"><strong>Qualified</strong><span>41</span><small>64% automation success</small></div>
+                  <div class="kpi"><strong>Urgent leads</strong><span>6</span><small>Escalated in under 2 mins</small></div>
+                  <div class="kpi"><strong>Confidence</strong><span>91%</span><small>Average model certainty</small></div>
+                </div>
+
+                <div class="cards-2">
+                  <section class="panel">
+                    <h4>Priority queue</h4>
+                    <p>High-confidence, high-value enquiries surfaced for immediate action.</p>
+                    <div class="table">
+                      <div class="row"><strong>Emergency plumbing request</strong><span>WhatsApp · South zone</span><small>Urgency 98%</small><span class="pill red">Escalate now</span></div>
+                      <div class="row"><strong>Clinic booking enquiry</strong><span>Website form · Returning</span><small>Confidence 94%</small><span class="pill blue">Assign sales</span></div>
+                      <div class="row"><strong>Salon package lead</strong><span>Instagram DM</span><small>Urgency 71%</small><span class="pill orange">Review</span></div>
+                    </div>
+                  </section>
+
+                  <section class="panel">
+                    <h4>Decision logic</h4>
+                    <p>Explainable routing states used to keep the AI layer understandable to operators.</p>
+                    <div class="timeline">
+                      <div class="timeline-item"><strong>Category detection</strong><span>Maps enquiry intent to business service group</span></div>
+                      <div class="timeline-item"><strong>Urgency scoring</strong><span>Detects time sensitivity and risk of delay</span></div>
+                      <div class="timeline-item"><strong>Recommended action</strong><span>Assigns team, request detail, or escalate</span></div>
+                    </div>
+                  </section>
+                </div>
+
+                <section class="panel">
+                  <h4>Operator review stream</h4>
+                  <p>Humans can validate AI decisions, rewrite summaries, and approve routing before dispatch.</p>
+                  <div class="table">
+                    <div class="row"><strong>Lead #1842</strong><span>“Need callback in 15 mins”</span><small>92% certainty</small><span class="pill red">Manual confirm</span></div>
+                    <div class="row"><strong>Lead #1838</strong><span>“Looking for pricing”</span><small>87% certainty</small><span class="pill green">Auto reply</span></div>
+                    <div class="row"><strong>Lead #1835</strong><span>“Can someone visit today?”</span><small>95% certainty</small><span class="pill blue">Dispatch team</span></div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO 3 -->
+    <section class="site-page" data-page="demo-clientport">
+      <div class="demo-shell">
+        <div class="demo-top">
+          <div class="demo-title"><strong>Live Demo</strong><span>ClientPort Studio</span></div>
+          <div class="contact-actions" style="margin-top:0">
+            <a href="#case-clientport" class="btn btn-secondary btn-small">Case Study</a>
+            <a href="#projects" class="btn btn-primary btn-small">Back to Projects</a>
+          </div>
+        </div>
+
+        <div class="app-frame">
+          <div class="app-grid">
+            <aside class="app-sidebar">
+              <div class="app-brand">
+                <h2>ClientPort</h2>
+                <p>Premium collaboration workspace for files, tasks, approvals, and project visibility.</p>
+              </div>
+              <nav class="menu">
+                <a class="active" href="javascript:void(0)"><span>Overview</span><span class="chip">Client</span></a>
+                <a href="javascript:void(0)"><span>Deliverables</span><span class="chip">12</span></a>
+                <a href="javascript:void(0)"><span>Files</span><span class="chip">48</span></a>
+                <a href="javascript:void(0)"><span>Approvals</span><span class="chip">3</span></a>
+                <a href="javascript:void(0)"><span>Invoices</span><span class="chip">2</span></a>
+              </nav>
+            </aside>
+
+            <div class="app-main">
+              <div class="app-header">
+                <div>
+                  <h3>Client experience dashboard</h3>
+                  <p>Designed to make delivery status, next actions, and review flow clear for both studio and client.</p>
+                </div>
+                <a href="javascript:void(0)" class="btn btn-primary btn-small">Upload deliverable</a>
+              </div>
+
+              <div class="app-body">
+                <div class="kpi-grid">
+                  <div class="kpi"><strong>Project progress</strong><span>78%</span><small>Design phase nearly complete</small></div>
+                  <div class="kpi"><strong>Open approvals</strong><span>3</span><small>Awaiting client sign-off</small></div>
+                  <div class="kpi"><strong>Files shared</strong><span>48</span><small>Versioned and timestamped</small></div>
+                  <div class="kpi"><strong>Invoices due</strong><span>£1.2k</span><small>Final milestone pending</small></div>
+                </div>
+
+                <div class="content-grid">
+                  <section class="panel">
+                    <h4>Delivery timeline</h4>
+                    <p>Major milestones and client-facing updates presented in one clean sequence.</p>
+                    <div class="timeline">
+                      <div class="timeline-item"><strong>Discovery complete</strong><span>Approved with client notes attached</span></div>
+                      <div class="timeline-item"><strong>UI direction delivered</strong><span>Waiting for variant selection</span></div>
+                      <div class="timeline-item"><strong>Build scheduled</strong><span>Starts once final review is signed</span></div>
+                    </div>
+                  </section>
+
+                  <section class="panel">
+                    <h4>Approval queue</h4>
+                    <p>Review items that require client confirmation before the next phase begins.</p>
+                    <div class="table">
+                      <div class="row"><strong>Homepage direction</strong><span>2 visual routes</span><small>Due today</small><span class="pill orange">Needs review</span></div>
+                      <div class="row"><strong>Brand lockup</strong><span>Primary + mono marks</span><small>Due tomorrow</small><span class="pill blue">In review</span></div>
+                      <div class="row"><strong>Content structure</strong><span>Site architecture</span><small>Ready</small><span class="pill green">Approved</span></div>
+                    </div>
+                  </section>
+                </div>
+
+                <section class="panel">
+                  <h4>Shared workspace</h4>
+                  <p>Combines files, notes, comments, and billing visibility into one premium client-facing system.</p>
+                  <div class="table">
+                    <div class="row"><strong>Onboarding brief.pdf</strong><span>Shared 4 days ago</span><small>Version 1.2</small><span class="pill purple">Pinned</span></div>
+                    <div class="row"><strong>Homepage wireframe.fig</strong><span>Shared yesterday</span><small>Commented</small><span class="pill orange">Review</span></div>
+                    <div class="row"><strong>Invoice milestone-02</strong><span>Issued today</span><small>Net 7</small><span class="pill blue">Open</span></div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO 4 -->
+    <section class="site-page" data-page="demo-launchlayer">
+      <div class="demo-shell">
+        <div class="demo-top">
+          <div class="demo-title"><strong>Live Demo</strong><span>LaunchLayer</span></div>
+          <div class="contact-actions" style="margin-top:0">
+            <a href="#case-launchlayer" class="btn btn-secondary btn-small">Case Study</a>
+            <a href="#projects" class="btn btn-primary btn-small">Back to Projects</a>
+          </div>
+        </div>
+
+        <div class="app-frame">
+          <div class="app-grid">
+            <aside class="app-sidebar">
+              <div class="app-brand">
+                <h2>LaunchLayer</h2>
+                <p>Release readiness system for startup teams managing milestones, blockers, and sign-offs.</p>
+              </div>
+              <nav class="menu">
+                <a class="active" href="javascript:void(0)"><span>Launch board</span><span class="chip">v2.4</span></a>
+                <a href="javascript:void(0)"><span>Milestones</span><span class="chip">9</span></a>
+                <a href="javascript:void(0)"><span>Dependencies</span><span class="chip">14</span></a>
+                <a href="javascript:void(0)"><span>Approvals</span><span class="chip">5</span></a>
+                <a href="javascript:void(0)"><span>Risks</span><span class="chip">3</span></a>
+              </nav>
+            </aside>
+
+            <div class="app-main">
+              <div class="app-header">
+                <div>
+                  <h3>Launch readiness workspace</h3>
+                  <p>Visualise blockers, ownership, dependency health, and sign-off progress before release.</p>
+                </div>
+                <a href="javascript:void(0)" class="btn btn-primary btn-small">Start review</a>
+              </div>
+
+              <div class="app-body">
+                <div class="kpi-grid">
+                  <div class="kpi"><strong>Readiness</strong><span>83%</span><small>On track for Friday</small></div>
+                  <div class="kpi"><strong>Open blockers</strong><span>3</span><small>One critical, two medium</small></div>
+                  <div class="kpi"><strong>Approvals done</strong><span>12/17</span><small>Legal pending</small></div>
+                  <div class="kpi"><strong>Dependencies clear</strong><span>14</span><small>2 at risk</small></div>
+                </div>
+
+                <div class="cards-2">
+                  <section class="panel">
+                    <h4>Milestone stream</h4>
+                    <p>Release sequence mapped across ownership and confidence levels.</p>
+                    <div class="timeline">
+                      <div class="timeline-item"><strong>Feature freeze</strong><span>Completed · Product team</span></div>
+                      <div class="timeline-item"><strong>QA sign-off</strong><span>In progress · 2 issues remaining</span></div>
+                      <div class="timeline-item"><strong>Launch comms</strong><span>Drafted · marketing waiting on assets</span></div>
+                    </div>
+                  </section>
+
+                  <section class="panel">
+                    <h4>Risk board</h4>
+                    <p>Critical blockers surfaced with impact and owner visibility.</p>
+                    <div class="table">
+                      <div class="row"><strong>Payment fallback bug</strong><span>Checkout service</span><small>Critical</small><span class="pill red">Fix now</span></div>
+                      <div class="row"><strong>Legal copy review</strong><span>Landing page</span><small>Medium</small><span class="pill orange">Pending</span></div>
+                      <div class="row"><strong>Mobile QA regression</strong><span>Auth flow</span><small>Medium</small><span class="pill blue">Assigned</span></div>
+                    </div>
+                  </section>
+                </div>
+
+                <section class="panel">
+                  <h4>Approval matrix</h4>
+                  <p>Sign-offs grouped by team so release confidence is visible at a glance.</p>
+                  <div class="table">
+                    <div class="row"><strong>Engineering</strong><span>Backend, frontend, infra</span><small>4/4</small><span class="pill green">Approved</span></div>
+                    <div class="row"><strong>Product</strong><span>Scope and release notes</span><small>3/3</small><span class="pill green">Approved</span></div>
+                    <div class="row"><strong>Legal</strong><span>Terms and policy updates</span><small>1/2</small><span class="pill orange">Waiting</span></div>
+                    <div class="row"><strong>Marketing</strong><span>Assets and launch copy</span><small>4/5</small><span class="pill blue">Almost done</span></div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script>
-    (function(){
-      const root = document.documentElement;
+    (function () {
+      const html = document.documentElement;
       const toggle = document.querySelector('[data-theme-toggle]');
       let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.setAttribute('data-theme', theme);
+      html.setAttribute('data-theme', theme);
 
-      function icon(){
-        toggle.innerHTML = theme === 'dark'
-          ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>'
-          : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z"></path></svg>';
+      function toggleIcon(mode){
+        toggle.innerHTML = mode === 'dark'
+          ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z"></path></svg>'
+          : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>';
       }
-      icon();
+      toggleIcon(theme);
 
       toggle.addEventListener('click', function(){
         theme = theme === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', theme);
-        icon();
+        html.setAttribute('data-theme', theme);
+        toggleIcon(theme);
       });
 
-      const reveals = document.querySelectorAll('.reveal');
-      if('IntersectionObserver' in window){
-        const io = new IntersectionObserver((entries)=>{
-          entries.forEach(entry=>{
-            if(entry.isIntersecting){
-              entry.target.classList.add('in');
-              io.unobserve(entry.target);
-            }
-          });
-        },{threshold:0.12});
-        reveals.forEach(el=>io.observe(el));
-      } else {
-        reveals.forEach(el=>el.classList.add('in'));
+      const pages = document.querySelectorAll('.site-page');
+
+      function route() {
+        const hash = (window.location.hash || '#home').replace('#', '');
+        let target = document.querySelector('.site-page[data-page="' + hash + '"]');
+        if (!target) target = document.querySelector('.site-page[data-page="home"]');
+
+        pages.forEach(page => page.classList.remove('active'));
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        document.title = target.dataset.page === 'home'
+          ? 'Rohith Dhanala — AI Systems, Products & Live Demo Projects'
+          : target.dataset.page.replace(/-/g, ' ') + ' — Rohith Dhanala';
       }
+
+      window.addEventListener('hashchange', route);
+      route();
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) entry.target.classList.add('in');
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     })();
   </script>
 </body>
