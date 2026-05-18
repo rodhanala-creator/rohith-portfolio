@@ -1,1 +1,244 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SalonFlow OS</title>
+  <meta name="description" content="SalonFlow OS — premium salon operations dashboard demo." />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=zodiak@400,500,700&display=swap" rel="stylesheet">
+  <style>
+    :root,[data-theme="light"]{
+      --bg:#f6f4ef;--surface:#fcfbf8;--surface-2:#f1ece4;--surface-3:#e8e0d3;--line:#d7cebf;
+      --text:#171411;--muted:#6f6558;--faint:#9e9387;--accent:#a56a3a;--accent-2:#7f522c;
+      --good:#2e7d5b;--warn:#c27b2f;--danger:#a84d5d;--radius:22px;--radius-sm:16px;
+      --shadow:0 12px 40px rgba(34,22,9,.10);--font-display:"Zodiak",serif;--font-body:"Satoshi",sans-serif;
+    }
+    [data-theme="dark"]{
+      --bg:#0f1217;--surface:#161b22;--surface-2:#1d2430;--surface-3:#273040;--line:#313b4a;
+      --text:#f3efe8;--muted:#c4bbaf;--faint:#8f877d;--accent:#d58a52;--accent-2:#ef9d67;
+      --good:#5ba97f;--warn:#e1a650;--danger:#d06a7d;--shadow:0 20px 50px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);background:radial-gradient(circle at top right, rgba(213,138,82,.12), transparent 25%),var(--bg);color:var(--text);min-height:100vh}
+    button,input,select{font:inherit;color:inherit}
+    button{cursor:pointer;border:none;background:none}
+    .app{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+    .sidebar{background:linear-gradient(180deg,var(--surface),var(--surface-2));border-right:1px solid var(--line);padding:24px;display:grid;grid-template-rows:auto auto 1fr auto;gap:22px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:42px;height:42px;border-radius:14px;background:var(--accent);display:grid;place-items:center;color:#fff;font-weight:700;box-shadow:var(--shadow)}
+    .brand h1{font-size:18px;line-height:1}
+    .brand p{font-size:12px;color:var(--faint);margin-top:4px}
+    .theme{display:flex;gap:10px}
+    .theme button,.quick button{min-height:44px;padding:12px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--muted)}
+    .quick{display:grid;gap:10px}
+    .quick button.active,.nav button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .nav{display:grid;gap:8px}
+    .nav button{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-radius:16px;color:var(--muted);border:1px solid transparent}
+    .nav button:hover{background:var(--surface-3)}
+    .mini-card{padding:16px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+    .mini-card strong{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+    .mini-card p{color:var(--muted);font-size:14px;line-height:1.6}
+    .content{display:grid;grid-template-rows:auto auto 1fr;gap:18px;padding:24px}
+    .topbar{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+    .headline h2{font-family:var(--font-display);font-size:44px;line-height:.95;font-weight:600}
+    .headline p{margin-top:10px;color:var(--muted);max-width:72ch;line-height:1.7}
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{min-height:46px;padding:12px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--text)}
+    .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .card{background:linear-gradient(180deg,var(--surface),var(--surface-2));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .stat{padding:18px}
+    .label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+    .value{font-size:34px;font-weight:700;line-height:1;margin-top:10px}
+    .delta{margin-top:8px;font-size:13px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1.35fr .95fr;gap:16px;align-items:start}
+    .panel{padding:20px}
+    .panel h3{font-family:var(--font-display);font-size:28px;font-weight:600;line-height:1;margin-bottom:14px}
+    .calendar{display:grid;gap:12px}
+    .appt{display:grid;grid-template-columns:86px 1fr auto;gap:14px;align-items:center;padding:14px;border-radius:18px;background:var(--surface);border:1px solid var(--line)}
+    .time{font-weight:700;font-size:15px}
+    .client strong{display:block}
+    .client span{font-size:13px;color:var(--muted)}
+    .badge{padding:8px 10px;border-radius:999px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+    .b-booked{background:rgba(91,169,127,.14);color:var(--good)}
+    .b-pending{background:rgba(225,166,80,.14);color:var(--warn)}
+    .b-vip{background:rgba(213,138,82,.14);color:var(--accent)}
+    .team{display:grid;gap:12px}
+    .member{padding:14px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+    .member-top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:10px}
+    .bar{height:10px;border-radius:999px;background:var(--surface-3);overflow:hidden}
+    .bar > span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+    .messages{margin-top:16px;display:grid;gap:12px}
+    .msg{padding:14px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+    .msg strong{display:block;margin-bottom:6px}
+    .msg p{color:var(--muted);font-size:14px;line-height:1.65}
+    .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+    .filters button{padding:10px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted)}
+    .filters button.active{background:var(--accent-soft, rgba(213,138,82,.16));color:var(--accent);border-color:var(--accent)}
+    @media (max-width:1100px){.stats,.grid{grid-template-columns:1fr 1fr}.app{grid-template-columns:1fr}.sidebar{grid-template-rows:auto}}
+    @media (max-width:760px){.stats,.grid{grid-template-columns:1fr}.topbar{flex-direction:column}.appt{grid-template-columns:1fr}.headline h2{font-size:34px}}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">S</div>
+        <div>
+          <h1>SalonFlow OS</h1>
+          <p>Operations dashboard</p>
+        </div>
+      </div>
 
+      <div class="theme">
+        <button id="themeToggle" aria-label="Switch theme">Toggle theme</button>
+        <button id="refreshBtn">Refresh data</button>
+      </div>
+
+      <nav class="nav" aria-label="Sections">
+        <button class="tab active" data-tab="overview">Overview <span>•</span></button>
+        <button class="tab" data-tab="appointments">Appointments <span>12</span></button>
+        <button class="tab" data-tab="team">Team load <span>4</span></button>
+        <button class="tab" data-tab="messages">Messages <span>9</span></button>
+      </nav>
+
+      <div class="mini-card">
+        <strong>Today focus</strong>
+        <p>Keep midday load balanced, follow up pending bridal enquiries, and maintain faster reply times on WhatsApp-origin leads.</p>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="topbar">
+        <div class="headline">
+          <h2>Turn bookings, team load, and client communication into one clean daily workflow.</h2>
+          <p>SalonFlow OS is built as a premium salon operations demo for beauty businesses that need clearer scheduling, stronger visibility, and a more organised front-desk rhythm.</p>
+        </div>
+        <div class="actions">
+          <button class="btn primary">New booking</button>
+          <button class="btn">Share schedule</button>
+          <button class="btn">Export report</button>
+        </div>
+      </div>
+
+      <section class="stats">
+        <article class="card stat"><div class="label">Bookings today</div><div class="value" id="bookingsVal">18</div><div class="delta">+4 from yesterday</div></article>
+        <article class="card stat"><div class="label">Projected revenue</div><div class="value" id="revenueVal">£1,280</div><div class="delta">Strong colour service mix</div></article>
+        <article class="card stat"><div class="label">Reply time</div><div class="value" id="replyVal">6m</div><div class="delta">WhatsApp enquiries improving</div></article>
+        <article class="card stat"><div class="label">Rebook rate</div><div class="value" id="rebookVal">64%</div><div class="delta">Healthy repeat client base</div></article>
+      </section>
+
+      <section class="grid">
+        <article class="card panel" id="overviewTab">
+          <h3>Today’s appointment flow</h3>
+          <div class="filters">
+            <button class="filter active" data-filter="all">All</button>
+            <button class="filter" data-filter="booked">Booked</button>
+            <button class="filter" data-filter="pending">Pending</button>
+            <button class="filter" data-filter="vip">VIP</button>
+          </div>
+          <div class="calendar" id="appointmentList"></div>
+        </article>
+
+        <article class="card panel">
+          <h3>Team utilisation</h3>
+          <div class="team" id="teamList"></div>
+
+          <div class="messages">
+            <div class="msg">
+              <strong>High-value bridal lead</strong>
+              <p>Client requested weekend trial plus event-day package. Suggest immediate follow-up and premium consultation slot.</p>
+            </div>
+            <div class="msg">
+              <strong>Operations note</strong>
+              <p>Afternoon chair usage is near capacity. Consider shifting one colour appointment to a stylist with open finishing time.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const appointments = [
+      {time:"09:00",name:"Maya Thompson",service:"Cut + blow dry",status:"booked"},
+      {time:"10:15",name:"Sana Ali",service:"Balayage refresh",status:"vip"},
+      {time:"11:30",name:"Olivia Reed",service:"Bridal consultation",status:"pending"},
+      {time:"12:00",name:"Chloe Martin",service:"Gloss + trim",status:"booked"},
+      {time:"14:00",name:"Ava Walker",service:"Colour correction",status:"vip"},
+      {time:"15:15",name:"Ella Green",service:"Hair spa + finish",status:"booked"},
+      {time:"17:00",name:"Nadia Khan",service:"Consultation",status:"pending"}
+    ];
+    const team = [
+      {name:"Aisha",role:"Senior stylist",load:92},
+      {name:"Megan",role:"Colour specialist",load:78},
+      {name:"Sophie",role:"Front desk",load:66},
+      {name:"Leah",role:"Junior stylist",load:58}
+    ];
+
+    const appointmentList = document.getElementById('appointmentList');
+    const teamList = document.getElementById('teamList');
+
+    function badgeClass(status){
+      if(status==="booked") return "badge b-booked";
+      if(status==="pending") return "badge b-pending";
+      return "badge b-vip";
+    }
+
+    function renderAppointments(filter="all"){
+      appointmentList.innerHTML = appointments
+        .filter(a => filter==="all" ? true : a.status===filter)
+        .map(a => `
+          <div class="appt">
+            <div class="time">${a.time}</div>
+            <div class="client">
+              <strong>${a.name}</strong>
+              <span>${a.service}</span>
+            </div>
+            <div class="${badgeClass(a.status)}">${a.status}</div>
+          </div>
+        `).join('');
+    }
+
+    function renderTeam(){
+      teamList.innerHTML = team.map(m => `
+        <div class="member">
+          <div class="member-top">
+            <div>
+              <strong>${m.name}</strong>
+              <div style="font-size:13px;color:var(--muted)">${m.role}</div>
+            </div>
+            <div style="font-size:13px;color:var(--accent);font-weight:700">${m.load}%</div>
+          </div>
+          <div class="bar"><span style="width:${m.load}%"></span></div>
+        </div>
+      `).join('');
+    }
+
+    renderAppointments();
+    renderTeam();
+
+    document.querySelectorAll('.filter').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        renderAppointments(btn.dataset.filter);
+      });
+    });
+
+    document.getElementById('themeToggle').addEventListener('click',()=>{
+      const root=document.documentElement;
+      root.setAttribute('data-theme', root.getAttribute('data-theme')==='dark' ? 'light' : 'dark');
+    });
+
+    document.getElementById('refreshBtn').addEventListener('click',()=>{
+      document.getElementById('bookingsVal').textContent = 16 + Math.floor(Math.random()*6);
+      document.getElementById('revenueVal').textContent = '£' + (1180 + Math.floor(Math.random()*240)).toLocaleString();
+      document.getElementById('replyVal').textContent = (4 + Math.floor(Math.random()*6)) + 'm';
+      document.getElementById('rebookVal').textContent = (60 + Math.floor(Math.random()*9)) + '%';
+    });
+  </script>
+</body>
+</html>
