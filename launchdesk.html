@@ -1,1 +1,177 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LaunchDesk</title>
+  <meta name="description" content="LaunchDesk — project launch dashboard for startup teams." />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
+  <style>
+    :root,[data-theme="light"]{
+      --bg:#f5f4f1;--surface:#ffffff;--surface-2:#efede8;--surface-3:#e6e2da;--line:#d5d0c7;
+      --text:#16130f;--muted:#665f55;--faint:#958c80;--accent:#7048e8;--accent-2:#5836bb;
+      --good:#2f8a63;--warn:#c58a35;--danger:#b05568;--radius:22px;--shadow:0 16px 42px rgba(30,21,11,.10);
+      --font-display:"Clash Display",sans-serif;--font-body:"Satoshi",sans-serif;
+    }
+    [data-theme="dark"]{
+      --bg:#0c1015;--surface:#141923;--surface-2:#1b2230;--surface-3:#252f41;--line:#303b4f;
+      --text:#f3efe7;--muted:#bcb5aa;--faint:#8d857b;--accent:#9271ff;--accent-2:#b198ff;
+      --good:#57b181;--warn:#d9a451;--danger:#cb7283;--shadow:0 18px 48px rgba(0,0,0,.34);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font-body);background:radial-gradient(circle at top right, rgba(146,113,255,.12), transparent 28%),var(--bg);color:var(--text)}
+    button,input{font:inherit;color:inherit}
+    button{cursor:pointer;border:none;background:none}
+    .app{display:grid;grid-template-columns:300px 1fr;min-height:100vh}
+    .sidebar{padding:24px;background:linear-gradient(180deg,var(--surface),var(--surface-2));border-right:1px solid var(--line);display:grid;gap:20px;align-content:start}
+    .brand{display:flex;gap:12px;align-items:center}
+    .mark{width:44px;height:44px;border-radius:14px;background:var(--accent);display:grid;place-items:center;color:#fff;font-weight:800;box-shadow:var(--shadow)}
+    .brand h1{font-family:var(--font-display);font-size:21px}
+    .brand p{font-size:12px;color:var(--faint)}
+    .nav{display:grid;gap:8px}
+    .nav button{padding:14px 16px;border-radius:16px;color:var(--muted);display:flex;justify-content:space-between}
+    .nav button.active{background:var(--accent);color:#fff}
+    .small-panel{padding:16px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+    .small-panel strong{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+    .small-panel p{font-size:14px;color:var(--muted);line-height:1.65}
+    .main{padding:24px;display:grid;grid-template-rows:auto auto 1fr;gap:16px}
+    .hero{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+    .hero h2{font-family:var(--font-display);font-size:48px;line-height:.94;max-width:11ch}
+    .hero p{margin-top:12px;color:var(--muted);max-width:78ch;line-height:1.72}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{min-height:46px;padding:12px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
+    .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .card{background:linear-gradient(180deg,var(--surface),var(--surface-2));border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}
+    .stat{padding:18px}
+    .eyebrow{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint)}
+    .value{font-size:34px;font-weight:800;margin-top:10px;line-height:1}
+    .sub{margin-top:8px;font-size:13px;color:var(--muted)}
+    .workspace{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+    .panel{padding:20px}
+    .panel h3{font-family:var(--font-display);font-size:28px;line-height:1;margin-bottom:14px}
+    .board{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .col{padding:14px;border-radius:18px;border:1px solid var(--line);background:var(--surface)}
+    .col strong{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
+    .ticket{padding:12px;border-radius:14px;background:var(--surface-2);border:1px solid var(--line);margin-bottom:10px}
+    .ticket:last-child{margin-bottom:0}
+    .ticket h4{font-size:14px;margin-bottom:6px}
+    .ticket p{font-size:13px;color:var(--muted);line-height:1.55}
+    .timeline{display:grid;gap:12px}
+    .milestone{padding:14px;border-radius:18px;border:1px solid var(--line);background:var(--surface)}
+    .milestone-top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:8px}
+    .status{padding:7px 10px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .s-good{background:rgba(87,177,129,.14);color:var(--good)}
+    .s-warn{background:rgba(217,164,81,.14);color:var(--warn)}
+    .s-risk{background:rgba(203,114,131,.14);color:var(--danger)}
+    .milestone p{font-size:14px;color:var(--muted);line-height:1.6}
+    @media (max-width:1100px){.app{grid-template-columns:1fr}.stats,.workspace{grid-template-columns:1fr 1fr}}
+    @media (max-width:760px){.stats,.workspace,.board{grid-template-columns:1fr}.hero{flex-direction:column}.hero h2{font-size:34px}}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="mark">L</div>
+        <div>
+          <h1>LaunchDesk</h1>
+          <p>Launch operations dashboard</p>
+        </div>
+      </div>
 
+      <button class="btn" id="themeToggle">Toggle theme</button>
+      <button class="btn" id="progressBtn">Update progress</button>
+
+      <nav class="nav">
+        <button class="active">Roadmap <span>12</span></button>
+        <button>Approvals <span>5</span></button>
+        <button>Blockers <span>3</span></button>
+        <button>Assets <span>18</span></button>
+      </nav>
+
+      <div class="small-panel">
+        <strong>Launch note</strong>
+        <p>Best suited to founder-led teams that need clarity across deadlines, approvals, content, and product readiness without adopting a heavyweight PM stack.</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="hero">
+        <div>
+          <h2>Give startup launches one shared system for momentum, visibility, and accountability.</h2>
+          <p>LaunchDesk is a product-style demo for founders and small teams who need to coordinate release tasks, approvals, blockers, and readiness without drowning in cluttered project management tools.</p>
+        </div>
+        <div class="hero-actions">
+          <button class="btn primary">Create milestone</button>
+          <button class="btn">Share status</button>
+          <button class="btn">Export launch brief</button>
+        </div>
+      </section>
+
+      <section class="stats">
+        <article class="card stat"><div class="eyebrow">Launch score</div><div class="value" id="launchScore">82%</div><div class="sub">Readiness improving</div></article>
+        <article class="card stat"><div class="eyebrow">Tasks complete</div><div class="value" id="tasksDone">47</div><div class="sub">Across product, ops, and growth</div></article>
+        <article class="card stat"><div class="eyebrow">Blockers</div><div class="value" id="blockersVal">3</div><div class="sub">One needs founder review</div></article>
+        <article class="card stat"><div class="eyebrow">Approval lag</div><div class="value" id="approvalVal">11h</div><div class="sub">Can be reduced before launch day</div></article>
+      </section>
+
+      <section class="workspace">
+        <article class="card panel">
+          <h3>Launch board</h3>
+          <div class="board">
+            <div class="col">
+              <strong>In progress</strong>
+              <div class="ticket"><h4>Homepage launch copy</h4><p>Final polish pending legal tone review.</p></div>
+              <div class="ticket"><h4>Pricing QA</h4><p>Check annual plan totals and edge-case states.</p></div>
+            </div>
+            <div class="col">
+              <strong>Awaiting approval</strong>
+              <div class="ticket"><h4>Email sequence</h4><p>Needs final founder sign-off before scheduling.</p></div>
+              <div class="ticket"><h4>Product walkthrough</h4><p>Waiting on updated screenshots from design.</p></div>
+            </div>
+            <div class="col">
+              <strong>Done</strong>
+              <div class="ticket"><h4>Beta onboarding flow</h4><p>Released to test cohort and internally verified.</p></div>
+              <div class="ticket"><h4>Support macros</h4><p>Saved for launch-day response handling.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card panel">
+          <h3>Critical milestones</h3>
+          <div class="timeline">
+            <div class="milestone">
+              <div class="milestone-top"><strong>Product and QA sign-off</strong><span class="status s-good">On track</span></div>
+              <p>Core release path is stable. Only minor UI polish remains before final freeze.</p>
+            </div>
+            <div class="milestone">
+              <div class="milestone-top"><strong>Launch messaging approval</strong><span class="status s-warn">Pending</span></div>
+              <p>Needs founder review on homepage headline, email narrative, and public positioning copy.</p>
+            </div>
+            <div class="milestone">
+              <div class="milestone-top"><strong>Analytics and attribution</strong><span class="status s-risk">At risk</span></div>
+              <p>Tracking plan exists but final validation has not been completed across all conversion points.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById('themeToggle').addEventListener('click',()=>{
+      const root=document.documentElement;
+      root.setAttribute('data-theme', root.getAttribute('data-theme')==='dark' ? 'light' : 'dark');
+    });
+
+    document.getElementById('progressBtn').addEventListener('click',()=>{
+      document.getElementById('launchScore').textContent = (76 + Math.floor(Math.random()*16)) + '%';
+      document.getElementById('tasksDone').textContent = 42 + Math.floor(Math.random()*12);
+      document.getElementById('blockersVal').textContent = 1 + Math.floor(Math.random()*5);
+      document.getElementById('approvalVal').textContent = (6 + Math.floor(Math.random()*12)) + 'h';
+    });
+  </script>
+</body>
+</html>
