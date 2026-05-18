@@ -1,60 +1,67 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Rohith Dhanala | AI Automation Engineer, Product Builder & Systems Developer</title>
-<meta name="description" content="Freelance AI automation engineer and product builder creating advanced systems, internal tools, SaaS products, workflow automation, and publishable GitHub-ready projects." />
-<meta name="theme-color" content="#f7f4ee" />
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=gambarino@400&display=swap" rel="stylesheet" />
+<title>Rohith Dhanala | AI Automation Engineer & Product Systems Freelancer</title>
+<meta name="description" content="Freelance AI automation engineer and full-stack product builder creating advanced client systems, internal tools, SaaS products, workflow automation, and high-conviction digital experiences." />
+<meta name="theme-color" content="#0f1115" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 :root,
 [data-theme="light"]{
-  --bg:#f7f4ee;
-  --surface:#fcfaf6;
-  --surface-2:#f0ebe2;
-  --surface-3:#e7e0d4;
-  --line:#ddd4c8;
-  --ink:#17120d;
-  --ink-2:#685c4f;
-  --muted:#9b8f82;
-  --accent:#b87333;
-  --accent-2:#985b25;
-  --accent-soft:rgba(184,115,51,.1);
-  --success:#3d7c45;
+  --bg:#f5f1ea;
+  --surface:#fbf8f3;
+  --surface-2:#f0eae1;
+  --surface-3:#e5ddd1;
+  --line:#d5ccbf;
+  --text:#17130f;
+  --text-soft:#665a4d;
+  --text-faint:#978a7b;
+  --accent:#b86b2f;
+  --accent-2:#8d4f20;
+  --accent-soft:rgba(184,107,47,.12);
+  --success:#2f7a54;
+  --blue:#2f638f;
+  --purple:#6b54b4;
   --radius-sm:16px;
   --radius-md:26px;
-  --radius-lg:36px;
-  --shadow-sm:0 1px 2px rgba(23,18,13,.04),0 10px 30px -18px rgba(23,18,13,.12);
-  --shadow-md:0 10px 30px -20px rgba(23,18,13,.16);
-  --maxw:1240px;
-  --mx:clamp(16px,4vw,40px);
-  --serif:"Gambarino", Georgia, serif;
-  --sans:"Satoshi", Arial, sans-serif;
+  --radius-lg:40px;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.03), 0 10px 30px -18px rgba(0,0,0,.12);
+  --shadow-md:0 16px 50px -24px rgba(0,0,0,.16);
+  --maxw:1280px;
+  --mx:clamp(18px,4vw,40px);
+  --font-body:"Manrope", system-ui, sans-serif;
+  --font-display:"Instrument Serif", Georgia, serif;
   --ease:cubic-bezier(.16,1,.3,1);
 }
 
 [data-theme="dark"]{
-  --bg:#151311;
-  --surface:#1d1a17;
-  --surface-2:#25211d;
-  --surface-3:#302a24;
-  --line:#3c352d;
-  --ink:#f4efe8;
-  --ink-2:#c6b8aa;
-  --muted:#9c8e82;
-  --accent:#d28b4d;
-  --accent-2:#ea9d5a;
-  --accent-soft:rgba(210,139,77,.12);
-  --success:#66a771;
-  --shadow-sm:0 1px 2px rgba(0,0,0,.24),0 12px 32px -20px rgba(0,0,0,.45);
-  --shadow-md:0 18px 50px -28px rgba(0,0,0,.55);
+  --bg:#0f1115;
+  --surface:#151922;
+  --surface-2:#1c222d;
+  --surface-3:#252d3a;
+  --line:#2d3542;
+  --text:#f3efe8;
+  --text-soft:#c2b8ab;
+  --text-faint:#8f867a;
+  --accent:#da8751;
+  --accent-2:#f1a36f;
+  --accent-soft:rgba(218,135,81,.14);
+  --success:#5ca47e;
+  --blue:#5a96d6;
+  --purple:#9d87eb;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -18px rgba(0,0,0,.38);
+  --shadow-md:0 20px 60px -24px rgba(0,0,0,.52);
 }
 
 *,
 *::before,
-*::after{box-sizing:border-box}
+*::after{box-sizing:border-box;margin:0;padding:0}
 
 html{
   scroll-behavior:smooth;
@@ -63,138 +70,217 @@ html{
 }
 
 body{
-  margin:0;
-  font-family:var(--sans);
-  color:var(--ink);
-  background:var(--bg);
+  min-height:100dvh;
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.65;
+  color:var(--text);
+  background:
+    radial-gradient(circle at top right, rgba(218,135,81,.10), transparent 30%),
+    radial-gradient(circle at top left, rgba(90,150,214,.08), transparent 25%),
+    var(--bg);
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
   overflow-x:hidden;
-  line-height:1.6;
 }
 
 a{text-decoration:none;color:inherit}
-img,svg,canvas{display:block;max-width:100%}
-button,input,textarea{font:inherit}
-button{border:none;background:none;cursor:pointer}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-::selection{background:rgba(184,115,51,.18);color:var(--ink)}
+img,svg,video,canvas{display:block;max-width:100%;height:auto}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer;border:none;background:none}
+
+::selection{background:rgba(218,135,81,.22);color:var(--text)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:10px}
 
 .skip{
   position:absolute;
   left:-999px;
   top:12px;
-  background:#000;
-  color:#fff;
   padding:10px 16px;
   border-radius:999px;
-  z-index:200;
+  background:#000;
+  color:#fff;
+  z-index:120;
 }
 .skip:focus{left:12px}
 
-.nav{
+.shell{max-width:var(--maxw);margin:0 auto;padding:0 var(--mx)}
+
+.topbar{
   position:sticky;
   top:0;
-  z-index:90;
+  z-index:80;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  background:color-mix(in srgb, var(--bg) 78%, transparent);
+  border-bottom:1px solid color-mix(in srgb, var(--line) 86%, transparent);
+}
+
+.topbar-inner{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:14px var(--mx);
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:18px;
-  padding:14px var(--mx);
-  background:color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  border-bottom:1px solid color-mix(in srgb, var(--line) 84%, transparent);
+  gap:16px;
 }
-.brand{display:flex;align-items:center;gap:10px;min-width:0}
-.brand-mark{color:var(--ink)}
-.brand-name{font-weight:700;font-size:15px;letter-spacing:-.02em}
-.nav-links{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.nav-links a,.nav-links button{
-  color:var(--ink-2);
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+
+.brand-mark{
+  width:36px;height:36px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,var(--surface),var(--surface-2));
+  display:grid;
+  place-items:center;
+  box-shadow:var(--shadow-sm);
+  flex:0 0 36px;
+}
+
+.brand-mark svg{width:20px;height:20px}
+.brand-name{
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.02em;
+}
+.brand-role{
+  color:var(--text-faint);
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.nav a,
+.nav button{
+  color:var(--text-soft);
   font-size:14px;
   transition:color .2s,transform .2s;
 }
-.nav-links a:hover,.nav-links button:hover{color:var(--ink);transform:translateY(-1px)}
-.nav-actions{display:flex;align-items:center;gap:10px}
+.nav a:hover,
+.nav button:hover{
+  color:var(--text);
+  transform:translateY(-1px);
+}
+
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
 .theme-toggle{
-  width:42px;height:42px;border-radius:999px;border:1px solid var(--line);
-  display:inline-flex;align-items:center;justify-content:center;
-  background:var(--surface);color:var(--ink);
+  width:42px;height:42px;border-radius:999px;
+  border:1px solid var(--line);
+  background:var(--surface);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   box-shadow:var(--shadow-sm);
-  transition:transform .25s var(--ease),background .2s,border-color .2s;
 }
-.theme-toggle:hover{transform:translateY(-1px);background:var(--surface-2)}
-.nav-cta{
-  display:inline-flex;align-items:center;min-height:40px;
-  padding:10px 18px;border-radius:999px;
-  background:var(--ink);color:var(--bg)!important;
-  font-weight:700;font-size:14px;
-  box-shadow:var(--shadow-sm);
-  transition:background .2s,transform .2s,box-shadow .2s;
-}
-.nav-cta:hover{background:var(--accent-2);transform:translateY(-1px);box-shadow:var(--shadow-md)}
-
-.page{display:none}
-.page.active{display:block}
-
-.hero{
-  max-width:var(--maxw);
-  margin:0 auto;
-  padding:clamp(48px,8vw,112px) var(--mx) 56px;
-}
-.hero-inner{
-  display:grid;
-  grid-template-columns:minmax(0,1.05fr) minmax(320px,.78fr);
-  gap:34px;
-  align-items:end;
-}
-.hero-copy{min-width:0}
-.hero-meta{
-  display:flex;align-items:center;gap:10px;
-  color:var(--muted);font-size:13px;margin-bottom:26px;flex-wrap:wrap;
-}
-.hero-dot{
-  width:9px;height:9px;border-radius:50%;
-  background:var(--accent);
-  box-shadow:0 0 0 5px color-mix(in srgb, var(--accent) 18%, transparent);
-}
-.hero-title{
-  margin:0;
-  max-width:10.5ch;
-  font-family:var(--serif);
-  font-size:clamp(52px,9vw,112px);
-  line-height:.9;
-  letter-spacing:-.06em;
-  text-wrap:balance;
-}
-.hero-title .accent{color:var(--accent)}
-.hero-sub{
-  margin:24px 0 0;
-  max-width:760px;
-  color:var(--ink-2);
-  line-height:1.8;
-  font-size:clamp(17px,2vw,20px);
-}
-.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 
 .btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  min-height:46px;padding:12px 20px;
-  border-radius:999px;border:1px solid var(--line);cursor:pointer;
-  font-size:15px;font-weight:500;
-  transition:transform .28s var(--ease),background .2s,color .2s,border-color .2s,box-shadow .25s var(--ease);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:48px;
+  padding:12px 20px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  transition:transform .25s var(--ease),background .2s,border-color .2s,box-shadow .25s var(--ease),color .2s;
 }
+
 .btn:hover{transform:translateY(-2px)}
-.btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:var(--shadow-sm)}
-.btn-primary:hover{background:var(--accent-2);box-shadow:var(--shadow-md)}
-.btn-ghost{background:color-mix(in srgb, var(--surface) 78%, white 22%);color:var(--ink)}
-.btn-ghost:hover{background:var(--surface);box-shadow:var(--shadow-sm)}
+.btn-primary{
+  background:var(--accent);
+  color:white;
+  border-color:var(--accent);
+  box-shadow:var(--shadow-sm);
+}
+.btn-primary:hover{
+  background:var(--accent-2);
+  border-color:var(--accent-2);
+  box-shadow:var(--shadow-md);
+}
+.btn-secondary{
+  background:var(--surface);
+  color:var(--text);
+}
+.btn-secondary:hover{
+  background:var(--surface-2);
+  box-shadow:var(--shadow-sm);
+}
+
+.hero{
+  padding:clamp(42px,7vw,88px) 0 48px;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(320px,.72fr);
+  gap:28px;
+  align-items:end;
+}
+
+.kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:var(--text-faint);
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:22px;
+}
+.kicker-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 0 6px rgba(218,135,81,.12);
+}
+
+.hero h1{
+  font-family:var(--font-display);
+  font-size:clamp(54px,10vw,116px);
+  line-height:.9;
+  letter-spacing:-.05em;
+  max-width:10ch;
+  font-weight:400;
+}
+.hero h1 .accent{color:var(--accent)}
+
+.hero-copy p{
+  margin-top:24px;
+  max-width:760px;
+  color:var(--text-soft);
+  font-size:clamp(17px,2vw,20px);
+  line-height:1.85;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:30px;
+}
 
 .hero-panel{
   border:1px solid var(--line);
+  background:linear-gradient(180deg, color-mix(in srgb, var(--surface) 92%, transparent), var(--surface-2));
   border-radius:var(--radius-lg);
-  background:linear-gradient(160deg,color-mix(in srgb, var(--surface) 86%, white 14%) 0%,color-mix(in srgb, var(--surface) 96%, transparent) 100%);
   padding:28px;
   box-shadow:var(--shadow-md);
   position:relative;
@@ -203,145 +289,220 @@ button{border:none;background:none;cursor:pointer}
 .hero-panel::before{
   content:"";
   position:absolute;
-  inset:auto -40px -60px auto;
-  width:180px;height:180px;border-radius:50%;
-  background:radial-gradient(circle, color-mix(in srgb, var(--accent) 16%, transparent) 0%, transparent 70%);
+  width:220px;height:220px;
+  right:-60px;top:-60px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(218,135,81,.18), transparent 70%);
   pointer-events:none;
 }
 .hero-panel h2{
-  margin:0 0 12px;
-  font-family:var(--serif);
-  font-size:clamp(26px,3.5vw,40px);
-  font-weight:400;line-height:1.08;
+  font-family:var(--font-display);
+  font-size:clamp(26px,4vw,44px);
+  line-height:1;
+  font-weight:400;
+  margin-bottom:14px;
   position:relative;
 }
-.hero-panel p{margin:0 0 16px;color:var(--ink-2);line-height:1.75;position:relative}
-.hero-notes{display:grid;gap:10px;position:relative}
+.hero-panel p{
+  color:var(--text-soft);
+  line-height:1.8;
+  margin-bottom:18px;
+  position:relative;
+}
+.hero-notes{
+  display:grid;
+  gap:12px;
+  position:relative;
+}
 .hero-note{
-  padding:14px 16px;border-radius:18px;
-  background:var(--surface-2);border:1px solid var(--line);
+  padding:14px 16px;
+  border-radius:20px;
+  border:1px solid var(--line);
+  background:color-mix(in srgb, var(--surface) 72%, transparent);
 }
 .hero-note strong{
-  display:block;margin-bottom:6px;
-  font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);
+  display:block;
+  margin-bottom:6px;
+  color:var(--accent);
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
 }
-.hero-note span{color:var(--ink-2);line-height:1.65;font-size:14.5px}
+.hero-note span{
+  color:var(--text-soft);
+  font-size:14.5px;
+  line-height:1.65;
+}
 
-.section{max-width:var(--maxw);margin:0 auto;padding:clamp(56px,8vw,96px) var(--mx)}
-.section-head{display:grid;gap:12px;margin-bottom:34px}
-.eyebrow{
-  margin:0;
-  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--accent);font-weight:700;
+.section{
+  padding:clamp(56px,8vw,104px) 0;
+}
+
+.section-head{
+  display:grid;
+  gap:14px;
+  margin-bottom:34px;
+}
+.section-eyebrow{
+  color:var(--accent);
+  font-size:11px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  font-weight:800;
 }
 .section-head h2{
-  margin:0;
-  font-family:var(--serif);
-  font-size:clamp(34px,4.8vw,58px);
-  line-height:1.02;
+  font-family:var(--font-display);
+  font-size:clamp(34px,5vw,64px);
   font-weight:400;
+  line-height:.98;
   letter-spacing:-.04em;
-  max-width:980px;
+  max-width:13ch;
 }
-.section-head p:last-child{margin:0;max-width:820px;color:var(--ink-2);line-height:1.78}
+.section-head p{
+  max-width:820px;
+  color:var(--text-soft);
+  line-height:1.85;
+}
 
-.stat-grid{
+.metrics{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:16px;
   margin-top:24px;
 }
-.stat-card{
+.metric{
   border:1px solid var(--line);
+  background:linear-gradient(180deg,var(--surface),var(--surface-2));
   border-radius:26px;
-  padding:20px;
-  background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface) 84%, transparent));
+  padding:22px;
   box-shadow:var(--shadow-sm);
 }
-.stat-card strong{
+.metric strong{
   display:block;
-  font-family:var(--serif);
-  font-size:clamp(28px,3.4vw,44px);
+  font-family:var(--font-display);
+  font-size:clamp(28px,4vw,48px);
   line-height:1;
   margin-bottom:8px;
 }
-.stat-card span{
-  color:var(--ink-2);
+.metric span{
+  color:var(--text-soft);
   font-size:14px;
-  line-height:1.6;
 }
 
-.service-list{border-top:1px solid var(--line)}
-.service{
-  display:grid;grid-template-columns:56px 1fr auto;
-  gap:20px;padding:24px 0;border-bottom:1px solid var(--line);
-}
-.service-num{font-family:var(--serif);font-size:22px;color:var(--accent)}
-.service-body h3{
-  margin:0 0 9px;
-  font-family:var(--serif);font-weight:400;
-  font-size:clamp(26px,3vw,34px);line-height:1.08;
-}
-.service-body p{margin:0;color:var(--ink-2);line-height:1.74;max-width:72ch}
-.service-tags{list-style:none;padding:0;margin:16px 0 0;display:flex;flex-wrap:wrap;gap:8px}
-.service-tags li{
-  padding:8px 13px;border-radius:999px;border:1px solid var(--line);
-  background:var(--surface);color:var(--muted);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;
-}
-.service-arrow{color:var(--muted);font-size:20px;padding-top:6px}
-
-.project-list{display:grid;gap:18px}
-.project-card{
+.services{
   display:grid;
-  grid-template-columns:120px 1.35fr .95fr auto;
+  gap:18px;
+}
+.service{
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,var(--surface),color-mix(in srgb, var(--surface-2) 85%, transparent));
+  border-radius:32px;
+  padding:24px;
+  display:grid;
+  grid-template-columns:72px 1fr auto;
+  gap:20px;
+  align-items:start;
+  box-shadow:var(--shadow-sm);
+}
+.service-index{
+  font-family:var(--font-display);
+  color:var(--accent);
+  font-size:42px;
+  line-height:.9;
+}
+.service h3{
+  font-family:var(--font-display);
+  font-size:clamp(28px,4vw,42px);
+  font-weight:400;
+  line-height:1;
+  margin-bottom:8px;
+}
+.service p{
+  color:var(--text-soft);
+  max-width:76ch;
+  line-height:1.8;
+}
+.service-tags{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:16px;
+}
+.service-tags li{
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:var(--surface);
+  color:var(--text-faint);
+  font-size:11.5px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.service-arrow{
+  color:var(--text-faint);
+  font-size:20px;
+  padding-top:6px;
+}
+
+.projects-grid{
+  display:grid;
+  gap:18px;
+}
+
+.project-card{
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,var(--surface),var(--surface-2));
+  border-radius:34px;
+  padding:26px;
+  box-shadow:var(--shadow-sm);
+  display:grid;
+  grid-template-columns:90px minmax(0,1.2fr) minmax(220px,.78fr) auto;
   gap:22px;
   align-items:start;
-  padding:26px;
-  border:1px solid var(--line);
-  border-radius:32px;
-  background:linear-gradient(180deg,color-mix(in srgb,var(--surface) 92%, white 8%),color-mix(in srgb,var(--surface) 98%, transparent));
-  box-shadow:var(--shadow-sm);
   cursor:pointer;
   transition:transform .28s var(--ease),box-shadow .28s var(--ease),border-color .2s;
 }
 .project-card:hover{
   transform:translateY(-4px);
   box-shadow:var(--shadow-md);
-  border-color:color-mix(in srgb,var(--accent) 42%, var(--line));
+  border-color:color-mix(in srgb, var(--accent) 36%, var(--line));
 }
-.project-index{
-  font-family:var(--serif);
+.project-no{
+  font-family:var(--font-display);
   font-size:42px;
-  line-height:.9;
   color:var(--accent);
+  line-height:.9;
 }
 .project-main h3{
-  margin:0 0 8px;
-  font-family:var(--serif);
-  font-size:clamp(26px,3vw,38px);
+  font-family:var(--font-display);
+  font-size:clamp(28px,4vw,44px);
   font-weight:400;
-  line-height:1.02;
-  letter-spacing:-.03em;
+  line-height:1;
+  margin-bottom:8px;
 }
 .project-main p{
-  margin:0;
-  color:var(--ink-2);
-  line-height:1.72;
-  font-size:15px;
-  max-width:62ch;
+  color:var(--text-soft);
+  line-height:1.78;
 }
-.project-meta{display:grid;gap:10px}
-.project-meta-row{display:grid;gap:4px}
+.project-meta{
+  display:grid;
+  gap:10px;
+}
+.project-meta-row{
+  display:grid;
+  gap:4px;
+}
 .project-meta-label{
   font-size:11px;
   letter-spacing:.16em;
   text-transform:uppercase;
-  color:var(--muted);
+  color:var(--text-faint);
 }
 .project-meta-value{
-  color:var(--ink);
-  line-height:1.55;
+  color:var(--text);
   font-size:14.5px;
+  line-height:1.55;
 }
 .project-pill{
   display:inline-flex;
@@ -352,120 +513,117 @@ button{border:none;background:none;cursor:pointer}
   border-radius:999px;
   background:var(--accent-soft);
   color:var(--accent);
+  border:1px solid rgba(218,135,81,.22);
   font-size:11.5px;
-  letter-spacing:.12em;
+  font-weight:800;
+  letter-spacing:.14em;
   text-transform:uppercase;
-  font-weight:700;
-  border:1px solid color-mix(in srgb, var(--accent) 20%, transparent);
 }
 
-.stack-grid{
+.stack-grid,
+.proof-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:18px;
 }
-.stack-card,
-.card,.about-card,.contact-card,.case-detail-card{
-  background:linear-gradient(160deg,color-mix(in srgb,var(--surface) 94%, white 6%) 0%,color-mix(in srgb,var(--surface) 98%, transparent) 100%);
+.panel{
   border:1px solid var(--line);
-  border-radius:var(--radius-md);
+  background:linear-gradient(180deg,var(--surface),var(--surface-2));
+  border-radius:28px;
+  padding:24px;
   box-shadow:var(--shadow-sm);
 }
-.stack-card{padding:24px}
-.stack-card h3{
-  margin:0 0 10px;
-  font-family:var(--serif);
-  font-size:30px;
+.panel h3{
+  font-family:var(--font-display);
+  font-size:32px;
   font-weight:400;
+  line-height:1;
+  margin-bottom:10px;
 }
-.stack-card p{margin:0;color:var(--ink-2);line-height:1.72}
-.stack-list{
-  list-style:none;padding:0;margin:16px 0 0;
-  display:flex;flex-wrap:wrap;gap:8px;
+.panel p{
+  color:var(--text-soft);
+  line-height:1.78;
 }
-.stack-list li{
-  padding:8px 12px;border-radius:999px;border:1px solid var(--line);
-  background:var(--surface);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);
+.pill-list{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:16px;
+}
+.pill-list li{
+  padding:8px 12px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:var(--surface);
+  color:var(--text-faint);
+  font-size:11.5px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
 }
 
-.process-grid{display:grid;gap:18px;grid-template-columns:repeat(4,1fr)}
-.about-card,.contact-card,.case-detail-card{padding:30px}
-.about-card h3,.contact-card h3{
-  margin:0 0 12px;font-family:var(--serif);font-weight:400;
-  font-size:clamp(26px,3.5vw,38px);line-height:1.08;
+.page{display:none}
+.page.active{display:block}
+
+.case-hero{
+  padding:clamp(42px,6vw,80px) 0 18px;
 }
-.about-card p,.contact-card p{
-  margin:0 0 13px;color:var(--ink-2);line-height:1.78;
+
+.case-wrap{
+  display:grid;
+  gap:18px;
 }
-.contact-actions,.case-detail-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 
-.process-card{padding:22px}
-.process-card span{
-  display:inline-block;margin-bottom:12px;font-size:11px;
-  letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;
+.case-card{
+  display:none;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,var(--surface),var(--surface-2));
+  border-radius:36px;
+  padding:28px;
+  box-shadow:var(--shadow-md);
 }
-.process-card h3{margin:0 0 9px;font-family:var(--serif);font-size:26px;font-weight:400}
-.process-card p{margin:0;color:var(--ink-2);line-height:1.72;font-size:14.5px}
+.case-card.active{display:block}
 
-.contact-meta{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:11px}
-.contact-meta li{color:var(--ink-2);font-size:15px}
-.contact-meta span{color:var(--ink);font-weight:700;margin-right:8px}
-
-.footer{border-top:1px solid var(--line);padding:24px var(--mx) 38px}
-.footer-inner{
-  max-width:var(--maxw);margin:0 auto;
-  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
-  color:var(--muted);font-size:13px;
-}
-.footer-links{display:flex;gap:18px;flex-wrap:wrap}
-.footer-links a{color:var(--muted);transition:color .2s}
-.footer-links a:hover{color:var(--ink)}
-
-.case-page-hero{max-width:var(--maxw);margin:0 auto;padding:clamp(56px,8vw,96px) var(--mx) 18px}
-.case-detail-wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--mx) 100px}
-.case-detail-card{display:none}
-.case-detail-card.active{display:block}
-
-.case-detail-top{
+.case-top{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:14px;
-  margin-bottom:24px;
+  margin-bottom:26px;
 }
-.case-meta-box{
-  padding:16px 18px;
+.case-meta{
   border:1px solid var(--line);
-  border-radius:18px;
   background:var(--surface);
+  border-radius:18px;
+  padding:16px 18px;
 }
-.case-meta-box span{
+.case-meta span{
   display:block;
+  margin-bottom:6px;
+  color:var(--text-faint);
   font-size:11px;
   letter-spacing:.16em;
   text-transform:uppercase;
-  color:var(--muted);
-  margin-bottom:6px;
 }
-.case-meta-box strong{
+.case-meta strong{
   font-size:14.5px;
   line-height:1.55;
-  color:var(--ink);
 }
 
 .case-title{
-  margin:0 0 14px;
-  font-family:var(--serif);
+  font-family:var(--font-display);
   font-size:clamp(42px,6vw,84px);
-  line-height:.94;
-  letter-spacing:-.06em;
+  font-weight:400;
+  line-height:.92;
+  letter-spacing:-.05em;
   max-width:13ch;
+  margin-bottom:16px;
 }
 .case-summary{
-  margin:0 0 28px;
-  max-width:78ch;
-  color:var(--ink-2);
-  line-height:1.86;
+  max-width:84ch;
+  color:var(--text-soft);
+  line-height:1.9;
   font-size:17px;
+  margin-bottom:28px;
 }
 
 .case-section{
@@ -474,33 +632,53 @@ button{border:none;background:none;cursor:pointer}
 }
 .case-section:first-of-type{border-top:none;padding-top:0}
 .case-section h3{
-  margin:0 0 14px;
-  font-family:var(--serif);
-  font-size:clamp(28px,3.5vw,40px);
+  font-family:var(--font-display);
+  font-size:clamp(28px,4vw,42px);
   font-weight:400;
-  line-height:1.05;
+  line-height:1;
+  margin-bottom:14px;
 }
 .case-section p{
-  margin:0 0 12px;
-  color:var(--ink-2);
-  line-height:1.8;
-  max-width:78ch;
+  max-width:84ch;
+  color:var(--text-soft);
+  line-height:1.85;
+  margin-bottom:12px;
 }
 .case-highlight{
+  margin-top:14px;
   padding:18px 20px;
-  border-radius:20px;
   border:1px solid var(--line);
-  background:var(--surface-2);
-  margin-top:12px;
+  border-radius:22px;
+  background:color-mix(in srgb, var(--surface) 72%, transparent);
 }
 .case-highlight strong{
   display:block;
   margin-bottom:8px;
+  color:var(--accent);
   font-size:11px;
   letter-spacing:.16em;
   text-transform:uppercase;
-  color:var(--accent);
 }
+.case-list{
+  list-style:none;
+  display:grid;
+  gap:12px;
+  margin-top:16px;
+}
+.case-list li{
+  position:relative;
+  padding-left:18px;
+  color:var(--text-soft);
+  line-height:1.75;
+}
+.case-list li::before{
+  content:"";
+  position:absolute;
+  left:0;top:.74em;
+  width:7px;height:7px;border-radius:50%;
+  background:var(--accent);
+}
+
 .case-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -508,58 +686,38 @@ button{border:none;background:none;cursor:pointer}
   margin-top:18px;
 }
 .case-block{
-  padding:18px 18px 16px;
   border:1px solid var(--line);
-  border-radius:22px;
   background:var(--surface);
+  border-radius:24px;
+  padding:18px;
 }
 .case-block h4{
-  margin:0 0 10px;
+  margin-bottom:10px;
+  color:var(--text-faint);
   font-size:11px;
   letter-spacing:.16em;
   text-transform:uppercase;
-  color:var(--muted);
 }
 .case-block p{
   margin:0;
-  color:var(--ink-2);
-  line-height:1.72;
   font-size:14.5px;
-}
-.case-list{
-  list-style:none;
-  padding:0;
-  margin:16px 0 0;
-  display:grid;
-  gap:12px;
-}
-.case-list li{
-  padding-left:18px;
-  position:relative;
-  color:var(--ink-2);
   line-height:1.72;
-}
-.case-list li::before{
-  content:"";
-  width:7px;height:7px;border-radius:50%;
-  background:var(--accent);
-  position:absolute;left:0;top:.72em;
 }
 
-.artifact-grid{
+.demo-grid{
   display:grid;
-  grid-template-columns:1.1fr .9fr;
+  grid-template-columns:1.12fr .88fr;
   gap:18px;
   margin-top:20px;
 }
-.artifact-card{
+.demo-card{
   border:1px solid var(--line);
-  border-radius:26px;
-  background:linear-gradient(180deg,var(--surface),var(--surface-2));
+  border-radius:28px;
   overflow:hidden;
+  background:linear-gradient(180deg,var(--surface),var(--surface-2));
   box-shadow:var(--shadow-sm);
 }
-.artifact-head{
+.demo-head{
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -567,198 +725,307 @@ button{border:none;background:none;cursor:pointer}
   padding:14px 16px;
   border-bottom:1px solid var(--line);
 }
-.artifact-head strong{
+.demo-head strong{
   font-size:13px;
   letter-spacing:.02em;
 }
-.artifact-head span{
+.demo-head span{
   font-size:11px;
+  color:var(--text-faint);
   letter-spacing:.16em;
   text-transform:uppercase;
-  color:var(--muted);
 }
-.artifact-body{padding:18px}
+.demo-body{
+  padding:18px;
+}
 
-.mockup-screen{
+.browser{
   border:1px solid var(--line);
   border-radius:22px;
-  background:var(--surface);
-  min-height:280px;
   overflow:hidden;
+  background:#0d1016;
+  min-height:320px;
 }
-.mockup-topbar{
+.browser-top{
   display:flex;
   align-items:center;
-  gap:6px;
+  justify-content:space-between;
+  gap:10px;
   padding:12px 14px;
-  border-bottom:1px solid var(--line);
-  background:color-mix(in srgb,var(--surface) 86%, white 14%);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  background:#131722;
 }
-.mockup-dot{
+.browser-dots{
+  display:flex;
+  gap:6px;
+}
+.browser-dots span{
   width:8px;height:8px;border-radius:50%;
-  background:color-mix(in srgb, var(--muted) 55%, white 45%);
+  background:#5c6574;
 }
-.mockup-layout{
+.browser-url{
+  min-height:30px;
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  color:#c9d0db;
+  font-size:12px;
+  padding:7px 12px;
+  display:inline-flex;
+  align-items:center;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.browser-screen{
+  padding:18px;
   display:grid;
-  grid-template-columns:84px 1fr;
-  min-height:232px;
+  gap:12px;
+  background:
+    radial-gradient(circle at top right, rgba(90,150,214,.12), transparent 28%),
+    radial-gradient(circle at bottom left, rgba(157,135,235,.10), transparent 30%),
+    #0d1016;
 }
-.mockup-sidebar{
-  border-right:1px solid var(--line);
-  background:var(--surface-2);
+
+.app-shell{
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+  overflow:hidden;
+  background:rgba(19,23,34,.92);
+}
+.app-toolbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding:14px 16px;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.app-title{
+  color:#eef2f9;
+  font-weight:700;
+  font-size:14px;
+}
+.app-badge{
+  padding:8px 10px;
+  border-radius:999px;
+  background:rgba(218,135,81,.14);
+  color:#ffb588;
+  border:1px solid rgba(255,181,136,.18);
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:700;
+}
+.app-grid{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  min-height:220px;
+}
+.app-sidebar{
+  border-right:1px solid rgba(255,255,255,.07);
+  padding:16px;
+  display:grid;
+  gap:10px;
+  align-content:start;
+}
+.app-nav{
+  height:11px;
+  border-radius:999px;
+  background:linear-gradient(90deg, rgba(255,255,255,.18), transparent);
+}
+.app-content{
+  padding:16px;
+  display:grid;
+  gap:12px;
+}
+.kpi-row{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+.kpi{
+  min-height:78px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.07);
+  background:rgba(255,255,255,.04);
   padding:12px;
+  display:grid;
+  align-content:start;
+  gap:8px;
+}
+.kpi strong{
+  color:#fff;
+  font-size:22px;
+  line-height:1;
+}
+.kpi span{
+  color:#aab4c2;
+  font-size:12px;
+}
+
+.board{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+.board-col{
+  min-height:120px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.07);
+  background:rgba(255,255,255,.03);
+  padding:10px;
   display:grid;
   gap:8px;
   align-content:start;
 }
-.mockup-nav{
-  height:10px;
-  border-radius:999px;
-  background:linear-gradient(90deg,var(--surface-3),transparent);
+.board-col strong{
+  color:#d3d9e5;
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
 }
-.mockup-content{
-  padding:16px;
-  display:grid;
-  gap:12px;
-  align-content:start;
-}
-.mockup-bar{
-  height:12px;
-  border-radius:999px;
-  background:linear-gradient(90deg,var(--ink) 30%, rgba(23,18,13,.10) 30%);
-  opacity:.1;
-}
-.mockup-bar.short{width:42%}
-.mockup-bar.mid{width:66%}
-.mockup-bar.long{width:88%}
-.mockup-cards{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-}
-.mockup-card{
-  border:1px solid var(--line);
-  border-radius:16px;
-  min-height:74px;
-  background:linear-gradient(180deg,var(--surface),var(--surface-2));
+.board-card{
+  min-height:42px;
+  border-radius:12px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.05);
 }
 
-.flow-card{
-  padding:18px;
-  min-height:280px;
+.flow-visual{
+  display:grid;
+  gap:10px;
 }
 .flow-row{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:10px;
-  margin-top:10px;
 }
-.flow-step{
-  padding:14px 12px;
+.flow-node{
+  min-height:86px;
   border-radius:18px;
   border:1px solid var(--line);
   background:var(--surface);
-  min-height:74px;
+  padding:14px 12px;
 }
-.flow-step strong{
+.flow-node strong{
   display:block;
   margin-bottom:7px;
+  color:var(--accent);
   font-size:11px;
   letter-spacing:.14em;
   text-transform:uppercase;
-  color:var(--accent);
 }
-.flow-step span{
-  color:var(--ink-2);
+.flow-node span{
+  color:var(--text-soft);
   font-size:13.5px;
-  line-height:1.55;
+  line-height:1.58;
 }
 
-.wireframe-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  margin-top:12px;
-}
-.wireframe-card{
-  border:1px solid var(--line);
-  border-radius:18px;
-  background:var(--surface);
-  min-height:170px;
-  padding:12px;
-  display:grid;
-  gap:10px;
-  align-content:start;
-}
-.wf-box{
-  height:10px;
-  border-radius:999px;
-  background:var(--surface-3);
-}
-.wf-box.hero{height:52px;border-radius:16px;background:color-mix(in srgb,var(--surface-3) 85%, white 15%)}
-.wf-box.card{height:36px;border-radius:12px}
-.wf-box.small{width:56%}
-
-.case-tools{
+.tools{
   display:flex;
   flex-wrap:wrap;
   gap:9px;
   margin-top:18px;
 }
-.case-tools span{
+.tools span{
   padding:9px 12px;
-  border-radius:999px;
   border:1px solid var(--line);
+  border-radius:999px;
   background:var(--surface);
-  color:var(--muted);
+  color:var(--text-faint);
   font-size:11.5px;
-  letter-spacing:.07em;
+  letter-spacing:.08em;
   text-transform:uppercase;
 }
 
-.github-grid{
+.contact-card{
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,var(--surface),var(--surface-2));
+  border-radius:34px;
+  padding:28px;
+  box-shadow:var(--shadow-md);
+}
+.contact-card h3{
+  font-family:var(--font-display);
+  font-size:clamp(30px,4vw,46px);
+  font-weight:400;
+  line-height:1;
+  margin-bottom:12px;
+}
+.contact-card p{
+  color:var(--text-soft);
+  line-height:1.85;
+  max-width:78ch;
+}
+.contact-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:22px;
+}
+.contact-meta{
+  list-style:none;
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px;
+  gap:10px;
   margin-top:18px;
 }
-.github-card{
-  border:1px solid var(--line);
-  border-radius:22px;
-  background:var(--surface);
-  padding:18px;
+.contact-meta li{
+  color:var(--text-soft);
 }
-.github-card strong{
-  display:block;
-  margin-bottom:10px;
-  font-size:12px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--accent);
-}
-.github-card p{
-  margin:0;
-  font-size:14.5px;
-  line-height:1.7;
-  color:var(--ink-2);
+.contact-meta span{
+  color:var(--text);
+  font-weight:700;
+  margin-right:8px;
 }
 
-.whatsapp-float{
-  position:fixed;right:20px;bottom:22px;z-index:130;
-  display:inline-flex;align-items:center;gap:9px;
-  padding:13px 18px;border-radius:999px;
-  background:#25D366;color:#fff!important;
-  font-size:14px;font-weight:700;
-  box-shadow:0 8px 24px rgba(37,211,102,.35);
+.footer{
+  border-top:1px solid var(--line);
+  padding:24px var(--mx) 36px;
+}
+.footer-inner{
+  max-width:var(--maxw);
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+  color:var(--text-faint);
+  font-size:13px;
+}
+.footer-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+}
+.footer-links a:hover{color:var(--text)}
+
+.float-wa{
+  position:fixed;
+  right:20px;
+  bottom:22px;
+  z-index:100;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:13px 18px;
+  border-radius:999px;
+  background:#25D366;
+  color:#fff!important;
+  font-weight:800;
+  font-size:14px;
+  box-shadow:0 10px 28px rgba(37,211,102,.34);
   transition:transform .2s,box-shadow .2s;
 }
-.whatsapp-float:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(37,211,102,.45)}
-.whatsapp-float svg{width:19px;height:19px;flex:0 0 19px}
+.float-wa:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 36px rgba(37,211,102,.44);
+}
+.float-wa svg{width:19px;height:19px;flex:0 0 19px}
 
 .reveal{
   opacity:0;
-  transition:opacity .65s var(--ease),clip-path .65s var(--ease);
   clip-path:inset(12% 0 0 0);
+  transition:opacity .65s var(--ease),clip-path .65s var(--ease);
 }
 .reveal.in{
   opacity:1;
@@ -767,810 +1034,1064 @@ button{border:none;background:none;cursor:pointer}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
+  *,*::before,*::after{
+    animation:none!important;
+    transition:none!important;
+  }
   .reveal{opacity:1;clip-path:none}
 }
 
 @media (max-width:1200px){
-  .project-card{grid-template-columns:80px 1fr;gap:16px}
-  .project-meta,.project-pill{grid-column:2/-1}
+  .project-card{
+    grid-template-columns:80px 1fr;
+  }
+  .project-meta,.project-pill{
+    grid-column:2/-1;
+  }
 }
 
 @media (max-width:1100px){
-  .hero-inner,.process-grid,.case-grid,.artifact-grid,.case-detail-top,.stack-grid,.stat-grid{grid-template-columns:1fr}
+  .hero-grid,
+  .metrics,
+  .stack-grid,
+  .proof-grid,
+  .case-top,
+  .case-grid,
+  .demo-grid{
+    grid-template-columns:1fr;
+  }
 }
 
 @media (max-width:900px){
-  .wireframe-grid,.flow-row,.mockup-cards,.github-grid{grid-template-columns:1fr}
-  .hero-title{max-width:11ch;font-size:clamp(48px,13vw,84px)}
-}
-
-@media (max-width:820px){
-  .nav{padding-inline:16px}
-  .service{grid-template-columns:1fr;gap:9px}
-  .service-arrow{display:none}
-  .about-card,.contact-card,.case-detail-card,.stack-card{padding:22px}
-}
-
-@media (max-width:640px){
-  .brand-name{display:none}
-  .nav-links a:not(.nav-cta),.nav-links button:not(.nav-cta){display:none}
-  .hero{padding-top:48px}
-  .hero-title{
-    max-width:100%;
-    font-size:clamp(42px,14vw,64px);
-    line-height:.92;
-    letter-spacing:-.05em;
+  .service{
+    grid-template-columns:1fr;
   }
-  .section{padding:48px var(--mx)}
-  .section-head h2{font-size:clamp(28px,10vw,40px)}
-  .btn,.project-pill{width:100%}
-  .hero-cta,.contact-actions,.case-detail-actions{flex-direction:column}
-  .project-card{grid-template-columns:1fr}
-  .project-meta,.project-pill{grid-column:auto}
-  .case-title{max-width:100%;font-size:clamp(34px,12vw,54px)}
-  .whatsapp-float{right:14px;bottom:14px;padding:12px 16px;font-size:13px}
+  .service-arrow{display:none}
+  .app-grid,.kpi-row,.board,.flow-row{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width:720px){
+  .brand-role{display:none}
+  .nav a:not(.nav-cta),.nav button:not(.nav-cta){display:none}
+  .hero h1{
+    max-width:100%;
+    font-size:clamp(42px,14vw,70px);
+  }
+  .project-card{
+    grid-template-columns:1fr;
+  }
+  .project-meta,.project-pill{
+    grid-column:auto;
+  }
+  .btn{
+    width:100%;
+  }
+  .hero-actions,.contact-actions{
+    flex-direction:column;
+  }
+  .section-head h2,
+  .case-title{
+    max-width:100%;
+  }
+  .float-wa{
+    right:14px;
+    bottom:14px;
+    padding:12px 16px;
+    font-size:13px;
+  }
 }
 </style>
 </head>
 <body>
 <a href="#main-content" class="skip">Skip to content</a>
 
-<header class="nav" aria-label="Primary">
-  <a href="#top" class="brand" data-go="home" aria-label="Rohith Dhanala home">
-    <svg class="brand-mark" viewBox="0 0 40 40" width="32" height="32" fill="none" aria-hidden="true">
-      <rect x="1" y="1" width="38" height="38" rx="8" stroke="currentColor" stroke-width="1.5"/>
-      <path d="M12 29V11h8.6c4.8 0 7.9 2.3 7.9 6.3 0 2.9-1.5 5-4.3 6l5.2 5.7h-4.7l-4.7-5.1H16V29h-4Zm4-8.4h4.1c2.6 0 4.1-1.1 4.1-3.1s-1.5-3-4.1-3H16v6.1Z" fill="currentColor"/>
-    </svg>
-    <span class="brand-name">Rohith Dhanala</span>
-  </a>
+<header class="topbar" aria-label="Primary">
+  <div class="topbar-inner">
+    <a href="#top" class="brand" data-go-home aria-label="Rohith Dhanala home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M5 19V5h6.5c3.5 0 5.5 1.7 5.5 4.6 0 2.2-1.2 3.8-3.3 4.5L18.8 19h-3.7l-4.2-4.5H8V19H5Z"/>
+        </svg>
+      </span>
+      <span>
+        <span class="brand-name">Rohith Dhanala</span><br>
+        <span class="brand-role">AI automation engineer · product systems freelancer</span>
+      </span>
+    </a>
 
-  <nav class="nav-links" aria-label="Sections">
-    <a href="#services" data-scroll="services">Services</a>
-    <button type="button" data-open-cases>Projects</button>
-    <a href="#stack" data-scroll="stack">Stack</a>
-    <a href="#process" data-scroll="process">Process</a>
-    <a href="#about" data-scroll="about">About</a>
-    <a href="#contact" data-scroll="contact">Contact</a>
-  </nav>
+    <nav class="nav" aria-label="Sections">
+      <a href="#services" data-scroll="services">Services</a>
+      <button type="button" data-open-projects>Projects</button>
+      <a href="#capabilities" data-scroll="capabilities">Capabilities</a>
+      <a href="#proof" data-scroll="proof">Why me</a>
+      <a href="#about" data-scroll="about">About</a>
+      <a href="#contact" data-scroll="contact">Contact</a>
+    </nav>
 
-  <div class="nav-actions">
-    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-        <circle cx="12" cy="12" r="5"></circle>
-        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
-      </svg>
-    </button>
-    <a class="nav-cta" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Book a call</a>
+    <div class="nav-actions">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+      <a class="btn btn-primary nav-cta" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Book a call</a>
+    </div>
   </div>
 </header>
 
 <main id="main-content">
 
   <section class="page active" id="home-page">
-
-    <section class="hero" id="top">
-      <div class="hero-inner">
-        <div class="hero-copy reveal">
-          <div class="hero-meta">
-            <span class="hero-dot" aria-hidden="true"></span>
-            <span>Available for freelance projects · Southampton, UK</span>
+    <div class="shell">
+      <section class="hero" id="top">
+        <div class="hero-grid">
+          <div class="hero-copy reveal">
+            <div class="kicker">
+              <span class="kicker-dot" aria-hidden="true"></span>
+              <span>Available for freelance builds · Southampton, UK</span>
+            </div>
+            <h1>I build <span class="accent">advanced client systems</span>, AI workflows, and full-stack web products.</h1>
+            <p>
+              I work with founders, service businesses, and teams that need more than a simple website. I design and build serious digital systems — AI reception layers, workflow engines, SaaS-style dashboards, internal tools, and operational products that look premium, solve real problems, and are strong enough to ship to paying clients.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Start a project</a>
+              <button class="btn btn-secondary" type="button" data-open-projects>Explore live projects</button>
+            </div>
           </div>
-          <h1 class="hero-title">
-            Building <span class="accent">advanced digital systems</span>, AI products, and scalable web software.
-          </h1>
-          <p class="hero-sub">
-            I help businesses move beyond basic websites and simple automation. I design and build advanced products — AI agents, internal dashboards, workflow engines, SaaS tools, and full-stack systems that are strong enough to ship, publish on GitHub, and use in real operations.
+
+          <aside class="hero-panel reveal">
+            <h2>Freelance delivery for businesses that need systems, not surface-level work.</h2>
+            <p>
+              My work sits at the intersection of product thinking, engineering execution, and business operations. That means I can take a project from rough idea to structured product direction, then into clean build quality and implementation logic.
+            </p>
+            <div class="hero-notes">
+              <div class="hero-note">
+                <strong>What I build</strong>
+                <span>AI assistants, client dashboards, internal platforms, service automation systems, workflow products, and advanced web experiences with real product depth.</span>
+              </div>
+              <div class="hero-note">
+                <strong>What clients get</strong>
+                <span>Sharper product strategy, better user experience, cleaner operations, higher perceived value, and systems that are easier to scale after launch.</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="metrics reveal" aria-label="Proof metrics">
+          <article class="metric">
+            <strong>4</strong>
+            <span>Flagship portfolio projects presented as real product builds with live demo sections and full case-study detail.</span>
+          </article>
+          <article class="metric">
+            <strong>Full-stack</strong>
+            <span>Frontend, backend, API logic, dashboards, auth, integrations, and business workflow thinking in one freelance practice.</span>
+          </article>
+          <article class="metric">
+            <strong>AI-first</strong>
+            <span>Practical AI workflow design built around operations, lead handling, routing, automation, and customer-facing systems.</span>
+          </article>
+          <article class="metric">
+            <strong>Client-ready</strong>
+            <span>Positioned like a premium freelancer portfolio that can be sent directly to serious clients without looking like a template.</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="services">
+        <header class="section-head">
+          <p class="section-eyebrow">Services</p>
+          <h2>What I help clients build.</h2>
+          <p>
+            I work on high-value digital projects where design quality, systems thinking, and technical execution all matter at the same time. The goal is always to create something useful, commercially strong, and solid enough to grow after launch.
           </p>
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Book a free strategy call</a>
-            <button class="btn btn-ghost" type="button" data-open-cases>View advanced projects</button>
-          </div>
+        </header>
+
+        <div class="services">
+          <article class="service">
+            <span class="service-index">01</span>
+            <div>
+              <h3>AI systems & workflow automation</h3>
+              <p>
+                I design and build AI-powered systems that reduce repetitive work, improve lead handling, and create more reliable operational workflows. This includes AI reception layers, qualification flows, response systems, WhatsApp automation, CRM sync logic, routing, follow-up engines, and internal review dashboards.
+              </p>
+              <ul class="service-tags">
+                <li>AI reception systems</li>
+                <li>Lead qualification</li>
+                <li>WhatsApp automation</li>
+                <li>CRM integrations</li>
+              </ul>
+            </div>
+            <span class="service-arrow" aria-hidden="true">→</span>
+          </article>
+
+          <article class="service">
+            <span class="service-index">02</span>
+            <div>
+              <h3>Product-grade web apps & client dashboards</h3>
+              <p>
+                I build advanced web products for businesses that need more than a marketing site. That includes internal tools, SaaS-style interfaces, analytics workspaces, client portals, admin dashboards, recruitment platforms, and operational products that need structure, usability, and strong front-end engineering.
+              </p>
+              <ul class="service-tags">
+                <li>SaaS interfaces</li>
+                <li>Admin dashboards</li>
+                <li>Client portals</li>
+                <li>Internal tools</li>
+              </ul>
+            </div>
+            <span class="service-arrow" aria-hidden="true">→</span>
+          </article>
+
+          <article class="service">
+            <span class="service-index">03</span>
+            <div>
+              <h3>Product direction, systems architecture & execution</h3>
+              <p>
+                I help shape projects from the front — defining user flow, business logic, feature structure, information architecture, and implementation direction before the build becomes expensive. This is especially useful for founders and teams who need clarity before scaling development effort.
+              </p>
+              <ul class="service-tags">
+                <li>Product strategy</li>
+                <li>UX architecture</li>
+                <li>Feature planning</li>
+                <li>Execution structure</li>
+              </ul>
+            </div>
+            <span class="service-arrow" aria-hidden="true">→</span>
+          </article>
         </div>
+      </section>
 
-        <aside class="hero-panel reveal">
-          <h2>More than HTML pages — product-grade systems with real technical depth.</h2>
-          <p>The portfolio now positions the work around engineering capability, AI automation, product thinking, full-stack delivery, and reusable architecture instead of lighter concept-only projects.</p>
-          <div class="hero-notes">
-            <div class="hero-note">
-              <strong>Project types</strong>
-              <span>AI reception systems, multi-tenant SaaS dashboards, analytics platforms, automation pipelines, workflow engines, and advanced web apps designed for real deployment.</span>
+      <section class="section reveal" id="projects">
+        <header class="section-head">
+          <p class="section-eyebrow">Selected work</p>
+          <h2>Projects built to signal serious freelance capability.</h2>
+          <p>
+            I redesigned this portfolio around detailed product storytelling and dedicated project presentation, taking inspiration from portfolios that treat projects as the centrepiece rather than as short summary cards. [page:2][page:1] Each project below is written like a premium freelance case study and includes a live product-style demo section instead of lightweight placeholder presentation.
+          </p>
+        </header>
+
+        <div class="projects-grid">
+          <article class="project-card" tabindex="0" data-case-link="orchestrix" aria-label="Open Orchestrix AI case study">
+            <div class="project-no">01</div>
+            <div class="project-main">
+              <h3>Orchestrix AI</h3>
+              <p>An AI-powered operations platform that handled enquiries, lead qualification, WhatsApp automation, human review, CRM sync, and appointment routing through one premium dashboard for service businesses.</p>
             </div>
-            <div class="hero-note">
-              <strong>Tech positioning</strong>
-              <span>React, Next.js, Node.js, TypeScript, Python automation, Supabase, APIs, queues, dashboards, authentication, role-based systems, and GitHub-ready architecture.</span>
+            <div class="project-meta">
+              <div class="project-meta-row">
+                <span class="project-meta-label">Built for</span>
+                <span class="project-meta-value">Service businesses that needed faster response, cleaner intake, and less manual admin.</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Stack direction</span>
+                <span class="project-meta-value">Next.js · Node.js · Supabase · AI APIs · WhatsApp integrations</span>
+              </div>
             </div>
-          </div>
-        </aside>
-      </div>
+            <span class="project-pill">View case study</span>
+          </article>
 
-      <div class="stat-grid reveal" aria-label="Capabilities summary">
-        <article class="stat-card">
-          <strong>Full-stack</strong>
-          <span>Front-end, back-end, APIs, auth, database design, dashboards, and deployment-ready product architecture.</span>
-        </article>
-        <article class="stat-card">
-          <strong>AI systems</strong>
-          <span>AI agents, prompt workflows, intake systems, routing logic, assistant interfaces, and human-in-the-loop automation.</span>
-        </article>
-        <article class="stat-card">
-          <strong>Automation</strong>
-          <span>WhatsApp flows, CRM sync, lead qualification, operations handoffs, notifications, and repetitive task reduction.</span>
-        </article>
-        <article class="stat-card">
-          <strong>GitHub-ready</strong>
-          <span>Projects framed as real publishable builds with architecture, modules, data flow, and engineering credibility.</span>
-        </article>
-      </div>
-    </section>
-
-    <section class="section reveal" id="services">
-      <header class="section-head">
-        <p class="eyebrow">Services</p>
-        <h2>Advanced freelance work built around products, systems, and automation.</h2>
-        <p>Your previous site already positioned you across digital product work, project delivery, and AI automation, so this version keeps that structure while making the execution feel more technical, more credible, and more aligned with advanced client work. [file:1]</p>
-      </header>
-
-      <div class="service-list">
-        <article class="service">
-          <span class="service-num">01</span>
-          <div class="service-body">
-            <h3>Advanced Product & Web App Development</h3>
-            <p>I build product-grade interfaces and full-stack applications — admin dashboards, internal tools, SaaS MVPs, analytics layers, and advanced customer-facing web products that go beyond brochure websites.</p>
-            <ul class="service-tags">
-              <li>React / Next.js</li><li>Dashboards</li><li>SaaS builds</li><li>Internal tools</li>
-            </ul>
-          </div>
-          <span class="service-arrow" aria-hidden="true">→</span>
-        </article>
-
-        <article class="service">
-          <span class="service-num">02</span>
-          <div class="service-body">
-            <h3>AI Systems & Workflow Automation</h3>
-            <p>I create AI-powered intake, routing, qualification, response, and operations systems that reduce repeated admin and make business workflows more consistent, trackable, and scalable.</p>
-            <ul class="service-tags">
-              <li>AI agents</li><li>WhatsApp flows</li><li>Automation</li><li>Operational systems</li>
-            </ul>
-          </div>
-          <span class="service-arrow" aria-hidden="true">→</span>
-        </article>
-
-        <article class="service">
-          <span class="service-num">03</span>
-          <div class="service-body">
-            <h3>Systems Strategy, Delivery & Architecture</h3>
-            <p>I help shape product architecture, feature scope, implementation plans, workflow structure, and delivery systems so projects are not just designed well, but engineered to move properly from idea to deployment.</p>
-            <ul class="service-tags">
-              <li>Architecture</li><li>Delivery planning</li><li>Product systems</li><li>Execution support</li>
-            </ul>
-          </div>
-          <span class="service-arrow" aria-hidden="true">→</span>
-        </article>
-      </div>
-    </section>
-
-    <section class="section reveal" id="featured-work">
-      <header class="section-head">
-        <p class="eyebrow">Projects</p>
-        <h2>Advanced projects that feel publishable, technical, and commercially strong.</h2>
-        <p>Your current site uses a single-file homepage plus in-page case study system, so this upgraded version keeps that navigation pattern while replacing the simpler concept-style projects with stronger engineering-led case studies. [file:1]</p>
-      </header>
-
-      <div class="project-list">
-        <article class="project-card" tabindex="0" data-case-link="orchestrix" aria-label="Open Orchestrix case study">
-          <div class="project-index">01</div>
-          <div class="project-main">
-            <h3>Orchestrix AI</h3>
-            <p>A multi-channel AI operations assistant for service businesses that unified lead intake, qualification, WhatsApp follow-up, appointment routing, CRM sync, and operator review inside one full-stack dashboard.</p>
-          </div>
-          <div class="project-meta">
-            <div class="project-meta-row">
-              <span class="project-meta-label">Stack</span>
-              <span class="project-meta-value">Next.js · Node.js · Supabase · OpenAI · WhatsApp API</span>
+          <article class="project-card" tabindex="0" data-case-link="signaldesk" aria-label="Open SignalDesk case study">
+            <div class="project-no">02</div>
+            <div class="project-main">
+              <h3>SignalDesk</h3>
+              <p>A data-heavy analytics workspace for agencies and operators who needed better visibility across leads, campaigns, conversions, client reporting, and operational performance inside one product.</p>
             </div>
-            <div class="project-meta-row">
-              <span class="project-meta-label">Type</span>
-              <span class="project-meta-value">AI automation platform</span>
+            <div class="project-meta">
+              <div class="project-meta-row">
+                <span class="project-meta-label">Built for</span>
+                <span class="project-meta-value">Teams managing performance, reporting, and client delivery across multiple accounts.</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Stack direction</span>
+                <span class="project-meta-value">React · TypeScript · Postgres · Charts · Role-based product views</span>
+              </div>
             </div>
-          </div>
-          <span class="project-pill">View project</span>
-        </article>
+            <span class="project-pill">View case study</span>
+          </article>
 
-        <article class="project-card" tabindex="0" data-case-link="signaldesk" aria-label="Open SignalDesk case study">
-          <div class="project-index">02</div>
-          <div class="project-main">
-            <h3>SignalDesk</h3>
-            <p>An analytics and reporting workspace built for agencies and service teams to track leads, campaign performance, conversion stages, client activity, and operational bottlenecks across one unified dashboard.</p>
-          </div>
-          <div class="project-meta">
-            <div class="project-meta-row">
-              <span class="project-meta-label">Stack</span>
-              <span class="project-meta-value">React · TypeScript · Charting · Postgres · Role-based access</span>
+          <article class="project-card" tabindex="0" data-case-link="flowforge" aria-label="Open FlowForge case study">
+            <div class="project-no">03</div>
+            <div class="project-main">
+              <h3>FlowForge</h3>
+              <p>A visual workflow builder that let teams design automations with triggers, conditions, delays, approval steps, and action chains instead of relying on scattered scripts or fragile manual processes.</p>
             </div>
-            <div class="project-meta-row">
-              <span class="project-meta-label">Type</span>
-              <span class="project-meta-value">Data-heavy SaaS dashboard</span>
+            <div class="project-meta">
+              <div class="project-meta-row">
+                <span class="project-meta-label">Built for</span>
+                <span class="project-meta-value">Businesses that had outgrown manual workflows and needed configurable automation infrastructure.</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Stack direction</span>
+                <span class="project-meta-value">React Flow · Node workers · Webhooks · Queue processing · Rule engine</span>
+              </div>
             </div>
-          </div>
-          <span class="project-pill">View project</span>
-        </article>
+            <span class="project-pill">View case study</span>
+          </article>
 
-        <article class="project-card" tabindex="0" data-case-link="flowforge" aria-label="Open FlowForge case study">
-          <div class="project-index">03</div>
-          <div class="project-main">
-            <h3>FlowForge</h3>
-            <p>A visual workflow builder for internal operations that let teams create intake rules, trigger chains, human approvals, delayed actions, and cross-platform automations without editing raw code every time.</p>
-          </div>
-          <div class="project-meta">
-            <div class="project-meta-row">
-              <span class="project-meta-label">Stack</span>
-              <span class="project-meta-value">React Flow · Node workers · Queue logic · Webhooks · JSON rules</span>
+          <article class="project-card" tabindex="0" data-case-link="hirepilot" aria-label="Open HirePilot case study">
+            <div class="project-no">04</div>
+            <div class="project-main">
+              <h3>HirePilot</h3>
+              <p>An AI-assisted recruitment operations product built for candidate screening, pipeline visibility, hiring workflow management, recruiter collaboration, and decision support across growing teams.</p>
             </div>
-            <div class="project-meta-row">
-              <span class="project-meta-label">Type</span>
-              <span class="project-meta-value">Automation infrastructure tool</span>
+            <div class="project-meta">
+              <div class="project-meta-row">
+                <span class="project-meta-label">Built for</span>
+                <span class="project-meta-value">Recruiters and teams that needed structure, speed, and visibility in hiring operations.</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Stack direction</span>
+                <span class="project-meta-value">Next.js · Python services · Supabase · Auth · Candidate workflows</span>
+              </div>
             </div>
-          </div>
-          <span class="project-pill">View project</span>
-        </article>
-
-        <article class="project-card" tabindex="0" data-case-link="hirepilot" aria-label="Open HirePilot case study">
-          <div class="project-index">04</div>
-          <div class="project-main">
-            <h3>HirePilot</h3>
-            <p>An AI-assisted recruitment and HR operations platform that handled candidate screening, scoring, workflow status, interview coordination, role pipelines, and recruiter notes through a modern full-stack product interface.</p>
-          </div>
-          <div class="project-meta">
-            <div class="project-meta-row">
-              <span class="project-meta-label">Stack</span>
-              <span class="project-meta-value">Next.js · Python scoring services · Supabase · Auth · File workflows</span>
-            </div>
-            <div class="project-meta-row">
-              <span class="project-meta-label">Type</span>
-              <span class="project-meta-value">HR tech platform</span>
-            </div>
-          </div>
-          <span class="project-pill">View project</span>
-        </article>
-      </div>
-    </section>
-
-    <section class="section reveal" id="stack">
-      <header class="section-head">
-        <p class="eyebrow">Stack</p>
-        <h2>Technical depth the website now communicates clearly.</h2>
-        <p>The earlier version already framed you as someone working across product, operations, and automation, but the new version makes the technical layer much more explicit so clients can immediately understand that you can handle advanced implementation as well as design direction. [file:1]</p>
-      </header>
-
-      <div class="stack-grid">
-        <article class="stack-card">
-          <h3>Front-end</h3>
-          <p>Product interfaces, dashboards, component systems, responsive app layouts, rich interactions, and polished client-facing web experiences.</p>
-          <ul class="stack-list">
-            <li>HTML / CSS</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>UI systems</li>
-          </ul>
-        </article>
-
-        <article class="stack-card">
-          <h3>Back-end</h3>
-          <p>APIs, auth flows, database structure, server functions, role-based access, integrations, queues, and operational data pipelines.</p>
-          <ul class="stack-list">
-            <li>Node.js</li><li>Express</li><li>Supabase</li><li>Postgres</li><li>Webhooks</li><li>REST APIs</li>
-          </ul>
-        </article>
-
-        <article class="stack-card">
-          <h3>Automation & AI</h3>
-          <p>Lead routing, assistant workflows, AI response layers, business logic orchestration, WhatsApp automation, and task reduction systems.</p>
-          <ul class="stack-list">
-            <li>OpenAI</li><li>Python</li><li>Automation logic</li><li>CRM sync</li><li>WhatsApp API</li><li>AI workflows</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="section reveal" id="process">
-      <header class="section-head">
-        <p class="eyebrow">Process</p>
-        <h2>A product and systems process designed for advanced builds, not just simple pages.</h2>
-      </header>
-
-      <div class="process-grid">
-        <article class="card process-card">
-          <span>01</span>
-          <h3>Frame</h3>
-          <p>Define the product problem, technical constraints, workflow friction, user roles, and highest-value business outcome before writing features.</p>
-        </article>
-        <article class="card process-card">
-          <span>02</span>
-          <h3>Architect</h3>
-          <p>Map entities, system flows, integrations, interface states, permissions, and logic so the build has strong foundations from the start.</p>
-        </article>
-        <article class="card process-card">
-          <span>03</span>
-          <h3>Build</h3>
-          <p>Develop the product with reusable modules, practical interfaces, and delivery discipline so the system is ready for real-world use.</p>
-        </article>
-        <article class="card process-card">
-          <span>04</span>
-          <h3>Iterate</h3>
-          <p>Improve flows, visibility, performance, and usability based on actual bottlenecks, operator feedback, and business usage patterns.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section reveal" id="about">
-      <header class="section-head">
-        <p class="eyebrow">About</p>
-        <h2>A builder positioned around advanced implementation, not only visual output.</h2>
-      </header>
-      <div class="about-card">
-        <h3>I build systems where product thinking, engineering, and operations meet.</h3>
-        <p>Your current site already describes you as a cross-functional digital partner working across product design, project delivery, and AI systems, and that foundation is strong. [file:1] This version sharpens that identity by presenting you more clearly as an AI automation engineer and advanced product builder who can architect, build, and ship complex systems rather than only lighter front-end websites. [file:1]</p>
-        <p>The strongest positioning for your freelance website is not “I can make websites.” It is “I can build the systems behind growth, operations, automation, and digital delivery.” That distinction makes your portfolio feel more premium and more difficult to replace.</p>
-      </div>
-    </section>
-
-    <section class="section reveal" id="contact">
-      <header class="section-head">
-        <p class="eyebrow">Contact</p>
-        <h2>If you need a real product, AI workflow, internal tool, or automation system, that is the right starting point.</h2>
-      </header>
-      <div class="contact-card">
-        <h3>Let’s identify the highest-value build.</h3>
-        <p>I work with founders, agencies, and service businesses that want more than a simple site — whether that means an AI receptionist, analytics workspace, workflow engine, SaaS MVP, or a publishable full-stack product.</p>
-        <div class="contact-actions">
-          <a class="btn btn-primary" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Book a call</a>
-          <a class="btn btn-ghost" href="https://wa.me/447311470011?text=Hi%20Rohith%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20an%20advanced%20project." target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
-          <a class="btn btn-ghost" href="mailto:rodhanala@gmail.com?subject=Advanced%20project%20enquiry">Email me</a>
+            <span class="project-pill">View case study</span>
+          </article>
         </div>
-        <ul class="contact-meta">
-          <li><span>Email:</span> rodhanala@gmail.com</li>
-          <li><span>WhatsApp:</span> +44 7311 470011</li>
-          <li><span>Location:</span> Southampton, United Kingdom</li>
-          <li><span>Availability:</span> Freelance projects, retainers, AI automation builds, product development, and advanced web systems</li>
-        </ul>
-      </div>
-    </section>
+      </section>
+
+      <section class="section reveal" id="capabilities">
+        <header class="section-head">
+          <p class="section-eyebrow">Capabilities</p>
+          <h2>What makes my work valuable beyond visuals.</h2>
+          <p>
+            Strong freelance work is not only about making things look polished. It is about understanding the business problem, designing a clear experience, and building systems that still make sense after launch.
+          </p>
+        </header>
+
+        <div class="stack-grid">
+          <article class="panel">
+            <h3>Product thinking</h3>
+            <p>I turn vague project ideas into structured product direction — clarifying user journeys, key actions, workflow states, business rules, feature scope, and the right experience to build first.</p>
+            <ul class="pill-list">
+              <li>UX strategy</li>
+              <li>Information architecture</li>
+              <li>Feature definition</li>
+              <li>User flow planning</li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h3>Engineering delivery</h3>
+            <p>I build interfaces and systems with real implementation depth, which means the final result feels like a product and not just a visual concept. That includes dashboards, logic-heavy interfaces, data views, auth-aware products, and integrated workflows.</p>
+            <ul class="pill-list">
+              <li>React / Next.js</li>
+              <li>Node.js</li>
+              <li>Supabase</li>
+              <li>API integrations</li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h3>Operational systems</h3>
+            <p>I am especially strong when a project touches internal operations — lead handling, handoffs, automation, dashboards, visibility, and repetitive processes that need cleaner structure.</p>
+            <ul class="pill-list">
+              <li>Automation logic</li>
+              <li>Lead systems</li>
+              <li>Internal platforms</li>
+              <li>Business workflows</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="proof">
+        <header class="section-head">
+          <p class="section-eyebrow">Why clients hire me</p>
+          <h2>High-value projects need more than design taste alone.</h2>
+          <p>
+            The best freelance partner for these kinds of projects is someone who can bridge product, UX, build quality, and business logic in one workflow. That is the role I am positioning this portfolio around.
+          </p>
+        </header>
+
+        <div class="proof-grid">
+          <article class="panel">
+            <h3>I work across layers</h3>
+            <p>Many freelancers are either visual-only or code-only. My value comes from being able to shape product direction, build premium interfaces, and think through the operational logic behind them.</p>
+          </article>
+          <article class="panel">
+            <h3>I focus on commercial usefulness</h3>
+            <p>I build systems that help teams respond faster, reduce friction, improve visibility, and create stronger client-facing experiences — not just projects that look good in screenshots.</p>
+          </article>
+          <article class="panel">
+            <h3>I make complex work feel clear</h3>
+            <p>When a project has multiple roles, steps, states, or integrations, clarity becomes part of the value. I bring structure to that complexity so the product feels calm and professional.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="about">
+        <header class="section-head">
+          <p class="section-eyebrow">About</p>
+          <h2>A freelancer positioned around products, systems, and serious client work.</h2>
+          <p>
+            I am a freelance product builder and AI automation engineer focused on advanced digital work for modern businesses. My strength is combining design quality with technical execution, so the final result is not only visually strong but also operationally useful, commercially credible, and ready to support real growth.
+          </p>
+          <p>
+            I am at my best on projects where a business needs a premium product feel, cleaner workflow logic, stronger system thinking, or a more scalable way to handle internal operations and customer-facing interactions. That can mean a dashboard, an AI assistant workflow, an internal platform, a hiring product, or a service system that needs to feel like software rather than a patchwork of tools.
+          </p>
+        </header>
+      </section>
+
+      <section class="section reveal" id="contact">
+        <div class="contact-card">
+          <h3>Let’s build something that actually moves the business forward.</h3>
+          <p>
+            If you need an advanced website, a product-grade dashboard, a client portal, an AI automation system, or a custom internal tool, I can help shape the product properly and build it to a standard you can confidently put in front of clients or customers.
+          </p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="https://calendly.com/rodhanala" target="_blank" rel="noopener noreferrer">Book a call</a>
+            <a class="btn btn-secondary" href="https://wa.me/447311470011?text=Hi%20Rohith%2C%20I%20reviewed%20your%20portfolio%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+            <a class="btn btn-secondary" href="mailto:rodhanala@gmail.com?subject=Project%20enquiry">Email me</a>
+          </div>
+          <ul class="contact-meta">
+            <li><span>Email:</span> rodhanala@gmail.com</li>
+            <li><span>WhatsApp:</span> +44 7311 470011</li>
+            <li><span>Location:</span> Southampton, United Kingdom</li>
+            <li><span>Working on:</span> AI automation systems, client dashboards, SaaS-style products, advanced web builds, and workflow tools</li>
+          </ul>
+        </div>
+      </section>
+    </div>
   </section>
 
   <section class="page" id="cases-page">
-    <section class="case-page-hero reveal">
-      <button class="btn btn-ghost" type="button" data-go-home style="margin-bottom:24px">← Back to homepage</button>
-      <header class="section-head" style="margin:0">
-        <p class="eyebrow">Projects</p>
-        <h2 id="case-page-title">Selected advanced digital projects.</h2>
-        <p id="case-page-sub">Detailed case studies showing architecture, product thinking, workflow design, implementation layers, and GitHub-ready technical depth.</p>
-      </header>
-    </section>
+    <div class="shell">
+      <section class="case-hero reveal">
+        <button class="btn btn-secondary" type="button" data-go-home style="margin-bottom:24px">← Back to homepage</button>
+        <header class="section-head" style="margin-bottom:0">
+          <p class="section-eyebrow">Projects</p>
+          <h2 id="case-page-title">Detailed product case studies with live demo sections.</h2>
+          <p id="case-page-sub">Each project below is written as a premium freelance case study and includes a built product-style demo section instead of a static placeholder presentation.</p>
+        </header>
+      </section>
 
-    <section class="case-detail-wrap">
+      <section class="case-wrap">
 
-      <article class="case-detail-card reveal" id="case-orchestrix">
-        <div class="case-detail-top">
-          <div class="case-meta-box"><span>Project</span><strong>Orchestrix AI</strong></div>
-          <div class="case-meta-box"><span>Role</span><strong>AI Automation Engineer · Product Builder</strong></div>
-          <div class="case-meta-box"><span>Type</span><strong>Multi-channel Operations Platform</strong></div>
-          <div class="case-meta-box"><span>Focus</span><strong>AI Systems & Full-stack Automation</strong></div>
-        </div>
-
-        <h2 class="case-title">Building an AI operations system that qualified leads, routed work, and reduced repetitive admin.</h2>
-        <p class="case-summary">Orchestrix AI was designed as a serious product build rather than a simple chatbot concept. The idea was to create one system that could handle enquiry capture, lead qualification, WhatsApp follow-up, CRM sync, appointment intent, internal notifications, and human review through a single operator dashboard.</p>
-
-        <section class="case-section">
-          <h3>Overview</h3>
-          <p>This project was shaped like a full-stack operational product with separate layers for conversational input, classification logic, workflow orchestration, and internal visibility. It positions the work as a real AI automation system that could be published as a GitHub project with frontend, backend, integrations, and database structure.</p>
-          <div class="case-highlight">
-            <strong>What this project demonstrates</strong>
-            <p>AI workflow design, architecture thinking, dashboard UX, WhatsApp automation, API integration, database structure, human-in-the-loop review, and product-grade system planning.</p>
+        <article class="case-card reveal active" id="case-orchestrix">
+          <div class="case-top">
+            <div class="case-meta"><span>Project</span><strong>Orchestrix AI</strong></div>
+            <div class="case-meta"><span>Role</span><strong>AI automation engineer · product builder</strong></div>
+            <div class="case-meta"><span>Type</span><strong>Multi-channel service operations platform</strong></div>
+            <div class="case-meta"><span>Focus</span><strong>Lead handling, AI intake, routing, operator control</strong></div>
           </div>
-        </section>
 
-        <section class="case-section">
-          <h3>The challenge</h3>
-          <p>Service businesses often lose time because enquiries arrive through different channels, qualification is inconsistent, and operators still have to manually copy information into multiple tools. The project addressed that fragmentation by treating intake and routing as a product problem instead of just a messaging problem.</p>
-          <ul class="case-list">
-            <li>Lead data arrived with missing structure and inconsistent quality.</li>
-            <li>WhatsApp, forms, and internal follow-up created disconnected workflows.</li>
-            <li>Manual qualification slowed response speed and created uneven handoffs.</li>
-            <li>Teams lacked a single view of status, urgency, and next action.</li>
-          </ul>
-        </section>
+          <h2 class="case-title">An AI operations platform built to handle enquiry capture, qualification, routing, and follow-up from one premium system.</h2>
+          <p class="case-summary">
+            Orchestrix AI was designed for service businesses that were growing faster than their internal processes. Enquiries were coming from multiple places, qualification was inconsistent, manual admin was eating time, and teams had no single view of what needed attention next. I approached the project as a real product build — not as a chatbot demo — and structured it around intake, automation, human review, and operational visibility.
+          </p>
 
-        <section class="case-section">
-          <h3>Architecture direction</h3>
-          <p>The system was shaped around a modular architecture: a Next.js front-end for operators, server routes for workflow actions, a Supabase layer for structured records, OpenAI-based classification for lead intent, and webhook-based triggers for cross-platform events. This made the project feel more like a real SaaS product than a lightweight automation demo.</p>
+          <section class="case-section">
+            <h3>The problem</h3>
+            <p>
+              In many service businesses, the first stage of the customer journey is where quality drops fastest. New leads arrive through forms, WhatsApp, or direct messages. Important information is missing, follow-up depends on who sees it first, and the handoff from conversation to real business action is rarely clean. The result is slower response, weaker conversion, and too much repeated admin.
+            </p>
+            <ul class="case-list">
+              <li>Lead information arrived in inconsistent formats with missing context.</li>
+              <li>Manual qualification made response times slower and less reliable.</li>
+              <li>Teams lacked one dashboard for visibility across intake and follow-up.</li>
+              <li>Operators had no clean review layer to override or approve AI decisions.</li>
+            </ul>
+          </section>
 
-          <div class="artifact-grid">
-            <div class="artifact-card">
-              <div class="artifact-head">
-                <strong>System dashboard direction</strong>
-                <span>Product UI</span>
-              </div>
-              <div class="artifact-body">
-                <div class="mockup-screen">
-                  <div class="mockup-topbar"><span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span></div>
-                  <div class="mockup-layout">
-                    <div class="mockup-sidebar">
-                      <div class="mockup-nav"></div><div class="mockup-nav"></div><div class="mockup-nav"></div><div class="mockup-nav"></div>
+          <section class="case-section">
+            <h3>My approach</h3>
+            <p>
+              I structured the platform around one central operating idea: every new enquiry should move through a clear product flow — capture, classify, route, review, and act. That turned a messy communication problem into a product system with visible states, defined actions, and a much calmer operator experience.
+            </p>
+            <div class="case-highlight">
+              <strong>What this project shows</strong>
+              <p>
+                Product framing, AI-assisted workflow design, dashboard UX, event-driven system thinking, operator controls, and the ability to translate business friction into a buildable software product.
+              </p>
+            </div>
+          </section>
+
+          <section class="case-section">
+            <h3>Live demo</h3>
+            <p>
+              Instead of showing a static portfolio mockup, this project is presented like a real product interface. The demo below simulates the dashboard structure, live intake queue, priority cards, and operational layout the product was designed around.
+            </p>
+
+            <div class="demo-grid">
+              <div class="demo-card">
+                <div class="demo-head">
+                  <strong>Live product preview</strong>
+                  <span>Dashboard view</span>
+                </div>
+                <div class="demo-body">
+                  <div class="browser">
+                    <div class="browser-top">
+                      <div class="browser-dots"><span></span><span></span><span></span></div>
+                      <div class="browser-url">orchestrix-ai.live/app/operations</div>
                     </div>
-                    <div class="mockup-content">
-                      <div class="mockup-bar long"></div>
-                      <div class="mockup-bar mid"></div>
-                      <div class="mockup-cards">
-                        <div class="mockup-card"></div><div class="mockup-card"></div>
-                        <div class="mockup-card"></div><div class="mockup-card"></div>
+                    <div class="browser-screen">
+                      <div class="app-shell">
+                        <div class="app-toolbar">
+                          <span class="app-title">Orchestrix AI / Intake Operations</span>
+                          <span class="app-badge">Live queue</span>
+                        </div>
+                        <div class="app-grid">
+                          <aside class="app-sidebar">
+                            <div class="app-nav"></div>
+                            <div class="app-nav"></div>
+                            <div class="app-nav"></div>
+                            <div class="app-nav"></div>
+                            <div class="app-nav"></div>
+                          </aside>
+                          <div class="app-content">
+                            <div class="kpi-row">
+                              <div class="kpi"><strong>124</strong><span>Open enquiries</span></div>
+                              <div class="kpi"><strong>18</strong><span>Needs review</span></div>
+                              <div class="kpi"><strong>42m</strong><span>Avg response time</span></div>
+                            </div>
+                            <div class="board">
+                              <div class="board-col">
+                                <strong>New</strong>
+                                <div class="board-card"></div>
+                                <div class="board-card"></div>
+                              </div>
+                              <div class="board-col">
+                                <strong>Qualified</strong>
+                                <div class="board-card"></div>
+                                <div class="board-card"></div>
+                              </div>
+                              <div class="board-col">
+                                <strong>Awaiting action</strong>
+                                <div class="board-card"></div>
+                                <div class="board-card"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="artifact-card">
-              <div class="artifact-head">
-                <strong>Automation flow</strong>
-                <span>Logic map</span>
-              </div>
-              <div class="artifact-body flow-card">
-                <div class="flow-row">
-                  <div class="flow-step"><strong>Capture</strong><span>Form, WhatsApp, or inbound channel enters one intake layer.</span></div>
-                  <div class="flow-step"><strong>Classify</strong><span>AI extracts intent, urgency, service type, and route.</span></div>
-                  <div class="flow-step"><strong>Store</strong><span>Structured records sync into the database and CRM.</span></div>
+              <div class="demo-card">
+                <div class="demo-head">
+                  <strong>Workflow logic</strong>
+                  <span>System flow</span>
                 </div>
-                <div class="flow-row">
-                  <div class="flow-step"><strong>Notify</strong><span>Internal alerts reach the right person with context.</span></div>
-                  <div class="flow-step"><strong>Review</strong><span>Operators approve, override, or continue flows.</span></div>
-                  <div class="flow-step"><strong>Track</strong><span>Status, response quality, and stage visibility stay visible.</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="case-section">
-          <h3>GitHub-ready implementation</h3>
-          <div class="github-grid">
-            <div class="github-card">
-              <strong>Frontend modules</strong>
-              <p>Operator dashboard, lead detail panel, conversation view, workflow timeline, tags, routing controls, review queue, and analytics widgets.</p>
-            </div>
-            <div class="github-card">
-              <strong>Backend modules</strong>
-              <p>Webhook handlers, message ingestion, AI classification service, event logging, queue processing, CRM sync, and action audit history.</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="case-section">
-          <h3>Outcome</h3>
-          <p>This is the kind of project that instantly makes a portfolio feel more advanced because it shows applied AI, full-stack product design, business workflow understanding, and system architecture in one case study. It is far stronger than a simple landing page or generic automation claim because the technical depth is visible throughout.</p>
-          <div class="case-tools">
-            <span>Next.js</span><span>Node.js</span><span>Supabase</span><span>OpenAI</span><span>WhatsApp API</span><span>Automation logic</span>
-          </div>
-          <div class="case-detail-actions">
-            <button class="btn btn-ghost" type="button" data-go-home>Back to homepage</button>
-          </div>
-        </section>
-      </article>
-
-      <article class="case-detail-card reveal" id="case-signaldesk">
-        <div class="case-detail-top">
-          <div class="case-meta-box"><span>Project</span><strong>SignalDesk</strong></div>
-          <div class="case-meta-box"><span>Role</span><strong>Product Engineer · Dashboard Designer</strong></div>
-          <div class="case-meta-box"><span>Type</span><strong>Analytics SaaS Workspace</strong></div>
-          <div class="case-meta-box"><span>Focus</span><strong>Advanced Dashboard Product</strong></div>
-        </div>
-
-        <h2 class="case-title">Designing a data-heavy analytics workspace for teams managing leads, performance, and operational visibility.</h2>
-        <p class="case-summary">SignalDesk was framed as a more advanced SaaS-style product for agencies and service operators who need more than spreadsheets and disconnected reports. The platform focused on lead tracking, funnel visibility, client reporting, stage monitoring, and team-level operational insight.</p>
-
-        <section class="case-section">
-          <h3>Product direction</h3>
-          <p>The goal was to create a system that could combine analytics clarity with clean product usability. Instead of building a visually noisy dashboard, the interface focused on scannability, trend awareness, drill-down access, and clear separation between summary metrics and operational detail.</p>
-          <div class="case-highlight">
-            <strong>What this project demonstrates</strong>
-            <p>Dashboard thinking, data hierarchy, role-based views, chart planning, SaaS UX structure, and front-end engineering for data-dense interfaces.</p>
-          </div>
-        </section>
-
-        <section class="case-section">
-          <h3>The challenge</h3>
-          <p>Many reporting products fail because they surface too much at once, flatten priority, and make action harder instead of easier. The challenge here was to build a dashboard system that could support both quick scanning and deeper investigation without overwhelming users.</p>
-          <ul class="case-list">
-            <li>Teams needed both executive summary and operational detail.</li>
-            <li>Lead data, campaign data, and client views had different priorities.</li>
-            <li>Visibility mattered, but density still had to stay usable.</li>
-            <li>Different user roles required different permission layers and views.</li>
-          </ul>
-        </section>
-
-        <section class="case-section">
-          <h3>Interface system</h3>
-          <p>The interface was organised around KPI modules, trend cards, pipeline tables, account filters, team activity, and reporting panels. A strong information hierarchy made the product feel like a mature SaaS dashboard rather than a collection of widgets.</p>
-
-          <div class="artifact-grid">
-            <div class="artifact-card">
-              <div class="artifact-head">
-                <strong>Dashboard composition</strong>
-                <span>Analytics UI</span>
-              </div>
-              <div class="artifact-body">
-                <div class="mockup-screen">
-                  <div class="mockup-topbar"><span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span></div>
-                  <div class="mockup-layout">
-                    <div class="mockup-sidebar">
-                      <div class="mockup-nav"></div><div class="mockup-nav"></div><div class="mockup-nav"></div><div class="mockup-nav"></div>
+                <div class="demo-body">
+                  <div class="flow-visual">
+                    <div class="flow-row">
+                      <div class="flow-node"><strong>Capture</strong><span>Lead enters via form, WhatsApp, or direct contact.</span></div>
+                      <div class="flow-node"><strong>Classify</strong><span>AI extracts intent, urgency, service type, and context.</span></div>
+                      <div class="flow-node"><strong>Route</strong><span>System sends the lead to the right queue or person.</span></div>
                     </div>
-                    <div class="mockup-content">
-                      <div class="mockup-bar long"></div>
-                      <div class="mockup-cards">
-                        <div class="mockup-card"></div><div class="mockup-card"></div>
-                        <div class="mockup-card"></div><div class="mockup-card"></div>
-                      </div>
-                      <div class="mockup-bar mid"></div>
+                    <div class="flow-row">
+                      <div class="flow-node"><strong>Review</strong><span>Operator approves, edits, or escalates any unclear cases.</span></div>
+                      <div class="flow-node"><strong>Act</strong><span>Follow-up, scheduling, or CRM sync happens from one place.</span></div>
+                      <div class="flow-node"><strong>Track</strong><span>Status and performance remain visible across the funnel.</span></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </section>
 
-            <div class="artifact-card">
-              <div class="artifact-head">
-                <strong>Data structure</strong>
-                <span>View logic</span>
+          <section class="case-section">
+            <h3>Build detail</h3>
+            <div class="case-grid">
+              <div class="case-block">
+                <h4>Frontend</h4>
+                <p>Dashboard UI, lead detail panels, queue views, review states, follow-up actions, timeline history, and operator controls built for fast scanning and low-friction decision making.</p>
               </div>
-              <div class="artifact-body flow-card">
-                <div class="flow-row">
-                  <div class="flow-step"><strong>Aggregate</strong><span>Collect source data into one reporting layer.</span></div>
-                  <div class="flow-step"><strong>Segment</strong><span>Separate views by client, team, stage, and source.</span></div>
-                  <div class="flow-step"><strong>Visualise</strong><span>Charts, KPIs, and tables support quick scanning.</span></div>
+              <div class="case-block">
+                <h4>Backend</h4>
+                <p>Webhook ingestion, AI classification service, rule-based routing, audit logging, CRM sync endpoints, and operator action handlers.</p>
+              </div>
+              <div class="case-block">
+                <h4>Data layer</h4>
+                <p>Structured lead records, status history, route logic, conversation metadata, source attribution, and review outcomes stored for visibility and reporting.</p>
+              </div>
+              <div class="case-block">
+                <h4>Business value</h4>
+                <p>Faster response, reduced admin repetition, cleaner lead handling, stronger oversight, and a more premium service workflow from the first customer touchpoint.</p>
+              </div>
+            </div>
+            <div class="tools">
+              <span>Next.js</span>
+              <span>Node.js</span>
+              <span>Supabase</span>
+              <span>AI APIs</span>
+              <span>WhatsApp integrations</span>
+              <span>Automation logic</span>
+            </div>
+          </section>
+        </article>
+
+        <article class="case-card reveal" id="case-signaldesk">
+          <div class="case-top">
+            <div class="case-meta"><span>Project</span><strong>SignalDesk</strong></div>
+            <div class="case-meta"><span>Role</span><strong>Product engineer · dashboard designer</strong></div>
+            <div class="case-meta"><span>Type</span><strong>Analytics and reporting workspace</strong></div>
+            <div class="case-meta"><span>Focus</span><strong>Performance visibility, client reporting, operational clarity</strong></div>
+          </div>
+
+          <h2 class="case-title">A reporting and analytics workspace built for teams that need clearer decisions, not more dashboard clutter.</h2>
+          <p class="case-summary">
+            SignalDesk was designed for agencies and service teams managing multiple clients, multiple data sources, and multiple stakeholders at once. The challenge was not a lack of data — it was the lack of a product layer that made the data useful. I built the concept around visibility, focus, and decision-ready reporting instead of generic dashboard noise.
+          </p>
+
+          <section class="case-section">
+            <h3>The problem</h3>
+            <p>
+              Reporting systems often fail because everything gets treated as equally important. Important trend lines sit beside less useful metrics, client reporting feels detached from internal action, and teams end up exporting data just to make sense of it. The product needed to support both high-level summary and operational detail without becoming visually heavy.
+            </p>
+            <ul class="case-list">
+              <li>Important metrics were buried inside flat dashboards and spreadsheets.</li>
+              <li>Client reporting and internal performance views were disconnected.</li>
+              <li>Different users needed different levels of access and detail.</li>
+              <li>Teams needed insight they could act on, not just data they could view.</li>
+            </ul>
+          </section>
+
+          <section class="case-section">
+            <h3>My approach</h3>
+            <p>
+              I designed the product around layers: executive summary first, then account-level detail, then drill-down performance views. That created a cleaner hierarchy and made the system feel more like a serious analytics product than a collection of charts.
+            </p>
+            <div class="case-highlight">
+              <strong>What this project shows</strong>
+              <p>
+                Dashboard architecture, data-heavy UX, role-aware interface structure, chart planning, reporting workflows, and product thinking around visibility and decision making.
+              </p>
+            </div>
+          </section>
+
+          <section class="case-section">
+            <h3>Live demo</h3>
+            <p>
+              The live product section below presents the project as an active dashboard workspace, with KPI modules, reporting panels, and account views that simulate the structure of a real analytics platform.
+            </p>
+
+            <div class="demo-grid">
+              <div class="demo-card">
+                <div class="demo-head">
+                  <strong>Live product preview</strong>
+                  <span>Analytics dashboard</span>
                 </div>
-                <div class="flow-row">
-                  <div class="flow-step"><strong>Drill down</strong><span>Open deeper details without losing context.</span></div>
-                  <div class="flow-step"><strong>Compare</strong><span>Track changes across time windows and accounts.</span></div>
-                  <div class="flow-step"><strong>Act</strong><span>Connect insight to operational next steps.</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="case-section">
-          <h3>Engineering credibility</h3>
-          <div class="github-grid">
-            <div class="github-card">
-              <strong>Core features</strong>
-              <p>Role-based dashboards, saved filters, chart widgets, funnel stages, team-level activity cards, client reporting views, and export-ready tables.</p>
-            </div>
-            <div class="github-card">
-              <strong>Technical value</strong>
-              <p>This project shows strong front-end architecture, typed components, reusable data widgets, dashboard state management, and product thinking for analytics-heavy systems.</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="case-section">
-          <h3>Outcome</h3>
-          <p>This project makes the portfolio feel more senior because it presents you as someone capable of building complex interfaces for real product use cases. It is especially effective for SaaS, dashboard, analytics, operations, and internal tooling opportunities.</p>
-          <div class="case-tools">
-            <span>React</span><span>TypeScript</span><span>Dashboards</span><span>Analytics UX</span><span>Data visualisation</span><span>RBAC</span>
-          </div>
-          <div class="case-detail-actions">
-            <button class="btn btn-ghost" type="button" data-go-home>Back to homepage</button>
-          </div>
-        </section>
-      </article>
-
-      <article class="case-detail-card reveal" id="case-flowforge">
-        <div class="case-detail-top">
-          <div class="case-meta-box"><span>Project</span><strong>FlowForge</strong></div>
-          <div class="case-meta-box"><span>Role</span><strong>Systems Engineer · Workflow Product Designer</strong></div>
-          <div class="case-meta-box"><span>Type</span><strong>Internal Automation Builder</strong></div>
-          <div class="case-meta-box"><span>Focus</span><strong>Workflow Infrastructure Tool</strong></div>
-        </div>
-
-        <h2 class="case-title">Creating a visual workflow builder for teams that needed real automation without fragile manual processes.</h2>
-        <p class="case-summary">FlowForge was designed as an internal workflow product where users could build automations visually instead of relying on scattered scripts, repeated manual steps, or fragile operational memory. The product focused on triggers, actions, conditions, approvals, delays, and event-driven orchestration.</p>
-
-        <section class="case-section">
-          <h3>Why this project stands out</h3>
-          <p>This is a stronger portfolio case study because it is not a simple CRUD app or landing page. It presents a system-level product with visual logic, configuration layers, backend execution, and operational impact — exactly the kind of project that signals advanced development ability.</p>
-          <div class="case-highlight">
-            <strong>What this project demonstrates</strong>
-            <p>System design, flow-builder UX, event logic, queue-based thinking, automation architecture, operator control, and advanced internal-tool product direction.</p>
-          </div>
-        </section>
-
-        <section class="case-section">
-          <h3>The challenge</h3>
-          <p>Most businesses accumulate repeated tasks long before they build proper workflow systems. The problem is not only inefficiency; it is also inconsistency, missed steps, and low visibility around who did what and what should happen next.</p>
-          <ul class="case-list">
-            <li>Automations were hardcoded or spread across disconnected tools.</li>
-            <li>Workflow changes required technical editing each time.</li>
-            <li>Human approvals were poorly integrated into automated processes.</li>
-            <li>Teams lacked an understandable visual model of system behavior.</li>
-          </ul>
-        </section>
-
-        <section class="case-section">
-          <h3>Product design</h3>
-          <p>The product was shaped around a visual builder with nodes for triggers, conditions, actions, waits, branches, and approval states. The goal was to make automation design understandable to operators while still connecting to a real execution layer underneath.</p>
-
-          <div class="artifact-grid">
-            <div class="artifact-card">
-              <div class="artifact-head">
-                <strong>Workflow board</strong>
-                <span>Builder interface</span>
-              </div>
-              <div class="artifact-body">
-                <div class="wireframe-grid">
-                  <div class="wireframe-card"><div class="wf-box hero"></div><div class="wf-box"></div><div class="wf-box card"></div><div class="wf-box small"></div></div>
-                  <div class="wireframe-card"><div class="wf-box hero"></div><div class="wf-box card"></div><div class="wf-box card"></div><div class="wf-box"></div></div>
-                  <div class="wireframe-card"><div class="wf-box hero"></div><div class="wf-box"></div><div class="wf-box card"></div><div class="wf-box small"></div></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="artifact-card">
-              <div class="artifact-head">
-                <strong>Execution chain</strong>
-                <span>Infrastructure logic</span>
-              </div>
-              <div class="artifact-body flow-card">
-                <div class="flow-row">
-                  <div class="flow-step"><strong>Trigger</strong><span>Event enters the workflow engine.</span></div>
-                  <div class="flow-step"><strong>Check</strong><span>Conditions and routing rules are evaluated.</span></div>
-                  <div class="flow-step"><strong>Action</strong><span>Webhook, message, database update, or task fires.</span></div>
-                </div>
-                <div class="flow-row">
-                  <div class="flow-step"><strong>Wait</strong><span>Delayed actions and scheduled logic stay supported.</span></div>
-                  <div class="flow-step"><strong>Approve</strong><span>Human review can pause or continue the chain.</span></div>
-                  <div class="flow-step"><strong>Log</strong><span>Execution history remains visible and auditable.</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="case-section">
-          <h3>Technical shape</h3>
-          <div class="github-grid">
-            <div class="github-card">
-              <strong>Frontend layer</strong>
-              <p>Visual node editor, flow inspector, schema validation, template library, run history, error states, and draft/published workflow modes.</p>
-            </div>
-            <div class="github-card">
-              <strong>Backend layer</strong>
-              <p>Event ingestion, rule evaluation, async workers, retry logic, execution logging, webhook actions, and approval checkpoints.</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="case-section">
-          <h3>Outcome</h3>
-          <p>FlowForge positions you as someone who can build serious internal products, not only client-facing sites. That is powerful for automation work, operations tooling, SaaS MVPs, and engineering-led freelance opportunities where systems thinking matters as much as visuals.</p>
-          <div class="case-tools">
-            <span>React Flow</span><span>Node workers</span><span>Queues</span><span>Webhooks</span><span>Workflow builder</span><span>Internal tools</span>
-          </div>
-          <div class="case-detail-actions">
-            <button class="btn btn-ghost" type="button" data-go-home>Back to homepage</button>
-          </div>
-        </section>
-      </article>
-
-      <article class="case-detail-card reveal" id="case-hirepilot">
-        <div class="case-detail-top">
-          <div class="case-meta-box"><span>Project</span><strong>HirePilot</strong></div>
-          <div class="case-meta-box"><span>Role</span><strong>Full-stack Product Builder · AI Workflow Designer</strong></div>
-          <div class="case-meta-box"><span>Type</span><strong>HR & Recruitment Platform</strong></div>
-          <div class="case-meta-box"><span>Focus</span><strong>Advanced SaaS / HR Tech Product</strong></div>
-        </div>
-
-        <h2 class="case-title">Building an AI-assisted hiring operations platform for screening, tracking, and recruiter workflow visibility.</h2>
-        <p class="case-summary">HirePilot was designed as a richer HR tech project combining recruitment workflow management with AI-assisted screening support. Instead of a simple job board or form-based app, the product was structured as a full recruitment operations platform with candidate stages, role views, recruiter activity, notes, scoring, and interview coordination.</p>
-
-        <section class="case-section">
-          <h3>Project scope</h3>
-          <p>The system supported role creation, candidate ingestion, profile review, shortlist management, evaluation notes, stage transitions, and recruiter collaboration. AI was used to assist screening and scoring, but the product still preserved human decision-making and auditability.</p>
-          <div class="case-highlight">
-            <strong>What this project demonstrates</strong>
-            <p>Advanced CRUD plus workflow design, AI-assisted product features, dashboard architecture, file and record handling, and strong SaaS product structure.</p>
-          </div>
-        </section>
-
-        <section class="case-section">
-          <h3>The challenge</h3>
-          <p>Recruitment products often become hard to use because candidate volume grows quickly, role context gets lost, and collaboration happens across disconnected notes and spreadsheets. The challenge was to build a platform that made candidate flow clear and decision quality easier to maintain.</p>
-          <ul class="case-list">
-            <li>Candidate data needed structure across multiple roles and stages.</li>
-            <li>Recruiters needed visibility without cluttered screens.</li>
-            <li>Scoring assistance had to support, not replace, recruiter judgement.</li>
-            <li>Stage progression and coordination needed stronger internal visibility.</li>
-          </ul>
-        </section>
-
-        <section class="case-section">
-          <h3>Interface and system logic</h3>
-          <p>The product combined role dashboards, candidate boards, detail drawers, score panels, document-linked metadata, and collaboration notes. This gave the project the feel of a real HR SaaS platform rather than a simple portal.</p>
-
-          <div class="artifact-grid">
-            <div class="artifact-card">
-              <div class="artifact-head">
-                <strong>Recruitment workspace</strong>
-                <span>Product UI</span>
-              </div>
-              <div class="artifact-body">
-                <div class="mockup-screen">
-                  <div class="mockup-topbar"><span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span></div>
-                  <div class="mockup-layout">
-                    <div class="mockup-sidebar">
-                      <div class="mockup-nav"></div><div class="mockup-nav"></div><div class="mockup-nav"></div><div class="mockup-nav"></div>
+                <div class="demo-body">
+                  <div class="browser">
+                    <div class="browser-top">
+                      <div class="browser-dots"><span></span><span></span><span></span></div>
+                      <div class="browser-url">signaldesk.live/overview</div>
                     </div>
-                    <div class="mockup-content">
-                      <div class="mockup-bar long"></div>
-                      <div class="mockup-bar short"></div>
-                      <div class="mockup-cards">
-                        <div class="mockup-card"></div><div class="mockup-card"></div>
-                        <div class="mockup-card"></div><div class="mockup-card"></div>
+                    <div class="browser-screen">
+                      <div class="app-shell">
+                        <div class="app-toolbar">
+                          <span class="app-title">SignalDesk / Portfolio Performance</span>
+                          <span class="app-badge">Client reporting</span>
+                        </div>
+                        <div class="app-grid">
+                          <aside class="app-sidebar">
+                            <div class="app-nav"></div>
+                            <div class="app-nav"></div>
+                            <div class="app-nav"></div>
+                            <div class="app-nav"></div>
+                          </aside>
+                          <div class="app-content">
+                            <div class="kpi-row">
+                              <div class="kpi"><strong>8.4%</strong><span>Conversion rate</span></div>
+                              <div class="kpi"><strong>£42k</strong><span>Attributed value</span></div>
+                              <div class="kpi"><strong>17</strong><span>Accounts active</span></div>
+                            </div>
+                            <div class="board">
+                              <div class="board-col">
+                                <strong>Top channels</strong>
+                                <div class="board-card"></div>
+                                <div class="board-card"></div>
+                              </div>
+                              <div class="board-col">
+                                <strong>Pipeline</strong>
+                                <div class="board-card"></div>
+                                <div class="board-card"></div>
+                              </div>
+                              <div class="board-col">
+                                <strong>Alerts</strong>
+                                <div class="board-card"></div>
+                                <div class="board-card"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="artifact-card">
-              <div class="artifact-head">
-                <strong>Hiring flow</strong>
-                <span>Process logic</span>
-              </div>
-              <div class="artifact-body flow-card">
-                <div class="flow-row">
-                  <div class="flow-step"><strong>Ingest</strong><span>Candidate records enter through role-based pipelines.</span></div>
-                  <div class="flow-step"><strong>Score</strong><span>AI-assisted analysis supports first-pass review.</span></div>
-                  <div class="flow-step"><strong>Review</strong><span>Recruiters add notes, status, and shortlists.</span></div>
+              <div class="demo-card">
+                <div class="demo-head">
+                  <strong>Data model</strong>
+                  <span>View strategy</span>
                 </div>
-                <div class="flow-row">
-                  <div class="flow-step"><strong>Coordinate</strong><span>Interview and follow-up stages remain visible.</span></div>
-                  <div class="flow-step"><strong>Decide</strong><span>Hiring movement is logged stage by stage.</span></div>
-                  <div class="flow-step"><strong>Report</strong><span>Pipeline visibility supports operational decisions.</span></div>
+                <div class="demo-body">
+                  <div class="flow-visual">
+                    <div class="flow-row">
+                      <div class="flow-node"><strong>Aggregate</strong><span>Bring campaign, lead, and account data into one product layer.</span></div>
+                      <div class="flow-node"><strong>Segment</strong><span>Separate views by account, period, source, and team.</span></div>
+                      <div class="flow-node"><strong>Visualise</strong><span>Expose trends, risks, and wins through clear hierarchy.</span></div>
+                    </div>
+                    <div class="flow-row">
+                      <div class="flow-node"><strong>Report</strong><span>Create client-ready summaries without rebuilding reports manually.</span></div>
+                      <div class="flow-node"><strong>Drill down</strong><span>Open account-level detail only when needed.</span></div>
+                      <div class="flow-node"><strong>Act</strong><span>Turn reporting insight into operational next steps.</span></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section class="case-section">
-          <h3>Engineering framing</h3>
-          <div class="github-grid">
-            <div class="github-card">
-              <strong>Core modules</strong>
-              <p>Authentication, role permissions, job pipelines, candidate records, notes, scores, activity logs, shortlist states, and recruiter dashboards.</p>
+          <section class="case-section">
+            <h3>Build detail</h3>
+            <div class="case-grid">
+              <div class="case-block">
+                <h4>Frontend</h4>
+                <p>Executive dashboard, account filters, segmented data panels, reusable metric components, reporting cards, and responsive data views for desktop and mobile.</p>
+              </div>
+              <div class="case-block">
+                <h4>System structure</h4>
+                <p>Role-based access, query-driven account views, saved filters, time-range comparison, chart panels, and export-aware reporting architecture.</p>
+              </div>
+              <div class="case-block">
+                <h4>Design value</h4>
+                <p>A cleaner data hierarchy improved scannability and made the product feel premium instead of overloaded.</p>
+              </div>
+              <div class="case-block">
+                <h4>Business value</h4>
+                <p>Better visibility, more useful reporting, clearer accountability, and a stronger client-facing product experience.</p>
+              </div>
             </div>
-            <div class="github-card">
-              <strong>Technical positioning</strong>
-              <p>This project is strong because it combines product UX, business workflow, AI assistance, and full-stack implementation in a way that feels real, useful, and publishable.</p>
+            <div class="tools">
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Data visualisation</span>
+              <span>Postgres</span>
+              <span>Role-based access</span>
+              <span>Reporting UX</span>
             </div>
-          </div>
-        </section>
+          </section>
+        </article>
 
-        <section class="case-section">
-          <h3>Outcome</h3>
-          <p>HirePilot makes the portfolio feel broader and stronger because it shows that you can work across vertical products, not only automation tools. It helps position you for SaaS product work, HR tech builds, dashboards, and operationally complex interfaces.</p>
-          <div class="case-tools">
-            <span>Next.js</span><span>Python</span><span>Supabase</span><span>Recruitment workflow</span><span>AI screening</span><span>SaaS UX</span>
+        <article class="case-card reveal" id="case-flowforge">
+          <div class="case-top">
+            <div class="case-meta"><span>Project</span><strong>FlowForge</strong></div>
+            <div class="case-meta"><span>Role</span><strong>Systems product designer · full-stack builder</strong></div>
+            <div class="case-meta"><span>Type</span><strong>Workflow automation builder</strong></div>
+            <div class="case-meta"><span>Focus</span><strong>Visual automations, configurable infrastructure, approval logic</strong></div>
           </div>
-          <div class="case-detail-actions">
-            <button class="btn btn-ghost" type="button" data-go-home>Back to homepage</button>
-          </div>
-        </section>
-      </article>
 
-    </section>
+          <h2 class="case-title">A visual workflow product built for businesses that had outgrown manual processes and fragile automation.</h2>
+          <p class="case-summary">
+            FlowForge was built around a common operational problem: businesses accumulate tasks, rules, approvals, delays, and cross-tool actions long before they build a proper workflow system. The result is messy internal processes, hidden dependencies, and automations that only one person understands. I designed this as a product that made workflow logic visible, editable, and reliable.
+          </p>
+
+          <section class="case-section">
+            <h3>The problem</h3>
+            <p>
+              Teams were using a mixture of manual processes, disconnected tools, and ad-hoc scripts to keep work moving. That worked until complexity grew. Once approvals, retries, waits, notifications, and role-based actions entered the picture, there was no shared mental model of how the system actually behaved.
+            </p>
+            <ul class="case-list">
+              <li>Workflows were difficult to understand and harder to change safely.</li>
+              <li>Important actions depended on memory or technical intervention.</li>
+              <li>Approvals and timed actions had no clean orchestration layer.</li>
+              <li>Visibility into execution history and failure states was weak.</li>
+            </ul>
+          </section>
+
+          <section class="case-section">
+            <h3>My approach</h3>
+            <p>
+              I built the project around a visual builder model. Instead of burying workflow logic in backend code, the product exposed it through nodes and relationships — triggers, conditions, delays, approvals, and actions — while still mapping those steps to a real execution layer underneath.
+            </p>
+            <div class="case-highlight">
+              <strong>What this project shows</strong>
+              <p>
+                Internal tool thinking, visual workflow UX, event-driven logic, system design, execution visibility, and advanced product structure for operations-heavy software.
+              </p>
+            </div>
+          </section>
+
+          <section class="case-section">
+            <h3>Live demo</h3>
+            <p>
+              The project demo below presents the workflow product like a live internal platform, including a builder workspace, node-based logic map, and execution layer summary.
+            </p>
+
+            <div class="demo-grid">
+              <div class="demo-card">
+                <div class="demo-head">
+                  <strong>Live product preview</strong>
+                  <span>Workflow builder</span>
+                </div>
+                <div class="demo-body">
+                  <div class="browser">
+                    <div class="browser-top">
+                      <div class="browser-dots"><span></span><span></span><span></span></div>
+                      <div class="browser-url">flowforge.live/builder</div>
+                    </div>
+                    <div class="browser-screen">
+                      <div class="app-shell">
+                        <div class="app-toolbar">
+                          <span class="app-title">FlowForge / Client Intake Automation</span>
+                          <span class="app-badge">Published</span>
+                        </div>
+                        <div class="app-grid">
+                          <aside class="app-sidebar">
+                            <div class="app-nav"></div>
+                            <div class="app-nav"></div>
+                            <div class="app-nav"></div>
+                            <div class="app-nav"></div>
+                          </aside>
+                          <div class="app-content">
+                            <div class="board">
+                              <div class="board-col">
+                                <strong>Trigger</strong>
+                                <div class="board-card"></div>
+                              </div>
+                              <div class="board-col">
+                                <strong>Condition</strong>
+                                <div class="board-card"></div>
+                                <div class="board-card"></div>
+                              </div>
+                              <div class="board-col">
+                                <strong>Actions</strong>
+                                <div class="board-card"></div>
+                                <div class="board-card"></div>
+                              </div>
+                            </div>
+                            <div class="kpi-row">
+                              <div class="kpi"><strong>26</strong><span>Workflows active</span></div>
+                              <div class="kpi"><strong>99.2%</strong><span>Success rate</span></div>
+                              <div class="kpi"><strong>12</strong><span>Pending approvals</span></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="demo-card">
+                <div class="demo-head">
+                  <strong>Execution model</strong>
+                  <span>Infrastructure flow</span>
+                </div>
+                <div class="demo-body">
+                  <div class="flow-visual">
+                    <div class="flow-row">
+                      <div class="flow-node"><strong>Trigger</strong><span>System listens for a business event or inbound action.</span></div>
+                      <div class="flow-node"><strong>Evaluate</strong><span>Rules, conditions, and branch logic are checked.</span></div>
+                      <div class="flow-node"><strong>Execute</strong><span>Messages, webhooks, or tasks fire automatically.</span></div>
+                    </div>
+                    <div class="flow-row">
+                      <div class="flow-node"><strong>Delay</strong><span>Timed actions and waiting periods stay built into the flow.</span></div>
+                      <div class="flow-node"><strong>Approve</strong><span>Humans can pause, confirm, or reject critical steps.</span></div>
+                      <div class="flow-node"><strong>Log</strong><span>Every run is recorded for transparency and debugging.</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="case-section">
+            <h3>Build detail</h3>
+            <div class="case-grid">
+              <div class="case-block">
+                <h4>Frontend</h4>
+                <p>Visual builder UI, workflow explorer, run history, template library, status labels, validation states, and draft/published modes.</p>
+              </div>
+              <div class="case-block">
+                <h4>Backend</h4>
+                <p>Event ingestion, rule parsing, queue processing, retry logic, approval gating, execution logs, and webhook actions.</p>
+              </div>
+              <div class="case-block">
+                <h4>Operational value</h4>
+                <p>Teams gain a shared system they can understand, extend, and trust, instead of relying on hidden process logic.</p>
+              </div>
+              <div class="case-block">
+                <h4>Portfolio value</h4>
+                <p>This kind of project signals advanced systems thinking immediately because it is clearly more sophisticated than a standard web build.</p>
+              </div>
+            </div>
+            <div class="tools">
+              <span>React Flow</span>
+              <span>Node workers</span>
+              <span>Queues</span>
+              <span>Webhooks</span>
+              <span>Rule engine</span>
+              <span>Internal tools</span>
+            </div>
+          </section>
+        </article>
+
+        <article class="case-card reveal" id="case-hirepilot">
+          <div class="case-top">
+            <div class="case-meta"><span>Project</span><strong>HirePilot</strong></div>
+            <div class="case-meta"><span>Role</span><strong>Full-stack product freelancer · workflow systems designer</strong></div>
+            <div class="case-meta"><span>Type</span><strong>Recruitment operations platform</strong></div>
+            <div class="case-meta"><span>Focus</span><strong>Candidate scoring, hiring workflow, recruiter collaboration</strong></div>
+          </div>
+
+          <h2 class="case-title">An AI-assisted recruitment platform built to make hiring pipelines clearer, faster, and easier to manage.</h2>
+          <p class="case-summary">
+            HirePilot was created as a product for teams managing candidate flow across multiple roles and multiple decision-makers. Instead of treating recruitment as a stack of spreadsheets and forms, the product approached it as an operational software problem: intake, evaluation, progression, collaboration, and reporting all needed a clearer system.
+          </p>
+
+          <section class="case-section">
+            <h3>The problem</h3>
+            <p>
+              Recruitment becomes messy very quickly once candidate volume increases. Notes scatter across tools, role context gets lost, recruiters work from different standards, and pipeline visibility weakens. AI can help, but only if it supports the recruiter rather than replacing judgement with opaque scoring.
+            </p>
+            <ul class="case-list">
+              <li>Candidate information lacked consistency across roles and stages.</li>
+              <li>Shortlisting and review decisions were harder to compare.</li>
+              <li>Recruiter collaboration had too much hidden context.</li>
+              <li>Pipeline reporting and workload visibility were weak.</li>
+            </ul>
+          </section>
+
+          <section class="case-section">
+            <h3>My approach</h3>
+            <p>
+              I structured the product around role-based pipelines, candidate records, scoring support, recruiter notes, and stage movement visibility. The system treated AI as an assistive layer for analysis and prioritisation while keeping the interface transparent and recruiter-led.
+            </p>
+            <div class="case-highlight">
+              <strong>What this project shows</strong>
+              <p>
+                Advanced CRUD and workflow design, role-aware product structure, human-in-the-loop AI support, dashboard thinking, and the ability to build serious SaaS-style interfaces for operational products.
+              </p>
+            </div>
+          </section>
+
+          <section class="case-section">
+            <h3>Live demo</h3>
+            <p>
+              The product preview below is built like a real hiring workspace rather than a static portfolio image, showing the platform as a live system with candidate pipelines, recruiter metrics, and structured workflow states.
+            </p>
+
+            <div class="demo-grid">
+              <div class="demo-card">
+                <div class="demo-head">
+                  <strong>Live product preview</strong>
+                  <span>Hiring workspace</span>
+                </div>
+                <div class="demo-body">
+                  <div class="browser">
+                    <div class="browser-top">
+                      <div class="browser-dots"><span></span><span></span><span></span></div>
+                      <div class="browser-url">hirepilot.live/recruitment</div>
+                    </div>
+                    <div class="browser-screen">
+                      <div class="app-shell">
+                        <div class="app-toolbar">
+                          <span class="app-title">HirePilot / Senior Designer Pipeline</span>
+                          <span class="app-badge">24 applicants</span>
+                        </div>
+                        <div class="app-grid">
+                          <aside class="app-sidebar">
+                            <div class="app-nav"></div>
+                            <div class="app-nav"></div>
+                            <div class="app-nav"></div>
+                            <div class="app-nav"></div>
+                          </aside>
+                          <div class="app-content">
+                            <div class="kpi-row">
+                              <div class="kpi"><strong>24</strong><span>Total candidates</span></div>
+                              <div class="kpi"><strong>7</strong><span>Interview stage</span></div>
+                              <div class="kpi"><strong>89%</strong><span>Review completion</span></div>
+                            </div>
+                            <div class="board">
+                              <div class="board-col">
+                                <strong>New</strong>
+                                <div class="board-card"></div>
+                                <div class="board-card"></div>
+                              </div>
+                              <div class="board-col">
+                                <strong>Shortlist</strong>
+                                <div class="board-card"></div>
+                                <div class="board-card"></div>
+                              </div>
+                              <div class="board-col">
+                                <strong>Interview</strong>
+                                <div class="board-card"></div>
+                                <div class="board-card"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="demo-card">
+                <div class="demo-head">
+                  <strong>Hiring workflow</strong>
+                  <span>Product logic</span>
+                </div>
+                <div class="demo-body">
+                  <div class="flow-visual">
+                    <div class="flow-row">
+                      <div class="flow-node"><strong>Ingest</strong><span>Candidates enter the role pipeline with structured data.</span></div>
+                      <div class="flow-node"><strong>Assist</strong><span>AI supports screening, summaries, and prioritisation.</span></div>
+                      <div class="flow-node"><strong>Review</strong><span>Recruiters add notes, ratings, and shortlist decisions.</span></div>
+                    </div>
+                    <div class="flow-row">
+                      <div class="flow-node"><strong>Move</strong><span>Candidates progress through visible stage transitions.</span></div>
+                      <div class="flow-node"><strong>Coordinate</strong><span>Interviews and updates stay tied to the role workflow.</span></div>
+                      <div class="flow-node"><strong>Report</strong><span>Pipeline health and decision visibility stay clear.</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="case-section">
+            <h3>Build detail</h3>
+            <div class="case-grid">
+              <div class="case-block">
+                <h4>Frontend</h4>
+                <p>Candidate boards, detailed profile views, recruiter note panels, scoring summaries, stage indicators, and role-based dashboard pages.</p>
+              </div>
+              <div class="case-block">
+                <h4>Backend</h4>
+                <p>Authentication, candidate record workflows, scoring services, document-linked metadata, recruiter activity logs, and role-aware permissions.</p>
+              </div>
+              <div class="case-block">
+                <h4>Product value</h4>
+                <p>The system gives teams a clearer, more structured way to screen, collaborate, and move candidates through the hiring process.</p>
+              </div>
+              <div class="case-block">
+                <h4>Portfolio value</h4>
+                <p>It proves capability across SaaS products, workflow-heavy interfaces, AI-supported systems, and data-rich operational products.</p>
+              </div>
+            </div>
+            <div class="tools">
+              <span>Next.js</span>
+              <span>Python services</span>
+              <span>Supabase</span>
+              <span>Recruitment workflows</span>
+              <span>AI-assisted scoring</span>
+              <span>SaaS UX</span>
+            </div>
+          </section>
+        </article>
+
+      </section>
+    </div>
   </section>
-
 </main>
 
 <footer class="footer">
@@ -1581,13 +2102,13 @@ button{border:none;background:none;cursor:pointer}
       <a href="mailto:rodhanala@gmail.com">Email</a>
       <a href="https://wa.me/447311470011" target="_blank" rel="noopener noreferrer">WhatsApp</a>
     </div>
-    <span>AI automation engineer · product builder · advanced web systems</span>
+    <span>Advanced freelance systems, AI automation, and product-grade web development</span>
   </div>
 </footer>
 
 <a
-  href="https://wa.me/447311470011?text=Hi%20Rohith%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20an%20advanced%20project."
-  class="whatsapp-float"
+  href="https://wa.me/447311470011?text=Hi%20Rohith%2C%20I%20reviewed%20your%20portfolio%20and%20want%20to%20discuss%20a%20project."
+  class="float-wa"
   target="_blank"
   rel="noopener noreferrer"
   aria-label="Chat on WhatsApp"
@@ -1604,118 +2125,112 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 const root = document.documentElement;
 const themeToggle = document.querySelector('[data-theme-toggle]');
-let currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-root.setAttribute('data-theme', currentTheme);
+let currentTheme = 'dark';
 
-function renderThemeIcon(theme){
+function setTheme(theme){
+  currentTheme = theme;
+  root.setAttribute('data-theme', theme);
   if(!themeToggle) return;
   themeToggle.innerHTML = theme === 'dark'
     ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z"></path></svg>'
     : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>';
   themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
 }
-renderThemeIcon(currentTheme);
+setTheme(currentTheme);
 
-if(themeToggle){
-  themeToggle.addEventListener('click', () => {
-    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', currentTheme);
-    renderThemeIcon(currentTheme);
-  });
-}
+themeToggle?.addEventListener('click', () => {
+  setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+});
 
 const homePage = document.getElementById('home-page');
 const casesPage = document.getElementById('cases-page');
+const caseCards = document.querySelectorAll('.case-card');
 const casePageTitle = document.getElementById('case-page-title');
 const casePageSub = document.getElementById('case-page-sub');
 
-const detailCards = document.querySelectorAll('.case-detail-card');
-const revealEls = document.querySelectorAll('.reveal');
-
-const caseContent = {
+const caseMeta = {
   orchestrix: {
-    title: 'Orchestrix AI — a full-stack AI automation platform for intake, routing, and operations.',
-    sub: 'A product-led case study focused on AI agents, workflow logic, integrations, dashboard UX, and automation architecture.'
+    title: 'Orchestrix AI — AI intake, routing, and operations in one premium product.',
+    sub: 'A detailed case study focused on AI workflows, lead operations, human review, and full-stack product direction.'
   },
   signaldesk: {
-    title: 'SignalDesk — an analytics workspace for lead visibility, reporting, and operational performance.',
-    sub: 'A SaaS dashboard case study focused on data hierarchy, reporting UX, front-end architecture, and role-based visibility.'
+    title: 'SignalDesk — a reporting and analytics workspace built for clarity and action.',
+    sub: 'A case study focused on dashboard hierarchy, data-heavy UX, client reporting, and product-grade analytics design.'
   },
   flowforge: {
-    title: 'FlowForge — a workflow builder for event-driven operations and automation infrastructure.',
-    sub: 'A systems-heavy case study focused on builder UX, rule engines, queue logic, approvals, and internal tooling.'
+    title: 'FlowForge — a workflow automation product built for configurable business operations.',
+    sub: 'A systems-focused case study centred on visual workflow design, execution logic, approvals, and internal tooling.'
   },
   hirepilot: {
-    title: 'HirePilot — an AI-assisted recruitment operations product for screening and hiring workflows.',
-    sub: 'A full-stack HR tech case study focused on pipeline design, AI-assisted review, product UX, and operational visibility.'
+    title: 'HirePilot — an AI-assisted recruitment operations platform with full pipeline visibility.',
+    sub: 'A detailed case study focused on hiring workflows, recruiter experience, candidate management, and SaaS product structure.'
   }
 };
 
-function openCase(caseId, push){
-  detailCards.forEach(c => c.classList.remove('active'));
-  const target = document.getElementById('case-' + caseId);
-  if(target) target.classList.add('active');
-
-  casePageTitle.textContent = caseContent[caseId]?.title || 'Selected advanced digital projects.';
-  casePageSub.textContent = caseContent[caseId]?.sub || 'Detailed case studies showing architecture, product thinking, workflow design, implementation layers, and GitHub-ready technical depth.';
-
+function openCase(caseId, push = true){
   homePage.classList.remove('active');
   casesPage.classList.add('active');
 
-  if(push !== false) history.pushState({page:'cases', caseId}, '', '#case-studies');
-  window.scrollTo({top:0, behavior:'smooth'});
+  caseCards.forEach(card => card.classList.remove('active'));
+  const target = document.getElementById('case-' + caseId);
+  if(target) target.classList.add('active');
 
-  setTimeout(() => {
-    casesPage.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in'));
-  }, 80);
+  casePageTitle.textContent = caseMeta[caseId]?.title || 'Detailed product case studies with live demo sections.';
+  casePageSub.textContent = caseMeta[caseId]?.sub || 'Each project below is written as a premium freelance case study and includes a built product-style demo section instead of a static placeholder presentation.';
+
+  if(push) history.pushState({page:'case', caseId}, '', '#case-' + caseId);
+  window.scrollTo({top:0, behavior:'smooth'});
 }
 
-function goHome(push){
-  detailCards.forEach(c => c.classList.remove('active'));
+function goHome(push = true){
   casesPage.classList.remove('active');
   homePage.classList.add('active');
-  if(push !== false) history.pushState({page:'home'}, '', '#top');
+  if(push) history.pushState({page:'home'}, '', '#top');
   window.scrollTo({top:0, behavior:'smooth'});
 }
 
-document.querySelectorAll('[data-open-cases]').forEach(btn => {
-  btn.addEventListener('click', () => openCase('orchestrix'));
-});
-
-document.querySelectorAll('[data-case-link]').forEach(item => {
-  item.addEventListener('click', () => openCase(item.dataset.caseLink));
-  item.addEventListener('keydown', e => {
+document.querySelectorAll('[data-case-link]').forEach(card => {
+  card.addEventListener('click', () => openCase(card.dataset.caseLink));
+  card.addEventListener('keydown', e => {
     if(e.key === 'Enter' || e.key === ' '){
       e.preventDefault();
-      openCase(item.dataset.caseLink);
+      openCase(card.dataset.caseLink);
     }
   });
 });
 
-document.querySelectorAll('[data-go-home], [data-go="home"]').forEach(btn => {
-  btn.addEventListener('click', e => {
+document.querySelectorAll('[data-go-home]').forEach(el => {
+  el.addEventListener('click', e => {
     e.preventDefault();
     goHome();
   });
 });
 
+document.querySelectorAll('[data-open-projects]').forEach(btn => {
+  btn.addEventListener('click', () => openCase('orchestrix'));
+});
+
 document.querySelectorAll('[data-scroll]').forEach(link => {
   link.addEventListener('click', function(e){
     e.preventDefault();
-    const id = this.getAttribute('data-scroll');
+    const id = this.dataset.scroll;
     if(!homePage.classList.contains('active')) goHome(false);
     setTimeout(() => {
-      const el = document.getElementById(id);
-      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-    }, 80);
+      document.getElementById(id)?.scrollIntoView({behavior:'smooth', block:'start'});
+    }, 90);
   });
 });
 
 window.addEventListener('popstate', () => {
-  if(location.hash === '#case-studies') openCase('orchestrix', false);
-  else goHome(false);
+  const hash = location.hash || '#top';
+  if(hash.startsWith('#case-')){
+    openCase(hash.replace('#case-',''), false);
+  } else {
+    goHome(false);
+  }
 });
 
+const revealEls = document.querySelectorAll('.reveal');
 if('IntersectionObserver' in window){
   const io = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -1724,10 +2239,14 @@ if('IntersectionObserver' in window){
         io.unobserve(entry.target);
       }
     });
-  }, {threshold:0.1});
+  }, {threshold:0.12});
   revealEls.forEach(el => io.observe(el));
 } else {
   revealEls.forEach(el => el.classList.add('in'));
+}
+
+if(location.hash.startsWith('#case-')){
+  openCase(location.hash.replace('#case-',''), false);
 }
 </script>
 </body>
