@@ -9,7 +9,7 @@
     <!-- Fonts: Syne for Display, Inter for Body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,6 +22,7 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         display: ['Syne', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
                         background: '#050505',
@@ -31,10 +32,13 @@
                         muted: '#888888',
                         accent: '#4F46E5', // Indigo
                         accentGlow: '#EC4899', // Pink
+                        appBg: '#0A0A0B',
+                        appSurface: '#161618',
                     },
                     animation: {
                         'blob': 'blob 7s infinite',
                         'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     },
                     keyframes: {
                         blob: {
@@ -90,458 +94,1179 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #050505; }
-        ::-webkit-scrollbar-thumb { background: #222; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #444; }
+        /* Custom Scrollbars */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
 
         /* Mockup Browser Dots */
         .mockup-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 6px; }
         .dot-red { background-color: #FF5F56; }
         .dot-yellow { background-color: #FFBD2E; }
         .dot-green { background-color: #27C93F; }
+
+        /* Typewriter cursor */
+        .cursor-blink { animation: blink 1s step-end infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        
+        /* Mobile Phone Mockup CSS */
+        .mobile-mockup {
+            width: 260px;
+            height: 540px;
+            border-radius: 2.5rem;
+            border: 8px solid #111;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .mobile-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 20px;
+            background: #111;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            z-index: 20;
+        }
     </style>
 </head>
 <body class="selection:bg-accent selection:text-white relative">
     <div class="bg-noise"></div>
 
-    <!-- Background Ambient Gradients -->
-    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-accent/20 blur-[120px] mix-blend-screen animate-blob"></div>
-        <div class="absolute top-[20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-accentGlow/10 blur-[120px] mix-blend-screen animate-blob animation-delay-2000"></div>
-        <div class="absolute bottom-[-20%] left-[20%] w-[60%] h-[60%] rounded-full bg-indigo-900/20 blur-[150px] mix-blend-screen animate-blob animation-delay-4000"></div>
+    <!-- ========================================== -->
+    <!-- PORTFOLIO VIEW                             -->
+    <!-- ========================================== -->
+    <div id="portfolio-view" class="block">
+        <!-- Background Ambient Gradients -->
+        <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-accent/20 blur-[120px] mix-blend-screen animate-blob"></div>
+            <div class="absolute top-[20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-accentGlow/10 blur-[120px] mix-blend-screen animate-blob animation-delay-2000"></div>
+            <div class="absolute bottom-[-20%] left-[20%] w-[60%] h-[60%] rounded-full bg-indigo-900/20 blur-[150px] mix-blend-screen animate-blob animation-delay-4000"></div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="fixed w-full z-40 top-0 transition-all duration-300" id="navbar">
+            <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+                
+                <!-- NEW MINIMAL LOGO -->
+                <a href="#home" onclick="showView('portfolio')" class="flex items-end gap-1 group">
+                    <span class="text-3xl font-display font-bold tracking-tighter text-white leading-none">RO</span>
+                    <span class="w-1.5 h-1.5 bg-accent rounded-full mb-[4px] group-hover:bg-accentGlow transition-colors duration-300"></span>
+                </a>
+
+                <div class="hidden md:flex items-center gap-8 bg-surface/50 backdrop-blur-md px-6 py-3 rounded-full border border-white/5">
+                    <a href="#about" class="text-sm text-muted hover:text-white transition-colors">Philosophy</a>
+                    <a href="#services" class="text-sm text-muted hover:text-white transition-colors">Capabilities</a>
+                    <a href="#work" class="text-sm text-muted hover:text-white transition-colors">Live Systems</a>
+                </div>
+                <a href="#contact" class="px-5 py-2.5 rounded-full bg-white text-black text-sm font-medium hover:scale-105 transition-transform duration-300">
+                    Let's Talk
+                </a>
+            </div>
+        </nav>
+
+        <main>
+            <!-- HERO SECTION -->
+            <section class="min-h-screen flex items-center justify-center pt-20 px-6 relative">
+                <div class="max-w-5xl mx-auto text-center z-10">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8 reveal delay-100">
+                        <span class="w-2 h-2 rounded-full bg-accentGlow animate-pulse"></span>
+                        <span class="text-xs uppercase tracking-widest text-muted font-medium">Southampton, UK & Remote</span>
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight leading-[1.1] mb-8 reveal delay-200">
+                        I design, build, and <br class="hidden md:block">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-gray-500">deliver digital systems.</span>
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl text-muted max-w-2xl mx-auto mb-12 font-light leading-relaxed reveal delay-300">
+                        Bridging the gap between messy workflows and shipped products. I specialize in <strong class="text-white font-normal">Digital Project Management, Product Design</strong>, and <strong class="text-white font-normal">AI Automation</strong>.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal delay-400">
+                        <a href="#work" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition-colors flex items-center justify-center gap-2">
+                            View Work
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <a href="#about" class="w-full sm:w-auto px-8 py-4 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/5 transition-all text-white font-medium flex items-center justify-center">
+                            My Approach
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABOUT & SERVICES -->
+            <section id="about" class="py-32 px-6 border-t border-white/5">
+                <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                    <div class="reveal sticky top-32">
+                        <h2 class="text-sm uppercase tracking-[0.2em] text-accent mb-4 font-bold">The Reality</h2>
+                        <h3 class="text-4xl md:text-5xl font-display font-bold mb-6 leading-tight">
+                            Everyone has ideas.<br>Execution is the hard part.
+                        </h3>
+                        <div class="space-y-6 text-muted text-lg font-light leading-relaxed">
+                            <p>
+                                Having worked across the NHS, startup agencies, and freelance environments, I've seen why projects fail: poor communication, scattered tools, and a disconnect between design and delivery.
+                            </p>
+                            <p>
+                                With a foundation in <span class="text-white">Computer Science (BE)</span> and <span class="text-white">Business Management (MA)</span>, I don't just write code or draw wireframes. I manage the entire lifecycle. 
+                            </p>
+                            <p>
+                                Whether it's deploying an AI agent, managing a complex cross-functional team, or designing a product from scratch, I bring operational clarity and technical capability to ensure projects actually launch.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Expanded Service Bento Box -->
+                    <div id="services" class="grid grid-cols-1 md:grid-cols-2 gap-4 reveal">
+                        <!-- Project Management -->
+                        <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-white/20 transition-colors">
+                            <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 blur-[40px] rounded-full group-hover:bg-blue-500/20 transition-colors"></div>
+                            <svg class="w-8 h-8 mb-5 text-blue-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"></path></svg>
+                            <h4 class="text-lg font-bold mb-2 relative z-10 text-white">Digital Project Management</h4>
+                            <p class="text-sm text-muted relative z-10">Agile delivery, stakeholder communication, workflow improvement, and keeping cross-functional teams aligned from discovery to launch.</p>
+                        </div>
+                        
+                        <!-- AI Automation -->
+                        <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-white/20 transition-colors">
+                            <div class="absolute top-0 right-0 w-24 h-24 bg-accent/10 blur-[40px] rounded-full group-hover:bg-accent/20 transition-colors"></div>
+                            <svg class="w-8 h-8 mb-5 text-accent relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <h4 class="text-lg font-bold mb-2 relative z-10 text-white">AI Systems & Automation</h4>
+                            <p class="text-sm text-muted relative z-10">Connecting disparate tools into autonomous loops. Building custom RAG agents, LLM integrations, and operational workflows.</p>
+                        </div>
+
+                        <!-- Product Management -->
+                        <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-white/20 transition-colors">
+                            <div class="absolute top-0 right-0 w-24 h-24 bg-pink-500/10 blur-[40px] rounded-full group-hover:bg-pink-500/20 transition-colors"></div>
+                            <svg class="w-8 h-8 mb-5 text-pink-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                            <h4 class="text-lg font-bold mb-2 relative z-10 text-white">Product Management</h4>
+                            <p class="text-sm text-muted relative z-10">Translating broad client concepts into actionable roadmaps. Managing backlogs, defining requirements, and ensuring business needs are met.</p>
+                        </div>
+
+                        <!-- Design & Dev -->
+                        <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-white/20 transition-colors">
+                            <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 blur-[40px] rounded-full group-hover:bg-emerald-500/20 transition-colors"></div>
+                            <svg class="w-8 h-8 mb-5 text-emerald-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            <h4 class="text-lg font-bold mb-2 relative z-10 text-white">Digital Design & Dev</h4>
+                            <p class="text-sm text-muted relative z-10">Hands-on execution. From UI/UX product design in Figma to full-stack frontend implementation, creating interfaces that are beautiful.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PORTFOLIO PREVIEWS -->
+            <section id="work" class="py-32 px-6">
+                <div class="max-w-7xl mx-auto">
+                    <div class="mb-20 reveal">
+                        <h2 class="text-sm uppercase tracking-[0.2em] text-accent mb-4 font-bold">Portfolio</h2>
+                        <h3 class="text-4xl md:text-5xl font-display font-bold max-w-2xl leading-tight mb-4">
+                            I don't just write specs.<br>I deliver complete solutions.
+                        </h3>
+                        <p class="text-muted text-lg">Click <strong class="text-white">Launch / View</strong> to experience the fully shipped products.</p>
+                    </div>
+
+                    <div class="space-y-40">
+                        
+                        <!-- PROJECT 1: AURA (Mobile App Design Case Study) -->
+                        <div class="group reveal">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                                <!-- Copy Side -->
+                                <div class="lg:col-span-5 lg:pr-8">
+                                    <div class="inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-xs font-medium text-emerald-400 mb-6 border border-emerald-500/20">Digital Design & UI/UX</div>
+                                    <h4 class="text-3xl font-display font-bold mb-4 text-white group-hover:text-emerald-400 transition-colors">Aura Health App</h4>
+                                    <p class="text-muted mb-6 leading-relaxed">
+                                        A comprehensive digital design case study for an AI-driven mental wellness application. Showcasing end-to-end product design, from wireframes to high-fidelity component systems and micro-interactions.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mb-8">
+                                        <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">UI/UX Design</span>
+                                        <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">Design Systems</span>
+                                        <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">Mobile First</span>
+                                    </div>
+                                    <button onclick="showView('aura')" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-medium rounded-full transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:scale-105">
+                                        View Design Case Study <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                    </button>
+                                </div>
+
+                                <!-- Mockup Side (CSS Built Mobile Phone) -->
+                                <div class="lg:col-span-7 flex justify-center cursor-pointer relative" onclick="showView('aura')">
+                                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-emerald-500/20 blur-[80px] rounded-full z-0"></div>
+                                    
+                                    <!-- Mobile Phone CSS Mockup -->
+                                    <div class="mobile-mockup group-hover:-translate-y-2 transition-transform duration-500 z-10 bg-[#0F172A]">
+                                        <div class="mobile-notch"></div>
+                                        <!-- App UI -->
+                                        <div class="pt-12 p-6 h-full flex flex-col relative">
+                                            <!-- Overlay -->
+                                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity z-20 backdrop-blur-[2px] flex items-center justify-center">
+                                                <div class="bg-white text-black px-4 py-2 rounded-full font-bold text-sm">Read Case Study</div>
+                                            </div>
+
+                                            <div class="flex justify-between items-center mb-8">
+                                                <div class="text-emerald-400 font-bold font-display text-lg tracking-tight">Aura.</div>
+                                                <div class="w-8 h-8 rounded-full bg-white/10"></div>
+                                            </div>
+                                            <div class="text-white text-2xl font-bold mb-2">Good morning,</div>
+                                            <div class="text-gray-400 text-sm mb-8">Your stress levels are 12% lower today.</div>
+                                            
+                                            <!-- Chart Mockup -->
+                                            <div class="bg-white/5 rounded-2xl p-4 border border-white/10 mb-6 h-32 flex items-end gap-2 justify-between">
+                                                <div class="w-1/6 bg-emerald-500/20 rounded-t h-[40%]"></div>
+                                                <div class="w-1/6 bg-emerald-500/40 rounded-t h-[60%]"></div>
+                                                <div class="w-1/6 bg-emerald-500/60 rounded-t h-[30%]"></div>
+                                                <div class="w-1/6 bg-emerald-500/80 rounded-t h-[80%]"></div>
+                                                <div class="w-1/6 bg-emerald-400 rounded-t h-[100%]"></div>
+                                            </div>
+
+                                            <div class="grid grid-cols-2 gap-4">
+                                                <div class="bg-white/5 rounded-2xl p-4 border border-white/10 h-24"></div>
+                                                <div class="bg-white/5 rounded-2xl p-4 border border-white/10 h-24"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Second phone slightly behind -->
+                                    <div class="mobile-mockup absolute right-4 top-12 scale-90 opacity-50 z-0 bg-[#0A0A0B] hidden sm:block">
+                                        <div class="mobile-notch"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PROJECT 2: ClientBridge (Digital Problem Solving / Live Demo) -->
+                        <div class="group reveal">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                                <!-- Mockup Side (CSS Built) -->
+                                <div class="lg:col-span-8 cursor-pointer order-2 lg:order-1" onclick="showView('syncport')">
+                                    <div class="glass-panel p-2 rounded-2xl md:rounded-[2rem] border border-white/10 shadow-2xl overflow-hidden group-hover:border-purple-500/50 transition-colors duration-500 relative">
+                                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/20 blur-[80px] rounded-full z-0"></div>
+                                        <!-- Browser Header -->
+                                        <div class="bg-surfaceHover px-4 py-3 border-b border-white/5 flex items-center justify-between rounded-t-xl md:rounded-t-[1.75rem] relative z-10">
+                                            <div>
+                                                <span class="mockup-dot dot-red"></span>
+                                                <span class="mockup-dot dot-yellow"></span>
+                                                <span class="mockup-dot dot-green"></span>
+                                            </div>
+                                            <div class="bg-black/50 text-xs text-gray-500 px-4 py-1 rounded-full w-1/3 text-center border border-white/5 truncate font-mono">
+                                                portal.clientbridge.app
+                                            </div>
+                                            <div class="w-12"></div>
+                                        </div>
+                                        <!-- App UI Teaser -->
+                                        <div class="bg-[#0A0A0B] h-[300px] md:h-[400px] flex text-sm overflow-hidden rounded-b-xl md:rounded-b-[1.75rem] relative z-10">
+                                             <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20 backdrop-blur-sm">
+                                                <div class="bg-white text-black px-6 py-3 rounded-full font-bold flex items-center gap-2">
+                                                    Launch Live Portal
+                                                </div>
+                                            </div>
+                                            <div class="w-16 bg-black/50 border-r border-white/5"></div>
+                                            <div class="flex-1 p-8">
+                                                <div class="h-8 w-1/2 bg-white/10 rounded mb-8"></div>
+                                                
+                                                <div class="bg-white/5 border border-white/10 rounded-xl p-6 mb-6">
+                                                    <div class="flex justify-between mb-2">
+                                                        <div class="h-4 w-1/4 bg-white/20 rounded"></div>
+                                                        <div class="h-4 w-12 bg-purple-500/50 rounded"></div>
+                                                    </div>
+                                                    <div class="w-full h-2 bg-black rounded-full overflow-hidden">
+                                                        <div class="w-[60%] h-full bg-purple-500"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="space-y-3">
+                                                    <div class="h-12 bg-white/5 border border-white/10 rounded-lg w-full"></div>
+                                                    <div class="h-12 bg-white/5 border border-white/10 rounded-lg w-full"></div>
+                                                    <div class="h-12 bg-white/5 border border-white/10 rounded-lg w-full"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Copy Side -->
+                                <div class="lg:col-span-4 lg:pl-8 order-1 lg:order-2">
+                                    <div class="inline-block px-3 py-1 rounded-full bg-purple-500/10 text-xs font-medium text-purple-400 mb-6 border border-purple-500/20">Product & Problem Solving</div>
+                                    <h4 class="text-3xl font-display font-bold mb-4 text-white group-hover:text-purple-400 transition-colors">ClientBridge Portal</h4>
+                                    <p class="text-muted mb-6 leading-relaxed">
+                                        Solving the messy B2B onboarding problem. A digital portal that replaces scattered email threads with a unified checklist, file vault, and progress tracker for enterprise clients.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mb-8">
+                                        <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">Client Experience</span>
+                                        <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">B2B SaaS</span>
+                                        <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">Product Mgt</span>
+                                    </div>
+                                    <button onclick="showView('syncport')" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-medium rounded-full transition-all shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] hover:scale-105">
+                                        Launch Live App <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PROJECT 3: FlowPilot -->
+                        <div class="group reveal">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                                <!-- Copy Side -->
+                                <div class="lg:col-span-4 lg:pr-8 order-2 lg:order-1">
+                                    <div class="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-xs font-medium text-blue-400 mb-6 border border-blue-500/20">Project Delivery & Ops</div>
+                                    <h4 class="text-3xl font-display font-bold mb-4 text-white group-hover:text-blue-400 transition-colors">FlowPilot Operations</h4>
+                                    <p class="text-muted mb-6 leading-relaxed">
+                                        A project management and delivery operations dashboard designed to bring clarity to chaotic service environments. Features live tracking, blocker alerts, and stakeholder visibility.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mb-8">
+                                        <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">Workflow Ops</span>
+                                        <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">Task Tracking</span>
+                                        <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">UI/UX</span>
+                                    </div>
+                                    <button onclick="showView('flowpilot')" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-full transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] hover:scale-105">
+                                        Launch Live App <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                    </button>
+                                </div>
+
+                                <!-- Mockup Side -->
+                                <div class="lg:col-span-8 order-1 lg:order-2 cursor-pointer" onclick="showView('flowpilot')">
+                                    <div class="glass-panel p-2 rounded-2xl md:rounded-[2rem] border border-white/10 shadow-2xl overflow-hidden group-hover:border-blue-500/50 transition-colors duration-500 relative">
+                                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/20 blur-[80px] rounded-full z-0"></div>
+                                        <div class="bg-surfaceHover px-4 py-3 border-b border-white/5 flex items-center justify-between rounded-t-xl md:rounded-t-[1.75rem] relative z-10">
+                                            <div>
+                                                <span class="mockup-dot dot-red"></span>
+                                                <span class="mockup-dot dot-yellow"></span>
+                                                <span class="mockup-dot dot-green"></span>
+                                            </div>
+                                            <div class="bg-black/50 text-xs text-gray-500 px-4 py-1 rounded-full w-1/3 text-center border border-white/5 truncate font-mono">
+                                                ops.flowpilot.io/delivery
+                                            </div>
+                                            <div class="w-12"></div>
+                                        </div>
+                                        <div class="bg-[#0A0A0B] h-[300px] md:h-[400px] flex text-sm overflow-hidden rounded-b-xl md:rounded-b-[1.75rem] relative z-10">
+                                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20 backdrop-blur-sm">
+                                                <div class="bg-white text-black px-6 py-3 rounded-full font-bold flex items-center gap-2">Launch Live App</div>
+                                            </div>
+                                            <div class="p-8 w-full">
+                                                <div class="h-8 w-1/3 bg-white/10 rounded mb-4"></div>
+                                                <div class="flex gap-4 mb-6">
+                                                    <div class="h-20 flex-1 bg-white/5 rounded-xl border border-white/10"></div>
+                                                    <div class="h-20 flex-1 bg-white/5 rounded-xl border border-white/10"></div>
+                                                    <div class="h-20 flex-1 bg-blue-500/20 rounded-xl border border-blue-500/30"></div>
+                                                </div>
+                                                <div class="flex gap-4">
+                                                    <div class="flex-1 space-y-3">
+                                                        <div class="h-4 w-24 bg-white/10 rounded"></div>
+                                                        <div class="h-24 bg-white/5 rounded-xl border border-white/10"></div>
+                                                    </div>
+                                                    <div class="flex-1 space-y-3">
+                                                        <div class="h-4 w-24 bg-white/10 rounded"></div>
+                                                        <div class="h-24 bg-red-500/10 rounded-xl border border-red-500/20"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PROJECT 4: Nexus AI -->
+                        <div class="group reveal">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                                <!-- Mockup Side -->
+                                <div class="lg:col-span-8 cursor-pointer" onclick="showView('nexus')">
+                                    <div class="glass-panel p-2 rounded-2xl md:rounded-[2rem] border border-white/10 shadow-2xl overflow-hidden group-hover:border-accent/50 transition-colors duration-500 relative">
+                                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/20 blur-[80px] rounded-full z-0"></div>
+                                        <div class="bg-surfaceHover px-4 py-3 border-b border-white/5 flex items-center justify-between rounded-t-xl md:rounded-t-[1.75rem] relative z-10">
+                                            <div>
+                                                <span class="mockup-dot dot-red"></span>
+                                                <span class="mockup-dot dot-yellow"></span>
+                                                <span class="mockup-dot dot-green"></span>
+                                            </div>
+                                            <div class="bg-black/50 text-xs text-gray-500 px-4 py-1 rounded-full w-1/3 text-center border border-white/5 truncate font-mono">
+                                                agent.nexus.local/trace
+                                            </div>
+                                            <div class="w-12"></div>
+                                        </div>
+                                        <div class="bg-[#0A0A0B] h-[300px] md:h-[400px] flex text-sm overflow-hidden rounded-b-xl md:rounded-b-[1.75rem] relative z-10 font-mono">
+                                             <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20 backdrop-blur-sm">
+                                                <div class="bg-white text-black px-6 py-3 rounded-full font-bold flex items-center gap-2 font-sans">Click to open live simulation</div>
+                                            </div>
+                                            <div class="p-6 w-full flex flex-col">
+                                                <div class="text-accent mb-4">> Nexus Engine Initiated...</div>
+                                                <div class="text-gray-500 mb-2">[INFO] Connecting to LLM provider</div>
+                                                <div class="text-green-400 mb-6">> Listening for inbound triggers</div>
+                                                <div class="border border-white/10 rounded-lg p-4 bg-black/50 flex-1 space-y-2">
+                                                    <div class="h-3 w-1/2 bg-white/10 rounded"></div>
+                                                    <div class="h-3 w-3/4 bg-white/5 rounded"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Copy Side -->
+                                <div class="lg:col-span-4 lg:pl-8">
+                                    <div class="inline-block px-3 py-1 rounded-full bg-accent/10 text-xs font-medium text-accent mb-6 border border-accent/20">AI Automation</div>
+                                    <h4 class="text-3xl font-display font-bold mb-4 text-white group-hover:text-accent transition-colors">Nexus Autonomous Agent</h4>
+                                    <p class="text-muted mb-6 leading-relaxed">
+                                        An intelligent agent designed for operations teams. It sits in the inbox, reads inbound requests, qualifies data against the CRM, and executes multi-step actions automatically.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mb-8">
+                                        <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">LLM Logic</span>
+                                        <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">Agentic Workflow</span>
+                                    </div>
+                                    <button onclick="showView('nexus')" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent hover:bg-indigo-500 text-white font-medium rounded-full transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:shadow-[0_0_30px_rgba(79,70,229,0.5)] hover:scale-105">
+                                        Launch Live App <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA / Contact -->
+            <section id="contact" class="py-32 px-6 relative overflow-hidden">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/20 blur-[150px] rounded-full pointer-events-none -z-10"></div>
+                
+                <div class="max-w-4xl mx-auto text-center reveal">
+                    <h2 class="text-5xl md:text-7xl font-display font-bold mb-6 tracking-tight">Let's deliver your <br>next project.</h2>
+                    <p class="text-xl text-muted font-light mb-10 max-w-2xl mx-auto">
+                        Whether you need a digital project manager to unblock your team, an AI agent to scale operations, or a full-stack product built from scratch.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="mailto:rodhanala@gmail.com" class="px-8 py-4 rounded-full bg-white text-black font-medium text-lg hover:scale-105 transition-transform flex items-center justify-center gap-2 shadow-[0_0_40px_rgba(255,255,255,0.3)]">
+                            Get In Touch
+                        </a>
+                        <a href="https://linkedin.com/in/rohith-dhanala-35715b162" target="_blank" class="px-8 py-4 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/5 transition-colors text-white font-medium text-lg flex items-center justify-center">
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="border-t border-white/10 py-12 px-6 bg-[#020202]">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-1">
+                    <span class="text-xl font-display font-bold tracking-tighter text-white leading-none">RO</span>
+                    <span class="w-1 h-1 bg-accent rounded-full mb-[2px]"></span>
+                </div>
+                <p class="text-sm text-muted">&copy; 2026 Rohith Dhanala. Based in Southampton, UK.</p>
+            </div>
+        </footer>
     </div>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-40 top-0 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-display font-bold tracking-tighter flex items-center gap-2 group">
-                <div class="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-colors duration-300">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                </div>
-                Rohith.
-            </a>
-            <div class="hidden md:flex items-center gap-8 bg-surface/50 backdrop-blur-md px-6 py-3 rounded-full border border-white/5">
-                <a href="#about" class="text-sm text-muted hover:text-white transition-colors">Philosophy</a>
-                <a href="#services" class="text-sm text-muted hover:text-white transition-colors">Capabilities</a>
-                <a href="#work" class="text-sm text-muted hover:text-white transition-colors">Live Systems</a>
-            </div>
-            <a href="#contact" class="px-5 py-2.5 rounded-full bg-white text-black text-sm font-medium hover:scale-105 transition-transform duration-300">
-                Let's Talk
-            </a>
-        </div>
-    </nav>
 
-    <main>
-        <!-- HERO SECTION -->
-        <section class="min-h-screen flex items-center justify-center pt-20 px-6 relative">
-            <div class="max-w-5xl mx-auto text-center z-10">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8 reveal delay-100">
-                    <span class="w-2 h-2 rounded-full bg-accentGlow animate-pulse"></span>
-                    <span class="text-xs uppercase tracking-widest text-muted font-medium">Southampton, UK & Remote</span>
+    <!-- ========================================== -->
+    <!-- PROJECT 1: AURA (DESIGN CASE STUDY VIEW)   -->
+    <!-- ========================================== -->
+    <div id="aura-view" class="hidden absolute inset-0 z-50 bg-[#050505] overflow-y-auto animate-fade-in-up">
+        <!-- Close Button Fixed -->
+        <button onclick="showView('portfolio')" class="fixed top-6 right-6 z-50 flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 backdrop-blur-md transition-all text-sm font-medium text-white shadow-xl">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            Back to Portfolio
+        </button>
+
+        <div class="max-w-5xl mx-auto px-6 py-24">
+            <div class="text-center mb-24">
+                <div class="inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-xs font-medium text-emerald-400 mb-6 border border-emerald-500/20 uppercase tracking-widest">Digital Design Case Study</div>
+                <h1 class="text-5xl md:text-7xl font-display font-bold mb-6 tracking-tight text-white">Aura Health</h1>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto font-light">An intelligent mental wellness and habit tracking application focusing on calm, data-driven UI and seamless micro-interactions.</p>
+            </div>
+
+            <!-- The Problem & Solution -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32">
+                <div>
+                    <h2 class="text-2xl font-display font-bold text-white mb-4">The Challenge</h2>
+                    <p class="text-gray-400 leading-relaxed">Most mental wellness apps overwhelm users with charts, notifications, and gamification that ultimately induces more anxiety. The goal was to design an interface that feels inherently calming, relying on subtle data visualization and a strictly minimal component library.</p>
                 </div>
-                
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight leading-[1.1] mb-8 reveal delay-200">
-                    I design, build, and <br class="hidden md:block">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-gray-500">deliver digital systems.</span>
-                </h1>
-                
-                <p class="text-lg md:text-xl text-muted max-w-2xl mx-auto mb-12 font-light leading-relaxed reveal delay-300">
-                    Bridging the gap between messy workflows and shipped products. I specialize in <strong class="text-white font-normal">Digital Project Management, Product Design</strong>, and <strong class="text-white font-normal">AI Automation</strong>.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal delay-400">
-                    <a href="#work" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition-colors flex items-center justify-center gap-2">
-                        View Live Systems
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </a>
-                    <a href="#about" class="w-full sm:w-auto px-8 py-4 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/5 transition-all text-white font-medium flex items-center justify-center">
-                        My Approach
-                    </a>
+                <div>
+                    <h2 class="text-2xl font-display font-bold text-white mb-4">The Solution</h2>
+                    <p class="text-gray-400 leading-relaxed">A dark-mode native, typography-first approach. By limiting the color palette to deep slates and bio-luminescent emeralds, and utilizing soft glassmorphism, Aura guides users gently through their daily check-ins without visual clutter.</p>
                 </div>
             </div>
-        </section>
 
-        <!-- ABOUT & SERVICES -->
-        <section id="about" class="py-32 px-6 border-t border-white/5">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                <div class="reveal sticky top-32">
-                    <h2 class="text-sm uppercase tracking-[0.2em] text-accent mb-4 font-bold">The Reality</h2>
-                    <h3 class="text-4xl md:text-5xl font-display font-bold mb-6 leading-tight">
-                        Everyone has ideas.<br>Execution is the hard part.
-                    </h3>
-                    <div class="space-y-6 text-muted text-lg font-light leading-relaxed">
-                        <p>
-                            Having worked across the NHS, startup agencies, and freelance environments, I've seen why projects fail: poor communication, scattered tools, and a disconnect between design and delivery.
-                        </p>
-                        <p>
-                            With a foundation in <span class="text-white">Computer Science (BE)</span> and <span class="text-white">Business Management (MA)</span>, I don't just write code or draw wireframes. I manage the entire lifecycle. 
-                        </p>
-                        <p>
-                            Whether it's deploying an AI agent, managing a complex cross-functional team, or designing a product from scratch, I bring operational clarity and technical capability to ensure projects actually launch.
-                        </p>
-                    </div>
-                </div>
+            <!-- Design System -->
+            <div class="mb-32">
+                <h2 class="text-sm uppercase tracking-[0.2em] text-emerald-400 mb-12 font-bold text-center">Design System & Guidelines</h2>
                 
-                <!-- Expanded Service Bento Box -->
-                <div id="services" class="grid grid-cols-1 md:grid-cols-2 gap-4 reveal">
-                    <!-- Project Management -->
-                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-white/20 transition-colors">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 blur-[40px] rounded-full group-hover:bg-blue-500/20 transition-colors"></div>
-                        <svg class="w-8 h-8 mb-5 text-blue-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"></path></svg>
-                        <h4 class="text-lg font-bold mb-2 relative z-10 text-white">Digital Project Management</h4>
-                        <p class="text-sm text-muted relative z-10">Agile delivery, stakeholder communication, workflow improvement, and keeping cross-functional teams aligned from discovery to launch.</p>
-                    </div>
-                    
-                    <!-- AI Automation -->
-                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-white/20 transition-colors">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-accent/10 blur-[40px] rounded-full group-hover:bg-accent/20 transition-colors"></div>
-                        <svg class="w-8 h-8 mb-5 text-accent relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                        <h4 class="text-lg font-bold mb-2 relative z-10 text-white">AI Systems & Automation</h4>
-                        <p class="text-sm text-muted relative z-10">Connecting disparate tools into autonomous loops. Building custom RAG agents, LLM integrations, and operational workflows that remove manual bottlenecks.</p>
-                    </div>
-
-                    <!-- Product Management -->
-                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-white/20 transition-colors">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-pink-500/10 blur-[40px] rounded-full group-hover:bg-pink-500/20 transition-colors"></div>
-                        <svg class="w-8 h-8 mb-5 text-pink-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                        <h4 class="text-lg font-bold mb-2 relative z-10 text-white">Product Management</h4>
-                        <p class="text-sm text-muted relative z-10">Translating broad client concepts into actionable roadmaps. Managing backlogs, defining requirements, and ensuring the final product solves real business needs.</p>
-                    </div>
-
-                    <!-- Design & Dev -->
-                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-white/20 transition-colors">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 blur-[40px] rounded-full group-hover:bg-emerald-500/20 transition-colors"></div>
-                        <svg class="w-8 h-8 mb-5 text-emerald-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                        <h4 class="text-lg font-bold mb-2 relative z-10 text-white">Digital Design & Dev</h4>
-                        <p class="text-sm text-muted relative z-10">Hands-on execution. From UI/UX product design in Figma to full-stack frontend implementation, creating interfaces that are both beautiful and functional.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- LIVE SYSTEMS PORTFOLIO -->
-        <section id="work" class="py-32 px-6">
-            <div class="max-w-7xl mx-auto">
-                <div class="mb-20 reveal">
-                    <h2 class="text-sm uppercase tracking-[0.2em] text-accent mb-4 font-bold">Live Portfolio</h2>
-                    <h3 class="text-4xl md:text-5xl font-display font-bold max-w-2xl leading-tight">
-                        I don't just write specs.<br>I deliver complete solutions.
-                    </h3>
-                </div>
-
-                <div class="space-y-32">
-                    
-                    <!-- PROJECT 1: FlowPilot (Project Management / Delivery Dashboard) -->
-                    <div class="group reveal">
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                            <!-- Copy Side -->
-                            <div class="lg:col-span-4 lg:pr-8 order-2 lg:order-1">
-                                <div class="inline-block px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-white mb-6 border border-white/10">Project Delivery & Ops</div>
-                                <h4 class="text-3xl font-display font-bold mb-4">FlowPilot Operations</h4>
-                                <p class="text-muted mb-6 leading-relaxed">
-                                    A project management and delivery operations dashboard designed to bring clarity to chaotic service environments. Features live tracking, blocker alerts, and stakeholder visibility.
-                                </p>
-                                <div class="flex flex-wrap gap-2 mb-8">
-                                    <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">Workflow Improvement</span>
-                                    <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">Task Tracking</span>
-                                    <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">UI/UX Design</span>
-                                </div>
-                                <a href="#" class="inline-flex items-center gap-2 text-white font-medium hover:text-blue-400 transition-colors">
-                                    View Architecture <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                                </a>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-[#111] p-12 rounded-[2rem] border border-white/5">
+                    <!-- Typography -->
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-6 border-b border-white/10 pb-4">Typography</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="text-4xl font-display font-bold text-white mb-1">Syne</div>
+                                <div class="text-sm text-gray-500 uppercase tracking-wider">Display & Headings</div>
                             </div>
-
-                            <!-- Mockup Side (CSS Built) -->
-                            <div class="lg:col-span-8 order-1 lg:order-2">
-                                <div class="glass-panel p-2 rounded-2xl md:rounded-[2rem] border border-white/10 shadow-2xl overflow-hidden group-hover:border-blue-500/30 transition-colors duration-500 relative">
-                                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/20 blur-[80px] rounded-full z-0"></div>
-                                    <!-- Browser Header -->
-                                    <div class="bg-surfaceHover px-4 py-3 border-b border-white/5 flex items-center justify-between rounded-t-xl md:rounded-t-[1.75rem] relative z-10">
-                                        <div>
-                                            <span class="mockup-dot dot-red"></span>
-                                            <span class="mockup-dot dot-yellow"></span>
-                                            <span class="mockup-dot dot-green"></span>
-                                        </div>
-                                        <div class="bg-black/50 text-xs text-gray-500 px-4 py-1 rounded-full w-1/3 text-center border border-white/5 truncate font-mono">
-                                            ops.flowpilot.io/delivery
-                                        </div>
-                                        <div class="w-12"></div>
-                                    </div>
-                                    <!-- App UI -->
-                                    <div class="bg-[#0A0A0B] h-[400px] md:h-[500px] flex text-sm overflow-hidden rounded-b-xl md:rounded-b-[1.75rem] relative z-10">
-                                        <!-- Sidebar -->
-                                        <div class="w-16 md:w-56 border-r border-white/5 p-4 flex flex-col gap-6 bg-black/40">
-                                            <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center flex-shrink-0 text-white">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-                                            </div>
-                                            <div class="flex flex-col gap-2">
-                                                <div class="h-8 bg-white/10 rounded-md flex items-center px-3 gap-3 w-full">
-                                                    <div class="w-2 h-2 rounded-full bg-blue-400 hidden md:block"></div>
-                                                    <div class="text-xs text-white hidden md:block font-medium">Sprint Board</div>
-                                                </div>
-                                                <div class="h-8 hover:bg-white/5 rounded-md flex items-center px-3 gap-3 w-full opacity-50">
-                                                    <div class="text-xs text-gray-400 hidden md:block pl-5">Roadmap</div>
-                                                </div>
-                                                <div class="h-8 hover:bg-white/5 rounded-md flex items-center px-3 gap-3 w-full opacity-50">
-                                                    <div class="text-xs text-gray-400 hidden md:block pl-5">Resources</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Main Content -->
-                                        <div class="flex-1 p-6 md:p-8 overflow-hidden flex flex-col gap-6">
-                                            <!-- Topbar -->
-                                            <div class="flex justify-between items-center">
-                                                <div>
-                                                    <div class="text-lg font-bold text-white mb-1">NHS Digital Integration Project</div>
-                                                    <div class="text-xs text-blue-400">Phase 2: Execution • 68% Complete</div>
-                                                </div>
-                                                <div class="px-3 py-1.5 bg-blue-500/20 border border-blue-500/30 text-blue-400 text-xs rounded-md font-medium">Sprint 14 Active</div>
-                                            </div>
-                                            
-                                            <!-- Delivery Metrics -->
-                                            <div class="grid grid-cols-4 gap-3">
-                                                <div class="bg-white/5 rounded-lg p-3 border border-white/5">
-                                                    <div class="text-[10px] text-gray-500 uppercase mb-1">Open Tickets</div>
-                                                    <div class="text-xl font-bold text-white">24</div>
-                                                </div>
-                                                <div class="bg-white/5 rounded-lg p-3 border border-white/5">
-                                                    <div class="text-[10px] text-gray-500 uppercase mb-1">Velocity</div>
-                                                    <div class="text-xl font-bold text-white">42 <span class="text-xs text-gray-500 font-normal">pts</span></div>
-                                                </div>
-                                                <div class="bg-red-500/10 rounded-lg p-3 border border-red-500/20">
-                                                    <div class="text-[10px] text-red-400 uppercase mb-1">Blockers</div>
-                                                    <div class="text-xl font-bold text-red-400">2</div>
-                                                </div>
-                                                <div class="bg-green-500/10 rounded-lg p-3 border border-green-500/20">
-                                                    <div class="text-[10px] text-green-400 uppercase mb-1">Client Approvals</div>
-                                                    <div class="text-xl font-bold text-green-400">100%</div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Kanban Board Mockup -->
-                                            <div class="flex-1 flex gap-4 overflow-x-auto pb-2">
-                                                <!-- Column: In Progress -->
-                                                <div class="flex-1 min-w-[200px] flex flex-col gap-3">
-                                                    <div class="text-xs font-medium text-gray-400 mb-1 flex items-center justify-between">IN PROGRESS <span class="bg-white/10 px-1.5 rounded text-[10px]">3</span></div>
-                                                    <div class="bg-white/5 border border-white/10 p-3 rounded-lg shadow-sm">
-                                                        <div class="text-xs text-white mb-2">API Documentation Setup</div>
-                                                        <div class="flex justify-between items-center">
-                                                            <span class="text-[9px] px-1.5 py-0.5 bg-blue-500/20 text-blue-400 rounded">Dev</span>
-                                                            <div class="w-5 h-5 rounded-full bg-purple-500 border-2 border-[#0A0A0B]"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="bg-white/5 border border-white/10 p-3 rounded-lg shadow-sm">
-                                                        <div class="text-xs text-white mb-2">Stakeholder Review Prep</div>
-                                                        <div class="flex justify-between items-center">
-                                                            <span class="text-[9px] px-1.5 py-0.5 bg-yellow-500/20 text-yellow-400 rounded">Management</span>
-                                                            <div class="w-5 h-5 rounded-full bg-emerald-500 border-2 border-[#0A0A0B]"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Column: Blocked -->
-                                                <div class="flex-1 min-w-[200px] flex flex-col gap-3">
-                                                    <div class="text-xs font-medium text-gray-400 mb-1 flex items-center justify-between">BLOCKED <span class="bg-white/10 px-1.5 rounded text-[10px]">1</span></div>
-                                                    <div class="bg-red-500/5 border border-red-500/20 p-3 rounded-lg shadow-sm relative overflow-hidden">
-                                                        <div class="absolute top-0 left-0 w-1 h-full bg-red-500"></div>
-                                                        <div class="text-xs text-white mb-2">Database Migration Auth</div>
-                                                        <div class="text-[10px] text-gray-500 mb-2">Waiting on client IT infra...</div>
-                                                        <div class="flex justify-between items-center">
-                                                            <span class="text-[9px] px-1.5 py-0.5 bg-red-500/20 text-red-400 rounded">DevOps</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div>
+                                <div class="text-2xl font-sans font-medium text-white mb-1">Inter</div>
+                                <div class="text-sm text-gray-500 uppercase tracking-wider">Body & Interface</div>
                             </div>
                         </div>
                     </div>
+                    <!-- Colors -->
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-6 border-b border-white/10 pb-4">Color Palette</h3>
+                        <div class="flex gap-4">
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-[#0F172A] shadow-inner mb-2 border border-white/10"></div>
+                                <div class="text-xs text-gray-500 font-mono">#0F172A</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-[#1E293B] shadow-inner mb-2 border border-white/10"></div>
+                                <div class="text-xs text-gray-500 font-mono">#1E293B</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-[#10B981] shadow-inner mb-2 border border-white/10"></div>
+                                <div class="text-xs text-gray-500 font-mono">#10B981</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-[#34D399] shadow-inner mb-2 border border-white/10"></div>
+                                <div class="text-xs text-gray-500 font-mono">#34D399</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                    <!-- PROJECT 2: Nexus AI (Agentic Workflow) -->
-                    <div class="group reveal">
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                            <!-- Mockup Side (CSS Built) -->
-                            <div class="lg:col-span-8">
-                                <div class="glass-panel p-2 rounded-2xl md:rounded-[2rem] border border-white/10 shadow-2xl overflow-hidden group-hover:border-accent/30 transition-colors duration-500 relative">
-                                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/20 blur-[80px] rounded-full z-0"></div>
-                                    <!-- Browser Header -->
-                                    <div class="bg-surfaceHover px-4 py-3 border-b border-white/5 flex items-center justify-between rounded-t-xl md:rounded-t-[1.75rem] relative z-10">
-                                        <div>
-                                            <span class="mockup-dot dot-red"></span>
-                                            <span class="mockup-dot dot-yellow"></span>
-                                            <span class="mockup-dot dot-green"></span>
-                                        </div>
-                                        <div class="bg-black/50 text-xs text-gray-500 px-4 py-1 rounded-full w-1/3 text-center border border-white/5 truncate font-mono">
-                                            agent.nexus.local/trace
-                                        </div>
-                                        <div class="w-12"></div>
-                                    </div>
-                                    <!-- App UI -->
-                                    <div class="bg-[#0A0A0B] h-[400px] md:h-[500px] flex text-sm overflow-hidden rounded-b-xl md:rounded-b-[1.75rem] relative z-10">
-                                        <!-- Sidebar -->
-                                        <div class="w-16 md:w-56 border-r border-white/5 p-4 flex flex-col gap-6 bg-black/40">
-                                            <div class="w-8 h-8 rounded-lg bg-accent flex items-center justify-center flex-shrink-0 text-white">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path><path d="M12 8v4l3 3"></path></svg>
-                                            </div>
-                                            <div class="flex flex-col gap-2">
-                                                <div class="h-8 bg-white/10 rounded-md flex items-center px-3 gap-3 w-full">
-                                                    <div class="w-2 h-2 rounded-full bg-green-400 hidden md:block animate-pulse"></div>
-                                                    <div class="text-xs text-white hidden md:block font-mono">Live Stream</div>
-                                                </div>
-                                                <div class="h-8 hover:bg-white/5 rounded-md flex items-center px-3 gap-3 w-full opacity-50">
-                                                    <div class="w-2 h-2 rounded-full bg-gray-500 hidden md:block"></div>
-                                                    <div class="text-xs text-gray-400 hidden md:block font-mono">Logs</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Main Content -->
-                                        <div class="flex-1 p-6 md:p-8 overflow-hidden flex flex-col gap-6">
-                                            <!-- Topbar -->
-                                            <div class="flex justify-between items-center">
-                                                <div>
-                                                    <div class="text-lg font-bold text-white mb-1">Active Run: Lead Qualification</div>
-                                                    <div class="text-xs text-accent font-mono">Status: Processing...</div>
-                                                </div>
-                                                <div class="px-3 py-1 bg-accent/20 border border-accent/30 text-accent text-xs rounded-full font-mono">Tokens: 1,402</div>
-                                            </div>
-                                            <!-- Stats -->
-                                            <div class="grid grid-cols-3 gap-4">
-                                                <div class="border border-white/10 rounded-xl p-4 bg-black/40">
-                                                    <div class="text-xs text-gray-500 mb-1">Intent Detected</div>
-                                                    <div class="text-sm text-white font-mono">Schedule_Meeting</div>
-                                                </div>
-                                                <div class="border border-white/10 rounded-xl p-4 bg-black/40">
-                                                    <div class="text-xs text-gray-500 mb-1">Confidence Score</div>
-                                                    <div class="text-sm text-green-400 font-mono">98.5%</div>
-                                                </div>
-                                                <div class="border border-accent/30 rounded-xl p-4 bg-accent/10">
-                                                    <div class="text-xs text-accent/80 mb-1">Tools Called</div>
-                                                    <div class="text-sm text-white font-mono">HubSpot_API, Cal_API</div>
-                                                </div>
-                                            </div>
-                                            <!-- Agent Trace Area -->
-                                            <div class="border border-white/10 rounded-xl flex-1 bg-black/40 p-5 flex flex-col gap-4 font-mono text-xs overflow-y-auto">
-                                                <div class="flex gap-3 text-gray-400"><span class="text-gray-600">[14:02:01]</span> <span class="text-blue-400">Trigger:</span> New email received from alex@acme.com</div>
-                                                <div class="flex gap-3 text-gray-400"><span class="text-gray-600">[14:02:02]</span> <span class="text-purple-400">Reasoning:</span> User is asking for a demo. Need to check if they exist in HubSpot.</div>
-                                                <div class="flex gap-3 text-gray-400"><span class="text-gray-600">[14:02:04]</span> <span class="text-yellow-400">Tool Exec:</span> get_contact(email="alex@acme.com") -> Result: null</div>
-                                                <div class="flex gap-3 text-gray-400"><span class="text-gray-600">[14:02:06]</span> <span class="text-green-400">Action:</span> Creating new contact in CRM...</div>
-                                                <div class="flex gap-3 text-gray-400"><span class="text-gray-600">[14:02:07]</span> <span class="text-accent animate-pulse">Generating response...</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+            <!-- Components Showcase -->
+            <div class="mb-32">
+                <h2 class="text-sm uppercase tracking-[0.2em] text-emerald-400 mb-12 font-bold text-center">Component Library</h2>
+                <div class="flex justify-center items-center gap-12 flex-wrap">
+                    <!-- Component 1 -->
+                    <div class="bg-[#0F172A] p-6 rounded-3xl border border-white/10 w-72 shadow-xl">
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="text-white font-medium">Daily Goal</div>
+                            <div class="text-emerald-400 font-bold">85%</div>
+                        </div>
+                        <div class="w-full h-2 bg-black rounded-full overflow-hidden">
+                            <div class="w-[85%] h-full bg-emerald-400"></div>
+                        </div>
+                    </div>
+                    <!-- Component 2 -->
+                    <div class="bg-[#1E293B] p-4 rounded-full border border-white/10 shadow-xl flex items-center gap-4 pr-6">
+                        <div class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        </div>
+                        <div>
+                            <div class="text-white font-medium text-sm">Meditation Complete</div>
+                            <div class="text-gray-400 text-xs">+50 Aura Points</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Screens (CSS Built) -->
+            <div>
+                <h2 class="text-sm uppercase tracking-[0.2em] text-emerald-400 mb-12 font-bold text-center">High-Fidelity Screens</h2>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-16">
+                    <!-- Screen 1 -->
+                    <div class="mobile-mockup bg-[#0F172A]">
+                        <div class="mobile-notch"></div>
+                        <div class="pt-16 p-6 h-full flex flex-col">
+                            <div class="text-emerald-400 font-bold font-display text-xl mb-8">Aura.</div>
+                            <div class="text-white text-3xl font-bold leading-tight mb-2">Breathe,<br>Alex.</div>
+                            <div class="text-gray-400 text-sm mb-12">Let's check in on your mind today.</div>
+                            
+                            <button class="w-full py-4 bg-emerald-500 text-white font-bold rounded-2xl mb-4 shadow-[0_0_20px_rgba(16,185,129,0.3)]">Start Session</button>
+                            <button class="w-full py-4 bg-[#1E293B] text-white font-medium rounded-2xl">View Insights</button>
+                        </div>
+                    </div>
+
+                    <!-- Screen 2 -->
+                    <div class="mobile-mockup bg-[#0F172A]">
+                        <div class="mobile-notch"></div>
+                        <div class="pt-16 p-6 h-full flex flex-col">
+                            <div class="flex justify-between items-center mb-8">
+                                <div class="text-white font-bold text-lg">Insights</div>
+                                <div class="w-8 h-8 rounded-full bg-[#1E293B] flex items-center justify-center text-white text-xs">...</div>
                             </div>
                             
-                            <!-- Copy Side -->
-                            <div class="lg:col-span-4 lg:pl-8">
-                                <div class="inline-block px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-white mb-6 border border-white/10">AI Automation</div>
-                                <h4 class="text-3xl font-display font-bold mb-4">Nexus Autonomous Agent</h4>
-                                <p class="text-muted mb-6 leading-relaxed">
-                                    An intelligent agent designed for operations teams. It sits in the inbox, reads inbound requests, qualifies data against the CRM, and executes multi-step actions without human intervention.
-                                </p>
-                                <div class="flex flex-wrap gap-2 mb-8">
-                                    <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">LLM Integration</span>
-                                    <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">API Architecture</span>
-                                    <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">Agentic Workflow</span>
+                            <div class="bg-[#1E293B] rounded-3xl p-5 mb-4 border border-white/5">
+                                <div class="text-gray-400 text-xs uppercase mb-2">Stress Level</div>
+                                <div class="text-3xl text-white font-bold mb-4">Low</div>
+                                <!-- Chart Mockup -->
+                                <div class="flex items-end gap-1 h-12 justify-between">
+                                    <div class="w-1/6 bg-emerald-500/20 rounded-sm h-[40%]"></div>
+                                    <div class="w-1/6 bg-emerald-500/40 rounded-sm h-[60%]"></div>
+                                    <div class="w-1/6 bg-emerald-500/60 rounded-sm h-[30%]"></div>
+                                    <div class="w-1/6 bg-emerald-500/80 rounded-sm h-[80%]"></div>
+                                    <div class="w-1/6 bg-emerald-400 rounded-sm h-[20%]"></div>
                                 </div>
-                                <a href="#" class="inline-flex items-center gap-2 text-white font-medium hover:text-accent transition-colors">
-                                    View Agent Trace <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                                </a>
+                            </div>
+
+                            <div class="bg-[#1E293B] rounded-3xl p-5 border border-white/5 flex gap-4 items-center">
+                                <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="text-white font-medium text-sm">Sleep Quality</div>
+                                    <div class="text-emerald-400 text-xs">+12% from last week</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- PROJECT 2: CLIENTBRIDGE (LIVE DEMO APP)    -->
+    <!-- ========================================== -->
+    <div id="syncport-view" class="hidden fixed inset-0 z-50 bg-[#F8F9FA] flex flex-col overflow-hidden animate-fade-in-up font-sans text-gray-800">
+        <!-- App Header (Light Theme for B2B SaaS feel) -->
+        <header class="h-16 border-b border-gray-200 bg-white flex items-center justify-between px-6 shrink-0 relative z-10 shadow-sm">
+            <div class="flex items-center gap-6">
+                <!-- App Logo -->
+                <div class="flex items-center gap-3 text-gray-900 font-bold tracking-tight">
+                    <div class="w-8 h-8 rounded bg-purple-600 flex items-center justify-center shadow-sm">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    </div>
+                    ClientBridge 
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button onclick="showView('portfolio')" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 border border-gray-200 transition-all text-sm font-medium text-gray-700">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    Exit Portal
+                </button>
+            </div>
+        </header>
+
+        <div class="flex-1 flex overflow-hidden">
+            <!-- Sidebar -->
+            <nav class="w-64 border-r border-gray-200 bg-white flex-col hidden sm:flex">
+                <div class="p-6 border-b border-gray-100">
+                    <div class="text-xs text-gray-500 uppercase tracking-wider font-bold mb-1">Active Client</div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-gray-900 rounded-md flex items-center justify-center text-white font-bold text-xs">AC</div>
+                        <div class="font-bold text-gray-900">Acme Corp</div>
+                    </div>
+                </div>
+                <div class="p-4 space-y-1">
+                    <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-md bg-purple-50 text-purple-700 font-medium">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                        Onboarding Plan
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-md text-gray-600 hover:bg-gray-50 transition-colors">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        Documents <span class="ml-auto bg-gray-100 text-gray-600 text-xs py-0.5 px-2 rounded-full">2</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-md text-gray-600 hover:bg-gray-50 transition-colors">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        Team Chat
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Main Canvas -->
+            <main class="flex-1 overflow-y-auto bg-gray-50 p-8">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Progress Header -->
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm mb-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                        <div class="flex-1 w-full">
+                            <h1 class="text-2xl font-bold text-gray-900 mb-2">Welcome to Acme Corp Onboarding</h1>
+                            <p class="text-gray-500 mb-6">Complete the tasks below to finalize your account setup.</p>
+                            
+                            <div class="flex justify-between text-sm mb-2 font-medium">
+                                <span class="text-purple-600">60% Completed</span>
+                                <span class="text-gray-500">3 of 5 Steps</span>
+                            </div>
+                            <div class="w-full h-2.5 bg-gray-100 rounded-full overflow-hidden">
+                                <div class="w-[60%] h-full bg-purple-600 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="shrink-0">
+                            <div class="w-24 h-24 rounded-full border-4 border-purple-100 flex items-center justify-center relative">
+                                <svg class="absolute inset-0 w-full h-full text-purple-600 transform -rotate-90" viewBox="0 0 36 36">
+                                    <path class="text-gray-100" stroke-width="3" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="text-purple-600" stroke-dasharray="60, 100" stroke-width="3" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                </svg>
+                                <span class="text-xl font-bold text-gray-900">60%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Task List -->
+                    <h2 class="text-lg font-bold text-gray-900 mb-4">Required Action Items</h2>
+                    <div class="bg-white rounded-2xl border border-gray-200 shadow-sm divide-y divide-gray-100">
+                        
+                        <!-- Task Completed -->
+                        <div class="p-5 flex items-start gap-4 bg-gray-50 rounded-t-2xl">
+                            <div class="mt-0.5 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center shrink-0">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 line-through opacity-70">Sign Master Service Agreement</h3>
+                                <p class="text-sm text-gray-500 mt-1">Completed by Alex Chen on May 12</p>
+                            </div>
+                        </div>
+
+                        <!-- Task Completed -->
+                        <div class="p-5 flex items-start gap-4 bg-gray-50">
+                            <div class="mt-0.5 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center shrink-0">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 line-through opacity-70">Provide Billing Details</h3>
+                                <p class="text-sm text-gray-500 mt-1">Completed by Finance Team on May 13</p>
+                            </div>
+                        </div>
+
+                        <!-- Task Active -->
+                        <div class="p-5 flex items-start gap-4 bg-white relative overflow-hidden group">
+                            <div class="absolute left-0 top-0 w-1 h-full bg-purple-600"></div>
+                            <div class="mt-0.5 w-6 h-6 rounded-full border-2 border-purple-600 flex items-center justify-center shrink-0 bg-purple-50">
+                                <div class="w-2 h-2 bg-purple-600 rounded-full"></div>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start">
+                                    <h3 class="font-bold text-gray-900 text-lg">Upload Brand Assets</h3>
+                                    <span class="bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">Due Today</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1 mb-4">Please upload your high-res logo files (SVG/PNG) and brand guideline PDF so our design team can begin setup.</p>
+                                <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:bg-gray-50 transition-colors cursor-pointer">
+                                    <svg class="mx-auto text-gray-400 mb-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                    <span class="text-sm font-medium text-purple-600">Click to upload</span> <span class="text-sm text-gray-500">or drag and drop files here</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Task Locked -->
+                        <div class="p-5 flex items-start gap-4 bg-white rounded-b-2xl opacity-60">
+                            <div class="mt-0.5 w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center shrink-0 bg-gray-100">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900">Initial Strategy Kickoff Call</h3>
+                                <p class="text-sm text-gray-500 mt-1">Unlocks after brand assets are received.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- APP 3: FLOWPILOT (FULL SCREEN APP)         -->
+    <!-- ========================================== -->
+    <div id="flowpilot-view" class="hidden fixed inset-0 z-50 bg-appBg flex flex-col overflow-hidden animate-fade-in-up">
+        <!-- App Header -->
+        <header class="h-16 border-b border-white/10 bg-appSurface flex items-center justify-between px-6 shrink-0">
+            <div class="flex items-center gap-6">
+                <!-- App Logo -->
+                <div class="flex items-center gap-2 text-white font-bold tracking-tight">
+                    <div class="w-8 h-8 rounded bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-500/20">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                    </div>
+                    FlowPilot <span class="text-blue-400 text-xs font-mono ml-1 px-1.5 py-0.5 rounded bg-blue-500/10 border border-blue-500/20">v2.4</span>
+                </div>
+                <!-- Breadcrumb -->
+                <div class="hidden md:flex items-center text-sm text-gray-400 gap-2 font-medium">
+                    <span class="hover:text-white cursor-pointer transition-colors">Projects</span>
+                    <span class="text-gray-600">/</span>
+                    <span class="text-white">NHS Digital Integration</span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <div class="hidden sm:flex items-center gap-3 mr-4">
+                    <div class="w-8 h-8 rounded-full bg-gray-800 border border-gray-600 flex items-center justify-center text-xs font-bold">AK</div>
+                    <div class="w-8 h-8 rounded-full bg-blue-900 border border-blue-600 flex items-center justify-center text-xs font-bold -ml-4">JD</div>
+                    <div class="w-8 h-8 rounded-full bg-purple-900 border border-purple-600 flex items-center justify-center text-xs font-bold -ml-4">MR</div>
+                    <button class="w-8 h-8 rounded-full border border-dashed border-gray-500 flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-colors -ml-4 bg-appSurface">
+                        +
+                    </button>
+                </div>
+                
+                <button onclick="showView('portfolio')" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 hover:bg-red-500/20 hover:text-red-400 border border-white/10 hover:border-red-500/30 transition-all text-sm font-medium text-gray-300">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    Close App
+                </button>
+            </div>
+        </header>
+
+        <!-- App Body -->
+        <div class="flex-1 flex overflow-hidden">
+            <!-- Sidebar Navigation -->
+            <nav class="w-64 border-r border-white/10 bg-appSurface/50 flex-col p-4 hidden lg:flex">
+                <div class="space-y-1 mb-8">
+                    <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-3">Views</div>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-blue-500/10 text-blue-400 font-medium">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+                        Sprint Board
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:bg-white/5 hover:text-white transition-colors">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                        Roadmap
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:bg-white/5 hover:text-white transition-colors">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        Timeline
+                    </a>
+                </div>
+
+                <div class="space-y-1">
+                    <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-3">Filters</div>
+                    <label class="flex items-center gap-3 px-3 py-1.5 cursor-pointer group">
+                        <input type="checkbox" checked class="accent-blue-500">
+                        <span class="text-sm text-gray-300 group-hover:text-white">Assigned to me</span>
+                    </label>
+                    <label class="flex items-center gap-3 px-3 py-1.5 cursor-pointer group">
+                        <input type="checkbox" class="accent-red-500">
+                        <span class="text-sm text-gray-300 group-hover:text-white">Blockers only</span>
+                    </label>
+                </div>
+            </nav>
+
+            <!-- Main Canvas -->
+            <main class="flex-1 flex flex-col overflow-hidden bg-appBg">
+                <!-- Subheader / Metrics -->
+                <div class="p-6 border-b border-white/5 shrink-0 flex flex-col sm:flex-row justify-between gap-4">
+                    <div>
+                        <h1 class="text-2xl font-bold text-white mb-2">Sprint 14: Core Integration</h1>
+                        <div class="flex items-center gap-4 text-sm">
+                            <span class="text-gray-400 flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> May 14 - May 28</span>
+                            <div class="flex items-center gap-2">
+                                <div class="w-32 h-1.5 bg-gray-800 rounded-full overflow-hidden">
+                                    <div class="w-[68%] h-full bg-blue-500 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.8)]"></div>
+                                </div>
+                                <span class="text-blue-400 font-bold font-mono">68%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <div class="px-4 py-2 rounded-xl bg-appSurface border border-white/10 flex flex-col justify-center items-end">
+                            <span class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Velocity</span>
+                            <span class="text-lg font-bold text-white">42<span class="text-xs text-gray-500 ml-1 font-normal">pts</span></span>
+                        </div>
+                        <div class="px-4 py-2 rounded-xl bg-red-500/5 border border-red-500/20 flex flex-col justify-center items-end">
+                            <span class="text-[10px] text-red-500 uppercase font-bold tracking-wider">Blockers</span>
+                            <span class="text-lg font-bold text-red-400">2</span>
+                        </div>
+                        <button class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm transition-colors shadow-lg shadow-blue-500/20">
+                            + New Task
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Kanban Board -->
+                <div class="flex-1 overflow-x-auto overflow-y-hidden p-6 flex gap-6 items-start">
+                    
+                    <!-- Column: To Do -->
+                    <div class="w-80 shrink-0 flex flex-col max-h-full">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-sm font-bold text-gray-400">TO DO</h3>
+                            <span class="bg-white/10 text-gray-300 text-xs px-2 py-0.5 rounded-full font-mono">4</span>
+                        </div>
+                        <div class="flex-1 overflow-y-auto space-y-3 pr-2 pb-4">
+                            <!-- Card -->
+                            <div class="bg-appSurface border border-white/5 p-4 rounded-xl hover:border-blue-500/50 transition-colors cursor-grab group">
+                                <div class="flex justify-between items-start mb-3">
+                                    <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 text-[10px] font-bold uppercase tracking-wider">Design</span>
+                                    <span class="text-gray-500 text-xs">NHS-142</span>
+                                </div>
+                                <h4 class="text-sm font-medium text-white mb-2 leading-snug">Finalize patient portal dark mode palette</h4>
+                                <div class="flex items-center justify-between mt-4">
+                                    <div class="w-6 h-6 rounded-full bg-blue-900 border border-blue-600 flex items-center justify-center text-[10px] font-bold text-white">JD</div>
+                                    <div class="flex items-center gap-1 text-gray-500 text-xs">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 3
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+                            <div class="bg-appSurface border border-white/5 p-4 rounded-xl hover:border-blue-500/50 transition-colors cursor-grab group">
+                                <div class="flex justify-between items-start mb-3">
+                                    <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 text-[10px] font-bold uppercase tracking-wider">Dev</span>
+                                    <span class="text-gray-500 text-xs">NHS-145</span>
+                                </div>
+                                <h4 class="text-sm font-medium text-white mb-2 leading-snug">Implement JWT token refresh logic</h4>
+                                <div class="flex items-center justify-between mt-4">
+                                    <div class="w-6 h-6 rounded-full border border-dashed border-gray-600 flex items-center justify-center text-[10px] text-gray-500">+</div>
+                                    <div class="flex items-center gap-1 text-gray-500 text-xs">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 5
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column: In Progress -->
+                    <div class="w-80 shrink-0 flex flex-col max-h-full">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-sm font-bold text-blue-400 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span> IN PROGRESS
+                            </h3>
+                            <span class="bg-blue-500/20 text-blue-400 text-xs px-2 py-0.5 rounded-full font-mono">2</span>
+                        </div>
+                        <div class="flex-1 overflow-y-auto space-y-3 pr-2 pb-4">
+                            <!-- Card -->
+                            <div class="bg-appSurface border border-blue-500/30 p-4 rounded-xl shadow-[0_4px_20px_rgba(59,130,246,0.1)] cursor-grab">
+                                <div class="flex justify-between items-start mb-3">
+                                    <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 text-[10px] font-bold uppercase tracking-wider">Dev</span>
+                                    <span class="text-gray-500 text-xs">NHS-132</span>
+                                </div>
+                                <h4 class="text-sm font-medium text-white mb-3 leading-snug">Build patient history API endpoints</h4>
+                                <!-- Progress Bar inside card -->
+                                <div class="w-full h-1.5 bg-gray-800 rounded-full mb-3 overflow-hidden">
+                                    <div class="w-3/4 h-full bg-green-500"></div>
+                                </div>
+                                <div class="flex items-center justify-between mt-2">
+                                    <div class="flex -space-x-2">
+                                        <div class="w-6 h-6 rounded-full bg-gray-800 border border-gray-600 flex items-center justify-center text-[10px] font-bold text-white relative z-10">AK</div>
+                                        <div class="w-6 h-6 rounded-full bg-purple-900 border border-purple-600 flex items-center justify-center text-[10px] font-bold text-white relative z-0">MR</div>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-gray-500 text-xs">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> 6/8
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column: Blocked -->
+                    <div class="w-80 shrink-0 flex flex-col max-h-full">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-sm font-bold text-red-500">BLOCKED</h3>
+                            <span class="bg-red-500/20 text-red-400 text-xs px-2 py-0.5 rounded-full font-mono">2</span>
+                        </div>
+                        <div class="flex-1 overflow-y-auto space-y-3 pr-2 pb-4">
+                            <!-- Card Blocked -->
+                            <div class="bg-red-500/5 border border-red-500/30 p-4 rounded-xl cursor-grab relative overflow-hidden">
+                                <div class="absolute left-0 top-0 w-1 h-full bg-red-500"></div>
+                                <div class="flex justify-between items-start mb-2 pl-2">
+                                    <span class="px-2 py-0.5 rounded bg-orange-500/10 text-orange-400 text-[10px] font-bold uppercase tracking-wider">DevOps</span>
+                                    <span class="text-red-400 text-xs font-medium bg-red-500/10 px-1.5 rounded">High</span>
+                                </div>
+                                <h4 class="text-sm font-medium text-white mb-2 leading-snug pl-2">Database Migration Auth</h4>
+                                <div class="bg-black/40 p-2 rounded text-xs text-gray-400 mb-3 ml-2 border border-red-500/10 font-mono">
+                                    > Error: Missing prod AWS keys from client IT.
+                                </div>
+                                <div class="flex items-center justify-between mt-2 pl-2">
+                                    <div class="w-6 h-6 rounded-full bg-gray-800 border border-red-500 flex items-center justify-center text-[10px] font-bold text-white">AK</div>
+                                    <span class="text-[10px] text-red-400">Blocked 2 days</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column: Review -->
+                    <div class="w-80 shrink-0 flex flex-col max-h-full">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-sm font-bold text-yellow-500">IN REVIEW</h3>
+                            <span class="bg-yellow-500/20 text-yellow-400 text-xs px-2 py-0.5 rounded-full font-mono">1</span>
+                        </div>
+                        <div class="flex-1 overflow-y-auto space-y-3 pr-2 pb-4">
+                            <div class="bg-appSurface border border-yellow-500/30 p-4 rounded-xl cursor-grab">
+                                <div class="flex justify-between items-start mb-3">
+                                    <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 text-[10px] font-bold uppercase tracking-wider">Design</span>
+                                    <span class="text-gray-500 text-xs">NHS-112</span>
+                                </div>
+                                <h4 class="text-sm font-medium text-white mb-2 leading-snug">Dashboard Wireframes V2</h4>
+                                <div class="flex items-center gap-2 mt-3">
+                                    <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
+                                    <span class="text-xs text-gray-400">Waiting on Client Sign-off</span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                 </div>
-            </div>
-        </section>
-
-        <section class="py-24 border-y border-white/5 bg-surface/30">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/5 reveal">
-                    <div class="px-4">
-                        <div class="text-4xl md:text-5xl font-display font-bold text-white mb-2">50+</div>
-                        <div class="text-sm text-muted uppercase tracking-wider">Workflows Automated</div>
-                    </div>
-                    <div class="px-4">
-                        <div class="text-4xl md:text-5xl font-display font-bold text-white mb-2">3+</div>
-                        <div class="text-sm text-muted uppercase tracking-wider">Years Delivery Mgt</div>
-                    </div>
-                    <div class="px-4">
-                        <div class="text-4xl md:text-5xl font-display font-bold text-white mb-2">End</div>
-                        <div class="text-sm text-muted uppercase tracking-wider">To End Deployment</div>
-                    </div>
-                    <div class="px-4">
-                        <div class="text-4xl md:text-5xl font-display font-bold text-white mb-2">CS/MA</div>
-                        <div class="text-sm text-muted uppercase tracking-wider">Engineering & Biz</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA / Contact -->
-        <section id="contact" class="py-32 px-6 relative overflow-hidden">
-            <!-- Glow background -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/20 blur-[150px] rounded-full pointer-events-none -z-10"></div>
-            
-            <div class="max-w-4xl mx-auto text-center reveal">
-                <h2 class="text-5xl md:text-7xl font-display font-bold mb-6 tracking-tight">Let's deliver your <br>next project.</h2>
-                <p class="text-xl text-muted font-light mb-10 max-w-2xl mx-auto">
-                    Whether you need a digital project manager to unblock your team, an AI agent to scale operations, or a full-stack product built from scratch.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="mailto:rodhanala@gmail.com" class="px-8 py-4 rounded-full bg-white text-black font-medium text-lg hover:scale-105 transition-transform flex items-center justify-center gap-2 shadow-[0_0_40px_rgba(255,255,255,0.3)]">
-                        Get In Touch
-                    </a>
-                    <a href="https://linkedin.com/in/rohith-dhanala-35715b162" target="_blank" class="px-8 py-4 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/5 transition-colors text-white font-medium text-lg flex items-center justify-center">
-                        LinkedIn
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t border-white/10 py-12 px-6 bg-[#020202]">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-2">
-                <div class="w-6 h-6 rounded-full bg-white text-black flex items-center justify-center">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                </div>
-                <span class="font-display font-bold text-lg tracking-tight">Rohith.</span>
-            </div>
-            <p class="text-sm text-muted">&copy; 2026 Rohith Dhanala. Based in Southampton, UK.</p>
+            </main>
         </div>
-    </footer>
+    </div>
 
-    <script>
-        // Scroll Reveal Logic
-        document.addEventListener('DOMContentLoaded', () => {
-            const reveals = document.querySelectorAll('.reveal');
+
+    <!-- ========================================== -->
+    <!-- APP 4: NEXUS AI (FULL SCREEN APP)          -->
+    <!-- ========================================== -->
+    <div id="nexus-view" class="hidden fixed inset-0 z-50 bg-[#000] flex flex-col overflow-hidden animate-fade-in-up font-sans text-gray-300">
+        <!-- App Header -->
+        <header class="h-16 border-b border-white/10 bg-[#0A0A0B] flex items-center justify-between px-6 shrink-0 relative z-10">
+            <div class="flex items-center gap-6">
+                <!-- App Logo -->
+                <div class="flex items-center gap-3 text-white font-bold tracking-tight">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-accent to-accentGlow flex items-center justify-center shadow-[0_0_15px_rgba(236,72,153,0.5)]">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path><path d="M12 8v4l3 3"></path></svg>
+                    </div>
+                    Nexus Workspace 
+                    <span class="ml-2 flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-green-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                </div>
+            </div>
             
-            const revealOptions = {
-                threshold: 0.15,
-                rootMargin: "0px 0px -50px 0px"
-            };
+            <div class="flex items-center gap-4">
+                <button onclick="runNexusSimulation()" class="hidden sm:flex items-center gap-2 px-4 py-2 rounded border border-accent/50 text-accent hover:bg-accent/10 transition-colors text-xs font-mono font-bold uppercase tracking-wider">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    Re-run Trace
+                </button>
+                <button onclick="showView('portfolio')" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/10 transition-all text-sm font-medium text-white">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    Exit Workspace
+                </button>
+            </div>
+        </header>
 
+        <div class="flex-1 flex overflow-hidden">
+            <!-- Sidebar Navigation -->
+            <nav class="w-16 md:w-64 border-r border-white/10 bg-[#050505] flex-col p-4 hidden sm:flex">
+                <div class="space-y-2 font-mono text-sm">
+                    <div class="text-[10px] text-gray-600 uppercase tracking-widest mb-4 px-2">Agents</div>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded bg-white/5 border border-white/10 text-white group">
+                        <svg class="text-accent group-hover:scale-110 transition-transform" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <span class="hidden md:block">LeadQualifier_v2</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded text-gray-500 hover:bg-white/5 transition-colors group">
+                        <svg class="group-hover:text-white transition-colors" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        <span class="hidden md:block">SupportTriage_Bot</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded text-gray-500 hover:bg-white/5 transition-colors group">
+                        <svg class="group-hover:text-white transition-colors" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        <span class="hidden md:block">CalendarSync_Agent</span>
+                    </a>
+                </div>
+
+                <div class="mt-auto pt-8">
+                    <div class="border border-white/10 rounded-lg p-4 bg-accent/5">
+                        <div class="text-[10px] text-accent uppercase tracking-widest mb-2 font-mono">System Load</div>
+                        <div class="w-full h-1 bg-gray-800 rounded overflow-hidden mb-1">
+                            <div class="h-full bg-accent w-[34%]"></div>
+                        </div>
+                        <div class="text-xs font-mono text-gray-400">Tokens: 4.2M / mo</div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Workspace -->
+            <main class="flex-1 flex flex-col md:flex-row overflow-hidden relative">
+                <!-- Background Grid -->
+                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGg0MHY0MEgwVjB6bTM5IDM5VjFoLTM4djM4aDM4eiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAyKSIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+')] z-0"></div>
+
+                <!-- Input / Trigger Data -->
+                <div class="w-full md:w-1/3 border-r border-white/10 p-6 flex flex-col z-10 bg-[#0A0A0B]/80 backdrop-blur-sm">
+                    <h3 class="font-mono text-white text-sm uppercase tracking-widest border-b border-white/10 pb-4 mb-6">Input Trigger</h3>
+                    
+                    <div class="bg-[#111] border border-white/10 rounded-lg p-5 mb-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="bg-blue-500/20 text-blue-400 text-[10px] font-mono px-2 py-1 rounded">Webhook: Inbound Email</span>
+                            <span class="text-xs text-gray-500 font-mono">14:02:01 UTC</span>
+                        </div>
+                        <div class="space-y-3 font-mono text-xs">
+                            <div class="text-gray-400"><span class="text-gray-600">From:</span> alex.chen@acme-corp.com</div>
+                            <div class="text-gray-400"><span class="text-gray-600">Subject:</span> Quick question about Enterprise pricing</div>
+                            <div class="p-3 bg-black rounded border border-white/5 text-gray-300 leading-relaxed">
+                                "Hi team,<br><br>We are looking to scale our operations next quarter and need a solution that handles over 10,000 requests/day. Can someone walk me through the Enterprise tier and its API limits?<br><br>I'm free tomorrow afternoon for a quick call.<br><br>- Alex"
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="font-mono text-white text-sm uppercase tracking-widest border-b border-white/10 pb-4 mb-6">Extracted Context</h3>
+                    
+                    <div class="grid grid-cols-2 gap-3 font-mono text-xs">
+                        <div class="bg-[#111] p-3 rounded border border-white/5">
+                            <div class="text-gray-600 mb-1">Company</div>
+                            <div id="nx-ctx-company" class="text-white opacity-0 transition-opacity duration-300">Acme Corp</div>
+                        </div>
+                        <div class="bg-[#111] p-3 rounded border border-white/5">
+                            <div class="text-gray-600 mb-1">Scale</div>
+                            <div id="nx-ctx-scale" class="text-white opacity-0 transition-opacity duration-300">10k+ req/day</div>
+                        </div>
+                        <div class="bg-[#111] p-3 rounded border border-white/5 col-span-2">
+                            <div class="text-gray-600 mb-1">Detected Intent</div>
+                            <div id="nx-ctx-intent" class="text-accent opacity-0 transition-opacity duration-300">High-Value Sales / Demo Request</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Agent Trace -->
+                <div class="w-full md:w-2/3 p-6 flex flex-col z-10 bg-black/60 backdrop-blur-sm relative">
+                    <div class="flex justify-between items-center border-b border-white/10 pb-4 mb-4 shrink-0">
+                        <h3 class="font-mono text-white text-sm uppercase tracking-widest flex items-center gap-3">
+                            Execution Trace
+                            <span id="nx-status" class="bg-gray-800 text-gray-300 text-[10px] px-2 py-0.5 rounded animate-pulse">WAITING</span>
+                        </h3>
+                        <div class="font-mono text-xs text-gray-500">Model: GPT-4o-Engine</div>
+                    </div>
+                    
+                    <!-- Terminal Window -->
+                    <div class="flex-1 rounded-lg bg-[#050505] border border-white/10 p-5 font-mono text-xs leading-relaxed overflow-y-auto relative shadow-inner">
+                        <div id="nexus-terminal" class="space-y-2">
+                            <!-- JS injected lines go here -->
+                        </div>
+                        <div class="mt-2 text-accent" id="nexus-cursor">> <span class="cursor-blink">█</span></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts for App Logic -->
+    <script>
+        // View Routing Logic
+        function showView(viewId) {
+            // Hide all views
+            document.getElementById('portfolio-view').classList.add('hidden');
+            document.getElementById('portfolio-view').classList.remove('block');
+            document.getElementById('aura-view').classList.add('hidden');
+            document.getElementById('syncport-view').classList.add('hidden');
+            document.getElementById('flowpilot-view').classList.add('hidden');
+            document.getElementById('nexus-view').classList.add('hidden');
+            
+            // Show requested view
+            if (viewId === 'portfolio') {
+                document.getElementById('portfolio-view').classList.remove('hidden');
+                document.getElementById('portfolio-view').classList.add('block');
+                window.location.hash = '';
+            } else if (viewId === 'aura') {
+                document.getElementById('aura-view').classList.remove('hidden');
+                window.location.hash = 'aura';
+            } else if (viewId === 'syncport') {
+                document.getElementById('syncport-view').classList.remove('hidden');
+                window.location.hash = 'syncport';
+            } else if (viewId === 'flowpilot') {
+                document.getElementById('flowpilot-view').classList.remove('hidden');
+                window.location.hash = 'flowpilot';
+            } else if (viewId === 'nexus') {
+                document.getElementById('nexus-view').classList.remove('hidden');
+                window.location.hash = 'nexus';
+                // Small delay for UI to render before starting animation
+                setTimeout(runNexusSimulation, 300);
+            }
+            window.scrollTo(0,0);
+        }
+
+        // Handle initial load based on URL hash
+        window.addEventListener('load', () => {
+            const hash = window.location.hash;
+            if (hash === '#aura') showView('aura');
+            else if (hash === '#syncport') showView('syncport');
+            else if (hash === '#flowpilot') showView('flowpilot');
+            else if (hash === '#nexus') showView('nexus');
+            
+            // Setup Portfolio Scroll Reveal
+            const reveals = document.querySelectorAll('.reveal');
+            const revealOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
             const revealOnScroll = new IntersectionObserver(function(entries, observer) {
                 entries.forEach(entry => {
-                    if (!entry.isIntersecting) {
-                        return;
-                    } else {
+                    if (entry.isIntersecting) {
                         entry.target.classList.add('active');
                         observer.unobserve(entry.target);
                     }
                 });
             }, revealOptions);
+            reveals.forEach(reveal => revealOnScroll.observe(reveal));
 
-            reveals.forEach(reveal => {
-                revealOnScroll.observe(reveal);
-            });
-
-            // Navbar Blur effect on scroll
+            // Navbar Blur
             const navbar = document.getElementById('navbar');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
@@ -551,6 +1276,78 @@
                 }
             });
         });
+        
+        // Handle browser back button
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash;
+            if (hash === '#aura') showView('aura');
+            else if (hash === '#syncport') showView('syncport');
+            else if (hash === '#flowpilot') showView('flowpilot');
+            else if (hash === '#nexus') showView('nexus');
+            else showView('portfolio');
+        });
+
+        // ----------------------------------------------------
+        // Nexus AI Simulation Logic
+        // ----------------------------------------------------
+        let nexusSimTimeout;
+        
+        function runNexusSimulation() {
+            // Reset UI
+            clearTimeout(nexusSimTimeout);
+            const terminal = document.getElementById('nexus-terminal');
+            terminal.innerHTML = '';
+            document.getElementById('nx-ctx-company').classList.remove('opacity-100');
+            document.getElementById('nx-ctx-scale').classList.remove('opacity-100');
+            document.getElementById('nx-ctx-intent').classList.remove('opacity-100');
+            
+            const statusBadge = document.getElementById('nx-status');
+            statusBadge.textContent = 'RUNNING';
+            statusBadge.className = 'bg-blue-500/20 text-blue-400 text-[10px] font-bold px-2 py-0.5 rounded border border-blue-500/30';
+
+            const logSequence = [
+                { time: 500, text: `<span class="text-gray-500">[SYSTEM]</span> Agent triggered by Webhook (ID: wh_8f92j)` },
+                { time: 1200, text: `<span class="text-purple-400">[THINKING]</span> Analyzing inbound payload...` },
+                { time: 2000, text: `<span class="text-green-400">[ACTION]</span> Extract_Entities(payload.body)` },
+                { time: 2800, text: `<span class="text-gray-500">[SYSTEM]</span> Entities parsed successfully.`, action: () => {
+                    document.getElementById('nx-ctx-company').classList.add('opacity-100');
+                    document.getElementById('nx-ctx-scale').classList.add('opacity-100');
+                }},
+                { time: 3800, text: `<span class="text-purple-400">[THINKING]</span> Need to determine intent and priority based on text: "Enterprise tier", "10,000 requests/day".` },
+                { time: 4800, text: `<span class="text-blue-400">[TOOL]</span> LLM_Classify(text, ['Support', 'Sales', 'Spam']) -> Result: "Sales"` },
+                { time: 5200, text: `<span class="text-gray-500">[SYSTEM]</span> Intent locked.`, action: () => {
+                    document.getElementById('nx-ctx-intent').classList.add('opacity-100');
+                }},
+                { time: 6500, text: `<span class="text-purple-400">[THINKING]</span> High value lead detected. Checking HubSpot for existing records with domain 'acme-corp.com'.` },
+                { time: 7500, text: `<span class="text-blue-400">[TOOL]</span> HubSpot_SearchCompany(domain="acme-corp.com")` },
+                { time: 8200, text: `<span class="text-yellow-400">[API RESPONSE]</span> 404 Not Found. New Logo.` },
+                { time: 9200, text: `<span class="text-green-400">[ACTION]</span> HubSpot_CreateContact(name="Alex Chen", email="alex.chen@acme-corp.com", lead_score=95)` },
+                { time: 10500, text: `<span class="text-green-400">[ACTION]</span> Calendar_CheckAvailability(user="sales_team", date="tomorrow afternoon")` },
+                { time: 11200, text: `<span class="text-yellow-400">[API RESPONSE]</span> Slots available: 14:00, 15:30 UTC.` },
+                { time: 12500, text: `<span class="text-purple-400">[THINKING]</span> Drafting response email with calendar links...` },
+                { time: 14000, text: `<span class="text-accent">[SUCCESS]</span> Response drafted and queued for Human Review. Process complete in 13.5s.`, action: () => {
+                    statusBadge.textContent = 'COMPLETED';
+                    statusBadge.className = 'bg-green-500/20 text-green-400 text-[10px] font-bold px-2 py-0.5 rounded border border-green-500/30';
+                }}
+            ];
+
+            let currentDelay = 0;
+            logSequence.forEach(log => {
+                nexusSimTimeout = setTimeout(() => {
+                    const line = document.createElement('div');
+                    line.className = 'animate-fade-in-up';
+                    
+                    const timeStr = new Date().toISOString().substring(11, 19);
+                    line.innerHTML = `<span class="text-gray-600 mr-3">[${timeStr}]</span> ${log.text}`;
+                    
+                    terminal.appendChild(line);
+                    terminal.scrollTop = terminal.scrollHeight; // Auto-scroll
+                    
+                    if(log.action) log.action();
+
+                }, log.time);
+            });
+        }
     </script>
 </body>
 </html>
