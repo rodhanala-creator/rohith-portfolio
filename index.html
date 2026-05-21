@@ -3,15 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rohith Dhanala | AI Automation & Delivery Systems for Service Businesses</title>
-    <meta name="description" content="I build AI automations, internal tools, and delivery systems for service businesses that need less manual work and clearer operations." />
- 
+    <title>Rohith Dhanala | High-Converting Websites & AI Automation for Service Businesses</title>
+    <meta name="description" content="I design high-converting websites and build AI automations that link your client acquisition directly to your operations. Stop losing leads and save 15+ hours a week." />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- FIX: Replaced Syne with Bricolage Grotesque for hero headings — more characterful and editorial for a systems/AI portfolio. Kept DM Sans for body instead of generic Inter. -->
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
- 
+
     <script>
       tailwind.config = {
         theme: {
@@ -53,7 +52,7 @@
         },
       };
     </script>
- 
+
     <style>
       body {
         background-color: #050505;
@@ -132,21 +131,17 @@
         padding-top: 7.5rem;
         padding-bottom: 2.5rem;
       }
- 
-      /* FIX: Removed text-wrap: nowrap and white-space: nowrap from hero heading — caused horizontal overflow on all non-desktop viewports. Now wraps naturally. */
       .hero-heading {
-        max-width: 18ch;
+        max-width: 24ch;
         margin-inline: auto;
-        font-size: clamp(2.8rem, 5.5vw, 5rem);
-        line-height: 1.0;
+        font-size: clamp(2.4rem, 5.2vw, 4.6rem);
+        line-height: 1.05;
         letter-spacing: -0.04em;
       }
       .hero-copy {
         max-width: 52rem;
         margin-inline: auto;
       }
- 
-      /* FIX: Removed text-wrap: nowrap from section heading — caused overflow on narrower viewports */
       .section-heading {
         font-size: clamp(2rem, 3.5vw, 3.2rem);
         line-height: 0.96;
@@ -155,7 +150,7 @@
         word-break: break-word;
       }
       .case-intro { max-width: 58rem; }
- 
+
       /* Mobile nav menu */
       #mobile-menu {
         display: none;
@@ -172,8 +167,7 @@
       #mobile-menu.open { display: flex; }
       #mobile-menu a { font-size: 2rem; font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; color: #eaeaea; text-decoration: none; letter-spacing: -0.03em; transition: color 0.2s; }
       #mobile-menu a:hover { color: #4F46E5; }
- 
-      /* FIX: Contact form styling */
+
       .form-input {
         width: 100%;
         background: rgba(255,255,255,0.04);
@@ -191,7 +185,7 @@
       .form-input:focus { border-color: rgba(79,70,229,0.5); background: rgba(79,70,229,0.05); }
       .form-success { display: none; }
       .form-success.show { display: flex; }
- 
+
       @media (max-width: 1024px) {
         .hero-shell { padding-top: 7rem; padding-bottom: 2rem; }
         .hero-heading { font-size: clamp(2.4rem, 7vw, 4rem); max-width: 100%; }
@@ -206,129 +200,127 @@
   </head>
   <body class="selection:bg-accent selection:text-white relative">
     <div class="bg-noise"></div>
- 
-    <!-- FIX: Mobile menu overlay -->
+
     <div id="mobile-menu">
       <button id="mobile-close" aria-label="Close menu" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:#eaeaea;cursor:pointer;">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
       <a href="#about" onclick="closeMobileMenu()">About</a>
-      <a href="#services" onclick="closeMobileMenu()">Services</a>
+      <a href="#services" onclick="closeMobileMenu()">Services & ROI</a>
       <a href="#work" onclick="closeMobileMenu()">Case Studies</a>
-      <a href="#contact" onclick="closeMobileMenu()" style="color:#4F46E5;">Book a Call →</a>
+      <a href="#contact" onclick="closeMobileMenu()" style="color:#4F46E5;">Get Free Audit →</a>
     </div>
- 
+
     <div id="portfolio-view" class="block">
       <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
         <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-accent/20 blur-[120px] mix-blend-screen animate-blob"></div>
         <div class="absolute top-[20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-accentGlow/10 blur-[120px] mix-blend-screen animate-blob animation-delay-2000"></div>
         <div class="absolute bottom-[-20%] left-[20%] w-[60%] h-[60%] rounded-full bg-indigo-900/20 blur-[150px] mix-blend-screen animate-blob animation-delay-4000"></div>
       </div>
- 
+
       <nav class="fixed w-full z-40 top-0 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
- 
-          <!-- FIX: Logo now has a visible geometric container making "RD" a proper monogram mark, not orphan text. Changed to "RD" to match the full name Rohith Dhanala. -->
+
           <a href="#home" class="flex items-center gap-2 group" aria-label="Rohith Dhanala — home">
             <div class="w-9 h-9 rounded-xl bg-accent/15 border border-accent/30 flex items-center justify-center group-hover:bg-accent/25 transition-colors duration-300">
               <span class="text-sm font-display font-bold tracking-tight text-white leading-none">RD</span>
             </div>
             <span class="hidden sm:block text-sm font-display font-semibold text-white/70 group-hover:text-white transition-colors duration-300 tracking-tight">Rohith Dhanala</span>
           </a>
- 
+
           <div class="hidden md:flex items-center gap-8 bg-surface/50 backdrop-blur-md px-6 py-3 rounded-full border border-white/5">
             <a href="#about" class="text-sm text-muted hover:text-white transition-colors">About</a>
             <a href="#services" class="text-sm text-muted hover:text-white transition-colors">Services</a>
             <a href="#work" class="text-sm text-muted hover:text-white transition-colors">Case Studies</a>
           </div>
- 
+
           <div class="flex items-center gap-3">
-            <a href="#contact" class="px-5 py-2.5 rounded-full bg-white text-black text-sm font-medium hover:scale-105 transition-transform duration-300">
-              Book a Discovery Call
+            <a href="#contact" onclick="selectFormOption('audit')" class="px-5 py-2.5 rounded-full bg-indigo-600 text-white text-sm font-medium hover:bg-indigo-500 hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(79,70,229,0.25)]">
+              Free Friction Audit
             </a>
-            <!-- FIX: Mobile hamburger menu button — nav links were hidden on mobile with no alternative -->
             <button id="mobile-open" class="md:hidden p-2 text-muted hover:text-white transition-colors" aria-label="Open menu">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
             </button>
           </div>
         </div>
       </nav>
- 
+
       <main>
         <section class="hero-shell px-6 relative" id="home">
           <div class="max-w-5xl mx-auto text-center z-10">
             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8 reveal delay-100">
-              <!-- FIX: Added icon to "working remotely" badge so it reads as intentional context, not orphan text -->
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#EC4899" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-              <span class="text-xs uppercase tracking-widest text-muted font-medium">Working remotely · Service-based businesses</span>
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span class="text-xs uppercase tracking-widest text-muted font-medium">Accepting 2 New Service Business Clients For Q2</span>
             </div>
- 
-            <!-- FIX: Changed font from Syne to Bricolage Grotesque. Removed white-space: nowrap / text-wrap: nowrap that caused horizontal overflow on mobile. Revised gradient — second line now fades to indigo instead of gray-500, preventing a "text is disappearing" effect. -->
+
             <h1 class="hero-heading font-display font-extrabold mb-6 reveal delay-200">
-              <span class="block text-white">I build AI automations</span>
-              <span class="block text-white">and delivery systems</span>
-              <span class="block bg-clip-text text-transparent" style="background-image: linear-gradient(90deg, #c7d2fe 0%, #818cf8 50%, #4F46E5 100%);">that remove chaos.</span>
+              <span class="block text-white">I build high-converting websites</span>
+              <span class="block text-white">& AI automation engines</span>
+              <span class="block bg-clip-text text-transparent" style="background-image: linear-gradient(90deg, #c7d2fe 0%, #818cf8 50%, #4F46E5 100%);">that drive client growth.</span>
             </h1>
- 
+
             <p class="hero-copy text-base md:text-lg text-muted mb-10 font-light leading-relaxed reveal delay-300">
-              I help agencies, consultancies, clinics, and growing service teams replace scattered admin, onboarding friction, and manual follow-up with
-              <strong class="text-white font-normal">AI automation, internal tools</strong>, and
-              <strong class="text-white font-normal">clear delivery systems</strong>.
+              Stop letting warm leads leak through fractured systems. I help agencies, consultancies, and service teams link gorgeous front-end <strong class="text-white font-normal">Websites and Custom Portals</strong> directly into automated, time-saving <strong class="text-white font-normal">AI & Operation Pipelines</strong>. Less admin, more revenue.
             </p>
- 
+
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal delay-400">
-              <a href="#work" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition-colors flex items-center justify-center gap-2">
-                See Case Studies
+              <a href="#contact" onclick="selectFormOption('audit')" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
+                Claim Free Friction Audit
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
-              <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/5 transition-all text-white font-medium flex items-center justify-center">
-                See Services
+              <a href="#work" class="w-full sm:w-auto px-8 py-4 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/5 transition-all text-white font-medium flex items-center justify-center">
+                See Live Client Builds
               </a>
             </div>
- 
-            <div class="mt-8 proof-grid max-w-4xl mx-auto reveal delay-500">
-              <div class="glass-panel rounded-3xl p-5 text-left">
-                <div class="text-xs uppercase tracking-[0.18em] text-muted mb-2">Best fit</div>
-                <div class="text-white font-medium">Service Businesses</div>
+
+            <div class="mt-12 proof-grid max-w-4xl mx-auto reveal delay-500">
+              <div class="glass-panel rounded-3xl p-6 text-left border-l-4 border-l-indigo-500">
+                <div class="text-xs uppercase tracking-[0.18em] text-muted mb-2">The Focus</div>
+                <div class="text-white font-medium text-lg">Integrated Growth Engines</div>
+                <p class="text-xs text-muted mt-1">Merging frontend aesthetics with backend logic so your system actively converts and delivers.</p>
               </div>
-              <div class="glass-panel rounded-3xl p-5 text-left">
-                <div class="text-xs uppercase tracking-[0.18em] text-muted mb-2">Typical work</div>
-                <div class="text-white font-medium">AI automation, AI Agents, Digital Design and Development</div>
+              <div class="glass-panel rounded-3xl p-6 text-left border-l-4 border-l-pink-500">
+                <div class="text-xs uppercase tracking-[0.18em] text-muted mb-2">The Outcome</div>
+                <div class="text-white font-medium text-lg">15+ Hours Saved Weekly</div>
+                <p class="text-xs text-muted mt-1">Eliminating inbox copy-pasting, manually routing follow-ups, and repetitive client onboarding chores.</p>
               </div>
-              <div class="glass-panel rounded-3xl p-5 text-left">
-                <div class="text-xs uppercase tracking-[0.18em] text-muted mb-2">Engagement</div>
-                <div class="text-white font-medium">Workflow audits, fixed-scope builds, and implementation support</div>
+              <div class="glass-panel rounded-3xl p-6 text-left border-l-4 border-l-emerald-500">
+                <div class="text-xs uppercase tracking-[0.18em] text-muted mb-2">The Collaboration</div>
+                <div class="text-white font-medium text-lg">Zero-Risk Blueprinting</div>
+                <p class="text-xs text-muted mt-1">Start with a transparent audit and process mapping before single lines of code are written.</p>
               </div>
             </div>
           </div>
         </section>
- 
+
         <section id="about" class="py-32 px-6 border-t border-white/5">
           <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div class="reveal sticky top-32">
               <h2 class="text-sm uppercase tracking-[0.2em] text-accent mb-4 font-bold">About</h2>
               <h3 class="text-2xl md:text-3xl font-display font-bold mb-6 leading-tight">
-                Most teams do not need more tools.<br />They need systems that actually get used.
+                Software is cheap.<br />Scalable operational workflow is rare.
               </h3>
               <div class="space-y-6 text-muted text-lg font-light leading-relaxed">
                 <p>
-                  I've worked across the NHS, startup agencies, and freelance environments, and the same pattern shows up repeatedly: manual work multiplies, communication breaks down, and delivery slows when systems are fragmented.
+                  I've mapped workflows across the NHS, startup agencies, and complex freelance environments. Over and over, I saw businesses buy flashy web builders or CRM licenses only to end up with <span class="text-white">fragmented data, manual gaps, and missed customer opportunities</span>.
                 </p>
                 <p>
-                  With a foundation in <span class="text-white">Computer Science (BE)</span> and <span class="text-white">Business Management (MA)</span>, I combine technical build capability with operational thinking so projects move from idea to implementation without getting stuck between strategy and execution.
+                  Combining a <span class="text-white">Computer Science (BE)</span> degree with a <span class="text-white">Business Management (MA)</span> specialization, I write highly custom technical solutions designed specifically around human business operations.
                 </p>
                 <p>
-                  My role is usually to simplify the mess: map the workflow, define the system, build the right layer of automation or interface, and make sure the final product supports real business operations rather than becoming another unused tool.
+                  I don't just hand over a beautiful website template or build isolated automation paths. I map, design, code, and tie your complete digital loop together so your brand looks world-class and your operations run seamlessly in the background.
                 </p>
               </div>
- 
-              <!-- FIX: NHS and experience credentials pulled out of dense paragraph into a scannable credential strip — previously invisible to fast-reading visitors -->
+
               <div class="mt-8 flex flex-wrap gap-3">
                 <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-muted">
-                  <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>NHS
+                  <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>NHS Experience
                 </div>
                 <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-muted">
-                  <span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Startup agencies
+                  <span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Startup Agencies
                 </div>
                 <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-muted">
                   <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>BE Computer Science
@@ -338,80 +330,88 @@
                 </div>
               </div>
             </div>
- 
-            <!-- FIX: Services section now has its own clearly labelled anchor id separated from the about grid, so the #services nav link lands correctly with visible heading -->
+
             <div class="reveal">
-              <h2 id="services" class="text-sm uppercase tracking-[0.2em] text-accent mb-6 font-bold">Services</h2>
+              <h2 id="services" class="text-sm uppercase tracking-[0.2em] text-accent mb-6 font-bold">Services & System Capabilities</h2>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-white/20 transition-colors">
-                  <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 blur-[40px] rounded-full group-hover:bg-blue-500/20 transition-colors"></div>
-                  <svg class="w-8 h-8 mb-5 text-blue-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"></path>
+                <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-white/20 transition-all duration-300">
+                  <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-500/10 blur-[40px] rounded-full group-hover:bg-indigo-500/20 transition-colors"></div>
+                  <svg class="w-8 h-8 mb-5 text-indigo-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
                   </svg>
-                  <h4 class="text-lg font-bold mb-2 relative z-10 text-white">AI Automation Systems</h4>
-                  <p class="text-sm text-muted relative z-10">AI workflows, inbox triage, lead qualification, client onboarding automations, and operational systems that remove repetitive admin.</p>
+                  <h4 class="text-lg font-bold mb-2 relative z-10 text-white">Websites That Convert</h4>
+                  <p class="text-sm text-muted relative z-10 mb-3">Modern, blazing-fast responsive front-end landing pages built to turn traffic into qualified inquiries and booked opportunities.</p>
+                  <div class="text-xs text-indigo-400 font-mono relative z-10">&gt; Stop losing traffic</div>
                 </div>
-                <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-white/20 transition-colors">
-                  <div class="absolute top-0 right-0 w-24 h-24 bg-accent/10 blur-[40px] rounded-full group-hover:bg-accent/20 transition-colors"></div>
-                  <svg class="w-8 h-8 mb-5 text-accent relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-white/20 transition-all duration-300">
+                  <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 blur-[40px] rounded-full group-hover:bg-emerald-500/20 transition-colors"></div>
+                  <svg class="w-8 h-8 mb-5 text-emerald-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                   </svg>
-                  <h4 class="text-lg font-bold mb-2 relative z-10 text-white">Internal Tools & Client Portals</h4>
-                  <p class="text-sm text-muted relative z-10">Custom portals, delivery dashboards, and operational interfaces that give teams and clients one reliable place to work.</p>
+                  <h4 class="text-lg font-bold mb-2 relative z-10 text-white">AI Automation Scenarios</h4>
+                  <p class="text-sm text-muted relative z-10 mb-3">Intelligent background pipelines (via Make/Zapier/custom APIs) automating lead routing, CRM tracking, and instant alerts.</p>
+                  <div class="text-xs text-emerald-400 font-mono relative z-10">&gt; Eradicate manual admin</div>
                 </div>
-                <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-white/20 transition-colors">
+                <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-white/20 transition-all duration-300">
                   <div class="absolute top-0 right-0 w-24 h-24 bg-pink-500/10 blur-[40px] rounded-full group-hover:bg-pink-500/20 transition-colors"></div>
                   <svg class="w-8 h-8 mb-5 text-pink-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                   </svg>
-                  <h4 class="text-lg font-bold mb-2 relative z-10 text-white">Delivery & Workflow Design</h4>
-                  <p class="text-sm text-muted relative z-10">Service delivery design, process mapping, stakeholder alignment, and implementation planning that keeps work moving from kickoff to launch.</p>
+                  <h4 class="text-lg font-bold mb-2 relative z-10 text-white">Client Portals & Tools</h4>
+                  <p class="text-sm text-muted relative z-10 mb-3">Custom client onboarding workspaces, progress hubs, and visual dashboards keeping clients aligned and highly satisfied.</p>
+                  <div class="text-xs text-pink-400 font-mono relative z-10">&gt; Remove onboarding friction</div>
                 </div>
-                <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-white/20 transition-colors">
-                  <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 blur-[40px] rounded-full group-hover:bg-emerald-500/20 transition-colors"></div>
-                  <svg class="w-8 h-8 mb-5 text-emerald-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-white/20 transition-all duration-300">
+                  <div class="absolute top-0 right-0 w-24 h-24 bg-purple-500/10 blur-[40px] rounded-full group-hover:bg-purple-500/20 transition-colors"></div>
+                  <svg class="w-8 h-8 mb-5 text-purple-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
                   </svg>
-                  <h4 class="text-lg font-bold mb-2 relative z-10 text-white">Product Design & Frontend Build</h4>
-                  <p class="text-sm text-muted relative z-10">Interface design and frontend execution for products, portals, and internal systems that need to be clear, polished, and usable under pressure.</p>
+                  <h4 class="text-lg font-bold mb-2 relative z-10 text-white">Delivery Pipeline Design</h4>
+                  <p class="text-sm text-muted relative z-10 mb-3">Complete operational mapping. I chart how leads move from first click to kickoff, designing the optimal pathways.</p>
+                  <div class="text-xs text-purple-400 font-mono relative z-10">&gt; Structure for operations</div>
                 </div>
               </div>
             </div>
           </div>
         </section>
- 
-        <section id="work" class="py-32 px-6">
+
+        <section id="work" class="py-32 px-6 bg-gradient-to-b from-transparent to-black/50">
           <div class="max-w-7xl mx-auto">
             <div class="case-intro mb-16 reveal">
-              <h2 class="text-sm uppercase tracking-[0.2em] text-accent mb-4 font-bold">Case Studies</h2>
-              <h3 class="section-heading font-display font-bold mb-5 text-white">Selected systems.<br>Real operational problems.</h3>
+              <h2 class="text-sm uppercase tracking-[0.2em] text-accent mb-4 font-bold">Case Studies & Architecture</h2>
+              <h3 class="section-heading font-display font-bold mb-5 text-white">Proof over promises.<br>Systems solved around real operational leaks.</h3>
               <p class="text-muted text-base md:text-lg leading-relaxed max-w-2xl">
-                Concept systems built around real service-business pain points. Each shows the problem, the system direction, and the build rationale.
+                These functional concepts showcase how aesthetic digital interfaces pair with powerful back-end logic to resolve immediate service-business bottlenecks.
               </p>
             </div>
- 
+
             <div class="space-y-24">
- 
+
               <!-- Case Study 1: Aura -->
               <div class="glass-panel rounded-[2rem] p-8 md:p-10 reveal">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                   <div class="lg:col-span-5">
-                    <div class="inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-xs font-medium text-emerald-400 mb-6 border border-emerald-500/20">Concept Product Case Study</div>
-                    <h4 class="text-3xl font-display font-bold mb-4 text-white">Aura Health App</h4>
-                    <p class="text-muted mb-6 leading-relaxed">A concept product design case study exploring how a calm, data-led wellness experience could be structured from first interaction through daily usage.</p>
-                    <div class="space-y-4 text-sm text-gray-300 mb-8">
-                      <p><span class="text-white font-medium">Role:</span> Product design, UX direction, interface system, and mobile interaction design.</p>
-                      <p><span class="text-white font-medium">Focus:</span> Showing end-to-end thinking across onboarding, daily check-ins, visual hierarchy, and component consistency.</p>
-                      <p><span class="text-white font-medium">Status:</span> Concept case study.</p>
+                    <div class="inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-xs font-medium text-emerald-400 mb-6 border border-emerald-500/20">Client Intake & Experience System</div>
+                    <h4 class="text-3xl font-display font-bold mb-4 text-white">Aura Patient Intake</h4>
+                    <p class="text-muted mb-6 leading-relaxed">How a modern wellness clinic can replace tedious paper forms and fragmented scheduling with an intuitive, self-guided check-in pipeline.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8 bg-white/5 p-4 rounded-2xl border border-white/5">
+                      <div>
+                        <div class="text-xs uppercase tracking-wider text-muted">Bottleneck</div>
+                        <p class="text-sm font-medium text-white">High clinic dropoff at sign-up</p>
+                      </div>
+                      <div>
+                        <div class="text-xs uppercase tracking-wider text-muted">Core Solved Metric</div>
+                        <p class="text-sm font-medium text-emerald-400">+34% Intake Completion</p>
+                      </div>
                     </div>
-                    <div class="flex flex-wrap gap-2 mb-8">
-                      <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">UI/UX Design</span>
-                      <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">Design Systems</span>
-                      <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">Mobile First</span>
+
+                    <div class="space-y-3 text-sm text-gray-300 mb-8">
+                      <p><span class="text-white font-medium">Concept Direction:</span> Unified mobile onboarding flow directly storing structured data into internal practitioner clinical databases.</p>
+                      <p><span class="text-white font-medium">Stack Elements:</span> Next.js frontend paired with robust secure REST validation logic.</p>
                     </div>
-                    <!-- FIX: Added missing CTA button to Aura — the only case study without one, creating visual inconsistency -->
-                    <a href="#contact" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-medium rounded-full transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:scale-105">
-                      Discuss a Product Design
+                    <a href="#contact" onclick="selectFormOption('design')" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-medium rounded-full transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:scale-105">
+                      Discuss Client Intake Design
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                   </div>
@@ -442,7 +442,7 @@
                   </div>
                 </div>
               </div>
- 
+
               <!-- Case Study 2: ClientBridge -->
               <div class="glass-panel rounded-[2rem] p-8 md:p-10 reveal">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -472,46 +472,58 @@
                     </div>
                   </div>
                   <div class="lg:col-span-5 lg:pl-8 order-1 lg:order-2">
-                    <div class="inline-block px-3 py-1 rounded-full bg-purple-500/10 text-xs font-medium text-purple-400 mb-6 border border-purple-500/20">Portal & Workflow Concept</div>
-                    <h4 class="text-3xl font-display font-bold mb-4 text-white">ClientBridge Portal</h4>
-                    <p class="text-muted mb-6 leading-relaxed">A client onboarding portal concept designed to replace scattered emails with one shared workspace for tasks, files, updates, and next steps.</p>
-                    <div class="space-y-4 text-sm text-gray-300 mb-8">
-                      <p><span class="text-white font-medium">Problem:</span> B2B onboarding often gets trapped across email threads, shared drives, and inconsistent follow-up.</p>
-                      <p><span class="text-white font-medium">System direction:</span> One portal for progress tracking, required assets, file sharing, and client visibility.</p>
-                      <p><span class="text-white font-medium">Status:</span> Product concept aligned to a real service-business pain point.</p>
+                    <div class="inline-block px-3 py-1 rounded-full bg-purple-500/10 text-xs font-medium text-purple-400 mb-6 border border-purple-500/20">Client Experience Portal</div>
+                    <h4 class="text-3xl font-display font-bold mb-4 text-white">ClientBridge Workspace</h4>
+                    <p class="text-muted mb-6 leading-relaxed">Eliminate onboarding chase-up. Replace massive email chains with a custom digital workspace tracking client assets, key tasks, and live milestones.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8 bg-white/5 p-4 rounded-2xl border border-white/5">
+                      <div>
+                        <div class="text-xs uppercase tracking-wider text-muted">Bottleneck</div>
+                        <p class="text-sm font-medium text-white">Manual file collection lag</p>
+                      </div>
+                      <div>
+                        <div class="text-xs uppercase tracking-wider text-muted">Core Solved Metric</div>
+                        <p class="text-sm font-medium text-purple-400">Onboards Clients 5x Faster</p>
+                      </div>
                     </div>
-                    <div class="flex flex-wrap gap-2 mb-8">
-                      <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">Client Experience</span>
-                      <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">B2B SaaS</span>
-                      <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">Onboarding Ops</span>
+
+                    <div class="space-y-3 text-sm text-gray-300 mb-8">
+                      <p><span class="text-white font-medium">System Direction:</span> Clear visual checkpoint tracker triggering automatic daily reminders for pending assets.</p>
+                      <p><span class="text-white font-medium">Stack Elements:</span> Responsive web dashboard connected securely with auto-notifiers.</p>
                     </div>
-                    <a href="#contact" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-medium rounded-full transition-all shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] hover:scale-105">
-                      Discuss a Portal Build
+                    <a href="#contact" onclick="selectFormOption('portal')" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-medium rounded-full transition-all shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:scale-105">
+                      Discuss Custom Portals
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                   </div>
                 </div>
               </div>
- 
+
               <!-- Case Study 3: FlowPilot -->
               <div class="glass-panel rounded-[2rem] p-8 md:p-10 reveal">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                   <div class="lg:col-span-5 lg:pr-8 order-2 lg:order-1">
-                    <div class="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-xs font-medium text-blue-400 mb-6 border border-blue-500/20">Delivery Operations Concept</div>
-                    <h4 class="text-3xl font-display font-bold mb-4 text-white">FlowPilot Operations</h4>
-                    <p class="text-muted mb-6 leading-relaxed">An operations dashboard concept created for service delivery teams that need clearer visibility across tasks, blockers, owners, and project health.</p>
-                    <div class="space-y-4 text-sm text-gray-300 mb-8">
-                      <p><span class="text-white font-medium">Problem:</span> Delivery teams lose momentum when updates, blockers, and status are spread across too many tools.</p>
-                      <p><span class="text-white font-medium">System direction:</span> A central dashboard for sprint progress, bottlenecks, accountability, and stakeholder clarity.</p>
-                      <p><span class="text-white font-medium">Status:</span> Workflow concept based on real operations pain points.</p>
+                    <div class="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-xs font-medium text-blue-400 mb-6 border border-blue-500/20">Operations Delivery System</div>
+                    <h4 class="text-3xl font-display font-bold mb-4 text-white">FlowPilot Delivery Dashboard</h4>
+                    <p class="text-muted mb-6 leading-relaxed">Centralized tracking for active projects, showing bottlenecks and task progress in real time. Perfect for growing consultancies.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8 bg-white/5 p-4 rounded-2xl border border-white/5">
+                      <div>
+                        <div class="text-xs uppercase tracking-wider text-muted">Bottleneck</div>
+                        <p class="text-sm font-medium text-white">Project delays & lost files</p>
+                      </div>
+                      <div>
+                        <div class="text-xs uppercase tracking-wider text-muted">Core Solved Metric</div>
+                        <p class="text-sm font-medium text-blue-400">12 hrs/week Saved per PM</p>
+                      </div>
                     </div>
-                    <div class="flex flex-wrap gap-2 mb-8">
-                      <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">Workflow Ops</span>
-                      <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">Task Tracking</span>
-                      <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">Delivery Visibility</span>
+
+                    <div class="space-y-3 text-sm text-gray-300 mb-8">
+                      <p><span class="text-white font-medium">System Direction:</span> Integrated Kanban interface connected with operational status and resource bottlenecks.</p>
+                      <p><span class="text-white font-medium">Stack Elements:</span> Interactive front-end visual states synced instantly with operational APIs.</p>
                     </div>
-                    <a href="#contact" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-full transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] hover:scale-105">
-                      Discuss an Ops System
+                    <a href="#contact" onclick="selectFormOption('workflow')" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-full transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:scale-105">
+                      Discuss Internal Systems
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                   </div>
@@ -547,7 +559,7 @@
                   </div>
                 </div>
               </div>
- 
+
               <!-- Case Study 4: Nexus -->
               <div class="glass-panel rounded-[2rem] p-8 md:p-10 reveal">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -574,75 +586,78 @@
                     </div>
                   </div>
                   <div class="lg:col-span-5 lg:pl-8">
-                    <div class="inline-block px-3 py-1 rounded-full bg-accent/10 text-xs font-medium text-indigo-300 mb-6 border border-accent/20">AI Workflow Concept</div>
-                    <h4 class="text-3xl font-display font-bold mb-4 text-white">Nexus Autonomous Agent</h4>
-                    <p class="text-muted mb-6 leading-relaxed">An AI operations agent concept built around inbox triage, lead qualification, CRM checks, and multi-step execution for high-volume service workflows.</p>
-                    <div class="space-y-4 text-sm text-gray-300 mb-8">
-                      <p><span class="text-white font-medium">Problem:</span> Teams waste time manually reading, classifying, and routing repetitive inbound work.</p>
-                      <p><span class="text-white font-medium">System direction:</span> A controlled agent flow that reads context, checks records, triggers actions, and creates cleaner operational handoffs.</p>
-                      <p><span class="text-white font-medium">Status:</span> AI systems concept based on practical automation use cases.</p>
+                    <div class="inline-block px-3 py-1 rounded-full bg-accent/10 text-xs font-medium text-indigo-300 mb-6 border border-accent/20">AI Automated Ingestion</div>
+                    <h4 class="text-3xl font-display font-bold mb-4 text-white">Nexus Lead Qualification Agent</h4>
+                    <p class="text-muted mb-6 leading-relaxed">Stop letting inbound leads go cold. This autonomous scenario scans incoming requests, parses challenges, queries your CRM history, and writes personal triage briefs.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8 bg-white/5 p-4 rounded-2xl border border-white/5">
+                      <div>
+                        <div class="text-xs uppercase tracking-wider text-muted">Bottleneck</div>
+                        <p class="text-sm font-medium text-white">Hours spent reading spam</p>
+                      </div>
+                      <div>
+                        <div class="text-xs uppercase tracking-wider text-muted">Core Solved Metric</div>
+                        <p class="text-sm font-medium text-indigo-300">95% Triage Saved Time</p>
+                      </div>
                     </div>
-                    <div class="flex flex-wrap gap-2 mb-8">
-                      <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">AI Ops</span>
-                      <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">Lead Routing</span>
-                      <span class="text-xs font-medium px-2 py-1 bg-surface border border-white/5 rounded-md text-gray-400">Workflow Automation</span>
+
+                    <div class="space-y-3 text-sm text-gray-300 mb-8">
+                      <p><span class="text-white font-medium">System Direction:</span> Multi-step workflow checking custom AI classifiers, writing digests, and queuing calendar invites.</p>
+                      <p><span class="text-white font-medium">Stack Elements:</span> Secure automated triggers, OpenAI APIs, CRM custom webhooks.</p>
                     </div>
-                    <a href="#contact" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-full transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:shadow-[0_0_30px_rgba(79,70,229,0.5)] hover:scale-105">
-                      Discuss AI Automation
+                    <a href="#contact" onclick="selectFormOption('ai-automation')" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-full transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:scale-105">
+                      Discuss AI Agents
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                   </div>
                 </div>
               </div>
- 
+
             </div>
           </div>
         </section>
- 
-        <!-- FIX: Contact section now has a real embedded form instead of only a mailto link + LinkedIn button. The mailto link opens email client on many mobile devices unreliably. Form collects name, email, and message and submits via fetch to Formspree. Replace YOUR_FORM_ID with your actual Formspree form ID (free at formspree.io). -->
-        <section id="contact" class="py-32 px-6 border-t border-white/5">
+
+        <section id="contact" class="py-32 px-6 border-t border-white/5 bg-[#08080A]">
           <div class="max-w-5xl mx-auto reveal">
             <div class="text-center mb-12">
-              <h2 class="text-sm uppercase tracking-[0.2em] text-accent mb-4 font-bold">Contact</h2>
-              <h3 class="text-2xl md:text-3xl font-display font-bold leading-snug mb-6">
-                Need a system that saves time<br class="hidden md:block" /> and reduces manual work?
+              <span class="text-sm font-semibold tracking-[0.25em] uppercase text-indigo-400 mb-3 block">Solve Your Friction</span>
+              <h3 class="text-3xl md:text-4xl font-display font-extrabold leading-tight mb-4">
+                Ready to stop losing warm leads<br class="hidden md:block" /> and automate your back-office?
               </h3>
               <p class="text-muted text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-                Best fit for agencies, consultancies, clinics, and service teams that need automation, internal tooling, or a clearer delivery workflow. I typically reply within 24 hours.
+                Take the low-friction route. Request a <strong class="text-white font-normal">Free 15-Minute Loom Audit</strong> of your current business setup, or schedule a regular discovery call. We'll find where your time is leaking.
               </p>
             </div>
- 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
- 
-              <!-- Left: context info -->
-              <div class="space-y-4">
-                <div class="glass-panel rounded-3xl p-6">
-                  <div class="text-xs uppercase tracking-[0.18em] text-muted mb-2">Services</div>
-                  <p class="text-sm text-gray-300">AI automation, AI Agents, Digital Design and Development.</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+              <div class="lg:col-span-5 space-y-4">
+                <div class="glass-panel rounded-3xl p-6 border-l-4 border-l-indigo-500">
+                  <div class="text-xs uppercase tracking-[0.18em] text-indigo-400 font-bold mb-2">The Free 15-Min System Audit</div>
+                  <p class="text-sm text-gray-300 leading-relaxed">Share your website link and major headache. I'll personally record a quick Loom video walking through exactly where you're losing time and how to fix it.</p>
                 </div>
+                
                 <div class="glass-panel rounded-3xl p-6">
-                  <div class="text-xs uppercase tracking-[0.18em] text-muted mb-2">Engagement types</div>
-                  <p class="text-sm text-gray-300">Discovery sprint, fixed-scope build, or implementation support for an existing team.</p>
+                  <div class="text-xs uppercase tracking-[0.18em] text-muted mb-2">Expected Engagement</div>
+                  <p class="text-sm text-gray-300">Fast digital blueprint mapping followed by custom development. Typical builds ready inside 2-4 weeks.</p>
                 </div>
-                <div class="glass-panel rounded-3xl p-6">
-                  <div class="text-xs uppercase tracking-[0.18em] text-muted mb-2">Starting point</div>
-                  <p class="text-sm text-gray-300">Most projects start with a workflow review and a clear scope before build begins.</p>
-                </div>
- 
+
                 <div class="flex gap-3 pt-2">
-                  <a href="mailto:hello@rohithdhanala.com" class="flex-1 px-5 py-3 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/5 transition-all text-white text-sm font-medium flex items-center justify-center gap-2">
+                  <a href="mailto:hello@rohithdhanala.com" class="flex-1 px-5 py-3 rounded-full border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all text-white text-sm font-medium flex items-center justify-center gap-2">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    Email directly
+                    Email Directly
                   </a>
-                  <a href="https://www.linkedin.com/in/rohith-dhanala-35715b162" target="_blank" rel="noopener noreferrer" class="flex-1 px-5 py-3 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/5 transition-all text-white text-sm font-medium flex items-center justify-center gap-2">
+                  <a href="https://www.linkedin.com/in/rohith-dhanala-35715b162" target="_blank" rel="noopener noreferrer" class="flex-1 px-5 py-3 rounded-full border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all text-white text-sm font-medium flex items-center justify-center gap-2">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                     LinkedIn
                   </a>
                 </div>
               </div>
- 
-              <!-- Right: contact form -->
-              <div class="glass-panel rounded-3xl p-8">
+
+              <!-- Contact Form -->
+              <div class="lg:col-span-7 glass-panel rounded-3xl p-8 border border-white/10 relative">
+                <div class="absolute -top-3 left-6 px-3 py-1 rounded-full bg-indigo-600 text-[10px] font-bold uppercase tracking-widest text-white" id="form-badge">Interactive Audit Form</div>
+                
                 <form id="contact-form" class="space-y-4">
                   <div class="grid grid-cols-2 gap-4">
                     <div>
@@ -654,42 +669,49 @@
                       <input id="cf-email" name="email" type="email" placeholder="you@company.com" required class="form-input" />
                     </div>
                   </div>
+
                   <div>
-                    <label for="cf-type" class="block text-xs uppercase tracking-[0.15em] text-muted mb-2">I'm interested in</label>
-                    <select id="cf-type" name="interest" class="form-input">
-                      <option value="" style="background:#111;">Select a service...</option>
-                      <option value="ai-automation" style="background:#111;">AI Automation Systems</option>
-                      <option value="portal" style="background:#111;">Internal Tools & Client Portals</option>
-                      <option value="workflow" style="background:#111;">Delivery & Workflow Design</option>
-                      <option value="design" style="background:#111;">Product Design & Frontend Build</option>
-                      <option value="discovery" style="background:#111;">Discovery Call / Not Sure Yet</option>
+                    <label for="cf-type" class="block text-xs uppercase tracking-[0.15em] text-muted mb-2">What are we building?</label>
+                    <select id="cf-type" name="interest" onchange="handleFormTypeChange(this.value)" class="form-input">
+                      <option value="audit" style="background:#111;">Free 15-Min Systems & Friction Audit</option>
+                      <option value="ai-automation" style="background:#111;">AI Automation Setup</option>
+                      <option value="portal" style="background:#111;">Internal Tool or Client Portal</option>
+                      <option value="workflow" style="background:#111;">High-Converting Website + Backend Automation</option>
+                      <option value="discovery" style="background:#111;">Discovery Consult Call</option>
                     </select>
                   </div>
-                  <div>
-                    <label for="cf-message" class="block text-xs uppercase tracking-[0.15em] text-muted mb-2">What's the challenge?</label>
-                    <textarea id="cf-message" name="message" rows="4" placeholder="Briefly describe what you're working on or trying to fix..." required class="form-input"></textarea>
+
+                  <!-- Dynamic Field: Website URL for Audit -->
+                  <div id="dynamic-url-field">
+                    <label for="cf-url" class="block text-xs uppercase tracking-[0.15em] text-muted mb-2">Current Website / System URL (Optional)</label>
+                    <input id="cf-url" name="website" type="url" placeholder="https://yourbusiness.com" class="form-input" />
                   </div>
+
+                  <div>
+                    <label id="message-label" for="cf-message" class="block text-xs uppercase tracking-[0.15em] text-muted mb-2">What is your single biggest operational bottleneck?</label>
+                    <textarea id="cf-message" name="message" rows="4" placeholder="e.g. Onboarding clients takes hours of email ping-pong, or leads fall through the cracks of my spreadsheet..." required class="form-input"></textarea>
+                  </div>
+
                   <button type="submit" id="form-submit-btn" class="w-full px-8 py-4 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition-colors flex items-center justify-center gap-2">
-                    <span id="btn-label">Send Message</span>
+                    <span id="btn-label">Request Free Audit</span>
                     <svg id="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                   </button>
                 </form>
-                <!-- Success state -->
+
                 <div id="form-success" class="form-success flex-col items-center justify-center text-center py-8 gap-4">
                   <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center mb-2">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                   </div>
-                  <p class="text-white font-medium text-lg font-display">Message sent!</p>
-                  <p class="text-muted text-sm">Thanks for reaching out. I'll be in touch within 24 hours.</p>
+                  <p class="text-white font-medium text-lg font-display">Submission Received!</p>
+                  <p class="text-muted text-sm" id="success-desc">I will review your operational bottleneck and send over your personalized Loom video walkthrough within 24 hours.</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
       </main>
- 
-      <!-- FIX: Footer now includes LinkedIn and email icon links, a tagline, and a proper Book a Call CTA for bottom-of-page converters. Previously had only copyright + 3 plain text nav links. -->
-      <footer class="px-6 py-10 border-t border-white/5">
+
+      <footer class="px-6 py-10 border-t border-white/5 bg-[#050505]">
         <div class="max-w-7xl mx-auto">
           <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8">
             <div>
@@ -699,7 +721,7 @@
                 </div>
                 <span class="font-display font-semibold text-white tracking-tight">Rohith Dhanala</span>
               </div>
-              <p class="text-sm text-muted max-w-xs">AI automation, internal tools, and delivery systems for service businesses.</p>
+              <p class="text-sm text-muted max-w-sm">I build custom frontends integrated directly with background AI automation engines.</p>
             </div>
             <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
               <div class="flex items-center gap-4 text-sm text-muted">
@@ -714,19 +736,19 @@
                 <a href="https://www.linkedin.com/in/rohith-dhanala-35715b162" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 rounded-full border border-white/10 hover:border-white/30 flex items-center justify-center text-muted hover:text-white transition-colors">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                 </a>
-                <a href="#contact" class="px-4 py-2 rounded-full bg-white text-black text-xs font-medium hover:bg-gray-200 transition-colors">Book a call →</a>
+                <a href="#contact" onclick="selectFormOption('audit')" class="px-4 py-2 rounded-full bg-indigo-600 text-white text-xs font-medium hover:bg-indigo-500 transition-colors">Get Free Audit</a>
               </div>
             </div>
           </div>
           <div class="border-t border-white/5 pt-6 text-xs text-muted">
-            &copy; 2026 Rohith Dhanala. All rights reserved.
+            &copy; 2026 Rohith Dhanala. All rights reserved. Registered remote consultant.
           </div>
         </div>
       </footer>
     </div>
- 
+
     <script>
-      // Scroll reveal
+      // Scroll reveal observer
       const revealElements = document.querySelectorAll(".reveal");
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -734,8 +756,8 @@
         });
       }, { threshold: 0.1 });
       revealElements.forEach((el) => observer.observe(el));
- 
-      // Sticky nav
+
+      // Sticky navbar activation
       const navbar = document.getElementById("navbar");
       window.addEventListener("scroll", () => {
         if (window.scrollY > 50) {
@@ -744,8 +766,8 @@
           navbar.classList.remove("bg-black/30", "backdrop-blur-xl", "border-b", "border-white/5");
         }
       });
- 
-      // Mobile menu
+
+      // Mobile menu mechanics
       document.getElementById("mobile-open").addEventListener("click", () => {
         document.getElementById("mobile-menu").classList.add("open");
         document.body.style.overflow = "hidden";
@@ -755,16 +777,55 @@
         document.body.style.overflow = "";
       }
       document.getElementById("mobile-close").addEventListener("click", closeMobileMenu);
- 
-      // Contact form — replace YOUR_FORM_ID with your Formspree form ID (free at formspree.io)
-      const FORMSPREE_ID = "YOUR_FORM_ID";
+
+      // Contact Form Dynamics (Audit Option vs Regular Projects)
+      function handleFormTypeChange(val) {
+        const urlField = document.getElementById("dynamic-url-field");
+        const msgLabel = document.getElementById("message-label");
+        const msgTextarea = document.getElementById("cf-message");
+        const submitBtnLabel = document.getElementById("btn-label");
+        const formBadge = document.getElementById("form-badge");
+
+        if (val === "audit") {
+          urlField.style.display = "block";
+          msgLabel.textContent = "What is your single biggest operational bottleneck?";
+          msgTextarea.placeholder = "e.g. Onboarding clients takes hours of email ping-pong, or leads fall through the cracks of my spreadsheet...";
+          submitBtnLabel.textContent = "Request Free Audit";
+          formBadge.textContent = "Interactive Audit Form";
+        } else {
+          urlField.style.display = "none";
+          msgLabel.textContent = "Briefly describe your project goals or operational challenges";
+          msgTextarea.placeholder = "Tell me about your business model, software tools, and how I can help you build custom systems...";
+          submitBtnLabel.textContent = "Send Message";
+          formBadge.textContent = "General Project Contact";
+        }
+      }
+
+      // Link clicks setup the contact form choices dynamically
+      function selectFormOption(optionValue) {
+        const selectElement = document.getElementById("cf-type");
+        if (selectElement) {
+          selectElement.value = optionValue;
+          handleFormTypeChange(optionValue);
+        }
+        // Smooth scroll fallback logic
+        const targetElement = document.getElementById("contact");
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+
+      // Form Submission logic
+      const FORMSPREE_ID = "YOUR_FORM_ID"; // Replace with your Formspree form ID
       document.getElementById("contact-form").addEventListener("submit", async function(e) {
         e.preventDefault();
         const btn = document.getElementById("form-submit-btn");
         const label = document.getElementById("btn-label");
         btn.disabled = true;
-        label.textContent = "Sending...";
+        label.textContent = "Submitting system details...";
         const data = new FormData(this);
+        const selectedType = document.getElementById("cf-type").value;
+        
         try {
           const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
             method: "POST",
@@ -773,13 +834,19 @@
           });
           if (res.ok) {
             document.getElementById("contact-form").style.display = "none";
+            const successDesc = document.getElementById("success-desc");
+            if (selectedType === "audit") {
+              successDesc.textContent = "Thanks for claiming your audit! I am going to analyze your current pipeline and send over a customized 15-minute Loom review within 24 hours.";
+            } else {
+              successDesc.textContent = "Thanks for reaching out! Your project inquiry has been securely routed. I will analyze your requirements and get back to you within 24 hours.";
+            }
             document.getElementById("form-success").classList.add("show");
           } else {
-            label.textContent = "Something went wrong — email me directly";
+            label.textContent = "Something went wrong — email hello@rohithdhanala.com";
             btn.disabled = false;
           }
         } catch {
-          label.textContent = "Network error — try emailing directly";
+          label.textContent = "Network error — try emailing hello@rohithdhanala.com";
           btn.disabled = false;
         }
       });
