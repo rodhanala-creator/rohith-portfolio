@@ -176,7 +176,7 @@
         max-width: none;
         margin-inline: auto;
         font-size: clamp(1.4rem, 2.0vw, 2.25rem);
-        line-height: 0.9;
+        line-height: 1.0;
         letter-spacing: -0.055em;
         text-wrap: nowrap;
       }
@@ -187,9 +187,9 @@
         max-width: 52rem;
         margin-inline: auto;
       }
-      .section-heading {
+      .section-heading { max-width: 100%; overflow-wrap: break-word;
         max-width: none;
-        font-size: clamp(2.4rem, 4.2vw, 4.5rem);
+        font-size: clamp(1.8rem, 2.8vw, 3rem);
         line-height: 0.94;
         letter-spacing: -0.045em;
         text-wrap: nowrap;
@@ -203,13 +203,13 @@
           padding-bottom: 2rem;
         }
         .hero-heading {
-          max-width: 10ch;
+          max-width: 100%;
           font-size: clamp(2.75rem, 7.6vw, 4.9rem);
           line-height: 0.92;
         }
-        .section-heading {
-          max-width: 10ch;
-          font-size: clamp(2.25rem, 5.4vw, 3.75rem);
+        .section-heading { max-width: 100%; overflow-wrap: break-word;
+          max-width: 100%;
+          font-size: clamp(1.6rem, 2.6vw, 2.6rem);
         }
       }
       @media (max-width: 768px) {
@@ -227,9 +227,9 @@
           line-height: 0.96;
           letter-spacing: -0.05em;
         }
-        .section-heading {
+        .section-heading { max-width: 100%; overflow-wrap: break-word;
           max-width: 9ch;
-          font-size: clamp(2rem, 8vw, 3.2rem);
+          font-size: clamp(1.5rem, 6vw, 2.2rem);
           line-height: 0.98;
         }
       }
@@ -411,7 +411,7 @@
                 About
               </h2>
               <h3
-                class="text-4xl md:text-5xl font-display font-bold mb-6 leading-tight"
+                class="text-2xl md:text-3xl font-display font-bold mb-6 leading-tight"
               >
                 Most teams do not need more tools.<br />They need systems that
                 actually get used.
@@ -575,7 +575,7 @@
               <h3
                 class="section-heading font-display font-bold mb-5 text-white"
               >
-                Selected systems built around real operational problems.
+                Selected systems. Real operational problems.
               </h3>
               <p class="text-muted text-base md:text-lg leading-relaxed">
                 Each project below shows the problem, the system direction, and
@@ -1074,7 +1074,7 @@
               Contact
             </h2>
             <h3
-              class="text-4xl md:text-6xl font-display font-bold leading-tight mb-6"
+              class="text-3xl md:text-5xl font-display font-bold leading-tight mb-6"
             >
               Need a system that saves time <br class="hidden md:block" />and
               reduces manual work?
