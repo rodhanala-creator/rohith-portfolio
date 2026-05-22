@@ -1,15 +1,16 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth bg-[#030303]">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rohith Dhanala | High-Converting Websites, AI Automation & Client Systems</title>
+    <title>Rohith Dhanala | Portfolio — High-Converting Websites, AI Automation & Systems</title>
     <meta name="description" content="I build high-converting landing pages linked directly to custom AI automations, client portals, and internal delivery systems." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
     
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -22,25 +23,19 @@
               mono: ["JetBrains Mono", "monospace"],
             },
             colors: {
-              background: "#030303",
-              surface: "#0A0A0B",
-              surfaceHover: "#121214",
-              primary: "#F5F5F7",
-              muted: "#9E9EAF",
+              background: "#08080C",
+              panel: "#0E0E16",
+              panelHover: "#141422",
+              primary: "#FFFFFF",
+              muted: "#94A3B8",
               accent: "#4F46E5",
-              accentGlow: "#C084FC",
-              success: "#10B981"
+              accentGlow: "#8B5CF6",
+              emeraldAccent: "#10B981"
             },
             animation: {
-              blob: "blob 10s infinite",
-            },
-            keyframes: {
-              blob: {
-                "0%, 100%": { transform: "translate(0px, 0px) scale(1)" },
-                "33%": { transform: "translate(30px, -40px) scale(1.08)" },
-                "66%": { transform: "translate(-20px, 20px) scale(0.95)" },
-              }
-            },
+              'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'spin-slow': 'spin 12s linear infinite',
+            }
           },
         },
       };
@@ -48,396 +43,580 @@
 
     <style>
       body {
-        background-color: #030303;
-        color: #F5F5F7;
+        background-color: #08080C;
+        color: #F8FAFC;
         overflow-x: hidden;
         -webkit-font-smoothing: antialiased;
+        font-family: 'DM Sans', sans-serif;
       }
-      .bg-noise {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
+
+      /* Premium Cyber Blueprint Grid Background */
+      .bg-grid {
+        background-size: 50px 50px;
+        background-image: 
+          linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+      }
+
+      /* Radial Glows */
+      .glow-orb {
+        filter: blur(120px);
+        opacity: 0.12;
         pointer-events: none;
-        z-index: 50;
-        opacity: 0.015;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
       }
+
+      /* Modern Noise Overlay for Texture */
+      .noise-overlay {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 99;
+        opacity: 0.02;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+
+      /* Animated Reveal Mechanics */
       .reveal {
         opacity: 0;
-        transform: translateY(16px);
-        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translateY(24px);
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .reveal.active {
         opacity: 1;
         transform: translateY(0);
       }
-      .glass-panel {
-        background: rgba(10, 10, 11, 0.6);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+
+      /* High-End Frosted Glass Cards with Premium Border Gradients */
+      .glass-card {
+        background: rgba(14, 14, 22, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       }
-      ::-webkit-scrollbar { width: 6px; height: 6px; }
-      ::-webkit-scrollbar-track { background: transparent; }
-      ::-webkit-scrollbar-thumb { background: #27272A; border-radius: 4px; }
-      ::-webkit-scrollbar-thumb:hover { background: #3F3F46; }
-      
-      .hero-shell {
-        min-height: 95svh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-top: 7rem;
-        padding-bottom: 4rem;
-      }
-      
-      .hero-heading {
-        font-size: clamp(2.2rem, 5.2vw, 4.5rem);
-        line-height: 1.15;
-        letter-spacing: -0.03em;
+      .glass-card:hover {
+        border-color: rgba(255, 255, 255, 0.1);
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px -15px rgba(79, 70, 229, 0.15);
       }
 
-      .sandbox-overlay {
+      /* Beautiful Custom Scrollbars */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #08080C;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1E1E2F;
+        border-radius: 99px;
+        border: 2px solid #08080C;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #2D2D44;
+      }
+
+      /* Custom Slide-over Overlay Drawer style */
+      .sandbox-drawer {
         transform: translateX(100%);
-        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
       }
-      .sandbox-overlay.open {
+      .sandbox-drawer.active {
         transform: translateX(0);
-      }
-      .form-input {
-        width: 100%;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 0.75rem;
-        padding: 0.75rem 1rem;
-        font-size: 0.875rem;
-        color: #FFFFFF;
-        outline: none;
-        transition: all 0.2s;
-      }
-      .form-input:focus {
-        border-color: #4F46E5;
-        background: rgba(255, 255, 255, 0.05);
       }
     </style>
   </head>
   
-  <body class="selection:bg-accent selection:text-white relative font-sans">
-    <div class="bg-noise"></div>
+  <body class="selection:bg-indigo-600 selection:text-white relative bg-background antialiased">
+    <!-- Ambient Texture Elements -->
+    <div class="noise-overlay"></div>
+    <div class="fixed inset-0 bg-grid -z-20"></div>
 
-    <div id="mobile-menu" class="hidden fixed inset-0 bg-background/98 backdrop-blur-2xl z-50 flex flex-col items-center justify-center gap-8">
-      <button id="mobile-close" aria-label="Close menu" class="absolute top-6 right-6 text-muted hover:text-white transition-colors">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    <!-- Mesh Gradient Orbs -->
+    <div class="fixed top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full bg-indigo-600/20 glow-orb -z-10 animate-pulse-slow"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-purple-600/15 glow-orb -z-10 animate-pulse-slow" style="animation-delay: 2s;"></div>
+    <div class="fixed top-[40%] left-[30%] w-[40%] h-[40%] rounded-full bg-emerald-500/10 glow-orb -z-10 animate-pulse-slow" style="animation-delay: 4s;"></div>
+
+    <!-- Mobile Menu Modal Overlay -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-background/95 backdrop-blur-2xl z-50 flex flex-col items-center justify-center gap-8 transition-all duration-300">
+      <button id="mobile-close" aria-label="Close menu" class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
-      <a href="#about" onclick="closeMobileMenu()" class="text-2xl font-display font-medium text-muted hover:text-white">About System</a>
-      <a href="#services" onclick="closeMobileMenu()" class="text-2xl font-display font-medium text-muted hover:text-white">What I Build</a>
-      <a href="#work" onclick="closeMobileMenu()" class="text-2xl font-display font-medium text-muted hover:text-white">Case Studies</a>
-      <a href="#contact" onclick="closeMobileMenu()" class="text-2xl font-display font-medium text-accent hover:text-indigo-400">Request Custom Audit →</a>
+      <a href="#about" onclick="closeMobileMenu()" class="text-3xl font-display font-semibold text-muted hover:text-white transition-all">About Blueprint</a>
+      <a href="#services" onclick="closeMobileMenu()" class="text-3xl font-display font-semibold text-muted hover:text-white transition-all">Capabilities</a>
+      <a href="#work" onclick="closeMobileMenu()" class="text-3xl font-display font-semibold text-muted hover:text-white transition-all">Case Sandbox</a>
+      <a href="#contact" onclick="closeMobileMenu()" class="text-3xl font-display font-semibold text-indigo-400 hover:text-indigo-300 transition-all">Request Systems Audit →</a>
     </div>
 
-    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-      <div class="absolute top-[-10%] left-[-15%] w-[45%] h-[45%] rounded-full bg-accent/10 blur-[140px] animate-blob"></div>
-      <div class="absolute bottom-[10%] right-[-10%] w-[45%] h-[45%] rounded-full bg-accentGlow/5 blur-[140px] animate-blob"></div>
-    </div>
-
-    <nav class="fixed w-full z-40 top-0 transition-all duration-300 border-b border-transparent" id="navbar">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="#home" class="flex items-center gap-2 group" aria-label="Rohith Dhanala - Home">
-          <div class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent/20 group-hover:border-accent/40 transition-all duration-300">
-            <span class="text-sm font-display font-bold tracking-tight text-white leading-none">RD</span>
+    <!-- Navigation Header Bar -->
+    <nav class="fixed w-full z-40 top-0 transition-all duration-500 border-b border-transparent py-4" id="navbar">
+      <div class="max-w-7xl mx-auto px-6 md:px-10 flex justify-between items-center">
+        <!-- Brand Identity -->
+        <a href="#home" class="flex items-center gap-3 group" aria-label="Rohith Dhanala - Home">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/10 group-hover:scale-105 transition-all duration-300">
+            <span class="text-sm font-display font-extrabold tracking-wider text-white">RD</span>
           </div>
-          <span class="text-sm font-display font-semibold text-white/90 group-hover:text-white transition-colors duration-300 tracking-tight">Rohith Dhanala</span>
+          <div class="flex flex-col">
+            <span class="text-sm font-display font-bold text-white tracking-tight group-hover:text-indigo-300 transition-colors">Rohith Dhanala</span>
+            <span class="text-[9px] font-mono tracking-widest text-indigo-400 uppercase">Operational Eng.</span>
+          </div>
         </a>
 
-        <div class="hidden md:flex items-center gap-8 bg-surface/60 backdrop-blur-md px-6 py-2.5 rounded-full border border-white/5">
-          <a href="#about" class="text-xs tracking-wider uppercase text-muted hover:text-white transition-colors font-medium">About</a>
-          <a href="#services" class="text-xs tracking-wider uppercase text-muted hover:text-white transition-colors font-medium">Services</a>
-          <a href="#work" class="text-xs tracking-wider uppercase text-muted hover:text-white transition-colors font-medium">Case Sandbox</a>
+        <!-- Middle Pill Navbar Links -->
+        <div class="hidden md:flex items-center gap-2 bg-panel/80 backdrop-blur-xl px-2 py-1.5 rounded-full border border-white/5 shadow-inner">
+          <a href="#about" class="text-xs tracking-wider uppercase text-muted hover:text-white px-4 py-2 rounded-full hover:bg-white/5 transition-all font-semibold">About</a>
+          <a href="#services" class="text-xs tracking-wider uppercase text-muted hover:text-white px-4 py-2 rounded-full hover:bg-white/5 transition-all font-semibold">Capabilities</a>
+          <a href="#work" class="text-xs tracking-wider uppercase text-muted hover:text-white px-4 py-2 rounded-full hover:bg-white/5 transition-all font-semibold">Case Sandbox</a>
         </div>
 
+        <!-- Action Buttons -->
         <div class="flex items-center gap-3">
-          <a href="#contact" onclick="selectFormOption('audit')" class="hidden sm:inline-block px-5 py-2.5 rounded-full bg-indigo-600 text-white class text-xs font-semibold uppercase tracking-wider hover:bg-indigo-500 transition-all duration-200 shadow-[0_0_20px_rgba(79,70,229,0.2)]">
+          <a href="#contact" onclick="selectFormOption('audit')" class="hidden sm:inline-flex px-6 py-2.5 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white text-xs font-bold uppercase tracking-wider transition-all shadow-[0_4px_20px_rgba(79,70,229,0.3)] hover:shadow-[0_4px_25px_rgba(79,70,229,0.5)] active:scale-95">
             Free Systems Audit
           </a>
-          <button id="mobile-open" class="md:hidden p-2 text-muted hover:text-white transition-colors" aria-label="Open menu">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <button id="mobile-open" class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-panel border border-white/5 text-muted hover:text-white transition-all" aria-label="Open menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           </button>
         </div>
       </div>
     </nav>
 
+    <!-- Hero Main Container -->
     <main>
-      <section class="hero-shell px-6 relative" id="home">
-        <div class="max-w-5xl mx-auto text-center z-10">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8 reveal">
-            <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span class="text-[10px] uppercase tracking-[0.2em] text-muted font-bold">Accepting 2 Selected Clients for Q2</span>
-          </div>
-
-          <h1 class="hero-heading font-display font-extrabold mb-6 max-w-4xl mx-auto reveal">
-            <span class="block text-white">I build high-converting websites</span>
-            <span class="block text-white">&amp; custom AI automation engines</span>
-            <span class="block bg-clip-text text-transparent bg-gradient-to-r from-indigo-200 via-indigo-300 to-indigo-500">that secure operations.</span>
-          </h1>
-
-          <p class="text-sm md:text-base text-muted mb-10 font-light leading-relaxed max-w-2xl mx-auto reveal">
-            A beautiful website is useless if your team is bogged down with copy-pasting inbox leads, manually typing out CRM records, and chasing onboarding files. I bridge the gap by building **polished front-end experiences** linked directly to background **AI operations and automated workflows**.
-          </p>
-
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto reveal">
-            <a href="#contact" onclick="selectFormOption('audit')" class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white text-black text-xs font-bold uppercase tracking-wider hover:bg-gray-200 transition-all flex items-center justify-center gap-2">
-              Claim Free Systems Audit
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-            <a href="#work" class="w-full sm:w-auto px-6 py-3.5 rounded-full border border-white/10 hover:border-white/30 hover:bg-white/5 transition-all text-xs font-bold uppercase tracking-wider text-white flex items-center justify-center">
-              Test Interactive Sandboxes
-            </a>
-          </div>
-
-          <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-4 text-left max-w-4xl mx-auto reveal">
-            <div class="glass-panel rounded-2xl p-6 border-l-2 border-l-indigo-500">
-              <div class="text-[10px] uppercase tracking-[0.2em] text-muted mb-1">Operational Impact</div>
-              <div class="text-white font-semibold text-base font-display">15+ Admin Hours Saved</div>
-              <p class="text-xs text-muted mt-1.5 leading-relaxed">No more copying inbox files, manual calendar ping-pong, or writing standard email follow-ups.</p>
-            </div>
-            <div class="glass-panel rounded-2xl p-6 border-l-2 border-l-purple-500">
-              <div class="text-[10px] uppercase tracking-[0.2em] text-muted mb-1">Lead Optimization</div>
-              <div class="text-white font-semibold text-base font-display">Zero Lost Opportunities</div>
-              <p class="text-xs text-muted mt-1.5 leading-relaxed">Inbound leads are qualified, categorized, mapped to pipelines, and answered in under 5 minutes.</p>
-            </div>
-            <div class="glass-panel rounded-2xl p-6 border-l-2 border-l-emerald-500">
-              <div class="text-[10px] uppercase tracking-[0.2em] text-muted mb-1">Productivity Core</div>
-              <div class="text-white font-semibold text-base font-display">Fully Integrated Loops</div>
-              <p class="text-xs text-muted mt-1.5 leading-relaxed">Unified custom front-end portals and interfaces that tie operational dashboards into standard CRMs.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="py-24 px-6 border-t border-white/5 bg-white/[0.01]">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <div class="reveal lg:sticky lg:top-28">
-            <h2 class="text-xs uppercase tracking-[0.2em] text-indigo-400 mb-3 font-bold">The Blueprint</h2>
-            <h3 class="text-2xl md:text-3xl font-display font-bold mb-6 leading-tight">
-              Software is inexpensive.<br />Operational efficiency is premium.
-            </h3>
-            <div class="space-y-4 text-muted text-sm font-light leading-relaxed">
-              <p>
-                Throughout my work mapping client flows across workspaces, startup agencies, and complex logistics networks, I noticed a universal problem: businesses purchase flashy software licenses only to end up with <span class="text-white font-normal">fragmented data, manual processes, and delayed replies</span>.
-              </p>
-              <p>
-                With a background combining a <span class="text-white font-normal">Computer Science (BE)</span> degree with a specialized <span class="text-white font-normal">Business Management (MA)</span> focus, I construct robust digital structures designed to work elegantly for human operators.
-              </p>
-              <p>
-                I integrate the entire loop—perfectly matching frontend branding with customized back-end database systems, AI handlers, and automated workflows.
-              </p>
+      <section class="min-h-screen flex items-center justify-center pt-32 pb-20 px-6 md:px-10 relative" id="home">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <!-- Left side copywriting content -->
+          <div class="lg:col-span-7 text-left space-y-8 z-10">
+            <!-- Active Status badge -->
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 backdrop-blur-md reveal">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+              </span>
+              <span class="text-[10px] uppercase tracking-[0.25em] text-emerald-400 font-extrabold">Accepting 2 Selected Clients for Q2</span>
             </div>
 
-            <div class="mt-8 flex flex-wrap gap-2">
-              <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/5 bg-white/[0.03] text-[11px] text-muted font-medium">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Healthcare Mapping
+            <!-- Main Heading Statement -->
+            <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white leading-[1.1] tracking-tight reveal">
+              I build high-converting websites <br />
+              <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-500">&amp; custom AI automation engines</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-muted font-light leading-relaxed max-w-2xl reveal">
+              A gorgeous website is useless if your team is bogged down with copy-pasting lead messages, manually writing CRM records, and chasing onboarding assets. I design polished frontend interfaces linked directly to background operational systems.
+            </p>
+
+            <!-- Quick Action Triggers -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 reveal">
+              <a href="#contact" onclick="selectFormOption('audit')" class="px-8 py-4 rounded-full bg-white hover:bg-slate-100 text-black text-xs font-extrabold uppercase tracking-wider transition-all flex items-center justify-center gap-3 shadow-[0_10px_30px_rgba(255,255,255,0.1)] active:scale-95">
+                Claim Free Systems Audit
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <a href="#work" class="px-8 py-4 rounded-full border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all text-xs font-extrabold uppercase tracking-wider text-white text-center active:scale-95">
+                Test Sandbox Simulations
+              </a>
+            </div>
+
+            <!-- Built-in Micro Metrics Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 reveal">
+              <div class="bg-panel/40 p-4 rounded-2xl border border-white/5 flex flex-col justify-center">
+                <span class="text-[10px] tracking-[0.2em] font-mono text-indigo-400 uppercase font-bold">Time Optimization</span>
+                <span class="text-white text-xl font-display font-extrabold mt-1">15+ Admin Hours Saved</span>
+                <span class="text-xs text-muted mt-1 leading-relaxed">No manual calendar ping-pong or file transfers.</span>
               </div>
-              <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/5 bg-white/[0.03] text-[11px] text-muted font-medium">
-                <span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Operational Pipeline Architecture
+              <div class="bg-panel/40 p-4 rounded-2xl border border-white/5 flex flex-col justify-center">
+                <span class="text-[10px] tracking-[0.2em] font-mono text-purple-400 uppercase font-bold">Lead Management</span>
+                <span class="text-white text-xl font-display font-extrabold mt-1">Zero Lost Leads</span>
+                <span class="text-xs text-muted mt-1 leading-relaxed">Inbound pipelines categorized & answered in 5m.</span>
               </div>
-              <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/5 bg-white/[0.03] text-[11px] text-muted font-medium">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>BE Computer Science
+              <div class="bg-panel/40 p-4 rounded-2xl border border-white/5 flex flex-col justify-center">
+                <span class="text-[10px] tracking-[0.2em] font-mono text-emeraldAccent uppercase font-bold">Architect Core</span>
+                <span class="text-white text-xl font-display font-extrabold mt-1 font-mono">100% Integrated</span>
+                <span class="text-xs text-muted mt-1 leading-relaxed">Custom frontend dashboards synced with your CRM.</span>
               </div>
             </div>
           </div>
 
-          <div class="reveal space-y-4" id="services">
-            <h2 class="text-xs uppercase tracking-[0.2em] text-indigo-400 mb-4 font-bold">Services &amp; System Capabilities</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="glass-panel p-6 rounded-2xl relative overflow-hidden group hover:border-white/10 transition-all duration-300">
-                <div class="w-9 h-9 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4 border border-indigo-500/20">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+          <!-- Right side Interactive Automation Diagram Graphic -->
+          <div class="lg:col-span-5 relative flex items-center justify-center z-10 reveal">
+            <div class="w-full max-w-md bg-panel rounded-3xl p-6 border border-white/5 shadow-2xl relative overflow-hidden group">
+              <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div class="flex items-center justify-between pb-4 border-b border-white/5">
+                <div class="flex items-center gap-2">
+                  <div class="w-3 h-3 rounded-full bg-indigo-500 animate-pulse"></div>
+                  <span class="text-xs font-mono text-indigo-300 font-bold uppercase tracking-wider">Automated System Schema</span>
                 </div>
-                <h4 class="text-sm font-bold text-white mb-1.5">High-Converting Frontends</h4>
-                <p class="text-xs text-muted leading-relaxed mb-4">Blazing-fast responsive landing pages built to turn passive traffic into qualified, booked opportunities.</p>
-                <div class="text-[10px] text-indigo-400 font-mono tracking-tight">&gt; Bridge Marketing &amp; Tech</div>
+                <span class="text-[10px] bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-2 py-0.5 rounded font-mono font-bold uppercase">Simulator Active</span>
               </div>
 
-              <div class="glass-panel p-6 rounded-2xl relative overflow-hidden group hover:border-white/10 transition-all duration-300">
-                <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4 border border-emerald-500/20">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              <!-- Graphic Node Canvas Sim -->
+              <div class="py-8 space-y-6 relative">
+                <!-- Connective dotted pipeline paths -->
+                <div class="absolute top-[40px] bottom-[40px] left-[28px] w-0.5 border-l border-dashed border-indigo-500/20 -z-10"></div>
+                
+                <!-- Node 1 -->
+                <div class="flex items-center gap-4 bg-background/50 p-3.5 rounded-2xl border border-white/5 shadow-md hover:border-indigo-500/20 transition-all">
+                  <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-white">Frontend Client Event</h4>
+                    <p class="text-[10px] text-muted">User schedules audit on Landing Page</p>
+                  </div>
                 </div>
-                <h4 class="text-sm font-bold text-white mb-1.5">AI Workflow Automation</h4>
-                <p class="text-xs text-muted leading-relaxed mb-4">Intelligent automation pipelines executing instant auto-response sequences and data classification.</p>
-                <div class="text-[10px] text-emerald-400 font-mono tracking-tight">&gt; Eliminate Scattered Admin</div>
+
+                <!-- Node 2 -->
+                <div class="flex items-center gap-4 bg-background/50 p-3.5 rounded-2xl border border-white/5 shadow-md hover:border-purple-500/20 transition-all">
+                  <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-white">AI Routing Engine</h4>
+                    <p class="text-[10px] text-muted">Intent parsed, qualified & classified in real-time</p>
+                  </div>
+                </div>
+
+                <!-- Node 3 -->
+                <div class="flex items-center gap-4 bg-background/50 p-3.5 rounded-2xl border border-white/5 shadow-md hover:border-emerald-500/20 transition-all">
+                  <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-white">Integrated CRM Database</h4>
+                    <p class="text-[10px] text-muted">Friction report compiled, notifications dispatched</p>
+                  </div>
+                </div>
               </div>
 
-              <div class="glass-panel p-6 rounded-2xl relative overflow-hidden group hover:border-white/10 transition-all duration-300">
-                <div class="w-9 h-9 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 mb-4 border border-purple-500/20">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                </div>
-                <h4 class="text-sm font-bold text-white mb-1.5">B2B Onboarding Portals</h4>
-                <p class="text-xs text-muted leading-relaxed mb-4">Custom dashboard environments that give your clients a clean hub to submit brand assets and track milestones.</p>
-                <div class="text-[10px] text-purple-400 font-mono tracking-tight">&gt; Remove Friction</div>
-              </div>
-
-              <div class="glass-panel p-6 rounded-2xl relative overflow-hidden group hover:border-white/10 transition-all duration-300">
-                <div class="w-9 h-9 rounded-lg bg-rose-500/10 flex items-center justify-center text-rose-400 mb-4 border border-rose-500/20">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
-                </div>
-                <h4 class="text-sm font-bold text-white mb-1.5">Internal Delivery Tools</h4>
-                <p class="text-xs text-muted leading-relaxed mb-4">Custom databases and task dashboards that consolidate project progress and highlight bottlenecks.</p>
-                <div class="text-[10px] text-rose-400 font-mono tracking-tight">&gt; Structure Pipelines</div>
+              <!-- Interactive Demo Clicker inside graphic -->
+              <div class="pt-4 border-t border-white/5 text-center">
+                <button onclick="document.getElementById('nx-trigger') ? openSandbox('nexus') : selectFormOption('audit')" class="w-full py-2.5 bg-indigo-600/10 hover:bg-indigo-600/25 border border-indigo-500/30 text-indigo-300 font-mono text-[10px] font-bold uppercase tracking-wider rounded-xl transition-all">
+                  Simulate Live Stream Logic
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="work" class="py-24 px-6">
+      <!-- About / System Blueprint Section -->
+      <section id="about" class="py-32 px-6 md:px-10 border-t border-white/5 bg-panel/30 relative">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          
+          <!-- Left blueprint information -->
+          <div class="lg:col-span-5 space-y-8 lg:sticky lg:top-32 reveal">
+            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold">&gt; The Architecture Core</span>
+            <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white leading-tight">
+              Software is simple.<br />Operational flow is premium.
+            </h2>
+            
+            <div class="space-y-6 text-muted text-sm font-light leading-relaxed">
+              <p>
+                Throughout my work mapping complex pipelines across agency networks and custom systems, I noticed a universal problem: businesses spend thousands of dollars on software only to end up with <span class="text-white font-semibold">fragmented data, manual copying, and delayed communication</span>.
+              </p>
+              <p>
+                Combining a <span class="text-indigo-300 font-semibold font-mono">Computer Science (BE)</span> engineering background with <span class="text-purple-300 font-semibold font-mono">Business Management (MA)</span> operational focus, I architect custom structures where design meets automated back-end logic.
+              </p>
+              <p>
+                I configure the entire machine—connecting high-performing branding with automated database actions, AI pipelines, and clean customer-facing hubs.
+              </p>
+            </div>
+
+            <!-- Custom Tech Stack Badges -->
+            <div class="pt-4 space-y-2">
+              <span class="text-[10px] font-mono tracking-widest text-indigo-400 uppercase font-bold block">Production Framework Core:</span>
+              <div class="flex flex-wrap gap-2">
+                <span class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/5 bg-white/[0.02] text-[11px] text-muted font-medium hover:border-white/10 transition-colors">
+                  <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Healthcare Pipeline Mapping
+                </span>
+                <span class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/5 bg-white/[0.02] text-[11px] text-muted font-medium hover:border-white/10 transition-colors">
+                  <span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Workflow Sync Architecture
+                </span>
+                <span class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/5 bg-white/[0.02] text-[11px] text-muted font-medium hover:border-white/10 transition-colors">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>BE Computer Science
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Bento Services Cards -->
+          <div id="services" class="lg:col-span-7 space-y-6 reveal">
+            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold block">&gt; Systems &amp; Technical Capabilities</span>
+            
+            <!-- Bento Box Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <!-- Bento Card 1 -->
+              <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
+                <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="w-11 h-11 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6 border border-indigo-500/20 shadow-md">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                </div>
+                <h4 class="text-base font-bold text-white mb-2">High-Converting Frontends</h4>
+                <p class="text-xs text-muted leading-relaxed mb-4">Blazing-fast modern web structures optimized to convert outbound traffic into qualified pipeline opportunities.</p>
+                <div class="text-[10px] text-indigo-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Bridging tech &amp; Conversion design</div>
+              </div>
+
+              <!-- Bento Card 2 -->
+              <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
+                <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="w-11 h-11 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6 border border-emerald-500/20 shadow-md">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <h4 class="text-base font-bold text-white mb-2">AI Workflow Automation</h4>
+                <p class="text-xs text-muted leading-relaxed mb-4">Autonomous intelligence setups mapped directly to systems to automatically reply, route, and update CRM profiles.</p>
+                <div class="text-[10px] text-emerald-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Zero manual data entry</div>
+              </div>
+
+              <!-- Bento Card 3 -->
+              <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="w-11 h-11 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6 border border-purple-500/20 shadow-md">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                </div>
+                <h4 class="text-base font-bold text-white mb-2">B2B Onboarding Hubs</h4>
+                <p class="text-xs text-muted leading-relaxed mb-4">Dedicated dashboard environments that guide your clients through uploading files, submitting assets, and tracking KPIs.</p>
+                <div class="text-[10px] text-purple-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Remove communication bottlenecks</div>
+              </div>
+
+              <!-- Bento Card 4 -->
+              <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
+                <div class="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="w-11 h-11 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400 mb-6 border border-rose-500/20 shadow-md">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                </div>
+                <h4 class="text-base font-bold text-white mb-2">Internal Delivery Tools</h4>
+                <p class="text-xs text-muted leading-relaxed mb-4">Unified databases, visual calendars, and kanban systems configured to track project milestones with absolute visual clarity.</p>
+                <div class="text-[10px] text-rose-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Consolidate bottleneck issues</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Case Studies & Sandboxes -->
+      <section id="work" class="py-32 px-6 md:px-10 relative">
         <div class="max-w-7xl mx-auto">
-          <div class="mb-16 reveal">
-            <h2 class="text-xs uppercase tracking-[0.2em] text-indigo-400 mb-3 font-bold">Case Studies &amp; Sandboxes</h2>
-            <h3 class="text-2xl font-display font-bold mb-4 text-white">Systems engineered to solve real operational gaps.</h3>
-            <p class="text-muted text-sm leading-relaxed max-w-xl">
-              Click the interactive buttons to test operational sandboxes directly inside this page wrapper.
+          <!-- Section Title Area -->
+          <div class="mb-20 text-center space-y-4 max-w-3xl mx-auto reveal">
+            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold">&gt; Interactive Case Studies</span>
+            <h3 class="text-3xl sm:text-5xl font-display font-extrabold text-white">Systems built to eliminate operational bottlenecks.</h3>
+            <p class="text-muted text-sm sm:text-base leading-relaxed">
+              Click the interactive buttons below to test operational sandboxes directly inside the browser.
             </p>
           </div>
 
-          <div class="space-y-12">
-            <div class="glass-panel rounded-3xl p-6 md:p-10 reveal">
-              <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-6 space-y-4">
-                  <div class="inline-block px-2.5 py-1 rounded-full bg-emerald-500/10 text-[9px] font-bold uppercase tracking-wider text-emerald-400 border border-emerald-500/20">UX Analysis Framework</div>
-                  <h4 class="text-xl md:text-2xl font-display font-bold text-white tracking-tight">Aura Patient Intake UX</h4>
-                  <p class="text-muted text-xs leading-relaxed">
+          <div class="space-y-16">
+            <!-- CASE STUDY 1: AURA PATIENT INTAKE UX -->
+            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden reveal">
+              <div class="absolute -right-20 -bottom-20 w-[400px] h-[400px] bg-emerald-500/5 rounded-full blur-[100px] -z-10"></div>
+              
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-400 border border-emerald-500/20">
+                    UX Analysis Framework
+                  </div>
+                  <h4 class="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight">Aura Patient Intake UX Case Study</h4>
+                  <p class="text-muted text-sm sm:text-base leading-relaxed">
                     How high-end, patient-centric design principles transformed clinical patient onboarding by replacing outdated paper processes with a frictionless digital workspace.
                   </p>
                   
-                  <div class="grid grid-cols-2 gap-4 bg-white/[0.02] p-3.5 rounded-xl border border-white/5">
+                  <!-- Metrics inside Case Study -->
+                  <div class="grid grid-cols-2 gap-4 bg-background/60 p-4 rounded-2xl border border-white/5">
                     <div>
-                      <span class="text-[9px] uppercase tracking-wider text-muted font-semibold block">Segment</span>
-                      <p class="text-xs font-semibold text-white mt-0.5">Medical Practices</p>
+                      <span class="text-[9px] uppercase tracking-widest text-muted font-bold block">Target Segment</span>
+                      <p class="text-sm font-bold text-white mt-1">Medical Practices</p>
                     </div>
                     <div>
-                      <span class="text-[9px] uppercase tracking-wider text-muted font-semibold block">Metrics Impact</span>
-                      <p class="text-xs font-semibold text-emerald-400 mt-0.5">+34% Conversions</p>
+                      <span class="text-[9px] uppercase tracking-widest text-muted font-bold block">Metrics Impacted</span>
+                      <p class="text-sm font-bold text-emerald-400 mt-1">+34% Conversions</p>
                     </div>
                   </div>
 
                   <div class="pt-2">
-                    <button onclick="toggleAuraCaseStudy()" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center gap-2">
+                    <button onclick="toggleAuraCaseStudy()" class="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center gap-2.5 shadow-[0_4px_15px_rgba(16,185,129,0.3)]">
                       <span>View Blueprint Breakdown</span>
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                      <svg id="aura-chevron" class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                   </div>
                 </div>
 
-                <div class="lg:col-span-6 flex justify-center relative">
-                  <div class="w-full max-w-sm rounded-2xl bg-[#09090A] p-5 border border-white/5 relative z-10 shadow-2xl">
-                    <div class="flex items-center justify-between border-b border-white/5 pb-3 mb-4">
-                      <div class="flex items-center gap-2">
-                        <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
-                        <span class="text-xs font-bold text-white font-display">Clinical Portal Map</span>
+                <!-- High-fidelity mockup visual representing clinical portals -->
+                <div class="lg:col-span-5 flex justify-center">
+                  <div class="w-full max-w-sm rounded-2xl bg-panel p-6 border border-white/5 relative z-10 shadow-2xl">
+                    <div class="flex items-center justify-between border-b border-white/5 pb-3 mb-5">
+                      <div class="flex items-center gap-2.5">
+                        <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
+                        <span class="text-xs font-bold text-white font-mono uppercase tracking-wider">Clinical Portal Map</span>
                       </div>
-                      <span class="text-[8px] font-mono bg-emerald-500/15 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10 font-bold uppercase">HIPAA Secure</span>
+                      <span class="text-[9px] font-mono bg-emerald-500/15 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10 font-bold uppercase">HIPAA Secure</span>
                     </div>
-                    <div class="space-y-2">
-                      <div class="p-3 bg-white/[0.02] rounded-xl border border-white/5">
-                        <div class="text-lg font-bold text-white font-display">426 Registrations</div>
+                    
+                    <div class="space-y-4">
+                      <div class="p-4 bg-background/80 rounded-xl border border-white/5 flex items-center justify-between">
+                        <div>
+                          <span class="text-[9px] uppercase tracking-wider text-muted font-bold">Total Intake</span>
+                          <div class="text-xl font-display font-extrabold text-white mt-1">426 Registrations</div>
+                        </div>
+                        <span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/10">+12% this wk</span>
+                      </div>
+
+                      <div class="space-y-2">
+                        <div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                          <div class="h-full bg-emerald-500" style="width: 78%;"></div>
+                        </div>
+                        <div class="flex justify-between text-[10px] text-muted font-mono font-bold">
+                          <span>Intake Completion Target</span>
+                          <span>78%</span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div id="aura-detailed-case" class="hidden mt-8 pt-8 border-t border-white/5 space-y-4">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-xs">
-                  <div class="space-y-2">
-                    <h5 class="font-bold text-emerald-400 uppercase tracking-wider">The Challenge</h5>
-                    <p class="text-muted leading-relaxed">Clinics frequently drop operational conversion leads due to confusing standalone validation workflows. Aura guides single inputs elegantly to guarantee intake rates.</p>
+              <!-- Aura Case study hidden drawer -->
+              <div id="aura-detailed-case" class="hidden mt-8 pt-8 border-t border-white/5 space-y-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 text-sm leading-relaxed">
+                  <div class="space-y-3">
+                    <h5 class="font-bold text-emerald-400 font-mono text-xs uppercase tracking-widest">&gt; The Challenge</h5>
+                    <p class="text-muted font-light">
+                      Medical clinics frequently fail on client patient registrations because intake forms are overly complex, non-responsive, and separate from administrative tools.
+                    </p>
                   </div>
-                  <div class="grid grid-cols-2 gap-2 font-mono text-[10px] text-muted">
-                    <div class="border border-white/5 rounded-xl bg-black/40 p-3">
-                      <div class="text-white mb-1">[W-01 Intake Overview]</div>
-                      <div class="h-1 bg-indigo-600/40 rounded w-3/4"></div>
-                    </div>
-                    <div class="border border-white/5 rounded-xl bg-black/40 p-3">
-                      <div class="text-white mb-1">[W-02 Step Handling]</div>
-                      <div class="h-1 bg-emerald-500/40 rounded w-1/2"></div>
-                    </div>
+                  <div class="space-y-3">
+                    <h5 class="font-bold text-emerald-400 font-mono text-xs uppercase tracking-widest">&gt; Engineering Strategy</h5>
+                    <p class="text-muted font-light">
+                      Aura resolves this by deploying clean progressive-disclosure visual arrays, removing extraneous form parameters, and routing completed form data into HIPAA-compliant database matrices in under 2 seconds.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="glass-panel rounded-3xl p-6 md:p-10 reveal">
-              <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-6 lg:order-2 space-y-4">
-                  <div class="inline-block px-2.5 py-1 rounded-full bg-purple-500/10 text-[9px] font-bold uppercase tracking-wider text-purple-400 border border-purple-500/20">Client Environment Sync</div>
-                  <h4 class="text-xl md:text-2xl font-display font-bold text-white tracking-tight">ClientBridge Portal</h4>
-                  <p class="text-muted text-xs leading-relaxed">
+            <!-- CASE STUDY 2: CLIENTBRIDGE PORTAL -->
+            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden reveal">
+              <div class="absolute -left-20 -bottom-20 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[100px] -z-10"></div>
+              
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 text-[10px] font-mono font-bold uppercase tracking-wider text-purple-400 border border-purple-500/20">
+                    Client Environment Sync
+                  </div>
+                  <h4 class="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight">ClientBridge Portal</h4>
+                  <p class="text-muted text-sm sm:text-base leading-relaxed">
                     How high-growth consultancies eliminate communication lag by shifting file collection and messaging loops directly into a dedicated status console tracking hub.
                   </p>
+
                   <div class="pt-2">
-                    <button onclick="openSandbox('clientbridge')" class="px-5 py-2.5 bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center gap-2">
+                    <button onclick="openSandbox('clientbridge')" class="px-6 py-3.5 bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center gap-2.5 shadow-[0_4px_15px_rgba(139,92,246,0.3)]">
                       <span>Launch Interactive Portal Sandbox</span>
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </button>
                   </div>
                 </div>
 
-                <div class="lg:col-span-6 lg:order-1">
-                  <div class="p-2 bg-white/[0.01] rounded-2xl border border-white/5 shadow-2xl">
-                    <div class="bg-white/[0.03] px-3 py-2 border-b border-white/5 flex items-center justify-between rounded-t-xl font-mono text-[9px]">
-                      <span class="text-muted">portal.clientbridge.app</span>
+                <div class="lg:col-span-5 flex justify-center">
+                  <div class="w-full max-w-sm rounded-2xl bg-panel border border-white/5 shadow-2xl overflow-hidden">
+                    <div class="bg-background/80 px-4 py-3 border-b border-white/5 flex items-center justify-between font-mono text-[10px]">
+                      <span class="text-muted font-bold">portal.clientbridge.app</span>
+                      <div class="flex gap-1">
+                        <span class="w-2 h-2 rounded-full bg-white/10"></span>
+                        <span class="w-2 h-2 rounded-full bg-white/10"></span>
+                      </div>
                     </div>
-                    <div class="h-44 bg-black/40 flex flex-col items-center justify-center p-4 text-center space-y-3">
-                      <p class="text-xs text-muted max-w-xs">Simulate dynamic pipelines, live checklist assets tracking, and onboarding automated operations triggers.</p>
+                    <div class="p-6 text-center space-y-4 bg-gradient-to-b from-panel to-background">
+                      <div class="w-12 h-12 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mx-auto">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 4v16m8-8H4"></path></svg>
+                      </div>
+                      <p class="text-xs text-muted leading-relaxed max-w-xs mx-auto">
+                        Launch this interactive client dashboard simulation to view progress bar updates, asset checkmarks, and automated CRM submission scenarios.
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="glass-panel rounded-3xl p-6 md:p-10 reveal">
-              <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-6 space-y-4">
-                  <div class="inline-block px-2.5 py-1 rounded-full bg-blue-500/10 text-[9px] font-bold uppercase tracking-wider text-blue-400 border border-blue-500/20">Kanban Operations Board</div>
-                  <h4 class="text-xl md:text-2xl font-display font-bold text-white tracking-tight">FlowPilot Operations</h4>
-                  <p class="text-muted text-xs leading-relaxed">
+            <!-- CASE STUDY 3: FLOWPILOT OPERATIONS -->
+            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden reveal">
+              <div class="absolute -right-20 -bottom-20 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[100px] -z-10"></div>
+              
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-[10px] font-mono font-bold uppercase tracking-wider text-blue-400 border border-blue-500/20">
+                    Kanban Operations Board
+                  </div>
+                  <h4 class="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight">FlowPilot Operations</h4>
+                  <p class="text-muted text-sm sm:text-base leading-relaxed">
                     A task-centric project grid constructed for remote teams that need absolute interactive clarity over database statuses and pipeline blockade bottlenecks.
                   </p>
+
                   <div class="pt-2">
-                    <button onclick="openSandbox('flowpilot')" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all">
-                      Test Sprint Board Sandbox
+                    <button onclick="openSandbox('flowpilot')" class="px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center gap-2.5 shadow-[0_4px_15px_rgba(59,130,246,0.3)]">
+                      <span>Test Sprint Board Sandbox</span>
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </button>
                   </div>
                 </div>
-                <div class="lg:col-span-6">
-                  <div class="p-2 bg-white/[0.01] rounded-2xl border border-white/5 h-44 flex items-center justify-center">
-                    <span class="text-xs text-muted font-mono">ops.flowpilot.io/delivery</span>
+
+                <div class="lg:col-span-5 flex justify-center">
+                  <div class="w-full max-w-sm rounded-2xl bg-panel border border-white/5 shadow-2xl overflow-hidden">
+                    <div class="bg-background/80 px-4 py-3 border-b border-white/5 flex items-center justify-between font-mono text-[10px]">
+                      <span class="text-muted font-bold">ops.flowpilot.io</span>
+                      <span class="text-blue-400 font-bold font-mono">Sprint v1.2</span>
+                    </div>
+                    <div class="p-6 text-center space-y-4 bg-gradient-to-b from-panel to-background">
+                      <div class="w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mx-auto animate-pulse">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h7"></path></svg>
+                      </div>
+                      <p class="text-xs text-muted leading-relaxed max-w-xs mx-auto">
+                        An interactive project backlog dashboard featuring cards that dynamically update column statistics as you assign tasks through different sprint stages.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="glass-panel rounded-3xl p-6 md:p-10 reveal">
-              <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-6 lg:order-2 space-y-4">
-                  <div class="inline-block px-2.5 py-1 rounded-full bg-indigo-500/10 text-[9px] font-bold uppercase tracking-wider text-indigo-400 border border-indigo-500/20">Autonomous Machine Logic</div>
-                  <h4 class="text-xl md:text-2xl font-display font-bold text-white tracking-tight">Nexus Lead Handler</h4>
-                  <p class="text-muted text-xs leading-relaxed">
+            <!-- CASE STUDY 4: NEXUS LEAD HANDLER -->
+            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden reveal">
+              <div class="absolute -left-20 -bottom-20 w-[400px] h-[400px] bg-indigo-500/5 rounded-full blur-[100px] -z-10"></div>
+              
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-[10px] font-mono font-bold uppercase tracking-wider text-indigo-400 border border-indigo-500/20">
+                    Autonomous Machine Logic
+                  </div>
+                  <h4 class="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight">Nexus Lead Handler</h4>
+                  <p class="text-muted text-sm sm:text-base leading-relaxed">
                     How high-volume agencies leverage autonomous classifiers to parse inbound system blueprints, structure pipeline fields, and draft automated outreach.
                   </p>
+
                   <div class="pt-2">
-                    <button onclick="openSandbox('nexus')" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all">
-                      Open AI Simulator Terminal
+                    <button onclick="openSandbox('nexus')" class="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center gap-2.5 shadow-[0_4px_15px_rgba(79,70,229,0.3)]">
+                      <span>Open AI Simulator Terminal</span>
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </button>
                   </div>
                 </div>
-                <div class="lg:col-span-6 lg:order-1">
-                  <div class="p-2 bg-white/[0.01] rounded-2xl border border-white/5 h-44 flex items-center justify-center">
-                    <span class="text-xs text-muted font-mono">agent.nexus.local/trace</span>
+
+                <div class="lg:col-span-5 flex justify-center">
+                  <div class="w-full max-w-sm rounded-2xl bg-panel border border-white/5 shadow-2xl overflow-hidden">
+                    <div class="bg-background/80 px-4 py-3 border-b border-white/5 flex items-center justify-between font-mono text-[10px]">
+                      <span class="text-muted font-bold">agent.nexus.local</span>
+                      <span class="text-emerald-400 font-bold font-mono">ON LINE</span>
+                    </div>
+                    <div class="p-6 text-center space-y-4 bg-gradient-to-b from-panel to-background">
+                      <div class="w-12 h-12 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mx-auto">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                      </div>
+                      <p class="text-xs text-muted leading-relaxed max-w-xs mx-auto">
+                        An autonomous developer terminal showing lead classification logs, database parsing logic structures, and immediate API responses.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -446,47 +625,60 @@
         </div>
       </section>
 
-      <section id="contact" class="py-24 px-6 border-t border-white/5 bg-[#060608]">
-        <div class="max-w-5xl mx-auto reveal">
-          <div class="text-center mb-12">
-            <span class="text-xs uppercase tracking-[0.2em] text-indigo-400 font-bold mb-2 block">Fix Your Bottlenecks</span>
-            <h3 class="text-2xl md:text-3xl font-display font-extrabold text-white mb-3">Stop losing leads to fragmented systems.</h3>
-            <p class="text-muted text-xs max-w-lg mx-auto leading-relaxed">
+      <!-- Contact & Video Request System -->
+      <section id="contact" class="py-32 px-6 md:px-10 border-t border-white/5 bg-panel/30 relative">
+        <div class="max-w-6xl mx-auto reveal">
+          
+          <div class="text-center mb-16 space-y-4">
+            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold block">&gt; Optimize Your Backend Mechanics</span>
+            <h3 class="text-3xl sm:text-5xl font-display font-extrabold text-white">Stop losing leads to manual tasks.</h3>
+            <p class="text-muted text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
               Drop your workflow details below. I will personally deliver an executive video structure showing you where your system architecture is losing operational volume.
             </p>
           </div>
 
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            <div class="lg:col-span-5 space-y-4">
-              <div class="glass-panel rounded-2xl p-5 border-l-2 border-l-indigo-500">
-                <span class="text-[9px] uppercase tracking-[0.15em] text-indigo-400 font-bold block mb-1">Friction Analysis Blueprint</span>
-                <p class="text-xs text-gray-300 leading-relaxed">No sales pitches. I review your frontend layouts and API integration architecture models to deliver actionable engineering blueprints.</p>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <!-- Left Info column -->
+            <div class="lg:col-span-5 space-y-6">
+              <div class="glass-card rounded-2xl p-6 border-l-4 border-l-indigo-600 space-y-3">
+                <span class="text-[10px] uppercase tracking-wider text-indigo-400 font-bold font-mono block">Friction Analysis Blueprint</span>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  No sales pitches. I review your frontend layouts and API integration architecture models to deliver actionable engineering blueprints.
+                </p>
               </div>
 
-              <div class="flex gap-2">
-                <a href="mailto:hello@rohithdhanala.com" class="flex-1 px-4 py-2.5 rounded-full border border-white/10 text-center text-xs text-white font-medium hover:bg-white/5 transition-all">Email Direct</a>
-                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2.5 rounded-full border border-white/10 text-center text-xs text-white font-medium hover:bg-white/5 transition-all">LinkedIn</a>
+              <div class="flex gap-4">
+                <a href="mailto:hello@rohithdhanala.com" class="flex-1 px-6 py-3.5 rounded-full border border-white/10 text-center text-xs text-white font-bold uppercase tracking-wider hover:bg-white/5 hover:border-white/20 transition-all active:scale-95">
+                  Email Direct
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="flex-1 px-6 py-3.5 rounded-full border border-white/10 text-center text-xs text-white font-bold uppercase tracking-wider hover:bg-white/5 hover:border-white/20 transition-all active:scale-95">
+                  LinkedIn
+                </a>
               </div>
             </div>
 
-            <div class="lg:col-span-7 glass-panel rounded-2xl p-6 relative">
-              <div class="absolute -top-3 left-6 px-3 py-1 rounded-full bg-indigo-600 text-[9px] font-bold uppercase tracking-wider text-white" id="form-badge">Systems Friction Form</div>
+            <!-- Form layout card -->
+            <div class="lg:col-span-7 glass-card rounded-3xl p-8 relative">
+              <div class="absolute -top-3.5 left-8 px-4 py-1.5 rounded-full bg-indigo-600 text-[10px] font-mono font-bold uppercase tracking-wider text-white shadow-lg" id="form-badge">
+                Systems Friction Form
+              </div>
               
-              <form id="contact-form" class="space-y-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <form id="contact-form" class="space-y-6 pt-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label for="cf-name" class="block text-[9px] uppercase tracking-[0.15em] text-muted mb-1.5">Operator Name</label>
-                    <input id="cf-name" name="name" type="text" placeholder="Name" required class="form-input" />
+                    <label for="cf-name" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-indigo-400 font-bold mb-2">Operator Name</label>
+                    <input id="cf-name" name="name" type="text" placeholder="Name" required class="form-input w-full bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-colors" />
                   </div>
                   <div>
-                    <label for="cf-email" class="block text-[9px] uppercase tracking-[0.15em] text-muted mb-1.5">Corporate Email</label>
-                    <input id="cf-email" name="email" type="email" placeholder="you@company.com" required class="form-input" />
+                    <label for="cf-email" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-indigo-400 font-bold mb-2">Corporate Email</label>
+                    <input id="cf-email" name="email" type="email" placeholder="you@company.com" required class="form-input w-full bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-colors" />
                   </div>
                 </div>
 
                 <div>
-                  <label for="cf-type" class="block text-[9px] uppercase tracking-[0.15em] text-muted mb-1.5">Select Pipeline Channel</label>
-                  <select id="cf-type" name="interest" onchange="handleFormTypeChange(this.value)" class="form-input bg-surface">
+                  <label for="cf-type" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-indigo-400 font-bold mb-2">Select Pipeline Channel</label>
+                  <select id="cf-type" name="interest" onchange="handleFormTypeChange(this.value)" class="form-input w-full bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-colors">
                     <option value="audit">Free 15-Min Systems Friction Audit</option>
                     <option value="ai-automation">AI Operations Scenarios</option>
                     <option value="portal">Custom Portals Development</option>
@@ -494,24 +686,25 @@
                 </div>
 
                 <div id="dynamic-url-field">
-                  <label for="cf-url" class="block text-[9px] uppercase tracking-[0.15em] text-muted mb-1.5">Existing Web Environment URL (Optional)</label>
-                  <input id="cf-url" name="website" type="url" placeholder="https://brand.com" class="form-input" />
+                  <label for="cf-url" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-indigo-400 font-bold mb-2">Existing Web Environment URL (Optional)</label>
+                  <input id="cf-url" name="website" type="url" placeholder="https://brand.com" class="form-input w-full bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-colors" />
                 </div>
 
                 <div>
-                  <label id="message-label" for="cf-message" class="block text-[9px] uppercase tracking-[0.15em] text-muted mb-1.5">What is your single biggest operational bottleneck?</label>
-                  <textarea id="cf-message" name="message" rows="4" placeholder="Describe manual pipeline processes or data loss issues..." required class="form-input resize-none"></textarea>
+                  <label id="message-label" for="cf-message" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-indigo-400 font-bold mb-2">What is your single biggest operational bottleneck?</label>
+                  <textarea id="cf-message" name="message" rows="4" placeholder="Describe manual pipeline processes or data loss issues..." required class="form-input w-full bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-colors resize-none"></textarea>
                 </div>
 
-                <button type="submit" id="form-submit-btn" class="w-full px-6 py-3.5 rounded-full bg-white text-black text-xs font-bold uppercase tracking-wider hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
+                <button type="submit" id="form-submit-btn" class="w-full px-6 py-4 rounded-xl bg-white text-black text-xs font-bold uppercase tracking-wider hover:bg-slate-100 transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl active:scale-95">
                   <span id="btn-label">Request Free Systems Audit</span>
                 </button>
               </form>
 
-              <div id="form-success" class="hidden flex-col items-center justify-center text-center py-6 gap-3">
-                <div class="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">&check;</div>
-                <h6 class="text-white font-bold text-sm">System Requirements Logged</h6>
-                <p class="text-muted text-xs max-w-xs" id="success-desc">Requirements safely compiled into secure memory structures. Response files pipeline dispatching under 24 hours.</p>
+              <!-- SUCCESS MESSAGE -->
+              <div id="form-success" class="hidden flex-col items-center justify-center text-center py-10 gap-4">
+                <div class="w-14 h-14 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl font-bold animate-bounce">&check;</div>
+                <h6 class="text-white font-display font-extrabold text-lg">System Requirements Logged</h6>
+                <p class="text-muted text-xs max-w-sm leading-relaxed" id="success-desc">Requirements compiled into secure memory structures. Response files pipeline dispatching under 24 hours.</p>
               </div>
             </div>
           </div>
@@ -519,140 +712,242 @@
       </section>
     </main>
 
-    <footer class="px-6 py-10 border-t border-white/5 bg-black">
+    <!-- Footer Section -->
+    <footer class="px-6 md:px-10 py-12 border-t border-white/5 bg-background">
       <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-muted">
-        <div class="flex items-center gap-2">
-          <div class="w-6 h-6 rounded-md bg-white/5 flex items-center justify-center text-white font-bold text-[11px]">RD</div>
-          <span>&copy; 2026 Rohith Dhanala. Operational Engineering Hub.</span>
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 to-purple-600 flex items-center justify-center text-white font-bold text-xs">RD</div>
+          <span>&copy; 2026 Rohith Dhanala. Operational Engineering Hub. All Rights Reserved.</span>
         </div>
-        <div class="flex gap-4 font-medium uppercase tracking-wider text-[10px]">
-          <a href="#about" class="hover:text-white transition-colors">About</a>
-          <a href="#services" class="hover:text-white transition-colors">Services</a>
-          <a href="#work" class="hover:text-white transition-colors">Work</a>
+        <div class="flex gap-6 font-semibold uppercase tracking-wider text-[10px]">
+          <a href="#about" class="hover:text-white transition-all">About</a>
+          <a href="#services" class="hover:text-white transition-all">Capabilities</a>
+          <a href="#work" class="hover:text-white transition-all">Sandbox</a>
         </div>
       </div>
     </footer>
 
-    <div id="sandbox-clientbridge" class="sandbox-overlay fixed inset-y-0 right-0 w-full lg:w-[60%] bg-[#080809] border-l border-white/10 z-50 shadow-2xl flex flex-col hidden">
-      <div class="p-4 border-b border-white/5 flex items-center justify-between bg-black/40">
-        <span class="text-xs font-bold text-white font-mono uppercase tracking-wider">ClientBridge Sandbox Workspace</span>
-        <button onclick="closeSandbox()" class="text-[10px] uppercase font-mono tracking-wider border border-white/10 rounded-full px-3.5 py-1 text-muted hover:text-white bg-white/5">Exit Console</button>
+    <!-- OVERLAY DRAWERS -->
+    <!-- CLIENTBRIDGE SANDBOX DRAWER -->
+    <div id="sandbox-clientbridge" class="sandbox-drawer fixed inset-y-0 right-0 w-full lg:w-[45%] bg-[#08080C] border-l border-white/10 z-50 shadow-2xl flex flex-col hidden">
+      <div class="p-5 border-b border-white/5 flex items-center justify-between bg-panel/80 backdrop-blur-md">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span>
+          <span class="text-xs font-bold text-white font-mono uppercase tracking-wider">ClientBridge Sandbox Workspace</span>
+        </div>
+        <button onclick="closeSandbox()" class="text-[10px] font-mono border border-white/10 rounded-full px-4 py-1.5 text-muted hover:text-white bg-white/5 hover:bg-white/10 transition-all">Exit Console</button>
       </div>
+
       <div class="flex-1 overflow-y-auto p-6 space-y-6 text-xs">
-        <div class="glass-panel p-5 rounded-2xl space-y-3">
-          <div class="flex justify-between items-center"><span class="text-muted">Onboarding Progress Tracker</span><span id="cb-progress-percent" class="font-mono text-purple-400 font-bold">50%</span></div>
-          <div class="w-full h-1.5 bg-white/5 rounded-full overflow-hidden"><div id="cb-progress-bar" class="h-full bg-purple-500 transition-all duration-300" style="width: 50%;"></div></div>
+        <div class="glass-card p-6 rounded-2xl space-y-4">
+          <div class="flex justify-between items-center">
+            <span class="text-white font-bold text-sm">Onboarding Progress Tracker</span>
+            <span id="cb-progress-percent" class="font-mono text-purple-400 font-extrabold text-base">50%</span>
+          </div>
           
-          <div class="space-y-2 pt-2">
-            <label class="flex items-center gap-3 p-2.5 bg-white/[0.02] border border-white/5 rounded-xl cursor-pointer hover:bg-white/[0.04]">
-              <input type="checkbox" checked onchange="updateClientBridgeTasks()" class="rounded bg-black border-white/10 text-purple-600 focus:ring-0" />
-              <span>Define Project Operational Brief</span>
+          <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+            <div id="cb-progress-bar" class="h-full bg-gradient-to-r from-purple-500 to-indigo-500 transition-all duration-500" style="width: 50%;"></div>
+          </div>
+          
+          <div class="space-y-3 pt-2">
+            <label class="flex items-center gap-3.5 p-3.5 bg-background border border-white/5 rounded-xl cursor-pointer hover:bg-panel transition-all">
+              <input type="checkbox" checked onchange="updateClientBridgeTasks()" class="rounded bg-black border-white/10 text-purple-600 focus:ring-0 w-4 h-4" />
+              <div>
+                <span class="text-white font-bold block">Define Project Operational Brief</span>
+                <span class="text-[10px] text-muted">Submit core framework blueprints</span>
+              </div>
             </label>
-            <label class="flex items-center gap-3 p-2.5 bg-white/[0.02] border border-white/5 rounded-xl cursor-pointer hover:bg-white/[0.04]">
-              <input type="checkbox" checked onchange="updateClientBridgeTasks()" class="rounded bg-black border-white/10 text-purple-600 focus:ring-0" />
-              <span>Submit Core Assets Guidelines</span>
+            <label class="flex items-center gap-3.5 p-3.5 bg-background border border-white/5 rounded-xl cursor-pointer hover:bg-panel transition-all">
+              <input type="checkbox" checked onchange="updateClientBridgeTasks()" class="rounded bg-black border-white/10 text-purple-600 focus:ring-0 w-4 h-4" />
+              <div>
+                <span class="text-white font-bold block">Submit Core Assets Guidelines</span>
+                <span class="text-[10px] text-muted">Upload operational diagrams</span>
+              </div>
             </label>
-            <label class="flex items-center gap-3 p-2.5 bg-white/[0.02] border border-white/5 rounded-xl cursor-pointer hover:bg-white/[0.04]">
-              <input type="checkbox" id="cb-task-dns" onchange="updateClientBridgeTasks()" class="rounded bg-black border-white/10 text-purple-600 focus:ring-0" />
-              <span>Provide Server DNS Verification Authorities</span>
+            <label class="flex items-center gap-3.5 p-3.5 bg-background border border-white/5 rounded-xl cursor-pointer hover:bg-panel transition-all">
+              <input type="checkbox" id="cb-task-dns" onchange="updateClientBridgeTasks()" class="rounded bg-black border-white/10 text-purple-600 focus:ring-0 w-4 h-4" />
+              <div>
+                <span class="text-white font-bold block">Provide Server DNS Verification Authorities</span>
+                <span class="text-[10px] text-muted">Necessary for webhook integration routing</span>
+              </div>
             </label>
           </div>
         </div>
 
-        <div class="glass-panel p-4 rounded-xl space-y-2">
-          <span class="text-muted block">Direct Action Upload Interface Simulation</span>
-          <div onclick="triggerMockUpload()" class="border border-dashed border-white/10 rounded-xl py-6 text-center bg-black/20 hover:border-purple-500/40 cursor-pointer text-muted hover:text-white">
-            <p class="font-medium text-[11px]">Click to Mock Simulate Upload Asset</p>
+        <div class="glass-card p-6 rounded-2xl space-y-4">
+          <span class="text-white font-bold text-sm block">Direct Action Upload Interface Simulation</span>
+          <div onclick="triggerMockUpload()" class="border-2 border-dashed border-white/15 rounded-2xl py-8 text-center bg-background/50 hover:border-purple-500/40 cursor-pointer text-muted hover:text-white transition-all">
+            <svg class="w-8 h-8 mx-auto text-muted mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+            <p class="font-bold text-xs text-white">Click to Mock Simulate Upload Asset</p>
+            <p class="text-[10px] text-muted mt-1">Accepts SVG, PDF or JPG blueprints</p>
           </div>
-          <div id="cb-file-list" class="space-y-1"></div>
+          <div id="cb-file-list" class="space-y-2"></div>
         </div>
       </div>
     </div>
 
-    <div id="sandbox-flowpilot" class="sandbox-overlay fixed inset-y-0 right-0 w-full lg:w-[60%] bg-[#080809] border-l border-white/10 z-50 shadow-2xl flex flex-col hidden">
-      <div class="p-4 border-b border-white/5 flex items-center justify-between bg-black/40">
-        <span class="text-xs font-bold text-white font-mono">FlowPilot Kanban Console</span>
-        <button onclick="closeSandbox()" class="text-[10px] font-mono border border-white/10 rounded-full px-3 py-1 text-muted hover:text-white">Exit Console</button>
+    <!-- FLOWPILOT SANDBOX DRAWER -->
+    <div id="sandbox-flowpilot" class="sandbox-drawer fixed inset-y-0 right-0 w-full lg:w-[45%] bg-[#08080C] border-l border-white/10 z-50 shadow-2xl flex flex-col hidden">
+      <div class="p-5 border-b border-white/5 flex items-center justify-between bg-panel/80 backdrop-blur-md">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
+          <span class="text-xs font-bold text-white font-mono uppercase tracking-wider">FlowPilot Kanban Console</span>
+        </div>
+        <button onclick="closeSandbox()" class="text-[10px] font-mono border border-white/10 rounded-full px-4 py-1.5 text-muted hover:text-white bg-white/5 hover:bg-white/10 transition-all">Exit Console</button>
       </div>
-      <div class="flex-1 p-4 overflow-x-auto flex gap-4 select-none bg-background" id="fp-board">
-        <div class="w-64 flex-shrink-0 flex flex-col h-full space-y-2">
-          <span class="text-[11px] font-bold uppercase tracking-wider text-muted">Operational Backlog ([<span id="col-backlog-count">2</span>])</span>
-          <div class="flex-1 bg-white/[0.02] rounded-xl p-2 border border-white/5 space-y-2" id="col-backlog">
-            <div class="p-3 bg-surface border border-white/5 rounded-xl hover:border-blue-500/40 cursor-pointer text-xs" onclick="moveKanbanCard(this, 'col-progress')">
-              <span class="text-[9px] uppercase font-mono bg-blue-500/15 text-blue-400 px-1.5 py-0.5 rounded font-bold">Layouts Map</span>
-              <p class="text-white font-medium mt-1">Design System Wireframe Grids</p>
+
+      <!-- Kanban Columns -->
+      <div class="flex-1 p-6 overflow-y-auto space-y-6 bg-background">
+        <p class="text-muted text-xs leading-relaxed">
+          Interact with cards below by clicking on them to transition tasks through dynamic project pipeline sprints.
+        </p>
+
+        <!-- Column 1: Backlog -->
+        <div class="space-y-3">
+          <div class="flex justify-between items-center bg-panel/40 p-3 rounded-xl border border-white/5">
+            <span class="text-xs font-bold uppercase tracking-wider text-muted">Operational Backlog</span>
+            <span id="col-backlog-count" class="font-mono bg-white/5 text-white px-2 py-0.5 rounded text-[10px] font-bold">2</span>
+          </div>
+          <div class="space-y-3" id="col-backlog">
+            <!-- Card 1 -->
+            <div class="p-4 bg-panel border border-white/5 rounded-2xl hover:border-blue-500/40 cursor-pointer text-xs space-y-2 transition-all" onclick="moveKanbanCard(this, 'col-progress')">
+              <div class="flex justify-between items-center">
+                <span class="text-[9px] uppercase font-mono bg-blue-500/10 text-blue-400 px-2.5 py-0.5 rounded-full font-bold border border-blue-500/10">Layouts Map</span>
+                <span class="text-[10px] text-muted font-mono font-medium">Sprint 1</span>
+              </div>
+              <p class="text-white font-bold text-sm">Design System Wireframe Grids</p>
+              <p class="text-muted text-[11px]">Draft UI grid systems & structural layout flows</p>
             </div>
-            <div class="p-3 bg-surface border border-white/5 rounded-xl hover:border-blue-500/40 cursor-pointer text-xs" onclick="moveKanbanCard(this, 'col-progress')">
-              <span class="text-[9px] uppercase font-mono bg-purple-500/15 text-purple-400 px-1.5 py-0.5 rounded font-bold">API Hooks</span>
-              <p class="text-white font-medium mt-1">Connect Webhooks Pipeline Models</p>
+            <!-- Card 2 -->
+            <div class="p-4 bg-panel border border-white/5 rounded-2xl hover:border-blue-500/40 cursor-pointer text-xs space-y-2 transition-all" onclick="moveKanbanCard(this, 'col-progress')">
+              <div class="flex justify-between items-center">
+                <span class="text-[9px] uppercase font-mono bg-purple-500/10 text-purple-400 px-2.5 py-0.5 rounded-full font-bold border border-purple-500/10">API Hooks</span>
+                <span class="text-[10px] text-muted font-mono font-medium">Sprint 1</span>
+              </div>
+              <p class="text-white font-bold text-sm">Connect Webhooks Pipeline Models</p>
+              <p class="text-muted text-[11px]">Integrate internal CRM notification flows</p>
             </div>
           </div>
         </div>
 
-        <div class="w-64 flex-shrink-0 flex flex-col h-full space-y-2">
-          <span class="text-[11px] font-bold uppercase tracking-wider text-muted">Active Pipeline Sprints ([<span id="col-progress-count">0</span>])</span>
-          <div class="flex-1 bg-white/[0.02] rounded-xl p-2 border border-white/5 space-y-2" id="col-progress"></div>
+        <!-- Column 2: Progress -->
+        <div class="space-y-3">
+          <div class="flex justify-between items-center bg-panel/40 p-3 rounded-xl border border-white/5">
+            <span class="text-xs font-bold uppercase tracking-wider text-muted">Active Pipeline Sprints</span>
+            <span id="col-progress-count" class="font-mono bg-white/5 text-white px-2 py-0.5 rounded text-[10px] font-bold">0</span>
+          </div>
+          <div class="space-y-3 min-h-[50px] rounded-2xl" id="col-progress"></div>
         </div>
         
-        <div class="w-64 flex-shrink-0 flex flex-col h-full space-y-2">
-          <span class="text-[11px] font-bold uppercase tracking-wider text-muted">Completed Ops Architecture ([<span id="col-done-count">0</span>])</span>
-          <div class="flex-1 bg-white/[0.02] rounded-xl p-2 border border-white/5 space-y-2" id="col-done"></div>
+        <!-- Column 3: Done -->
+        <div class="space-y-3">
+          <div class="flex justify-between items-center bg-panel/40 p-3 rounded-xl border border-white/5">
+            <span class="text-xs font-bold uppercase tracking-wider text-muted">Completed Ops Architecture</span>
+            <span id="col-done-count" class="font-mono bg-white/5 text-white px-2 py-0.5 rounded text-[10px] font-bold">0</span>
+          </div>
+          <div class="space-y-3 min-h-[50px] rounded-2xl" id="col-done"></div>
         </div>
       </div>
     </div>
 
-    <div id="sandbox-nexus" class="sandbox-overlay fixed inset-y-0 right-0 w-full lg:w-[60%] bg-[#050506] border-l border-white/10 z-50 shadow-2xl flex flex-col hidden">
-      <div class="p-4 border-b border-white/5 flex items-center justify-between bg-black/40">
-        <span class="text-xs font-bold text-white font-mono uppercase">Nexus Autonomous Logic Core</span>
-        <button onclick="closeSandbox()" class="text-[10px] font-mono border border-white/10 rounded-full px-3 py-1 text-muted hover:text-white">Exit Playground</button>
+    <!-- NEXUS AI TERMINAL SANDBOX DRAWER -->
+    <div id="sandbox-nexus" class="sandbox-drawer fixed inset-y-0 right-0 w-full lg:w-[45%] bg-[#08080C] border-l border-white/10 z-50 shadow-2xl flex flex-col hidden">
+      <div class="p-5 border-b border-white/5 flex items-center justify-between bg-panel/80 backdrop-blur-md">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-pulse"></span>
+          <span class="text-xs font-bold text-white font-mono uppercase tracking-wider">Nexus Autonomous Logic Core</span>
+        </div>
+        <button onclick="closeSandbox()" class="text-[10px] font-mono border border-white/10 rounded-full px-4 py-1.5 text-muted hover:text-white bg-white/5 hover:bg-white/10 transition-all">Exit Playground</button>
       </div>
-      <div class="flex-1 p-6 space-y-4 overflow-y-auto text-xs">
-        <div class="glass-panel p-4 rounded-xl space-y-3">
-          <span class="text-muted font-bold block">Inbound Intent Simulator Templates</span>
-          <div class="grid grid-cols-2 gap-2">
-            <button onclick="setNexusTemplate('plumbing')" class="p-2 bg-white/5 rounded-lg border border-white/5 text-left text-white hover:bg-white/10">🔧 Home Trades Scope</button>
-            <button onclick="setNexusTemplate('agency')" class="p-2 bg-white/5 rounded-lg border border-white/5 text-left text-white hover:bg-white/10">🚀 High-Volume SaaS Team</button>
+
+      <div class="flex-1 p-6 space-y-6 overflow-y-auto text-xs">
+        <div class="glass-card p-6 rounded-2xl space-y-4">
+          <span class="text-white font-bold text-sm block">Inbound Intent Simulator Templates</span>
+          <p class="text-muted leading-relaxed">Choose an industrial operational template below to load simulated lead parameters immediately into the AI Classifier block:</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button onclick="setNexusTemplate('plumbing')" class="p-3 bg-background rounded-xl border border-white/5 text-left text-white hover:border-indigo-500/30 transition-all flex items-center gap-2">
+              <span>🔧</span>
+              <div>
+                <span class="font-bold block">Home Trades Scope</span>
+                <span class="text-[9px] text-muted">Manual pipeline tracking</span>
+              </div>
+            </button>
+            <button onclick="setNexusTemplate('agency')" class="p-3 bg-background rounded-xl border border-white/5 text-left text-white hover:border-indigo-500/30 transition-all flex items-center gap-2">
+              <span>🚀</span>
+              <div>
+                <span class="font-bold block">SaaS Marketing Team</span>
+                <span class="text-[9px] text-muted">Webhook database connection</span>
+              </div>
+            </button>
           </div>
-          <textarea id="nx-input-msg" rows="3" class="w-full bg-black border border-white/10 rounded-lg p-2.5 font-mono text-[11px] text-white outline-none focus:border-indigo-500" placeholder="Awaiting configuration template logic launch parameters..."></textarea>
-          <button onclick="runNexusAI()" id="nx-trigger" class="w-full py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold uppercase tracking-wider transition-all">Execute Intent Classification Sequence</button>
+          
+          <textarea id="nx-input-msg" rows="4" class="w-full bg-background border border-white/5 rounded-xl p-3.5 font-mono text-xs text-white outline-none focus:border-indigo-500 transition-colors" placeholder="Awaiting configuration template logic launch parameters..."></textarea>
+          
+          <button onclick="runNexusAI()" id="nx-trigger" class="w-full py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold uppercase tracking-wider transition-all shadow-lg active:scale-95">
+            Execute Intent Classification Sequence
+          </button>
         </div>
 
-        <div class="border border-white/10 rounded-xl bg-black p-4 font-mono text-[10px] text-muted h-40 overflow-y-auto space-y-1" id="nx-console">
-          <div>// System listening. Core awaiting launch triggers...</div>
+        <!-- CLI Output Block -->
+        <div class="border border-white/5 rounded-2xl bg-black p-5 font-mono text-[11px] text-muted h-44 overflow-y-auto space-y-2" id="nx-console">
+          <div class="text-indigo-400">// System listening. Core awaiting launch triggers...</div>
         </div>
 
-        <div id="nx-crm-wrapper" class="hidden glass-panel p-4 rounded-xl border border-emerald-500/20 bg-emerald-500/[0.02] space-y-2">
-          <div class="text-white font-bold">CRM Output Sync Mapped Field Parameters:</div>
-          <div class="text-[11px] space-y-1 text-gray-300">
-            <p>Category Type: <span id="nx-res-cat" class="text-white font-bold">N/A</span></p>
-            <p>Budget Threshold Mapping: <span id="nx-res-budget" class="text-white font-bold">N/A</span></p>
-            <div id="nx-res-email" class="bg-black/50 p-2.5 rounded border border-white/5 text-muted mt-2 font-mono text-[9px]"></div>
+        <!-- Dynamic Output Properties Map Panel -->
+        <div id="nx-crm-wrapper" class="hidden glass-card p-6 rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.02] space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="text-white font-bold text-sm">CRM Output Sync Mapped Field Parameters:</span>
+          </div>
+          <div class="space-y-2 text-slate-300">
+            <p>Category Type: <span id="nx-res-cat" class="text-white font-bold font-mono">N/A</span></p>
+            <p>Budget Threshold Mapping: <span id="nx-res-budget" class="text-white font-bold font-mono">N/A</span></p>
+            <div id="nx-res-email" class="bg-black/40 p-4 rounded-xl border border-white/5 text-muted font-mono text-[10px] leading-relaxed mt-3"></div>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Core Application Logic Scripts -->
     <script>
-      // Active Scroll Reveal Elements Handling Mechanics
+      // Scroll Reveal Animations handler
       const revealElements = document.querySelectorAll(".reveal");
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("active");
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
         });
       }, { threshold: 0.05 });
-      revealElements.forEach((el) => observer.observe(el));
+      
+      revealElements.forEach((el) => {
+        // Run initial transition and observe
+        observer.observe(el);
+      });
 
-      // Navbar Background Blur States Opacity Control System
+      // Instantly trigger reveal of elements currently visible on viewport on load
+      window.addEventListener('load', () => {
+        revealElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight) {
+            el.classList.add('active');
+          }
+        });
+      });
+
+      // Dynamic Navbar scroll styling
       const navbar = document.getElementById("navbar");
       window.addEventListener("scroll", () => {
         if (window.scrollY > 30) {
-          navbar.classList.add("bg-black/50", "backdrop-blur-xl", "border-b", "border-white/5");
+          navbar.classList.add("bg-background/80", "backdrop-blur-xl", "border-b", "border-white/5", "py-3");
+          navbar.classList.remove("py-4");
         } else {
-          navbar.classList.remove("bg-black/50", "backdrop-blur-xl", "border-b", "border-white/5");
+          navbar.classList.remove("bg-background/80", "backdrop-blur-xl", "border-b", "border-white/5", "py-3");
+          navbar.classList.add("py-4");
         }
       });
 
-      // Mobile Drawers Navigation Trigger Scripts Mappings
+      // Mobile Drawers Navigation Trigger Scripts
       const mobileMenu = document.getElementById("mobile-menu");
       document.getElementById("mobile-open").addEventListener("click", () => {
         mobileMenu.classList.remove("hidden");
@@ -664,7 +959,7 @@
       }
       document.getElementById("mobile-close").addEventListener("click", closeMobileMenu);
 
-      // Contact Form Channels Layout State Configuration
+      // Contact Form Type Selector Configuration Systems
       function handleFormTypeChange(val) {
         const urlField = document.getElementById("dynamic-url-field");
         const msgLabel = document.getElementById("message-label");
@@ -696,7 +991,7 @@
         document.getElementById("contact")?.scrollIntoView({ behavior: 'smooth' });
       }
 
-      // Submission Management Fallback Execution Array Loops
+      // Contact Form Submit Handler
       document.getElementById("contact-form").addEventListener("submit", function(e) {
         e.preventDefault();
         this.classList.add("hidden");
@@ -705,35 +1000,54 @@
         successBlock.classList.add("flex");
       });
 
+      // Aura Case Study Detailed toggle
       function toggleAuraCaseStudy() {
-        document.getElementById("aura-detailed-case").classList.toggle("hidden");
+        const caseStudyDiv = document.getElementById("aura-detailed-case");
+        const chevron = document.getElementById("aura-chevron");
+        caseStudyDiv.classList.toggle("hidden");
+        if (caseStudyDiv.classList.contains("hidden")) {
+          chevron.classList.remove("rotate-180");
+        } else {
+          chevron.classList.add("rotate-180");
+        }
       }
 
-      // Universal Sandbox Controller Functions
+      // Universal Sandbox Overlay Controls (Slide-Over Drawer style)
       function openSandbox(targetId) {
         closeSandbox();
         const overlay = document.getElementById(`sandbox-${targetId}`);
         if (overlay) {
           overlay.classList.remove("hidden");
-          setTimeout(() => overlay.classList.add("open"), 20);
+          // Small delay for smooth entry slide transition trigger
+          setTimeout(() => {
+            overlay.classList.add("active");
+          }, 30);
           document.body.style.overflow = "hidden";
         }
       }
 
       function closeSandbox() {
-        document.querySelectorAll(".sandbox-overlay").forEach(el => {
-          el.classList.remove("open");
-          setTimeout(() => el.classList.add("hidden"), 300);
+        document.querySelectorAll(".sandbox-drawer").forEach(el => {
+          el.classList.remove("active");
+          // Wait for exit CSS transition before hiding completely
+          setTimeout(() => {
+            if (!el.classList.contains("active")) {
+              el.classList.add("hidden");
+            }
+          }, 500);
         });
         document.body.style.overflow = "";
       }
 
-      // ClientBridge App Functional Logics
+      // ClientBridge Onboarding Checklist & Task mechanics
       function updateClientBridgeTasks() {
         const checkboxes = document.querySelectorAll('#sandbox-clientbridge input[type="checkbox"]');
         let checkedCount = 0;
         checkboxes.forEach(cb => { if (cb.checked) checkedCount++; });
-        const percent = Math.round((checkedCount / 3) * 100);
+        
+        const totalTasks = checkboxes.length;
+        const percent = Math.round((checkedCount / totalTasks) * 100);
+        
         document.getElementById("cb-progress-percent").textContent = `${percent}%`;
         document.getElementById("cb-progress-bar").style.width = `${percent}%`;
       }
@@ -741,34 +1055,59 @@
       function triggerMockUpload() {
         const list = document.getElementById("cb-file-list");
         const row = document.createElement("div");
-        row.className = "flex justify-between items-center bg-white/5 p-2 rounded text-[10px] border border-white/5";
-        row.innerHTML = `<span class="font-mono">asset_vector_guidelines.svg</span><span class="text-emerald-400 uppercase font-bold text-[9px]">Synced Complete</span>`;
+        row.className = "flex justify-between items-center bg-background p-3.5 rounded-xl border border-white/5 text-[11px] animate-pulse";
+        row.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span class="text-purple-400">📊</span>
+            <span class="font-mono text-white">asset_vector_guidelines.svg</span>
+          </div>
+          <span class="text-emerald-400 font-mono font-bold text-[10px] uppercase bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/10">Synced Complete</span>
+        `;
         list.appendChild(row);
+        
+        // Remove pulse after brief upload delay simulation
+        setTimeout(() => {
+          row.classList.remove("animate-pulse");
+        }, 1200);
+
         document.getElementById("cb-task-dns").checked = true;
         updateClientBridgeTasks();
       }
 
-      // FlowPilot Kanban App Operations Array Mappings
+      // FlowPilot Kanban board tasks mechanic
       function moveKanbanCard(card, targetId) {
         const container = document.getElementById(targetId);
         if (!container) return;
-        container.appendChild(card);
-        if (targetId === 'col-progress') {
-          card.onclick = () => moveKanbanCard(card, 'col-done');
-          card.querySelector("span").className = "text-[9px] uppercase font-mono bg-emerald-500/10 text-emerald-400 px-1.5 py-0.5 rounded font-bold";
-        } else {
-          card.onclick = null;
-        }
-        document.getElementById("col-backlog-count").textContent = document.getElementById("col-backlog").children.length;
-        document.getElementById("col-progress-count").textContent = document.getElementById("col-progress").children.length;
-        document.getElementById("col-done-count").textContent = document.getElementById("col-done").children.length;
+        
+        // Fade card out during transition
+        card.style.opacity = "0";
+        card.style.transform = "scale(0.9)";
+        
+        setTimeout(() => {
+          container.appendChild(card);
+          card.style.opacity = "1";
+          card.style.transform = "scale(1)";
+          
+          if (targetId === 'col-progress') {
+            card.onclick = () => moveKanbanCard(card, 'col-done');
+            card.querySelector("span").className = "text-[9px] uppercase font-mono bg-emerald-500/10 text-emerald-400 px-2.5 py-0.5 rounded-full font-bold border border-emerald-500/10";
+          } else {
+            card.onclick = null;
+          }
+          
+          // Update counters of columns
+          document.getElementById("col-backlog-count").textContent = document.getElementById("col-backlog").children.length;
+          document.getElementById("col-progress-count").textContent = document.getElementById("col-progress").children.length;
+          document.getElementById("col-done-count").textContent = document.getElementById("col-done").children.length;
+        }, 300);
       }
 
-      // Nexus Core Engine Text Template Definitions Array Logs
+      // Nexus AI classification terminal templates
       const nexusTemplates = {
         plumbing: "Plumbing operation infrastructure localized workflow optimization parameters. Spreadsheets tracking leads leak 40% value.",
-        agency: "B2B SaaS Growth firm ingestion systems model require automated Webhooks integration fields to Hubspot records."
+        agency: "B2B SaaS Growth firm ingestion systems model require automated Webhooks integration fields to HubSpot records."
       };
+      
       function setNexusTemplate(key) {
         document.getElementById("nx-input-msg").value = nexusTemplates[key];
       }
@@ -780,16 +1119,21 @@
         triggerBtn.disabled = true;
 
         setTimeout(() => {
-          logBox.innerHTML += "<div>&gt; [CLASSIFY VECTOR RUN] Resolving operational context tokens classifications...</div>";
+          logBox.innerHTML += "<div class='text-purple-400'>&gt; [CLASSIFY VECTOR RUN] Resolving operational context tokens classifications...</div>";
+          logBox.scrollTop = logBox.scrollHeight;
+          
           setTimeout(() => {
-            logBox.innerHTML += "<div>&gt; [SUCCESS ROUTING] Synced CRM properties matrix objects.</div>";
+            logBox.innerHTML += "<div class='text-emerald-400'>&gt; [SUCCESS ROUTING] Synced CRM properties matrix objects.</div>";
+            logBox.scrollTop = logBox.scrollHeight;
+            
             document.getElementById("nx-res-cat").textContent = "Operational Pipeline System Analysis";
             document.getElementById("nx-res-budget").textContent = "Enterprise Structural Scope Tier";
-            document.getElementById("nx-res-email").textContent = "Subject: Automation blueprint pipeline strategy map routing configured.";
+            document.getElementById("nx-res-email").textContent = "Subject: Automation blueprint pipeline strategy map routing configured. Executing API Dispatch...";
+            
             document.getElementById("nx-crm-wrapper").classList.remove("hidden");
             triggerBtn.disabled = false;
-          }, 800);
-        }, 600);
+          }, 1000);
+        }, 800);
       }
     </script>
   </body>
