@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rohith Dhanala | Portfolio — High-Converting Websites, AI Automation & Systems</title>
+    <title>Rohith Dhanala | Portfolio — High-Converting Systems & Interfaces</title>
     <meta name="description" content="I build high-converting landing pages linked directly to custom AI automations, client portals, and internal delivery systems." />
 
     <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet" />
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -31,7 +31,8 @@
               muted: "#8A94A6",
               accent: "#4F46E5",
               accentGlow: "#8B5CF6",
-              emeraldAccent: "#10B981"
+              emeraldAccent: "#10B981",
+              amberAccent: "#F59E0B"
             },
             animation: {
               'pulse-slow': 'pulse 7s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -126,16 +127,6 @@
         background: #2D3142;
       }
 
-      /* Dynamic Sandbox Slide-over Drawer styles */
-      .sandbox-drawer {
-        transform: translateX(100%);
-        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .sandbox-drawer.active {
-        transform: translateX(0);
-      }
-
-      /* Custom animations for Aura Case Study Screens */
       .pulse-soft {
         animation: pulseSoft 2.5s infinite ease-in-out;
       }
@@ -161,17 +152,16 @@
       <button id="mobile-close" aria-label="Close menu" class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
-      <a href="#about" onclick="closeMobileMenu()" class="text-3xl font-display font-semibold text-muted hover:text-white transition-all">About Studio</a>
-      <a href="#aura-case" onclick="closeMobileMenu()" class="text-3xl font-display font-semibold text-muted hover:text-white transition-all">Aura Intake</a>
-      <a href="#projects" onclick="closeMobileMenu()" class="text-3xl font-display font-semibold text-muted hover:text-white transition-all">Projects</a>
-      <a href="#contact" onclick="closeMobileMenu()" class="text-3xl font-display font-semibold text-indigo-400 hover:text-indigo-300 transition-all">Request Systems Audit →</a>
+      <a href="#about" onclick="closeMobileMenu(); handleNav('about')" class="text-3xl font-display font-semibold text-muted hover:text-white transition-all">About</a>
+      <a href="#projects" onclick="closeMobileMenu(); handleNav('projects')" class="text-3xl font-display font-semibold text-muted hover:text-white transition-all">Projects</a>
+      <a href="#contact" onclick="closeMobileMenu(); handleNav('contact')" class="text-3xl font-display font-semibold text-indigo-400 hover:text-indigo-300 transition-all">Contact</a>
     </div>
 
     <!-- Navigation Header Bar -->
     <nav class="fixed w-full z-40 top-0 transition-all duration-500 border-b border-transparent py-5" id="navbar">
       <div class="max-w-7xl mx-auto px-6 md:px-10 flex justify-between items-center">
         <!-- Brand Identity -->
-        <a href="#home" class="flex items-center gap-3 group" aria-label="Rohith Dhanala - Home">
+        <a href="#home" onclick="navigateTo('home')" class="flex items-center gap-3 group" aria-label="Rohith Dhanala - Home">
           <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center shadow-lg shadow-indigo-500/10 group-hover:scale-105 transition-all duration-300">
             <span class="text-sm font-display font-extrabold tracking-wider text-white">RD</span>
           </div>
@@ -182,14 +172,14 @@
 
         <!-- Premium Pill Navbar Links -->
         <div class="hidden md:flex items-center gap-2 bg-panel/70 backdrop-blur-2xl px-2 py-1.5 rounded-full border border-white/5 shadow-inner">
-          <a href="#about" class="text-xs tracking-wider uppercase text-muted hover:text-white px-5 py-2.5 rounded-full hover:bg-white/5 transition-all font-semibold">About</a>
-          <a href="#aura-case" class="text-xs tracking-wider uppercase text-muted hover:text-white px-5 py-2.5 rounded-full hover:bg-white/5 transition-all font-semibold">Aura Study</a>
-          <a href="#projects" class="text-xs tracking-wider uppercase text-muted hover:text-white px-5 py-2.5 rounded-full hover:bg-white/5 transition-all font-semibold">Projects</a>
+          <a href="#about" onclick="handleNav('about')" class="text-xs tracking-wider uppercase text-muted hover:text-white px-5 py-2.5 rounded-full hover:bg-white/5 transition-all font-semibold">About</a>
+          <a href="#projects" onclick="handleNav('projects')" class="text-xs tracking-wider uppercase text-muted hover:text-white px-5 py-2.5 rounded-full hover:bg-white/5 transition-all font-semibold">Projects</a>
+          <a href="#contact" onclick="handleNav('contact')" class="text-xs tracking-wider uppercase text-muted hover:text-white px-5 py-2.5 rounded-full hover:bg-white/5 transition-all font-semibold">Contact</a>
         </div>
 
         <!-- Call-to-Action Bar -->
         <div class="flex items-center gap-3">
-          <a href="#contact" onclick="selectFormOption('audit')" class="hidden sm:inline-flex px-6 py-2.5 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white text-xs font-bold uppercase tracking-wider transition-all shadow-[0_4px_20px_rgba(79,70,229,0.25)] hover:shadow-[0_4px_25px_rgba(79,70,229,0.4)] active:scale-95">
+          <a href="#contact" onclick="navigateTo('home'); setTimeout(() => selectFormOption('audit'), 100)" class="hidden sm:inline-flex px-6 py-2.5 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white text-xs font-bold uppercase tracking-wider transition-all shadow-[0_4px_20px_rgba(79,70,229,0.25)] hover:shadow-[0_4px_25px_rgba(79,70,229,0.4)] active:scale-95">
             Free Systems Audit
           </a>
           <button id="mobile-open" class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-panel border border-white/5 text-muted hover:text-white transition-all" aria-label="Open menu">
@@ -199,9 +189,12 @@
       </div>
     </nav>
 
-    <!-- Hero Main Container -->
-    <main>
-      <section class="min-h-screen flex items-center justify-center pt-32 pb-24 px-6 md:px-10 relative" id="home">
+    <!-- ============================================ -->
+    <!-- MAIN HOME PAGE                               -->
+    <!-- ============================================ -->
+    <div id="page-home" class="app-page">
+      <!-- Hero Main Container -->
+      <section class="min-h-screen flex items-center justify-center pt-32 pb-24 px-6 md:px-10 relative">
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           <!-- Left copywriting content -->
@@ -294,11 +287,8 @@
                         <stop offset="100%" stop-color="#4F46E5" stop-opacity="0.0"/>
                       </linearGradient>
                     </defs>
-                    <!-- Filled Area -->
                     <path id="chart-area-path" d="M 0 100 Q 30 70 60 85 T 120 40 T 180 60 T 240 25 T 300 15 L 300 100 Z" fill="url(#chartGradient)"></path>
-                    <!-- Glowing Line -->
                     <path id="chart-line-path" d="M 0 100 Q 30 70 60 85 T 120 40 T 180 60 T 240 25 T 300 15" fill="none" stroke="#4F46E5" stroke-width="2.5" stroke-linecap="round"></path>
-                    <!-- Indicator Pulsing Pins -->
                     <circle cx="300" cy="15" r="4" fill="#8B5CF6"></circle>
                     <circle cx="300" cy="15" r="8" fill="#8B5CF6" class="animate-ping" opacity="0.5"></circle>
                   </svg>
@@ -332,7 +322,7 @@
 
               <!-- Interactive Clicker -->
               <div class="pt-4 border-t border-white/5 flex gap-2">
-                <button onclick="openSandbox('nexus')" class="flex-1 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-mono text-[10px] font-bold uppercase tracking-wider rounded-xl transition-all shadow-lg shadow-indigo-500/10">
+                <button onclick="navigateTo('project-nexus')" class="flex-1 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-mono text-[10px] font-bold uppercase tracking-wider rounded-xl transition-all shadow-lg shadow-indigo-500/10">
                   Open Neural Nexus AI Terminal
                 </button>
                 <button onclick="simulateTelemetryTick()" class="px-4 bg-background hover:bg-white/5 border border-white/5 rounded-xl text-muted hover:text-white transition-all text-xs" title="Refresh Live State">
@@ -357,17 +347,16 @@
             
             <div class="space-y-6 text-muted text-sm font-light leading-relaxed">
               <p>
-                As a freelance engineer, I don't believe in generic templates. I build bespoke software systems that combine custom frontend interfaces with absolute functional depth.
+                As a freelance systems architect, I don't build standard marketing wrappers. I construct bespoke software layers combining design system rigor with stable, transactional code.
               </p>
               <p>
-                Merging a background in <span class="text-indigo-300 font-semibold font-mono">Computer Science (BE)</span> and <span class="text-purple-300 font-semibold font-mono">Business Management (MA)</span>, I understand both the architectural elegance of code and the concrete operational targets of high-growth businesses.
+                Merging a background in <span class="text-indigo-300 font-semibold font-mono">Computer Science (BE)</span> and <span class="text-purple-300 font-semibold font-mono">Business Management (MA)</span>, I understand both the structural constraints of clean databases and the absolute ROI objectives of modern products.
               </p>
               <p>
-                From patient intake platforms in regulated healthcare models to automated agency delivery portals, I architect and build complete product landscapes that remove human friction points entirely.
+                I eliminate operational friction entirely. By deploying custom dashboards, secure clients bridges, and automated pipeline listeners, I give companies the structural tooling they need to scale.
               </p>
             </div>
 
-            <!-- Custom Tech Stack Badges -->
             <div class="pt-4 space-y-2">
               <span class="text-[10px] font-mono tracking-widest text-indigo-400 uppercase font-bold block">Production Framework Focus:</span>
               <div class="flex flex-wrap gap-2">
@@ -390,7 +379,6 @@
             
             <!-- Bento Box Cards Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <!-- Bento Card 1 -->
               <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
                 <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div class="w-11 h-11 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6 border border-indigo-500/20 shadow-md">
@@ -401,7 +389,6 @@
                 <div class="text-[10px] text-indigo-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Built from the design system up</div>
               </div>
 
-              <!-- Bento Card 2 -->
               <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
                 <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div class="w-11 h-11 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6 border border-emerald-500/20 shadow-md">
@@ -412,7 +399,6 @@
                 <div class="text-[10px] text-emerald-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Scaled automation pipelines</div>
               </div>
 
-              <!-- Bento Card 3 -->
               <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
                 <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div class="w-11 h-11 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6 border border-purple-500/20 shadow-md">
@@ -423,7 +409,6 @@
                 <div class="text-[10px] text-purple-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Elite digital work spaces</div>
               </div>
 
-              <!-- Bento Card 4 -->
               <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
                 <div class="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div class="w-11 h-11 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400 mb-6 border border-rose-500/20 shadow-md">
@@ -438,497 +423,90 @@
         </div>
       </section>
 
-      <!-- Case Study: Aura Patient Intake UX Redesign -->
-      <section id="aura-case" class="py-28 px-6 md:px-10 border-t border-white/5 bg-background relative overflow-hidden">
-        <div class="absolute top-[20%] right-[-10%] w-[35%] h-[35%] rounded-full bg-emerald-500/5 glow-orb -z-10 animate-pulse-slow"></div>
-        <div class="absolute bottom-[20%] left-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-500/5 glow-orb -z-10 animate-pulse-slow"></div>
-
-        <div class="max-w-7xl mx-auto">
-          <!-- Section Heading area -->
-          <div class="mb-16 reveal max-w-4xl">
-            <span class="text-xs font-mono tracking-[0.2em] text-emerald-400 uppercase font-extrabold">&gt; Deep Design Case Study</span>
-            <h3 class="text-3xl sm:text-5xl font-display font-extrabold text-white mt-3 leading-tight">
-              Aura Patient Intake UX: Systems Architecture &amp; Fluid Design Case Study
-            </h3>
-            <p class="text-muted text-base sm:text-lg mt-4 font-light leading-relaxed">
-              How high-end, patient-centric design principles transformed clinical patient onboarding by replacing outdated paper processes with a frictionless digital workspace.
-            </p>
-          </div>
-
-          <!-- Main Case Study Content Grid -->
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
-            <!-- Left: Text Breakdown (Detailed BoltDS Design Process) -->
-            <div class="lg:col-span-6 space-y-12">
-              
-              <!-- Segment 1: The Challenge -->
-              <div class="space-y-4">
-                <div class="flex items-center gap-3">
-                  <span class="text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded font-bold uppercase">01</span>
-                  <h4 class="text-lg font-bold text-white tracking-tight">Systemic Inefficiencies and Friction</h4>
-                </div>
-                <p class="text-sm text-muted leading-relaxed font-light">
-                  Traditional clinical onboarding operations suffer from massive friction. Patients are presented with dense, non-responsive sheets containing nested options, causing an average of <span class="text-white font-semibold">45% registration drop-off rates</span>. Administrative teams are then forced to manually scan, re-type, and troubleshoot errors.
-                </p>
-              </div>
-
-              <!-- Segment 2: Visual Architecture & Progressive Disclosure -->
-              <div class="space-y-4">
-                <div class="flex items-center gap-3">
-                  <span class="text-xs font-mono bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2.5 py-1 rounded font-bold uppercase">02</span>
-                  <h4 class="text-lg font-bold text-white tracking-tight">Progressive Disclosure Design System</h4>
-                </div>
-                <p class="text-sm text-muted leading-relaxed font-light">
-                  The design system for Aura reduces cognitive load. By presenting inputs one clear variable block at a time, patients interact with an elegant, responsive UI canvas. We engineered custom micro-indicators, fluid step-by-step transitions, and strict real-time field validation to eliminate validation errors.
-                </p>
-              </div>
-
-              <!-- Segment 3: The Design System Tokens -->
-              <div class="p-6 rounded-2xl bg-panel/60 border border-white/5 space-y-4">
-                <span class="text-[10px] font-mono tracking-wider text-muted uppercase font-bold block">Aura DS Core Token Matrix</span>
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                  <div>
-                    <span class="text-[9px] text-muted font-mono block">Brand Primary</span>
-                    <div class="flex items-center gap-1.5 mt-1">
-                      <span class="w-3.5 h-3.5 rounded bg-emerald-500 border border-emerald-400/20"></span>
-                      <span class="text-[10px] text-white font-mono font-semibold">#10B981</span>
-                    </div>
-                  </div>
-                  <div>
-                    <span class="text-[9px] text-muted font-mono block">System Dark</span>
-                    <div class="flex items-center gap-1.5 mt-1">
-                      <span class="w-3.5 h-3.5 rounded bg-[#090A0E] border border-white/10"></span>
-                      <span class="text-[10px] text-white font-mono font-semibold">#090A0E</span>
-                    </div>
-                  </div>
-                  <div>
-                    <span class="text-[9px] text-muted font-mono block">Accent Glow</span>
-                    <div class="flex items-center gap-1.5 mt-1">
-                      <span class="w-3.5 h-3.5 rounded bg-indigo-500 border border-indigo-400/20"></span>
-                      <span class="text-[10px] text-white font-mono font-semibold">#4F46E5</span>
-                    </div>
-                  </div>
-                  <div>
-                    <span class="text-[9px] text-muted font-mono block">Typography</span>
-                    <span class="text-[10px] text-white font-mono font-semibold mt-1 block">Bricolage / DM</span>
-                  </div>
-                </div>
-                
-                <div class="grid grid-cols-2 gap-4 pt-2 border-t border-white/5">
-                  <div>
-                    <span class="text-[9px] text-muted font-mono block">Button Active</span>
-                    <span class="text-[10px] text-white bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded mt-1 inline-block">w-full rounded-full transition-all</span>
-                  </div>
-                  <div>
-                    <span class="text-[9px] text-muted font-mono block">Validation State</span>
-                    <span class="text-[10px] text-emerald-400 mt-1 block">Real-time Regex Regex Matching</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Segment 4: Engineering Impact Metrics -->
-              <div class="grid grid-cols-2 gap-4">
-                <div class="p-5 bg-panel/30 border border-white/5 rounded-2xl flex flex-col justify-center">
-                  <span class="text-[9px] font-mono text-emerald-400 font-extrabold uppercase tracking-widest">Total Patient Intake</span>
-                  <span class="text-white text-3xl font-display font-extrabold mt-1">+34%</span>
-                  <span class="text-xs text-muted mt-1 leading-relaxed">Increase in intake conversion velocity and accuracy metrics.</span>
-                </div>
-                <div class="p-5 bg-panel/30 border border-white/5 rounded-2xl flex flex-col justify-center">
-                  <span class="text-[9px] font-mono text-indigo-400 font-extrabold uppercase tracking-widest">Form Drop-off</span>
-                  <span class="text-white text-3xl font-display font-extrabold mt-1">-45%</span>
-                  <span class="text-xs text-muted mt-1 leading-relaxed">Reduction in dropped registration processes due to user confusion.</span>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Right: Interactive Product Screens (Aura Intake Wizard & Clinical Dashboards) -->
-            <div class="lg:col-span-6 space-y-6">
-              
-              <!-- Screen 1: High-Fidelity Patient Intake Application Screen -->
-              <div class="rounded-3xl bg-[#090A0E] border border-white/5 shadow-2xl overflow-hidden relative">
-                <div class="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-emerald-500 to-indigo-500"></div>
-                
-                <!-- Browser Header -->
-                <div class="px-5 py-3.5 border-b border-white/5 bg-[#050508] flex items-center justify-between">
-                  <div class="flex items-center gap-2">
-                    <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span class="text-xs font-bold text-white font-mono uppercase tracking-wider">Aura Patient Intake Screen</span>
-                  </div>
-                  <span class="text-[9px] font-mono bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded font-bold uppercase">HIPAA Compliant</span>
-                </div>
-
-                <!-- Intake Application UI Body -->
-                <div class="p-6 space-y-6">
-                  <!-- Form Process Timeline -->
-                  <div class="flex items-center justify-between pb-4 border-b border-white/5">
-                    <div class="flex items-center gap-3">
-                      <span id="aura-step-badge" class="w-6 h-6 rounded-full bg-emerald-500 text-black font-mono font-bold text-xs flex items-center justify-center">1</span>
-                      <div>
-                        <h5 class="text-xs font-bold text-white">Interactive Step Formulation</h5>
-                        <p id="aura-step-desc" class="text-[10px] text-muted">Awaiting general credentials parameters</p>
-                      </div>
-                    </div>
-                    <span class="text-[10px] font-mono text-muted" id="aura-step-percent">33% Done</span>
-                  </div>
-
-                  <!-- Dynamic Form Elements -->
-                  <div id="aura-wizard-body" class="space-y-4">
-                    <!-- Step 1 Layout -->
-                    <div id="aura-step-1" class="space-y-3">
-                      <div>
-                        <label for="pt-name" class="block text-[9px] uppercase tracking-wider font-mono text-muted mb-1.5 font-bold">Patient Legal Name</label>
-                        <input id="pt-name" type="text" placeholder="John Doe" class="w-full bg-[#050508] border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emerald-500 transition-colors" />
-                        <span id="pt-name-err" class="text-[9px] text-red-400 hidden mt-1 block">Please write a valid patient name.</span>
-                      </div>
-                      <div>
-                        <label for="pt-email" class="block text-[9px] uppercase tracking-wider font-mono text-muted mb-1.5 font-bold">Patient Contact Email</label>
-                        <input id="pt-email" type="email" placeholder="john@doe.com" class="w-full bg-[#050508] border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emerald-500 transition-colors" />
-                        <span id="pt-email-err" class="text-[9px] text-red-400 hidden mt-1 block">Please enter a valid email address.</span>
-                      </div>
-                    </div>
-
-                    <!-- Step 2 Layout (Hidden initially) -->
-                    <div id="aura-step-2" class="space-y-3 hidden">
-                      <div>
-                        <label for="pt-insurance" class="block text-[9px] uppercase tracking-wider font-mono text-muted mb-1.5 font-bold">Insurance Provider Authority</label>
-                        <input id="pt-insurance" type="text" placeholder="Blue Cross Shield" class="w-full bg-[#050508] border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emerald-500 transition-colors" />
-                      </div>
-                      <div>
-                        <label for="pt-policy" class="block text-[9px] uppercase tracking-wider font-mono text-muted mb-1.5 font-bold">Insurance Policy Serial ID</label>
-                        <input id="pt-policy" type="text" placeholder="POL-993-211-1" class="w-full bg-[#050508] border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emerald-500 transition-colors" />
-                      </div>
-                    </div>
-
-                    <!-- Step 3 Layout (Hidden initially) -->
-                    <div id="aura-step-3" class="space-y-3 hidden">
-                      <div class="p-4 rounded-2xl bg-emerald-500/5 border border-emerald-500/10 text-center space-y-2">
-                        <span class="text-xl">🛡️</span>
-                        <h6 class="text-xs font-bold text-white">Ready for Clinical Sync Verification</h6>
-                        <p class="text-[10px] text-muted leading-relaxed">
-                          Your progressive intake credentials will be synchronized directly into the securely encrypted patient matrices log.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Controls -->
-                  <div class="flex items-center gap-3 pt-2">
-                    <button id="aura-back-btn" onclick="nextAuraStep(-1)" disabled class="flex-1 py-3 border border-white/5 rounded-xl text-muted hover:text-white text-xs font-bold uppercase tracking-wider transition-all disabled:opacity-30">
-                      Back
-                    </button>
-                    <button id="aura-next-btn" onclick="nextAuraStep(1)" class="flex-1 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-lg shadow-emerald-500/10">
-                      Continue Step →
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Screen 2: Real-time Clinical Physician Dashboard Feed -->
-              <div class="rounded-3xl bg-[#090A0E] border border-white/5 shadow-2xl overflow-hidden">
-                <!-- Dashboard Header -->
-                <div class="px-5 py-3.5 border-b border-white/5 bg-[#050508] flex items-center justify-between">
-                  <div class="flex items-center gap-2">
-                    <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
-                    <span class="text-xs font-bold text-white font-mono uppercase tracking-wider">Clinician Intakes Dashboard</span>
-                  </div>
-                  <span class="text-[10px] text-muted font-mono font-medium" id="clinical-feed-time">Synced 1m ago</span>
-                </div>
-
-                <!-- Dashboard Patients List -->
-                <div class="p-5 space-y-3.5" id="clinical-patients-feed">
-                  <!-- Patient 1 -->
-                  <div class="flex items-center justify-between p-3.5 bg-[#050508]/60 border border-white/5 rounded-2xl">
-                    <div class="flex items-center gap-3">
-                      <div class="w-9 h-9 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-xs font-bold text-emerald-400">
-                        SB
-                      </div>
-                      <div>
-                        <h5 class="text-xs font-bold text-white">Sarah Berenson</h5>
-                        <p class="text-[9px] text-muted font-mono">ID: PT-844-A | Inbound Sync</p>
-                      </div>
-                    </div>
-                    <span class="text-[9px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded-full font-bold uppercase">
-                      Intake Synced
-                    </span>
-                  </div>
-
-                  <!-- Patient 2 -->
-                  <div class="flex items-center justify-between p-3.5 bg-[#050508]/60 border border-white/5 rounded-2xl">
-                    <div class="flex items-center gap-3">
-                      <div class="w-9 h-9 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-xs font-bold text-indigo-400">
-                        MR
-                      </div>
-                      <div>
-                        <h5 class="text-xs font-bold text-white">Marcus Ross</h5>
-                        <p class="text-[9px] text-muted font-mono">ID: PT-219-X | Form Progressing</p>
-                      </div>
-                    </div>
-                    <span class="text-[9px] bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2 py-0.5 rounded-full font-bold uppercase animate-pulse">
-                      Filling Form
-                    </span>
-                  </div>
-
-                  <!-- Dynamically appended patient from the interactive wizard will insert here -->
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- Case Studies & Advanced Shipped Products -->
+      <!-- Projects Section Grid Index -->
       <section id="projects" class="py-28 px-6 md:px-10 relative border-t border-white/5">
         <div class="max-w-7xl mx-auto">
           <!-- Section Title Area -->
           <div class="mb-20 text-center space-y-4 max-w-3xl mx-auto reveal">
-            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold">&gt; Interactive Shipped Products</span>
-            <h3 class="text-3xl sm:text-5xl font-display font-extrabold text-white">Complete products constructed with elite fidelity.</h3>
+            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold">&gt; Shipped Client Systems</span>
+            <h3 class="text-4xl sm:text-5xl font-display font-extrabold text-white">Production Projects</h3>
             <p class="text-muted text-sm sm:text-base leading-relaxed">
-              These are not basic mockups. I build, design, and ship functional interfaces. Test their custom design systems and interactive features below.
+              Explore deep architecture systems designed, engineered, and shipped for active environments. Click any project to open its dedicated page.
             </p>
           </div>
 
           <!-- Product Columns / Grid -->
-          <div class="space-y-16">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
-            <!-- PRODUCT 1: CLIENTBRIDGE (Cold Minimalist Aesthetic) -->
-            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden reveal">
-              <div class="absolute -right-20 -bottom-20 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[100px] -z-10"></div>
-              
-              <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-6 space-y-6">
-                  <!-- Visual Brand tag for ClientBridge -->
-                  <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center text-white text-xs font-bold">CB</div>
-                    <div>
-                      <span class="text-xs font-mono font-bold text-purple-400 uppercase tracking-widest block">ClientBridge</span>
-                      <span class="text-[10px] text-muted block">Client Workspace &amp; Delivery System</span>
-                    </div>
-                  </div>
-
-                  <h4 class="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight">
-                    Secure Client Collaboration Platform
-                  </h4>
-                  <p class="text-muted text-sm leading-relaxed">
-                    Designed with a sleek, cold obsidian-minimalist workspace aesthetic (inspired by *Linear* and *Vercel*). It features encrypted document delivery systems, dynamic circular client progress tracking, and key validation dashboards.
-                  </p>
-                  
-                  <!-- Metrics mapping -->
-                  <div class="grid grid-cols-2 gap-4 bg-[#050508]/60 p-4 rounded-2xl border border-white/5">
-                    <div>
-                      <span class="text-[9px] uppercase tracking-widest text-muted font-bold block">Delivery Security</span>
-                      <p class="text-xs font-bold text-white mt-1">End-To-End AES Sync</p>
-                    </div>
-                    <div>
-                      <span class="text-[9px] uppercase tracking-widest text-muted font-bold block">Friction reduction</span>
-                      <p class="text-xs font-bold text-purple-400 mt-1">100% Onboard Efficiency</p>
-                    </div>
-                  </div>
-
-                  <div class="pt-2">
-                    <button onclick="openSandbox('clientbridge')" class="px-6 py-3.5 bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center gap-2.5 shadow-[0_4px_15px_rgba(139,92,246,0.3)]">
-                      <span>Launch ClientBridge Portal Workspace</span>
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Product Preview Image / Mockup Screen representing ClientBridge -->
-                <div class="lg:col-span-6 flex justify-center">
-                  <div class="w-full max-w-md rounded-2xl bg-[#090A0E] border border-white/5 shadow-2xl overflow-hidden relative">
-                    <!-- Top interface bar -->
-                    <div class="bg-[#050508] px-4 py-3 border-b border-white/5 flex items-center justify-between text-[10px] font-mono">
-                      <div class="flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span>
-                        <span class="text-white font-bold">portal.clientbridge.io</span>
-                      </div>
-                      <span class="text-emeraldAccent">SECURE</span>
-                    </div>
-
-                    <!-- Layout Content Mock -->
-                    <div class="p-6 space-y-4 bg-gradient-to-b from-[#090A0E] to-[#050508]">
-                      <!-- Active Asset tracker -->
-                      <div class="p-4 bg-background border border-white/5 rounded-xl flex items-center justify-between">
-                        <div>
-                          <span class="text-[9px] uppercase tracking-wider text-muted font-bold block">Core Onboarding Progress</span>
-                          <span class="text-sm font-bold text-white mt-1 block">Task Verification Checklist</span>
-                        </div>
-                        <div class="w-10 h-10 rounded-full border-2 border-purple-500/20 flex items-center justify-center text-[10px] font-mono text-purple-400 font-bold">
-                          66%
-                        </div>
-                      </div>
-
-                      <div class="space-y-2">
-                        <div class="flex items-center justify-between text-[10px] font-mono text-muted">
-                          <span>Operational Blueprint Guidelines</span>
-                          <span class="text-emeraldAccent">Checked</span>
-                        </div>
-                        <div class="flex items-center justify-between text-[10px] font-mono text-muted">
-                          <span>Submit Primary Brand Identity Assets</span>
-                          <span class="text-emeraldAccent">Checked</span>
-                        </div>
-                        <div class="flex items-center justify-between text-[10px] font-mono text-muted">
-                          <span>Verify Server Domain Authority</span>
-                          <span class="text-purple-400 animate-pulse">Awaiting Validation</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <!-- CASE STUDY LINK: AURA PATIENT INTAKE -->
+            <div onclick="navigateTo('aura-case')" class="glass-card rounded-3xl p-8 relative overflow-hidden group cursor-pointer border border-emerald-500/10 hover:border-emerald-500/30 flex flex-col justify-between min-h-[440px]">
+              <div class="absolute top-0 right-0 p-6">
+                <span class="text-[9px] font-mono bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-full font-bold uppercase tracking-wider">Design System Case Study</span>
+              </div>
+              <div class="space-y-4 pt-12">
+                <span class="text-emeraldAccent font-mono text-sm block tracking-widest uppercase font-bold">CASE STUDY // CLINICAL DESIGN SYSTEMS</span>
+                <h4 class="text-3xl font-display font-extrabold text-white group-hover:text-emerald-300 transition-colors">Aura Patient Intake UX</h4>
+                <p class="text-muted text-sm leading-relaxed max-w-md">
+                  A deep technical redesign of complex clinical onboarding channels. Featuring complete CSS tokens, state arrays, and verified conversion optimizations.
+                </p>
+              </div>
+              <div class="pt-8 flex items-center gap-2 text-xs font-bold font-mono text-emerald-400 uppercase tracking-widest group-hover:translate-x-1.5 transition-transform">
+                <span>Inspect Design System &amp; screens</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </div>
             </div>
 
-            <!-- PRODUCT 2: FLOWPILOT (Cyber Industrial Aesthetic) -->
-            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden reveal">
-              <div class="absolute -left-20 -bottom-20 w-[400px] h-[400px] bg-amber-500/5 rounded-full blur-[100px] -z-10"></div>
-              
-              <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-6 lg:order-2 space-y-6">
-                  <!-- Visual Brand tag for FlowPilot -->
-                  <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-amber-600 to-yellow-500 flex items-center justify-center text-white text-xs font-bold">FP</div>
-                    <div>
-                      <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest block">FlowPilot</span>
-                      <span class="text-[10px] text-muted block">Intelligent Kanban Board Dashboard</span>
-                    </div>
-                  </div>
-
-                  <h4 class="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight">
-                    Agile Sprint Planning &amp; Kanban Engine
-                  </h4>
-                  <p class="text-muted text-sm leading-relaxed">
-                    Designed as a tactile developer sprint grid with high-contrast amber boundaries, structured columns, retro-monospace labels, priority indicators, and animated drag-destination task blocks.
-                  </p>
-                  
-                  <!-- Metrics mapping -->
-                  <div class="grid grid-cols-2 gap-4 bg-[#050508]/60 p-4 rounded-2xl border border-white/5">
-                    <div>
-                      <span class="text-[9px] uppercase tracking-widest text-muted font-bold block">Status Tracking</span>
-                      <p class="text-xs font-bold text-white mt-1">Real-time DB Sync</p>
-                    </div>
-                    <div>
-                      <span class="text-[9px] uppercase tracking-widest text-muted font-bold block">Task Management</span>
-                      <p class="text-xs font-bold text-amber-400 mt-1">Dynamic Task Routing</p>
-                    </div>
-                  </div>
-
-                  <div class="pt-2">
-                    <button onclick="openSandbox('flowpilot')" class="px-6 py-3.5 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center gap-2.5 shadow-[0_4px_15px_rgba(245,158,11,0.3)]">
-                      <span>Launch FlowPilot Sprint Console</span>
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Product Preview Image / Mockup Screen representing FlowPilot -->
-                <div class="lg:col-span-6 lg:order-1 flex justify-center">
-                  <div class="w-full max-w-md rounded-2xl bg-[#0B0C10] border border-amber-500/20 shadow-2xl overflow-hidden">
-                    <div class="bg-black/80 px-4 py-3 border-b border-amber-500/20 flex items-center justify-between font-mono text-[10px]">
-                      <span class="text-amber-400 font-bold uppercase">System: flowpilot.local</span>
-                      <span class="text-muted font-bold">SPRINT ACTIVE</span>
-                    </div>
-
-                    <!-- Mock Board Columns -->
-                    <div class="p-6 bg-[#050508] grid grid-cols-3 gap-3.5">
-                      <!-- Col 1 -->
-                      <div class="space-y-3.5">
-                        <span class="text-[8px] font-mono tracking-widest text-muted block uppercase font-bold">Backlog</span>
-                        <div class="p-3 bg-[#0B0C10] border border-white/5 rounded-xl text-left space-y-2">
-                          <span class="text-[8px] bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded font-mono font-bold uppercase">UI Wireframes</span>
-                          <p class="text-[10px] font-bold text-white leading-tight">Grid System</p>
-                        </div>
-                      </div>
-
-                      <!-- Col 2 -->
-                      <div class="space-y-3.5">
-                        <span class="text-[8px] font-mono tracking-widest text-muted block uppercase font-bold">Active</span>
-                        <div class="p-3 bg-[#0B0C10] border border-amber-500/30 rounded-xl text-left space-y-2">
-                          <span class="text-[8px] bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded font-mono font-bold uppercase">API Config</span>
-                          <p class="text-[10px] font-bold text-white leading-tight">Sync Webhooks</p>
-                        </div>
-                      </div>
-
-                      <!-- Col 3 -->
-                      <div class="space-y-3.5">
-                        <span class="text-[8px] font-mono tracking-widest text-muted block uppercase font-bold">Done</span>
-                        <div class="p-3 bg-[#0B0C10] border border-white/5 rounded-xl text-left opacity-40">
-                          <p class="text-[9px] text-muted">Awaiting task transitions...</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <!-- PRODUCT 1: CLIENTBRIDGE -->
+            <div onclick="navigateTo('project-clientbridge')" class="glass-card rounded-3xl p-8 relative overflow-hidden group cursor-pointer border border-purple-500/10 hover:border-purple-500/30 flex flex-col justify-between min-h-[440px]">
+              <div class="absolute top-0 right-0 p-6">
+                <span class="text-[9px] font-mono bg-purple-500/15 text-purple-400 border border-purple-500/20 px-3 py-1 rounded-full font-bold uppercase tracking-wider">B2B SaaS</span>
+              </div>
+              <div class="space-y-4 pt-12">
+                <span class="text-purple-400 font-mono text-sm block tracking-widest uppercase font-bold">SHIPPED SYSTEM // COLLABORATION VAULT</span>
+                <h4 class="text-3xl font-display font-extrabold text-white group-hover:text-purple-300 transition-colors">ClientBridge Gateway</h4>
+                <p class="text-muted text-sm leading-relaxed max-w-md">
+                  An ultra-secure, minimalist document exchange and status synchronizer. Leverages end-to-end encryption keys and progress analytics loops.
+                </p>
+              </div>
+              <div class="pt-8 flex items-center gap-2 text-xs font-bold font-mono text-purple-400 uppercase tracking-widest group-hover:translate-x-1.5 transition-transform">
+                <span>Launch ClientBridge Gateway</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </div>
             </div>
 
-            <!-- PRODUCT 3: NEXUS AI (Hacker / Neural Aesthetic) -->
-            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden reveal">
-              <div class="absolute -right-20 -bottom-20 w-[400px] h-[400px] bg-emerald-500/5 rounded-full blur-[100px] -z-10"></div>
-              
-              <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-6 space-y-6">
-                  <!-- Visual Brand tag for Nexus AI -->
-                  <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white text-xs font-bold">NX</div>
-                    <div>
-                      <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest block">Nexus AI</span>
-                      <span class="text-[10px] text-muted block">Autonomous Language Routing Terminal</span>
-                    </div>
-                  </div>
+            <!-- PRODUCT 2: FLOWPILOT -->
+            <div onclick="navigateTo('project-flowpilot')" class="glass-card rounded-3xl p-8 relative overflow-hidden group cursor-pointer border border-amber-500/10 hover:border-amber-500/30 flex flex-col justify-between min-h-[440px]">
+              <div class="absolute top-0 right-0 p-6">
+                <span class="text-[9px] font-mono bg-amber-500/15 text-amber-400 border border-amber-500/20 px-3 py-1 rounded-full font-bold uppercase tracking-wider">Agile Tools</span>
+              </div>
+              <div class="space-y-4 pt-12">
+                <span class="text-amber-400 font-mono text-sm block tracking-widest uppercase font-bold">SHIPPED SYSTEM // PRODUCTION TRACKER</span>
+                <h4 class="text-3xl font-display font-extrabold text-white group-hover:text-amber-300 transition-colors">FlowPilot Sprint board</h4>
+                <p class="text-muted text-sm leading-relaxed max-w-md">
+                  An interactive, developer-centric kanban engine monitoring active workflow migrations, bottleneck constraints, and pipeline statuses in real-time.
+                </p>
+              </div>
+              <div class="pt-8 flex items-center gap-2 text-xs font-bold font-mono text-amber-400 uppercase tracking-widest group-hover:translate-x-1.5 transition-transform">
+                <span>Open Sprint Dashboard</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
+            </div>
 
-                  <h4 class="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight">
-                    Autonomous Intent Extraction Console
-                  </h4>
-                  <p class="text-muted text-sm leading-relaxed">
-                    Designed with an advanced futuristic hacker-terminal aesthetic featuring deep emerald neural networks, scanline overlay systems, responsive command inputs, and JSON payload compilers.
-                  </p>
-                  
-                  <!-- Metrics mapping -->
-                  <div class="grid grid-cols-2 gap-4 bg-[#050508]/60 p-4 rounded-2xl border border-white/5">
-                    <div>
-                      <span class="text-[9px] uppercase tracking-widest text-muted font-bold block">NLP Categorizer</span>
-                      <p class="text-xs font-bold text-white mt-1">99.4% Extraction Accuracy</p>
-                    </div>
-                    <div>
-                      <span class="text-[9px] uppercase tracking-widest text-muted font-bold block">Sync Dispatcher</span>
-                      <p class="text-xs font-bold text-emeraldAccent mt-1">Under 800ms API Speed</p>
-                    </div>
-                  </div>
-
-                  <div class="pt-2">
-                    <button onclick="openSandbox('nexus')" class="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center gap-2.5 shadow-[0_4px_15px_rgba(16,185,129,0.3)]">
-                      <span>Open Neural Nexus AI Terminal</span>
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Product Preview Image / Mockup Screen representing Nexus AI -->
-                <div class="lg:col-span-6 flex justify-center">
-                  <div class="w-full max-w-md rounded-2xl bg-[#090A0E] border border-emerald-500/20 shadow-2xl overflow-hidden relative">
-                    <div class="absolute inset-0 bg-scanline pointer-events-none opacity-[0.03] z-20"></div>
-                    
-                    <div class="bg-[#050508] px-4 py-3 border-b border-emerald-500/20 flex items-center justify-between font-mono text-[10px]">
-                      <span class="text-emeraldAccent font-bold">root@nexus-classifier.local:~/</span>
-                      <span class="text-muted">ONLINE</span>
-                    </div>
-
-                    <!-- Console Terminal Box -->
-                    <div class="p-6 space-y-4 bg-black/90 font-mono text-xs">
-                      <div class="text-emerald-400/80">// Loading AI neural vectors classifications models...</div>
-                      <div class="text-emeraldAccent">// Model: Nexus-Intent-Extractor-v4 ready.</div>
-                      
-                      <!-- Command Input representation -->
-                      <div class="p-3.5 bg-[#090A0E]/80 border border-white/5 rounded-xl flex items-center justify-between">
-                        <span class="text-slate-300 font-mono text-[10px]">Plumbing operation leads tracking spreadsheet models.</span>
-                        <span class="w-2.5 h-4 bg-emeraldAccent animate-pulse"></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <!-- PRODUCT 3: NEXUS AI -->
+            <div onclick="navigateTo('project-nexus')" class="glass-card rounded-3xl p-8 relative overflow-hidden group cursor-pointer border border-indigo-500/10 hover:border-indigo-500/30 flex flex-col justify-between min-h-[440px]">
+              <div class="absolute top-0 right-0 p-6">
+                <span class="text-[9px] font-mono bg-indigo-500/15 text-indigo-400 border border-indigo-500/20 px-3 py-1 rounded-full font-bold uppercase tracking-wider">NLP Engine</span>
+              </div>
+              <div class="space-y-4 pt-12">
+                <span class="text-indigo-400 font-mono text-sm block tracking-widest uppercase font-bold">SHIPPED SYSTEM // AI TERMINAL</span>
+                <h4 class="text-3xl font-display font-extrabold text-white group-hover:text-indigo-300 transition-colors">Nexus AI NLP Terminal</h4>
+                <p class="text-muted text-sm leading-relaxed max-w-md">
+                  An autonomous natural language extraction node. Translates unformatted client prompts into validated JSON parameters to dispatch directly to CRM databases.
+                </p>
+              </div>
+              <div class="pt-8 flex items-center gap-2 text-xs font-bold font-mono text-indigo-400 uppercase tracking-widest group-hover:translate-x-1.5 transition-transform">
+                <span>Boot Nexus AI Terminal</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </div>
             </div>
 
@@ -1021,7 +599,467 @@
           </div>
         </div>
       </section>
-    </main>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- DEDICATED PAGE: AURA DESIGN CASE STUDY        -->
+    <!-- ============================================ -->
+    <div id="page-aura-case" class="app-page hidden min-h-screen pt-32 pb-24 px-6 md:px-10">
+      <div class="max-w-6xl mx-auto space-y-16">
+        
+        <!-- Back To Home Float Link -->
+        <button onclick="navigateTo('home')" class="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-white/10 bg-white/5 text-muted hover:text-white transition-all text-xs font-bold font-mono uppercase">
+          ← Back to home
+        </button>
+
+        <!-- Main Banner -->
+        <div class="space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded font-bold uppercase">CASE STUDY // IN-DEPTH</span>
+            <span class="text-xs font-mono text-muted">AURA CLIENT PORTAL INC.</span>
+          </div>
+          <h1 class="font-display font-extrabold text-4xl sm:text-6xl text-white leading-tight">
+            Aura Clinical Design System &amp; Patient Intake UX Architecture
+          </h1>
+          <p class="text-muted text-base sm:text-lg max-w-3xl leading-relaxed font-light">
+            A deep physical and technical architectural retrospective. Overhauling legacy non-responsive hospital intakes with pixel-grid design system parameters and real-time validation layers.
+          </p>
+        </div>
+
+        <!-- Project Overview Parameters -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 bg-[#090A0E] border border-white/5 rounded-3xl font-mono text-xs">
+          <div>
+            <span class="text-muted block font-bold mb-1">// MAIN ROLE:</span>
+            <span class="text-white font-semibold block text-sm">Lead Systems Architect</span>
+          </div>
+          <div>
+            <span class="text-muted block font-bold mb-1">// SYSTEM METRIC:</span>
+            <span class="text-emerald-400 font-bold block text-sm">+34% Intake Velocity</span>
+          </div>
+          <div>
+            <span class="text-muted block font-bold mb-1">// DURATION:</span>
+            <span class="text-white font-semibold block text-sm">12 Weeks Sprints</span>
+          </div>
+          <div>
+            <span class="text-muted block font-bold mb-1">// PLATFORM STACK:</span>
+            <span class="text-white font-semibold block text-sm">HTML, Tailwind, HIPAA API</span>
+          </div>
+        </div>
+
+        <!-- Before vs. After Interactive Area -->
+        <div class="space-y-6">
+          <h3 class="text-xl sm:text-2xl font-display font-extrabold text-white">Interactive Transformation Blueprint</h3>
+          <p class="text-muted text-xs sm:text-sm font-light">
+            Compare the structural layouts of the messy paper-onboarding predecessor system with our customized progressive digital solution.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Legacy (Before) -->
+            <div class="p-6 bg-red-500/5 border border-red-500/10 rounded-2xl space-y-4">
+              <span class="text-[10px] font-mono text-red-400 font-extrabold uppercase tracking-widest">[X] Legacy intake (45% Drop-off)</span>
+              <div class="space-y-3 font-mono text-[10px] text-red-300 opacity-60">
+                <div class="p-3.5 border border-red-500/20 bg-[#050508] rounded-xl">
+                  <span class="font-bold">SECTION 1: PATIENT FAMILY HISTORY DETAILS (WRITE IN BLOCK LETTERS)</span>
+                  <div class="grid grid-cols-4 gap-2 mt-2">
+                    <div class="h-6 bg-red-500/10 rounded"></div>
+                    <div class="h-6 bg-red-500/10 rounded"></div>
+                    <div class="h-6 bg-red-500/10 rounded col-span-2"></div>
+                  </div>
+                </div>
+                <div class="p-3.5 border border-red-500/20 bg-[#050508] rounded-xl">
+                  <span class="font-bold">SECTION 2: DENSE INSURANCE DISCLOSURE VARIABLES</span>
+                  <div class="h-12 bg-red-500/10 rounded mt-2"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Aura Optimized (After) -->
+            <div class="p-6 bg-emerald-500/5 border border-emerald-500/15 rounded-2xl space-y-4">
+              <span class="text-[10px] font-mono text-emerald-400 font-extrabold uppercase tracking-widest">[✓] Aura Intake (0% Errors)</span>
+              <div class="space-y-3">
+                <div class="p-4 bg-background border border-white/5 rounded-2xl flex items-center justify-between text-xs">
+                  <div>
+                    <span class="text-[9px] uppercase font-mono text-emeraldAccent font-bold tracking-wider block">Intake Formulation State</span>
+                    <span class="text-white font-semibold">Stage-by-Stage Progressive Disclosure</span>
+                  </div>
+                  <span class="text-xs font-mono font-bold text-emeraldAccent bg-emerald-500/10 px-2.5 py-1 rounded">Stage 1 Active</span>
+                </div>
+                <p class="text-muted text-[11px] font-light leading-relaxed">
+                  Inputs are isolated into individual, easy-to-parse variables. The interface actively evaluates user formats with real-time feedback loops.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- System Architecture Blueprint Diagram -->
+        <div class="space-y-6">
+          <h3 class="text-xl sm:text-2xl font-display font-extrabold text-white">System Architecture Flow</h3>
+          <p class="text-muted text-xs sm:text-sm font-light">
+            A precise visualization of how user metrics transition through encryption algorithms directly to secure HIPAA databases.
+          </p>
+
+          <div class="p-8 bg-background border border-white/5 rounded-3xl flex flex-col items-center justify-center relative overflow-hidden">
+            <!-- Diagram Nodes using CSS Grid and connections -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 w-full relative z-10 text-center text-xs font-mono">
+              <div class="p-5 bg-[#090A0E] border border-white/5 rounded-2xl flex flex-col justify-center items-center">
+                <span class="w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-2">01</span>
+                <span class="text-white font-bold">Patient Device</span>
+                <p class="text-[9px] text-muted mt-1">Responsive HTML Wizard Client</p>
+              </div>
+              <div class="p-5 bg-[#090A0E] border border-white/5 rounded-2xl flex flex-col justify-center items-center">
+                <span class="w-8 h-8 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-2">02</span>
+                <span class="text-white font-bold">Field Validation Node</span>
+                <p class="text-[9px] text-muted mt-1">Real-time RegEx Classifiers</p>
+              </div>
+              <div class="p-5 bg-[#090A0E] border border-white/5 rounded-2xl flex flex-col justify-center items-center">
+                <span class="w-8 h-8 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-2">03</span>
+                <span class="text-white font-bold">AES-256 Encryption</span>
+                <p class="text-[9px] text-muted mt-1">Payload Serialization Protocol</p>
+              </div>
+              <div class="p-5 bg-[#090A0E] border border-white/5 rounded-2xl flex flex-col justify-center items-center">
+                <span class="w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-2">04</span>
+                <span class="text-white font-bold">EHR Secure Database</span>
+                <p class="text-[9px] text-muted mt-1">HIPAA Compliant API Sink</p>
+              </div>
+            </div>
+            <!-- Interactive Visual Path Connection Background Lines -->
+            <div class="absolute inset-x-0 top-1/2 h-0.5 bg-gradient-to-r from-emerald-500 via-indigo-500 to-purple-500 opacity-20 hidden md:block z-0"></div>
+          </div>
+        </div>
+
+        <!-- CSS Design Token Matrix Section -->
+        <div class="space-y-6">
+          <h3 class="text-xl sm:text-2xl font-display font-extrabold text-white">Dynamic Design Token Board</h3>
+          <p class="text-muted text-xs sm:text-sm font-light">
+            Pixel-level metrics utilized to construct the fluid spacing rules, font definitions, and visual heights of Aura.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
+            <div class="p-6 bg-panel/40 border border-white/5 rounded-2xl space-y-3">
+              <span class="text-emerald-400 font-bold block">// TYPOGRAPHY RATIOS</span>
+              <p class="text-white font-semibold">Primary Title: Bricolage Grotesque</p>
+              <p class="text-muted leading-relaxed">Headers leverage custom -0.03em tracking margins to improve semantic line height and premium visual balance.</p>
+            </div>
+            <div class="p-6 bg-panel/40 border border-white/5 rounded-2xl space-y-3">
+              <span class="text-indigo-400 font-bold block">// ELEVATION GLOW</span>
+              <p class="text-white font-semibold">Level 1: 0 10px 40px -10px</p>
+              <p class="text-muted leading-relaxed">Subtle radial glows applied behind input fields when selected to direct user gaze points instantly.</p>
+            </div>
+            <div class="p-6 bg-panel/40 border border-white/5 rounded-2xl space-y-3">
+              <span class="text-purple-400 font-bold block">// RESPONSIVE SPACING</span>
+              <p class="text-white font-semibold">Grid standard: 40px blueprint</p>
+              <p class="text-muted leading-relaxed">Fluid layouts conform to consistent percentage widths rather than rigid pixels, supporting absolute device adaptation.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Field Interactive States Matrix Test Board -->
+        <div class="space-y-6">
+          <h3 class="text-xl sm:text-2xl font-display font-extrabold text-white">Interactive Field State Matrix</h3>
+          <p class="text-muted text-xs sm:text-sm font-light">
+            Test how the design system handles different field states. Click different triggers to morph the input element state below.
+          </p>
+
+          <div class="p-8 bg-[#090A0E] border border-white/5 rounded-3xl space-y-6">
+            <div class="flex flex-wrap gap-2 text-xs font-mono">
+              <button onclick="setFieldState('idle')" class="px-4 py-2 rounded-lg bg-[#050508] border border-white/5 hover:border-white/20 text-muted hover:text-white transition-all">Idle State</button>
+              <button onclick="setFieldState('focus')" class="px-4 py-2 rounded-lg bg-[#050508] border border-white/5 hover:border-white/20 text-muted hover:text-white transition-all">Focus State</button>
+              <button onclick="setFieldState('error')" class="px-4 py-2 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 transition-all">Error Validation State</button>
+              <button onclick="setFieldState('success')" class="px-4 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emeraldAccent transition-all">Success State</button>
+            </div>
+
+            <!-- Field Mock -->
+            <div class="max-w-md space-y-2">
+              <label for="matrix-input" class="block text-[10px] font-mono uppercase font-bold text-muted">Aura Intake Variable Field</label>
+              <input id="matrix-input" type="text" placeholder="John Doe" class="w-full bg-[#050508] border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none transition-all" />
+              <p id="matrix-msg" class="text-[9px] font-mono text-muted">Current State: IDLE</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- DEDICATED PAGE: CLIENTBRIDGE PRODUCT VIEW    -->
+    <!-- ============================================ -->
+    <div id="page-project-clientbridge" class="app-page hidden min-h-screen pt-32 pb-24 px-6 md:px-10">
+      <div class="max-w-6xl mx-auto space-y-16">
+        
+        <button onclick="navigateTo('home')" class="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-white/10 bg-white/5 text-muted hover:text-white transition-all text-xs font-bold font-mono uppercase">
+          ← Back to home
+        </button>
+
+        <div class="space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono bg-purple-500/15 text-purple-400 border border-purple-500/20 px-3 py-1 rounded font-bold uppercase">B2B WORKSPACE</span>
+            <span class="text-xs font-mono text-muted">v1.4.0 Production Deploy</span>
+          </div>
+          <h1 class="font-display font-extrabold text-4xl sm:text-6xl text-white leading-tight">
+            ClientBridge: Cold Obsidian Secure Workspace Gateway
+          </h1>
+          <p class="text-muted text-base sm:text-lg max-w-3xl leading-relaxed font-light">
+            An ultra-secure, design-led client interface built to eliminate communication lag. Designed around key credentials exchanges, document verification drops, and real-time sprint logs.
+          </p>
+        </div>
+
+        <!-- Full Dynamic App Playground Inside Screen -->
+        <div class="glass-card rounded-3xl p-6 md:p-10 space-y-8 relative overflow-hidden">
+          <div class="flex justify-between items-center pb-4 border-b border-white/5">
+            <h3 class="text-lg font-bold text-white tracking-tight">Interactive Sandbox: Client Onboarding</h3>
+            <span id="cb-inner-percent" class="font-mono text-purple-400 font-extrabold text-base">66% Complete</span>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+            <div id="cb-inner-bar" class="h-full bg-gradient-to-r from-purple-500 to-indigo-500 transition-all duration-500" style="width: 66%;"></div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Checkboxes -->
+            <div class="space-y-4">
+              <span class="text-[10px] font-mono uppercase tracking-wider text-muted font-bold block">// Verification Checklist</span>
+              <label class="flex items-center gap-3.5 p-4 bg-background border border-white/5 rounded-xl cursor-pointer hover:bg-panel transition-all">
+                <input type="checkbox" checked onchange="updateInnerProgress()" class="rounded bg-black border-white/10 text-purple-600 focus:ring-0 w-4 h-4" />
+                <div>
+                  <span class="text-white font-bold block text-xs">Define Project Operational Brief</span>
+                  <span class="text-[9px] text-muted">Core blueprint and functional wireframes verified</span>
+                </div>
+              </label>
+              <label class="flex items-center gap-3.5 p-4 bg-background border border-white/5 rounded-xl cursor-pointer hover:bg-panel transition-all">
+                <input type="checkbox" checked onchange="updateInnerProgress()" class="rounded bg-black border-white/10 text-purple-600 focus:ring-0 w-4 h-4" />
+                <div>
+                  <span class="text-white font-bold block text-xs">Submit Core Assets Guidelines</span>
+                  <span class="text-[9px] text-muted">Primary logo files, font libraries, and color chips received</span>
+                </div>
+              </label>
+              <label class="flex items-center gap-3.5 p-4 bg-background border border-white/5 rounded-xl cursor-pointer hover:bg-panel transition-all">
+                <input type="checkbox" id="cb-inner-task-dns" onchange="updateInnerProgress()" class="rounded bg-black border-white/10 text-purple-600 focus:ring-0 w-4 h-4" />
+                <div>
+                  <span class="text-white font-bold block text-xs">Verify Server Domain Authority</span>
+                  <span class="text-[9px] text-muted">Necessary for pipeline webhooks registration routes</span>
+                </div>
+              </label>
+            </div>
+
+            <!-- Upload and Document Logs -->
+            <div class="space-y-4">
+              <span class="text-[10px] font-mono uppercase tracking-wider text-muted font-bold block">// Secure Document Vault</span>
+              <div onclick="triggerInnerUpload()" class="border-2 border-dashed border-white/15 rounded-2xl py-8 text-center bg-background/50 hover:border-purple-500/40 cursor-pointer text-muted hover:text-white transition-all">
+                <svg class="w-8 h-8 mx-auto text-muted mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                <p class="font-bold text-xs text-white">Click to Upload Validation Document</p>
+                <p class="text-[9px] text-muted mt-1">Simulates secure client AES-256 validation</p>
+              </div>
+              <div id="cb-inner-file-list" class="space-y-2"></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Infrastructure Statistics -->
+        <div class="space-y-6">
+          <h3 class="text-xl sm:text-2xl font-display font-extrabold text-white">Scale &amp; Security Protocols</h3>
+          <p class="text-muted text-xs sm:text-sm font-light">ClientBridge handles highly confidential assets pipelines. The network configuration adheres to strict industrial standards.</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6 font-mono text-xs">
+            <div class="p-6 bg-panel/40 border border-white/5 rounded-2xl">
+              <span class="text-purple-400 block font-bold">// COMPUTE NODE</span>
+              <span class="text-white font-semibold text-sm mt-1 block">Edge CDN Caching</span>
+            </div>
+            <div class="p-6 bg-panel/40 border border-white/5 rounded-2xl">
+              <span class="text-purple-400 block font-bold">// SECURE VAULT</span>
+              <span class="text-white font-semibold text-sm mt-1 block">AWS KMS Keys</span>
+            </div>
+            <div class="p-6 bg-panel/40 border border-white/5 rounded-2xl">
+              <span class="text-purple-400 block font-bold">// LATENCY</span>
+              <span class="text-white font-semibold text-sm mt-1 block">&lt; 140ms Dispatches</span>
+            </div>
+            <div class="p-6 bg-panel/40 border border-white/5 rounded-2xl">
+              <span class="text-purple-400 block font-bold">// DISK SYNC</span>
+              <span class="text-white font-semibold text-sm mt-1 block">Postgres SSL</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- DEDICATED PAGE: FLOWPILOT PRODUCT VIEW       -->
+    <!-- ============================================ -->
+    <div id="page-project-flowpilot" class="app-page hidden min-h-screen pt-32 pb-24 px-6 md:px-10">
+      <div class="max-w-6xl mx-auto space-y-16">
+        
+        <button onclick="navigateTo('home')" class="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-white/10 bg-white/5 text-muted hover:text-white transition-all text-xs font-bold font-mono uppercase">
+          ← Back to home
+        </button>
+
+        <div class="space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono bg-amber-500/15 text-amber-400 border border-amber-500/20 px-3 py-1 rounded font-bold uppercase">SPRINT ENGINE</span>
+            <span class="text-xs font-mono text-muted">Enterprise Agile standard v2.0</span>
+          </div>
+          <h1 class="font-display font-extrabold text-4xl sm:text-6xl text-white leading-tight">
+            FlowPilot: High-Contrast Cyber Developer Board
+          </h1>
+          <p class="text-muted text-base sm:text-lg max-w-3xl leading-relaxed font-light">
+            An advanced tactile board engineered to track task mutations dynamically. Perfect for agile engineering teams looking for absolute clarity.
+          </p>
+        </div>
+
+        <!-- FlowPilot Live Kanban Sandbox -->
+        <div class="glass-card rounded-3xl p-6 md:p-10 space-y-8 bg-[#090A0E] border border-amber-500/15 relative overflow-hidden">
+          <div class="flex flex-col sm:flex-row justify-between sm:items-center pb-4 border-b border-amber-500/25 gap-2">
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-tight font-mono text-amber-400 uppercase">Interactive Sprint Board Console</h3>
+              <p class="text-muted text-[11px] mt-1">Click task blocks to transition their state arrays through active pipelines.</p>
+            </div>
+            <div class="flex items-center gap-2 font-mono text-[10px] text-white">
+              <span class="w-2.5 h-2.5 rounded-full bg-emeraldAccent animate-pulse"></span>
+              <span>SYNCHRONIZED WITH DB CLIENT</span>
+            </div>
+          </div>
+
+          <!-- Board Columns -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Col 1 -->
+            <div class="space-y-4">
+              <div class="flex justify-between items-center bg-[#050508] p-3 rounded-xl border border-white/5">
+                <span class="text-xs font-bold font-mono uppercase text-muted">Backlog Pipeline</span>
+                <span id="fp-backlog-count" class="font-mono bg-white/5 px-2 py-0.5 rounded text-[10px] text-white">2</span>
+              </div>
+              <div class="space-y-3" id="fp-col-backlog">
+                <div onclick="moveInnerKanban(this, 'fp-col-progress')" class="p-4 bg-background border border-white/5 rounded-xl hover:border-amber-500/40 cursor-pointer text-xs space-y-2 transition-all">
+                  <span class="text-[8px] font-mono bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-0.5 rounded-full font-bold uppercase">UI Wireframe</span>
+                  <p class="text-white font-bold text-sm">Design Patient Intake Wizard</p>
+                  <p class="text-[10px] text-muted leading-relaxed">Stage progressive disclosure steps layout grids.</p>
+                </div>
+                <div onclick="moveInnerKanban(this, 'fp-col-progress')" class="p-4 bg-background border border-white/5 rounded-xl hover:border-amber-500/40 cursor-pointer text-xs space-y-2 transition-all">
+                  <span class="text-[8px] font-mono bg-purple-500/10 text-purple-400 border border-purple-500/20 px-2 py-0.5 rounded-full font-bold uppercase">API Sync</span>
+                  <p class="text-white font-bold text-sm">Integrate Internal Webhooks</p>
+                  <p class="text-[10px] text-muted leading-relaxed">Synchronize metadata dispatches automatically.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Col 2 -->
+            <div class="space-y-4">
+              <div class="flex justify-between items-center bg-[#050508] p-3 rounded-xl border border-white/5">
+                <span class="text-xs font-bold font-mono uppercase text-muted">Active Sprint</span>
+                <span id="fp-progress-count" class="font-mono bg-white/5 px-2 py-0.5 rounded text-[10px] text-white">0</span>
+              </div>
+              <div class="space-y-3 min-h-[100px] border border-dashed border-white/5 rounded-2xl p-2" id="fp-col-progress"></div>
+            </div>
+
+            <!-- Col 3 -->
+            <div class="space-y-4">
+              <div class="flex justify-between items-center bg-[#050508] p-3 rounded-xl border border-white/5">
+                <span class="text-xs font-bold font-mono uppercase text-muted">Completed Ops</span>
+                <span id="fp-done-count" class="font-mono bg-white/5 px-2 py-0.5 rounded text-[10px] text-white">0</span>
+              </div>
+              <div class="space-y-3 min-h-[100px] border border-dashed border-white/5 rounded-2xl p-2" id="fp-col-done"></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- DEDICATED PAGE: NEXUS AI PRODUCT VIEW        -->
+    <!-- ============================================ -->
+    <div id="page-project-nexus" class="app-page hidden min-h-screen pt-32 pb-24 px-6 md:px-10">
+      <div class="max-w-6xl mx-auto space-y-16">
+        
+        <button onclick="navigateTo('home')" class="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-white/10 bg-white/5 text-muted hover:text-white transition-all text-xs font-bold font-mono uppercase">
+          ← Back to home
+        </button>
+
+        <div class="space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded font-bold uppercase">AI ROUTING ENGINE</span>
+            <span class="text-xs font-mono text-muted">NLP extraction model v4.0</span>
+          </div>
+          <h1 class="font-display font-extrabold text-4xl sm:text-6xl text-white leading-tight">
+            Nexus AI: Natural Language Operational Terminal
+          </h1>
+          <p class="text-muted text-base sm:text-lg max-w-3xl leading-relaxed font-light">
+            An intelligent terminal module developed to parse unformatted human text requests, classify operational variables, and map them instantly to programmatic database fields.
+          </p>
+        </div>
+
+        <!-- Terminal Playground UI -->
+        <div class="rounded-3xl bg-[#050508] border border-emerald-500/20 shadow-2xl overflow-hidden relative">
+          <div class="absolute inset-0 bg-scanline pointer-events-none opacity-[0.02] z-20"></div>
+          
+          <!-- Terminal Header -->
+          <div class="px-5 py-3.5 border-b border-emerald-500/20 bg-black flex items-center justify-between font-mono text-[10px]">
+            <span class="text-emeraldAccent font-bold">root@nexus-classifier.local:~/playground</span>
+            <span class="text-muted">ACTIVE SECURE CLIENT</span>
+          </div>
+
+          <div class="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Left Console inputs -->
+            <div class="lg:col-span-7 space-y-4">
+              <span class="text-[10px] font-mono text-emeraldAccent block font-bold">// Load text parameter matrices:</span>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
+                <button onclick="setInnerNexusTemplate('plumbing')" class="p-3 bg-[#090A0E] rounded-xl border border-white/5 text-left text-white hover:border-emerald-500/30 transition-all flex items-center gap-2.5">
+                  <span>🔧</span>
+                  <div>
+                    <span class="font-bold block text-xs">Home Services Model</span>
+                    <span class="text-[9px] text-muted">Manual pipeline mapping issues</span>
+                  </div>
+                </button>
+                <button onclick="setInnerNexusTemplate('agency')" class="p-3 bg-[#090A0E] rounded-xl border border-white/5 text-left text-white hover:border-emerald-500/30 transition-all flex items-center gap-2.5">
+                  <span>🚀</span>
+                  <div>
+                    <span class="font-bold block text-xs">SaaS Marketing Team</span>
+                    <span class="text-[9px] text-muted">Dynamic webhooks sync requirements</span>
+                  </div>
+                </button>
+              </div>
+
+              <textarea id="nx-inner-input" rows="4" class="w-full bg-black border border-white/5 rounded-xl p-3.5 font-mono text-xs text-white outline-none focus:border-emerald-500 transition-colors" placeholder="Awaiting parameter payload metrics inputs..."></textarea>
+              
+              <button onclick="runInnerNexusAI()" id="nx-inner-trigger" class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold uppercase tracking-wider transition-all shadow-lg text-xs font-mono">
+                Process Neural NLP Extraction
+              </button>
+
+              <div class="border border-white/5 rounded-xl bg-black p-4 font-mono text-[11px] text-muted h-32 overflow-y-auto space-y-1" id="nx-inner-console">
+                <div class="text-emerald-400">// System initialized. Ready to compile...</div>
+              </div>
+            </div>
+
+            <!-- Right JSON Compilation Output -->
+            <div class="lg:col-span-5 space-y-4">
+              <span class="text-[10px] font-mono text-emeraldAccent block font-bold">// Processed JSON Payload Output:</span>
+              
+              <div id="nx-inner-crm-wrapper" class="hidden p-6 rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.02] space-y-3 font-mono text-xs h-full">
+                <div class="flex items-center gap-2 pb-2 border-b border-emerald-500/10">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span class="text-white font-bold font-mono">CRM Sync Property Map</span>
+                </div>
+                <div class="space-y-3 text-slate-300">
+                  <p>Category: <span id="nx-inner-res-cat" class="text-white font-bold">N/A</span></p>
+                  <p>Structural Tier: <span id="nx-inner-res-budget" class="text-white font-bold">N/A</span></p>
+                  <div id="nx-inner-res-email" class="bg-black/50 p-4 rounded-xl border border-white/5 text-muted font-mono text-[10px] leading-relaxed"></div>
+                </div>
+              </div>
+              
+              <div id="nx-inner-crm-placeholder" class="h-full border border-dashed border-white/5 rounded-2xl flex flex-col items-center justify-center p-6 text-center text-muted font-mono">
+                <span>// Awaiting payload compiling...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
     <!-- Footer Section -->
     <footer class="px-6 md:px-10 py-12 border-t border-white/5 bg-background">
@@ -1031,230 +1069,278 @@
           <span>&copy; 2026 Rohith Dhanala. Design-Led Systems Engineering. All Rights Reserved.</span>
         </div>
         <div class="flex gap-6 font-semibold uppercase tracking-wider text-[10px]">
-          <a href="#about" class="hover:text-white transition-all">About</a>
-          <a href="#aura-case" class="hover:text-white transition-all">Aura Study</a>
-          <a href="#projects" class="hover:text-white transition-all">Projects</a>
+          <a href="#about" onclick="handleNav('about')" class="hover:text-white transition-all">About</a>
+          <a href="#projects" onclick="handleNav('projects')" class="hover:text-white transition-all">Projects</a>
+          <a href="#contact" onclick="handleNav('contact')" class="hover:text-white transition-all">Contact</a>
         </div>
       </div>
     </footer>
 
-    <!-- OVERLAY DRAWERS -->
-    
-    <!-- CLIENTBRIDGE SANDBOX DRAWER -->
-    <div id="sandbox-clientbridge" class="sandbox-drawer fixed inset-y-0 right-0 w-full lg:w-[48%] bg-[#050508] border-l border-white/10 z-50 shadow-2xl flex flex-col hidden">
-      <div class="p-5 border-b border-white/5 flex items-center justify-between bg-panel/90 backdrop-blur-md">
-        <div class="flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span>
-          <span class="text-xs font-bold text-white font-mono uppercase tracking-wider">ClientBridge Project Workspace</span>
-        </div>
-        <button onclick="closeSandbox()" class="text-[10px] font-mono border border-white/10 rounded-full px-4 py-1.5 text-muted hover:text-white bg-white/5 hover:bg-white/10 transition-all">Exit Console</button>
-      </div>
-
-      <div class="flex-1 overflow-y-auto p-6 space-y-6 text-xs">
-        <div class="glass-card p-6 rounded-2xl space-y-4">
-          <div class="flex justify-between items-center">
-            <span class="text-white font-bold text-sm">Circular Task Analytics</span>
-            <span id="cb-progress-percent" class="font-mono text-purple-400 font-extrabold text-base">66%</span>
-          </div>
-          
-          <!-- Modern Progress Tracker Bar -->
-          <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
-            <div id="cb-progress-bar" class="h-full bg-gradient-to-r from-purple-500 to-indigo-500 transition-all duration-500" style="width: 66%;"></div>
-          </div>
-          
-          <div class="space-y-3 pt-2">
-            <label class="flex items-center gap-3.5 p-3.5 bg-background border border-white/5 rounded-xl cursor-pointer hover:bg-panel transition-all">
-              <input type="checkbox" checked onchange="updateClientBridgeTasks()" class="rounded bg-black border-white/10 text-purple-600 focus:ring-0 w-4 h-4" />
-              <div>
-                <span class="text-white font-bold block">Define Project Operational Brief</span>
-                <span class="text-[10px] text-muted">Core blueprint and functional wireframes verified</span>
-              </div>
-            </label>
-            <label class="flex items-center gap-3.5 p-3.5 bg-background border border-white/5 rounded-xl cursor-pointer hover:bg-panel transition-all">
-              <input type="checkbox" checked onchange="updateClientBridgeTasks()" class="rounded bg-black border-white/10 text-purple-600 focus:ring-0 w-4 h-4" />
-              <div>
-                <span class="text-white font-bold block">Submit Core Assets Guidelines</span>
-                <span class="text-[10px] text-muted">Primary logo files, font libraries, and color chips received</span>
-              </div>
-            </label>
-            <label class="flex items-center gap-3.5 p-3.5 bg-background border border-white/5 rounded-xl cursor-pointer hover:bg-panel transition-all">
-              <input type="checkbox" id="cb-task-dns" onchange="updateClientBridgeTasks()" class="rounded bg-black border-white/10 text-purple-600 focus:ring-0 w-4 h-4" />
-              <div>
-                <span class="text-white font-bold block">Verify Server Domain Authority</span>
-                <span class="text-[10px] text-muted">Necessary for pipeline webhooks registration routes</span>
-              </div>
-            </label>
-          </div>
-        </div>
-
-        <div class="glass-card p-6 rounded-2xl space-y-4">
-          <span class="text-white font-bold text-sm block">Encrypted Document Upload Vault</span>
-          <div onclick="triggerMockUpload()" class="border-2 border-dashed border-white/15 rounded-2xl py-8 text-center bg-background/50 hover:border-purple-500/40 cursor-pointer text-muted hover:text-white transition-all">
-            <svg class="w-8 h-8 mx-auto text-muted mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-            <p class="font-bold text-xs text-white">Click to Upload Validation Document</p>
-            <p class="text-[10px] text-muted mt-1">Accepts SVG, PDF, or secure keys formats</p>
-          </div>
-          <div id="cb-file-list" class="space-y-2"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- FLOWPILOT SANDBOX DRAWER -->
-    <div id="sandbox-flowpilot" class="sandbox-drawer fixed inset-y-0 right-0 w-full lg:w-[48%] bg-[#050508] border-l border-white/10 z-50 shadow-2xl flex flex-col hidden">
-      <div class="p-5 border-b border-white/5 flex items-center justify-between bg-panel/90 backdrop-blur-md">
-        <div class="flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
-          <span class="text-xs font-bold text-white font-mono uppercase tracking-wider">FlowPilot Agile Engine</span>
-        </div>
-        <button onclick="closeSandbox()" class="text-[10px] font-mono border border-white/10 rounded-full px-4 py-1.5 text-muted hover:text-white bg-white/5 hover:bg-white/10 transition-all">Exit Console</button>
-      </div>
-
-      <!-- Kanban Columns -->
-      <div class="flex-1 p-6 overflow-y-auto space-y-6 bg-background">
-        <p class="text-muted text-xs leading-relaxed font-light">
-          Manage task status dynamically. Click on cards to transition tasks through key sprint stages. Column statistics will compile in real-time.
-        </p>
-
-        <!-- Column 1: Backlog -->
-        <div class="space-y-3">
-          <div class="flex justify-between items-center bg-panel/40 p-3 rounded-xl border border-white/5">
-            <span class="text-xs font-bold uppercase tracking-wider text-muted font-mono">Backlog Sprints</span>
-            <span id="col-backlog-count" class="font-mono bg-white/5 text-white px-2 py-0.5 rounded text-[10px] font-bold">2</span>
-          </div>
-          
-          <div class="space-y-3" id="col-backlog">
-            <!-- Card 1 -->
-            <div class="p-4 bg-panel border border-white/5 rounded-2xl hover:border-amber-500/40 cursor-pointer text-xs space-y-2 transition-all" onclick="moveKanbanCard(this, 'col-progress')">
-              <div class="flex justify-between items-center">
-                <span class="text-[9px] uppercase font-mono bg-amber-500/10 text-amber-400 px-2.5 py-0.5 rounded-full font-bold border border-amber-500/10">UI Screens</span>
-                <span class="text-[10px] text-muted font-mono font-medium">Sprint 1</span>
-              </div>
-              <p class="text-white font-bold text-sm">Design Patient Intake Wizard</p>
-              <p class="text-muted text-[11px]">Generate modular, responsive input stages for Aura</p>
-            </div>
-            <!-- Card 2 -->
-            <div class="p-4 bg-panel border border-white/5 rounded-2xl hover:border-amber-500/40 cursor-pointer text-xs space-y-2 transition-all" onclick="moveKanbanCard(this, 'col-progress')">
-              <div class="flex justify-between items-center">
-                <span class="text-[9px] uppercase font-mono bg-purple-500/10 text-purple-400 px-2.5 py-0.5 rounded-full font-bold border border-purple-500/10">Database Sync</span>
-                <span class="text-[10px] text-muted font-mono font-medium">Sprint 1</span>
-              </div>
-              <p class="text-white font-bold text-sm">Integrate Internal Webhooks</p>
-              <p class="text-muted text-[11px]">Dispatch automated client registration triggers</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Column 2: Progress -->
-        <div class="space-y-3">
-          <div class="flex justify-between items-center bg-panel/40 p-3 rounded-xl border border-white/5">
-            <span class="text-xs font-bold uppercase tracking-wider text-muted font-mono">Active Pipelines</span>
-            <span id="col-progress-count" class="font-mono bg-white/5 text-white px-2 py-0.5 rounded text-[10px] font-bold">0</span>
-          </div>
-          <div class="space-y-3 min-h-[50px] rounded-2xl border border-dashed border-white/5 p-2" id="col-progress"></div>
-        </div>
-        
-        <!-- Column 3: Done -->
-        <div class="space-y-3">
-          <div class="flex justify-between items-center bg-panel/40 p-3 rounded-xl border border-white/5">
-            <span class="text-xs font-bold uppercase tracking-wider text-muted font-mono">Shipped Tasks</span>
-            <span id="col-done-count" class="font-mono bg-white/5 text-white px-2 py-0.5 rounded text-[10px] font-bold">0</span>
-          </div>
-          <div class="space-y-3 min-h-[50px] rounded-2xl border border-dashed border-white/5 p-2" id="col-done"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- NEXUS AI TERMINAL SANDBOX DRAWER -->
-    <div id="sandbox-nexus" class="sandbox-drawer fixed inset-y-0 right-0 w-full lg:w-[48%] bg-[#050508] border-l border-white/10 z-50 shadow-2xl flex flex-col hidden">
-      <div class="absolute inset-0 bg-scanline pointer-events-none opacity-[0.02] z-20"></div>
-      
-      <div class="p-5 border-b border-white/5 flex items-center justify-between bg-panel/90 backdrop-blur-md">
-        <div class="flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span class="text-xs font-bold text-white font-mono uppercase tracking-wider">Nexus AI Neural Terminal</span>
-        </div>
-        <button onclick="closeSandbox()" class="text-[10px] font-mono border border-white/10 rounded-full px-4 py-1.5 text-muted hover:text-white bg-white/5 hover:bg-white/10 transition-all">Exit Playground</button>
-      </div>
-
-      <div class="flex-1 p-6 space-y-6 overflow-y-auto text-xs z-10">
-        <div class="glass-card p-6 rounded-2xl space-y-4 bg-black/40">
-          <span class="text-white font-bold text-sm block">Inbound Intent Parameter Mocks</span>
-          <p class="text-muted leading-relaxed font-light">Choose a simulated industrial scenario to load raw client parameters into the natural language processing vector block:</p>
-          
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <button onclick="setNexusTemplate('plumbing')" class="p-3 bg-background rounded-xl border border-white/5 text-left text-white hover:border-emerald-500/30 transition-all flex items-center gap-2.5">
-              <span>🔧</span>
-              <div>
-                <span class="font-bold block">Home Services Model</span>
-                <span class="text-[9px] text-muted">Manual pipeline mapping issues</span>
-              </div>
-            </button>
-            <button onclick="setNexusTemplate('agency')" class="p-3 bg-background rounded-xl border border-white/5 text-left text-white hover:border-emerald-500/30 transition-all flex items-center gap-2.5">
-              <span>🚀</span>
-              <div>
-                <span class="font-bold block">SaaS Marketing Team</span>
-                <span class="text-[9px] text-muted">Dynamic webhooks sync requirements</span>
-              </div>
-            </button>
-          </div>
-          
-          <textarea id="nx-input-msg" rows="4" class="w-full bg-background border border-white/5 rounded-xl p-3.5 font-mono text-xs text-white outline-none focus:border-emerald-500 transition-colors" placeholder="Awaiting parameter payload metrics inputs..."></textarea>
-          
-          <button onclick="runNexusAI()" id="nx-trigger" class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold uppercase tracking-wider transition-all shadow-lg active:scale-95">
-            Process Neural NLP Extraction
-          </button>
-        </div>
-
-        <!-- CLI Output Block -->
-        <div class="border border-white/5 rounded-2xl bg-black p-5 font-mono text-[11px] text-muted h-44 overflow-y-auto space-y-2" id="nx-console">
-          <div class="text-emerald-400">// Ready. Awaiting trigger execution...</div>
-        </div>
-
-        <!-- Dynamic Output Properties Map Panel -->
-        <div id="nx-crm-wrapper" class="hidden glass-card p-6 rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.02] space-y-3">
-          <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span class="text-white font-bold text-sm">CRM Sync Parameter Output Matrix</span>
-          </div>
-          <div class="space-y-2 text-slate-300">
-            <p>Categorized Group: <span id="nx-res-cat" class="text-white font-bold font-mono">N/A</span></p>
-            <p>Est. Structural Tier: <span id="nx-res-budget" class="text-white font-bold font-mono">N/A</span></p>
-            <div id="nx-res-email" class="bg-black/40 p-4 rounded-xl border border-white/5 text-muted font-mono text-[10px] leading-relaxed mt-3"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Core Application Logic Scripts -->
     <script>
-      // Scroll Reveal Animations handler
-      const revealElements = document.querySelectorAll(".reveal");
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-          }
-        });
-      }, { threshold: 0.05 });
-      
-      revealElements.forEach((el) => {
-        observer.observe(el);
-      });
-
-      // Instantly trigger reveal of elements currently visible on viewport on load
-      window.addEventListener('load', () => {
-        revealElements.forEach(el => {
-          const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight) {
-            el.classList.add('active');
-          }
+      // Single-Page Routing System
+      function navigateTo(routeId) {
+        // Hide all pages
+        document.querySelectorAll('.app-page').forEach(page => {
+          page.classList.add('hidden');
         });
         
-        // Start live telemetry counter tick simulation loop
+        // Show selected page
+        const target = document.getElementById(`page-${routeId}`);
+        if (target) {
+          target.classList.remove('hidden');
+          window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+        
+        // Close Mobile Menu automatically
+        closeMobileMenu();
+      }
+
+      // Navbar smooth navigation router bridge
+      function handleNav(sectionId) {
+        navigateTo('home');
+        setTimeout(() => {
+          const el = document.getElementById(sectionId);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 120);
+      }
+
+      // Check current window hash on initialization
+      window.addEventListener('load', () => {
+        const hash = window.location.hash.replace('#', '');
+        if (hash && document.getElementById(`page-${hash}`)) {
+          navigateTo(hash);
+        } else {
+          navigateTo('home');
+        }
+        
+        // Setup Intersection Observer scroll triggers for home page elements
+        const revealElements = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        }, { threshold: 0.05 });
+        
+        revealElements.forEach((el) => {
+          observer.observe(el);
+        });
+        
+        // Initialize dynamic sparklines
         setInterval(simulateTelemetryTick, 4000);
       });
 
-      // Interactive Dynamic Live Telemetry Simulation Tick
+      // Interactive Aura Patient Intake Step Wizard Control
+      let auraCurrentStep = 1;
+      function nextAuraStep(direction) {
+        const nameInput = document.getElementById("pt-name");
+        const emailInput = document.getElementById("pt-email");
+        
+        if (auraCurrentStep === 1 && direction === 1) {
+          let validated = true;
+          if (nameInput.value.trim() === "") {
+            document.getElementById("pt-name-err").classList.remove("hidden");
+            validated = false;
+          } else {
+            document.getElementById("pt-name-err").classList.add("hidden");
+          }
+          if (emailInput.value.trim() === "" || !emailInput.value.includes("@")) {
+            document.getElementById("pt-email-err").classList.remove("hidden");
+            validated = false;
+          } else {
+            document.getElementById("pt-email-err").classList.add("hidden");
+          }
+          if (!validated) return;
+        }
+
+        document.getElementById(`aura-step-${auraCurrentStep}`).classList.add("hidden");
+        auraCurrentStep += direction;
+        document.getElementById(`aura-step-${auraCurrentStep}`).classList.remove("hidden");
+        document.getElementById("aura-step-badge").textContent = auraCurrentStep;
+        
+        const nextBtn = document.getElementById("aura-next-btn");
+        const backBtn = document.getElementById("aura-back-btn");
+        const stepDesc = document.getElementById("aura-step-desc");
+        const stepPercent = document.getElementById("aura-step-percent");
+        
+        if (auraCurrentStep === 1) {
+          backBtn.disabled = true;
+          nextBtn.textContent = "Continue Step →";
+          stepDesc.textContent = "Awaiting general credentials parameters";
+          stepPercent.textContent = "33% Done";
+        } else if (auraCurrentStep === 2) {
+          backBtn.disabled = false;
+          nextBtn.textContent = "Verify Credentials →";
+          stepDesc.textContent = "Sync insurance provider details";
+          stepPercent.textContent = "66% Done";
+        } else if (auraCurrentStep === 3) {
+          backBtn.disabled = false;
+          nextBtn.textContent = "Verify & Sync Intake";
+          stepDesc.textContent = "Aura secure database matrix dispatch";
+          stepPercent.textContent = "95% Ready";
+          nextBtn.onclick = function() { submitAuraIntake(); };
+        }
+      }
+
+      function submitAuraIntake() {
+        const ptName = document.getElementById("pt-name").value || "Sarah Berenson";
+        const ptFeed = document.getElementById("clinical-patients-feed");
+        
+        const ptCard = document.createElement("div");
+        ptCard.className = "flex items-center justify-between p-3.5 bg-emerald-500/5 border border-emerald-500/20 rounded-2xl animate-pulse";
+        ptCard.innerHTML = `
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-xs font-bold text-emerald-400">
+              ${ptName.substring(0, 2).toUpperCase()}
+            </div>
+            <div>
+              <h5 class="text-xs font-bold text-white">${ptName}</h5>
+              <p class="text-[9px] text-muted font-mono">ID: PT-NEW-SYNC | Intake Processing</p>
+            </div>
+          </div>
+          <span class="text-[9px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded-full font-bold uppercase">
+            Dispatched
+          </span>
+        `;
+        
+        ptFeed.insertBefore(ptCard, ptFeed.firstChild);
+        setTimeout(() => { ptCard.classList.remove("animate-pulse"); }, 1500);
+
+        // Reset wizard
+        document.getElementById(`aura-step-${auraCurrentStep}`).classList.add("hidden");
+        auraCurrentStep = 1;
+        document.getElementById("pt-name").value = "";
+        document.getElementById("pt-email").value = "";
+        document.getElementById("pt-insurance").value = "";
+        document.getElementById("pt-policy").value = "";
+        
+        document.getElementById(`aura-step-1`).classList.remove("hidden");
+        document.getElementById("aura-step-badge").textContent = "1";
+        document.getElementById("aura-back-btn").disabled = true;
+        const nextBtn = document.getElementById("aura-next-btn");
+        nextBtn.textContent = "Continue Step →";
+        nextBtn.onclick = function() { nextAuraStep(1); };
+        document.getElementById("aura-step-desc").textContent = "Awaiting general credentials parameters";
+        document.getElementById("aura-step-percent").textContent = "33% Done";
+      }
+
+      // Aura Case Study Field State Matrix Controls
+      function setFieldState(state) {
+        const input = document.getElementById("matrix-input");
+        const msg = document.getElementById("matrix-msg");
+        
+        if (state === 'idle') {
+          input.className = "w-full bg-[#050508] border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none transition-all";
+          msg.textContent = "Current State: IDLE (Regular border parameters)";
+        } else if (state === 'focus') {
+          input.className = "w-full bg-[#050508] border border-indigo-500 rounded-xl px-4 py-3 text-xs text-white outline-none transition-all ring-2 ring-indigo-500/20";
+          msg.textContent = "Current State: FOCUS (Active glowing token applied)";
+        } else if (state === 'error') {
+          input.className = "w-full bg-[#050508] border border-red-500 rounded-xl px-4 py-3 text-xs text-red-400 outline-none transition-all ring-2 ring-red-500/10";
+          msg.textContent = "Current State: ERROR VALIDATION (Failing regex matching algorithm)";
+        } else if (state === 'success') {
+          input.className = "w-full bg-[#050508] border border-emerald-500 rounded-xl px-4 py-3 text-xs text-emerald-400 outline-none transition-all ring-2 ring-emerald-500/10";
+          msg.textContent = "Current State: SUCCESS (Payload matching formatting conditions)";
+        }
+      }
+
+      // ClientBridge Inside Page Checklist Controls
+      function updateInnerProgress() {
+        const checkboxes = document.querySelectorAll('#page-project-clientbridge input[type="checkbox"]');
+        let checkedCount = 0;
+        checkboxes.forEach(cb => { if (cb.checked) checkedCount++; });
+        
+        const totalTasks = checkboxes.length;
+        const percent = Math.round((checkedCount / totalTasks) * 100);
+        
+        document.getElementById("cb-inner-percent").textContent = `${percent}% Complete`;
+        document.getElementById("cb-inner-bar").style.width = `${percent}%`;
+      }
+
+      function triggerInnerUpload() {
+        const list = document.getElementById("cb-inner-file-list");
+        const row = document.createElement("div");
+        row.className = "flex justify-between items-center bg-[#050508] p-3.5 rounded-xl border border-white/5 text-[11px] animate-pulse";
+        row.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span class="text-purple-400">📊</span>
+            <span class="font-mono text-white">client_assets_specification.pdf</span>
+          </div>
+          <span class="text-emerald-400 font-mono font-bold text-[10px] uppercase bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/10">Synced Secure</span>
+        `;
+        list.appendChild(row);
+        setTimeout(() => { row.classList.remove("animate-pulse"); }, 1200);
+
+        document.getElementById("cb-inner-task-dns").checked = true;
+        updateInnerProgress();
+      }
+
+      // FlowPilot Inside Page Kanban Board Task Mechanics
+      function moveInnerKanban(card, targetId) {
+        const container = document.getElementById(targetId);
+        if (!container) return;
+        
+        card.style.opacity = "0";
+        card.style.transform = "scale(0.9)";
+        
+        setTimeout(() => {
+          container.appendChild(card);
+          card.style.opacity = "1";
+          card.style.transform = "scale(1)";
+          
+          if (targetId === 'fp-col-progress') {
+            card.onclick = () => moveInnerKanban(card, 'fp-col-done');
+            card.querySelector("span").className = "text-[8px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded-full font-bold uppercase";
+          } else {
+            card.onclick = null;
+          }
+          
+          document.getElementById("fp-backlog-count").textContent = document.getElementById("fp-col-backlog").children.length;
+          document.getElementById("fp-progress-count").textContent = document.getElementById("fp-col-progress").children.length;
+          document.getElementById("fp-done-count").textContent = document.getElementById("fp-col-done").children.length;
+        }, 300);
+      }
+
+      // Nexus AI Inside Page Terminal Simulator Code
+      const nexusTemplates = {
+        plumbing: "Plumbing operations pipeline localized design. Spreadsheets tracking leads leak 45% values due to non-responsive schemas.",
+        agency: "B2B SaaS Growth firm intake environments requiring automated webhooks and dynamic field sync immediately."
+      };
+      
+      function setInnerNexusTemplate(key) {
+        document.getElementById("nx-inner-input").value = nexusTemplates[key];
+      }
+
+      function runInnerNexusAI() {
+        const logBox = document.getElementById("nx-inner-console");
+        logBox.innerHTML = "<div>&gt; [INIT CONSOLE LOG ENGINE EXECUTION] Loading text parameters arrays...</div>";
+        const triggerBtn = document.getElementById("nx-inner-trigger");
+        triggerBtn.disabled = true;
+
+        setTimeout(() => {
+          logBox.innerHTML += "<div class='text-purple-400'>&gt; [CLASSIFY VECTOR RUN] Resolving operational context tokens classifications...</div>";
+          logBox.scrollTop = logBox.scrollHeight;
+          
+          setTimeout(() => {
+            logBox.innerHTML += "<div class='text-emerald-400'>&gt; [SUCCESS ROUTING] Synced CRM properties matrix objects.</div>";
+            logBox.scrollTop = logBox.scrollHeight;
+            
+            document.getElementById("nx-inner-res-cat").textContent = "Operational Pipeline System Analysis";
+            document.getElementById("nx-inner-res-budget").textContent = "Enterprise Structural Scope Tier";
+            document.getElementById("nx-inner-res-email").textContent = "Subject: Automation blueprint pipeline strategy map routing configured. Executing API Dispatch...";
+            
+            document.getElementById("nx-inner-crm-placeholder").classList.add("hidden");
+            document.getElementById("nx-inner-crm-wrapper").classList.remove("hidden");
+            triggerBtn.disabled = false;
+          }, 1000);
+        }, 800);
+      }
+
+      // Dynamic Interactive Sparkline fluctuation metrics
       function simulateTelemetryTick() {
         const throughputText = document.getElementById("telemetry-throughput");
         const percentText = document.getElementById("telemetry-percent");
@@ -1263,13 +1349,11 @@
         
         if (!throughputText) return;
 
-        // Ticks throughput value dynamically with slight fluctuation
         const baseValue = 14200;
         const randomModifier = Math.floor(Math.random() * 400);
         const nextValue = baseValue + randomModifier;
         throughputText.textContent = `${nextValue.toLocaleString()} req/s`;
 
-        // Fluctuate percent indicator value
         const basePercent = 22.0;
         const randomPercentModifier = (Math.random() * 6).toFixed(1);
         const isUp = Math.random() > 0.3;
@@ -1281,7 +1365,6 @@
           percentText.className = "text-[10px] font-mono text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded font-bold border border-rose-500/10";
         }
 
-        // Randomly morph chart paths slightly to simulate active metric adjustments
         const val1 = 50 + Math.floor(Math.random() * 30);
         const val2 = 30 + Math.floor(Math.random() * 30);
         const val3 = 60 + Math.floor(Math.random() * 20);
@@ -1305,7 +1388,7 @@
         }
       });
 
-      // Mobile Drawers Navigation Trigger Scripts
+      // Mobile Drawers Navigation Controls
       const mobileMenu = document.getElementById("mobile-menu");
       document.getElementById("mobile-open").addEventListener("click", () => {
         mobileMenu.classList.remove("hidden");
@@ -1357,245 +1440,6 @@
         successBlock.classList.remove("hidden");
         successBlock.classList.add("flex");
       });
-
-      // Interactive Aura Patient Intake Step Wizard Control
-      let auraCurrentStep = 1;
-      function nextAuraStep(direction) {
-        const nameInput = document.getElementById("pt-name");
-        const emailInput = document.getElementById("pt-email");
-        
-        // Step 1 Validation
-        if (auraCurrentStep === 1 && direction === 1) {
-          let validated = true;
-          if (nameInput.value.trim() === "") {
-            document.getElementById("pt-name-err").classList.remove("hidden");
-            validated = false;
-          } else {
-            document.getElementById("pt-name-err").classList.add("hidden");
-          }
-          if (emailInput.value.trim() === "" || !emailInput.value.includes("@")) {
-            document.getElementById("pt-email-err").classList.remove("hidden");
-            validated = false;
-          } else {
-            document.getElementById("pt-email-err").classList.add("hidden");
-          }
-          if (!validated) return;
-        }
-
-        // Hide current step layout
-        document.getElementById(`aura-step-${auraCurrentStep}`).classList.add("hidden");
-        
-        // Change current step number
-        auraCurrentStep += direction;
-        
-        // Show new step layout
-        document.getElementById(`aura-step-${auraCurrentStep}`).classList.remove("hidden");
-        
-        // Update labels
-        document.getElementById("aura-step-badge").textContent = auraCurrentStep;
-        
-        const nextBtn = document.getElementById("aura-next-btn");
-        const backBtn = document.getElementById("aura-back-btn");
-        const stepDesc = document.getElementById("aura-step-desc");
-        const stepPercent = document.getElementById("aura-step-percent");
-        
-        if (auraCurrentStep === 1) {
-          backBtn.disabled = true;
-          nextBtn.textContent = "Continue Step →";
-          stepDesc.textContent = "Awaiting general credentials parameters";
-          stepPercent.textContent = "33% Done";
-        } else if (auraCurrentStep === 2) {
-          backBtn.disabled = false;
-          nextBtn.textContent = "Verify Credentials →";
-          stepDesc.textContent = "Sync insurance provider details";
-          stepPercent.textContent = "66% Done";
-        } else if (auraCurrentStep === 3) {
-          backBtn.disabled = false;
-          nextBtn.textContent = "Verify & Sync Intake";
-          stepDesc.textContent = "Aura secure database matrix dispatch";
-          stepPercent.textContent = "95% Ready";
-          
-          // Change click function of the next button to complete intake
-          nextBtn.onclick = function() {
-            submitAuraIntake();
-          };
-        }
-      }
-
-      function submitAuraIntake() {
-        // Mock API submission and appending to Clinical Dashboard Feed
-        const ptName = document.getElementById("pt-name").value || "Test Patient";
-        const ptFeed = document.getElementById("clinical-patients-feed");
-        
-        // Create new patient log card element
-        const ptCard = document.createElement("div");
-        ptCard.className = "flex items-center justify-between p-3.5 bg-emerald-500/5 border border-emerald-500/20 rounded-2xl animate-pulse";
-        ptCard.innerHTML = `
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-xs font-bold text-emerald-400">
-              ${ptName.substring(0, 2).toUpperCase()}
-            </div>
-            <div>
-              <h5 class="text-xs font-bold text-white">${ptName}</h5>
-              <p class="text-[9px] text-muted font-mono">ID: PT-NEW-SYNC | Intake Processing</p>
-            </div>
-          </div>
-          <span class="text-[9px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded-full font-bold uppercase">
-            Dispatched
-          </span>
-        `;
-        
-        // Prepend to dashboard feed
-        ptFeed.insertBefore(ptCard, ptFeed.firstChild);
-        
-        // Reset patient intake wizard step 1
-        setTimeout(() => {
-          ptCard.classList.remove("animate-pulse");
-        }, 1500);
-
-        // Return to Step 1 and clear inputs
-        document.getElementById(`aura-step-${auraCurrentStep}`).classList.add("hidden");
-        auraCurrentStep = 1;
-        document.getElementById("pt-name").value = "";
-        document.getElementById("pt-email").value = "";
-        document.getElementById("pt-insurance").value = "";
-        document.getElementById("pt-policy").value = "";
-        
-        document.getElementById(`aura-step-1`).classList.remove("hidden");
-        document.getElementById("aura-step-badge").textContent = "1";
-        document.getElementById("aura-back-btn").disabled = true;
-        const nextBtn = document.getElementById("aura-next-btn");
-        nextBtn.textContent = "Continue Step →";
-        nextBtn.onclick = function() { nextAuraStep(1); };
-        document.getElementById("aura-step-desc").textContent = "Awaiting general credentials parameters";
-        document.getElementById("aura-step-percent").textContent = "33% Done";
-
-        // Scroll down slightly to feed to show client action confirmation
-        document.getElementById("clinical-patients-feed").scrollIntoView({ behavior: "smooth" });
-      }
-
-      // Universal Sandbox Overlay Controls (Slide-Over Drawer style)
-      function openSandbox(targetId) {
-        closeSandbox();
-        const overlay = document.getElementById(`sandbox-${targetId}`);
-        if (overlay) {
-          overlay.classList.remove("hidden");
-          setTimeout(() => {
-            overlay.classList.add("active");
-          }, 30);
-          document.body.style.overflow = "hidden";
-        }
-      }
-
-      // Close all drawers
-      function closeSandbox() {
-        document.querySelectorAll(".sandbox-drawer").forEach(el => {
-          el.classList.remove("active");
-          setTimeout(() => {
-            if (!el.classList.contains("active")) {
-              el.classList.add("hidden");
-            }
-          }, 500);
-        });
-        document.body.style.overflow = "";
-      }
-
-      // ClientBridge Onboarding Checklist & Task mechanics
-      function updateClientBridgeTasks() {
-        const checkboxes = document.querySelectorAll('#sandbox-clientbridge input[type="checkbox"]');
-        let checkedCount = 0;
-        checkboxes.forEach(cb => { if (cb.checked) checkedCount++; });
-        
-        const totalTasks = checkboxes.length;
-        const percent = Math.round((checkedCount / totalTasks) * 100);
-        
-        document.getElementById("cb-progress-percent").textContent = `${percent}%`;
-        document.getElementById("cb-progress-bar").style.width = `${percent}%`;
-      }
-
-      function triggerMockUpload() {
-        const list = document.getElementById("cb-file-list");
-        const row = document.createElement("div");
-        row.className = "flex justify-between items-center bg-[#050508] p-3.5 rounded-xl border border-white/5 text-[11px] animate-pulse";
-        row.innerHTML = `
-          <div class="flex items-center gap-2">
-            <span class="text-purple-400">📊</span>
-            <span class="font-mono text-white">verification_credentials.pdf</span>
-          </div>
-          <span class="text-emerald-400 font-mono font-bold text-[10px] uppercase bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/10">Synced Complete</span>
-        `;
-        list.appendChild(row);
-        
-        // Remove pulse after brief upload delay simulation
-        setTimeout(() => {
-          row.classList.remove("animate-pulse");
-        }, 1200);
-
-        document.getElementById("cb-task-dns").checked = true;
-        updateClientBridgeTasks();
-      }
-
-      // FlowPilot Kanban board tasks mechanic
-      function moveKanbanCard(card, targetId) {
-        const container = document.getElementById(targetId);
-        if (!container) return;
-        
-        // Fade card out during transition
-        card.style.opacity = "0";
-        card.style.transform = "scale(0.9)";
-        
-        setTimeout(() => {
-          container.appendChild(card);
-          card.style.opacity = "1";
-          card.style.transform = "scale(1)";
-          
-          if (targetId === 'col-progress') {
-            card.onclick = () => moveKanbanCard(card, 'col-done');
-            card.querySelector("span").className = "text-[9px] uppercase font-mono bg-emerald-500/10 text-emerald-400 px-2.5 py-0.5 rounded-full font-bold border border-emerald-500/10";
-          } else {
-            card.onclick = null;
-          }
-          
-          // Update counters of columns
-          document.getElementById("col-backlog-count").textContent = document.getElementById("col-backlog").children.length;
-          document.getElementById("col-progress-count").textContent = document.getElementById("col-progress").children.length;
-          document.getElementById("col-done-count").textContent = document.getElementById("col-done").children.length;
-        }, 300);
-      }
-
-      // Nexus AI classification terminal templates
-      const nexusTemplates = {
-        plumbing: "Plumbing operations pipeline localized design. Spreadsheets tracking leads leak 45% values due to non-responsive schemas.",
-        agency: "B2B SaaS Growth firm intake environments requiring automated webhooks and dynamic field sync immediately."
-      };
-      
-      function setNexusTemplate(key) {
-        document.getElementById("nx-input-msg").value = nexusTemplates[key];
-      }
-
-      function runNexusAI() {
-        const logBox = document.getElementById("nx-console");
-        logBox.innerHTML = "<div>&gt; [INIT CONSOLE LOG ENGINE EXECUTION] Loading text parameters arrays...</div>";
-        const triggerBtn = document.getElementById("nx-trigger");
-        triggerBtn.disabled = true;
-
-        setTimeout(() => {
-          logBox.innerHTML += "<div class='text-purple-400'>&gt; [CLASSIFY VECTOR RUN] Resolving operational context tokens classifications...</div>";
-          logBox.scrollTop = logBox.scrollHeight;
-          
-          setTimeout(() => {
-            logBox.innerHTML += "<div class='text-emerald-400'>&gt; [SUCCESS ROUTING] Synced CRM properties matrix objects.</div>";
-            logBox.scrollTop = logBox.scrollHeight;
-            
-            document.getElementById("nx-res-cat").textContent = "Operational Pipeline System Analysis";
-            document.getElementById("nx-res-budget").textContent = "Enterprise Structural Scope Tier";
-            document.getElementById("nx-res-email").textContent = "Subject: Automation blueprint pipeline strategy map routing configured. Executing API Dispatch...";
-            
-            document.getElementById("nx-crm-wrapper").classList.remove("hidden");
-            triggerBtn.disabled = false;
-          }, 1000);
-        }, 800);
-      }
     </script>
   </body>
 </html>
