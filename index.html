@@ -6,6 +6,7 @@
     <title>Rohith Dhanala | Portfolio — High-Converting Websites, AI Automation & Systems</title>
     <meta name="description" content="I build high-converting landing pages linked directly to custom AI automations, client portals, and internal delivery systems." />
 
+    <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
@@ -23,18 +24,25 @@
               mono: ["JetBrains Mono", "monospace"],
             },
             colors: {
-              background: "#08080C",
-              panel: "#0E0E16",
-              panelHover: "#141422",
+              background: "#050508",
+              panel: "#0B0C10",
+              panelHover: "#12141C",
               primary: "#FFFFFF",
-              muted: "#94A3B8",
+              muted: "#8A94A6",
               accent: "#4F46E5",
               accentGlow: "#8B5CF6",
               emeraldAccent: "#10B981"
             },
             animation: {
-              'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              'spin-slow': 'spin 12s linear infinite',
+              'pulse-slow': 'pulse 7s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'spin-slow': 'spin 16s linear infinite',
+              'scanline': 'scanline 6s linear infinite',
+            },
+            keyframes: {
+              scanline: {
+                '0%': { transform: 'translateY(-100%)' },
+                '100%': { transform: 'translateY(100%)' }
+              }
             }
           },
         },
@@ -43,137 +51,145 @@
 
     <style>
       body {
-        background-color: #08080C;
-        color: #F8FAFC;
+        background-color: #050508;
+        color: #F3F4F6;
         overflow-x: hidden;
         -webkit-font-smoothing: antialiased;
         font-family: 'DM Sans', sans-serif;
       }
 
-      /* Premium Cyber Blueprint Grid Background */
+      /* Grid Blueprint Pattern */
       .bg-grid {
-        background-size: 50px 50px;
+        background-size: 40px 40px;
         background-image: 
-          linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+          linear-gradient(to right, rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
       }
 
-      /* Radial Glows */
+      /* Glow effect elements */
       .glow-orb {
-        filter: blur(120px);
-        opacity: 0.12;
+        filter: blur(140px);
+        opacity: 0.14;
         pointer-events: none;
       }
 
-      /* Modern Noise Overlay for Texture */
+      /* Texture Overlays */
       .noise-overlay {
         position: fixed;
         inset: 0;
         pointer-events: none;
         z-index: 99;
-        opacity: 0.02;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        opacity: 0.015;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
       }
 
-      /* Animated Reveal Mechanics */
+      /* Adaptive Screen Transitions */
       .reveal {
         opacity: 0;
-        transform: translateY(24px);
-        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translateY(20px);
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .reveal.active {
         opacity: 1;
         transform: translateY(0);
       }
 
-      /* High-End Frosted Glass Cards with Premium Border Gradients */
+      /* Luxury Glassmorphism Layer */
       .glass-card {
-        background: rgba(14, 14, 22, 0.7);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        background: rgba(11, 12, 16, 0.65);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
         border: 1px solid rgba(255, 255, 255, 0.04);
-        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.6);
         transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .glass-card:hover {
-        border-color: rgba(255, 255, 255, 0.1);
-        transform: translateY(-4px);
-        box-shadow: 0 20px 40px -15px rgba(79, 70, 229, 0.15);
+        border-color: rgba(255, 255, 255, 0.09);
+        transform: translateY(-2px);
+        box-shadow: 0 24px 48px -15px rgba(79, 70, 229, 0.18);
       }
 
-      /* Beautiful Custom Scrollbars */
+      /* Modern Web Custom Scrollbar */
       ::-webkit-scrollbar {
         width: 8px;
         height: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #08080C;
+        background: #050508;
       }
       ::-webkit-scrollbar-thumb {
-        background: #1E1E2F;
+        background: #191B24;
         border-radius: 99px;
-        border: 2px solid #08080C;
+        border: 2px solid #050508;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #2D2D44;
+        background: #2D3142;
       }
 
-      /* Custom Slide-over Overlay Drawer style */
+      /* Dynamic Sandbox Slide-over Drawer styles */
       .sandbox-drawer {
         transform: translateX(100%);
-        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .sandbox-drawer.active {
         transform: translateX(0);
+      }
+
+      /* Custom animations for Aura Case Study Screens */
+      .pulse-soft {
+        animation: pulseSoft 2.5s infinite ease-in-out;
+      }
+      @keyframes pulseSoft {
+        0%, 100% { opacity: 0.2; }
+        50% { opacity: 0.5; }
       }
     </style>
   </head>
   
   <body class="selection:bg-indigo-600 selection:text-white relative bg-background antialiased">
-    <!-- Ambient Texture Elements -->
+    <!-- Ambient Overlays -->
     <div class="noise-overlay"></div>
     <div class="fixed inset-0 bg-grid -z-20"></div>
 
-    <!-- Mesh Gradient Orbs -->
-    <div class="fixed top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full bg-indigo-600/20 glow-orb -z-10 animate-pulse-slow"></div>
-    <div class="fixed bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-purple-600/15 glow-orb -z-10 animate-pulse-slow" style="animation-delay: 2s;"></div>
-    <div class="fixed top-[40%] left-[30%] w-[40%] h-[40%] rounded-full bg-emerald-500/10 glow-orb -z-10 animate-pulse-slow" style="animation-delay: 4s;"></div>
+    <!-- Gradient Ambient Orbs -->
+    <div class="fixed top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full bg-indigo-600/15 glow-orb -z-10 animate-pulse-slow"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-purple-600/10 glow-orb -z-10 animate-pulse-slow" style="animation-delay: 2s;"></div>
+    <div class="fixed top-[45%] left-[25%] w-[40%] h-[40%] rounded-full bg-emerald-500/5 glow-orb -z-10 animate-pulse-slow" style="animation-delay: 4.5s;"></div>
 
     <!-- Mobile Menu Modal Overlay -->
-    <div id="mobile-menu" class="hidden fixed inset-0 bg-background/95 backdrop-blur-2xl z-50 flex flex-col items-center justify-center gap-8 transition-all duration-300">
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-background/98 backdrop-blur-3xl z-50 flex flex-col items-center justify-center gap-8 transition-all duration-300">
       <button id="mobile-close" aria-label="Close menu" class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
-      <a href="#about" onclick="closeMobileMenu()" class="text-3xl font-display font-semibold text-muted hover:text-white transition-all">About Blueprint</a>
-      <a href="#services" onclick="closeMobileMenu()" class="text-3xl font-display font-semibold text-muted hover:text-white transition-all">Capabilities</a>
-      <a href="#work" onclick="closeMobileMenu()" class="text-3xl font-display font-semibold text-muted hover:text-white transition-all">Case Sandbox</a>
+      <a href="#about" onclick="closeMobileMenu()" class="text-3xl font-display font-semibold text-muted hover:text-white transition-all">About Studio</a>
+      <a href="#aura-case" onclick="closeMobileMenu()" class="text-3xl font-display font-semibold text-muted hover:text-white transition-all">Aura Intake</a>
+      <a href="#projects" onclick="closeMobileMenu()" class="text-3xl font-display font-semibold text-muted hover:text-white transition-all">Projects</a>
       <a href="#contact" onclick="closeMobileMenu()" class="text-3xl font-display font-semibold text-indigo-400 hover:text-indigo-300 transition-all">Request Systems Audit →</a>
     </div>
 
     <!-- Navigation Header Bar -->
-    <nav class="fixed w-full z-40 top-0 transition-all duration-500 border-b border-transparent py-4" id="navbar">
+    <nav class="fixed w-full z-40 top-0 transition-all duration-500 border-b border-transparent py-5" id="navbar">
       <div class="max-w-7xl mx-auto px-6 md:px-10 flex justify-between items-center">
         <!-- Brand Identity -->
         <a href="#home" class="flex items-center gap-3 group" aria-label="Rohith Dhanala - Home">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/10 group-hover:scale-105 transition-all duration-300">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center shadow-lg shadow-indigo-500/10 group-hover:scale-105 transition-all duration-300">
             <span class="text-sm font-display font-extrabold tracking-wider text-white">RD</span>
           </div>
           <div class="flex flex-col">
             <span class="text-sm font-display font-bold text-white tracking-tight group-hover:text-indigo-300 transition-colors">Rohith Dhanala</span>
-            <span class="text-[9px] font-mono tracking-widest text-indigo-400 uppercase">Operational Eng.</span>
           </div>
         </a>
 
-        <!-- Middle Pill Navbar Links -->
-        <div class="hidden md:flex items-center gap-2 bg-panel/80 backdrop-blur-xl px-2 py-1.5 rounded-full border border-white/5 shadow-inner">
-          <a href="#about" class="text-xs tracking-wider uppercase text-muted hover:text-white px-4 py-2 rounded-full hover:bg-white/5 transition-all font-semibold">About</a>
-          <a href="#services" class="text-xs tracking-wider uppercase text-muted hover:text-white px-4 py-2 rounded-full hover:bg-white/5 transition-all font-semibold">Capabilities</a>
-          <a href="#work" class="text-xs tracking-wider uppercase text-muted hover:text-white px-4 py-2 rounded-full hover:bg-white/5 transition-all font-semibold">Case Sandbox</a>
+        <!-- Premium Pill Navbar Links -->
+        <div class="hidden md:flex items-center gap-2 bg-panel/70 backdrop-blur-2xl px-2 py-1.5 rounded-full border border-white/5 shadow-inner">
+          <a href="#about" class="text-xs tracking-wider uppercase text-muted hover:text-white px-5 py-2.5 rounded-full hover:bg-white/5 transition-all font-semibold">About</a>
+          <a href="#aura-case" class="text-xs tracking-wider uppercase text-muted hover:text-white px-5 py-2.5 rounded-full hover:bg-white/5 transition-all font-semibold">Aura Study</a>
+          <a href="#projects" class="text-xs tracking-wider uppercase text-muted hover:text-white px-5 py-2.5 rounded-full hover:bg-white/5 transition-all font-semibold">Projects</a>
         </div>
 
-        <!-- Action Buttons -->
+        <!-- Call-to-Action Bar -->
         <div class="flex items-center gap-3">
-          <a href="#contact" onclick="selectFormOption('audit')" class="hidden sm:inline-flex px-6 py-2.5 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white text-xs font-bold uppercase tracking-wider transition-all shadow-[0_4px_20px_rgba(79,70,229,0.3)] hover:shadow-[0_4px_25px_rgba(79,70,229,0.5)] active:scale-95">
+          <a href="#contact" onclick="selectFormOption('audit')" class="hidden sm:inline-flex px-6 py-2.5 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white text-xs font-bold uppercase tracking-wider transition-all shadow-[0_4px_20px_rgba(79,70,229,0.25)] hover:shadow-[0_4px_25px_rgba(79,70,229,0.4)] active:scale-95">
             Free Systems Audit
           </a>
           <button id="mobile-open" class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-panel border border-white/5 text-muted hover:text-white transition-all" aria-label="Open menu">
@@ -185,9 +201,10 @@
 
     <!-- Hero Main Container -->
     <main>
-      <section class="min-h-screen flex items-center justify-center pt-32 pb-20 px-6 md:px-10 relative" id="home">
+      <section class="min-h-screen flex items-center justify-center pt-32 pb-24 px-6 md:px-10 relative" id="home">
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          <!-- Left side copywriting content -->
+          
+          <!-- Left copywriting content -->
           <div class="lg:col-span-7 text-left space-y-8 z-10">
             <!-- Active Status badge -->
             <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 backdrop-blur-md reveal">
@@ -195,46 +212,46 @@
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
-              <span class="text-[10px] uppercase tracking-[0.25em] text-emerald-400 font-extrabold">Accepting 2 Selected Clients for Q2</span>
+              <span class="text-[10px] uppercase tracking-[0.25em] text-emerald-400 font-extrabold">Accepting Selected Partners for Q3</span>
             </div>
 
             <!-- Main Heading Statement -->
-            <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white leading-[1.1] tracking-tight reveal">
-              I build high-converting websites <br />
-              <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-500">&amp; custom AI automation engines</span>
+            <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white leading-[1.15] tracking-tight reveal">
+              I design premium websites <br />
+              <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-500">&amp; custom engineering engines</span>
             </h1>
 
             <p class="text-base sm:text-lg text-muted font-light leading-relaxed max-w-2xl reveal">
-              A gorgeous website is useless if your team is bogged down with copy-pasting lead messages, manually writing CRM records, and chasing onboarding assets. I design polished frontend interfaces linked directly to background operational systems.
+              A gorgeous web interface is only half the battle. I build frictionless, high-fidelity frontend systems synchronized with operational databases, automated pipelines, and private client communication environments.
             </p>
 
             <!-- Quick Action Triggers -->
             <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 reveal">
-              <a href="#contact" onclick="selectFormOption('audit')" class="px-8 py-4 rounded-full bg-white hover:bg-slate-100 text-black text-xs font-extrabold uppercase tracking-wider transition-all flex items-center justify-center gap-3 shadow-[0_10px_30px_rgba(255,255,255,0.1)] active:scale-95">
+              <a href="#contact" onclick="selectFormOption('audit')" class="px-8 py-4 rounded-full bg-white hover:bg-slate-100 text-black text-xs font-extrabold uppercase tracking-wider transition-all flex items-center justify-center gap-3 shadow-[0_10px_30px_rgba(255,255,255,0.08)] active:scale-95">
                 Claim Free Systems Audit
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
-              <a href="#work" class="px-8 py-4 rounded-full border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all text-xs font-extrabold uppercase tracking-wider text-white text-center active:scale-95">
-                Test Sandbox Simulations
+              <a href="#projects" class="px-8 py-4 rounded-full border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all text-xs font-extrabold uppercase tracking-wider text-white text-center active:scale-95">
+                Inspect Shipped Products
               </a>
             </div>
 
             <!-- Built-in Micro Metrics Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 reveal">
               <div class="bg-panel/40 p-4 rounded-2xl border border-white/5 flex flex-col justify-center">
-                <span class="text-[10px] tracking-[0.2em] font-mono text-indigo-400 uppercase font-bold">Time Optimization</span>
+                <span class="text-[10px] tracking-[0.2em] font-mono text-indigo-400 uppercase font-bold">Optimization</span>
                 <span class="text-white text-xl font-display font-extrabold mt-1">15+ Admin Hours Saved</span>
                 <span class="text-xs text-muted mt-1 leading-relaxed">No manual calendar ping-pong or file transfers.</span>
               </div>
               <div class="bg-panel/40 p-4 rounded-2xl border border-white/5 flex flex-col justify-center">
-                <span class="text-[10px] tracking-[0.2em] font-mono text-purple-400 uppercase font-bold">Lead Management</span>
-                <span class="text-white text-xl font-display font-extrabold mt-1">Zero Lost Leads</span>
-                <span class="text-xs text-muted mt-1 leading-relaxed">Inbound pipelines categorized & answered in 5m.</span>
+                <span class="text-[10px] tracking-[0.2em] font-mono text-purple-400 uppercase font-bold">Inbound Metrics</span>
+                <span class="text-white text-xl font-display font-extrabold mt-1">Zero Leakage Pipelines</span>
+                <span class="text-xs text-muted mt-1 leading-relaxed">Customer queries routed and tracked in real-time.</span>
               </div>
               <div class="bg-panel/40 p-4 rounded-2xl border border-white/5 flex flex-col justify-center">
-                <span class="text-[10px] tracking-[0.2em] font-mono text-emeraldAccent uppercase font-bold">Architect Core</span>
-                <span class="text-white text-xl font-display font-extrabold mt-1 font-mono">100% Integrated</span>
-                <span class="text-xs text-muted mt-1 leading-relaxed">Custom frontend dashboards synced with your CRM.</span>
+                <span class="text-[10px] tracking-[0.2em] font-mono text-emeraldAccent uppercase font-bold">Integration</span>
+                <span class="text-white text-xl font-display font-extrabold mt-1 font-mono">100% Custom Sync</span>
+                <span class="text-xs text-muted mt-1 leading-relaxed">Private dashboards mapped to structural databases.</span>
               </div>
             </div>
           </div>
@@ -247,9 +264,9 @@
               <div class="flex items-center justify-between pb-4 border-b border-white/5">
                 <div class="flex items-center gap-2">
                   <div class="w-3 h-3 rounded-full bg-indigo-500 animate-pulse"></div>
-                  <span class="text-xs font-mono text-indigo-300 font-bold uppercase tracking-wider">Automated System Schema</span>
+                  <span class="text-xs font-mono text-indigo-300 font-bold uppercase tracking-wider">Operational Engine Map</span>
                 </div>
-                <span class="text-[10px] bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-2 py-0.5 rounded font-mono font-bold uppercase">Simulator Active</span>
+                <span class="text-[10px] bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-2 py-0.5 rounded font-mono font-bold uppercase">Ready</span>
               </div>
 
               <!-- Graphic Node Canvas Sim -->
@@ -263,8 +280,8 @@
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
                   </div>
                   <div>
-                    <h4 class="text-xs font-bold text-white">Frontend Client Event</h4>
-                    <p class="text-[10px] text-muted">User schedules audit on Landing Page</p>
+                    <h4 class="text-xs font-bold text-white">Interactive Client Portal</h4>
+                    <p class="text-[10px] text-muted">Aura, ClientBridge custom frameworks</p>
                   </div>
                 </div>
 
@@ -274,8 +291,8 @@
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                   </div>
                   <div>
-                    <h4 class="text-xs font-bold text-white">AI Routing Engine</h4>
-                    <p class="text-[10px] text-muted">Intent parsed, qualified & classified in real-time</p>
+                    <h4 class="text-xs font-bold text-white">Autonomous Agent Router</h4>
+                    <p class="text-[10px] text-muted">Intent classification and extraction parameters</p>
                   </div>
                 </div>
 
@@ -285,16 +302,16 @@
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                   </div>
                   <div>
-                    <h4 class="text-xs font-bold text-white">Integrated CRM Database</h4>
-                    <p class="text-[10px] text-muted">Friction report compiled, notifications dispatched</p>
+                    <h4 class="text-xs font-bold text-white">Production Database Sync</h4>
+                    <p class="text-[10px] text-muted">Intact status metrics pipelines dispatched</p>
                   </div>
                 </div>
               </div>
 
               <!-- Interactive Demo Clicker inside graphic -->
               <div class="pt-4 border-t border-white/5 text-center">
-                <button onclick="document.getElementById('nx-trigger') ? openSandbox('nexus') : selectFormOption('audit')" class="w-full py-2.5 bg-indigo-600/10 hover:bg-indigo-600/25 border border-indigo-500/30 text-indigo-300 font-mono text-[10px] font-bold uppercase tracking-wider rounded-xl transition-all">
-                  Simulate Live Stream Logic
+                <button onclick="openSandbox('nexus')" class="w-full py-2.5 bg-indigo-600/10 hover:bg-indigo-600/25 border border-indigo-500/30 text-indigo-300 font-mono text-[10px] font-bold uppercase tracking-wider rounded-xl transition-all">
+                  Run Interactive Neural Nexus
                 </button>
               </div>
             </div>
@@ -303,40 +320,40 @@
       </section>
 
       <!-- About / System Blueprint Section -->
-      <section id="about" class="py-32 px-6 md:px-10 border-t border-white/5 bg-panel/30 relative">
+      <section id="about" class="py-28 px-6 md:px-10 border-t border-white/5 bg-panel/20 relative">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           
           <!-- Left blueprint information -->
           <div class="lg:col-span-5 space-y-8 lg:sticky lg:top-32 reveal">
-            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold">&gt; The Architecture Core</span>
+            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold">&gt; The Philosophy</span>
             <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white leading-tight">
-              Software is simple.<br />Operational flow is premium.
+              Aesthetically Flawless.<br />Technically Unstoppable.
             </h2>
             
             <div class="space-y-6 text-muted text-sm font-light leading-relaxed">
               <p>
-                Throughout my work mapping complex pipelines across agency networks and custom systems, I noticed a universal problem: businesses spend thousands of dollars on software only to end up with <span class="text-white font-semibold">fragmented data, manual copying, and delayed communication</span>.
+                As a freelance engineer, I don't believe in generic templates. I build bespoke software systems that combine custom frontend interfaces with absolute functional depth.
               </p>
               <p>
-                Combining a <span class="text-indigo-300 font-semibold font-mono">Computer Science (BE)</span> engineering background with <span class="text-purple-300 font-semibold font-mono">Business Management (MA)</span> operational focus, I architect custom structures where design meets automated back-end logic.
+                Merging a background in <span class="text-indigo-300 font-semibold font-mono">Computer Science (BE)</span> and <span class="text-purple-300 font-semibold font-mono">Business Management (MA)</span>, I understand both the architectural elegance of code and the concrete operational targets of high-growth businesses.
               </p>
               <p>
-                I configure the entire machine—connecting high-performing branding with automated database actions, AI pipelines, and clean customer-facing hubs.
+                From patient intake platforms in regulated healthcare models to automated agency delivery portals, I architect and build complete product landscapes that remove human friction points entirely.
               </p>
             </div>
 
             <!-- Custom Tech Stack Badges -->
             <div class="pt-4 space-y-2">
-              <span class="text-[10px] font-mono tracking-widest text-indigo-400 uppercase font-bold block">Production Framework Core:</span>
+              <span class="text-[10px] font-mono tracking-widest text-indigo-400 uppercase font-bold block">Production Framework Focus:</span>
               <div class="flex flex-wrap gap-2">
                 <span class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/5 bg-white/[0.02] text-[11px] text-muted font-medium hover:border-white/10 transition-colors">
-                  <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Healthcare Pipeline Mapping
+                  <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Design Systems Engineering
                 </span>
                 <span class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/5 bg-white/[0.02] text-[11px] text-muted font-medium hover:border-white/10 transition-colors">
                   <span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Workflow Sync Architecture
                 </span>
                 <span class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/5 bg-white/[0.02] text-[11px] text-muted font-medium hover:border-white/10 transition-colors">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>BE Computer Science
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Responsive Micro-Animations
                 </span>
               </div>
             </div>
@@ -344,7 +361,7 @@
 
           <!-- Right Bento Services Cards -->
           <div id="services" class="lg:col-span-7 space-y-6 reveal">
-            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold block">&gt; Systems &amp; Technical Capabilities</span>
+            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold block">&gt; Capability Framework Matrix</span>
             
             <!-- Bento Box Cards Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -354,9 +371,9 @@
                 <div class="w-11 h-11 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6 border border-indigo-500/20 shadow-md">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
                 </div>
-                <h4 class="text-base font-bold text-white mb-2">High-Converting Frontends</h4>
-                <p class="text-xs text-muted leading-relaxed mb-4">Blazing-fast modern web structures optimized to convert outbound traffic into qualified pipeline opportunities.</p>
-                <div class="text-[10px] text-indigo-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Bridging tech &amp; Conversion design</div>
+                <h4 class="text-base font-bold text-white mb-2">High-Fidelity Interaction</h4>
+                <p class="text-xs text-muted leading-relaxed mb-4">Highly fluid interface architectures with hand-crafted CSS grids, custom-engineered animations, and pixel-perfect layouts.</p>
+                <div class="text-[10px] text-indigo-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Built from the design system up</div>
               </div>
 
               <!-- Bento Card 2 -->
@@ -365,9 +382,9 @@
                 <div class="w-11 h-11 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6 border border-emerald-500/20 shadow-md">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                 </div>
-                <h4 class="text-base font-bold text-white mb-2">AI Workflow Automation</h4>
-                <p class="text-xs text-muted leading-relaxed mb-4">Autonomous intelligence setups mapped directly to systems to automatically reply, route, and update CRM profiles.</p>
-                <div class="text-[10px] text-emerald-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Zero manual data entry</div>
+                <h4 class="text-base font-bold text-white mb-2">AI Extraction &amp; Workflows</h4>
+                <p class="text-xs text-muted leading-relaxed mb-4">Integrations mapped directly to system webhook databases that qualify user intents, categorize files, and automate outbound client loops.</p>
+                <div class="text-[10px] text-emerald-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Scaled automation pipelines</div>
               </div>
 
               <!-- Bento Card 3 -->
@@ -376,9 +393,9 @@
                 <div class="w-11 h-11 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6 border border-purple-500/20 shadow-md">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                 </div>
-                <h4 class="text-base font-bold text-white mb-2">B2B Onboarding Hubs</h4>
-                <p class="text-xs text-muted leading-relaxed mb-4">Dedicated dashboard environments that guide your clients through uploading files, submitting assets, and tracking KPIs.</p>
-                <div class="text-[10px] text-purple-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Remove communication bottlenecks</div>
+                <h4 class="text-base font-bold text-white mb-2">Secure Collaboration Portals</h4>
+                <p class="text-xs text-muted leading-relaxed mb-4">Dedicated environment hubs with progress indicators, secure files trackers, and status update timelines to align remote teams.</p>
+                <div class="text-[10px] text-purple-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Elite digital work spaces</div>
               </div>
 
               <!-- Bento Card 4 -->
@@ -387,253 +404,522 @@
                 <div class="w-11 h-11 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400 mb-6 border border-rose-500/20 shadow-md">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
                 </div>
-                <h4 class="text-base font-bold text-white mb-2">Internal Delivery Tools</h4>
-                <p class="text-xs text-muted leading-relaxed mb-4">Unified databases, visual calendars, and kanban systems configured to track project milestones with absolute visual clarity.</p>
-                <div class="text-[10px] text-rose-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Consolidate bottleneck issues</div>
+                <h4 class="text-base font-bold text-white mb-2">Tailored Operational Sprints</h4>
+                <p class="text-xs text-muted leading-relaxed mb-4">Interactive kanban engines and live project schedules showing actual tasks transition phases, priority status levels, and code metrics.</p>
+                <div class="text-[10px] text-rose-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Unified agile project systems</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Case Studies & Sandboxes -->
-      <section id="work" class="py-32 px-6 md:px-10 relative">
+      <!-- Case Study: Aura Patient Intake UX Redesign -->
+      <section id="aura-case" class="py-28 px-6 md:px-10 border-t border-white/5 bg-background relative overflow-hidden">
+        <div class="absolute top-[20%] right-[-10%] w-[35%] h-[35%] rounded-full bg-emerald-500/5 glow-orb -z-10 animate-pulse-slow"></div>
+        <div class="absolute bottom-[20%] left-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-500/5 glow-orb -z-10 animate-pulse-slow"></div>
+
         <div class="max-w-7xl mx-auto">
-          <!-- Section Title Area -->
-          <div class="mb-20 text-center space-y-4 max-w-3xl mx-auto reveal">
-            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold">&gt; Interactive Case Studies</span>
-            <h3 class="text-3xl sm:text-5xl font-display font-extrabold text-white">Systems built to eliminate operational bottlenecks.</h3>
-            <p class="text-muted text-sm sm:text-base leading-relaxed">
-              Click the interactive buttons below to test operational sandboxes directly inside the browser.
+          <!-- Section Heading area -->
+          <div class="mb-16 reveal max-w-4xl">
+            <span class="text-xs font-mono tracking-[0.2em] text-emerald-400 uppercase font-extrabold">&gt; Deep Design Case Study</span>
+            <h3 class="text-3xl sm:text-5xl font-display font-extrabold text-white mt-3 leading-tight">
+              Aura Patient Intake UX: Systems Architecture &amp; Fluid Design Case Study
+            </h3>
+            <p class="text-muted text-base sm:text-lg mt-4 font-light leading-relaxed">
+              How high-end, patient-centric design principles transformed clinical patient onboarding by replacing outdated paper processes with a frictionless digital workspace.
             </p>
           </div>
 
+          <!-- Main Case Study Content Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <!-- Left: Text Breakdown (Detailed BoltDS Design Process) -->
+            <div class="lg:col-span-6 space-y-12">
+              
+              <!-- Segment 1: The Challenge -->
+              <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                  <span class="text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded font-bold uppercase">01</span>
+                  <h4 class="text-lg font-bold text-white tracking-tight">Systemic Inefficiencies and Friction</h4>
+                </div>
+                <p class="text-sm text-muted leading-relaxed font-light">
+                  Traditional clinical onboarding operations suffer from massive friction. Patients are presented with dense, non-responsive sheets containing nested options, causing an average of <span class="text-white font-semibold">45% registration drop-off rates</span>. Administrative teams are then forced to manually scan, re-type, and troubleshoot errors.
+                </p>
+              </div>
+
+              <!-- Segment 2: Visual Architecture & Progressive Disclosure -->
+              <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                  <span class="text-xs font-mono bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2.5 py-1 rounded font-bold uppercase">02</span>
+                  <h4 class="text-lg font-bold text-white tracking-tight">Progressive Disclosure Design System</h4>
+                </div>
+                <p class="text-sm text-muted leading-relaxed font-light">
+                  The design system for Aura reduces cognitive load. By presenting inputs one clear variable block at a time, patients interact with an elegant, responsive UI canvas. We engineered custom micro-indicators, fluid step-by-step transitions, and strict real-time field validation to eliminate validation errors.
+                </p>
+              </div>
+
+              <!-- Segment 3: The Design System Tokens -->
+              <div class="p-6 rounded-2xl bg-panel/60 border border-white/5 space-y-4">
+                <span class="text-[10px] font-mono tracking-wider text-muted uppercase font-bold block">Aura DS Core Token Matrix</span>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                  <div>
+                    <span class="text-[9px] text-muted font-mono block">Brand Primary</span>
+                    <div class="flex items-center gap-1.5 mt-1">
+                      <span class="w-3.5 h-3.5 rounded bg-emerald-500 border border-emerald-400/20"></span>
+                      <span class="text-[10px] text-white font-mono font-semibold">#10B981</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span class="text-[9px] text-muted font-mono block">System Dark</span>
+                    <div class="flex items-center gap-1.5 mt-1">
+                      <span class="w-3.5 h-3.5 rounded bg-[#090A0E] border border-white/10"></span>
+                      <span class="text-[10px] text-white font-mono font-semibold">#090A0E</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span class="text-[9px] text-muted font-mono block">Accent Glow</span>
+                    <div class="flex items-center gap-1.5 mt-1">
+                      <span class="w-3.5 h-3.5 rounded bg-indigo-500 border border-indigo-400/20"></span>
+                      <span class="text-[10px] text-white font-mono font-semibold">#4F46E5</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span class="text-[9px] text-muted font-mono block">Typography</span>
+                    <span class="text-[10px] text-white font-mono font-semibold mt-1 block">Bricolage / DM</span>
+                  </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 pt-2 border-t border-white/5">
+                  <div>
+                    <span class="text-[9px] text-muted font-mono block">Button Active</span>
+                    <span class="text-[10px] text-white bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded mt-1 inline-block">w-full rounded-full transition-all</span>
+                  </div>
+                  <div>
+                    <span class="text-[9px] text-muted font-mono block">Validation State</span>
+                    <span class="text-[10px] text-emerald-400 mt-1 block">Real-time Regex Regex Matching</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Segment 4: Engineering Impact Metrics -->
+              <div class="grid grid-cols-2 gap-4">
+                <div class="p-5 bg-panel/30 border border-white/5 rounded-2xl flex flex-col justify-center">
+                  <span class="text-[9px] font-mono text-emerald-400 font-extrabold uppercase tracking-widest">Total Patient Intake</span>
+                  <span class="text-white text-3xl font-display font-extrabold mt-1">+34%</span>
+                  <span class="text-xs text-muted mt-1 leading-relaxed">Increase in intake conversion velocity and accuracy metrics.</span>
+                </div>
+                <div class="p-5 bg-panel/30 border border-white/5 rounded-2xl flex flex-col justify-center">
+                  <span class="text-[9px] font-mono text-indigo-400 font-extrabold uppercase tracking-widest">Form Drop-off</span>
+                  <span class="text-white text-3xl font-display font-extrabold mt-1">-45%</span>
+                  <span class="text-xs text-muted mt-1 leading-relaxed">Reduction in dropped registration processes due to user confusion.</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Right: Interactive Product Screens (Aura Intake Wizard & Clinical Dashboards) -->
+            <div class="lg:col-span-6 space-y-6">
+              
+              <!-- Screen 1: High-Fidelity Patient Intake Application Screen -->
+              <div class="rounded-3xl bg-[#090A0E] border border-white/5 shadow-2xl overflow-hidden relative">
+                <div class="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-emerald-500 to-indigo-500"></div>
+                
+                <!-- Browser Header -->
+                <div class="px-5 py-3.5 border-b border-white/5 bg-[#050508] flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-xs font-bold text-white font-mono uppercase tracking-wider">Aura Patient Intake Screen</span>
+                  </div>
+                  <span class="text-[9px] font-mono bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded font-bold uppercase">HIPAA Compliant</span>
+                </div>
+
+                <!-- Intake Application UI Body -->
+                <div class="p-6 space-y-6">
+                  <!-- Form Process Timeline -->
+                  <div class="flex items-center justify-between pb-4 border-b border-white/5">
+                    <div class="flex items-center gap-3">
+                      <span id="aura-step-badge" class="w-6 h-6 rounded-full bg-emerald-500 text-black font-mono font-bold text-xs flex items-center justify-center">1</span>
+                      <div>
+                        <h5 class="text-xs font-bold text-white">Interactive Step Formulation</h5>
+                        <p id="aura-step-desc" class="text-[10px] text-muted">Awaiting general credentials parameters</p>
+                      </div>
+                    </div>
+                    <span class="text-[10px] font-mono text-muted" id="aura-step-percent">33% Done</span>
+                  </div>
+
+                  <!-- Dynamic Form Elements -->
+                  <div id="aura-wizard-body" class="space-y-4">
+                    <!-- Step 1 Layout -->
+                    <div id="aura-step-1" class="space-y-3">
+                      <div>
+                        <label for="pt-name" class="block text-[9px] uppercase tracking-wider font-mono text-muted mb-1.5 font-bold">Patient Legal Name</label>
+                        <input id="pt-name" type="text" placeholder="John Doe" class="w-full bg-[#050508] border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emerald-500 transition-colors" />
+                        <span id="pt-name-err" class="text-[9px] text-red-400 hidden mt-1 block">Please write a valid patient name.</span>
+                      </div>
+                      <div>
+                        <label for="pt-email" class="block text-[9px] uppercase tracking-wider font-mono text-muted mb-1.5 font-bold">Patient Contact Email</label>
+                        <input id="pt-email" type="email" placeholder="john@doe.com" class="w-full bg-[#050508] border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emerald-500 transition-colors" />
+                        <span id="pt-email-err" class="text-[9px] text-red-400 hidden mt-1 block">Please enter a valid email address.</span>
+                      </div>
+                    </div>
+
+                    <!-- Step 2 Layout (Hidden initially) -->
+                    <div id="aura-step-2" class="space-y-3 hidden">
+                      <div>
+                        <label for="pt-insurance" class="block text-[9px] uppercase tracking-wider font-mono text-muted mb-1.5 font-bold">Insurance Provider Authority</label>
+                        <input id="pt-insurance" type="text" placeholder="Blue Cross Shield" class="w-full bg-[#050508] border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emerald-500 transition-colors" />
+                      </div>
+                      <div>
+                        <label for="pt-policy" class="block text-[9px] uppercase tracking-wider font-mono text-muted mb-1.5 font-bold">Insurance Policy Serial ID</label>
+                        <input id="pt-policy" type="text" placeholder="POL-993-211-1" class="w-full bg-[#050508] border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emerald-500 transition-colors" />
+                      </div>
+                    </div>
+
+                    <!-- Step 3 Layout (Hidden initially) -->
+                    <div id="aura-step-3" class="space-y-3 hidden">
+                      <div class="p-4 rounded-2xl bg-emerald-500/5 border border-emerald-500/10 text-center space-y-2">
+                        <span class="text-xl">🛡️</span>
+                        <h6 class="text-xs font-bold text-white">Ready for Clinical Sync Verification</h6>
+                        <p class="text-[10px] text-muted leading-relaxed">
+                          Your progressive intake credentials will be synchronized directly into the securely encrypted patient matrices log.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Controls -->
+                  <div class="flex items-center gap-3 pt-2">
+                    <button id="aura-back-btn" onclick="nextAuraStep(-1)" disabled class="flex-1 py-3 border border-white/5 rounded-xl text-muted hover:text-white text-xs font-bold uppercase tracking-wider transition-all disabled:opacity-30">
+                      Back
+                    </button>
+                    <button id="aura-next-btn" onclick="nextAuraStep(1)" class="flex-1 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-lg shadow-emerald-500/10">
+                      Continue Step →
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Screen 2: Real-time Clinical Physician Dashboard Feed -->
+              <div class="rounded-3xl bg-[#090A0E] border border-white/5 shadow-2xl overflow-hidden">
+                <!-- Dashboard Header -->
+                <div class="px-5 py-3.5 border-b border-white/5 bg-[#050508] flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+                    <span class="text-xs font-bold text-white font-mono uppercase tracking-wider">Clinician Intakes Dashboard</span>
+                  </div>
+                  <span class="text-[10px] text-muted font-mono font-medium" id="clinical-feed-time">Synced 1m ago</span>
+                </div>
+
+                <!-- Dashboard Patients List -->
+                <div class="p-5 space-y-3.5" id="clinical-patients-feed">
+                  <!-- Patient 1 -->
+                  <div class="flex items-center justify-between p-3.5 bg-[#050508]/60 border border-white/5 rounded-2xl">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-xs font-bold text-emerald-400">
+                        SB
+                      </div>
+                      <div>
+                        <h5 class="text-xs font-bold text-white">Sarah Berenson</h5>
+                        <p class="text-[9px] text-muted font-mono">ID: PT-844-A | Inbound Sync</p>
+                      </div>
+                    </div>
+                    <span class="text-[9px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded-full font-bold uppercase">
+                      Intake Synced
+                    </span>
+                  </div>
+
+                  <!-- Patient 2 -->
+                  <div class="flex items-center justify-between p-3.5 bg-[#050508]/60 border border-white/5 rounded-2xl">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-xs font-bold text-indigo-400">
+                        MR
+                      </div>
+                      <div>
+                        <h5 class="text-xs font-bold text-white">Marcus Ross</h5>
+                        <p class="text-[9px] text-muted font-mono">ID: PT-219-X | Form Progressing</p>
+                      </div>
+                    </div>
+                    <span class="text-[9px] bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2 py-0.5 rounded-full font-bold uppercase animate-pulse">
+                      Filling Form
+                    </span>
+                  </div>
+
+                  <!-- Dynamically appended patient from the interactive wizard will insert here -->
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Case Studies & Advanced Shipped Products -->
+      <section id="projects" class="py-28 px-6 md:px-10 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+          <!-- Section Title Area -->
+          <div class="mb-20 text-center space-y-4 max-w-3xl mx-auto reveal">
+            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold">&gt; Interactive Shipped Products</span>
+            <h3 class="text-3xl sm:text-5xl font-display font-extrabold text-white">Complete products constructed with elite fidelity.</h3>
+            <p class="text-muted text-sm sm:text-base leading-relaxed">
+              These are not basic mockups. I build, design, and ship functional interfaces. Test their custom design systems and interactive features below.
+            </p>
+          </div>
+
+          <!-- Product Columns / Grid -->
           <div class="space-y-16">
-            <!-- CASE STUDY 1: AURA PATIENT INTAKE UX -->
+            
+            <!-- PRODUCT 1: CLIENTBRIDGE (Cold Minimalist Aesthetic) -->
+            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden reveal">
+              <div class="absolute -right-20 -bottom-20 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[100px] -z-10"></div>
+              
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                  <!-- Visual Brand tag for ClientBridge -->
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center text-white text-xs font-bold">CB</div>
+                    <div>
+                      <span class="text-xs font-mono font-bold text-purple-400 uppercase tracking-widest block">ClientBridge</span>
+                      <span class="text-[10px] text-muted block">Client Workspace &amp; Delivery System</span>
+                    </div>
+                  </div>
+
+                  <h4 class="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight">
+                    Secure Client Collaboration Platform
+                  </h4>
+                  <p class="text-muted text-sm leading-relaxed">
+                    Designed with a sleek, cold obsidian-minimalist workspace aesthetic (inspired by *Linear* and *Vercel*). It features encrypted document delivery systems, dynamic circular client progress tracking, and key validation dashboards.
+                  </p>
+                  
+                  <!-- Metrics mapping -->
+                  <div class="grid grid-cols-2 gap-4 bg-[#050508]/60 p-4 rounded-2xl border border-white/5">
+                    <div>
+                      <span class="text-[9px] uppercase tracking-widest text-muted font-bold block">Delivery Security</span>
+                      <p class="text-xs font-bold text-white mt-1">End-To-End AES Sync</p>
+                    </div>
+                    <div>
+                      <span class="text-[9px] uppercase tracking-widest text-muted font-bold block">Friction reduction</span>
+                      <p class="text-xs font-bold text-purple-400 mt-1">100% Onboard Efficiency</p>
+                    </div>
+                  </div>
+
+                  <div class="pt-2">
+                    <button onclick="openSandbox('clientbridge')" class="px-6 py-3.5 bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center gap-2.5 shadow-[0_4px_15px_rgba(139,92,246,0.3)]">
+                      <span>Launch ClientBridge Portal Workspace</span>
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Product Preview Image / Mockup Screen representing ClientBridge -->
+                <div class="lg:col-span-6 flex justify-center">
+                  <div class="w-full max-w-md rounded-2xl bg-[#090A0E] border border-white/5 shadow-2xl overflow-hidden relative">
+                    <!-- Top interface bar -->
+                    <div class="bg-[#050508] px-4 py-3 border-b border-white/5 flex items-center justify-between text-[10px] font-mono">
+                      <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span>
+                        <span class="text-white font-bold">portal.clientbridge.io</span>
+                      </div>
+                      <span class="text-emeraldAccent">SECURE</span>
+                    </div>
+
+                    <!-- Layout Content Mock -->
+                    <div class="p-6 space-y-4 bg-gradient-to-b from-[#090A0E] to-[#050508]">
+                      <!-- Active Asset tracker -->
+                      <div class="p-4 bg-background border border-white/5 rounded-xl flex items-center justify-between">
+                        <div>
+                          <span class="text-[9px] uppercase tracking-wider text-muted font-bold block">Core Onboarding Progress</span>
+                          <span class="text-sm font-bold text-white mt-1 block">Task Verification Checklist</span>
+                        </div>
+                        <div class="w-10 h-10 rounded-full border-2 border-purple-500/20 flex items-center justify-center text-[10px] font-mono text-purple-400 font-bold">
+                          66%
+                        </div>
+                      </div>
+
+                      <div class="space-y-2">
+                        <div class="flex items-center justify-between text-[10px] font-mono text-muted">
+                          <span>Operational Blueprint Guidelines</span>
+                          <span class="text-emeraldAccent">Checked</span>
+                        </div>
+                        <div class="flex items-center justify-between text-[10px] font-mono text-muted">
+                          <span>Submit Primary Brand Identity Assets</span>
+                          <span class="text-emeraldAccent">Checked</span>
+                        </div>
+                        <div class="flex items-center justify-between text-[10px] font-mono text-muted">
+                          <span>Verify Server Domain Authority</span>
+                          <span class="text-purple-400 animate-pulse">Awaiting Validation</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PRODUCT 2: FLOWPILOT (Cyber Industrial Aesthetic) -->
+            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden reveal">
+              <div class="absolute -left-20 -bottom-20 w-[400px] h-[400px] bg-amber-500/5 rounded-full blur-[100px] -z-10"></div>
+              
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 lg:order-2 space-y-6">
+                  <!-- Visual Brand tag for FlowPilot -->
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-amber-600 to-yellow-500 flex items-center justify-center text-white text-xs font-bold">FP</div>
+                    <div>
+                      <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest block">FlowPilot</span>
+                      <span class="text-[10px] text-muted block">Intelligent Kanban Board Dashboard</span>
+                    </div>
+                  </div>
+
+                  <h4 class="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight">
+                    Agile Sprint Planning &amp; Kanban Engine
+                  </h4>
+                  <p class="text-muted text-sm leading-relaxed">
+                    Designed as a tactile developer sprint grid with high-contrast amber boundaries, structured columns, retro-monospace labels, priority indicators, and animated drag-destination task blocks.
+                  </p>
+                  
+                  <!-- Metrics mapping -->
+                  <div class="grid grid-cols-2 gap-4 bg-[#050508]/60 p-4 rounded-2xl border border-white/5">
+                    <div>
+                      <span class="text-[9px] uppercase tracking-widest text-muted font-bold block">Status Tracking</span>
+                      <p class="text-xs font-bold text-white mt-1">Real-time DB Sync</p>
+                    </div>
+                    <div>
+                      <span class="text-[9px] uppercase tracking-widest text-muted font-bold block">Task Management</span>
+                      <p class="text-xs font-bold text-amber-400 mt-1">Dynamic Task Routing</p>
+                    </div>
+                  </div>
+
+                  <div class="pt-2">
+                    <button onclick="openSandbox('flowpilot')" class="px-6 py-3.5 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center gap-2.5 shadow-[0_4px_15px_rgba(245,158,11,0.3)]">
+                      <span>Launch FlowPilot Sprint Console</span>
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Product Preview Image / Mockup Screen representing FlowPilot -->
+                <div class="lg:col-span-6 lg:order-1 flex justify-center">
+                  <div class="w-full max-w-md rounded-2xl bg-[#0B0C10] border border-amber-500/20 shadow-2xl overflow-hidden">
+                    <div class="bg-black/80 px-4 py-3 border-b border-amber-500/20 flex items-center justify-between font-mono text-[10px]">
+                      <span class="text-amber-400 font-bold uppercase">System: flowpilot.local</span>
+                      <span class="text-muted font-bold">SPRINT ACTIVE</span>
+                    </div>
+
+                    <!-- Mock Board Columns -->
+                    <div class="p-6 bg-[#050508] grid grid-cols-3 gap-3.5">
+                      <!-- Col 1 -->
+                      <div class="space-y-3.5">
+                        <span class="text-[8px] font-mono tracking-widest text-muted block uppercase font-bold">Backlog</span>
+                        <div class="p-3 bg-[#0B0C10] border border-white/5 rounded-xl text-left space-y-2">
+                          <span class="text-[8px] bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded font-mono font-bold uppercase">UI Wireframes</span>
+                          <p class="text-[10px] font-bold text-white leading-tight">Grid System</p>
+                        </div>
+                      </div>
+
+                      <!-- Col 2 -->
+                      <div class="space-y-3.5">
+                        <span class="text-[8px] font-mono tracking-widest text-muted block uppercase font-bold">Active</span>
+                        <div class="p-3 bg-[#0B0C10] border border-amber-500/30 rounded-xl text-left space-y-2">
+                          <span class="text-[8px] bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded font-mono font-bold uppercase">API Config</span>
+                          <p class="text-[10px] font-bold text-white leading-tight">Sync Webhooks</p>
+                        </div>
+                      </div>
+
+                      <!-- Col 3 -->
+                      <div class="space-y-3.5">
+                        <span class="text-[8px] font-mono tracking-widest text-muted block uppercase font-bold">Done</span>
+                        <div class="p-3 bg-[#0B0C10] border border-white/5 rounded-xl text-left opacity-40">
+                          <p class="text-[9px] text-muted">Awaiting task transitions...</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PRODUCT 3: NEXUS AI (Hacker / Neural Aesthetic) -->
             <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden reveal">
               <div class="absolute -right-20 -bottom-20 w-[400px] h-[400px] bg-emerald-500/5 rounded-full blur-[100px] -z-10"></div>
               
               <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6">
-                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-400 border border-emerald-500/20">
-                    UX Analysis Framework
+                <div class="lg:col-span-6 space-y-6">
+                  <!-- Visual Brand tag for Nexus AI -->
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white text-xs font-bold">NX</div>
+                    <div>
+                      <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest block">Nexus AI</span>
+                      <span class="text-[10px] text-muted block">Autonomous Language Routing Terminal</span>
+                    </div>
                   </div>
-                  <h4 class="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight">Aura Patient Intake UX Case Study</h4>
-                  <p class="text-muted text-sm sm:text-base leading-relaxed">
-                    How high-end, patient-centric design principles transformed clinical patient onboarding by replacing outdated paper processes with a frictionless digital workspace.
+
+                  <h4 class="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight">
+                    Autonomous Intent Extraction Console
+                  </h4>
+                  <p class="text-muted text-sm leading-relaxed">
+                    Designed with an advanced futuristic hacker-terminal aesthetic featuring deep emerald neural networks, scanline overlay systems, responsive command inputs, and JSON payload compilers.
                   </p>
                   
-                  <!-- Metrics inside Case Study -->
-                  <div class="grid grid-cols-2 gap-4 bg-background/60 p-4 rounded-2xl border border-white/5">
+                  <!-- Metrics mapping -->
+                  <div class="grid grid-cols-2 gap-4 bg-[#050508]/60 p-4 rounded-2xl border border-white/5">
                     <div>
-                      <span class="text-[9px] uppercase tracking-widest text-muted font-bold block">Target Segment</span>
-                      <p class="text-sm font-bold text-white mt-1">Medical Practices</p>
+                      <span class="text-[9px] uppercase tracking-widest text-muted font-bold block">NLP Categorizer</span>
+                      <p class="text-xs font-bold text-white mt-1">99.4% Extraction Accuracy</p>
                     </div>
                     <div>
-                      <span class="text-[9px] uppercase tracking-widest text-muted font-bold block">Metrics Impacted</span>
-                      <p class="text-sm font-bold text-emerald-400 mt-1">+34% Conversions</p>
+                      <span class="text-[9px] uppercase tracking-widest text-muted font-bold block">Sync Dispatcher</span>
+                      <p class="text-xs font-bold text-emeraldAccent mt-1">Under 800ms API Speed</p>
                     </div>
                   </div>
 
                   <div class="pt-2">
-                    <button onclick="toggleAuraCaseStudy()" class="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center gap-2.5 shadow-[0_4px_15px_rgba(16,185,129,0.3)]">
-                      <span>View Blueprint Breakdown</span>
-                      <svg id="aura-chevron" class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                    <button onclick="openSandbox('nexus')" class="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center gap-2.5 shadow-[0_4px_15px_rgba(16,185,129,0.3)]">
+                      <span>Open Neural Nexus AI Terminal</span>
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </button>
                   </div>
                 </div>
 
-                <!-- High-fidelity mockup visual representing clinical portals -->
-                <div class="lg:col-span-5 flex justify-center">
-                  <div class="w-full max-w-sm rounded-2xl bg-panel p-6 border border-white/5 relative z-10 shadow-2xl">
-                    <div class="flex items-center justify-between border-b border-white/5 pb-3 mb-5">
-                      <div class="flex items-center gap-2.5">
-                        <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
-                        <span class="text-xs font-bold text-white font-mono uppercase tracking-wider">Clinical Portal Map</span>
-                      </div>
-                      <span class="text-[9px] font-mono bg-emerald-500/15 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10 font-bold uppercase">HIPAA Secure</span>
-                    </div>
+                <!-- Product Preview Image / Mockup Screen representing Nexus AI -->
+                <div class="lg:col-span-6 flex justify-center">
+                  <div class="w-full max-w-md rounded-2xl bg-[#090A0E] border border-emerald-500/20 shadow-2xl overflow-hidden relative">
+                    <div class="absolute inset-0 bg-scanline pointer-events-none opacity-[0.03] z-20"></div>
                     
-                    <div class="space-y-4">
-                      <div class="p-4 bg-background/80 rounded-xl border border-white/5 flex items-center justify-between">
-                        <div>
-                          <span class="text-[9px] uppercase tracking-wider text-muted font-bold">Total Intake</span>
-                          <div class="text-xl font-display font-extrabold text-white mt-1">426 Registrations</div>
-                        </div>
-                        <span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/10">+12% this wk</span>
-                      </div>
-
-                      <div class="space-y-2">
-                        <div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                          <div class="h-full bg-emerald-500" style="width: 78%;"></div>
-                        </div>
-                        <div class="flex justify-between text-[10px] text-muted font-mono font-bold">
-                          <span>Intake Completion Target</span>
-                          <span>78%</span>
-                        </div>
-                      </div>
+                    <div class="bg-[#050508] px-4 py-3 border-b border-emerald-500/20 flex items-center justify-between font-mono text-[10px]">
+                      <span class="text-emeraldAccent font-bold">root@nexus-classifier.local:~/</span>
+                      <span class="text-muted">ONLINE</span>
                     </div>
-                  </div>
-                </div>
-              </div>
 
-              <!-- Aura Case study hidden drawer -->
-              <div id="aura-detailed-case" class="hidden mt-8 pt-8 border-t border-white/5 space-y-6">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 text-sm leading-relaxed">
-                  <div class="space-y-3">
-                    <h5 class="font-bold text-emerald-400 font-mono text-xs uppercase tracking-widest">&gt; The Challenge</h5>
-                    <p class="text-muted font-light">
-                      Medical clinics frequently fail on client patient registrations because intake forms are overly complex, non-responsive, and separate from administrative tools.
-                    </p>
-                  </div>
-                  <div class="space-y-3">
-                    <h5 class="font-bold text-emerald-400 font-mono text-xs uppercase tracking-widest">&gt; Engineering Strategy</h5>
-                    <p class="text-muted font-light">
-                      Aura resolves this by deploying clean progressive-disclosure visual arrays, removing extraneous form parameters, and routing completed form data into HIPAA-compliant database matrices in under 2 seconds.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- CASE STUDY 2: CLIENTBRIDGE PORTAL -->
-            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden reveal">
-              <div class="absolute -left-20 -bottom-20 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[100px] -z-10"></div>
-              
-              <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6">
-                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 text-[10px] font-mono font-bold uppercase tracking-wider text-purple-400 border border-purple-500/20">
-                    Client Environment Sync
-                  </div>
-                  <h4 class="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight">ClientBridge Portal</h4>
-                  <p class="text-muted text-sm sm:text-base leading-relaxed">
-                    How high-growth consultancies eliminate communication lag by shifting file collection and messaging loops directly into a dedicated status console tracking hub.
-                  </p>
-
-                  <div class="pt-2">
-                    <button onclick="openSandbox('clientbridge')" class="px-6 py-3.5 bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center gap-2.5 shadow-[0_4px_15px_rgba(139,92,246,0.3)]">
-                      <span>Launch Interactive Portal Sandbox</span>
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </button>
-                  </div>
-                </div>
-
-                <div class="lg:col-span-5 flex justify-center">
-                  <div class="w-full max-w-sm rounded-2xl bg-panel border border-white/5 shadow-2xl overflow-hidden">
-                    <div class="bg-background/80 px-4 py-3 border-b border-white/5 flex items-center justify-between font-mono text-[10px]">
-                      <span class="text-muted font-bold">portal.clientbridge.app</span>
-                      <div class="flex gap-1">
-                        <span class="w-2 h-2 rounded-full bg-white/10"></span>
-                        <span class="w-2 h-2 rounded-full bg-white/10"></span>
+                    <!-- Console Terminal Box -->
+                    <div class="p-6 space-y-4 bg-black/90 font-mono text-xs">
+                      <div class="text-emerald-400/80">// Loading AI neural vectors classifications models...</div>
+                      <div class="text-emeraldAccent">// Model: Nexus-Intent-Extractor-v4 ready.</div>
+                      
+                      <!-- Command Input representation -->
+                      <div class="p-3.5 bg-[#090A0E]/80 border border-white/5 rounded-xl flex items-center justify-between">
+                        <span class="text-slate-300 font-mono text-[10px]">Plumbing operation leads tracking spreadsheet models.</span>
+                        <span class="w-2.5 h-4 bg-emeraldAccent animate-pulse"></span>
                       </div>
-                    </div>
-                    <div class="p-6 text-center space-y-4 bg-gradient-to-b from-panel to-background">
-                      <div class="w-12 h-12 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mx-auto">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 4v16m8-8H4"></path></svg>
-                      </div>
-                      <p class="text-xs text-muted leading-relaxed max-w-xs mx-auto">
-                        Launch this interactive client dashboard simulation to view progress bar updates, asset checkmarks, and automated CRM submission scenarios.
-                      </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- CASE STUDY 3: FLOWPILOT OPERATIONS -->
-            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden reveal">
-              <div class="absolute -right-20 -bottom-20 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[100px] -z-10"></div>
-              
-              <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6">
-                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-[10px] font-mono font-bold uppercase tracking-wider text-blue-400 border border-blue-500/20">
-                    Kanban Operations Board
-                  </div>
-                  <h4 class="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight">FlowPilot Operations</h4>
-                  <p class="text-muted text-sm sm:text-base leading-relaxed">
-                    A task-centric project grid constructed for remote teams that need absolute interactive clarity over database statuses and pipeline blockade bottlenecks.
-                  </p>
-
-                  <div class="pt-2">
-                    <button onclick="openSandbox('flowpilot')" class="px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center gap-2.5 shadow-[0_4px_15px_rgba(59,130,246,0.3)]">
-                      <span>Test Sprint Board Sandbox</span>
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </button>
-                  </div>
-                </div>
-
-                <div class="lg:col-span-5 flex justify-center">
-                  <div class="w-full max-w-sm rounded-2xl bg-panel border border-white/5 shadow-2xl overflow-hidden">
-                    <div class="bg-background/80 px-4 py-3 border-b border-white/5 flex items-center justify-between font-mono text-[10px]">
-                      <span class="text-muted font-bold">ops.flowpilot.io</span>
-                      <span class="text-blue-400 font-bold font-mono">Sprint v1.2</span>
-                    </div>
-                    <div class="p-6 text-center space-y-4 bg-gradient-to-b from-panel to-background">
-                      <div class="w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mx-auto animate-pulse">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h7"></path></svg>
-                      </div>
-                      <p class="text-xs text-muted leading-relaxed max-w-xs mx-auto">
-                        An interactive project backlog dashboard featuring cards that dynamically update column statistics as you assign tasks through different sprint stages.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- CASE STUDY 4: NEXUS LEAD HANDLER -->
-            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden reveal">
-              <div class="absolute -left-20 -bottom-20 w-[400px] h-[400px] bg-indigo-500/5 rounded-full blur-[100px] -z-10"></div>
-              
-              <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6">
-                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-[10px] font-mono font-bold uppercase tracking-wider text-indigo-400 border border-indigo-500/20">
-                    Autonomous Machine Logic
-                  </div>
-                  <h4 class="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight">Nexus Lead Handler</h4>
-                  <p class="text-muted text-sm sm:text-base leading-relaxed">
-                    How high-volume agencies leverage autonomous classifiers to parse inbound system blueprints, structure pipeline fields, and draft automated outreach.
-                  </p>
-
-                  <div class="pt-2">
-                    <button onclick="openSandbox('nexus')" class="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center gap-2.5 shadow-[0_4px_15px_rgba(79,70,229,0.3)]">
-                      <span>Open AI Simulator Terminal</span>
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </button>
-                  </div>
-                </div>
-
-                <div class="lg:col-span-5 flex justify-center">
-                  <div class="w-full max-w-sm rounded-2xl bg-panel border border-white/5 shadow-2xl overflow-hidden">
-                    <div class="bg-background/80 px-4 py-3 border-b border-white/5 flex items-center justify-between font-mono text-[10px]">
-                      <span class="text-muted font-bold">agent.nexus.local</span>
-                      <span class="text-emerald-400 font-bold font-mono">ON LINE</span>
-                    </div>
-                    <div class="p-6 text-center space-y-4 bg-gradient-to-b from-panel to-background">
-                      <div class="w-12 h-12 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mx-auto">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                      </div>
-                      <p class="text-xs text-muted leading-relaxed max-w-xs mx-auto">
-                        An autonomous developer terminal showing lead classification logs, database parsing logic structures, and immediate API responses.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       <!-- Contact & Video Request System -->
-      <section id="contact" class="py-32 px-6 md:px-10 border-t border-white/5 bg-panel/30 relative">
+      <section id="contact" class="py-28 px-6 md:px-10 border-t border-white/5 bg-panel/30 relative">
         <div class="max-w-6xl mx-auto reveal">
           
           <div class="text-center mb-16 space-y-4">
-            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold block">&gt; Optimize Your Backend Mechanics</span>
-            <h3 class="text-3xl sm:text-5xl font-display font-extrabold text-white">Stop losing leads to manual tasks.</h3>
-            <p class="text-muted text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-              Drop your workflow details below. I will personally deliver an executive video structure showing you where your system architecture is losing operational volume.
+            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold block">&gt; System Blueprint Review</span>
+            <h3 class="text-3xl sm:text-5xl font-display font-extrabold text-white">Optimize your digital operations.</h3>
+            <p class="text-muted text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-light">
+              Submit your system parameters and workflow details. I will review your operational models and deliver a private video review pinpointing functional friction points.
             </p>
           </div>
 
@@ -642,9 +928,9 @@
             <!-- Left Info column -->
             <div class="lg:col-span-5 space-y-6">
               <div class="glass-card rounded-2xl p-6 border-l-4 border-l-indigo-600 space-y-3">
-                <span class="text-[10px] uppercase tracking-wider text-indigo-400 font-bold font-mono block">Friction Analysis Blueprint</span>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                  No sales pitches. I review your frontend layouts and API integration architecture models to deliver actionable engineering blueprints.
+                <span class="text-[10px] uppercase tracking-wider text-indigo-400 font-bold font-mono block">Friction Audit Parameters</span>
+                <p class="text-xs text-slate-300 leading-relaxed font-light">
+                  I inspect existing layout setups, validation rules, webhook routing layers, and CRM mapping fields. No sales pitch, just direct engineering strategy.
                 </p>
               </div>
 
@@ -661,13 +947,13 @@
             <!-- Form layout card -->
             <div class="lg:col-span-7 glass-card rounded-3xl p-8 relative">
               <div class="absolute -top-3.5 left-8 px-4 py-1.5 rounded-full bg-indigo-600 text-[10px] font-mono font-bold uppercase tracking-wider text-white shadow-lg" id="form-badge">
-                Systems Friction Form
+                Operational Audit Request
               </div>
               
               <form id="contact-form" class="space-y-6 pt-4">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label for="cf-name" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-indigo-400 font-bold mb-2">Operator Name</label>
+                    <label for="cf-name" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-indigo-400 font-bold mb-2">Primary Operator</label>
                     <input id="cf-name" name="name" type="text" placeholder="Name" required class="form-input w-full bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-colors" />
                   </div>
                   <div>
@@ -677,7 +963,7 @@
                 </div>
 
                 <div>
-                  <label for="cf-type" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-indigo-400 font-bold mb-2">Select Pipeline Channel</label>
+                  <label for="cf-type" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-indigo-400 font-bold mb-2">Select Pipeline Focus</label>
                   <select id="cf-type" name="interest" onchange="handleFormTypeChange(this.value)" class="form-input w-full bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-colors">
                     <option value="audit">Free 15-Min Systems Friction Audit</option>
                     <option value="ai-automation">AI Operations Scenarios</option>
@@ -686,13 +972,13 @@
                 </div>
 
                 <div id="dynamic-url-field">
-                  <label for="cf-url" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-indigo-400 font-bold mb-2">Existing Web Environment URL (Optional)</label>
+                  <label for="cf-url" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-indigo-400 font-bold mb-2">Existing Web Platform URL (Optional)</label>
                   <input id="cf-url" name="website" type="url" placeholder="https://brand.com" class="form-input w-full bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-colors" />
                 </div>
 
                 <div>
                   <label id="message-label" for="cf-message" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-indigo-400 font-bold mb-2">What is your single biggest operational bottleneck?</label>
-                  <textarea id="cf-message" name="message" rows="4" placeholder="Describe manual pipeline processes or data loss issues..." required class="form-input w-full bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-colors resize-none"></textarea>
+                  <textarea id="cf-message" name="message" rows="4" placeholder="Describe manual client data transfers, complex forms drop-off..." required class="form-input w-full bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-colors resize-none"></textarea>
                 </div>
 
                 <button type="submit" id="form-submit-btn" class="w-full px-6 py-4 rounded-xl bg-white text-black text-xs font-bold uppercase tracking-wider hover:bg-slate-100 transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl active:scale-95">
@@ -703,8 +989,8 @@
               <!-- SUCCESS MESSAGE -->
               <div id="form-success" class="hidden flex-col items-center justify-center text-center py-10 gap-4">
                 <div class="w-14 h-14 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl font-bold animate-bounce">&check;</div>
-                <h6 class="text-white font-display font-extrabold text-lg">System Requirements Logged</h6>
-                <p class="text-muted text-xs max-w-sm leading-relaxed" id="success-desc">Requirements compiled into secure memory structures. Response files pipeline dispatching under 24 hours.</p>
+                <h6 class="text-white font-display font-extrabold text-lg">System Audit Logged</h6>
+                <p class="text-muted text-xs max-w-sm leading-relaxed" id="success-desc">Requirements compiled. Secure transmission dispatched. Response strategy scheduled in under 24 hours.</p>
               </div>
             </div>
           </div>
@@ -717,23 +1003,24 @@
       <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-muted">
         <div class="flex items-center gap-3">
           <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 to-purple-600 flex items-center justify-center text-white font-bold text-xs">RD</div>
-          <span>&copy; 2026 Rohith Dhanala. Operational Engineering Hub. All Rights Reserved.</span>
+          <span>&copy; 2026 Rohith Dhanala. Design-Led Systems Engineering. All Rights Reserved.</span>
         </div>
         <div class="flex gap-6 font-semibold uppercase tracking-wider text-[10px]">
           <a href="#about" class="hover:text-white transition-all">About</a>
-          <a href="#services" class="hover:text-white transition-all">Capabilities</a>
-          <a href="#work" class="hover:text-white transition-all">Sandbox</a>
+          <a href="#aura-case" class="hover:text-white transition-all">Aura Study</a>
+          <a href="#projects" class="hover:text-white transition-all">Projects</a>
         </div>
       </div>
     </footer>
 
     <!-- OVERLAY DRAWERS -->
+    
     <!-- CLIENTBRIDGE SANDBOX DRAWER -->
-    <div id="sandbox-clientbridge" class="sandbox-drawer fixed inset-y-0 right-0 w-full lg:w-[45%] bg-[#08080C] border-l border-white/10 z-50 shadow-2xl flex flex-col hidden">
-      <div class="p-5 border-b border-white/5 flex items-center justify-between bg-panel/80 backdrop-blur-md">
+    <div id="sandbox-clientbridge" class="sandbox-drawer fixed inset-y-0 right-0 w-full lg:w-[48%] bg-[#050508] border-l border-white/10 z-50 shadow-2xl flex flex-col hidden">
+      <div class="p-5 border-b border-white/5 flex items-center justify-between bg-panel/90 backdrop-blur-md">
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span>
-          <span class="text-xs font-bold text-white font-mono uppercase tracking-wider">ClientBridge Sandbox Workspace</span>
+          <span class="text-xs font-bold text-white font-mono uppercase tracking-wider">ClientBridge Project Workspace</span>
         </div>
         <button onclick="closeSandbox()" class="text-[10px] font-mono border border-white/10 rounded-full px-4 py-1.5 text-muted hover:text-white bg-white/5 hover:bg-white/10 transition-all">Exit Console</button>
       </div>
@@ -741,12 +1028,13 @@
       <div class="flex-1 overflow-y-auto p-6 space-y-6 text-xs">
         <div class="glass-card p-6 rounded-2xl space-y-4">
           <div class="flex justify-between items-center">
-            <span class="text-white font-bold text-sm">Onboarding Progress Tracker</span>
-            <span id="cb-progress-percent" class="font-mono text-purple-400 font-extrabold text-base">50%</span>
+            <span class="text-white font-bold text-sm">Circular Task Analytics</span>
+            <span id="cb-progress-percent" class="font-mono text-purple-400 font-extrabold text-base">66%</span>
           </div>
           
+          <!-- Modern Progress Tracker Bar -->
           <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
-            <div id="cb-progress-bar" class="h-full bg-gradient-to-r from-purple-500 to-indigo-500 transition-all duration-500" style="width: 50%;"></div>
+            <div id="cb-progress-bar" class="h-full bg-gradient-to-r from-purple-500 to-indigo-500 transition-all duration-500" style="width: 66%;"></div>
           </div>
           
           <div class="space-y-3 pt-2">
@@ -754,32 +1042,32 @@
               <input type="checkbox" checked onchange="updateClientBridgeTasks()" class="rounded bg-black border-white/10 text-purple-600 focus:ring-0 w-4 h-4" />
               <div>
                 <span class="text-white font-bold block">Define Project Operational Brief</span>
-                <span class="text-[10px] text-muted">Submit core framework blueprints</span>
+                <span class="text-[10px] text-muted">Core blueprint and functional wireframes verified</span>
               </div>
             </label>
             <label class="flex items-center gap-3.5 p-3.5 bg-background border border-white/5 rounded-xl cursor-pointer hover:bg-panel transition-all">
               <input type="checkbox" checked onchange="updateClientBridgeTasks()" class="rounded bg-black border-white/10 text-purple-600 focus:ring-0 w-4 h-4" />
               <div>
                 <span class="text-white font-bold block">Submit Core Assets Guidelines</span>
-                <span class="text-[10px] text-muted">Upload operational diagrams</span>
+                <span class="text-[10px] text-muted">Primary logo files, font libraries, and color chips received</span>
               </div>
             </label>
             <label class="flex items-center gap-3.5 p-3.5 bg-background border border-white/5 rounded-xl cursor-pointer hover:bg-panel transition-all">
               <input type="checkbox" id="cb-task-dns" onchange="updateClientBridgeTasks()" class="rounded bg-black border-white/10 text-purple-600 focus:ring-0 w-4 h-4" />
               <div>
-                <span class="text-white font-bold block">Provide Server DNS Verification Authorities</span>
-                <span class="text-[10px] text-muted">Necessary for webhook integration routing</span>
+                <span class="text-white font-bold block">Verify Server Domain Authority</span>
+                <span class="text-[10px] text-muted">Necessary for pipeline webhooks registration routes</span>
               </div>
             </label>
           </div>
         </div>
 
         <div class="glass-card p-6 rounded-2xl space-y-4">
-          <span class="text-white font-bold text-sm block">Direct Action Upload Interface Simulation</span>
+          <span class="text-white font-bold text-sm block">Encrypted Document Upload Vault</span>
           <div onclick="triggerMockUpload()" class="border-2 border-dashed border-white/15 rounded-2xl py-8 text-center bg-background/50 hover:border-purple-500/40 cursor-pointer text-muted hover:text-white transition-all">
             <svg class="w-8 h-8 mx-auto text-muted mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-            <p class="font-bold text-xs text-white">Click to Mock Simulate Upload Asset</p>
-            <p class="text-[10px] text-muted mt-1">Accepts SVG, PDF or JPG blueprints</p>
+            <p class="font-bold text-xs text-white">Click to Upload Validation Document</p>
+            <p class="text-[10px] text-muted mt-1">Accepts SVG, PDF, or secure keys formats</p>
           </div>
           <div id="cb-file-list" class="space-y-2"></div>
         </div>
@@ -787,45 +1075,46 @@
     </div>
 
     <!-- FLOWPILOT SANDBOX DRAWER -->
-    <div id="sandbox-flowpilot" class="sandbox-drawer fixed inset-y-0 right-0 w-full lg:w-[45%] bg-[#08080C] border-l border-white/10 z-50 shadow-2xl flex flex-col hidden">
-      <div class="p-5 border-b border-white/5 flex items-center justify-between bg-panel/80 backdrop-blur-md">
+    <div id="sandbox-flowpilot" class="sandbox-drawer fixed inset-y-0 right-0 w-full lg:w-[48%] bg-[#050508] border-l border-white/10 z-50 shadow-2xl flex flex-col hidden">
+      <div class="p-5 border-b border-white/5 flex items-center justify-between bg-panel/90 backdrop-blur-md">
         <div class="flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
-          <span class="text-xs font-bold text-white font-mono uppercase tracking-wider">FlowPilot Kanban Console</span>
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
+          <span class="text-xs font-bold text-white font-mono uppercase tracking-wider">FlowPilot Agile Engine</span>
         </div>
         <button onclick="closeSandbox()" class="text-[10px] font-mono border border-white/10 rounded-full px-4 py-1.5 text-muted hover:text-white bg-white/5 hover:bg-white/10 transition-all">Exit Console</button>
       </div>
 
       <!-- Kanban Columns -->
       <div class="flex-1 p-6 overflow-y-auto space-y-6 bg-background">
-        <p class="text-muted text-xs leading-relaxed">
-          Interact with cards below by clicking on them to transition tasks through dynamic project pipeline sprints.
+        <p class="text-muted text-xs leading-relaxed font-light">
+          Manage task status dynamically. Click on cards to transition tasks through key sprint stages. Column statistics will compile in real-time.
         </p>
 
         <!-- Column 1: Backlog -->
         <div class="space-y-3">
           <div class="flex justify-between items-center bg-panel/40 p-3 rounded-xl border border-white/5">
-            <span class="text-xs font-bold uppercase tracking-wider text-muted">Operational Backlog</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-muted font-mono">Backlog Sprints</span>
             <span id="col-backlog-count" class="font-mono bg-white/5 text-white px-2 py-0.5 rounded text-[10px] font-bold">2</span>
           </div>
+          
           <div class="space-y-3" id="col-backlog">
             <!-- Card 1 -->
-            <div class="p-4 bg-panel border border-white/5 rounded-2xl hover:border-blue-500/40 cursor-pointer text-xs space-y-2 transition-all" onclick="moveKanbanCard(this, 'col-progress')">
+            <div class="p-4 bg-panel border border-white/5 rounded-2xl hover:border-amber-500/40 cursor-pointer text-xs space-y-2 transition-all" onclick="moveKanbanCard(this, 'col-progress')">
               <div class="flex justify-between items-center">
-                <span class="text-[9px] uppercase font-mono bg-blue-500/10 text-blue-400 px-2.5 py-0.5 rounded-full font-bold border border-blue-500/10">Layouts Map</span>
+                <span class="text-[9px] uppercase font-mono bg-amber-500/10 text-amber-400 px-2.5 py-0.5 rounded-full font-bold border border-amber-500/10">UI Screens</span>
                 <span class="text-[10px] text-muted font-mono font-medium">Sprint 1</span>
               </div>
-              <p class="text-white font-bold text-sm">Design System Wireframe Grids</p>
-              <p class="text-muted text-[11px]">Draft UI grid systems & structural layout flows</p>
+              <p class="text-white font-bold text-sm">Design Patient Intake Wizard</p>
+              <p class="text-muted text-[11px]">Generate modular, responsive input stages for Aura</p>
             </div>
             <!-- Card 2 -->
-            <div class="p-4 bg-panel border border-white/5 rounded-2xl hover:border-blue-500/40 cursor-pointer text-xs space-y-2 transition-all" onclick="moveKanbanCard(this, 'col-progress')">
+            <div class="p-4 bg-panel border border-white/5 rounded-2xl hover:border-amber-500/40 cursor-pointer text-xs space-y-2 transition-all" onclick="moveKanbanCard(this, 'col-progress')">
               <div class="flex justify-between items-center">
-                <span class="text-[9px] uppercase font-mono bg-purple-500/10 text-purple-400 px-2.5 py-0.5 rounded-full font-bold border border-purple-500/10">API Hooks</span>
+                <span class="text-[9px] uppercase font-mono bg-purple-500/10 text-purple-400 px-2.5 py-0.5 rounded-full font-bold border border-purple-500/10">Database Sync</span>
                 <span class="text-[10px] text-muted font-mono font-medium">Sprint 1</span>
               </div>
-              <p class="text-white font-bold text-sm">Connect Webhooks Pipeline Models</p>
-              <p class="text-muted text-[11px]">Integrate internal CRM notification flows</p>
+              <p class="text-white font-bold text-sm">Integrate Internal Webhooks</p>
+              <p class="text-muted text-[11px]">Dispatch automated client registration triggers</p>
             </div>
           </div>
         </div>
@@ -833,75 +1122,78 @@
         <!-- Column 2: Progress -->
         <div class="space-y-3">
           <div class="flex justify-between items-center bg-panel/40 p-3 rounded-xl border border-white/5">
-            <span class="text-xs font-bold uppercase tracking-wider text-muted">Active Pipeline Sprints</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-muted font-mono">Active Pipelines</span>
             <span id="col-progress-count" class="font-mono bg-white/5 text-white px-2 py-0.5 rounded text-[10px] font-bold">0</span>
           </div>
-          <div class="space-y-3 min-h-[50px] rounded-2xl" id="col-progress"></div>
+          <div class="space-y-3 min-h-[50px] rounded-2xl border border-dashed border-white/5 p-2" id="col-progress"></div>
         </div>
         
         <!-- Column 3: Done -->
         <div class="space-y-3">
           <div class="flex justify-between items-center bg-panel/40 p-3 rounded-xl border border-white/5">
-            <span class="text-xs font-bold uppercase tracking-wider text-muted">Completed Ops Architecture</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-muted font-mono">Shipped Tasks</span>
             <span id="col-done-count" class="font-mono bg-white/5 text-white px-2 py-0.5 rounded text-[10px] font-bold">0</span>
           </div>
-          <div class="space-y-3 min-h-[50px] rounded-2xl" id="col-done"></div>
+          <div class="space-y-3 min-h-[50px] rounded-2xl border border-dashed border-white/5 p-2" id="col-done"></div>
         </div>
       </div>
     </div>
 
     <!-- NEXUS AI TERMINAL SANDBOX DRAWER -->
-    <div id="sandbox-nexus" class="sandbox-drawer fixed inset-y-0 right-0 w-full lg:w-[45%] bg-[#08080C] border-l border-white/10 z-50 shadow-2xl flex flex-col hidden">
-      <div class="p-5 border-b border-white/5 flex items-center justify-between bg-panel/80 backdrop-blur-md">
+    <div id="sandbox-nexus" class="sandbox-drawer fixed inset-y-0 right-0 w-full lg:w-[48%] bg-[#050508] border-l border-white/10 z-50 shadow-2xl flex flex-col hidden">
+      <div class="absolute inset-0 bg-scanline pointer-events-none opacity-[0.02] z-20"></div>
+      
+      <div class="p-5 border-b border-white/5 flex items-center justify-between bg-panel/90 backdrop-blur-md">
         <div class="flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-pulse"></span>
-          <span class="text-xs font-bold text-white font-mono uppercase tracking-wider">Nexus Autonomous Logic Core</span>
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="text-xs font-bold text-white font-mono uppercase tracking-wider">Nexus AI Neural Terminal</span>
         </div>
         <button onclick="closeSandbox()" class="text-[10px] font-mono border border-white/10 rounded-full px-4 py-1.5 text-muted hover:text-white bg-white/5 hover:bg-white/10 transition-all">Exit Playground</button>
       </div>
 
-      <div class="flex-1 p-6 space-y-6 overflow-y-auto text-xs">
-        <div class="glass-card p-6 rounded-2xl space-y-4">
-          <span class="text-white font-bold text-sm block">Inbound Intent Simulator Templates</span>
-          <p class="text-muted leading-relaxed">Choose an industrial operational template below to load simulated lead parameters immediately into the AI Classifier block:</p>
+      <div class="flex-1 p-6 space-y-6 overflow-y-auto text-xs z-10">
+        <div class="glass-card p-6 rounded-2xl space-y-4 bg-black/40">
+          <span class="text-white font-bold text-sm block">Inbound Intent Parameter Mocks</span>
+          <p class="text-muted leading-relaxed font-light">Choose a simulated industrial scenario to load raw client parameters into the natural language processing vector block:</p>
+          
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <button onclick="setNexusTemplate('plumbing')" class="p-3 bg-background rounded-xl border border-white/5 text-left text-white hover:border-indigo-500/30 transition-all flex items-center gap-2">
+            <button onclick="setNexusTemplate('plumbing')" class="p-3 bg-background rounded-xl border border-white/5 text-left text-white hover:border-emerald-500/30 transition-all flex items-center gap-2.5">
               <span>🔧</span>
               <div>
-                <span class="font-bold block">Home Trades Scope</span>
-                <span class="text-[9px] text-muted">Manual pipeline tracking</span>
+                <span class="font-bold block">Home Services Model</span>
+                <span class="text-[9px] text-muted">Manual pipeline mapping issues</span>
               </div>
             </button>
-            <button onclick="setNexusTemplate('agency')" class="p-3 bg-background rounded-xl border border-white/5 text-left text-white hover:border-indigo-500/30 transition-all flex items-center gap-2">
+            <button onclick="setNexusTemplate('agency')" class="p-3 bg-background rounded-xl border border-white/5 text-left text-white hover:border-emerald-500/30 transition-all flex items-center gap-2.5">
               <span>🚀</span>
               <div>
                 <span class="font-bold block">SaaS Marketing Team</span>
-                <span class="text-[9px] text-muted">Webhook database connection</span>
+                <span class="text-[9px] text-muted">Dynamic webhooks sync requirements</span>
               </div>
             </button>
           </div>
           
-          <textarea id="nx-input-msg" rows="4" class="w-full bg-background border border-white/5 rounded-xl p-3.5 font-mono text-xs text-white outline-none focus:border-indigo-500 transition-colors" placeholder="Awaiting configuration template logic launch parameters..."></textarea>
+          <textarea id="nx-input-msg" rows="4" class="w-full bg-background border border-white/5 rounded-xl p-3.5 font-mono text-xs text-white outline-none focus:border-emerald-500 transition-colors" placeholder="Awaiting parameter payload metrics inputs..."></textarea>
           
-          <button onclick="runNexusAI()" id="nx-trigger" class="w-full py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold uppercase tracking-wider transition-all shadow-lg active:scale-95">
-            Execute Intent Classification Sequence
+          <button onclick="runNexusAI()" id="nx-trigger" class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold uppercase tracking-wider transition-all shadow-lg active:scale-95">
+            Process Neural NLP Extraction
           </button>
         </div>
 
         <!-- CLI Output Block -->
         <div class="border border-white/5 rounded-2xl bg-black p-5 font-mono text-[11px] text-muted h-44 overflow-y-auto space-y-2" id="nx-console">
-          <div class="text-indigo-400">// System listening. Core awaiting launch triggers...</div>
+          <div class="text-emerald-400">// Ready. Awaiting trigger execution...</div>
         </div>
 
         <!-- Dynamic Output Properties Map Panel -->
         <div id="nx-crm-wrapper" class="hidden glass-card p-6 rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.02] space-y-3">
           <div class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span class="text-white font-bold text-sm">CRM Output Sync Mapped Field Parameters:</span>
+            <span class="text-white font-bold text-sm">CRM Sync Parameter Output Matrix</span>
           </div>
           <div class="space-y-2 text-slate-300">
-            <p>Category Type: <span id="nx-res-cat" class="text-white font-bold font-mono">N/A</span></p>
-            <p>Budget Threshold Mapping: <span id="nx-res-budget" class="text-white font-bold font-mono">N/A</span></p>
+            <p>Categorized Group: <span id="nx-res-cat" class="text-white font-bold font-mono">N/A</span></p>
+            <p>Est. Structural Tier: <span id="nx-res-budget" class="text-white font-bold font-mono">N/A</span></p>
             <div id="nx-res-email" class="bg-black/40 p-4 rounded-xl border border-white/5 text-muted font-mono text-[10px] leading-relaxed mt-3"></div>
           </div>
         </div>
@@ -921,7 +1213,6 @@
       }, { threshold: 0.05 });
       
       revealElements.forEach((el) => {
-        // Run initial transition and observe
         observer.observe(el);
       });
 
@@ -940,10 +1231,10 @@
       window.addEventListener("scroll", () => {
         if (window.scrollY > 30) {
           navbar.classList.add("bg-background/80", "backdrop-blur-xl", "border-b", "border-white/5", "py-3");
-          navbar.classList.remove("py-4");
+          navbar.classList.remove("py-5");
         } else {
           navbar.classList.remove("bg-background/80", "backdrop-blur-xl", "border-b", "border-white/5", "py-3");
-          navbar.classList.add("py-4");
+          navbar.classList.add("py-5");
         }
       });
 
@@ -970,14 +1261,14 @@
         if (val === "audit") {
           urlField.classList.remove("hidden");
           msgLabel.textContent = "What is your single biggest operational bottleneck?";
-          msgTextarea.placeholder = "e.g. Onboarding clients requires manual validation arrays...";
+          msgTextarea.placeholder = "Describe manual pipelines or data loss issues...";
           submitBtnLabel.textContent = "Request Free Systems Audit";
           formBadge.textContent = "Systems Friction Form";
         } else {
           urlField.classList.add("hidden");
-          msgLabel.textContent = "Briefly describe your requirements target vectors:";
-          msgTextarea.placeholder = "Explain tool connections, database frameworks, scope models...";
-          submitBtnLabel.textContent = "Send Operational Scope Blueprint Requirements";
+          msgLabel.textContent = "Describe your project parameters vectors:";
+          msgTextarea.placeholder = "Explain desired web frameworks, integration scopes, automations...";
+          submitBtnLabel.textContent = "Send Bespoke Requirements Profile";
           formBadge.textContent = "Bespoke System Intake";
         }
       }
@@ -1000,16 +1291,120 @@
         successBlock.classList.add("flex");
       });
 
-      // Aura Case Study Detailed toggle
-      function toggleAuraCaseStudy() {
-        const caseStudyDiv = document.getElementById("aura-detailed-case");
-        const chevron = document.getElementById("aura-chevron");
-        caseStudyDiv.classList.toggle("hidden");
-        if (caseStudyDiv.classList.contains("hidden")) {
-          chevron.classList.remove("rotate-180");
-        } else {
-          chevron.classList.add("rotate-180");
+      // Interactive Aura Patient Intake Step Wizard Control
+      let auraCurrentStep = 1;
+      function nextAuraStep(direction) {
+        const nameInput = document.getElementById("pt-name");
+        const emailInput = document.getElementById("pt-email");
+        
+        // Step 1 Validation
+        if (auraCurrentStep === 1 && direction === 1) {
+          let validated = true;
+          if (nameInput.value.trim() === "") {
+            document.getElementById("pt-name-err").classList.remove("hidden");
+            validated = false;
+          } else {
+            document.getElementById("pt-name-err").classList.add("hidden");
+          }
+          if (emailInput.value.trim() === "" || !emailInput.value.includes("@")) {
+            document.getElementById("pt-email-err").classList.remove("hidden");
+            validated = false;
+          } else {
+            document.getElementById("pt-email-err").classList.add("hidden");
+          }
+          if (!validated) return;
         }
+
+        // Hide current step layout
+        document.getElementById(`aura-step-${auraCurrentStep}`).classList.add("hidden");
+        
+        // Change current step number
+        auraCurrentStep += direction;
+        
+        // Show new step layout
+        document.getElementById(`aura-step-${auraCurrentStep}`).classList.remove("hidden");
+        
+        // Update labels
+        document.getElementById("aura-step-badge").textContent = auraCurrentStep;
+        
+        const nextBtn = document.getElementById("aura-next-btn");
+        const backBtn = document.getElementById("aura-back-btn");
+        const stepDesc = document.getElementById("aura-step-desc");
+        const stepPercent = document.getElementById("aura-step-percent");
+        
+        if (auraCurrentStep === 1) {
+          backBtn.disabled = true;
+          nextBtn.textContent = "Continue Step →";
+          stepDesc.textContent = "Awaiting general credentials parameters";
+          stepPercent.textContent = "33% Done";
+        } else if (auraCurrentStep === 2) {
+          backBtn.disabled = false;
+          nextBtn.textContent = "Verify Credentials →";
+          stepDesc.textContent = "Sync insurance provider details";
+          stepPercent.textContent = "66% Done";
+        } else if (auraCurrentStep === 3) {
+          backBtn.disabled = false;
+          nextBtn.textContent = "Verify & Sync Intake";
+          stepDesc.textContent = "Aura secure database matrix dispatch";
+          stepPercent.textContent = "95% Ready";
+          
+          // Change click function of the next button to complete intake
+          nextBtn.onclick = function() {
+            submitAuraIntake();
+          };
+        }
+      }
+
+      function submitAuraIntake() {
+        // Mock API submission and appending to Clinical Dashboard Feed
+        const ptName = document.getElementById("pt-name").value || "Test Patient";
+        const ptFeed = document.getElementById("clinical-patients-feed");
+        
+        // Create new patient log card element
+        const ptCard = document.createElement("div");
+        ptCard.className = "flex items-center justify-between p-3.5 bg-emerald-500/5 border border-emerald-500/20 rounded-2xl animate-pulse";
+        ptCard.innerHTML = `
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-xs font-bold text-emerald-400">
+              ${ptName.substring(0, 2).toUpperCase()}
+            </div>
+            <div>
+              <h5 class="text-xs font-bold text-white">${ptName}</h5>
+              <p class="text-[9px] text-muted font-mono">ID: PT-NEW-SYNC | Intake Processing</p>
+            </div>
+          </div>
+          <span class="text-[9px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded-full font-bold uppercase">
+            Dispatched
+          </span>
+        `;
+        
+        // Prepend to dashboard feed
+        ptFeed.insertBefore(ptCard, ptFeed.firstChild);
+        
+        // Reset patient intake wizard step 1
+        setTimeout(() => {
+          ptCard.classList.remove("animate-pulse");
+        }, 1500);
+
+        // Return to Step 1 and clear inputs
+        document.getElementById(`aura-step-${auraCurrentStep}`).classList.add("hidden");
+        auraCurrentStep = 1;
+        document.getElementById("pt-name").value = "";
+        document.getElementById("pt-email").value = "";
+        document.getElementById("pt-insurance").value = "";
+        document.getElementById("pt-policy").value = "";
+        
+        document.getElementById(`aura-step-1`).classList.remove("hidden");
+        document.getElementById("aura-step-badge").textContent = "1";
+        document.getElementById("aura-back-btn").disabled = true;
+        const nextBtn = document.getElementById("aura-next-btn");
+        nextBtn.textContent = "Continue Step →";
+        nextBtn.onclick = function() { nextAuraStep(1); };
+        document.getElementById("aura-step-desc").textContent = "Awaiting general credentials parameters";
+        document.getElementById("aura-step-percent").textContent = "33% Done";
+
+        // Scroll down slightly to feed to show client action confirmation
+        document.getElementById("clinical-patients-feed").scrollIntoView({ behavior: "smooth" });
       }
 
       // Universal Sandbox Overlay Controls (Slide-Over Drawer style)
@@ -1018,7 +1413,6 @@
         const overlay = document.getElementById(`sandbox-${targetId}`);
         if (overlay) {
           overlay.classList.remove("hidden");
-          // Small delay for smooth entry slide transition trigger
           setTimeout(() => {
             overlay.classList.add("active");
           }, 30);
@@ -1029,7 +1423,6 @@
       function closeSandbox() {
         document.querySelectorAll(".sandbox-drawer").forEach(el => {
           el.classList.remove("active");
-          // Wait for exit CSS transition before hiding completely
           setTimeout(() => {
             if (!el.classList.contains("active")) {
               el.classList.add("hidden");
@@ -1055,11 +1448,11 @@
       function triggerMockUpload() {
         const list = document.getElementById("cb-file-list");
         const row = document.createElement("div");
-        row.className = "flex justify-between items-center bg-background p-3.5 rounded-xl border border-white/5 text-[11px] animate-pulse";
+        row.className = "flex justify-between items-center bg-[#050508] p-3.5 rounded-xl border border-white/5 text-[11px] animate-pulse";
         row.innerHTML = `
           <div class="flex items-center gap-2">
             <span class="text-purple-400">📊</span>
-            <span class="font-mono text-white">asset_vector_guidelines.svg</span>
+            <span class="font-mono text-white">verification_credentials.pdf</span>
           </div>
           <span class="text-emerald-400 font-mono font-bold text-[10px] uppercase bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/10">Synced Complete</span>
         `;
@@ -1104,8 +1497,8 @@
 
       // Nexus AI classification terminal templates
       const nexusTemplates = {
-        plumbing: "Plumbing operation infrastructure localized workflow optimization parameters. Spreadsheets tracking leads leak 40% value.",
-        agency: "B2B SaaS Growth firm ingestion systems model require automated Webhooks integration fields to HubSpot records."
+        plumbing: "Plumbing operations pipeline localized design. Spreadsheets tracking leads leak 45% values due to non-responsive schemas.",
+        agency: "B2B SaaS Growth firm intake environments requiring automated webhooks and dynamic field sync immediately."
       };
       
       function setNexusTemplate(key) {
