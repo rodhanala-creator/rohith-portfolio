@@ -3,17 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rohith Dhanala | Portfolio — High-Converting Systems & Interfaces</title>
-    <meta name="description" content="I build high-converting landing pages linked directly to custom AI automations, client portals, and internal delivery systems." />
+    <title>Rohith Dhanala | Portfolio — High-Converting Systems & AI Automation</title>
+    <meta name="description" content="I build high-converting landing pages linked directly to custom AI automations, secure client portals, and automated operations pipelines." />
+    
+    <!-- SEO and Social Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Rohith Dhanala" />
+    <link rel="canonical" href="https://rohithdhanala.com/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Rohith Dhanala | Portfolio — High-Converting Systems & AI Automation" />
+    <meta property="og:description" content="Custom web interfaces synchronized with operational databases, automated Make.com pipelines, and private client communication environments." />
+    <meta property="og:url" content="https://rohithdhanala.com/" />
+    <meta property="og:site_name" content="Rohith Dhanala" />
 
-    <!-- Premium Fonts -->
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rohith Dhanala | Portfolio — High-Converting Systems & AI Automation" />
+    <meta name="twitter:description" content="Automate manual workflows, build premium interfaces, and save 15+ admin hours per week." />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet" />
     
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS (via CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Tailwind Config Script -->
     <script>
       tailwind.config = {
         theme: {
@@ -25,7 +43,7 @@
             },
             colors: {
               background: "#050508",
-              panel: "#0B0C10",
+              panel: "rgba(11, 12, 16, 0.65)",
               panelHover: "#12141C",
               primary: "#FFFFFF",
               muted: "#8A94A6",
@@ -37,149 +55,60 @@
             animation: {
               'pulse-slow': 'pulse 7s cubic-bezier(0.4, 0, 0.6, 1) infinite',
               'spin-slow': 'spin 16s linear infinite',
-              'scanline': 'scanline 6s linear infinite',
-            },
-            keyframes: {
-              scanline: {
-                '0%': { transform: 'translateY(-100%)' },
-                '100%': { transform: 'translateY(100%)' }
-              }
             }
           },
         },
       };
     </script>
 
-    <style>
-      body {
-        background-color: #050508;
-        color: #F3F4F6;
-        overflow-x: hidden;
-        -webkit-font-smoothing: antialiased;
-        font-family: 'DM Sans', sans-serif;
-      }
-
-      /* Grid Blueprint Pattern */
-      .bg-grid {
-        background-size: 40px 40px;
-        background-image: 
-          linear-gradient(to right, rgba(255, 255, 255, 0.012) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
-      }
-
-      /* Glow effect elements */
-      .glow-orb {
-        filter: blur(140px);
-        opacity: 0.14;
-        pointer-events: none;
-      }
-
-      /* Texture Overlays */
-      .noise-overlay {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        z-index: 99;
-        opacity: 0.015;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-      }
-
-      /* Adaptive Screen Transitions */
-      .reveal {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* Luxury Glassmorphism Layer */
-      .glass-card {
-        background: rgba(11, 12, 16, 0.65);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
-        border: 1px solid rgba(255, 255, 255, 0.04);
-        box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.6);
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .glass-card:hover {
-        border-color: rgba(255, 255, 255, 0.09);
-        transform: translateY(-2px);
-        box-shadow: 0 24px 48px -15px rgba(79, 70, 229, 0.18);
-      }
-
-      /* Modern Web Custom Scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #050508;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #191B24;
-        border-radius: 99px;
-        border: 2px solid #050508;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #2D3142;
-      }
-
-      .pulse-soft {
-        animation: pulseSoft 2.5s infinite ease-in-out;
-      }
-      @keyframes pulseSoft {
-        0%, 100% { opacity: 0.2; }
-        50% { opacity: 0.5; }
-      }
-    </style>
+    <!-- Custom CSS Link -->
+    <link rel="stylesheet" href="styles.css" />
   </head>
   
-  <body class="selection:bg-indigo-600 selection:text-white relative bg-background antialiased">
-    <!-- Ambient Overlays -->
+  <body class="selection:bg-indigo-600 selection:text-white relative bg-background antialiased custom-scroll">
+    <!-- Ambient Texture and Grids -->
     <div class="noise-overlay"></div>
     <div class="fixed inset-0 bg-grid -z-20"></div>
 
-    <!-- Gradient Ambient Orbs -->
+    <!-- Glowing Background Spheres -->
     <div class="fixed top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full bg-indigo-600/15 glow-orb -z-10 animate-pulse-slow"></div>
     <div class="fixed bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-purple-600/10 glow-orb -z-10 animate-pulse-slow" style="animation-delay: 2s;"></div>
     <div class="fixed top-[45%] left-[25%] w-[40%] h-[40%] rounded-full bg-emerald-500/5 glow-orb -z-10 animate-pulse-slow" style="animation-delay: 4.5s;"></div>
 
-    <!-- Mobile Menu Modal Overlay -->
+    <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="hidden fixed inset-0 bg-background/98 backdrop-blur-3xl z-50 flex flex-col items-center justify-center gap-8 transition-all duration-300">
-      <button id="mobile-close" aria-label="Close menu" class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all">
+      <button id="mobile-close" aria-label="Close menu" class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all text-white">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
-      <a href="#about" onclick="closeMobileMenu(); handleNav('about')" class="text-3xl font-display font-semibold text-muted hover:text-white transition-all">About</a>
-      <a href="#projects" onclick="closeMobileMenu(); handleNav('projects')" class="text-3xl font-display font-semibold text-muted hover:text-white transition-all">Projects</a>
-      <a href="#contact" onclick="closeMobileMenu(); handleNav('contact')" class="text-3xl font-display font-semibold text-indigo-400 hover:text-indigo-300 transition-all">Contact</a>
+      <a href="#about" onclick="closeMobileMenu(); navigateTo('home')" class="text-3xl font-display font-semibold text-muted hover:text-white transition-all">About</a>
+      <a href="#projects" onclick="closeMobileMenu(); navigateTo('home')" class="text-3xl font-display font-semibold text-muted hover:text-white transition-all">Case Studies</a>
+      <a href="#contact" onclick="closeMobileMenu(); navigateTo('home')" class="text-3xl font-display font-semibold text-indigo-400 hover:text-indigo-300 transition-all">Contact</a>
     </div>
 
-    <!-- Navigation Header Bar -->
+    <!-- Main Navigation Bar -->
     <nav class="fixed w-full z-40 top-0 transition-all duration-500 border-b border-transparent py-5" id="navbar">
       <div class="max-w-7xl mx-auto px-6 md:px-10 flex justify-between items-center">
-        <!-- Brand Identity -->
+        <!-- Brand Identity Logo -->
         <a href="#home" onclick="navigateTo('home')" class="flex items-center gap-3 group" aria-label="Rohith Dhanala - Home">
           <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center shadow-lg shadow-indigo-500/10 group-hover:scale-105 transition-all duration-300">
             <span class="text-sm font-display font-extrabold tracking-wider text-white">RD</span>
           </div>
           <div class="flex flex-col">
             <span class="text-sm font-display font-bold text-white tracking-tight group-hover:text-indigo-300 transition-colors">Rohith Dhanala</span>
+            <span class="text-[9px] font-mono text-muted tracking-widest leading-none">SYSTEMS ARCHITECT</span>
           </div>
         </a>
 
         <!-- Premium Pill Navbar Links -->
-        <div class="hidden md:flex items-center gap-2 bg-panel/70 backdrop-blur-2xl px-2 py-1.5 rounded-full border border-white/5 shadow-inner">
-          <a href="#about" onclick="handleNav('about')" class="text-xs tracking-wider uppercase text-muted hover:text-white px-5 py-2.5 rounded-full hover:bg-white/5 transition-all font-semibold">About</a>
-          <a href="#projects" onclick="handleNav('projects')" class="text-xs tracking-wider uppercase text-muted hover:text-white px-5 py-2.5 rounded-full hover:bg-white/5 transition-all font-semibold">Projects</a>
-          <a href="#contact" onclick="handleNav('contact')" class="text-xs tracking-wider uppercase text-muted hover:text-white px-5 py-2.5 rounded-full hover:bg-white/5 transition-all font-semibold">Contact</a>
+        <div class="hidden md:flex items-center gap-2 bg-[#0B0C10]/70 backdrop-blur-2xl px-2 py-1.5 rounded-full border border-white/5 shadow-inner">
+          <a href="#about" onclick="navigateTo('home'); scrollToSection('about')" class="text-[11px] tracking-wider uppercase text-muted hover:text-white px-5 py-2.5 rounded-full hover:bg-white/5 transition-all font-bold">About</a>
+          <a href="#projects" onclick="navigateTo('home'); scrollToSection('projects')" class="text-[11px] tracking-wider uppercase text-muted hover:text-white px-5 py-2.5 rounded-full hover:bg-white/5 transition-all font-bold">Case Studies</a>
+          <a href="#contact" onclick="navigateTo('home'); scrollToSection('contact')" class="text-[11px] tracking-wider uppercase text-muted hover:text-white px-5 py-2.5 rounded-full hover:bg-white/5 transition-all font-bold">Contact</a>
         </div>
 
-        <!-- Call-to-Action Bar -->
+        <!-- Header Action Triggers -->
         <div class="flex items-center gap-3">
-          <a href="#contact" onclick="navigateTo('home'); setTimeout(() => selectFormOption('audit'), 100)" class="hidden sm:inline-flex px-6 py-2.5 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white text-xs font-bold uppercase tracking-wider transition-all shadow-[0_4px_20px_rgba(79,70,229,0.25)] hover:shadow-[0_4px_25px_rgba(79,70,229,0.4)] active:scale-95">
+          <a href="#contact" onclick="navigateTo('home'); setTimeout(() => { scrollToSection('contact'); selectFormOption('audit'); }, 100)" class="hidden sm:inline-flex px-6 py-2.5 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white text-xs font-bold uppercase tracking-wider transition-all shadow-[0_4px_20px_rgba(79,70,229,0.25)] hover:shadow-[0_4px_25px_rgba(79,70,229,0.4)] active:scale-95">
             Free Systems Audit
           </a>
           <button id="mobile-open" class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-panel border border-white/5 text-muted hover:text-white transition-all" aria-label="Open menu">
@@ -190,95 +119,96 @@
     </nav>
 
     <!-- ============================================ -->
-    <!-- MAIN HOME PAGE                               -->
+    <!-- PORTFOLIO HOME LANDING PAGE                  -->
     <!-- ============================================ -->
     <div id="page-home" class="app-page">
-      <!-- Hero Main Container -->
+      
+      <!-- Hero Section -->
       <section class="min-h-screen flex items-center justify-center pt-32 pb-24 px-6 md:px-10 relative">
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
-          <!-- Left copywriting content -->
+          <!-- Left Content -->
           <div class="lg:col-span-7 text-left space-y-8 z-10">
-            <!-- Active Status badge -->
-            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 backdrop-blur-md reveal">
-              <span class="relative flex h-2.5 w-2.5">
+            <!-- Availability status badge -->
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 backdrop-blur-md reveal active">
+              <span class="relative flex h-2 w-2">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span class="text-[10px] uppercase tracking-[0.25em] text-emerald-400 font-extrabold">Accepting Selected Partners for Q3</span>
+              <span class="text-[10px] uppercase tracking-[0.25em] text-emerald-400 font-extrabold">Available for Freelance &amp; Contract Work</span>
             </div>
 
-            <!-- Main Heading Statement -->
-            <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white leading-[1.15] tracking-tight reveal">
-              I design premium websites <br />
-              <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-500">&amp; custom engineering engines</span>
+            <!-- Value Proposition Statement -->
+            <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white leading-[1.12] tracking-tight reveal active">
+              I build premium web systems <br />
+              <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-500">&amp; custom AI automation engines</span>
             </h1>
 
-            <p class="text-base sm:text-lg text-muted font-light leading-relaxed max-w-2xl reveal">
-              A gorgeous web interface is only half the battle. I build frictionless, high-fidelity frontend systems synchronized with operational databases, automated pipelines, and private client communication environments.
+            <p class="text-base sm:text-lg text-muted font-light leading-relaxed max-w-2xl reveal active">
+              A premium visual interface is only the beginning. I design high-converting frontend products integrated directly with structural databases, secure portal document exchanges, and Make.com workflow pipelines.
             </p>
 
-            <!-- Quick Action Triggers -->
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 reveal">
-              <a href="#contact" onclick="selectFormOption('audit')" class="px-8 py-4 rounded-full bg-white hover:bg-slate-100 text-black text-xs font-extrabold uppercase tracking-wider transition-all flex items-center justify-center gap-3 shadow-[0_10px_30px_rgba(255,255,255,0.08)] active:scale-95">
+            <!-- Call-to-actions -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 reveal active">
+              <a href="#contact" onclick="scrollToSection('contact'); selectFormOption('audit')" class="px-8 py-4 rounded-full bg-white hover:bg-slate-100 text-black text-xs font-extrabold uppercase tracking-wider transition-all flex items-center justify-center gap-3 shadow-[0_10px_30px_rgba(255,255,255,0.08)] active:scale-95">
                 Claim Free Systems Audit
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
-              <a href="#projects" class="px-8 py-4 rounded-full border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all text-xs font-extrabold uppercase tracking-wider text-white text-center active:scale-95">
-                Inspect Shipped Products
+              <a href="#projects" onclick="scrollToSection('projects')" class="px-8 py-4 rounded-full border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all text-xs font-extrabold uppercase tracking-wider text-white text-center active:scale-95">
+                Inspect Interactive Case Studies
               </a>
             </div>
 
-            <!-- Built-in Micro Metrics Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 reveal">
+            <!-- Micro Metrics Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 reveal active">
               <div class="bg-panel/40 p-4 rounded-2xl border border-white/5 flex flex-col justify-center">
                 <span class="text-[10px] tracking-[0.2em] font-mono text-indigo-400 uppercase font-bold">Optimization</span>
-                <span class="text-white text-xl font-display font-extrabold mt-1">15+ Admin Hours Saved</span>
-                <span class="text-xs text-muted mt-1 leading-relaxed">No manual calendar ping-pong or file transfers.</span>
+                <span class="text-white text-lg font-display font-extrabold mt-1">15+ Admin Hours Saved</span>
+                <span class="text-[11px] text-muted mt-1 leading-normal">Zero manual booking ping-pong or file transfers.</span>
               </div>
               <div class="bg-panel/40 p-4 rounded-2xl border border-white/5 flex flex-col justify-center">
-                <span class="text-[10px] tracking-[0.2em] font-mono text-purple-400 uppercase font-bold">Inbound Metrics</span>
-                <span class="text-white text-xl font-display font-extrabold mt-1">Zero Leakage Pipelines</span>
-                <span class="text-xs text-muted mt-1 leading-relaxed">Customer queries routed and tracked in real-time.</span>
+                <span class="text-[10px] tracking-[0.2em] font-mono text-purple-400 uppercase font-bold">Inbound metrics</span>
+                <span class="text-white text-lg font-display font-extrabold mt-1">Leak-proof lead capture</span>
+                <span class="text-[11px] text-muted mt-1 leading-normal">Website enquiries processed and qualified in under 2 mins.</span>
               </div>
               <div class="bg-panel/40 p-4 rounded-2xl border border-white/5 flex flex-col justify-center">
                 <span class="text-[10px] tracking-[0.2em] font-mono text-emeraldAccent uppercase font-bold">Integration</span>
-                <span class="text-white text-xl font-display font-extrabold mt-1 font-mono">100% Custom Sync</span>
-                <span class="text-xs text-muted mt-1 leading-relaxed">Private dashboards mapped to structural databases.</span>
+                <span class="text-white text-lg font-display font-extrabold mt-1">100% Customized Sync</span>
+                <span class="text-[11px] text-muted mt-1 leading-normal">Operational dashboards mapped to central data hubs.</span>
               </div>
             </div>
           </div>
 
-          <!-- Right side Interactive Live Telemetry & System Analytics Dashboard -->
-          <div class="lg:col-span-5 relative flex items-center justify-center z-10 reveal">
+          <!-- Right Content: Live System Telemetry -->
+          <div class="lg:col-span-5 relative flex items-center justify-center z-10 reveal active">
             <div class="w-full max-w-md bg-[#090A0E] rounded-3xl p-6 border border-white/5 shadow-2xl relative overflow-hidden group">
-              <!-- Ambient lights within the card -->
+              <!-- Glows inside card -->
               <div class="absolute -top-24 -left-24 w-48 h-48 bg-indigo-500/10 rounded-full blur-[80px] pointer-events-none"></div>
               <div class="absolute -bottom-24 -right-24 w-48 h-48 bg-emerald-500/10 rounded-full blur-[80px] pointer-events-none"></div>
               
-              <!-- Header -->
+              <!-- HUD Card Header -->
               <div class="flex items-center justify-between pb-4 border-b border-white/5 mb-5">
                 <div class="flex items-center gap-2">
                   <span class="relative flex h-2 w-2">
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                   </span>
-                  <span class="text-[10px] font-mono text-emerald-400 font-extrabold uppercase tracking-widest">Live System Telemetry</span>
+                  <span class="text-[10px] font-mono text-emerald-400 font-extrabold uppercase tracking-widest">Active System Analytics</span>
                 </div>
-                <span class="text-[9px] font-mono bg-indigo-500/10 text-indigo-300 border border-indigo-500/15 px-2 py-0.5 rounded font-bold uppercase">v2.5 active</span>
+                <span class="text-[9px] font-mono bg-indigo-500/10 text-indigo-300 border border-indigo-500/15 px-2 py-0.5 rounded font-bold uppercase">Telemetry v3.1</span>
               </div>
 
-              <!-- Metric Sparkline Display -->
+              <!-- Live sparkline chart panel -->
               <div class="bg-background/80 rounded-2xl p-4 border border-white/5 space-y-3 relative overflow-hidden mb-4">
                 <div class="flex justify-between items-start">
                   <div>
                     <span class="text-[9px] font-mono text-muted uppercase tracking-wider block">Operational Throughput</span>
-                    <span class="text-xl font-display font-extrabold text-white mt-1 block tracking-tight" id="telemetry-throughput">14,290 req/s</span>
+                    <span class="text-xl font-display font-extrabold text-white mt-1 block tracking-tight" id="telemetry-throughput">12,842 requests</span>
                   </div>
-                  <span class="text-[10px] font-mono text-emeraldAccent bg-emerald-500/10 px-2 py-0.5 rounded font-bold border border-emerald-500/10" id="telemetry-percent">+24.8%</span>
+                  <span class="text-[10px] font-mono text-emeraldAccent bg-emerald-500/10 px-2 py-0.5 rounded font-bold border border-emerald-500/10" id="telemetry-percent">+28.4%</span>
                 </div>
                 
-                <!-- Crisp SVG Chart -->
+                <!-- SVG Vector Chart -->
                 <div class="h-24 w-full relative pt-2">
                   <svg class="w-full h-full" viewBox="0 0 300 100" preserveAspectRatio="none">
                     <defs>
@@ -295,38 +225,18 @@
                 </div>
               </div>
 
-              <!-- Live Activity Logs Feed -->
-              <div class="space-y-2 mb-5 font-mono text-[10px]">
-                <div class="flex items-center justify-between p-3 bg-background/40 border border-white/5 rounded-xl">
-                  <div class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-                    <span class="text-slate-300">Intake payload dispatched</span>
-                  </div>
-                  <span class="text-muted">Aura Intake</span>
-                </div>
-                <div class="flex items-center justify-between p-3 bg-background/40 border border-white/5 rounded-xl">
-                  <div class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
-                    <span class="text-slate-300">AES encryption key validated</span>
-                  </div>
-                  <span class="text-muted">ClientBridge</span>
-                </div>
-                <div class="flex items-center justify-between p-3 bg-background/40 border border-white/5 rounded-xl">
-                  <div class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emeraldAccent"></span>
-                    <span class="text-slate-300">Webhook pipeline synchronized</span>
-                  </div>
-                  <span class="text-muted">FlowPilot</span>
-                </div>
+              <!-- Dynamic Log Feeder -->
+              <div class="space-y-2 mb-5 font-mono text-[10px]" id="telemetry-logs-feed">
+                <!-- Javascript will inject entries here -->
               </div>
 
-              <!-- Interactive Clicker -->
+              <!-- HUD Click Actions -->
               <div class="pt-4 border-t border-white/5 flex gap-2">
-                <button onclick="navigateTo('project-nexus')" class="flex-1 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-mono text-[10px] font-bold uppercase tracking-wider rounded-xl transition-all shadow-lg shadow-indigo-500/10">
-                  Open Neural Nexus AI Terminal
+                <button onclick="navigateTo('nexus-case')" class="flex-1 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-mono text-[10px] font-bold uppercase tracking-wider rounded-xl transition-all shadow-lg shadow-indigo-500/10">
+                  Open Neural Nexus terminal
                 </button>
-                <button onclick="simulateTelemetryTick()" class="px-4 bg-background hover:bg-white/5 border border-white/5 rounded-xl text-muted hover:text-white transition-all text-xs" title="Refresh Live State">
-                  🔄
+                <button id="btn-trigger-log" class="px-4 bg-background hover:bg-white/5 border border-white/5 rounded-xl text-muted hover:text-white transition-all text-xs" title="Force payload dispatch">
+                  ⚡
                 </button>
               </div>
             </div>
@@ -334,178 +244,198 @@
         </div>
       </section>
 
-      <!-- About / System Blueprint Section -->
+      <!-- Services Section (Bento Matrix) -->
       <section id="about" class="py-28 px-6 md:px-10 border-t border-white/5 bg-panel/20 relative">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           
-          <!-- Left blueprint information -->
+          <!-- Left Philosopy context -->
           <div class="lg:col-span-5 space-y-8 lg:sticky lg:top-32 reveal">
-            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold">&gt; The Philosophy</span>
+            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold">&gt; Positioning Philosophy</span>
             <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white leading-tight">
               Aesthetically Flawless.<br />Technically Unstoppable.
             </h2>
             
             <div class="space-y-6 text-muted text-sm font-light leading-relaxed">
               <p>
-                As a freelance systems architect, I don't build standard marketing wrappers. I construct bespoke software layers combining design system rigor with stable, transactional code.
+                As a freelance systems architect, I don't build simple marketing brochures. I write stable, transactional codebases integrated with custom designs.
               </p>
               <p>
-                Merging a background in <span class="text-indigo-300 font-semibold font-mono">Computer Science (BE)</span> and <span class="text-purple-300 font-semibold font-mono">Business Management (MA)</span>, I understand both the structural constraints of clean databases and the absolute ROI objectives of modern products.
+                Combining a background in <span class="text-indigo-300 font-semibold font-mono">Computer Science (BE)</span> and <span class="text-purple-300 font-semibold font-mono">Business Management (MA)</span>, I understand both the architectural constraints of secure databases and the absolute bottom-line ROI constraints of service businesses.
               </p>
               <p>
-                I eliminate operational friction entirely. By deploying custom dashboards, secure clients bridges, and automated pipeline listeners, I give companies the structural tooling they need to scale.
+                I focus on eliminating operational friction. By deploying custom status dashboards, secure file portals, and automated workflow triggers, I provide teams with the structural assets they need to scale calmly.
               </p>
             </div>
 
+            <!-- Focus badges -->
             <div class="pt-4 space-y-2">
-              <span class="text-[10px] font-mono tracking-widest text-indigo-400 uppercase font-bold block">Production Framework Focus:</span>
+              <span class="text-[10px] font-mono tracking-widest text-indigo-400 uppercase font-bold block">Focus Framework:</span>
               <div class="flex flex-wrap gap-2">
                 <span class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/5 bg-white/[0.02] text-[11px] text-muted font-medium hover:border-white/10 transition-colors">
-                  <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Design Systems Engineering
+                  <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Design Systems Architecture
                 </span>
                 <span class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/5 bg-white/[0.02] text-[11px] text-muted font-medium hover:border-white/10 transition-colors">
-                  <span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Workflow Sync Architecture
+                  <span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Workflow Automation Sync
                 </span>
                 <span class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/5 bg-white/[0.02] text-[11px] text-muted font-medium hover:border-white/10 transition-colors">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Responsive Micro-Animations
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Operational Metrics Panels
                 </span>
               </div>
             </div>
           </div>
 
-          <!-- Right Bento Services Cards -->
+          <!-- Right Bento Matrix -->
           <div id="services" class="lg:col-span-7 space-y-6 reveal">
             <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold block">&gt; Capability Framework Matrix</span>
             
-            <!-- Bento Box Cards Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <!-- Services Card 1 -->
               <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
                 <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div class="w-11 h-11 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6 border border-indigo-500/20 shadow-md">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"></path></svg>
                 </div>
-                <h4 class="text-base font-bold text-white mb-2">High-Fidelity Interaction</h4>
-                <p class="text-xs text-muted leading-relaxed mb-4">Highly fluid interface architectures with hand-crafted CSS grids, custom-engineered animations, and pixel-perfect layouts.</p>
-                <div class="text-[10px] text-indigo-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Built from the design system up</div>
+                <h4 class="text-base font-bold text-white mb-2">High-Fidelity Interface UX</h4>
+                <p class="text-xs text-muted leading-relaxed mb-4">Highly responsive frontend layouts with hand-crafted CSS grids, custom interaction states, and preconnect font rendering optimizations.</p>
+                <div class="text-[10px] text-indigo-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Built from design systems up</div>
               </div>
 
+              <!-- Services Card 2 -->
               <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
                 <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div class="w-11 h-11 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6 border border-emerald-500/20 shadow-md">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                 </div>
-                <h4 class="text-base font-bold text-white mb-2">AI Extraction &amp; Workflows</h4>
-                <p class="text-xs text-muted leading-relaxed mb-4">Integrations mapped directly to system webhook databases that qualify user intents, categorize files, and automate outbound client loops.</p>
-                <div class="text-[10px] text-emerald-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Scaled automation pipelines</div>
+                <h4 class="text-base font-bold text-white mb-2">AI Integrations &amp; Pipelines</h4>
+                <p class="text-xs text-muted leading-relaxed mb-4">Make.com webhook networks linked with OpenAI APIs that filter customer requests, check calendar slot buffers, and automate communications.</p>
+                <div class="text-[10px] text-emerald-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Automated database routing</div>
               </div>
 
+              <!-- Services Card 3 -->
               <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
                 <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div class="w-11 h-11 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6 border border-purple-500/20 shadow-md">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                 </div>
-                <h4 class="text-base font-bold text-white mb-2">Secure Collaboration Portals</h4>
-                <p class="text-xs text-muted leading-relaxed mb-4">Dedicated environment hubs with progress indicators, secure files trackers, and status update timelines to align remote teams.</p>
-                <div class="text-[10px] text-purple-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Elite digital work spaces</div>
+                <h4 class="text-base font-bold text-white mb-2">Client Portals &amp; Hubs</h4>
+                <p class="text-xs text-muted leading-relaxed mb-4">Dedicated, secure document vaults with milestone updates and linear timeline tracking so clients stay fully informed without endless status sync calls.</p>
+                <div class="text-[10px] text-purple-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Private delivery hubs</div>
               </div>
 
+              <!-- Services Card 4 -->
               <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
                 <div class="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div class="w-11 h-11 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400 mb-6 border border-rose-500/20 shadow-md">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
                 </div>
-                <h4 class="text-base font-bold text-white mb-2">Tailored Operational Sprints</h4>
-                <p class="text-xs text-muted leading-relaxed mb-4">Interactive kanban engines and live project schedules showing actual tasks transition phases, priority status levels, and code metrics.</p>
-                <div class="text-[10px] text-rose-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Unified agile project systems</div>
+                <h4 class="text-base font-bold text-white mb-2">Operations Metrics Boards</h4>
+                <p class="text-xs text-muted leading-relaxed mb-4">Agile pipelines, calendar match checkers, and custom interactive dashboard metrics detailing bottleneck points and lead tracking in real time.</p>
+                <div class="text-[10px] text-rose-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Real-time pipeline tracking</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Projects Section Grid Index -->
+      <!-- Case Studies Showcase Section -->
       <section id="projects" class="py-28 px-6 md:px-10 relative border-t border-white/5">
         <div class="max-w-7xl mx-auto">
-          <!-- Section Title Area -->
+          
           <div class="mb-20 text-center space-y-4 max-w-3xl mx-auto reveal">
-            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold">&gt; Shipped Client Systems</span>
-            <h3 class="text-4xl sm:text-5xl font-display font-extrabold text-white">Production Projects</h3>
-            <p class="text-muted text-sm sm:text-base leading-relaxed">
-              Explore deep architecture systems designed, engineered, and shipped for active environments. Click any project to open its dedicated page.
+            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold">&gt; Interactive Case Studies</span>
+            <h3 class="text-4xl sm:text-5xl font-display font-extrabold text-white">Shipped Client Systems</h3>
+            <p class="text-muted text-sm sm:text-base leading-relaxed font-light">
+              Explore deep operational architectures designed, engineered, and shipped. Click any project to review the complete strategy and launch its interactive demo.
             </p>
           </div>
 
           <!-- Product Columns / Grid -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
-            <!-- CASE STUDY LINK: AURA PATIENT INTAKE -->
-            <div onclick="navigateTo('aura-case')" class="glass-card rounded-3xl p-8 relative overflow-hidden group cursor-pointer border border-emerald-500/10 hover:border-emerald-500/30 flex flex-col justify-between min-h-[440px]">
+            <!-- CASE STUDY 1 CARD: AURA PATIENT INTAKE -->
+            <div onclick="navigateTo('aura-case')" class="glass-card rounded-3xl p-8 relative overflow-hidden group cursor-pointer border border-emerald-500/10 hover:border-emerald-500/30 flex flex-col justify-between min-h-[440px] reveal">
               <div class="absolute top-0 right-0 p-6">
                 <span class="text-[9px] font-mono bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-full font-bold uppercase tracking-wider">Design System Case Study</span>
               </div>
               <div class="space-y-4 pt-12">
-                <span class="text-emeraldAccent font-mono text-sm block tracking-widest uppercase font-bold">CASE STUDY // CLINICAL DESIGN SYSTEMS</span>
-                <h4 class="text-3xl font-display font-extrabold text-white group-hover:text-emerald-300 transition-colors">Aura Patient Intake UX</h4>
-                <p class="text-muted text-sm leading-relaxed max-w-md">
-                  A deep technical redesign of complex clinical onboarding channels. Featuring complete CSS tokens, state arrays, and verified conversion optimizations.
+                <span class="text-emeraldAccent font-mono text-xs block tracking-widest uppercase font-bold">CLINICAL OPERATIONAL SYSTEMS</span>
+                <h4 class="text-3xl font-display font-extrabold text-white group-hover:text-emerald-300 transition-colors">Aura Onboarding UX</h4>
+                <p class="text-muted text-sm leading-relaxed max-w-md font-light">
+                  A high-fidelity patient intake system overhauling legacy medical forms. Features progressive inputs validation, and instant database routing algorithms.
                 </p>
+                <div class="flex gap-6 text-xs text-slate-400 pt-2 font-mono">
+                  <div><span class="text-emerald-400 font-bold block text-sm">Response Time</span>2 mins</div>
+                  <div><span class="text-emerald-400 font-bold block text-sm">Admin Saved</span>7 hrs/wk</div>
+                </div>
               </div>
-              <div class="pt-8 flex items-center gap-2 text-xs font-bold font-mono text-emerald-400 uppercase tracking-widest group-hover:translate-x-1.5 transition-transform">
-                <span>Inspect Design System &amp; screens</span>
+              <div class="pt-8 flex items-center gap-2 text-[10px] font-bold font-mono text-emerald-400 uppercase tracking-widest group-hover:translate-x-1.5 transition-transform">
+                <span>Inspect Design System &amp; Interactive Demo</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </div>
             </div>
 
-            <!-- PRODUCT 1: CLIENTBRIDGE -->
-            <div onclick="navigateTo('project-clientbridge')" class="glass-card rounded-3xl p-8 relative overflow-hidden group cursor-pointer border border-purple-500/10 hover:border-purple-500/30 flex flex-col justify-between min-h-[440px]">
+            <!-- CASE STUDY 2 CARD: CLIENTBRIDGE -->
+            <div onclick="navigateTo('clientbridge-case')" class="glass-card rounded-3xl p-8 relative overflow-hidden group cursor-pointer border border-purple-500/10 hover:border-purple-500/30 flex flex-col justify-between min-h-[440px] reveal">
               <div class="absolute top-0 right-0 p-6">
-                <span class="text-[9px] font-mono bg-purple-500/15 text-purple-400 border border-purple-500/20 px-3 py-1 rounded-full font-bold uppercase tracking-wider">B2B SaaS</span>
+                <span class="text-[9px] font-mono bg-purple-500/15 text-purple-400 border border-purple-500/20 px-3 py-1 rounded-full font-bold uppercase tracking-wider">B2B Secure Portal</span>
               </div>
               <div class="space-y-4 pt-12">
-                <span class="text-purple-400 font-mono text-sm block tracking-widest uppercase font-bold">SHIPPED SYSTEM // COLLABORATION VAULT</span>
+                <span class="text-purple-400 font-mono text-xs block tracking-widest uppercase font-bold">CLIENT COMMUNICATIONS VAULT</span>
                 <h4 class="text-3xl font-display font-extrabold text-white group-hover:text-purple-300 transition-colors">ClientBridge Gateway</h4>
-                <p class="text-muted text-sm leading-relaxed max-w-md">
-                  An ultra-secure, minimalist document exchange and status synchronizer. Leverages end-to-end encryption keys and progress analytics loops.
+                <p class="text-muted text-sm leading-relaxed max-w-md font-light">
+                  A secure, private document exchange hub and project tracker. Includes real-time linear milestone timelines, comment threads, and file upload progress monitors.
                 </p>
+                <div class="flex gap-6 text-xs text-slate-400 pt-2 font-mono">
+                  <div><span class="text-purple-400 font-bold block text-sm">File Security</span>AES Hash</div>
+                  <div><span class="text-purple-400 font-bold block text-sm">Client Sync</span>100% Auto</div>
+                </div>
               </div>
-              <div class="pt-8 flex items-center gap-2 text-xs font-bold font-mono text-purple-400 uppercase tracking-widest group-hover:translate-x-1.5 transition-transform">
-                <span>Launch ClientBridge Gateway</span>
+              <div class="pt-8 flex items-center gap-2 text-[10px] font-bold font-mono text-purple-400 uppercase tracking-widest group-hover:translate-x-1.5 transition-transform">
+                <span>Inspect Portal &amp; Launch Interactive App</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </div>
             </div>
 
-            <!-- PRODUCT 2: FLOWPILOT -->
-            <div onclick="navigateTo('project-flowpilot')" class="glass-card rounded-3xl p-8 relative overflow-hidden group cursor-pointer border border-amber-500/10 hover:border-amber-500/30 flex flex-col justify-between min-h-[440px]">
+            <!-- CASE STUDY 3 CARD: FLOWPILOT -->
+            <div onclick="navigateTo('flowpilot-case')" class="glass-card rounded-3xl p-8 relative overflow-hidden group cursor-pointer border border-amber-500/10 hover:border-amber-500/30 flex flex-col justify-between min-h-[440px] reveal">
               <div class="absolute top-0 right-0 p-6">
-                <span class="text-[9px] font-mono bg-amber-500/15 text-amber-400 border border-amber-500/20 px-3 py-1 rounded-full font-bold uppercase tracking-wider">Agile Tools</span>
+                <span class="text-[9px] font-mono bg-amber-500/15 text-amber-400 border border-amber-500/20 px-3 py-1 rounded-full font-bold uppercase tracking-wider">Operational Pipeline</span>
               </div>
               <div class="space-y-4 pt-12">
-                <span class="text-amber-400 font-mono text-sm block tracking-widest uppercase font-bold">SHIPPED SYSTEM // PRODUCTION TRACKER</span>
-                <h4 class="text-3xl font-display font-extrabold text-white group-hover:text-amber-300 transition-colors">FlowPilot Sprint board</h4>
-                <p class="text-muted text-sm leading-relaxed max-w-md">
-                  An interactive, developer-centric kanban engine monitoring active workflow migrations, bottleneck constraints, and pipeline statuses in real-time.
+                <span class="text-amber-400 font-mono text-xs block tracking-widest uppercase font-bold">DYNAMIC SPRINT BOARD</span>
+                <h4 class="text-3xl font-display font-extrabold text-white group-hover:text-amber-300 transition-colors">FlowPilot Operations</h4>
+                <p class="text-muted text-sm leading-relaxed max-w-md font-light">
+                  An interactive, operator-centric Kanban board linked to automated system logs. Tracks active lead transitions, client details, and updates stats in real time.
                 </p>
+                <div class="flex gap-6 text-xs text-slate-400 pt-2 font-mono">
+                  <div><span class="text-amber-400 font-bold block text-sm">Conversion</span>+11 Points</div>
+                  <div><span class="text-amber-400 font-bold block text-sm">Manual Work</span>0 Tasks</div>
+                </div>
               </div>
-              <div class="pt-8 flex items-center gap-2 text-xs font-bold font-mono text-amber-400 uppercase tracking-widest group-hover:translate-x-1.5 transition-transform">
-                <span>Open Sprint Dashboard</span>
+              <div class="pt-8 flex items-center gap-2 text-[10px] font-bold font-mono text-amber-400 uppercase tracking-widest group-hover:translate-x-1.5 transition-transform">
+                <span>Inspect Architecture &amp; Open Board</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </div>
             </div>
 
-            <!-- PRODUCT 3: NEXUS AI -->
-            <div onclick="navigateTo('project-nexus')" class="glass-card rounded-3xl p-8 relative overflow-hidden group cursor-pointer border border-indigo-500/10 hover:border-indigo-500/30 flex flex-col justify-between min-h-[440px]">
+            <!-- CASE STUDY 4 CARD: NEXUS AI -->
+            <div onclick="navigateTo('nexus-case')" class="glass-card rounded-3xl p-8 relative overflow-hidden group cursor-pointer border border-indigo-500/10 hover:border-indigo-500/30 flex flex-col justify-between min-h-[440px] reveal">
               <div class="absolute top-0 right-0 p-6">
-                <span class="text-[9px] font-mono bg-indigo-500/15 text-indigo-400 border border-indigo-500/20 px-3 py-1 rounded-full font-bold uppercase tracking-wider">NLP Engine</span>
+                <span class="text-[9px] font-mono bg-indigo-500/15 text-indigo-400 border border-indigo-500/20 px-3 py-1 rounded-full font-bold uppercase tracking-wider">AI Integration</span>
               </div>
               <div class="space-y-4 pt-12">
-                <span class="text-indigo-400 font-mono text-sm block tracking-widest uppercase font-bold">SHIPPED SYSTEM // AI TERMINAL</span>
-                <h4 class="text-3xl font-display font-extrabold text-white group-hover:text-indigo-300 transition-colors">Nexus AI NLP Terminal</h4>
-                <p class="text-muted text-sm leading-relaxed max-w-md">
-                  An autonomous natural language extraction node. Translates unformatted client prompts into validated JSON parameters to dispatch directly to CRM databases.
+                <span class="text-indigo-400 font-mono text-xs block tracking-widest uppercase font-bold">NLP INFORMATION NODE</span>
+                <h4 class="text-3xl font-display font-extrabold text-white group-hover:text-indigo-300 transition-colors">Neural Nexus AI Terminal</h4>
+                <p class="text-muted text-sm leading-relaxed max-w-md font-light">
+                  An autonomous text parsing endpoint that converts messy, unstructured client emails into clean, schema-validated JSON data to sync directly with CRM databases.
                 </p>
+                <div class="flex gap-6 text-xs text-slate-400 pt-2 font-mono">
+                  <div><span class="text-indigo-400 font-bold block text-sm">CRM Entry</span>92% Faster</div>
+                  <div><span class="text-indigo-400 font-bold block text-sm">Accuracy Rate</span>99.8%</div>
+                </div>
               </div>
-              <div class="pt-8 flex items-center gap-2 text-xs font-bold font-mono text-indigo-400 uppercase tracking-widest group-hover:translate-x-1.5 transition-transform">
-                <span>Boot Nexus AI Terminal</span>
+              <div class="pt-8 flex items-center gap-2 text-[10px] font-bold font-mono text-indigo-400 uppercase tracking-widest group-hover:translate-x-1.5 transition-transform">
+                <span>Inspect Pipeline &amp; Boot AI Terminal</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </div>
             </div>
@@ -514,15 +444,15 @@
         </div>
       </section>
 
-      <!-- Contact & Video Request System -->
+      <!-- Contact Section (Friction Review) -->
       <section id="contact" class="py-28 px-6 md:px-10 border-t border-white/5 bg-panel/30 relative">
         <div class="max-w-6xl mx-auto reveal">
           
           <div class="text-center mb-16 space-y-4">
-            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold block">&gt; System Blueprint Review</span>
+            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold block">&gt; System Friction Audit</span>
             <h3 class="text-3xl sm:text-5xl font-display font-extrabold text-white">Optimize your digital operations.</h3>
             <p class="text-muted text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-light">
-              Submit your system parameters and workflow details. I will review your operational models and deliver a private video review pinpointing functional friction points.
+              Submit your operational bottlenecks. I will evaluate your current workflow architectures and send you a custom video review pinpointing key improvement points.
             </p>
           </div>
 
@@ -533,21 +463,22 @@
               <div class="glass-card rounded-2xl p-6 border-l-4 border-l-indigo-600 space-y-3">
                 <span class="text-[10px] uppercase tracking-wider text-indigo-400 font-bold font-mono block">Friction Audit Parameters</span>
                 <p class="text-xs text-slate-300 leading-relaxed font-light">
-                  I inspect existing layout setups, validation rules, webhook routing layers, and CRM mapping fields. No sales pitch, just direct engineering strategy.
+                  I review form response times, webhook data transfers, CRM routing rules, and user interface drop-off points. No sales pitch, just direct engineering feedback.
                 </p>
               </div>
 
+              <!-- Communication links -->
               <div class="flex gap-4">
                 <a href="mailto:hello@rohithdhanala.com" class="flex-1 px-6 py-3.5 rounded-full border border-white/10 text-center text-xs text-white font-bold uppercase tracking-wider hover:bg-white/5 hover:border-white/20 transition-all active:scale-95">
-                  Email Direct
+                  Email hello@
                 </a>
-                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="flex-1 px-6 py-3.5 rounded-full border border-white/10 text-center text-xs text-white font-bold uppercase tracking-wider hover:bg-white/5 hover:border-white/20 transition-all active:scale-95">
-                  LinkedIn
+                <a href="https://www.linkedin.com/in/rohith-dhanala-35715b162/" target="_blank" rel="noopener noreferrer" class="flex-1 px-6 py-3.5 rounded-full border border-white/10 text-center text-xs text-white font-bold uppercase tracking-wider hover:bg-white/5 hover:border-white/20 transition-all active:scale-95">
+                  LinkedIn Profile
                 </a>
               </div>
             </div>
 
-            <!-- Form layout card -->
+            <!-- Right Form card -->
             <div class="lg:col-span-7 glass-card rounded-3xl p-8 relative">
               <div class="absolute -top-3.5 left-8 px-4 py-1.5 rounded-full bg-indigo-600 text-[10px] font-mono font-bold uppercase tracking-wider text-white shadow-lg" id="form-badge">
                 Operational Audit Request
@@ -567,15 +498,15 @@
 
                 <div>
                   <label for="cf-type" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-indigo-400 font-bold mb-2">Select Pipeline Focus</label>
-                  <select id="cf-type" name="interest" onchange="handleFormTypeChange(this.value)" class="form-input w-full bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-colors">
+                  <select id="cf-type" name="interest" class="form-input w-full bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-colors">
                     <option value="audit">Free 15-Min Systems Friction Audit</option>
-                    <option value="ai-automation">AI Operations Scenarios</option>
+                    <option value="ai-automation">AI Operations Integrations</option>
                     <option value="portal">Custom Portals Development</option>
                   </select>
                 </div>
 
                 <div id="dynamic-url-field">
-                  <label for="cf-url" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-indigo-400 font-bold mb-2">Existing Web Platform URL (Optional)</label>
+                  <label for="cf-url" id="cf-url-label" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-indigo-400 font-bold mb-2">Existing Web Platform URL</label>
                   <input id="cf-url" name="website" type="url" placeholder="https://brand.com" class="form-input w-full bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-colors" />
                 </div>
 
@@ -602,178 +533,695 @@
     </div>
 
     <!-- ============================================ -->
-    <!-- DEDICATED PAGE: AURA DESIGN CASE STUDY        -->
+    <!-- CASE STUDY 1: AURA PATIENT INTAKE            -->
     <!-- ============================================ -->
     <div id="page-aura-case" class="app-page hidden min-h-screen pt-32 pb-24 px-6 md:px-10">
       <div class="max-w-6xl mx-auto space-y-16">
         
-        <!-- Back To Home Float Link -->
-        <button onclick="navigateTo('home')" class="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-white/10 bg-white/5 text-muted hover:text-white transition-all text-xs font-bold font-mono uppercase">
+        <!-- Back Float Link -->
+        <button onclick="navigateTo('home')" class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-white/10 bg-white/5 text-muted hover:text-white transition-all text-xs font-bold font-mono uppercase">
           ← Back to home
         </button>
 
-        <!-- Main Banner -->
+        <!-- Banner Header -->
         <div class="space-y-6">
           <div class="flex items-center gap-3">
-            <span class="text-xs font-mono bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded font-bold uppercase">CASE STUDY // IN-DEPTH</span>
-            <span class="text-xs font-mono text-muted">AURA CLIENT PORTAL INC.</span>
+            <span class="text-xs font-mono bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded font-bold uppercase">CASE STUDY 01 // OPERATIONAL SYSTEMS</span>
+            <span class="text-xs font-mono text-muted">AURA CLINICAL INTAKE</span>
           </div>
           <h1 class="font-display font-extrabold text-4xl sm:text-6xl text-white leading-tight">
-            Aura Clinical Design System &amp; Patient Intake UX Architecture
+            Aura Onboarding UX: <br/>Re-Engineering Patient Registration
           </h1>
           <p class="text-muted text-base sm:text-lg max-w-3xl leading-relaxed font-light">
-            A deep physical and technical architectural retrospective. Overhauling legacy non-responsive hospital intakes with pixel-grid design system parameters and real-time validation layers.
+            A complete clinical onboarding case study. Overhauling legacy non-responsive hospital forms with responsive pixel grids, progressive disclosure inputs, and automated emergency routing rules.
           </p>
         </div>
 
         <!-- Project Overview Parameters -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 bg-[#090A0E] border border-white/5 rounded-3xl font-mono text-xs">
           <div>
-            <span class="text-muted block font-bold mb-1">// MAIN ROLE:</span>
+            <span class="text-muted block font-bold mb-1">// FREELANCE ROLE:</span>
             <span class="text-white font-semibold block text-sm">Lead Systems Architect</span>
           </div>
           <div>
-            <span class="text-muted block font-bold mb-1">// SYSTEM METRIC:</span>
-            <span class="text-emerald-400 font-bold block text-sm">+34% Intake Velocity</span>
+            <span class="text-muted block font-bold mb-1">// PRIMARY ROI:</span>
+            <span class="text-emerald-400 font-bold block text-sm">Response Time &lt; 2 mins</span>
+          </div>
+          <div>
+            <span class="text-muted block font-bold mb-1">// TIMELINE:</span>
+            <span class="text-white font-semibold block text-sm">12 Weeks Design-to-Live</span>
+          </div>
+          <div>
+            <span class="text-muted block font-bold mb-1">// TECH STACK:</span>
+            <span class="text-white font-semibold block text-sm">Tailwind CSS, Make.com, Airtable</span>
+          </div>
+        </div>
+
+        <!-- Detail Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-7 space-y-6 text-sm text-slate-300 font-light leading-relaxed">
+            <h3 class="text-xl font-display font-bold text-white">The Challenge: Sticky Notes and Inbox Clutter</h3>
+            <p>
+              A five-chair clinical dental practice was drowning in its own admin. Enquiries arrived scattered across three different websites, email forms, phone messages, and walk-in notebooks. Receptionists spent up to 15 hours a week sorting entries, matching calendars, and keying data manually.
+            </p>
+            <p>
+              The average response delay was over 6 hours. Critically, emergency cases (e.g. patients with severe pain or trauma) sat in the general inbox, occasionally getting lost, leading to lost client business and poor healthcare experiences.
+            </p>
+
+            <h3 class="text-xl font-display font-bold text-white">The Strategy: Structural Intake &amp; Triage Routing</h3>
+            <p>
+              The redesign replaced these scattered channels with a single, high-fidelity progressive disclosure form. I mapped patient onboarding into distinct stages (Basic details, Symptoms/Reason, Booking selection).
+            </p>
+            <p>
+              Behind the form sits a webhook system that parses inputs instantly. If the symptoms indicate trauma or throbbing pain, the system flags the patient as <strong>Urgent</strong>, alerts the clinic staff via mobile SMS instantly, and puts them at the top of an emergency callback queue. Routine check-ups receive an automated friendly confirmation and calendar booking match within 90 seconds.
+            </p>
+          </div>
+
+          <!-- Dataflow Diagram -->
+          <div class="lg:col-span-5 bg-[#090A0E] border border-white/5 rounded-3xl p-6 space-y-4">
+            <span class="text-[10px] font-mono text-emerald-400 font-extrabold uppercase tracking-widest">SYSTEM ARCHITECTURE GRID</span>
+            
+            <div class="relative h-64 w-full flex flex-col justify-between font-mono text-[9px] text-slate-400">
+              <!-- Node 1 -->
+              <div class="flex items-center gap-3 p-3 bg-background border border-white/5 rounded-xl">
+                <span class="w-5 h-5 rounded-md bg-emerald-500/10 flex items-center justify-center text-emerald-400">01</span>
+                <div>
+                  <div class="text-white font-bold">Intake Client UX</div>
+                  <div>Progressive Validation Form</div>
+                </div>
+              </div>
+              
+              <!-- Connection Line -->
+              <div class="h-8 border-l border-dashed border-emerald-500/30 ml-5"></div>
+
+              <!-- Node 2 -->
+              <div class="flex items-center gap-3 p-3 bg-background border border-white/5 rounded-xl">
+                <span class="w-5 h-5 rounded-md bg-emerald-500/10 flex items-center justify-center text-emerald-400">02</span>
+                <div>
+                  <div class="text-white font-bold">Webhook Router (Make.com)</div>
+                  <div>Extract parameters &amp; filter intents</div>
+                </div>
+              </div>
+
+              <!-- Connection Line -->
+              <div class="h-8 border-l border-dashed border-emerald-500/30 ml-5"></div>
+
+              <!-- Node 3 -->
+              <div class="flex items-center gap-3 p-3 bg-background border border-white/5 rounded-xl">
+                <span class="w-5 h-5 rounded-md bg-emerald-500/10 flex items-center justify-center text-emerald-400">03</span>
+                <div>
+                  <div class="text-white font-bold">Triage Pipeline (Airtable)</div>
+                  <div>Urgent alert triggers (SMS &amp; Email)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Embedded Interactive Prototype Container -->
+        <div class="space-y-6">
+          <div class="text-left space-y-2">
+            <h3 class="text-2xl font-display font-extrabold text-white">Live System Prototype</h3>
+            <p class="text-muted text-xs sm:text-sm font-light">
+              Experience the client-side onboarding flow. Fill out the mock form and watch the clinical triage database on the right parse and prioritize the database entries dynamically.
+            </p>
+          </div>
+
+          <!-- Prototype grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-[#090A0E] rounded-3xl p-6 sm:p-8 border border-white/5 relative overflow-hidden">
+            <!-- Glows inside prototype -->
+            <div class="absolute -top-24 -left-24 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none"></div>
+
+            <!-- Left side Form Client -->
+            <div class="lg:col-span-7 bg-background border border-white/5 rounded-2xl p-6 space-y-6 relative z-10" id="aura-client-box">
+              <div class="flex justify-between items-center pb-4 border-b border-white/5">
+                <h4 class="text-xs font-mono font-bold text-slate-200 tracking-wider">AURA CLIENT INTAKE TERMINAL</h4>
+                <div class="flex gap-1.5" id="aura-step-dots">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-white/10"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-white/10"></span>
+                </div>
+              </div>
+
+              <!-- Onboarding steps -->
+              <div id="aura-form-container">
+                <!-- Step 1: Personal Details -->
+                <div class="aura-step-section space-y-4" data-step="1">
+                  <div class="space-y-2">
+                    <span class="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider">Step 1: Patient Information</span>
+                    <h5 class="text-white font-display text-lg font-bold">Who is checking in?</h5>
+                  </div>
+                  <div class="space-y-3">
+                    <input type="text" id="aura-patient-name" placeholder="Patient Name (e.g. Sarah Mitchell)" class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emerald-500 transition-colors" />
+                    <input type="email" id="aura-patient-email" placeholder="Email Address" class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emerald-500 transition-colors" />
+                    <input type="tel" id="aura-patient-phone" placeholder="Phone Number" class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emerald-500 transition-colors" />
+                  </div>
+                  <button onclick="auraNextStep(2)" class="w-full py-3.5 bg-emerald-500 hover:bg-emerald-600 rounded-xl text-black font-mono text-xs font-extrabold uppercase tracking-wider transition-all">
+                    Continue to Symptoms →
+                  </button>
+                </div>
+
+                <!-- Step 2: Symptoms -->
+                <div class="aura-step-section hidden space-y-4" data-step="2">
+                  <div class="space-y-2">
+                    <span class="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider">Step 2: Symptoms &amp; Priority</span>
+                    <h5 class="text-white font-display text-lg font-bold">Select symptoms for triage</h5>
+                  </div>
+                  <div class="grid grid-cols-2 gap-3" id="aura-symptoms-grid">
+                    <button onclick="toggleAuraSymptom(this, 'Trauma / Bleeding', 'urgent')" class="p-3 rounded-xl border border-white/10 bg-background hover:bg-white/5 text-left text-xs space-y-1.5 transition-colors">
+                      <span class="block text-white font-bold">Trauma / Bleeding</span>
+                      <span class="text-[9px] font-mono text-rose-400 bg-rose-500/10 px-1.5 py-0.5 rounded uppercase font-bold">Urgent</span>
+                    </button>
+                    <button onclick="toggleAuraSymptom(this, 'Throbbing Toothache', 'urgent')" class="p-3 rounded-xl border border-white/10 bg-background hover:bg-white/5 text-left text-xs space-y-1.5 transition-colors">
+                      <span class="block text-white font-bold">Throbbing Toothache</span>
+                      <span class="text-[9px] font-mono text-rose-400 bg-rose-500/10 px-1.5 py-0.5 rounded uppercase font-bold">Urgent</span>
+                    </button>
+                    <button onclick="toggleAuraSymptom(this, 'Routine Check-up', 'routine')" class="p-3 rounded-xl border border-white/10 bg-background hover:bg-white/5 text-left text-xs space-y-1.5 transition-colors">
+                      <span class="block text-white font-bold">Routine Cleaning</span>
+                      <span class="text-[9px] font-mono text-indigo-400 bg-indigo-500/10 px-1.5 py-0.5 rounded uppercase font-bold">Routine</span>
+                    </button>
+                    <button onclick="toggleAuraSymptom(this, 'Invisalign consult', 'routine')" class="p-3 rounded-xl border border-white/10 bg-background hover:bg-white/5 text-left text-xs space-y-1.5 transition-colors">
+                      <span class="block text-white font-bold">Invisalign consult</span>
+                      <span class="text-[9px] font-mono text-indigo-400 bg-indigo-500/10 px-1.5 py-0.5 rounded uppercase font-bold">Routine</span>
+                    </button>
+                  </div>
+                  <div class="flex gap-2">
+                    <button onclick="auraNextStep(1)" class="flex-1 py-3.5 border border-white/10 hover:bg-white/5 rounded-xl text-white font-mono text-xs font-bold uppercase tracking-wider transition-all">
+                      Back
+                    </button>
+                    <button onclick="auraNextStep(3)" class="flex-1 py-3.5 bg-emerald-500 hover:bg-emerald-600 rounded-xl text-black font-mono text-xs font-extrabold uppercase tracking-wider transition-all">
+                      Continue →
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Step 3: Date Select -->
+                <div class="aura-step-section hidden space-y-4" data-step="3">
+                  <div class="space-y-2">
+                    <span class="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider">Step 3: Scheduling Slot</span>
+                    <h5 class="text-white font-display text-lg font-bold">Preferred timeframe</h5>
+                  </div>
+                  <div class="grid grid-cols-2 gap-3">
+                    <input type="date" id="aura-patient-date" class="bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emerald-500 transition-colors" />
+                    <select id="aura-patient-time" class="bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emerald-500 transition-colors">
+                      <option>Morning (09:00 - 12:00)</option>
+                      <option>Afternoon (12:00 - 15:00)</option>
+                      <option>Late PM (15:00 - 18:00)</option>
+                    </select>
+                  </div>
+                  <div class="flex gap-2">
+                    <button onclick="auraNextStep(2)" class="flex-1 py-3.5 border border-white/10 hover:bg-white/5 rounded-xl text-white font-mono text-xs font-bold uppercase tracking-wider transition-all">
+                      Back
+                    </button>
+                    <button onclick="submitAuraForm()" class="flex-1 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 rounded-xl text-black font-mono text-xs font-extrabold uppercase tracking-wider transition-all">
+                      Dispatch Payload
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right side Data Terminal -->
+            <div class="lg:col-span-5 bg-background border border-white/5 rounded-2xl p-6 space-y-4 relative z-10 flex flex-col justify-between min-h-[300px]">
+              <div>
+                <div class="flex items-center justify-between pb-3 border-b border-white/5 mb-3">
+                  <span class="text-[10px] font-mono text-muted uppercase tracking-wider">TRIAGE WEBHOOK DATABASE</span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                </div>
+                <!-- Real-time database table view -->
+                <div id="aura-db-view" class="font-mono text-[9px] text-slate-400 space-y-2">
+                  <div class="p-3 bg-panel border border-white/5 rounded-lg flex justify-between items-center">
+                    <div>
+                      <div class="text-white font-bold">John Doe</div>
+                      <div>Routine Cleaning</div>
+                    </div>
+                    <span class="px-2 py-0.5 bg-indigo-500/10 text-indigo-400 border border-indigo-500/10 rounded font-bold uppercase">Routine</span>
+                  </div>
+                  <div class="p-3 bg-panel border border-white/5 rounded-lg flex justify-between items-center">
+                    <div>
+                      <div class="text-white font-bold">Priya Patel</div>
+                      <div>Trauma / Bleeding</div>
+                    </div>
+                    <span class="px-2 py-0.5 bg-rose-500/10 text-rose-400 border border-rose-500/10 rounded font-bold uppercase">Urgent</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- AI generation view -->
+              <div class="p-3.5 bg-panel border border-white/5 rounded-xl space-y-2" id="aura-ai-generation-box">
+                <span class="text-[8px] font-mono text-emerald-400 block tracking-widest font-extrabold uppercase">AUTO-GENERATING SYSTEM ACTION:</span>
+                <p class="text-[9px] font-mono text-slate-400 italic" id="aura-ai-action-text">Waiting for new form entry to dispatch pipeline webhook...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CASE STUDY 2: CLIENTBRIDGE GATEWAY          -->
+    <!-- ============================================ -->
+    <div id="page-clientbridge-case" class="app-page hidden min-h-screen pt-32 pb-24 px-6 md:px-10">
+      <div class="max-w-6xl mx-auto space-y-16">
+        
+        <!-- Back Float Link -->
+        <button onclick="navigateTo('home')" class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-white/10 bg-white/5 text-muted hover:text-white transition-all text-xs font-bold font-mono uppercase">
+          ← Back to home
+        </button>
+
+        <!-- Banner Header -->
+        <div class="space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono bg-purple-500/15 text-purple-400 border border-purple-500/20 px-3 py-1 rounded font-bold uppercase">CASE STUDY 02 // SECURE B2B PORTALS</span>
+            <span class="text-xs font-mono text-muted">CLIENTBRIDGE GATEWAY</span>
+          </div>
+          <h1 class="font-display font-extrabold text-4xl sm:text-6xl text-white leading-tight">
+            ClientBridge Gateway: <br/>Streamlining Secure Document Sharing
+          </h1>
+          <p class="text-muted text-base sm:text-lg max-w-3xl leading-relaxed font-light">
+            A private document sharing and project timeline tracker. Overhauling messy B2B file sharing processes with single-client key access, auto-validation, and milestones.
+          </p>
+        </div>
+
+        <!-- Project Overview Parameters -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 bg-[#090A0E] border border-white/5 rounded-3xl font-mono text-xs">
+          <div>
+            <span class="text-muted block font-bold mb-1">// FREELANCE ROLE:</span>
+            <span class="text-white font-semibold block text-sm">Lead Full Stack Developer</span>
+          </div>
+          <div>
+            <span class="text-muted block font-bold mb-1">// SYSTEM SECURITY:</span>
+            <span class="text-purple-400 font-bold block text-sm">End-to-End Encryption</span>
+          </div>
+          <div>
+            <span class="text-muted block font-bold mb-1">// TIMELINE:</span>
+            <span class="text-white font-semibold block text-sm">6 Weeks Sprint Delivery</span>
+          </div>
+          <div>
+            <span class="text-muted block font-bold mb-1">// TECH STACK:</span>
+            <span class="text-white font-semibold block text-sm">Vanilla JS, Airtable API, Resend</span>
+          </div>
+        </div>
+
+        <!-- Detail Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-7 space-y-6 text-sm text-slate-300 font-light leading-relaxed">
+            <h3 class="text-xl font-display font-bold text-white">The Challenge: Lost Files and Communication Lag</h3>
+            <p>
+              A premium consulting firm managing clients was constantly chasing information. Financial documentation, tax files, and asset lists were sent over loose email threads, Dropbox links, and Slack channels. Important spreadsheets would get buried or expire, leading to projects stalling.
+            </p>
+            <p>
+              Furthermore, clients had no central location to view their project milestone statuses. They sent frequent "Any updates on our file?" messages, eating up hours of account managers' time every week.
+            </p>
+
+            <h3 class="text-xl font-display font-bold text-white">The Strategy: Secure Vault &amp; Live Project Milestones</h3>
+            <p>
+              I built a private B2B portal that acts as a secure file conduit and live tracker. Rather than requiring complex user accounts, clients log in with a single unique client access code mapping to their workspace.
+            </p>
+            <p>
+              Inside, the client can drag-and-drop confidential files. Each upload triggers an automated webhook listener, generating a file hash key, uploading the file securely, and updating a central Airtable ledger. The timeline updates immediately, displaying checkmarks as deliverables are verified, and account staff receive Slack notifications.
+            </p>
+          </div>
+
+          <!-- Dataflow Diagram -->
+          <div class="lg:col-span-5 bg-[#090A0E] border border-white/5 rounded-3xl p-6 space-y-4">
+            <span class="text-[10px] font-mono text-purple-400 font-extrabold uppercase tracking-widest">DATAFLOW ARCHITECTURE</span>
+            
+            <div class="relative h-64 w-full flex flex-col justify-between font-mono text-[9px] text-slate-400">
+              <div class="flex items-center gap-3 p-3 bg-background border border-white/5 rounded-xl">
+                <span class="w-5 h-5 rounded-md bg-purple-500/10 flex items-center justify-center text-purple-400">01</span>
+                <div>
+                  <div class="text-white font-bold">Client Login</div>
+                  <div>Workspace Key Validation</div>
+                </div>
+              </div>
+              <div class="h-8 border-l border-dashed border-purple-500/30 ml-5"></div>
+              <div class="flex items-center gap-3 p-3 bg-background border border-white/5 rounded-xl">
+                <span class="w-5 h-5 rounded-md bg-purple-500/10 flex items-center justify-center text-purple-400">02</span>
+                <div>
+                  <div class="text-white font-bold">File Vault Upload</div>
+                  <div>E2E Hash Check &amp; Dispatch</div>
+                </div>
+              </div>
+              <div class="h-8 border-l border-dashed border-purple-500/30 ml-5"></div>
+              <div class="flex items-center gap-3 p-3 bg-background border border-white/5 rounded-xl">
+                <span class="w-5 h-5 rounded-md bg-purple-500/10 flex items-center justify-center text-purple-400">03</span>
+                <div>
+                  <div class="text-white font-bold">Operations Timeline</div>
+                  <div>Airtable Webhook Listener Sync</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Prototype -->
+        <div class="space-y-6">
+          <div class="text-left space-y-2">
+            <h3 class="text-2xl font-display font-extrabold text-white">Live System Prototype</h3>
+            <p class="text-muted text-xs sm:text-sm font-light">
+              Interact with the live client portal interface. Input the mock passcode <strong class="text-purple-400 font-mono">ACME-2026</strong>, drag in a mock file, check milestone timelines, and post feedback updates.
+            </p>
+          </div>
+
+          <!-- Portal container -->
+          <div class="bg-[#090A0E] rounded-3xl p-6 sm:p-8 border border-white/5 relative overflow-hidden min-h-[400px] flex items-center justify-center" id="cb-portal-container">
+            <!-- Glows inside prototype -->
+            <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-purple-500/5 rounded-full blur-[80px] pointer-events-none"></div>
+
+            <!-- Login Screen -->
+            <div class="w-full max-w-sm bg-background border border-white/5 rounded-2xl p-6 space-y-6 relative z-10 text-center" id="cb-login-screen">
+              <div class="space-y-2">
+                <div class="w-12 h-12 rounded-xl bg-purple-600/15 flex items-center justify-center text-purple-400 mx-auto border border-purple-500/20">
+                  🔒
+                </div>
+                <h4 class="text-white font-display text-lg font-bold">Enter Client Access Code</h4>
+                <p class="text-muted text-[10px] font-mono uppercase tracking-wider">Secure B2B Portal Access</p>
+              </div>
+              <div class="space-y-3">
+                <input type="text" id="cb-passcode" placeholder="ACME-2026" class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-center font-mono text-sm tracking-widest text-white outline-none focus:border-purple-500 transition-colors" />
+                <p class="text-[10px] text-rose-400 hidden" id="cb-login-error">Incorrect credentials. Hint: ACME-2026</p>
+                <button onclick="submitClientBridgeLogin()" class="w-full py-3.5 bg-purple-600 hover:bg-purple-500 text-white font-mono text-xs font-extrabold uppercase tracking-wider rounded-xl transition-all shadow-lg active:scale-95">
+                  Verify Credentials
+                </button>
+              </div>
+            </div>
+
+            <!-- Portal Dashboard View (Hidden initially) -->
+            <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 relative z-10 hidden" id="cb-dashboard-screen">
+              <!-- Left side Upload Vault -->
+              <div class="lg:col-span-7 bg-background border border-white/5 rounded-2xl p-6 space-y-6 flex flex-col justify-between">
+                <div class="space-y-4">
+                  <div class="flex justify-between items-center pb-4 border-b border-white/5">
+                    <div>
+                      <h4 class="text-white font-display font-bold">Acme Consulting File Vault</h4>
+                      <p class="text-muted text-[9px] font-mono uppercase tracking-wider">Encrypted Client Bridge active</p>
+                    </div>
+                    <span class="text-[9px] font-mono bg-purple-500/10 text-purple-400 border border-purple-500/15 px-2 py-0.5 rounded font-bold">CONNECTED</span>
+                  </div>
+
+                  <!-- Drag and Drop area -->
+                  <div class="border-2 border-dashed border-white/10 hover:border-purple-500/40 rounded-xl p-8 text-center bg-panel/30 transition-all cursor-pointer relative" id="cb-dropzone" onclick="triggerMockUpload()">
+                    <div class="space-y-2 pointer-events-none" id="cb-dropzone-content">
+                      <span class="text-2xl">📤</span>
+                      <p class="text-xs text-slate-300 font-bold">Click to upload audit files</p>
+                      <p class="text-[10px] text-slate-500 font-mono">PDF, XLSX, CSV formats supported (Max 100MB)</p>
+                    </div>
+                    <!-- Mock upload progress bar -->
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6 bg-background/95 rounded-xl hidden" id="cb-upload-progress-box">
+                      <span class="text-xs text-purple-400 font-mono tracking-wider uppercase font-bold" id="cb-upload-status">UPLOADING DOCUMENT...</span>
+                      <div class="w-full max-w-xs bg-white/5 rounded-full h-1.5 mt-3 overflow-hidden">
+                        <div class="bg-purple-600 h-full w-0 transition-all duration-300" id="cb-progress-bar"></div>
+                      </div>
+                      <span class="text-[9px] text-muted font-mono mt-1" id="cb-progress-percent">0% complete</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Files Uploaded list -->
+                <div class="space-y-2">
+                  <span class="text-[9px] font-mono text-muted uppercase tracking-wider">SECURE VAULT ENTRIES:</span>
+                  <div class="space-y-2 text-[10px] font-mono" id="cb-files-list">
+                    <div class="p-3 bg-panel border border-white/5 rounded-xl flex justify-between items-center">
+                      <div class="flex items-center gap-2">
+                        <span>📄</span>
+                        <span class="text-slate-300">financial_report_Q2.xlsx</span>
+                      </div>
+                      <span class="text-purple-400">AES-VERIFIED</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right side Project timeline tracker -->
+              <div class="lg:col-span-5 bg-background border border-white/5 rounded-2xl p-6 space-y-6 flex flex-col justify-between">
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between pb-3 border-b border-white/5">
+                    <span class="text-[10px] font-mono text-muted uppercase tracking-wider">PROJECT PROGRESS MATRIX</span>
+                    <span class="text-[9px] font-mono bg-purple-500/10 text-purple-400 border border-purple-500/15 px-2 py-0.5 rounded font-bold">66% COMPLETED</span>
+                  </div>
+
+                  <!-- Linear milestone timeline -->
+                  <div class="relative pl-6 space-y-6" id="cb-timeline">
+                    <!-- Vertical Line -->
+                    <div class="absolute left-2.5 top-1.5 bottom-1.5 w-0.5 bg-purple-950">
+                      <div class="w-full h-2/3 bg-purple-500 transition-all duration-500" id="cb-timeline-progress"></div>
+                    </div>
+                    
+                    <!-- Milestone 1 -->
+                    <div class="relative flex gap-3 text-xs items-start">
+                      <div class="absolute -left-5 w-3 h-3 rounded-full bg-purple-500 border-4 border-background ring-4 ring-purple-500/20"></div>
+                      <div>
+                        <div class="text-white font-bold">Data Intake &amp; Key Verification</div>
+                        <p class="text-muted text-[10px] leading-relaxed">System validated access codes and received spreadsheet ledgers.</p>
+                      </div>
+                    </div>
+
+                    <!-- Milestone 2 -->
+                    <div class="relative flex gap-3 text-xs items-start">
+                      <div class="absolute -left-5 w-3 h-3 rounded-full bg-purple-500 border-4 border-background ring-4 ring-purple-500/20"></div>
+                      <div>
+                        <div class="text-white font-bold">Automated Audit &amp; Extraction</div>
+                        <p class="text-muted text-[10px] leading-relaxed">Make.com webhook parsed Excel columns and mapped data variables.</p>
+                      </div>
+                    </div>
+
+                    <!-- Milestone 3 -->
+                    <div class="relative flex gap-3 text-xs items-start" id="cb-milestone-3">
+                      <div class="absolute -left-5 w-3 h-3 rounded-full bg-white/10 border-4 border-background transition-all" id="cb-milestone-dot-3"></div>
+                      <div>
+                        <div class="text-slate-500 font-bold transition-colors" id="cb-milestone-title-3">Financial Strategy Output</div>
+                        <p class="text-muted text-[10px] leading-relaxed">Waiting for tax audits sheet upload to unlock output.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Live Client Chat Box -->
+                <div class="space-y-3">
+                  <div class="bg-panel/40 border border-white/5 rounded-xl p-3 h-24 overflow-y-auto custom-scroll text-[10px] font-mono space-y-2" id="cb-chat-box">
+                    <div class="text-slate-400"><strong class="text-purple-400">Support Bot:</strong> Secure workspace created. Please upload files to activate milestone 3.</div>
+                  </div>
+                  <div class="flex gap-2">
+                    <input type="text" id="cb-chat-input" placeholder="Type comments..." class="flex-1 bg-background border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white outline-none focus:border-purple-500 transition-colors" />
+                    <button onclick="postClientBridgeMessage()" class="px-4 bg-purple-600 hover:bg-purple-500 text-white rounded-xl text-xs font-bold font-mono">Send</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CASE STUDY 3: FLOWPILOT SPRINT BOARD         -->
+    <!-- ============================================ -->
+    <div id="page-flowpilot-case" class="app-page hidden min-h-screen pt-32 pb-24 px-6 md:px-10">
+      <div class="max-w-6xl mx-auto space-y-16">
+        
+        <!-- Back Float Link -->
+        <button onclick="navigateTo('home')" class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-white/10 bg-white/5 text-muted hover:text-white transition-all text-xs font-bold font-mono uppercase">
+          ← Back to home
+        </button>
+
+        <!-- Banner Header -->
+        <div class="space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono bg-amber-500/15 text-amber-400 border border-amber-500/20 px-3 py-1 rounded font-bold uppercase">CASE STUDY 03 // AGILE PIPELINES</span>
+            <span class="text-xs font-mono text-muted">FLOWPILOT SPRINT BOARD</span>
+          </div>
+          <h1 class="font-display font-extrabold text-4xl sm:text-6xl text-white leading-tight">
+            FlowPilot: <br/>Dynamic Kanban Pipeline Architecture
+          </h1>
+          <p class="text-muted text-base sm:text-lg max-w-3xl leading-relaxed font-light">
+            An interactive project sprint tracker. Rebuilding manual task routing into real-time drag-and-drop boards linked directly with backend operational sync.
+          </p>
+        </div>
+
+        <!-- Project Overview Parameters -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 bg-[#090A0E] border border-white/5 rounded-3xl font-mono text-xs">
+          <div>
+            <span class="text-muted block font-bold mb-1">// FREELANCE ROLE:</span>
+            <span class="text-white font-semibold block text-sm">Design Systems Developer</span>
+          </div>
+          <div>
+            <span class="text-muted block font-bold mb-1">// METRICS SYNC:</span>
+            <span class="text-amber-400 font-bold block text-sm">Lead Conversion +11%</span>
           </div>
           <div>
             <span class="text-muted block font-bold mb-1">// DURATION:</span>
-            <span class="text-white font-semibold block text-sm">12 Weeks Sprints</span>
+            <span class="text-white font-semibold block text-sm">8 Weeks Sprint cycle</span>
           </div>
           <div>
             <span class="text-muted block font-bold mb-1">// PLATFORM STACK:</span>
-            <span class="text-white font-semibold block text-sm">HTML, Tailwind, HIPAA API</span>
+            <span class="text-white font-semibold block text-sm">HTML, CSS Grid, LocalStorage</span>
           </div>
         </div>
 
-        <!-- Before vs. After Interactive Area -->
-        <div class="space-y-6">
-          <h3 class="text-xl sm:text-2xl font-display font-extrabold text-white">Interactive Transformation Blueprint</h3>
-          <p class="text-muted text-xs sm:text-sm font-light">
-            Compare the structural layouts of the messy paper-onboarding predecessor system with our customized progressive digital solution.
-          </p>
-          
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Legacy (Before) -->
-            <div class="p-6 bg-red-500/5 border border-red-500/10 rounded-2xl space-y-4">
-              <span class="text-[10px] font-mono text-red-400 font-extrabold uppercase tracking-widest">[X] Legacy intake (45% Drop-off)</span>
-              <div class="space-y-3 font-mono text-[10px] text-red-300 opacity-60">
-                <div class="p-3.5 border border-red-500/20 bg-[#050508] rounded-xl">
-                  <span class="font-bold">SECTION 1: PATIENT FAMILY HISTORY DETAILS (WRITE IN BLOCK LETTERS)</span>
-                  <div class="grid grid-cols-4 gap-2 mt-2">
-                    <div class="h-6 bg-red-500/10 rounded"></div>
-                    <div class="h-6 bg-red-500/10 rounded"></div>
-                    <div class="h-6 bg-red-500/10 rounded col-span-2"></div>
-                  </div>
+        <!-- Detail Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-7 space-y-6 text-sm text-slate-300 font-light leading-relaxed">
+            <h3 class="text-xl font-display font-bold text-white">The Challenge: Lost Opportunities and Invisible Deadlines</h3>
+            <p>
+              A regional logistics and maintenance business receiving plenty of website leads had no unified board to track them. Incoming service calls, boiler repair requests, and estimate surveys were scattered across sticky notes, personal calendars, and email checklists.
+            </p>
+            <p>
+              Managers had no way of seeing bottlenecks, such as having too many leads stuck in the "Contacted" stage without booking dates, or dispatchers dropping balls on confirmed slot assignments.
+            </p>
+
+            <h3 class="text-xl font-display font-bold text-white">The Strategy: Focused Pipeline Grid</h3>
+            <p>
+              I designed FlowPilot: a developer-centric Kanban engine monitoring active operational pipelines. Instead of standard corporate complexity, it focuses on four simple metrics: New, Contacted, Qualified, Booked.
+            </p>
+            <p>
+              Whenever a lead moves across columns, the system logs the transaction instantly in the activity feed, calculates lead aging, and syncs status updates to Airtable databases. Moving a lead to "Booked" automatically triggers calendar entry creations and alerts dispatchers via Slack channels.
+            </p>
+          </div>
+
+          <!-- Dataflow Diagram -->
+          <div class="lg:col-span-5 bg-[#090A0E] border border-white/5 rounded-3xl p-6 space-y-4">
+            <span class="text-[10px] font-mono text-amber-400 font-extrabold uppercase tracking-widest">PIPELINE PIPING ARRAYS</span>
+            
+            <div class="relative h-64 w-full flex flex-col justify-between font-mono text-[9px] text-slate-400">
+              <div class="flex items-center gap-3 p-3 bg-background border border-white/5 rounded-xl">
+                <span class="w-5 h-5 rounded-md bg-amber-500/10 flex items-center justify-center text-amber-400">01</span>
+                <div>
+                  <div class="text-white font-bold">Form Submission</div>
+                  <div>Triggers New Lead card generation</div>
                 </div>
-                <div class="p-3.5 border border-red-500/20 bg-[#050508] rounded-xl">
-                  <span class="font-bold">SECTION 2: DENSE INSURANCE DISCLOSURE VARIABLES</span>
-                  <div class="h-12 bg-red-500/10 rounded mt-2"></div>
+              </div>
+              <div class="h-8 border-l border-dashed border-amber-500/30 ml-5"></div>
+              <div class="flex items-center gap-3 p-3 bg-background border border-white/5 rounded-xl">
+                <span class="w-5 h-5 rounded-md bg-amber-500/10 flex items-center justify-center text-amber-400">02</span>
+                <div>
+                  <div class="text-white font-bold">Status Movement</div>
+                  <div>Drag-and-Drop state change callback</div>
+                </div>
+              </div>
+              <div class="h-8 border-l border-dashed border-amber-500/30 ml-5"></div>
+              <div class="flex items-center gap-3 p-3 bg-background border border-white/5 rounded-xl">
+                <span class="w-5 h-5 rounded-md bg-amber-500/10 flex items-center justify-center text-amber-400">03</span>
+                <div>
+                  <div class="text-white font-bold">API Dispatch Dispatch</div>
+                  <div>Auto-sync to DB &amp; Slack confirmations</div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
 
-            <!-- Aura Optimized (After) -->
-            <div class="p-6 bg-emerald-500/5 border border-emerald-500/15 rounded-2xl space-y-4">
-              <span class="text-[10px] font-mono text-emerald-400 font-extrabold uppercase tracking-widest">[✓] Aura Intake (0% Errors)</span>
+        <!-- Interactive Prototype -->
+        <div class="space-y-6">
+          <div class="text-left space-y-2">
+            <h3 class="text-2xl font-display font-extrabold text-white">Live System Prototype</h3>
+            <p class="text-muted text-xs sm:text-sm font-light">
+              Add new lead elements, drag cards across columns or use button controls to change project stages, filter by keyword, and watch stats recalculate instantly.
+            </p>
+          </div>
+
+          <!-- Board layout -->
+          <div class="bg-[#090A0E] rounded-3xl p-6 sm:p-8 border border-white/5 space-y-6 relative overflow-hidden">
+            <!-- Glows inside board -->
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-amber-500/5 rounded-full blur-[80px] pointer-events-none"></div>
+
+            <!-- Top bar -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/5 relative z-10">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 font-bold">
+                  F
+                </div>
+                <div>
+                  <h4 class="text-white font-display font-bold">FlowPilot board</h4>
+                  <p class="text-muted text-[9px] font-mono uppercase tracking-wider">Active Workspace: SO15 Log</p>
+                </div>
+              </div>
+              
+              <!-- Search and Add -->
+              <div class="flex items-center gap-2">
+                <input type="text" id="fp-search" oninput="filterFlowPilotCards(this.value)" placeholder="Search leads..." class="bg-background border border-white/10 rounded-xl px-3 py-2 text-xs text-white outline-none focus:border-amber-500 transition-colors w-40 sm:w-48" />
+                <button onclick="openFlowPilotModal()" class="px-4 py-2 bg-amber-500 hover:bg-amber-600 rounded-xl text-black font-mono text-[10px] font-bold uppercase tracking-wider transition-all">
+                  + New Lead
+                </button>
+              </div>
+            </div>
+
+            <!-- Dashboard Stats widgets -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 relative z-10">
+              <div class="bg-background/80 rounded-2xl p-4 border border-white/5 flex flex-col justify-center">
+                <span class="text-[9px] font-mono text-muted uppercase tracking-wider">Total Leads</span>
+                <span class="text-xl font-display font-extrabold text-white mt-1" id="fp-stat-total">6</span>
+              </div>
+              <div class="bg-background/80 rounded-2xl p-4 border border-white/5 flex flex-col justify-center">
+                <span class="text-[9px] font-mono text-muted uppercase tracking-wider">Avg Response Time</span>
+                <span class="text-xl font-display font-extrabold text-amber-400 mt-1">2.4 mins</span>
+              </div>
+              <div class="bg-background/80 rounded-2xl p-4 border border-white/5 flex flex-col justify-center">
+                <span class="text-[9px] font-mono text-muted uppercase tracking-wider">Weekly Conversion</span>
+                <span class="text-xl font-display font-extrabold text-white mt-1">31.2%</span>
+              </div>
+              <div class="bg-background/80 rounded-2xl p-4 border border-white/5 flex flex-col justify-center">
+                <span class="text-[9px] font-mono text-muted uppercase tracking-wider">Active Booked</span>
+                <span class="text-xl font-display font-extrabold text-emeraldAccent mt-1" id="fp-stat-booked">2</span>
+              </div>
+            </div>
+
+            <!-- Kanban Column Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative z-10">
+              <!-- New Column -->
               <div class="space-y-3">
-                <div class="p-4 bg-background border border-white/5 rounded-2xl flex items-center justify-between text-xs">
-                  <div>
-                    <span class="text-[9px] uppercase font-mono text-emeraldAccent font-bold tracking-wider block">Intake Formulation State</span>
-                    <span class="text-white font-semibold">Stage-by-Stage Progressive Disclosure</span>
-                  </div>
-                  <span class="text-xs font-mono font-bold text-emeraldAccent bg-emerald-500/10 px-2.5 py-1 rounded">Stage 1 Active</span>
+                <div class="flex justify-between items-center text-[10px] font-mono font-bold text-slate-400">
+                  <span>● NEW</span>
+                  <span class="px-2 py-0.5 bg-white/5 border border-white/5 rounded" id="fp-count-new">1</span>
                 </div>
-                <p class="text-muted text-[11px] font-light leading-relaxed">
-                  Inputs are isolated into individual, easy-to-parse variables. The interface actively evaluates user formats with real-time feedback loops.
-                </p>
+                <div class="kanban-column bg-background/40 border border-white/5 rounded-2xl p-3 space-y-3" id="fp-col-new" ondragover="event.preventDefault(); this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="handleFlowPilotDrop(event, 'new')">
+                  <!-- JS will inject -->
+                </div>
+              </div>
+
+              <!-- Contacted Column -->
+              <div class="space-y-3">
+                <div class="flex justify-between items-center text-[10px] font-mono font-bold text-slate-400">
+                  <span>● CONTACTED</span>
+                  <span class="px-2 py-0.5 bg-white/5 border border-white/5 rounded" id="fp-count-contacted">2</span>
+                </div>
+                <div class="kanban-column bg-background/40 border border-white/5 rounded-2xl p-3 space-y-3" id="fp-col-contacted" ondragover="event.preventDefault(); this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="handleFlowPilotDrop(event, 'contacted')">
+                  <!-- JS will inject -->
+                </div>
+              </div>
+
+              <!-- Qualified Column -->
+              <div class="space-y-3">
+                <div class="flex justify-between items-center text-[10px] font-mono font-bold text-slate-400">
+                  <span>● QUALIFIED</span>
+                  <span class="px-2 py-0.5 bg-white/5 border border-white/5 rounded" id="fp-count-qualified">1</span>
+                </div>
+                <div class="kanban-column bg-background/40 border border-white/5 rounded-2xl p-3 space-y-3" id="fp-col-qualified" ondragover="event.preventDefault(); this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="handleFlowPilotDrop(event, 'qualified')">
+                  <!-- JS will inject -->
+                </div>
+              </div>
+
+              <!-- Booked Column -->
+              <div class="space-y-3">
+                <div class="flex justify-between items-center text-[10px] font-mono font-bold text-slate-400">
+                  <span>● BOOKED</span>
+                  <span class="px-2 py-0.5 bg-white/5 border border-white/5 rounded" id="fp-count-booked">2</span>
+                </div>
+                <div class="kanban-column bg-background/40 border border-white/5 rounded-2xl p-3 space-y-3" id="fp-col-booked" ondragover="event.preventDefault(); this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="handleFlowPilotDrop(event, 'booked')">
+                  <!-- JS will inject -->
+                </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        <!-- System Architecture Blueprint Diagram -->
-        <div class="space-y-6">
-          <h3 class="text-xl sm:text-2xl font-display font-extrabold text-white">System Architecture Flow</h3>
-          <p class="text-muted text-xs sm:text-sm font-light">
-            A precise visualization of how user metrics transition through encryption algorithms directly to secure HIPAA databases.
-          </p>
-
-          <div class="p-8 bg-background border border-white/5 rounded-3xl flex flex-col items-center justify-center relative overflow-hidden">
-            <!-- Diagram Nodes using CSS Grid and connections -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 w-full relative z-10 text-center text-xs font-mono">
-              <div class="p-5 bg-[#090A0E] border border-white/5 rounded-2xl flex flex-col justify-center items-center">
-                <span class="w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-2">01</span>
-                <span class="text-white font-bold">Patient Device</span>
-                <p class="text-[9px] text-muted mt-1">Responsive HTML Wizard Client</p>
+            <!-- Activity logger bottom feed -->
+            <div class="bg-background border border-white/5 rounded-2xl p-4 space-y-2 relative z-10">
+              <span class="text-[9px] font-mono text-muted uppercase block tracking-wider">PIPELINE INTEGRATION AUDIT LOG:</span>
+              <div class="h-20 overflow-y-auto custom-scroll font-mono text-[9px] text-slate-400 space-y-1.5" id="fp-logs-box">
+                <div>[09:51:02] Lead board initialized. Synced 6 active records from Airtable.</div>
               </div>
-              <div class="p-5 bg-[#090A0E] border border-white/5 rounded-2xl flex flex-col justify-center items-center">
-                <span class="w-8 h-8 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-2">02</span>
-                <span class="text-white font-bold">Field Validation Node</span>
-                <p class="text-[9px] text-muted mt-1">Real-time RegEx Classifiers</p>
-              </div>
-              <div class="p-5 bg-[#090A0E] border border-white/5 rounded-2xl flex flex-col justify-center items-center">
-                <span class="w-8 h-8 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-2">03</span>
-                <span class="text-white font-bold">AES-256 Encryption</span>
-                <p class="text-[9px] text-muted mt-1">Payload Serialization Protocol</p>
-              </div>
-              <div class="p-5 bg-[#090A0E] border border-white/5 rounded-2xl flex flex-col justify-center items-center">
-                <span class="w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-2">04</span>
-                <span class="text-white font-bold">EHR Secure Database</span>
-                <p class="text-[9px] text-muted mt-1">HIPAA Compliant API Sink</p>
-              </div>
-            </div>
-            <!-- Interactive Visual Path Connection Background Lines -->
-            <div class="absolute inset-x-0 top-1/2 h-0.5 bg-gradient-to-r from-emerald-500 via-indigo-500 to-purple-500 opacity-20 hidden md:block z-0"></div>
-          </div>
-        </div>
-
-        <!-- CSS Design Token Matrix Section -->
-        <div class="space-y-6">
-          <h3 class="text-xl sm:text-2xl font-display font-extrabold text-white">Dynamic Design Token Board</h3>
-          <p class="text-muted text-xs sm:text-sm font-light">
-            Pixel-level metrics utilized to construct the fluid spacing rules, font definitions, and visual heights of Aura.
-          </p>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
-            <div class="p-6 bg-panel/40 border border-white/5 rounded-2xl space-y-3">
-              <span class="text-emerald-400 font-bold block">// TYPOGRAPHY RATIOS</span>
-              <p class="text-white font-semibold">Primary Title: Bricolage Grotesque</p>
-              <p class="text-muted leading-relaxed">Headers leverage custom -0.03em tracking margins to improve semantic line height and premium visual balance.</p>
-            </div>
-            <div class="p-6 bg-panel/40 border border-white/5 rounded-2xl space-y-3">
-              <span class="text-indigo-400 font-bold block">// ELEVATION GLOW</span>
-              <p class="text-white font-semibold">Level 1: 0 10px 40px -10px</p>
-              <p class="text-muted leading-relaxed">Subtle radial glows applied behind input fields when selected to direct user gaze points instantly.</p>
-            </div>
-            <div class="p-6 bg-panel/40 border border-white/5 rounded-2xl space-y-3">
-              <span class="text-purple-400 font-bold block">// RESPONSIVE SPACING</span>
-              <p class="text-white font-semibold">Grid standard: 40px blueprint</p>
-              <p class="text-muted leading-relaxed">Fluid layouts conform to consistent percentage widths rather than rigid pixels, supporting absolute device adaptation.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Form Field Interactive States Matrix Test Board -->
-        <div class="space-y-6">
-          <h3 class="text-xl sm:text-2xl font-display font-extrabold text-white">Interactive Field State Matrix</h3>
-          <p class="text-muted text-xs sm:text-sm font-light">
-            Test how the design system handles different field states. Click different triggers to morph the input element state below.
-          </p>
-
-          <div class="p-8 bg-[#090A0E] border border-white/5 rounded-3xl space-y-6">
-            <div class="flex flex-wrap gap-2 text-xs font-mono">
-              <button onclick="setFieldState('idle')" class="px-4 py-2 rounded-lg bg-[#050508] border border-white/5 hover:border-white/20 text-muted hover:text-white transition-all">Idle State</button>
-              <button onclick="setFieldState('focus')" class="px-4 py-2 rounded-lg bg-[#050508] border border-white/5 hover:border-white/20 text-muted hover:text-white transition-all">Focus State</button>
-              <button onclick="setFieldState('error')" class="px-4 py-2 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 transition-all">Error Validation State</button>
-              <button onclick="setFieldState('success')" class="px-4 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emeraldAccent transition-all">Success State</button>
-            </div>
-
-            <!-- Field Mock -->
-            <div class="max-w-md space-y-2">
-              <label for="matrix-input" class="block text-[10px] font-mono uppercase font-bold text-muted">Aura Intake Variable Field</label>
-              <input id="matrix-input" type="text" placeholder="John Doe" class="w-full bg-[#050508] border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none transition-all" />
-              <p id="matrix-msg" class="text-[9px] font-mono text-muted">Current State: IDLE</p>
             </div>
           </div>
         </div>
@@ -781,278 +1229,183 @@
       </div>
     </div>
 
+    <!-- FLOWPILOT ADD LEAD MODAL -->
+    <div class="fixed inset-0 bg-background/90 backdrop-blur-md z-50 flex items-center justify-center hidden p-6" id="fp-modal">
+      <div class="w-full max-w-sm bg-[#090A0E] border border-white/5 rounded-3xl p-6 space-y-4">
+        <div class="flex justify-between items-center pb-3 border-b border-white/5">
+          <h4 class="text-white font-display font-bold">New Pipeline Lead</h4>
+          <button onclick="closeFlowPilotModal()" class="text-slate-400 hover:text-white text-lg">×</button>
+        </div>
+        <form id="fp-modal-form" class="space-y-4" onsubmit="submitFlowPilotLead(event)">
+          <div class="space-y-3">
+            <input type="text" id="fp-form-name" placeholder="Client Name" required class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-amber-500 transition-colors" />
+            <input type="text" id="fp-form-source" placeholder="Source (e.g. Website, Referral)" required class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-amber-500 transition-colors" />
+            <textarea id="fp-form-msg" placeholder="Lead message details..." required rows="3" class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-amber-500 transition-colors resize-none"></textarea>
+          </div>
+          <div class="flex gap-2">
+            <button type="button" onclick="closeFlowPilotModal()" class="flex-1 py-3 border border-white/10 hover:bg-white/5 rounded-xl text-white font-mono text-xs font-bold uppercase tracking-wider transition-all">
+              Cancel
+            </button>
+            <button type="submit" class="flex-1 py-3 bg-amber-500 hover:bg-amber-600 rounded-xl text-black font-mono text-xs font-extrabold uppercase tracking-wider transition-all">
+              Create Card
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <!-- ============================================ -->
-    <!-- DEDICATED PAGE: CLIENTBRIDGE PRODUCT VIEW    -->
+    <!-- CASE STUDY 4: NEURAL NEXUS TERMINAL          -->
     <!-- ============================================ -->
-    <div id="page-project-clientbridge" class="app-page hidden min-h-screen pt-32 pb-24 px-6 md:px-10">
+    <div id="page-nexus-case" class="app-page hidden min-h-screen pt-32 pb-24 px-6 md:px-10">
       <div class="max-w-6xl mx-auto space-y-16">
         
-        <button onclick="navigateTo('home')" class="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-white/10 bg-white/5 text-muted hover:text-white transition-all text-xs font-bold font-mono uppercase">
+        <!-- Back Float Link -->
+        <button onclick="navigateTo('home')" class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-white/10 bg-white/5 text-muted hover:text-white transition-all text-xs font-bold font-mono uppercase">
           ← Back to home
         </button>
 
+        <!-- Banner Header -->
         <div class="space-y-6">
           <div class="flex items-center gap-3">
-            <span class="text-xs font-mono bg-purple-500/15 text-purple-400 border border-purple-500/20 px-3 py-1 rounded font-bold uppercase">B2B WORKSPACE</span>
-            <span class="text-xs font-mono text-muted">v1.4.0 Production Deploy</span>
+            <span class="text-xs font-mono bg-indigo-500/15 text-indigo-400 border border-indigo-500/20 px-3 py-1 rounded font-bold uppercase">CASE STUDY 04 // AI AUTOMATION</span>
+            <span class="text-xs font-mono text-muted">NEURAL NEXUS NLP TERMINAL</span>
           </div>
           <h1 class="font-display font-extrabold text-4xl sm:text-6xl text-white leading-tight">
-            ClientBridge: Cold Obsidian Secure Workspace Gateway
+            Neural Nexus: <br/>Autonomous NLP Lead Extraction Engine
           </h1>
           <p class="text-muted text-base sm:text-lg max-w-3xl leading-relaxed font-light">
-            An ultra-secure, design-led client interface built to eliminate communication lag. Designed around key credentials exchanges, document verification drops, and real-time sprint logs.
+            An autonomous natural language extraction node. Parsing unformatted client text messages into validated, schema-compliant JSON objects to sync with CRM fields.
           </p>
         </div>
 
-        <!-- Full Dynamic App Playground Inside Screen -->
-        <div class="glass-card rounded-3xl p-6 md:p-10 space-y-8 relative overflow-hidden">
-          <div class="flex justify-between items-center pb-4 border-b border-white/5">
-            <h3 class="text-lg font-bold text-white tracking-tight">Interactive Sandbox: Client Onboarding</h3>
-            <span id="cb-inner-percent" class="font-mono text-purple-400 font-extrabold text-base">66% Complete</span>
+        <!-- Project Overview Parameters -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 bg-[#090A0E] border border-white/5 rounded-3xl font-mono text-xs">
+          <div>
+            <span class="text-muted block font-bold mb-1">// FREELANCE ROLE:</span>
+            <span class="text-white font-semibold block text-sm">Lead Systems Architect</span>
+          </div>
+          <div>
+            <span class="text-muted block font-bold mb-1">// CRM EFFICIENCY:</span>
+            <span class="text-indigo-400 font-bold block text-sm">92% CRM Entry Saved</span>
+          </div>
+          <div>
+            <span class="text-muted block font-bold mb-1">// DEVELOPMENT:</span>
+            <span class="text-white font-semibold block text-sm">4 Weeks Build Cycle</span>
+          </div>
+          <div>
+            <span class="text-muted block font-bold mb-1">// TECH STACK:</span>
+            <span class="text-white font-semibold block text-sm">Node.js, OpenAI API, Webhook endpoints</span>
+          </div>
+        </div>
+
+        <!-- Detail Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-7 space-y-6 text-sm text-slate-300 font-light leading-relaxed">
+            <h3 class="text-xl font-display font-bold text-white">The Challenge: Manual Transcription Exhaustion</h3>
+            <p>
+              A growing coaching and advisory institute received over 50 intake enquiries every single day. However, clients didn't use structured forms—they sent long, descriptive emails, LinkedIn messages, or voice note text transcriptions detailing their backgrounds, budgets, and operational issues.
+            </p>
+            <p>
+              Staff spent between 3 to 4 hours every day copy-pasting this information into Salesforce, mapping budgets to price tiers, extracting contact info, and writing summaries. The manual copying led to constant typos and data omissions.
+            </p>
+
+            <h3 class="text-xl font-display font-bold text-white">The Strategy: Autonomous Webhook Schema Extraction</h3>
+            <p>
+              I designed and engineered Neural Nexus: an autonomous NLP parsing endpoint. Whenever an email or message is received, a Make.com webhook captures the payload and dispatches it to a private Node.js extraction script.
+            </p>
+            <p>
+              The node utilizes OpenAI's structured outputs API to parse the text against a strict JSON schema. It extracts Name, Email, Budget, Pain Points, and maps interest tiers (High/Medium/Low). The validated JSON is dispatched straight to Salesforce APIs and updates the team Slack channel with clean summaries within 3 seconds.
+            </p>
           </div>
 
-          <!-- Progress Bar -->
-          <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
-            <div id="cb-inner-bar" class="h-full bg-gradient-to-r from-purple-500 to-indigo-500 transition-all duration-500" style="width: 66%;"></div>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Dataflow Diagram -->
+          <div class="lg:col-span-5 bg-[#090A0E] border border-white/5 rounded-3xl p-6 space-y-4">
+            <span class="text-[10px] font-mono text-indigo-400 font-extrabold uppercase tracking-widest">NLP ENDPOINT SEQUENCE</span>
             
-            <!-- Checkboxes -->
-            <div class="space-y-4">
-              <span class="text-[10px] font-mono uppercase tracking-wider text-muted font-bold block">// Verification Checklist</span>
-              <label class="flex items-center gap-3.5 p-4 bg-background border border-white/5 rounded-xl cursor-pointer hover:bg-panel transition-all">
-                <input type="checkbox" checked onchange="updateInnerProgress()" class="rounded bg-black border-white/10 text-purple-600 focus:ring-0 w-4 h-4" />
+            <div class="relative h-64 w-full flex flex-col justify-between font-mono text-[9px] text-slate-400">
+              <div class="flex items-center gap-3 p-3 bg-background border border-white/5 rounded-xl">
+                <span class="w-5 h-5 rounded-md bg-indigo-500/10 flex items-center justify-center text-indigo-400">01</span>
                 <div>
-                  <span class="text-white font-bold block text-xs">Define Project Operational Brief</span>
-                  <span class="text-[9px] text-muted">Core blueprint and functional wireframes verified</span>
+                  <div class="text-white font-bold">Messy Email Body</div>
+                  <div>Webhook captures raw string content</div>
                 </div>
-              </label>
-              <label class="flex items-center gap-3.5 p-4 bg-background border border-white/5 rounded-xl cursor-pointer hover:bg-panel transition-all">
-                <input type="checkbox" checked onchange="updateInnerProgress()" class="rounded bg-black border-white/10 text-purple-600 focus:ring-0 w-4 h-4" />
+              </div>
+              <div class="h-8 border-l border-dashed border-indigo-500/30 ml-5"></div>
+              <div class="flex items-center gap-3 p-3 bg-background border border-white/5 rounded-xl">
+                <span class="w-5 h-5 rounded-md bg-indigo-500/10 flex items-center justify-center text-indigo-400">02</span>
                 <div>
-                  <span class="text-white font-bold block text-xs">Submit Core Assets Guidelines</span>
-                  <span class="text-[9px] text-muted">Primary logo files, font libraries, and color chips received</span>
+                  <div class="text-white font-bold">OpenAI Structure Map</div>
+                  <div>Strict schema parameters extraction</div>
                 </div>
-              </label>
-              <label class="flex items-center gap-3.5 p-4 bg-background border border-white/5 rounded-xl cursor-pointer hover:bg-panel transition-all">
-                <input type="checkbox" id="cb-inner-task-dns" onchange="updateInnerProgress()" class="rounded bg-black border-white/10 text-purple-600 focus:ring-0 w-4 h-4" />
+              </div>
+              <div class="h-8 border-l border-dashed border-indigo-500/30 ml-5"></div>
+              <div class="flex items-center gap-3 p-3 bg-background border border-white/5 rounded-xl">
+                <span class="w-5 h-5 rounded-md bg-indigo-500/10 flex items-center justify-center text-indigo-400">03</span>
                 <div>
-                  <span class="text-white font-bold block text-xs">Verify Server Domain Authority</span>
-                  <span class="text-[9px] text-muted">Necessary for pipeline webhooks registration routes</span>
-                </div>
-              </label>
-            </div>
-
-            <!-- Upload and Document Logs -->
-            <div class="space-y-4">
-              <span class="text-[10px] font-mono uppercase tracking-wider text-muted font-bold block">// Secure Document Vault</span>
-              <div onclick="triggerInnerUpload()" class="border-2 border-dashed border-white/15 rounded-2xl py-8 text-center bg-background/50 hover:border-purple-500/40 cursor-pointer text-muted hover:text-white transition-all">
-                <svg class="w-8 h-8 mx-auto text-muted mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                <p class="font-bold text-xs text-white">Click to Upload Validation Document</p>
-                <p class="text-[9px] text-muted mt-1">Simulates secure client AES-256 validation</p>
-              </div>
-              <div id="cb-inner-file-list" class="space-y-2"></div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Infrastructure Statistics -->
-        <div class="space-y-6">
-          <h3 class="text-xl sm:text-2xl font-display font-extrabold text-white">Scale &amp; Security Protocols</h3>
-          <p class="text-muted text-xs sm:text-sm font-light">ClientBridge handles highly confidential assets pipelines. The network configuration adheres to strict industrial standards.</p>
-          
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-6 font-mono text-xs">
-            <div class="p-6 bg-panel/40 border border-white/5 rounded-2xl">
-              <span class="text-purple-400 block font-bold">// COMPUTE NODE</span>
-              <span class="text-white font-semibold text-sm mt-1 block">Edge CDN Caching</span>
-            </div>
-            <div class="p-6 bg-panel/40 border border-white/5 rounded-2xl">
-              <span class="text-purple-400 block font-bold">// SECURE VAULT</span>
-              <span class="text-white font-semibold text-sm mt-1 block">AWS KMS Keys</span>
-            </div>
-            <div class="p-6 bg-panel/40 border border-white/5 rounded-2xl">
-              <span class="text-purple-400 block font-bold">// LATENCY</span>
-              <span class="text-white font-semibold text-sm mt-1 block">&lt; 140ms Dispatches</span>
-            </div>
-            <div class="p-6 bg-panel/40 border border-white/5 rounded-2xl">
-              <span class="text-purple-400 block font-bold">// DISK SYNC</span>
-              <span class="text-white font-semibold text-sm mt-1 block">Postgres SSL</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- ============================================ -->
-    <!-- DEDICATED PAGE: FLOWPILOT PRODUCT VIEW       -->
-    <!-- ============================================ -->
-    <div id="page-project-flowpilot" class="app-page hidden min-h-screen pt-32 pb-24 px-6 md:px-10">
-      <div class="max-w-6xl mx-auto space-y-16">
-        
-        <button onclick="navigateTo('home')" class="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-white/10 bg-white/5 text-muted hover:text-white transition-all text-xs font-bold font-mono uppercase">
-          ← Back to home
-        </button>
-
-        <div class="space-y-6">
-          <div class="flex items-center gap-3">
-            <span class="text-xs font-mono bg-amber-500/15 text-amber-400 border border-amber-500/20 px-3 py-1 rounded font-bold uppercase">SPRINT ENGINE</span>
-            <span class="text-xs font-mono text-muted">Enterprise Agile standard v2.0</span>
-          </div>
-          <h1 class="font-display font-extrabold text-4xl sm:text-6xl text-white leading-tight">
-            FlowPilot: High-Contrast Cyber Developer Board
-          </h1>
-          <p class="text-muted text-base sm:text-lg max-w-3xl leading-relaxed font-light">
-            An advanced tactile board engineered to track task mutations dynamically. Perfect for agile engineering teams looking for absolute clarity.
-          </p>
-        </div>
-
-        <!-- FlowPilot Live Kanban Sandbox -->
-        <div class="glass-card rounded-3xl p-6 md:p-10 space-y-8 bg-[#090A0E] border border-amber-500/15 relative overflow-hidden">
-          <div class="flex flex-col sm:flex-row justify-between sm:items-center pb-4 border-b border-amber-500/25 gap-2">
-            <div>
-              <h3 class="text-lg font-bold text-white tracking-tight font-mono text-amber-400 uppercase">Interactive Sprint Board Console</h3>
-              <p class="text-muted text-[11px] mt-1">Click task blocks to transition their state arrays through active pipelines.</p>
-            </div>
-            <div class="flex items-center gap-2 font-mono text-[10px] text-white">
-              <span class="w-2.5 h-2.5 rounded-full bg-emeraldAccent animate-pulse"></span>
-              <span>SYNCHRONIZED WITH DB CLIENT</span>
-            </div>
-          </div>
-
-          <!-- Board Columns -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            <!-- Col 1 -->
-            <div class="space-y-4">
-              <div class="flex justify-between items-center bg-[#050508] p-3 rounded-xl border border-white/5">
-                <span class="text-xs font-bold font-mono uppercase text-muted">Backlog Pipeline</span>
-                <span id="fp-backlog-count" class="font-mono bg-white/5 px-2 py-0.5 rounded text-[10px] text-white">2</span>
-              </div>
-              <div class="space-y-3" id="fp-col-backlog">
-                <div onclick="moveInnerKanban(this, 'fp-col-progress')" class="p-4 bg-background border border-white/5 rounded-xl hover:border-amber-500/40 cursor-pointer text-xs space-y-2 transition-all">
-                  <span class="text-[8px] font-mono bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-0.5 rounded-full font-bold uppercase">UI Wireframe</span>
-                  <p class="text-white font-bold text-sm">Design Patient Intake Wizard</p>
-                  <p class="text-[10px] text-muted leading-relaxed">Stage progressive disclosure steps layout grids.</p>
-                </div>
-                <div onclick="moveInnerKanban(this, 'fp-col-progress')" class="p-4 bg-background border border-white/5 rounded-xl hover:border-amber-500/40 cursor-pointer text-xs space-y-2 transition-all">
-                  <span class="text-[8px] font-mono bg-purple-500/10 text-purple-400 border border-purple-500/20 px-2 py-0.5 rounded-full font-bold uppercase">API Sync</span>
-                  <p class="text-white font-bold text-sm">Integrate Internal Webhooks</p>
-                  <p class="text-[10px] text-muted leading-relaxed">Synchronize metadata dispatches automatically.</p>
+                  <div class="text-white font-bold">Validated CRM Sync</div>
+                  <div>Salesforce API push with zero typos</div>
                 </div>
               </div>
             </div>
-
-            <!-- Col 2 -->
-            <div class="space-y-4">
-              <div class="flex justify-between items-center bg-[#050508] p-3 rounded-xl border border-white/5">
-                <span class="text-xs font-bold font-mono uppercase text-muted">Active Sprint</span>
-                <span id="fp-progress-count" class="font-mono bg-white/5 px-2 py-0.5 rounded text-[10px] text-white">0</span>
-              </div>
-              <div class="space-y-3 min-h-[100px] border border-dashed border-white/5 rounded-2xl p-2" id="fp-col-progress"></div>
-            </div>
-
-            <!-- Col 3 -->
-            <div class="space-y-4">
-              <div class="flex justify-between items-center bg-[#050508] p-3 rounded-xl border border-white/5">
-                <span class="text-xs font-bold font-mono uppercase text-muted">Completed Ops</span>
-                <span id="fp-done-count" class="font-mono bg-white/5 px-2 py-0.5 rounded text-[10px] text-white">0</span>
-              </div>
-              <div class="space-y-3 min-h-[100px] border border-dashed border-white/5 rounded-2xl p-2" id="fp-col-done"></div>
-            </div>
-
           </div>
         </div>
 
-      </div>
-    </div>
-
-    <!-- ============================================ -->
-    <!-- DEDICATED PAGE: NEXUS AI PRODUCT VIEW        -->
-    <!-- ============================================ -->
-    <div id="page-project-nexus" class="app-page hidden min-h-screen pt-32 pb-24 px-6 md:px-10">
-      <div class="max-w-6xl mx-auto space-y-16">
-        
-        <button onclick="navigateTo('home')" class="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-white/10 bg-white/5 text-muted hover:text-white transition-all text-xs font-bold font-mono uppercase">
-          ← Back to home
-        </button>
-
+        <!-- Interactive Prototype -->
         <div class="space-y-6">
-          <div class="flex items-center gap-3">
-            <span class="text-xs font-mono bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded font-bold uppercase">AI ROUTING ENGINE</span>
-            <span class="text-xs font-mono text-muted">NLP extraction model v4.0</span>
-          </div>
-          <h1 class="font-display font-extrabold text-4xl sm:text-6xl text-white leading-tight">
-            Nexus AI: Natural Language Operational Terminal
-          </h1>
-          <p class="text-muted text-base sm:text-lg max-w-3xl leading-relaxed font-light">
-            An intelligent terminal module developed to parse unformatted human text requests, classify operational variables, and map them instantly to programmatic database fields.
-          </p>
-        </div>
-
-        <!-- Terminal Playground UI -->
-        <div class="rounded-3xl bg-[#050508] border border-emerald-500/20 shadow-2xl overflow-hidden relative">
-          <div class="absolute inset-0 bg-scanline pointer-events-none opacity-[0.02] z-20"></div>
-          
-          <!-- Terminal Header -->
-          <div class="px-5 py-3.5 border-b border-emerald-500/20 bg-black flex items-center justify-between font-mono text-[10px]">
-            <span class="text-emeraldAccent font-bold">root@nexus-classifier.local:~/playground</span>
-            <span class="text-muted">ACTIVE SECURE CLIENT</span>
+          <div class="text-left space-y-2">
+            <h3 class="text-2xl font-display font-extrabold text-white">Live System Prototype</h3>
+            <p class="text-muted text-xs sm:text-sm font-light">
+              Test the AI extraction engine. Click one of the pre-loaded unformatted emails below (or write your own), and click "Execute Parse". Watch the terminal extract schema-valid JSON parameters in real time.
+            </p>
           </div>
 
-          <div class="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <!-- Left Console inputs -->
-            <div class="lg:col-span-7 space-y-4">
-              <span class="text-[10px] font-mono text-emeraldAccent block font-bold">// Load text parameter matrices:</span>
-              
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
-                <button onclick="setInnerNexusTemplate('plumbing')" class="p-3 bg-[#090A0E] rounded-xl border border-white/5 text-left text-white hover:border-emerald-500/30 transition-all flex items-center gap-2.5">
-                  <span>🔧</span>
-                  <div>
-                    <span class="font-bold block text-xs">Home Services Model</span>
-                    <span class="text-[9px] text-muted">Manual pipeline mapping issues</span>
-                  </div>
-                </button>
-                <button onclick="setInnerNexusTemplate('agency')" class="p-3 bg-[#090A0E] rounded-xl border border-white/5 text-left text-white hover:border-emerald-500/30 transition-all flex items-center gap-2.5">
-                  <span>🚀</span>
-                  <div>
-                    <span class="font-bold block text-xs">SaaS Marketing Team</span>
-                    <span class="text-[9px] text-muted">Dynamic webhooks sync requirements</span>
-                  </div>
-                </button>
+          <!-- Terminal Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-[#090A0E] rounded-3xl p-6 sm:p-8 border border-white/5 relative overflow-hidden">
+            <!-- Glows inside terminal -->
+            <div class="absolute -top-24 -left-24 w-48 h-48 bg-indigo-500/5 rounded-full blur-[80px] pointer-events-none"></div>
+
+            <!-- Left side inputs -->
+            <div class="lg:col-span-6 space-y-4 relative z-10 flex flex-col justify-between">
+              <div class="space-y-3">
+                <span class="text-[9px] font-mono text-muted uppercase tracking-wider block">1. INPUT: UNSTRUCTURED CLIENT CORRESPONDENCE</span>
+                
+                <!-- Email suggestion buttons -->
+                <div class="flex gap-2 pb-2">
+                  <button onclick="loadNexusEmail('coaching')" class="px-3 py-1.5 bg-background hover:bg-white/5 border border-white/5 rounded-lg text-[9px] font-mono text-slate-300 transition-colors">
+                    📄 Coaching inquiry
+                  </button>
+                  <button onclick="loadNexusEmail('boiler')" class="px-3 py-1.5 bg-background hover:bg-white/5 border border-white/5 rounded-lg text-[9px] font-mono text-slate-300 transition-colors">
+                    📄 Boiler repair text
+                  </button>
+                </div>
+
+                <textarea id="nexus-input-text" placeholder="Paste unformatted lead email or message..." rows="6" class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-colors resize-none font-sans leading-relaxed"></textarea>
               </div>
 
-              <textarea id="nx-inner-input" rows="4" class="w-full bg-black border border-white/5 rounded-xl p-3.5 font-mono text-xs text-white outline-none focus:border-emerald-500 transition-colors" placeholder="Awaiting parameter payload metrics inputs..."></textarea>
-              
-              <button onclick="runInnerNexusAI()" id="nx-inner-trigger" class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold uppercase tracking-wider transition-all shadow-lg text-xs font-mono">
-                Process Neural NLP Extraction
+              <button onclick="parseNexusIntent()" class="w-full py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-mono text-xs font-extrabold uppercase tracking-wider rounded-xl transition-all shadow-lg active:scale-95">
+                Execute Parse Intent
               </button>
-
-              <div class="border border-white/5 rounded-xl bg-black p-4 font-mono text-[11px] text-muted h-32 overflow-y-auto space-y-1" id="nx-inner-console">
-                <div class="text-emerald-400">// System initialized. Ready to compile...</div>
-              </div>
             </div>
 
-            <!-- Right JSON Compilation Output -->
-            <div class="lg:col-span-5 space-y-4">
-              <span class="text-[10px] font-mono text-emeraldAccent block font-bold">// Processed JSON Payload Output:</span>
-              
-              <div id="nx-inner-crm-wrapper" class="hidden p-6 rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.02] space-y-3 font-mono text-xs h-full">
-                <div class="flex items-center gap-2 pb-2 border-b border-emerald-500/10">
-                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                  <span class="text-white font-bold font-mono">CRM Sync Property Map</span>
+            <!-- Right side Terminal Console -->
+            <div class="lg:col-span-6 bg-background border border-white/5 rounded-2xl p-5 relative z-10 flex flex-col justify-between min-h-[350px]">
+              <div>
+                <div class="flex items-center justify-between pb-3 border-b border-white/5 mb-3 font-mono text-[9px] text-slate-500">
+                  <span>TERMINAL OUTPUT (STDOUT)</span>
+                  <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
                 </div>
-                <div class="space-y-3 text-slate-300">
-                  <p>Category: <span id="nx-inner-res-cat" class="text-white font-bold">N/A</span></p>
-                  <p>Structural Tier: <span id="nx-inner-res-budget" class="text-white font-bold">N/A</span></p>
-                  <div id="nx-inner-res-email" class="bg-black/50 p-4 rounded-xl border border-white/5 text-muted font-mono text-[10px] leading-relaxed"></div>
+                <!-- Console log outputs -->
+                <div id="nexus-terminal-box" class="font-mono text-[9px] text-emerald-400 space-y-1.5 h-64 overflow-y-auto custom-scroll">
+                  <div>nexus-nlp-node --version v1.0.4</div>
+                  <div>ready. waiting for payload buffer...</div>
                 </div>
               </div>
-              
-              <div id="nx-inner-crm-placeholder" class="h-full border border-dashed border-white/5 rounded-2xl flex flex-col items-center justify-center p-6 text-center text-muted font-mono">
-                <span>// Awaiting payload compiling...</span>
+
+              <!-- Extra actions -->
+              <div class="pt-3 border-t border-white/5 flex justify-between items-center font-mono text-[9px] text-slate-500">
+                <span>Response: <strong class="text-emerald-400" id="nexus-parse-timer">0.0s</strong></span>
+                <span class="text-slate-400" id="nexus-status-pill">STANDBY</span>
               </div>
             </div>
           </div>
@@ -1061,385 +1414,26 @@
       </div>
     </div>
 
-    <!-- Footer Section -->
-    <footer class="px-6 md:px-10 py-12 border-t border-white/5 bg-background">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-muted">
-        <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 to-purple-600 flex items-center justify-center text-white font-bold text-xs">RD</div>
-          <span>&copy; 2026 Rohith Dhanala. Design-Led Systems Engineering. All Rights Reserved.</span>
+    <!-- Main Footer -->
+    <footer class="border-t border-white/5 py-12 px-6 md:px-10 bg-background relative overflow-hidden">
+      <!-- Glow bottom footer -->
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-indigo-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
+        <div class="flex flex-col items-center md:items-start text-center md:text-left gap-1">
+          <span class="text-sm font-display font-bold text-white">Rohith Dhanala</span>
+          <span class="text-[10px] font-mono text-slate-400">© <span id="footer-year">2026</span> · Systems Architect</span>
         </div>
-        <div class="flex gap-6 font-semibold uppercase tracking-wider text-[10px]">
-          <a href="#about" onclick="handleNav('about')" class="hover:text-white transition-all">About</a>
-          <a href="#projects" onclick="handleNav('projects')" class="hover:text-white transition-all">Projects</a>
-          <a href="#contact" onclick="handleNav('contact')" class="hover:text-white transition-all">Contact</a>
+
+        <div class="flex items-center gap-6 text-xs text-muted font-mono">
+          <a href="mailto:hello@rohithdhanala.com" class="hover:text-white transition-colors">hello@rohithdhanala.com</a>
+          <a href="https://www.linkedin.com/in/rohith-dhanala-35715b162/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">LinkedIn</a>
+          <a href="#home" onclick="navigateTo('home'); scrollToSection('navbar')" class="hover:text-white transition-colors">Back to top ↑</a>
         </div>
       </div>
     </footer>
 
-    <!-- Core Application Logic Scripts -->
-    <script>
-      // Single-Page Routing System
-      function navigateTo(routeId) {
-        // Hide all pages
-        document.querySelectorAll('.app-page').forEach(page => {
-          page.classList.add('hidden');
-        });
-        
-        // Show selected page
-        const target = document.getElementById(`page-${routeId}`);
-        if (target) {
-          target.classList.remove('hidden');
-          window.scrollTo({ top: 0, behavior: 'instant' });
-        }
-        
-        // Close Mobile Menu automatically
-        closeMobileMenu();
-      }
-
-      // Navbar smooth navigation router bridge
-      function handleNav(sectionId) {
-        navigateTo('home');
-        setTimeout(() => {
-          const el = document.getElementById(sectionId);
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 120);
-      }
-
-      // Check current window hash on initialization
-      window.addEventListener('load', () => {
-        const hash = window.location.hash.replace('#', '');
-        if (hash && document.getElementById(`page-${hash}`)) {
-          navigateTo(hash);
-        } else {
-          navigateTo('home');
-        }
-        
-        // Setup Intersection Observer scroll triggers for home page elements
-        const revealElements = document.querySelectorAll(".reveal");
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("active");
-            }
-          });
-        }, { threshold: 0.05 });
-        
-        revealElements.forEach((el) => {
-          observer.observe(el);
-        });
-        
-        // Initialize dynamic sparklines
-        setInterval(simulateTelemetryTick, 4000);
-      });
-
-      // Interactive Aura Patient Intake Step Wizard Control
-      let auraCurrentStep = 1;
-      function nextAuraStep(direction) {
-        const nameInput = document.getElementById("pt-name");
-        const emailInput = document.getElementById("pt-email");
-        
-        if (auraCurrentStep === 1 && direction === 1) {
-          let validated = true;
-          if (nameInput.value.trim() === "") {
-            document.getElementById("pt-name-err").classList.remove("hidden");
-            validated = false;
-          } else {
-            document.getElementById("pt-name-err").classList.add("hidden");
-          }
-          if (emailInput.value.trim() === "" || !emailInput.value.includes("@")) {
-            document.getElementById("pt-email-err").classList.remove("hidden");
-            validated = false;
-          } else {
-            document.getElementById("pt-email-err").classList.add("hidden");
-          }
-          if (!validated) return;
-        }
-
-        document.getElementById(`aura-step-${auraCurrentStep}`).classList.add("hidden");
-        auraCurrentStep += direction;
-        document.getElementById(`aura-step-${auraCurrentStep}`).classList.remove("hidden");
-        document.getElementById("aura-step-badge").textContent = auraCurrentStep;
-        
-        const nextBtn = document.getElementById("aura-next-btn");
-        const backBtn = document.getElementById("aura-back-btn");
-        const stepDesc = document.getElementById("aura-step-desc");
-        const stepPercent = document.getElementById("aura-step-percent");
-        
-        if (auraCurrentStep === 1) {
-          backBtn.disabled = true;
-          nextBtn.textContent = "Continue Step →";
-          stepDesc.textContent = "Awaiting general credentials parameters";
-          stepPercent.textContent = "33% Done";
-        } else if (auraCurrentStep === 2) {
-          backBtn.disabled = false;
-          nextBtn.textContent = "Verify Credentials →";
-          stepDesc.textContent = "Sync insurance provider details";
-          stepPercent.textContent = "66% Done";
-        } else if (auraCurrentStep === 3) {
-          backBtn.disabled = false;
-          nextBtn.textContent = "Verify & Sync Intake";
-          stepDesc.textContent = "Aura secure database matrix dispatch";
-          stepPercent.textContent = "95% Ready";
-          nextBtn.onclick = function() { submitAuraIntake(); };
-        }
-      }
-
-      function submitAuraIntake() {
-        const ptName = document.getElementById("pt-name").value || "Sarah Berenson";
-        const ptFeed = document.getElementById("clinical-patients-feed");
-        
-        const ptCard = document.createElement("div");
-        ptCard.className = "flex items-center justify-between p-3.5 bg-emerald-500/5 border border-emerald-500/20 rounded-2xl animate-pulse";
-        ptCard.innerHTML = `
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-xs font-bold text-emerald-400">
-              ${ptName.substring(0, 2).toUpperCase()}
-            </div>
-            <div>
-              <h5 class="text-xs font-bold text-white">${ptName}</h5>
-              <p class="text-[9px] text-muted font-mono">ID: PT-NEW-SYNC | Intake Processing</p>
-            </div>
-          </div>
-          <span class="text-[9px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded-full font-bold uppercase">
-            Dispatched
-          </span>
-        `;
-        
-        ptFeed.insertBefore(ptCard, ptFeed.firstChild);
-        setTimeout(() => { ptCard.classList.remove("animate-pulse"); }, 1500);
-
-        // Reset wizard
-        document.getElementById(`aura-step-${auraCurrentStep}`).classList.add("hidden");
-        auraCurrentStep = 1;
-        document.getElementById("pt-name").value = "";
-        document.getElementById("pt-email").value = "";
-        document.getElementById("pt-insurance").value = "";
-        document.getElementById("pt-policy").value = "";
-        
-        document.getElementById(`aura-step-1`).classList.remove("hidden");
-        document.getElementById("aura-step-badge").textContent = "1";
-        document.getElementById("aura-back-btn").disabled = true;
-        const nextBtn = document.getElementById("aura-next-btn");
-        nextBtn.textContent = "Continue Step →";
-        nextBtn.onclick = function() { nextAuraStep(1); };
-        document.getElementById("aura-step-desc").textContent = "Awaiting general credentials parameters";
-        document.getElementById("aura-step-percent").textContent = "33% Done";
-      }
-
-      // Aura Case Study Field State Matrix Controls
-      function setFieldState(state) {
-        const input = document.getElementById("matrix-input");
-        const msg = document.getElementById("matrix-msg");
-        
-        if (state === 'idle') {
-          input.className = "w-full bg-[#050508] border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none transition-all";
-          msg.textContent = "Current State: IDLE (Regular border parameters)";
-        } else if (state === 'focus') {
-          input.className = "w-full bg-[#050508] border border-indigo-500 rounded-xl px-4 py-3 text-xs text-white outline-none transition-all ring-2 ring-indigo-500/20";
-          msg.textContent = "Current State: FOCUS (Active glowing token applied)";
-        } else if (state === 'error') {
-          input.className = "w-full bg-[#050508] border border-red-500 rounded-xl px-4 py-3 text-xs text-red-400 outline-none transition-all ring-2 ring-red-500/10";
-          msg.textContent = "Current State: ERROR VALIDATION (Failing regex matching algorithm)";
-        } else if (state === 'success') {
-          input.className = "w-full bg-[#050508] border border-emerald-500 rounded-xl px-4 py-3 text-xs text-emerald-400 outline-none transition-all ring-2 ring-emerald-500/10";
-          msg.textContent = "Current State: SUCCESS (Payload matching formatting conditions)";
-        }
-      }
-
-      // ClientBridge Inside Page Checklist Controls
-      function updateInnerProgress() {
-        const checkboxes = document.querySelectorAll('#page-project-clientbridge input[type="checkbox"]');
-        let checkedCount = 0;
-        checkboxes.forEach(cb => { if (cb.checked) checkedCount++; });
-        
-        const totalTasks = checkboxes.length;
-        const percent = Math.round((checkedCount / totalTasks) * 100);
-        
-        document.getElementById("cb-inner-percent").textContent = `${percent}% Complete`;
-        document.getElementById("cb-inner-bar").style.width = `${percent}%`;
-      }
-
-      function triggerInnerUpload() {
-        const list = document.getElementById("cb-inner-file-list");
-        const row = document.createElement("div");
-        row.className = "flex justify-between items-center bg-[#050508] p-3.5 rounded-xl border border-white/5 text-[11px] animate-pulse";
-        row.innerHTML = `
-          <div class="flex items-center gap-2">
-            <span class="text-purple-400">📊</span>
-            <span class="font-mono text-white">client_assets_specification.pdf</span>
-          </div>
-          <span class="text-emerald-400 font-mono font-bold text-[10px] uppercase bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/10">Synced Secure</span>
-        `;
-        list.appendChild(row);
-        setTimeout(() => { row.classList.remove("animate-pulse"); }, 1200);
-
-        document.getElementById("cb-inner-task-dns").checked = true;
-        updateInnerProgress();
-      }
-
-      // FlowPilot Inside Page Kanban Board Task Mechanics
-      function moveInnerKanban(card, targetId) {
-        const container = document.getElementById(targetId);
-        if (!container) return;
-        
-        card.style.opacity = "0";
-        card.style.transform = "scale(0.9)";
-        
-        setTimeout(() => {
-          container.appendChild(card);
-          card.style.opacity = "1";
-          card.style.transform = "scale(1)";
-          
-          if (targetId === 'fp-col-progress') {
-            card.onclick = () => moveInnerKanban(card, 'fp-col-done');
-            card.querySelector("span").className = "text-[8px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded-full font-bold uppercase";
-          } else {
-            card.onclick = null;
-          }
-          
-          document.getElementById("fp-backlog-count").textContent = document.getElementById("fp-col-backlog").children.length;
-          document.getElementById("fp-progress-count").textContent = document.getElementById("fp-col-progress").children.length;
-          document.getElementById("fp-done-count").textContent = document.getElementById("fp-col-done").children.length;
-        }, 300);
-      }
-
-      // Nexus AI Inside Page Terminal Simulator Code
-      const nexusTemplates = {
-        plumbing: "Plumbing operations pipeline localized design. Spreadsheets tracking leads leak 45% values due to non-responsive schemas.",
-        agency: "B2B SaaS Growth firm intake environments requiring automated webhooks and dynamic field sync immediately."
-      };
-      
-      function setInnerNexusTemplate(key) {
-        document.getElementById("nx-inner-input").value = nexusTemplates[key];
-      }
-
-      function runInnerNexusAI() {
-        const logBox = document.getElementById("nx-inner-console");
-        logBox.innerHTML = "<div>&gt; [INIT CONSOLE LOG ENGINE EXECUTION] Loading text parameters arrays...</div>";
-        const triggerBtn = document.getElementById("nx-inner-trigger");
-        triggerBtn.disabled = true;
-
-        setTimeout(() => {
-          logBox.innerHTML += "<div class='text-purple-400'>&gt; [CLASSIFY VECTOR RUN] Resolving operational context tokens classifications...</div>";
-          logBox.scrollTop = logBox.scrollHeight;
-          
-          setTimeout(() => {
-            logBox.innerHTML += "<div class='text-emerald-400'>&gt; [SUCCESS ROUTING] Synced CRM properties matrix objects.</div>";
-            logBox.scrollTop = logBox.scrollHeight;
-            
-            document.getElementById("nx-inner-res-cat").textContent = "Operational Pipeline System Analysis";
-            document.getElementById("nx-inner-res-budget").textContent = "Enterprise Structural Scope Tier";
-            document.getElementById("nx-inner-res-email").textContent = "Subject: Automation blueprint pipeline strategy map routing configured. Executing API Dispatch...";
-            
-            document.getElementById("nx-inner-crm-placeholder").classList.add("hidden");
-            document.getElementById("nx-inner-crm-wrapper").classList.remove("hidden");
-            triggerBtn.disabled = false;
-          }, 1000);
-        }, 800);
-      }
-
-      // Dynamic Interactive Sparkline fluctuation metrics
-      function simulateTelemetryTick() {
-        const throughputText = document.getElementById("telemetry-throughput");
-        const percentText = document.getElementById("telemetry-percent");
-        const chartArea = document.getElementById("chart-area-path");
-        const chartLine = document.getElementById("chart-line-path");
-        
-        if (!throughputText) return;
-
-        const baseValue = 14200;
-        const randomModifier = Math.floor(Math.random() * 400);
-        const nextValue = baseValue + randomModifier;
-        throughputText.textContent = `${nextValue.toLocaleString()} req/s`;
-
-        const basePercent = 22.0;
-        const randomPercentModifier = (Math.random() * 6).toFixed(1);
-        const isUp = Math.random() > 0.3;
-        percentText.textContent = `${isUp ? '+' : '-'}${randomPercentModifier}%`;
-        
-        if (isUp) {
-          percentText.className = "text-[10px] font-mono text-emeraldAccent bg-emerald-500/10 px-2 py-0.5 rounded font-bold border border-emerald-500/10";
-        } else {
-          percentText.className = "text-[10px] font-mono text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded font-bold border border-rose-500/10";
-        }
-
-        const val1 = 50 + Math.floor(Math.random() * 30);
-        const val2 = 30 + Math.floor(Math.random() * 30);
-        const val3 = 60 + Math.floor(Math.random() * 20);
-        const val4 = 15 + Math.floor(Math.random() * 20);
-        
-        const nextPathD = `M 0 100 Q 30 70 60 ${val1} T 120 ${val2} T 180 ${val3} T 240 25 T 300 ${val4}`;
-        
-        chartLine.setAttribute("d", nextPathD);
-        chartArea.setAttribute("d", `${nextPathD} L 300 100 Z`);
-      }
-
-      // Dynamic Navbar scroll styling
-      const navbar = document.getElementById("navbar");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 30) {
-          navbar.classList.add("bg-background/80", "backdrop-blur-xl", "border-b", "border-white/5", "py-3");
-          navbar.classList.remove("py-5");
-        } else {
-          navbar.classList.remove("bg-background/80", "backdrop-blur-xl", "border-b", "border-white/5", "py-3");
-          navbar.classList.add("py-5");
-        }
-      });
-
-      // Mobile Drawers Navigation Controls
-      const mobileMenu = document.getElementById("mobile-menu");
-      document.getElementById("mobile-open").addEventListener("click", () => {
-        mobileMenu.classList.remove("hidden");
-        document.body.style.overflow = "hidden";
-      });
-      function closeMobileMenu() {
-        mobileMenu.classList.add("hidden");
-        document.body.style.overflow = "";
-      }
-      document.getElementById("mobile-close").addEventListener("click", closeMobileMenu);
-
-      // Contact Form Type Selector Configuration Systems
-      function handleFormTypeChange(val) {
-        const urlField = document.getElementById("dynamic-url-field");
-        const msgLabel = document.getElementById("message-label");
-        const msgTextarea = document.getElementById("cf-message");
-        const submitBtnLabel = document.getElementById("btn-label");
-        const formBadge = document.getElementById("form-badge");
-
-        if (val === "audit") {
-          urlField.classList.remove("hidden");
-          msgLabel.textContent = "What is your single biggest operational bottleneck?";
-          msgTextarea.placeholder = "Describe manual pipelines or data loss issues...";
-          submitBtnLabel.textContent = "Request Free Systems Audit";
-          formBadge.textContent = "Systems Friction Form";
-        } else {
-          urlField.classList.add("hidden");
-          msgLabel.textContent = "Describe your project parameters vectors:";
-          msgTextarea.placeholder = "Explain desired web frameworks, integration scopes, automations...";
-          submitBtnLabel.textContent = "Send Bespoke Requirements Profile";
-          formBadge.textContent = "Bespoke System Intake";
-        }
-      }
-
-      function selectFormOption(optionValue) {
-        const selectElement = document.getElementById("cf-type");
-        if (selectElement) {
-          selectElement.value = optionValue;
-          handleFormTypeChange(optionValue);
-        }
-        document.getElementById("contact")?.scrollIntoView({ behavior: 'smooth' });
-      }
-
-      // Contact Form Submit Handler
-      document.getElementById("contact-form").addEventListener("submit", function(e) {
-        e.preventDefault();
-        this.classList.add("hidden");
-        const successBlock = document.getElementById("form-success");
-        successBlock.classList.remove("hidden");
-        successBlock.classList.add("flex");
-      });
-    </script>
+    <!-- Main JavaScript Logic Link -->
+    <script src="script.js"></script>
   </body>
 </html>
