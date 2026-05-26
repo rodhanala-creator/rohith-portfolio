@@ -3,17 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rohith Dhanala | AI Automation, Websites &amp; Digital Operations</title>
-    <meta name="description" content="I build calmer digital systems for service businesses — reducing manual work, missed enquiries, and the daily friction that makes running a business feel harder than it should." />
+    <title>Rohith Dhanala | Product Designer &amp; AI Automation Engineer</title>
+    <meta name="description" content="I design premium digital products and build AI-powered automation systems that capture leads, stream onboarding, and eliminate repetitive admin for service-based businesses and startups." />
     
     <!-- SEO and Social Meta Tags -->
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Rohith Dhanala" />
+    <link rel="canonical" href="https://rohithdhanala.com/" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Rohith Dhanala | AI Automation, Websites &amp; Digital Operations" />
-    <meta property="og:description" content="I build calmer digital systems for service businesses — reducing manual work, missed enquiries, and the daily friction that makes running a business feel harder than it should." />
+    <meta property="og:title" content="Rohith Dhanala | Premium Design &amp; AI Automation" />
+    <meta property="og:description" content="I design gorgeous, high-converting digital products and connect them to smart AI systems that handle bookings, qualify leads, and save hours of manual admin." />
     <meta property="og:site_name" content="Rohith Dhanala" />
 
     <!-- Google Fonts -->
@@ -24,7 +25,6 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Tailwind Config Script -->
     <script>
       tailwind.config = {
         theme: {
@@ -35,14 +35,14 @@
               mono: ["JetBrains Mono", "monospace"],
             },
             colors: {
-              background: "#08090C",
-              panel: "rgba(17, 19, 24, 0.7)",
-              panelHover: "#161921",
+              background: "#050609",
+              panel: "rgba(10, 12, 18, 0.75)",
+              panelHover: "#141722",
               primary: "#F8FAFC",
               muted: "#94A3B8",
-              accent: "#10B981", // Warm Emerald Accent representing Calm Systems
-              accentHover: "#34D399",
-              purpleGlow: "#6366F1",
+              accent: "#6366F1", // Modern violet/indigo
+              emeraldAccent: "#10B981", // Warm growth green
+              roseAccent: "#F43F5E",
               amberAccent: "#F59E0B"
             },
             animation: {
@@ -62,19 +62,19 @@
         z-index: 30;
       }
       .bg-grid {
-        background-size: 50px 50px;
-        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-                          linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+        background-size: 40px 40px;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+                          linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
       }
       .glass-card {
-        background: rgba(15, 17, 22, 0.6);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.04);
+        background: rgba(10, 12, 18, 0.7);
+        backdrop-filter: blur(14px);
+        border: 1px solid rgba(255, 255, 255, 0.03);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
       .glass-card:hover {
-        border-color: rgba(16, 185, 129, 0.15);
-        background: rgba(22, 25, 33, 0.8);
+        border-color: rgba(99, 102, 241, 0.25);
+        background: rgba(16, 19, 28, 0.85);
         transform: translateY(-2px);
       }
       .custom-scroll::-webkit-scrollbar {
@@ -82,65 +82,78 @@
         height: 6px;
       }
       .custom-scroll::-webkit-scrollbar-track {
-        background: rgba(8, 9, 12, 0.5);
+        background: rgba(5, 6, 9, 0.5);
       }
       .custom-scroll::-webkit-scrollbar-thumb {
-        background: rgba(16, 185, 129, 0.2);
+        background: rgba(99, 102, 241, 0.25);
         border-radius: 999px;
       }
       .custom-scroll::-webkit-scrollbar-thumb:hover {
-        background: rgba(16, 185, 129, 0.4);
+        background: rgba(99, 102, 241, 0.45);
+      }
+      .kanban-column {
+        min-height: 280px;
+        transition: background-color 0.2s ease;
+      }
+      .kanban-column.drag-over {
+        background-color: rgba(245, 158, 11, 0.03);
+        border-color: rgba(245, 158, 11, 0.2);
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fadeIn {
+        animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
     </style>
   </head>
   
-  <body class="selection:bg-emerald-800 selection:text-emerald-100 relative bg-background antialiased custom-scroll text-slate-300">
-    <!-- Ambient Graphic Filters -->
+  <body class="selection:bg-indigo-900 selection:text-indigo-100 relative bg-background antialiased custom-scroll text-slate-300">
+    <!-- Ambient Filters & Grids -->
     <div class="noise-overlay"></div>
     <div class="fixed inset-0 bg-grid -z-20"></div>
 
-    <!-- Calm Ambient Orbs -->
-    <div class="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-emerald-950/20 blur-[130px] pointer-events-none -z-10 animate-pulse-slow"></div>
-    <div class="fixed bottom-[-10%] right-[-10%] w-[45%] h-[45%] rounded-full bg-indigo-950/15 blur-[130px] pointer-events-none -z-10 animate-pulse-slow" style="animation-delay: 3s;"></div>
+    <!-- Glowing Background Atmosphere -->
+    <div class="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-indigo-950/20 blur-[130px] pointer-events-none -z-10 animate-pulse-slow"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[45%] h-[45%] rounded-full bg-emerald-950/15 blur-[130px] pointer-events-none -z-10 animate-pulse-slow" style="animation-delay: 3.5s;"></div>
 
-    <!-- Mobile Navigation Overlay -->
+    <!-- Mobile Navigation Menu -->
     <div id="mobile-menu" class="hidden fixed inset-0 bg-background/98 backdrop-blur-3xl z-50 flex flex-col items-center justify-center gap-8 transition-all duration-300">
       <button id="mobile-close" aria-label="Close menu" class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full border border-white/10 hover:border-white/20 hover:bg-white/5 text-white transition-all">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
-      <a href="#services" onclick="closeMobileMenu()" class="text-2xl font-display font-medium text-slate-400 hover:text-white transition-all">What I Do</a>
-      <a href="#philosophy" onclick="closeMobileMenu()" class="text-2xl font-display font-medium text-slate-400 hover:text-white transition-all">My Philosophy</a>
-      <a href="#case-studies" onclick="closeMobileMenu()" class="text-2xl font-display font-medium text-slate-400 hover:text-white transition-all">Case Studies</a>
-      <a href="#playground" onclick="closeMobileMenu()" class="text-2xl font-display font-medium text-slate-400 hover:text-white transition-all">Playground Demo</a>
-      <a href="#contact" onclick="closeMobileMenu()" class="text-2xl font-display font-medium text-emerald-400 hover:text-emerald-300 transition-all">Let's Chat</a>
+      <a href="#about" onclick="closeMobileMenu(); navigateTo('home')" class="text-2xl font-display font-medium text-slate-400 hover:text-white transition-all">Our Strategy</a>
+      <a href="#projects" onclick="closeMobileMenu(); navigateTo('home')" class="text-2xl font-display font-medium text-slate-400 hover:text-white transition-all">Case Studies</a>
+      <a href="#playground" onclick="closeMobileMenu(); navigateTo('home')" class="text-2xl font-display font-medium text-slate-400 hover:text-white transition-all">AI Playgrounds</a>
+      <a href="#contact" onclick="closeMobileMenu(); navigateTo('home')" class="text-2xl font-display font-medium text-indigo-400 hover:text-indigo-300 transition-all">Let's Talk</a>
     </div>
 
     <!-- Header Navigation -->
     <nav class="fixed w-full z-40 top-0 transition-all duration-300 border-b border-transparent py-5" id="navbar">
-      <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-        <!-- Logo Brand -->
-        <a href="#home" class="flex items-center gap-3 group" aria-label="Rohith Dhanala - Home">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-700 to-indigo-800 flex items-center justify-center shadow-md group-hover:scale-105 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-6 md:px-10 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#home" onclick="navigateTo('home')" class="flex items-center gap-3 group" aria-label="Rohith Dhanala - Home">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-emerald-500 flex items-center justify-center shadow-md group-hover:scale-105 transition-all duration-300">
             <span class="text-sm font-display font-extrabold tracking-wider text-white">RD</span>
           </div>
           <div class="flex flex-col">
-            <span class="text-sm font-display font-bold text-white tracking-tight group-hover:text-emerald-400 transition-colors">Rohith Dhanala</span>
-            <span class="text-[9px] font-mono text-emerald-500 tracking-widest leading-none">DIGITAL OPERATIONS &amp; WEBSITES</span>
+            <span class="text-sm font-display font-bold text-white tracking-tight group-hover:text-indigo-400 transition-colors">Rohith Dhanala</span>
+            <span class="text-[9px] font-mono text-indigo-400 tracking-widest leading-none">DESIGN &amp; AI AUTOMATIONS</span>
           </div>
         </a>
 
-        <!-- Premium Pill Navigation Menu -->
-        <div class="hidden md:flex items-center gap-1 bg-[#111318]/80 backdrop-blur-2xl px-2 py-1 rounded-full border border-white/5 shadow-inner">
-          <a href="#services" class="text-[11px] tracking-wider uppercase text-slate-400 hover:text-white px-4 py-2 rounded-full hover:bg-white/5 transition-all font-bold">What I Do</a>
-          <a href="#philosophy" class="text-[11px] tracking-wider uppercase text-slate-400 hover:text-white px-4 py-2 rounded-full hover:bg-white/5 transition-all font-bold">Philosophy</a>
-          <a href="#case-studies" class="text-[11px] tracking-wider uppercase text-slate-400 hover:text-white px-4 py-2 rounded-full hover:bg-white/5 transition-all font-bold">Case Studies</a>
-          <a href="#playground" class="text-[11px] tracking-wider uppercase text-slate-400 hover:text-white px-4 py-2 rounded-full hover:bg-white/5 transition-all font-bold">Playground</a>
+        <!-- Menu Links -->
+        <div class="hidden md:flex items-center gap-1 bg-[#0d0f14]/80 backdrop-blur-2xl px-2 py-1 rounded-full border border-white/5 shadow-inner">
+          <a href="#about" onclick="navigateTo('home'); scrollToSection('about')" class="text-[11px] tracking-wider uppercase text-slate-400 hover:text-white px-4 py-2 rounded-full hover:bg-white/5 transition-all font-bold">Strategy</a>
+          <a href="#projects" onclick="navigateTo('home'); scrollToSection('projects')" class="text-[11px] tracking-wider uppercase text-slate-400 hover:text-white px-4 py-2 rounded-full hover:bg-white/5 transition-all font-bold">Case Studies</a>
+          <a href="#playground" onclick="navigateTo('home'); scrollToSection('playground')" class="text-[11px] tracking-wider uppercase text-slate-400 hover:text-white px-4 py-2 rounded-full hover:bg-white/5 transition-all font-bold">Playground</a>
         </div>
 
-        <!-- Call To Action -->
+        <!-- Action Target -->
         <div class="flex items-center gap-3">
-          <a href="#contact" class="hidden sm:inline-flex px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white text-xs font-bold uppercase tracking-wider transition-all shadow-[0_4px_20px_rgba(16,185,129,0.15)] active:scale-95">
-            Book a Call
+          <a href="#contact" onclick="navigateTo('home'); setTimeout(() => { scrollToSection('contact'); }, 100)" class="hidden sm:inline-flex px-5 py-2.5 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white text-xs font-bold uppercase tracking-wider transition-all shadow-[0_4px_20px_rgba(79,70,229,0.15)] active:scale-95">
+            Claim Free Blueprint
           </a>
           <button id="mobile-open" class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-panel border border-white/5 text-slate-400 hover:text-white transition-all" aria-label="Open menu">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -150,617 +163,1324 @@
     </nav>
 
     <!-- ============================================ -->
-    <!-- HERO SECTION                                 -->
+    <!-- PORTFOLIO HOME LANDING PAGE                  -->
     <!-- ============================================ -->
-    <section id="home" class="min-h-screen flex items-center justify-center pt-32 pb-20 px-6 relative">
-      <div class="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Left Hero Content -->
-        <div class="lg:col-span-7 text-left space-y-8 z-10">
-          <!-- Availability Badge -->
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 backdrop-blur-md">
-            <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span class="text-[10px] uppercase tracking-[0.2em] text-emerald-400 font-extrabold">Available for Projects • Southampton, UK</span>
+    <div id="page-home" class="app-page">
+      
+      <!-- Hero Section -->
+      <section class="min-h-screen flex items-center justify-center pt-32 pb-20 px-6 md:px-10 relative">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          
+          <!-- Left Hero Context -->
+          <div class="lg:col-span-7 text-left space-y-8 z-10">
+            <!-- Availability Badge -->
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-indigo-500/20 bg-indigo-500/5 backdrop-blur-md">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+              </span>
+              <span class="text-[10px] uppercase tracking-[0.2em] text-indigo-400 font-extrabold">Booking Q3 Projects for Startups &amp; Service Brands</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white leading-[1.12] tracking-tight">
+              I design premium products <br />
+              <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-emerald-400">and automate them with AI.</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-400 font-light leading-relaxed max-w-2xl">
+              I build gorgeous, ultra-modern websites and custom apps that captivate your audience, backed by invisible AI automation systems that handle bookings, qualify leads, and run your daily operational admin automatically.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              <a href="#contact" onclick="scrollToSection('contact')" class="px-8 py-4 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-extrabold uppercase tracking-wider transition-all flex items-center justify-center gap-3 shadow-lg active:scale-95">
+                Request Free Automation Audit
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <a href="#projects" onclick="scrollToSection('projects')" class="px-8 py-4 rounded-full border border-white/10 hover:border-indigo-500/20 hover:bg-indigo-500/5 transition-all text-xs font-extrabold uppercase tracking-wider text-white text-center active:scale-95">
+                Explore Shipped Work
+              </a>
+            </div>
+
+            <!-- Focus Badges -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+              <div class="bg-[#0b0c11]/50 p-4 rounded-2xl border border-white/5">
+                <span class="text-[10px] tracking-[0.2em] font-mono text-indigo-400 uppercase font-bold">1. PREMIUM DIGITAL PRODUCTS</span>
+                <p class="text-white text-sm font-semibold mt-1">High-Converting Web &amp; UX</p>
+                <p class="text-xs text-slate-400 mt-1.5">Elite, highly polished marketing platforms and custom SaaS interfaces designed to build massive trust instantly.</p>
+              </div>
+              <div class="bg-[#0b0c11]/50 p-4 rounded-2xl border border-white/5">
+                <span class="text-[10px] tracking-[0.2em] font-mono text-purple-400 uppercase font-bold">2. CONVERSATIONAL AI AGENTS</span>
+                <p class="text-white text-sm font-semibold mt-1">24/7 AI Leads Receptionist</p>
+                <p class="text-xs text-slate-400 mt-1.5">Intelligent AI email-responders and web chat assistants that instantly qualify and schedule leads day or night.</p>
+              </div>
+              <div class="bg-[#0b0c11]/50 p-4 rounded-2xl border border-white/5">
+                <span class="text-[10px] tracking-[0.2em] font-mono text-emeraldAccent uppercase font-bold">3. END-TO-END AUTOMATION</span>
+                <p class="text-white text-sm font-semibold mt-1">Hands-Free Operations</p>
+                <p class="text-xs text-slate-400 mt-1.5">Seamless workflow pipelines linking your website, Stripe, calendars, and CRM together without human manual data entry.</p>
+              </div>
+            </div>
           </div>
 
-          <!-- Headline -->
-          <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white leading-[1.15] tracking-tight">
-            I build calmer digital systems for <br />
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-teal-300 to-indigo-300">service-based businesses</span>
-          </h1>
+          <!-- Right Hero Visual Block: Real-Time Automation Lead HUD -->
+          <div class="lg:col-span-5 relative flex items-center justify-center z-10">
+            <div class="w-full max-w-md bg-[#0a0c12] rounded-3xl p-6 border border-white/5 shadow-2xl relative overflow-hidden">
+              <div class="absolute -top-12 -left-12 w-32 h-32 bg-indigo-500/5 rounded-full blur-[60px] pointer-events-none"></div>
+              
+              <!-- System health widgets header -->
+              <div class="flex items-center justify-between pb-4 border-b border-white/5 mb-5">
+                <div class="flex items-center gap-2">
+                  <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                  <span class="text-[10px] font-mono text-emerald-400 uppercase font-extrabold tracking-widest">Live Agent Activity Logs</span>
+                </div>
+                <span class="text-[9px] font-mono bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2 py-0.5 rounded uppercase">Active Node</span>
+              </div>
 
-          <p class="text-base sm:text-lg text-slate-400 font-light leading-relaxed max-w-2xl">
-            Reducing manual work, missed enquiries, and the daily process friction that makes running a business feel harder than it should. Built from design, operations, and smart AI low-code integrations.
-          </p>
+              <!-- Sparkline Visual -->
+              <div class="bg-background/85 rounded-2xl p-4 border border-white/5 space-y-3">
+                <div class="flex justify-between items-center text-xs">
+                  <span class="text-slate-400 font-mono">Real-Time Lead Intake Activity</span>
+                  <span class="text-indigo-400 font-bold font-mono">100% Operational</span>
+                </div>
 
-          <!-- Buttons -->
-          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-            <a href="#contact" class="px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-extrabold uppercase tracking-wider transition-all flex items-center justify-center gap-3 shadow-lg hover:shadow-emerald-500/20 active:scale-95">
-              Let's Streamline Your Setup
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-            <a href="#case-studies" class="px-8 py-4 rounded-full border border-white/10 hover:border-emerald-500/20 hover:bg-emerald-500/5 transition-all text-xs font-extrabold uppercase tracking-wider text-white text-center active:scale-95">
-              See Quiet Success Stories
-            </a>
+                <!-- SVG Vector Sparkline -->
+                <div class="h-24 w-full relative pt-2">
+                  <svg class="w-full h-full" viewBox="0 0 300 100" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.25"/>
+                        <stop offset="100%" stop-color="#4F46E5" stop-opacity="0.0"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M 0 100 Q 30 80 60 95 T 120 40 T 180 70 T 240 25 T 300 15 L 300 100 Z" fill="url(#chartGradient)"></path>
+                    <path d="M 0 100 Q 30 80 60 95 T 120 40 T 180 70 T 240 25 T 300 15" fill="none" stroke="#6366F1" stroke-width="2.5" stroke-linecap="round"></path>
+                    <circle cx="300" cy="15" r="4.5" fill="#10B981"></circle>
+                    <circle cx="300" cy="15" r="8" fill="#10B981" class="animate-ping" opacity="0.4"></circle>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Dynamic Real-Time Console Log Injections -->
+              <div class="mt-4 space-y-2 font-mono text-[10px]" id="telemetry-logs-feed">
+                <!-- Injected via app script -->
+              </div>
+
+              <!-- Click actions panel -->
+              <div class="pt-4 border-t border-white/5 mt-4 flex gap-2">
+                <button onclick="scrollToSection('playground')" class="flex-1 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-mono text-[9px] font-bold uppercase tracking-wider rounded-xl transition-all">
+                  Test the Playgrounds
+                </button>
+                <button id="btn-trigger-log" class="px-3 bg-background hover:bg-white/5 border border-white/5 rounded-xl text-muted hover:text-white transition-all text-xs" title="Force AI Event Mock Run">
+                  ⚡
+                </button>
+              </div>
+            </div>
           </div>
 
-          <!-- Micro Highlights -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6">
-            <div class="p-4 bg-[#111318]/50 rounded-2xl border border-white/5">
-              <span class="text-[10px] tracking-[0.2em] font-mono text-emerald-400 uppercase font-bold">WEBSITES</span>
-              <p class="text-white text-sm font-semibold mt-1">Clear &amp; High-Converting</p>
-              <p class="text-xs text-slate-400 mt-1">Web designs that convert visitors, rather than confuse them.</p>
-            </div>
-            <div class="p-4 bg-[#111318]/50 rounded-2xl border border-white/5">
-              <span class="text-[10px] tracking-[0.2em] font-mono text-teal-400 uppercase font-bold">AUTOMATIONS</span>
-              <p class="text-white text-sm font-semibold mt-1">Calm Process Flows</p>
-              <p class="text-xs text-slate-400 mt-1">Plugging manual gaps using clean Make.com/Zapier wiring.</p>
-            </div>
-            <div class="p-4 bg-[#111318]/50 rounded-2xl border border-white/5">
-              <span class="text-[10px] tracking-[0.2em] font-mono text-indigo-400 uppercase font-bold">VIBE CODING</span>
-              <p class="text-white text-sm font-semibold mt-1">AI-Powered Delivery</p>
-              <p class="text-xs text-slate-400 mt-1">Rapid functional builds deployed cleanly in hours, not weeks.</p>
-            </div>
-          </div>
         </div>
+      </section>
 
-        <!-- Right Hero Visual Block -->
-        <div class="lg:col-span-5 relative flex items-center justify-center z-10">
-          <div class="w-full max-w-md bg-[#0F1116] rounded-3xl p-6 border border-white/5 shadow-2xl relative overflow-hidden">
-            <div class="absolute -top-12 -left-12 w-32 h-32 bg-emerald-500/5 rounded-full blur-[60px] pointer-events-none"></div>
+      <!-- Strategy & Value Section -->
+      <section id="about" class="py-28 px-6 md:px-10 border-t border-white/5 bg-[#07080b]/40 relative">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          
+          <!-- Left Philosophy Text -->
+          <div class="lg:col-span-5 space-y-8 lg:sticky lg:top-32">
+            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold">&gt; The Strategy</span>
+            <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white leading-tight">
+              Aesthetic On the Outside.<br />Autonomous On the Inside.
+            </h2>
+            <div class="space-y-6 text-slate-400 text-sm font-light leading-relaxed">
+              <p>
+                My professional journey began in product interface design, running <strong class="text-indigo-400 font-bold font-mono">Maxcreepers Studio</strong> starting in 2019. This obsession with high-end, clean design is exactly what separates my systems from typical "clunky" agency tools.
+              </p>
+              <p>
+                I believe that modern service businesses and fast-scaling startups don't need complex, overwhelming custom-coded backend software. They need **flawless customer touchpoints and smart automation workflows** that recover lost time.
+              </p>
+              <p>
+                I specialize in designing world-class frontends (websites, web portals, interactive forms) and connecting them to intelligent AI automation workflows (Make, Airtable, OpenAI API, Twilio). 
+              </p>
+              <p>
+                You get an incredibly beautiful online presence that acts as a 24/7 lead-generating, onboarding, and scheduling machine—completely hands-free.
+              </p>
+            </div>
+
+            <!-- Technical Badge Core -->
+            <div class="space-y-2 pt-2">
+              <span class="text-[10px] font-mono tracking-widest text-slate-500 uppercase font-bold block">My Tech Stack &amp; Tools:</span>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-slate-400 font-mono text-[10px]">Airtable DB</span>
+                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-slate-400 font-mono text-[10px]">Make.com Middleware</span>
+                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-slate-400 font-mono text-[10px]">OpenAI / Anthropic APIs</span>
+                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-slate-400 font-mono text-[10px]">Tailwind &amp; Framer/React</span>
+                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-slate-400 font-mono text-[10px]">Twilio / Stripe API</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Capabilities Bento Cards -->
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
+              <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6 border border-indigo-500/20 shadow-md">🎨</div>
+              <h3 class="text-base font-bold text-white mb-2">Stunning Digital Products</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">We design highly responsive web platforms built directly around conversion psychology. Beautiful animations, flawless layouts, and frictionless layouts that turn casual visitors into paying customers.</p>
+              <div class="text-[9px] text-indigo-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Premium high-fidelity UI/UX</div>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
+              <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6 border border-emerald-500/20 shadow-md">🤖</div>
+              <h3 class="text-base font-bold text-white mb-2">AI-Powered Conversations</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">Smart AI engines that instantly handle incoming customer inquiries, draft custom email replies, book slots on your calendar, and escalate priority client issues directly to you.</p>
+              <div class="text-[9px] text-emeraldAccent font-mono tracking-wider font-semibold uppercase">&gt;&gt; 24/7 automated lead response</div>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
+              <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6 border border-purple-500/20 shadow-md">📂</div>
+              <h3 class="text-base font-bold text-white mb-2">Automated Client Portals</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">Beautiful, secure client workspaces where customers can track project milestones, sign agreements, upload files, and access payment links without tedious back-and-forth emails.</p>
+              <div class="text-[9px] text-purple-400 font-mono tracking-wider font-semibold uppercase">&gt;&gt; Streamlined onboarding experiences</div>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
+              <div class="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 mb-6 border border-amber-500/20 shadow-md">⚙️</div>
+              <h3 class="text-base font-bold text-white mb-2">Integrated System Automations</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">Connect all your business tools behind the scenes. Sync calendar updates, customer invoice records, CRM statuses, and dispatch sheets automatically without manual copy-pasting.</p>
+              <div class="text-[9px] text-amberAccent font-mono tracking-wider font-semibold uppercase">&gt;&gt; No-code &amp; API-driven pipelines</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Immersive Detailed Case Studies Grid -->
+      <section id="projects" class="py-28 px-6 md:px-10 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto space-y-16">
+          
+          <div class="text-center space-y-4 max-w-3xl mx-auto">
+            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold">&gt; Shipped Client Case Studies</span>
+            <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white">How We Automate Service Growth</h2>
+            <p class="text-slate-400 text-sm sm:text-base leading-relaxed font-light">
+              We design premium digital products that capture attention and back them with AI automations that handle the administrative load, booking pipelines, and client portals completely.
+            </p>
+          </div>
+
+          <!-- Vertical grid layouts of deep case studies -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
-            <!-- Floating System Health Widget -->
-            <div class="flex items-center justify-between pb-4 border-b border-white/5 mb-5">
-              <div class="flex items-center gap-2">
-                <span class="relative flex h-2 w-2">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                <span class="text-[10px] font-mono text-emerald-400 uppercase font-extrabold tracking-widest">Digital Operations Sync</span>
+            <!-- Case Study 1 Card -->
+            <div onclick="navigateTo('aura-case')" class="glass-card p-8 rounded-3xl flex flex-col justify-between min-h-[460px] cursor-pointer group relative border border-white/5 hover:border-emerald-500/20 transition-all">
+              <div class="space-y-6">
+                <div class="flex justify-between items-center">
+                  <span class="text-xs font-mono text-emeraldAccent uppercase tracking-widest font-bold">Project 01 / Dental &amp; Clinical Ops</span>
+                  <span class="text-[9px] font-mono bg-emerald-500/10 text-emeraldAccent px-2.5 py-1 rounded-full border border-emerald-500/20 font-bold uppercase">View Blueprint</span>
+                </div>
+                <div class="space-y-3">
+                  <h3 class="text-2xl sm:text-3xl font-display font-extrabold text-white group-hover:text-emeraldAccent transition-colors">Aura Progressive Intake &amp; AI Triage Assistant</h3>
+                  <p class="text-xs text-slate-400 leading-relaxed font-light">
+                    How we integrated a busy dental clinic's messy patient registrations into a beautiful step-by-step intake portal linked directly to an automated AI emergency triage engine.
+                  </p>
+                </div>
+                <div class="border-t border-white/5 pt-4 grid grid-cols-2 gap-4 text-[11px] font-mono">
+                  <div>
+                    <span class="text-slate-500 block">AI Triage Speed</span>
+                    <span class="text-white font-bold text-xs">&lt; 90 Seconds</span>
+                  </div>
+                  <div>
+                    <span class="text-slate-500 block">Admin Time Reclaimed</span>
+                    <span class="text-emeraldAccent font-bold text-xs">15 Hours / Wk</span>
+                  </div>
+                </div>
               </div>
-              <span class="text-[9px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded uppercase">Quiet &amp; Steady</span>
-            </div>
-
-            <!-- Operational Flow Visual -->
-            <div class="bg-background/80 rounded-2xl p-4 border border-white/5 space-y-4">
-              <div class="flex justify-between items-center text-xs">
-                <span class="text-slate-400 font-mono">Current Efficiency Flow</span>
-                <span class="text-emerald-400 font-bold font-mono">+85% Saved Time</span>
-              </div>
-
-              <!-- Animated Connector Nodes -->
-              <div class="space-y-3">
-                <div class="flex items-center justify-between p-2.5 bg-[#111318]/75 rounded-xl border border-white/5">
-                  <div class="flex items-center gap-2">
-                    <span class="text-xs">📥</span>
-                    <span class="text-xs font-semibold text-slate-200">Enquiry Received</span>
-                  </div>
-                  <div class="h-1 w-12 bg-emerald-950 rounded-full overflow-hidden relative">
-                    <div class="absolute top-0 left-0 h-full bg-emerald-400 animate-pulse w-full"></div>
-                  </div>
-                  <span class="text-[10px] font-mono text-slate-400">Website Intake</span>
-                </div>
-
-                <div class="flex items-center justify-between p-2.5 bg-[#111318]/75 rounded-xl border border-white/5">
-                  <div class="flex items-center gap-2">
-                    <span class="text-xs">⚙️</span>
-                    <span class="text-xs font-semibold text-slate-200">System Filtration</span>
-                  </div>
-                  <div class="h-1 w-12 bg-emerald-950 rounded-full overflow-hidden relative">
-                    <div class="absolute top-0 left-0 h-full bg-emerald-400 animate-pulse w-3/4"></div>
-                  </div>
-                  <span class="text-[10px] font-mono text-emerald-400">Make Automation</span>
-                </div>
-
-                <div class="flex items-center justify-between p-2.5 bg-[#111318]/75 rounded-xl border border-white/5">
-                  <div class="flex items-center gap-2">
-                    <span class="text-xs">💬</span>
-                    <span class="text-xs font-semibold text-slate-200">WhatsApp Alert</span>
-                  </div>
-                  <div class="h-1 w-12 bg-emerald-950 rounded-full overflow-hidden relative">
-                    <div class="absolute top-0 left-0 h-full bg-emerald-400 animate-pulse w-1/2"></div>
-                  </div>
-                  <span class="text-[10px] font-mono text-indigo-400">Team Routing</span>
-                </div>
+              <div class="pt-6 flex items-center gap-2 text-[10px] font-bold font-mono text-emeraldAccent uppercase tracking-widest group-hover:translate-x-1.5 transition-transform">
+                <span>View System Architecture &amp; Play</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </div>
             </div>
 
-            <p class="text-[11px] text-slate-400 mt-4 leading-relaxed font-light italic">
-              "We take the operational noise down to zero. Instead of manual sorting and messy sheets, leads flows securely and calmly exactly where they belong."
-            </p>
+            <!-- Case Study 2 Card -->
+            <div onclick="navigateTo('clientbridge-case')" class="glass-card p-8 rounded-3xl flex flex-col justify-between min-h-[460px] cursor-pointer group relative border border-white/5 hover:border-purple-500/20 transition-all">
+              <div class="space-y-6">
+                <div class="flex justify-between items-center">
+                  <span class="text-xs font-mono text-purple-400 uppercase tracking-widest font-bold">Project 02 / B2B &amp; Startup Portals</span>
+                  <span class="text-[9px] font-mono bg-purple-500/10 text-purple-400 px-2.5 py-1 rounded-full border border-purple-500/20 font-bold uppercase">View Blueprint</span>
+                </div>
+                <div class="space-y-3">
+                  <h3 class="text-2xl sm:text-3xl font-display font-extrabold text-white group-hover:text-purple-400 transition-colors">ClientBridge Secure Portal &amp; Automation Hub</h3>
+                  <p class="text-xs text-slate-400 leading-relaxed font-light">
+                    How we built an automated, premium portal for a startup consulting agency to secure documents, verify file requirements, and automate onboarding.
+                  </p>
+                </div>
+                <div class="border-t border-white/5 pt-4 grid grid-cols-2 gap-4 text-[11px] font-mono">
+                  <div>
+                    <span class="text-slate-500 block">Onboarding Speed</span>
+                    <span class="text-white font-bold text-xs">Instant Setup</span>
+                  </div>
+                  <div>
+                    <span class="text-slate-500 block">Email Admin Saved</span>
+                    <span class="text-purple-400 font-bold text-xs">12 Hours / Wk</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pt-6 flex items-center gap-2 text-[10px] font-bold font-mono text-purple-400 uppercase tracking-widest group-hover:translate-x-1.5 transition-transform">
+                <span>Explore Document Vault &amp; Login</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
+            </div>
+
+            <!-- Case Study 3 Card -->
+            <div onclick="navigateTo('flowpilot-case')" class="glass-card p-8 rounded-3xl flex flex-col justify-between min-h-[460px] cursor-pointer group relative border border-white/5 hover:border-amber-500/20 transition-all">
+              <div class="space-y-6">
+                <div class="flex justify-between items-center">
+                  <span class="text-xs font-mono text-amberAccent uppercase tracking-widest font-bold">Project 03 / Home &amp; Trade Services</span>
+                  <span class="text-[9px] font-mono bg-amber-500/10 text-amberAccent px-2.5 py-1 rounded-full border border-amber-500/20 font-bold uppercase">View Blueprint</span>
+                </div>
+                <div class="space-y-3">
+                  <h3 class="text-2xl sm:text-3xl font-display font-extrabold text-white group-hover:text-amberAccent transition-colors">FlowPilot Auto-Dispatch &amp; Booking Matrix</h3>
+                  <p class="text-xs text-slate-400 leading-relaxed font-light">
+                    How we designed a gorgeous trade-service booking app, integrating drag-and-drop schedule columns directly with automated SMS technician dispatches and calendar slots.
+                  </p>
+                </div>
+                <div class="border-t border-white/5 pt-4 grid grid-cols-2 gap-4 text-[11px] font-mono">
+                  <div>
+                    <span class="text-slate-500 block">Booking Sync</span>
+                    <span class="text-white font-bold text-xs">Real-Time</span>
+                  </div>
+                  <div>
+                    <span class="text-slate-500 block">Call Overhead Drop</span>
+                    <span class="text-amberAccent font-bold text-xs">-80% Calls</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pt-6 flex items-center gap-2 text-[10px] font-bold font-mono text-amberAccent uppercase tracking-widest group-hover:translate-x-1.5 transition-transform">
+                <span>Access Interactive Board &amp; Test</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
+            </div>
+
           </div>
+
         </div>
+      </section>
 
-      </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!-- WHAT I DO SECTION (Services Portfolio)       -->
-    <!-- ============================================ -->
-    <section id="services" class="py-24 px-6 border-t border-white/5 bg-[#0A0C10]/50 relative">
-      <div class="max-w-6xl mx-auto space-y-16">
-        
-        <div class="text-center space-y-4 max-w-2xl mx-auto">
-          <span class="text-xs font-mono tracking-[0.2em] text-emerald-400 uppercase font-extrabold">// Practical Services</span>
-          <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">Digital work built to reduce pressure, not add to it.</h2>
-          <p class="text-slate-400 text-sm sm:text-base font-light">
-            I don't sell over-engineered code frameworks. I design websites that get results and stitch together automations that save actual business hours.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Sandbox Operations Playground -->
+      <section id="playground" class="py-24 px-6 border-t border-white/5 relative bg-[#06070a]/40">
+        <div class="max-w-6xl mx-auto space-y-12">
           
-          <!-- Service 1: Websites That Convert -->
-          <div class="glass-card p-6 rounded-2xl relative overflow-hidden group flex flex-col justify-between min-h-[300px]">
-            <div class="space-y-4">
-              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl">
-                🖥️
-              </div>
-              <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">Websites That Convert</h3>
-              <p class="text-xs text-slate-400 leading-relaxed font-light">
-                Clear, well-structured websites and landing pages designed with robust copy. We focus on guiding visitors to a real next step—not just pretty pages that leave clients guessing.
-              </p>
-              <ul class="text-[11px] text-slate-500 space-y-1 font-mono">
-                <li>• Conversion Landing Pages</li>
-                <li>• Strategic UX/UI Structure</li>
-                <li>• Dynamic Tailwind Mockups</li>
-              </ul>
-            </div>
-            <div class="pt-4 text-[10px] font-bold font-mono uppercase text-emerald-400">01 / Aesthetic &amp; Intentional</div>
-          </div>
-
-          <!-- Service 2: Smart Automations -->
-          <div class="glass-card p-6 rounded-2xl relative overflow-hidden group flex flex-col justify-between min-h-[300px]">
-            <div class="space-y-4">
-              <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 text-xl">
-                ⚡
-              </div>
-              <h3 class="text-lg font-bold text-white group-hover:text-teal-400 transition-colors">Digital Operations &amp; Flows</h3>
-              <p class="text-xs text-slate-400 leading-relaxed font-light">
-                Removing manual administrative gaps. I connect your lead channels, calendars, and customer lists using smart Make, Zapier, or Airtable setups, giving you hours of operations back.
-              </p>
-              <ul class="text-[11px] text-slate-500 space-y-1 font-mono">
-                <li>• Lead Triage &amp; SMS Alerts</li>
-                <li>• WhatsApp Client Handshakes</li>
-                <li>• Calmer Booking Integrations</li>
-              </ul>
-            </div>
-            <div class="pt-4 text-[10px] font-bold font-mono uppercase text-teal-400">02 / Automated &amp; Quiet</div>
-          </div>
-
-          <!-- Service 3: Fast Launcher Templates -->
-          <div class="glass-card p-6 rounded-2xl relative overflow-hidden group flex flex-col justify-between min-h-[300px]">
-            <div class="space-y-4">
-              <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-xl">
-                📦
-              </div>
-              <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">Launch Systems &amp; Templates</h3>
-              <p class="text-xs text-slate-400 leading-relaxed font-light">
-                Ready-made aesthetic digital products that help service operators launch in a fraction of the time. These templates serve as a repeatable, clean foundation for your custom client assets.
-              </p>
-              <ul class="text-[11px] text-slate-500 space-y-1 font-mono">
-                <li>• Reusable Theme Frameworks</li>
-                <li>• Clean WhatsApp booking structures</li>
-                <li>• Low-maintenance deploy paths</li>
-              </ul>
-            </div>
-            <div class="pt-4 text-[10px] font-bold font-mono uppercase text-indigo-400">03 / Polished &amp; Scalable</div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!-- THE PHILOSOPHY: Why "Vibe Coding" works      -->
-    <!-- ============================================ -->
-    <section id="philosophy" class="py-24 px-6 border-t border-white/5 relative">
-      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Philosophy Left Context -->
-        <div class="lg:col-span-6 space-y-6">
-          <span class="text-xs font-mono tracking-[0.2em] text-emerald-400 uppercase font-extrabold">// My Background &amp; Approach</span>
-          <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white leading-tight">
-            Built from design and operations — not just complex code.
-          </h2>
-          <div class="space-y-4 text-slate-400 text-sm leading-relaxed font-light">
-            <p>
-              My work started in product design and freelance UI/UX with the foundation of <span class="text-emerald-400 font-bold font-mono">Maxcreepers Design Studio</span> in 2019. That journey naturally evolved into digital project management and operational analysis—where process issues show up immediately and bad systems have real, physical friction.
-            </p>
-            <p>
-              That combination is why my work sits perfectly between simple, converting websites, smooth automations, and practical business improvements. 
-            </p>
-            <p class="border-l-2 border-emerald-500 pl-4 py-1 italic text-slate-300">
-              "I practice what is known as 'Vibe Coding'. I leverage modern AI tools, low-code platforms, and visual assemblers to build fast and beautifully. I don't write complex code databases when a clear, calmer automated connection achieves the same target with zero maintenance headache."
-            </p>
-          </div>
-        </div>
-
-        <!-- Philosophy Right Visual Bento -->
-        <div class="lg:col-span-6 space-y-4">
-          <div class="p-6 bg-[#0E1116] rounded-2xl border border-white/5 space-y-2">
-            <span class="text-emerald-400 text-xs font-mono font-bold tracking-wider block">01 / The No-Complexity Goal</span>
-            <p class="text-white font-display font-bold text-sm">Complexity is a Debt.</p>
-            <p class="text-xs text-slate-400 leading-relaxed font-light">
-              Most businesses don't need highly engineered databases. They need a simple, aesthetic form that passes enquiries to WhatsApp or email without anything falling through.
+          <div class="text-center space-y-3 max-w-2xl mx-auto">
+            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold">// Interactive AI Playground</span>
+            <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">Interactive Automation Playground</h2>
+            <p class="text-slate-400 text-sm font-light">
+              We design and build functional, interactive automation prototypes to prove concepts before coding live. Test drive the micro-systems below.
             </p>
           </div>
 
-          <div class="p-6 bg-[#0E1116] rounded-2xl border border-white/5 space-y-2">
-            <span class="text-teal-400 text-xs font-mono font-bold tracking-wider block">02 / Rapid Vibe Coding Build Speeds</span>
-            <p class="text-white font-display font-bold text-sm">Powered by modern AI Workflows.</p>
-            <p class="text-xs text-slate-400 leading-relaxed font-light">
-              By designing in Figma and translating ideas directly using Tailwind and AI frameworks, I construct highly tailored digital channels in days instead of months.
-            </p>
-          </div>
-        </div>
+          <!-- Sandbox Card Widget -->
+          <div class="bg-[#0a0c12] rounded-3xl border border-white/5 p-6 sm:p-8 space-y-8 relative overflow-hidden">
+            <div class="absolute -top-24 -left-24 w-48 h-48 bg-indigo-500/5 rounded-full blur-[80px] pointer-events-none"></div>
 
-      </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!-- REAL LIFE CASE STUDIES                       -->
-    <!-- ============================================ -->
-    <section id="case-studies" class="py-24 px-6 border-t border-white/5 bg-[#0A0C10]/30 relative">
-      <div class="max-w-6xl mx-auto space-y-16">
-        
-        <div class="text-center space-y-3 max-w-2xl mx-auto">
-          <span class="text-xs font-mono tracking-[0.2em] text-emerald-400 uppercase font-extrabold">// Real Work Impact</span>
-          <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">Processes streamlined in the wild.</h2>
-          <p class="text-slate-400 text-sm font-light">
-            Real improvements built for active local service teams. We focus on relief, not adding complexity.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          
-          <!-- Case Study 1: Dental Intake -->
-          <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-full space-y-6">
-            <div class="space-y-4">
-              <span class="text-emerald-400 font-mono text-[10px] tracking-wider block uppercase">Case Study 01 / Healthcare Operations</span>
-              <h3 class="text-xl font-display font-bold text-white">The Overloaded Dental Front Desk</h3>
-              <p class="text-xs text-slate-400 leading-relaxed font-light">
-                A local dental practice was staying open but struggling to stay responsive. Enquiries were landing from emails, voice logs, and web forms simultaneously. Staff was heavily overloaded.
-              </p>
-              <div class="p-3 bg-emerald-950/20 border border-emerald-900/40 rounded-xl text-xs text-emerald-300 font-light">
-                <strong>The Fix:</strong> Designed a calmer visual intake form that instantly parses urgency keywords and filters high-priority patient slots securely down to receptionist alerts.
-              </div>
+            <!-- Tab Selectors -->
+            <div class="flex flex-wrap justify-center sm:justify-start gap-2 border-b border-white/5 pb-6">
+              <button onclick="switchPlaygroundTab('triage')" id="tab-btn-triage" class="tab-btn active px-4 py-2 bg-indigo-500/10 text-indigo-400 border border-indigo-500/30 rounded-full font-mono text-xs font-bold transition-all">
+                1. AI Patient Triage Form
+              </button>
+              <button onclick="switchPlaygroundTab('webhook')" id="tab-btn-webhook" class="tab-btn px-4 py-2 hover:bg-white/5 text-slate-400 rounded-full font-mono text-xs transition-all">
+                2. Visual Webhook Router (Make.com)
+              </button>
+              <button onclick="switchPlaygroundTab('ai-reply')" id="tab-btn-ai-reply" class="tab-btn px-4 py-2 hover:bg-white/5 text-slate-400 rounded-full font-mono text-xs transition-all">
+                3. Smart AI Lead Responder
+              </button>
             </div>
-            <div class="pt-2 border-t border-white/5 flex justify-between items-center text-[11px] text-slate-500 font-mono">
-              <span>Result: Zero dropped bookings</span>
-              <span class="text-emerald-400 font-bold">15 hours saved / week</span>
-            </div>
-          </div>
 
-          <!-- Case Study 2: Plumbing Lead Velocity -->
-          <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-full space-y-6">
-            <div class="space-y-4">
-              <span class="text-teal-400 font-mono text-[10px] tracking-wider block uppercase">Case Study 02 / Local Field Service</span>
-              <h3 class="text-xl font-display font-bold text-white">The Lost Plumbing Momentum</h3>
-              <p class="text-xs text-slate-400 leading-relaxed font-light">
-                An active plumbing business was getting customer leads, but losing momentum immediately after the first contact because scheduling required constant back-and-forth emails.
-              </p>
-              <div class="p-3 bg-teal-950/20 border border-teal-900/40 rounded-xl text-xs text-teal-300 font-light">
-                <strong>The Fix:</strong> Created a simpler pathway right after first contact. Form submissions trigger instant SMS scheduling alerts via Make, allowing instant calendar bookings.
-              </div>
-            </div>
-            <div class="pt-2 border-t border-white/5 flex justify-between items-center text-[11px] text-slate-500 font-mono">
-              <span>Result: Prompt dispatch responses</span>
-              <span class="text-teal-400 font-bold">Automatic routing</span>
-            </div>
-          </div>
-
-          <!-- Case Study 3: Beauty Salon Template -->
-          <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-full space-y-6">
-            <div class="space-y-4">
-              <span class="text-indigo-400 font-mono text-[10px] tracking-wider block uppercase">Case Study 03 / Beauty &amp; Wellness</span>
-              <h3 class="text-xl font-display font-bold text-white">The Instant Salon Launch</h3>
-              <p class="text-xs text-slate-400 leading-relaxed font-light">
-                Built for beauty freelancers and boutique salon owners who need a professional, fast, and gorgeous digital presence without paying thousands of pounds in custom monthly fees.
-              </p>
-              <div class="p-3 bg-indigo-950/20 border border-indigo-900/40 rounded-xl text-xs text-indigo-300 font-light">
-                <strong>The Fix:</strong> Designed a beautiful salon template optimized for rapid setups, complete with a custom styled WhatsApp booking handshake that converts visitors instantly.
-              </div>
-            </div>
-            <div class="pt-2 border-t border-white/5 flex justify-between items-center text-[11px] text-slate-500 font-mono">
-              <span>Result: Reusable framework</span>
-              <span class="text-indigo-400 font-bold">2-hour custom setup</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!-- PLAYGROUND DEMO (The Vibe Code Simulator)     -->
-    <!-- ============================================ -->
-    <section id="playground" class="py-24 px-6 border-t border-white/5 relative bg-[#0E1116]/40">
-      <div class="max-w-6xl mx-auto space-y-12">
-        
-        <div class="text-center space-y-3 max-w-2xl mx-auto">
-          <span class="text-xs font-mono tracking-[0.2em] text-emerald-400 uppercase font-extrabold">// Interactive Vibe Code Playground</span>
-          <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">Try the automated tools I build</h2>
-          <p class="text-slate-400 text-sm font-light">
-            I designed and wired these three micro-simulations below to show you exactly how my "calmer systems" operate in real-time. Feel free to interact with them.
-          </p>
-        </div>
-
-        <!-- Playground Core Dashboard Widget -->
-        <div class="bg-[#0F1116] rounded-3xl border border-white/5 p-6 sm:p-8 space-y-8 relative overflow-hidden">
-          <div class="absolute -top-24 -left-24 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none"></div>
-
-          <!-- Tab Selector -->
-          <div class="flex flex-wrap justify-center sm:justify-start gap-2 border-b border-white/5 pb-6">
-            <button onclick="switchPlaygroundTab('triage')" id="tab-btn-triage" class="tab-btn active px-4 py-2 bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-full font-mono text-xs font-bold transition-all">
-              1. Aura Patient Triage
-            </button>
-            <button onclick="switchPlaygroundTab('webhook')" id="tab-btn-webhook" class="tab-btn px-4 py-2 hover:bg-white/5 text-slate-400 rounded-full font-mono text-xs transition-all">
-              2. Make.com Webhook Visualizer
-            </button>
-            <button onclick="switchPlaygroundTab('ai-reply')" id="tab-btn-ai-reply" class="tab-btn px-4 py-2 hover:bg-white/5 text-slate-400 rounded-full font-mono text-xs transition-all">
-              3. AI Lead Reply Drafter
-            </button>
-          </div>
-
-          <!-- Tab Content 1: Triage Sandbox -->
-          <div id="play-triage" class="playground-tab-pane grid grid-cols-1 lg:grid-cols-12 gap-8 items-start animate-fadeIn">
-            <div class="lg:col-span-7 space-y-6">
-              <div class="space-y-2">
-                <span class="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider">Aura Patient Intake Simulator</span>
-                <h3 class="text-white font-display text-lg font-bold">Filter urgency out of messy customer entries</h3>
-                <p class="text-xs text-slate-400 font-light leading-relaxed">
-                  Fill in this mock appointment request. Watch how the validation logic intercepts and assigns a priority level dynamically, logging it immediately in the "Urgent Bypass Queue" or the "Routine Batch Ledger".
-                </p>
-              </div>
-
-              <!-- Live Form -->
-              <div class="space-y-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <input type="text" id="triage-name" placeholder="Patient Name (e.g., Sarah Mitchell)" class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emerald-500 transition-all font-sans" />
-                  <input type="email" id="triage-email" placeholder="Email (e.g., sarah@example.com)" class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emerald-500 transition-all font-sans" />
+            <!-- Tab Content 1: Triage Sandbox -->
+            <div id="play-triage" class="playground-tab-pane grid grid-cols-1 lg:grid-cols-12 gap-8 items-start animate-fadeIn">
+              <div class="lg:col-span-7 space-y-6">
+                <div class="space-y-2">
+                  <span class="text-[10px] font-mono text-indigo-400 font-bold uppercase tracking-wider">Smart Triage Intake</span>
+                  <h3 class="text-white font-display text-lg font-bold">Dynamic Urgency Evaluation</h3>
+                  <p class="text-xs text-slate-400 font-light leading-relaxed">
+                    Submit mock entries. System patterns detect the urgency of the concern and route the client details instantly to either the "Critical Emergency Board" or the "Standard Appointment Buffer."
+                  </p>
                 </div>
+
+                <!-- Form -->
+                <div class="space-y-4">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <input type="text" id="triage-name" placeholder="Patient Name (e.g., Sarah Mitchell)" class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-all" />
+                    <input type="email" id="triage-email" placeholder="Email Address" class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-all" />
+                  </div>
+                  <div>
+                    <label class="block text-[10px] font-mono uppercase tracking-[0.15em] text-slate-500 font-bold mb-2">Select Symptom Type:</label>
+                    <select id="triage-type" class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-all">
+                      <option value="routine">Routine Checkup / Cleaning Inquiry</option>
+                      <option value="emergency">Extreme/Throbbing Nerve Pain &amp; Swelling (Urgent)</option>
+                      <option value="routine">Invisalign/Aligner Consultation Check</option>
+                      <option value="emergency">Accidental Dental Trauma / Lost Tooth (Urgent)</option>
+                    </select>
+                  </div>
+
+                  <button onclick="submitPlaygroundTriage()" class="w-full py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-mono text-xs font-bold uppercase tracking-wider transition-all rounded-xl">
+                    Submit to AI Routing Webhook →
+                  </button>
+                </div>
+              </div>
+
+              <!-- Dashboard Outputs -->
+              <div class="lg:col-span-5 bg-background border border-white/5 rounded-2xl p-5 space-y-4 flex flex-col justify-between min-h-[300px]">
                 <div>
-                  <label class="block text-[10px] font-mono uppercase tracking-[0.15em] text-slate-500 font-bold mb-2">What service do you need?</label>
-                  <select id="triage-type" class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emerald-500 transition-all">
-                    <option value="routine">Routine Cleaning / Dental Checkup</option>
-                    <option value="emergency">Severe Toothache / Swollen Jaw (Urgent)</option>
-                    <option value="routine">Orthodontic Consultation check</option>
-                    <option value="emergency">Bleeding Gums / Sudden Trauma (Urgent)</option>
-                  </select>
+                  <div class="flex items-center justify-between pb-3 border-b border-white/5 mb-3">
+                    <span class="text-[9px] font-mono text-slate-500 uppercase tracking-wider">Airtable Database Replica</span>
+                    <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+                  </div>
+                  <div id="triage-dashboard-view" class="font-mono text-[10px] text-slate-400 space-y-2">
+                    <div class="p-3 bg-panel border border-white/5 rounded-xl flex justify-between items-center">
+                      <div>
+                        <div class="text-white font-bold font-sans">Alex Henderson</div>
+                        <div>Teeth Whitening Consultation</div>
+                      </div>
+                      <span class="px-2 py-0.5 bg-slate-500/10 text-slate-400 border border-white/5 rounded font-bold uppercase text-[8px]">Standard Queue</span>
+                    </div>
+                    <div class="p-3 bg-panel border border-rose-500/15 rounded-xl flex justify-between items-center animate-pulse">
+                      <div>
+                        <div class="text-white font-bold font-sans">Claire Morris</div>
+                        <div class="text-rose-400">Broken Crown / Heavy Bleeding</div>
+                      </div>
+                      <span class="px-2 py-0.5 bg-rose-500/10 text-rose-400 border border-rose-500/20 rounded font-bold uppercase text-[8px]">Emergency Triage</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-3 bg-panel/40 border border-white/5 rounded-xl">
+                  <p id="triage-log-text" class="text-[10px] font-mono text-slate-500 italic text-center">
+                    Awaiting intake form trigger...
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Content 2: Webhook Visualizer -->
+            <div id="play-webhook" class="playground-tab-pane hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-start animate-fadeIn">
+              <div class="lg:col-span-7 space-y-6">
+                <div class="space-y-2">
+                  <span class="text-[10px] font-mono text-emeraldAccent font-bold uppercase tracking-wider">Make.com Integration Engine</span>
+                  <h3 class="text-white font-display text-lg font-bold">Visualizing Webhooks In Action</h3>
+                  <p class="text-xs text-slate-400 font-light leading-relaxed">
+                    When someone takes action on your website, a webhook carries the data across tools. Choose a mock scenario below and watch the automated pipeline execute node-by-node in real-time.
+                  </p>
                 </div>
 
-                <button onclick="submitPlaygroundTriage()" class="w-full py-3.5 bg-emerald-500 hover:bg-emerald-400 rounded-xl text-slate-950 font-mono text-xs font-bold uppercase tracking-wider transition-all">
-                  Process Enquiry Payload →
+                <!-- Webhook trigger selectors -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <button onclick="triggerWebhookRun('website')" class="p-4 bg-background border border-white/10 hover:border-emeraldAccent hover:bg-white/5 text-left rounded-xl transition-all space-y-2">
+                    <span class="block text-white font-bold text-xs">A: New Booking form</span>
+                    <p class="text-[10px] text-slate-500 font-mono">User picks an available calendar slot on your site.</p>
+                  </button>
+                  <button onclick="triggerWebhookRun('whatsapp')" class="p-4 bg-background border border-white/10 hover:border-emeraldAccent hover:bg-white/5 text-left rounded-xl transition-all space-y-2">
+                    <span class="block text-white font-bold text-xs">B: Incoming SMS</span>
+                    <p class="text-[10px] text-slate-500 font-mono">A customer responds to an automated text alert.</p>
+                  </button>
+                  <button onclick="triggerWebhookRun('stripe')" class="p-4 bg-background border border-white/10 hover:border-emeraldAccent hover:bg-white/5 text-left rounded-xl transition-all space-y-2">
+                    <span class="block text-white font-bold text-xs">C: Stripe Invoice Paid</span>
+                    <p class="text-[10px] text-slate-500 font-mono">Stripe confirms deposit received successfully.</p>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Webhook Logs -->
+              <div class="lg:col-span-5 bg-background border border-white/5 rounded-2xl p-5 space-y-6 flex flex-col justify-between min-h-[300px]">
+                <div>
+                  <div class="flex items-center justify-between pb-3 border-b border-white/5 mb-3">
+                    <span class="text-[9px] font-mono text-slate-500 uppercase tracking-wider">Make.com Webhook Stream</span>
+                    <span class="text-[9px] font-mono bg-emerald-500/10 text-emeraldAccent border border-emerald-500/20 px-2 py-0.5 rounded font-bold uppercase" id="webhook-state-badge">Standby</span>
+                  </div>
+
+                  <!-- Webhook node connections -->
+                  <div class="space-y-3 font-mono text-[10px]" id="webhook-steps">
+                    <div class="flex items-center gap-3 text-slate-500 transition-colors" id="step-node-1">
+                      <span class="w-5 h-5 rounded-full bg-white/5 flex items-center justify-center text-[9px]">1</span>
+                      <span>Capture JSON from Webhook Router...</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-slate-500 transition-colors" id="step-node-2">
+                      <span class="w-5 h-5 rounded-full bg-white/5 flex items-center justify-center text-[9px]">2</span>
+                      <span>Update Client record inside Airtable...</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-slate-500 transition-colors" id="step-node-3">
+                      <span class="w-5 h-5 rounded-full bg-white/5 flex items-center justify-center text-[9px]">3</span>
+                      <span>Trigger Twilio auto-onboarding text message...</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-3 bg-panel border border-white/5 rounded-xl font-mono text-[9px] text-slate-500" id="webhook-console">
+                  [SYSTEM]: Standby. Select an automation trigger on the left to fire the Make.com simulator.
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Content 3: AI response drafting -->
+            <div id="play-ai-reply" class="playground-tab-pane hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-start animate-fadeIn">
+              <div class="lg:col-span-7 space-y-6">
+                <div class="space-y-2">
+                  <span class="text-[10px] font-mono text-indigo-400 font-bold uppercase tracking-wider">AI Lead Assistant</span>
+                  <h3 class="text-white font-display text-lg font-bold">Unstructured Email Assistant</h3>
+                  <p class="text-xs text-slate-400 font-light leading-relaxed">
+                    Instead of spending hours drafting client emails, my AI automation reads messy, unstructured inquiries, cross-references your availability/pricing, and drafts a flawless email reply instantly.
+                  </p>
+                </div>
+
+                <!-- Template selectors -->
+                <div class="flex gap-2">
+                  <button onclick="loadReplyTemplate('booking')" class="px-3 py-1.5 bg-background hover:bg-white/5 border border-white/5 rounded-lg text-[9px] font-mono text-slate-300 transition-colors">
+                    ✉️ Template A: Reschedule Request
+                  </button>
+                  <button onclick="loadReplyTemplate('pricing')" class="px-3 py-1.5 bg-background hover:bg-white/5 border border-white/5 rounded-lg text-[9px] font-mono text-slate-300 transition-colors">
+                    ✉️ Template B: Pricing Request
+                  </button>
+                </div>
+
+                <textarea id="ai-input-message" rows="4" placeholder="Or type a custom client email..." class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-all font-sans leading-relaxed"></textarea>
+
+                <button onclick="generateAIReply()" class="w-full py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-mono text-xs font-bold uppercase tracking-wider rounded-xl transition-all animate-pulse">
+                  Generate Draft with AI Assistant →
+                </button>
+              </div>
+
+              <!-- Draft display -->
+              <div class="lg:col-span-5 bg-background border border-white/5 rounded-2xl p-5 space-y-4 flex flex-col justify-between min-h-[300px]">
+                <div>
+                  <div class="flex items-center justify-between pb-3 border-b border-white/5 mb-3 font-mono text-[9px] text-slate-500">
+                    <span>Generated AI Reply (Ready-to-Approve)</span>
+                    <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+                  </div>
+                  <div id="ai-draft-box" class="font-sans text-xs text-slate-400 space-y-2 bg-panel/40 p-3 rounded-xl border border-white/5 h-44 overflow-y-auto custom-scroll italic leading-relaxed">
+                    Select a template on the left or type your own email draft, then run the assistant.
+                  </div>
+                </div>
+
+                <button onclick="copyAIDraft()" class="w-full py-2 bg-background border border-white/5 hover:bg-white/5 rounded-xl font-mono text-[9px] font-bold text-slate-400 hover:text-white transition-all">
+                  📋 Copy Generated Reply
                 </button>
               </div>
             </div>
 
-            <!-- Triage Results Output -->
-            <div class="lg:col-span-5 bg-background border border-white/5 rounded-2xl p-5 space-y-4 flex flex-col justify-between min-h-[300px]">
+          </div>
+        </div>
+      </section>
+
+      <!-- Standard Contact Section -->
+      <section id="contact" class="py-28 px-6 md:px-10 border-t border-white/5 bg-[#050609]/50 relative">
+        <div class="max-w-4xl mx-auto space-y-12">
+          
+          <div class="text-center space-y-4">
+            <span class="text-xs font-mono tracking-[0.2em] text-indigo-400 uppercase font-extrabold block">// Next Steps</span>
+            <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white">Let's Build Your Automation Machine</h2>
+            <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-light">
+              Get a premium web platform that wins customers, backed by AI automations that handle your repetetive admin. Drop me a line below and let's claim your blueprint.
+            </p>
+          </div>
+
+          <!-- Quick access nodes -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <a href="mailto:rodhanala@gmail.com" class="p-6 bg-background hover:bg-[#0c0d12]/50 border border-white/5 rounded-2xl text-center space-y-2 block transition-all group">
+              <span class="text-2xl block">📧</span>
+              <span class="block text-white font-display font-bold text-sm group-hover:text-indigo-400 transition-colors">Direct Email</span>
+              <span class="block text-xs font-mono text-slate-500">rodhanala@gmail.com</span>
+            </a>
+
+            <a href="https://wa.me/447311470011" target="_blank" rel="noopener noreferrer" class="p-6 bg-background hover:bg-[#0c0d12]/50 border border-white/5 rounded-2xl text-center space-y-2 block transition-all group">
+              <span class="text-2xl block">💬</span>
+              <span class="block text-white font-display font-bold text-sm group-hover:text-indigo-400 transition-colors">WhatsApp Direct Line</span>
+              <span class="block text-xs font-mono text-slate-500">+44 7311 470011</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/rohith-dhanala-35715b162/" target="_blank" rel="noopener noreferrer" class="p-6 bg-gradient-to-tr from-indigo-950/20 via-purple-950/10 to-transparent hover:bg-white/5 border border-indigo-500/10 hover:border-indigo-500/30 rounded-2xl text-center space-y-2 block transition-all group">
+              <span class="text-2xl block">🔗</span>
+              <span class="block text-white font-display font-bold text-sm group-hover:text-indigo-400 transition-colors">LinkedIn Profile</span>
+              <span class="block text-xs font-mono text-indigo-400 font-bold">Review Design Background</span>
+            </a>
+          </div>
+
+          <!-- Form Panel -->
+          <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-4 relative">
+            <div class="absolute -top-3.5 left-8 px-4 py-1.5 rounded-full bg-indigo-600 text-[9px] font-mono font-bold uppercase tracking-wider text-white shadow-lg">
+              Project Brief Form
+            </div>
+
+            <h3 class="text-white font-display font-bold text-base text-center pt-2">Claim Your Free Design &amp; Automation Audit</h3>
+            <form id="portfolio-contact-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input type="text" id="contact-name" placeholder="Your Name" required class="bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-colors" />
+                <input type="email" id="contact-email" placeholder="Your Email" required class="bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-colors" />
+              </div>
               <div>
-                <div class="flex items-center justify-between pb-3 border-b border-white/5 mb-3">
-                  <span class="text-[9px] font-mono text-slate-500 uppercase tracking-wider">Practice Dashboard Replica</span>
-                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                </div>
-                <div id="triage-dashboard-view" class="font-mono text-[10px] text-slate-400 space-y-2">
-                  <div class="p-3 bg-panel border border-white/5 rounded-xl flex justify-between items-center">
-                    <div>
-                      <div class="text-white font-bold">John Doe</div>
-                      <div>Routine Cleaning</div>
-                    </div>
-                    <span class="px-2 py-0.5 bg-slate-500/10 text-slate-400 border border-white/5 rounded font-bold uppercase tracking-wider text-[8px]">Routine</span>
-                  </div>
-                  <div class="p-3 bg-panel border border-rose-500/15 rounded-xl flex justify-between items-center">
-                    <div>
-                      <div class="text-white font-bold">Priya Patel</div>
-                      <div class="text-rose-400">Severe Trauma (Bleeding)</div>
-                    </div>
-                    <span class="px-2 py-0.5 bg-rose-500/10 text-rose-400 border border-rose-500/20 rounded font-bold uppercase tracking-wider text-[8px] animate-pulse">Urgent Bypass</span>
-                  </div>
-                </div>
+                <label class="block text-[10px] font-mono uppercase tracking-[0.15em] text-slate-500 font-bold mb-2">What service do you need help with?</label>
+                <select id="contact-scope" class="w-full bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-colors">
+                  <option value="all">Complete Design + AI Automation Machine Package</option>
+                  <option value="product">Premium Digital Product / Modern UX Website Only</option>
+                  <option value="automation">AI Chat / Lead-Responder Automations</option>
+                  <option value="portal">Automated Client Portal / Onboarding Hub</option>
+                </select>
               </div>
-              <div class="p-3 bg-panel/40 border border-white/5 rounded-xl">
-                <p id="triage-log-text" class="text-[10px] font-mono text-slate-500 italic text-center">
-                  Waiting for next registration payload...
-                </p>
+              <div>
+                <textarea id="contact-msg" rows="3" placeholder="Tell me briefly about your business and your current manual bottlenecks (e.g., booking delays, follow-ups)..." required class="w-full bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-colors resize-none"></textarea>
               </div>
+              <button type="submit" class="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md">
+                Request Free Blueprint
+              </button>
+            </form>
+
+            <!-- Success callback state -->
+            <div id="contact-feedback" class="hidden text-center py-6 space-y-2 animate-fadeIn">
+              <span class="text-3xl">🚀</span>
+              <h4 class="text-white font-display font-bold text-sm">Brief Captured Successfully</h4>
+              <p class="text-xs text-slate-400 font-light leading-relaxed">Thank you. Your project parameters have been synchronized with my Airtable database. I'll analyze your bottlenecks and reach out within 24 hours.</p>
             </div>
           </div>
 
-          <!-- Tab Content 2: Webhook Visualizer -->
-          <div id="play-webhook" class="playground-tab-pane hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-start animate-fadeIn">
-            <div class="lg:col-span-7 space-y-6">
-              <div class="space-y-2">
-                <span class="text-[10px] font-mono text-teal-400 font-bold uppercase tracking-wider">Make.com No-Code Orchestrator</span>
-                <h3 class="text-white font-display text-lg font-bold">Watch multi-app automations trigger live</h3>
-                <p class="text-xs text-slate-400 font-light leading-relaxed">
-                  In a normal setup, a webhook catches web activity and sends details to Google Sheets, sends team SMS messages, and emails clients automatically. Click below to simulate an incoming webhook run.
-                </p>
-              </div>
-
-              <!-- Simulated Trigger Buttons -->
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <button onclick="triggerWebhookRun('website')" class="p-4 bg-background border border-white/10 hover:border-teal-500 hover:bg-white/5 text-left rounded-xl transition-all space-y-2">
-                  <span class="block text-white font-bold text-xs">A. Website Lead Form</span>
-                  <p class="text-[10px] text-slate-500 font-mono">Simulate a service contact form submission.</p>
-                </button>
-                <button onclick="triggerWebhookRun('whatsapp')" class="p-4 bg-background border border-white/10 hover:border-teal-500 hover:bg-white/5 text-left rounded-xl transition-all space-y-2">
-                  <span class="block text-white font-bold text-xs">B. WhatsApp Ping</span>
-                  <p class="text-[10px] text-slate-500 font-mono">Simulate customer typing "Book" into WhatsApp.</p>
-                </button>
-                <button onclick="triggerWebhookRun('stripe')" class="p-4 bg-background border border-white/10 hover:border-teal-500 hover:bg-white/5 text-left rounded-xl transition-all space-y-2">
-                  <span class="block text-white font-bold text-xs">C. Stripe Deposit Paid</span>
-                  <p class="text-[10px] text-slate-500 font-mono">Simulate a salon booking payment success.</p>
-                </button>
-              </div>
-            </div>
-
-            <!-- Webhook Step Visualizer Console -->
-            <div class="lg:col-span-5 bg-background border border-white/5 rounded-2xl p-5 space-y-6 flex flex-col justify-between min-h-[300px]">
-              <div>
-                <div class="flex items-center justify-between pb-3 border-b border-white/5 mb-3">
-                  <span class="text-[9px] font-mono text-slate-500 uppercase tracking-wider">Make.com Integration Live Logs</span>
-                  <span class="text-[9px] font-mono bg-teal-500/10 text-teal-400 border border-teal-500/20 px-2 py-0.5 rounded font-bold uppercase" id="webhook-state-badge">Standby</span>
-                </div>
-
-                <!-- Step progress diagram -->
-                <div class="space-y-3 font-mono text-[10px]" id="webhook-steps">
-                  <div class="flex items-center gap-3 text-slate-500 transition-colors" id="step-node-1">
-                    <span class="w-5 h-5 rounded-full bg-white/5 flex items-center justify-center text-[9px]">1</span>
-                    <span>Catch payload webhook on router...</span>
-                  </div>
-                  <div class="flex items-center gap-3 text-slate-500 transition-colors" id="step-node-2">
-                    <span class="w-5 h-5 rounded-full bg-white/5 flex items-center justify-center text-[9px]">2</span>
-                    <span>Push and structure row in Airtable...</span>
-                  </div>
-                  <div class="flex items-center gap-3 text-slate-500 transition-colors" id="step-node-3">
-                    <span class="w-5 h-5 rounded-full bg-white/5 flex items-center justify-center text-[9px]">3</span>
-                    <span>Trigger Twilio SMS booking alert to admin...</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Console output -->
-              <div class="p-3 bg-panel border border-white/5 rounded-xl font-mono text-[9px] text-slate-500" id="webhook-console">
-                [SYSTEM]: Select a trigger scenario above to run automation loops.
-              </div>
-            </div>
-          </div>
-
-          <!-- Tab Content 3: AI Reply Generator -->
-          <div id="play-ai-reply" class="playground-tab-pane hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-start animate-fadeIn">
-            <div class="lg:col-span-7 space-y-6">
-              <div class="space-y-2">
-                <span class="text-[10px] font-mono text-indigo-400 font-bold uppercase tracking-wider">Aesthetic Copy &amp; Reply Drafter</span>
-                <h3 class="text-white font-display text-lg font-bold">Stitch AI tools to auto-draft emails</h3>
-                <p class="text-xs text-slate-400 font-light leading-relaxed">
-                  Service operators spend hours replying to repetitive enquiries. In my setups, GPT models instantly read incoming messages and draft responses. Choose a client message template to see it draft live.
-                </p>
-              </div>
-
-              <!-- Mock Email Selections -->
-              <div class="flex gap-2">
-                <button onclick="loadReplyTemplate('booking')" class="px-3 py-1.5 bg-background hover:bg-white/5 border border-white/5 rounded-lg text-[9px] font-mono text-slate-300 transition-colors">
-                  ✉️ Template A: Dental Reschedule Query
-                </button>
-                <button onclick="loadReplyTemplate('pricing')" class="px-3 py-1.5 bg-background hover:bg-white/5 border border-white/5 rounded-lg text-[9px] font-mono text-slate-300 transition-colors">
-                  ✉️ Template B: Plumbing Pricing Request
-                </button>
-              </div>
-
-              <textarea id="ai-input-message" rows="4" placeholder="Or type a custom client message here..." class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-indigo-500 transition-all font-sans leading-relaxed"></textarea>
-
-              <button onclick="generateAIReply()" class="w-full py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-mono text-xs font-bold uppercase tracking-wider rounded-xl transition-all">
-                Run AI Draft Generator
-              </button>
-            </div>
-
-            <!-- Draft Results Console -->
-            <div class="lg:col-span-5 bg-background border border-white/5 rounded-2xl p-5 space-y-4 flex flex-col justify-between min-h-[300px]">
-              <div>
-                <div class="flex items-center justify-between pb-3 border-b border-white/5 mb-3 font-mono text-[9px] text-slate-500">
-                  <span>GPT Draft Output</span>
-                  <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
-                </div>
-                <!-- Console log outputs -->
-                <div id="ai-draft-box" class="font-sans text-xs text-slate-400 space-y-2 bg-panel/40 p-3 rounded-xl border border-white/5 h-44 overflow-y-auto custom-scroll italic">
-                  Awaiting draft generation request... Select a template or write inside the form, then click run.
-                </div>
-              </div>
-
-              <!-- Copy trigger -->
-              <button onclick="copyAIDraft()" class="w-full py-2 bg-background border border-white/5 hover:bg-white/5 rounded-xl font-mono text-[9px] font-bold text-slate-400 hover:text-white transition-all">
-                📋 Copy Draft Content
-              </button>
-            </div>
+          <!-- Footer Metadata -->
+          <div class="pt-8 border-t border-white/5 text-center space-y-2 font-mono text-[10px] text-slate-600">
+            <div>&copy; <span id="footer-year">2026</span> Rohith Dhanala. Premium Digital Products &amp; AI Automations.</div>
+            <div>Southampton, United Kingdom • Supporting Brands Globally.</div>
           </div>
 
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <!-- ============================================ -->
-    <!-- GET IN TOUCH / FOOTER                        -->
+    <!-- DETAILED CASE STUDY 1: AURA CLINICAL ENGINE  -->
     <!-- ============================================ -->
-    <section id="contact" class="py-24 px-6 border-t border-white/5 bg-[#0A0C10] relative">
-      <div class="max-w-4xl mx-auto space-y-12">
+    <div id="page-aura-case" class="app-page hidden min-h-screen pt-32 pb-24 px-6 md:px-10">
+      <div class="max-w-5xl mx-auto space-y-12 animate-fadeIn">
         
-        <div class="text-center space-y-4">
-          <span class="text-xs font-mono tracking-[0.2em] text-emerald-400 uppercase font-extrabold block">// Clear Next Step</span>
-          <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white">Let's find the clearest path forward</h2>
-          <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-light">
-            Share what you want to improve—whether it is a high-converting website, automated lead channels, or getting your operations organized. Let's make running your business feel calmer.
+        <button onclick="navigateTo('home')" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 text-xs font-bold font-mono text-slate-400 hover:text-white rounded-full transition-all uppercase">
+          ← Back to Portfolio
+        </button>
+
+        <div class="space-y-4">
+          <span class="text-xs font-mono bg-emerald-500/10 text-emeraldAccent border border-emerald-500/20 px-3 py-1 rounded font-bold uppercase tracking-widest">Case Study 01 // Clinical Operations &amp; Booking</span>
+          <h1 class="text-3xl sm:text-5xl font-display font-extrabold text-white leading-tight">
+            Aura: Elegant Intake UX Linked to AI Emergency Triage
+          </h1>
+          <p class="text-slate-400 text-sm sm:text-base font-light max-w-3xl leading-relaxed">
+            How we completely transformed a busy multi-chair private dental clinic's messy, manual phone-booking bottleneck into a beautiful, step-by-step patient registration portal linked to an intelligent AI emergency classifier.
           </p>
         </div>
 
-        <!-- Connection Contact Methods Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          
-          <!-- Email -->
-          <a href="mailto:rodhanala@gmail.com" class="p-6 bg-background hover:bg-[#111318]/50 border border-white/5 rounded-2xl text-center space-y-2 block transition-all group">
-            <span class="text-2xl block">📧</span>
-            <span class="block text-white font-display font-bold text-sm group-hover:text-emerald-400 transition-colors">Email Me</span>
-            <span class="block text-xs font-mono text-slate-500">rodhanala@gmail.com</span>
-          </a>
-
-          <!-- WhatsApp -->
-          <a href="https://wa.me/447311470011" target="_blank" rel="noopener noreferrer" class="p-6 bg-background hover:bg-[#111318]/50 border border-white/5 rounded-2xl text-center space-y-2 block transition-all group">
-            <span class="text-2xl block">💬</span>
-            <span class="block text-white font-display font-bold text-sm group-hover:text-emerald-400 transition-colors">WhatsApp Chat</span>
-            <span class="block text-xs font-mono text-slate-500">+44 7311 470011</span>
-          </a>
-
-          <!-- Strategy Call Book -->
-          <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" class="p-6 bg-gradient-to-tr from-emerald-950/20 via-teal-950/10 to-transparent hover:bg-white/5 border border-emerald-500/10 hover:border-emerald-500/30 rounded-2xl text-center space-y-2 block transition-all group">
-            <span class="text-2xl block">🗓️</span>
-            <span class="block text-white font-display font-bold text-sm group-hover:text-emerald-400 transition-colors">Book Strategy Call</span>
-            <span class="block text-xs font-mono text-emerald-400 font-bold">Free 15-Min Process Assessment</span>
-          </a>
-
-        </div>
-
-        <!-- Inline Enquiry Form -->
-        <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-4">
-          <h3 class="text-white font-display font-bold text-base text-center">Or drop a quick outline here</h3>
-          <form id="portfolio-contact-form" class="space-y-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input type="text" id="contact-name" placeholder="Your Name" required class="bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emerald-500 transition-colors" />
-              <input type="email" id="contact-email" placeholder="Your Email" required class="bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emerald-500 transition-colors" />
-            </div>
-            <div>
-              <textarea id="contact-msg" rows="3" placeholder="Tell me briefly about the manual friction or website needs you have..." required class="w-full bg-background border border-white/5 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emerald-500 transition-colors resize-none"></textarea>
-            </div>
-            <button type="submit" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold uppercase tracking-wider rounded-xl transition-all">
-              Send Process Summary
-            </button>
-          </form>
-
-          <!-- Form Feedback -->
-          <div id="contact-feedback" class="hidden text-center py-4 space-y-2">
-            <span class="text-2xl">🎉</span>
-            <h4 class="text-white font-display font-bold text-sm">Got it. Let's make things calmer.</h4>
-            <p class="text-xs text-slate-400 font-light">I will look through this and reach back within 24 hours.</p>
+        <!-- Metric Parameter Panel -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 p-6 bg-[#0a0c12] border border-white/5 rounded-2xl font-mono text-xs">
+          <div>
+            <span class="text-slate-500 block uppercase mb-1 font-bold">1. Project Niche</span>
+            <span class="text-white font-sans text-sm font-semibold">Service-Based Medical/Clinical</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block uppercase mb-1 font-bold">2. My Role</span>
+            <span class="text-white font-sans text-sm font-semibold">Product Design &amp; Automations</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block uppercase mb-1 font-bold">3. Tools Implemented</span>
+            <span class="text-white font-sans text-sm font-semibold">Make.com, Airtable, OpenAI API, Twilio</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block uppercase mb-1 font-bold">4. Quantifiable ROI</span>
+            <span class="text-emeraldAccent font-sans text-sm font-bold">15 Admin Hours Saved / Week</span>
           </div>
         </div>
 
-        <!-- Footer Info -->
-        <div class="pt-8 border-t border-white/5 text-center space-y-2 font-mono text-[10px] text-slate-600">
-          <div>&copy; <span id="footer-year">2026</span> Rohith Dhanala. Built with design, clarity &amp; quiet operations.</div>
-          <div>Southampton, Hampshire, UK • Available globally.</div>
+        <!-- Deep Case Narratives -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 text-xs leading-relaxed text-slate-400">
+          <div class="md:col-span-8 space-y-6">
+            <h2 class="text-lg font-display font-bold text-white uppercase tracking-wider border-l-2 border-emeraldAccent pl-3">The Challenge &amp; Bottleneck</h2>
+            <p>
+              A busy multi-chair private dental practice suffered from immense administrative strain. Patient registrations, appointment scheduling, and emergency triage calls were handled entirely over the phone by front-desk staff. With dozens of incoming calls daily, staff spent over 15 hours every week manually tracking information, checking calendars, and keying customer details into databases.
+            </p>
+            <p>
+              More critically, patients experiencing extreme emergency conditions—like trauma, bleeding, or throbbing root canal pain—often had to wait on hold behind standard cleaning inquiries. The business was losing high-value urgent patients due to phone delays, while the staff felt constantly burned out by the manual overhead.
+            </p>
+
+            <h2 class="text-lg font-display font-bold text-white uppercase tracking-wider border-l-2 border-emeraldAccent pl-3">The Blueprint Strategy</h2>
+            <p>
+              We completely bypassed the manual bottleneck by building a two-part digital system:
+            </p>
+            <ol class="list-decimal list-inside space-y-2 pl-2">
+              <li><strong>Premium Front-End Intake Portal</strong>: A gorgeous, step-by-step digital form that takes patients through medical demographics, symptom tags, and appointment availability. This feels incredibly premium and works flawlessly on mobile.</li>
+              <li><strong>AI Triage Engine (Make.com + OpenAI)</strong>: On submission, the data is instantly processed. If symptoms indicate emergency conditions, an AI routing webhook triggers a priority alarm. It drops the patient at the top of an Airtable dispatch ledger, and alerts on-duty clinical staff via Twilio SMS for immediate callback. Standard cleaning requests are systematically matched directly into calendar booking slots.</li>
+            </ol>
+            <p>
+              This combination ensured urgent patients received clinical callbacks within 90 seconds, and eliminated manual registration re-keying completely.
+            </p>
+          </div>
+
+          <!-- Relational database scheme diagram representation -->
+          <div class="md:col-span-4 bg-[#0a0c12] border border-white/5 rounded-2xl p-4 space-y-4">
+            <span class="text-[9px] font-mono text-emeraldAccent block tracking-widest uppercase font-bold">The Automation Schema</span>
+            <div class="space-y-3 font-mono text-[9px]">
+              <div class="p-2.5 bg-background border border-white/5 rounded-xl">
+                <span class="text-white font-bold block mb-1">1. Intake UI Collection</span>
+                <div class="text-slate-500">• User inputs demographics &amp; symptoms.</div>
+                <div class="text-slate-500">• Frontend validations prevent blank submissions.</div>
+              </div>
+              <div class="p-2.5 bg-background border border-white/5 rounded-xl">
+                <span class="text-white font-bold block mb-1">2. AI Router Webhook</span>
+                <div class="text-slate-500">• Prompt classifies symptoms into priority values.</div>
+                <div class="text-slate-500">• If URGENT: Fired Twilio on-call alarm.</div>
+                <div class="text-slate-500">• If ROUTINE: Automatically scheduled in booking slot.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Embedded Simulation -->
+        <div class="space-y-4 border-t border-white/5 pt-8">
+          <div class="text-left">
+            <h2 class="text-xl font-display font-extrabold text-white">Live Prototype Sandbox</h2>
+            <p class="text-slate-400 text-xs">Run through the step-by-step booking form below. Submit mock parameters to test how the AI router automatically prioritizes your entry in the database replica on the right.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 bg-[#0a0c12] rounded-3xl p-6 border border-white/5 relative overflow-hidden">
+            <!-- Form frame -->
+            <div class="md:col-span-7 bg-background border border-white/5 rounded-2xl p-6 space-y-6 relative z-10" id="aura-client-box">
+              <div class="flex justify-between items-center pb-4 border-b border-white/5">
+                <span class="text-xs font-mono font-bold text-slate-200 tracking-wider">AURA COMPONENT SIMULATOR</span>
+                <div class="flex gap-1" id="aura-step-dots">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emeraldAccent"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-white/10"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-white/10"></span>
+                </div>
+              </div>
+
+              <!-- Progression content -->
+              <div id="aura-form-container">
+                <!-- Frame 1 -->
+                <div class="aura-step-section space-y-4" data-step="1">
+                  <div class="space-y-1">
+                    <span class="text-[9px] font-mono text-emeraldAccent font-bold uppercase">Step 1: Contact Details</span>
+                    <h3 class="text-white font-display text-base font-bold">Input Core Patient Information</h3>
+                  </div>
+                  <div class="space-y-3">
+                    <input type="text" id="aura-patient-name" placeholder="Full Name" class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emeraldAccent transition-colors" />
+                    <input type="email" id="aura-patient-email" placeholder="Email Address" class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emeraldAccent transition-colors" />
+                    <input type="tel" id="aura-patient-phone" placeholder="Active Mobile Number" class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emeraldAccent transition-colors" />
+                  </div>
+                  <button onclick="auraNextStep(2)" class="w-full py-3 bg-emeraldAccent hover:bg-emerald-400 text-black font-mono text-xs font-extrabold uppercase tracking-wider transition-all rounded-xl">
+                    Verify &amp; Choose Symptoms →
+                  </button>
+                </div>
+
+                <!-- Frame 2 -->
+                <div class="aura-step-section hidden space-y-4" data-step="2">
+                  <div class="space-y-1">
+                    <span class="text-[9px] font-mono text-emeraldAccent font-bold uppercase">Step 2: Core Symptom Classification</span>
+                    <h3 class="text-white font-display text-base font-bold">Select Symptoms</h3>
+                  </div>
+                  <div class="grid grid-cols-2 gap-3" id="aura-symptoms-grid">
+                    <button onclick="toggleAuraSymptom(this, 'Bleeding / Lost Tooth Due to Accident', 'urgent')" class="p-3 rounded-xl border border-white/10 bg-background hover:bg-white/5 text-left text-xs space-y-1.5 transition-colors">
+                      <span class="block text-white font-bold">Dental Trauma / Bleeding</span>
+                      <span class="text-[9px] font-mono text-rose-400 bg-rose-500/10 px-1.5 py-0.5 rounded uppercase font-bold">EMERGENCY DETECTED</span>
+                    </button>
+                    <button onclick="toggleAuraSymptom(this, 'Extreme Throbbing Toothache / Swelling', 'urgent')" class="p-3 rounded-xl border border-white/10 bg-background hover:bg-white/5 text-left text-xs space-y-1.5 transition-colors">
+                      <span class="block text-white font-bold">Severe Pain &amp; Swelling</span>
+                      <span class="text-[9px] font-mono text-rose-400 bg-rose-500/10 px-1.5 py-0.5 rounded uppercase font-bold">EMERGENCY DETECTED</span>
+                    </button>
+                    <button onclick="toggleAuraSymptom(this, 'Routine Scaling / Check-up Request', 'routine')" class="p-3 rounded-xl border border-white/10 bg-background hover:bg-white/5 text-left text-xs space-y-1.5 transition-colors">
+                      <span class="block text-white font-bold">Routine Teeth Cleaning</span>
+                      <span class="text-[9px] font-mono text-indigo-400 bg-indigo-500/10 px-1.5 py-0.5 rounded uppercase font-bold">STANDARD SCHEDULE</span>
+                    </button>
+                    <button onclick="toggleAuraSymptom(this, 'Invisalign Alignment Assessment Check', 'routine')" class="p-3 rounded-xl border border-white/10 bg-background hover:bg-white/5 text-left text-xs space-y-1.5 transition-colors">
+                      <span class="block text-white font-bold">Aligner Consultation</span>
+                      <span class="text-[9px] font-mono text-indigo-400 bg-indigo-500/10 px-1.5 py-0.5 rounded uppercase font-bold">STANDARD SCHEDULE</span>
+                    </button>
+                  </div>
+                  <div class="flex gap-2">
+                    <button onclick="auraNextStep(1)" class="flex-1 py-3 border border-white/10 hover:bg-white/5 rounded-xl text-white font-mono text-xs font-bold uppercase tracking-wider transition-all">
+                      Back
+                    </button>
+                    <button onclick="auraNextStep(3)" class="flex-1 py-3 bg-emeraldAccent hover:bg-emerald-400 text-black font-mono text-xs font-extrabold uppercase tracking-wider transition-all">
+                      Next Step →
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Frame 3 -->
+                <div class="aura-step-section hidden space-y-4" data-step="3">
+                  <div class="space-y-1">
+                    <span class="text-[9px] font-mono text-emeraldAccent font-bold uppercase">Step 3: Preferred Schedule</span>
+                    <h3 class="text-white font-display text-base font-bold">Appointment Availability</h3>
+                  </div>
+                  <div class="grid grid-cols-2 gap-3">
+                    <input type="date" id="aura-patient-date" class="bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emeraldAccent transition-colors" />
+                    <select id="aura-patient-time" class="bg-background border border-white/10 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-emeraldAccent transition-colors">
+                      <option>Morning (08:30 - 12:00)</option>
+                      <option>Afternoon (12:00 - 15:30)</option>
+                      <option>Late PM (15:30 - 18:00)</option>
+                    </select>
+                  </div>
+                  <div class="flex gap-2">
+                    <button onclick="auraNextStep(2)" class="flex-1 py-3.5 border border-white/10 hover:bg-white/5 rounded-xl text-white font-mono text-xs font-bold uppercase tracking-wider transition-all">
+                      Back
+                    </button>
+                    <button onclick="submitAuraForm()" class="flex-1 py-3.5 bg-gradient-to-r from-emeraldAccent to-teal-500 hover:from-emerald-400 hover:to-teal-400 rounded-xl text-black font-mono text-xs font-extrabold uppercase tracking-wider transition-all">
+                      Commit to Intake DB
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ledger replica -->
+            <div class="md:col-span-5 bg-background border border-white/5 rounded-2xl p-5 space-y-4 flex flex-col justify-between min-h-[300px]">
+              <div>
+                <div class="flex items-center justify-between pb-3 border-b border-white/5 mb-3">
+                  <span class="text-[10px] font-mono text-slate-500 uppercase tracking-wider">Aura Airtable DB Replica</span>
+                  <span class="w-2 h-2 rounded-full bg-emeraldAccent animate-pulse"></span>
+                </div>
+                <div id="aura-db-view" class="font-mono text-[9px] text-slate-400 space-y-2">
+                  <div class="p-3 bg-panel border border-white/5 rounded-lg flex justify-between items-center">
+                    <div>
+                      <div class="text-white font-bold font-sans">Alex Henderson</div>
+                      <div>Standard Teeth Cleaning</div>
+                    </div>
+                    <span class="px-2 py-0.5 bg-indigo-500/10 text-indigo-400 border border-indigo-500/10 rounded font-bold uppercase text-[8px]">Standard</span>
+                  </div>
+                  <div class="p-3 bg-panel border border-white/5 rounded-lg flex justify-between items-center">
+                    <div>
+                      <div class="text-white font-bold font-sans">Claire Morris</div>
+                      <div>Broken Crown / Heavy Bleeding</div>
+                    </div>
+                    <span class="px-2 py-0.5 bg-rose-500/10 text-rose-400 border border-rose-500/10 rounded font-bold uppercase text-[8px]">Emergency</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-3 bg-panel border border-white/5 rounded-xl space-y-1.5" id="aura-ai-generation-box">
+                <span class="text-[8px] font-mono text-emeraldAccent block tracking-widest font-extrabold uppercase">API Hook Interceptor Status:</span>
+                <p class="text-[9px] font-mono text-slate-400 italic" id="aura-ai-action-text">Waiting for custom registration webhook buffer...</p>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
-    </section>
+    </div>
 
-    <!-- Native JavaScript Engine -->
+    <!-- ============================================ -->
+    <!-- DETAILED CASE STUDY 2: CLIENTBRIDGE PORTAL   -->
+    <!-- ============================================ -->
+    <div id="page-clientbridge-case" class="app-page hidden min-h-screen pt-32 pb-24 px-6 md:px-10">
+      <div class="max-w-5xl mx-auto space-y-12 animate-fadeIn">
+        
+        <button onclick="navigateTo('home')" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 text-xs font-bold font-mono text-slate-400 hover:text-white rounded-full transition-all uppercase">
+          ← Back to Portfolio
+        </button>
+
+        <div class="space-y-4">
+          <span class="text-xs font-mono bg-purple-500/10 text-purple-400 border border-purple-500/20 px-3 py-1 rounded font-bold uppercase tracking-widest">Case Study 02 // B2B Startup Onboarding</span>
+          <h1 class="text-3xl sm:text-5xl font-display font-extrabold text-white leading-tight">
+            ClientBridge: Auto-Onboarding &amp; File Verification Portal
+          </h1>
+          <p class="text-slate-400 text-sm sm:text-base font-light max-w-3xl leading-relaxed">
+            How we designed an automated, highly secure client document vault and portal for a premium startup accelerator, eliminating manual spreadsheet chasing and milestone tracking completely.
+          </p>
+        </div>
+
+        <!-- Metric Parameters -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 p-6 bg-[#0a0c12] border border-white/5 rounded-2xl font-mono text-xs">
+          <div>
+            <span class="text-slate-500 block uppercase mb-1 font-bold">1. Project Niche</span>
+            <span class="text-white font-sans text-sm font-semibold">B2B Startups &amp; Agencies</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block uppercase mb-1 font-bold">2. My Role</span>
+            <span class="text-white font-sans text-sm font-semibold">UX Design &amp; Portal Automations</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block uppercase mb-1 font-bold">3. Tools Implemented</span>
+            <span class="text-white font-sans text-sm font-semibold">React-Tailwind, Node, Make.com, Airtable SDK</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block uppercase mb-1 font-bold">4. Quantifiable ROI</span>
+            <span class="text-purple-400 font-sans text-sm font-bold">12 Onboarding Hours Saved / Week</span>
+          </div>
+        </div>
+
+        <!-- Narrative -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 text-xs leading-relaxed text-slate-400">
+          <div class="md:col-span-8 space-y-6">
+            <h2 class="text-lg font-display font-bold text-white uppercase tracking-wider border-l-2 border-purple-400 pl-3">The Challenge &amp; Bottleneck</h2>
+            <p>
+              An active startup consulting accelerator was struggling to onboard new founders efficiently. Essential documents—incorporation certificates, cap tables, founders' identity files, and business plans—were completely scattered. Founders sent documents over endless email threads, Slack uploads, and Google Drive links. 
+            </p>
+            <p>
+              The accelerator's managers spent over 12 hours a week manually downloading, organizing, and checking off document requirements. Founders had no visual clarity on where they stood in the onboarding queue, leading to high friction, frustration, and constant "where do things stand?" check-in emails.
+            </p>
+
+            <h2 class="text-lg font-display font-bold text-white uppercase tracking-wider border-l-2 border-purple-400 pl-3">The Blueprint Strategy</h2>
+            <p>
+              We solved this bottleneck by designing and automating **ClientBridge**:
+            </p>
+            <ol class="list-decimal list-inside space-y-2 pl-2">
+              <li><strong>Zero-Registration Login UX</strong>: Instead of forcing founders to memorize another login, they receive a secure, cryptographically generated workspace token (`ACME-2026`) that logs them directly into their beautiful portal instantly.</li>
+              <li><strong>Smart File Uploader (Make + Airtable Integration)</strong>: When a user uploads their balance sheets or Cap Tables into the custom dashboard, a backend automation checks the file type, updates the status checkmark in Airtable, and recalculates the progress completion percentage in real-time.</li>
+            </ol>
+            <p>
+              This gave founders total clarity over their onboarding checklist and reduced manual data sorting to absolute zero.
+            </p>
+          </div>
+
+          <!-- Relational database scheme diagram representation -->
+          <div class="md:col-span-4 bg-[#0a0c12] border border-white/5 rounded-2xl p-4 space-y-4">
+            <span class="text-[9px] font-mono text-purple-400 block tracking-widest uppercase font-bold">The Automation Schema</span>
+            <div class="space-y-3 font-mono text-[9px]">
+              <div class="p-2.5 bg-background border border-white/5 rounded-xl">
+                <span class="text-white font-bold block mb-1">1. Token Check Handshake</span>
+                <div class="text-slate-500">• User requests entry using workspace code.</div>
+                <div class="text-slate-500">• Access token verified against CRM.</div>
+              </div>
+              <div class="p-2.5 bg-background border border-white/5 rounded-xl">
+                <span class="text-white font-bold block mb-1">2. Asset Verification Router</span>
+                <div class="text-slate-500">• File gets uploaded to folder structures.</div>
+                <div class="text-slate-500">• Milestones status update dynamically inside CRM.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sandbox Simulation -->
+        <div class="space-y-4 border-t border-white/5 pt-8">
+          <div class="text-left">
+            <h2 class="text-xl font-display font-extrabold text-white">Live Prototype Sandbox</h2>
+            <p class="text-slate-400 text-xs">Verify credentials with mock token <strong class="text-purple-400 font-mono">ACME-2026</strong>, test-upload files, and watch milestones trigger instantly.</p>
+          </div>
+
+          <div class="bg-[#0a0c12] rounded-3xl p-6 sm:p-8 border border-white/5 relative overflow-hidden min-h-[400px] flex items-center justify-center animate-fadeIn" id="cb-portal-container">
+            <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-purple-500/5 rounded-full blur-[80px] pointer-events-none"></div>
+
+            <!-- Login Screen -->
+            <div class="w-full max-w-sm bg-background border border-white/5 rounded-2xl p-6 space-y-6 relative z-10 text-center animate-fadeIn" id="cb-login-screen">
+              <div class="space-y-2">
+                <div class="w-12 h-12 rounded-xl bg-purple-600/15 flex items-center justify-center text-purple-400 mx-auto border border-purple-500/20">🔒</div>
+                <h4 class="text-white font-display text-lg font-bold">Secure Access Link</h4>
+                <p class="text-muted text-[10px] font-mono uppercase tracking-wider">Verify Workspace ID Code</p>
+              </div>
+              <div class="space-y-3">
+                <input type="text" id="cb-passcode" placeholder="ACME-2026" class="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-center font-mono text-sm tracking-widest text-white outline-none focus:border-purple-500 transition-colors" />
+                <p class="text-[10px] text-rose-400 hidden animate-fadeIn" id="cb-login-error">Check Token. Hint: ACME-2026</p>
+                <button onclick="submitClientBridgeLogin()" class="w-full py-3.5 bg-purple-600 hover:bg-purple-500 text-white font-mono text-xs font-extrabold uppercase tracking-wider rounded-xl transition-all shadow-lg active:scale-95">
+                  Unlock Vault Portfolio
+                </button>
+              </div>
+            </div>
+
+            <!-- Dashboard View (Hidden initially) -->
+            <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 relative z-10 hidden" id="cb-dashboard-screen">
+              <!-- Upload Box -->
+              <div class="lg:col-span-7 bg-background border border-white/5 rounded-2xl p-6 space-y-6 flex flex-col justify-between">
+                <div class="space-y-4">
+                  <div class="flex justify-between items-center pb-4 border-b border-white/5">
+                    <div>
+                      <h4 class="text-white font-display font-bold font-sans">Acme Corp Dashboard</h4>
+                      <p class="text-muted text-[9px] font-mono uppercase tracking-wider">Secure Onboarding Files Hub</p>
+                    </div>
+                    <span class="text-[9px] font-mono bg-purple-500/10 text-purple-400 border border-purple-500/15 px-2 py-0.5 rounded font-bold">SECURE PORTAL LOADED</span>
+                  </div>
+
+                  <!-- Dropzone -->
+                  <div class="border-2 border-dashed border-white/10 hover:border-purple-500/40 rounded-xl p-8 text-center bg-panel/30 transition-all cursor-pointer relative" id="cb-dropzone" onclick="triggerMockUpload()">
+                    <div class="space-y-2 pointer-events-none" id="cb-dropzone-content">
+                      <span class="text-2xl">📤</span>
+                      <p class="text-xs text-slate-300 font-bold">Upload Cap Table / incorporation doc</p>
+                      <p class="text-[10px] text-slate-500 font-mono">Simulate file drag-and-drop here</p>
+                    </div>
+                    
+                    <!-- Progress meter -->
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6 bg-background/95 rounded-xl hidden" id="cb-upload-progress-box">
+                      <span class="text-xs text-purple-400 font-mono tracking-wider uppercase font-bold" id="cb-upload-status">UPLOADING PDF TO DATABASE...</span>
+                      <div class="w-full max-w-xs bg-white/5 rounded-full h-1.5 mt-3 overflow-hidden">
+                        <div class="bg-purple-600 h-full w-0 transition-all duration-300" id="cb-progress-bar"></div>
+                      </div>
+                      <span class="text-[9px] text-muted font-mono mt-1" id="cb-progress-percent">0% processed</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Files list -->
+                <div class="space-y-2">
+                  <span class="text-[9px] font-mono text-muted uppercase tracking-wider">Onboarded files verified:</span>
+                  <div class="space-y-2 text-[10px] font-mono" id="cb-files-list">
+                    <div class="p-3 bg-panel border border-white/5 rounded-xl flex justify-between items-center">
+                      <div class="flex items-center gap-2 font-sans">
+                        <span>📄</span>
+                        <span class="text-slate-300">Incorporation_Certificate_Checked.pdf</span>
+                      </div>
+                      <span class="text-purple-400 font-mono">VERIFIED</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project milestone timeline -->
+              <div class="lg:col-span-5 bg-background border border-white/5 rounded-2xl p-6 space-y-6 flex flex-col justify-between">
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between pb-3 border-b border-white/5">
+                    <span class="text-[10px] font-mono text-muted uppercase tracking-wider">Onboarding Checklist Progress</span>
+                    <span class="text-[9px] font-mono bg-purple-500/10 text-purple-400 border border-purple-500/15 px-2 py-0.5 rounded font-bold" id="cb-portal-percent-badge">66% COMPLETED</span>
+                  </div>
+
+                  <!-- Timeline -->
+                  <div class="relative pl-6 space-y-6 text-slate-400" id="cb-timeline">
+                    <!-- Progress bar -->
+                    <div class="absolute left-2.5 top-1.5 bottom-1.5 w-0.5 bg-purple-950">
+                      <div class="w-full h-2/3 bg-purple-500 transition-all duration-500" id="cb-timeline-progress"></div>
+                    </div>
+                    
+                    <!-- Mile 1 -->
+                    <div class="relative flex gap-3 text-xs items-start">
+                      <div class="absolute -left-5 w-3 h-3 rounded-full bg-purple-500 border-4 border-background ring-4 ring-purple-500/20"></div>
+                      <div>
+                        <div class="text-white font-bold font-sans">1. Secure Handshake Active</div>
+                        <p class="text-slate-500 text-[10px] leading-relaxed">Secure link successfully connected.</p>
+                      </div>
+                    </div>
+
+                    <!-- Mile 2 -->
+                    <div class="relative flex gap-3 text-xs items-start">
+                      <div class="absolute -left-5 w-3 h-3 rounded-full bg-purple-500 border-4 border-background ring-4 ring-purple-500/20"></div>
+                      <div>
+                        <div class="text-white font-bold font-sans">2. Identity Verified</div>
+                        <p class="text-slate-500 text-[10px] leading-relaxed">Incorporation certificate verified.</p>
+                      </div>
+                    </div>
+
+                    <!-- Mile 3 -->
+                    <div class="relative flex gap-3 text-xs items-start" id="cb-milestone-3">
+                      <div class="absolute -left-5 w-3 h-3 rounded-full bg-white/10 border-4 border-background transition-all" id="cb-milestone-dot-3"></div>
+                      <div>
+                        <div class="text-slate-500 font-bold transition-colors font-sans" id="cb-milestone-title-3">3. Cap Table Asset Upload</div>
+                        <p class="text-slate-500 text-[10px] leading-relaxed font-light">Awaiting your spreadsheet upload to verify.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Chat Box -->
+                <div class="space-y-3">
+                  <div class="bg-panel/40 border border-white/5 rounded-xl p-3 h-24 overflow-y-auto custom-scroll text-[10px] font-mono space-y-2 text-slate-500" id="cb-chat-box">
+                    <div><strong class="text-purple-400 font-sans">Portal Bot:</strong> Active session verified. Please test-upload your files above to complete milestone 3.</div>
+                  </div>
+                  <div class="flex gap-2">
+                    <input type="text" id="cb-chat-input" placeholder="Type a message to portal managers..." class="flex-1 bg-background border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white outline-none focus:border-purple-500 transition-colors" />
+                    <button onclick="postClientBridgeMessage()" class="px-4 bg-purple-600 hover:bg-purple-500 text-white rounded-xl text-xs font-bold font-mono">Send</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- DETAILED CASE STUDY 3: FLOWPILOT DISPATCH    -->
+    <!-- ============================================ -->
+    <div id="page-flowpilot-case" class="app-page hidden min-h-screen pt-32 pb-24 px-6 md:px-10">
+      <div class="max-w-5xl mx-auto space-y-12 animate-fadeIn">
+        
+        <button onclick="navigateTo('home')" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 text-xs font-bold font-mono text-slate-400 hover:text-white rounded-full transition-all uppercase">
+          ← Back to Portfolio
+        </button>
+
+        <div class="space-y-4">
+          <span class="text-xs font-mono bg-amber-500/10 text-amberAccent border border-amber-500/20 px-3 py-1 rounded font-bold uppercase tracking-widest">Case Study 03 // Trade &amp; Home Services Ops</span>
+          <h1 class="text-3xl sm:text-5xl font-display font-extrabold text-white leading-tight">
+            FlowPilot: Beautiful Booking Matrix with Auto-SMS Dispatches
+          </h1>
+          <p class="text-slate-400 text-sm sm:text-base font-light max-w-3xl leading-relaxed">
+            How we designed a gorgeous trade-booking application for a local heating and plumbing trade business, replacing paper appointment cards with a real-time drag-and-drop dispatcher matrix.
+          </p>
+        </div>
+
+        <!-- Parameters Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 p-6 bg-[#0a0c12] border border-white/5 rounded-2xl font-mono text-xs">
+          <div>
+            <span class="text-slate-500 block uppercase mb-1 font-bold">1. Project Niche</span>
+            <span class="text-white font-sans text-sm font-semibold">Home Services &amp; Trade Brands</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block uppercase mb-1 font-bold">2. My Role</span>
+            <span class="text-white font-sans text-sm font-semibold">UI/UX Design &amp; Make.com Integration</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block uppercase mb-1 font-bold">3. Tools Implemented</span>
+            <span class="text-white font-sans text-sm font-semibold">Tailwind Grid, Make.com, Airtable, Twilio API</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block uppercase mb-1 font-bold">4. Quantifiable ROI</span>
+            <span class="text-amberAccent font-sans text-sm font-bold">-80% Operational Phone calls</span>
+          </div>
+        </div>
+
+        <!-- Narrative -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 text-xs leading-relaxed text-slate-400">
+          <div class="md:col-span-8 space-y-6">
+            <h2 class="text-lg font-display font-bold text-white uppercase tracking-wider border-l-2 border-amberAccent pl-3">The Challenge &amp; Bottleneck</h2>
+            <p>
+              An active regional plumbing, heating, and air conditioning maintenance business was struggling with scheduling and coordinator bottlenecks. Inquiries came from a messy website contact form, and jobs were managed manually on whiteboards and shared paper agendas.
+            </p>
+            <p>
+              Dispatches were slow: engineers frequently drove to the wrong locations, customers were left waiting without updates, and billing was delayed because paperwork went missing. This lack of organization impacted customer satisfaction and caused billing leaks.
+            </p>
+
+            <h2 class="text-lg font-display font-bold text-white uppercase tracking-wider border-l-2 border-amberAccent pl-3">The Blueprint Strategy</h2>
+            <p>
+              We completely automated this system by designing **FlowPilot**:
+            </p>
+            <ol class="list-decimal list-inside space-y-2 pl-2">
+              <li><strong>Interactive Field Matrix Board</strong>: A visual, drag-and-drop kanban dispatcher dashboard that gives coordinators instant visual control over job pipelines.</li>
+              <li><strong>State-Driven Text Triggers (Airtable + Twilio Webhooks)</strong>: Moving a job card to "Scheduled" triggers a webhook. The automation pulls the assigned engineer's schedule, texts the customer a tracking link with estimated arrival times, and drafts a digital invoice draft in the system automatically.</li>
+            </ol>
+            <p>
+              This streamlined communication, reduced scheduling overhead, and eliminated the need for manual follow-up calls.
+            </p>
+          </div>
+
+          <!-- Relational database scheme diagram representation -->
+          <div class="md:col-span-4 bg-[#0a0c12] border border-white/5 rounded-2xl p-4 space-y-4">
+            <span class="text-[9px] font-mono text-amberAccent block tracking-widest uppercase font-bold">The Automation Schema</span>
+            <div class="space-y-3 font-mono text-[9px]">
+              <div class="p-2.5 bg-background border border-white/5 rounded-xl">
+                <span class="text-white font-bold block mb-1">1. Drag Dispatch Triggers</span>
+                <div class="text-slate-500">• Coordinator drags card to target column stage.</div>
+                <div class="text-slate-500">• DOM event captures the new status.</div>
+              </div>
+              <div class="p-2.5 bg-background border border-white/5 rounded-xl">
+                <span class="text-white font-bold block mb-1">2. SMS &amp; Calendar Pipelines</span>
+                <div class="text-slate-500">• Automatically texts customer with tracker.</div>
+                <div class="text-slate-500">• Pre-populates the engineer's calendar events.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sandbox Simulation -->
+        <div class="space-y-4 border-t border-white/5 pt-8">
+          <div class="text-left">
+            <h2 class="text-xl font-display font-extrabold text-white">Live Prototype Sandbox</h2>
+            <p class="text-slate-400 text-xs">Inject mock job rows, filter lists, and drag-and-drop cards across columns to test the background event logging.</p>
+          </div>
+
+          <div class="bg-[#0a0c12] rounded-3xl p-6 sm:p-8 border border-white/5 space-y-6 relative overflow-hidden animate-fadeIn">
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-amber-500/5 rounded-full blur-[80px] pointer-events-none"></div>
+
+            <!-- Top bar -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/5 relative z-10">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 font-bold">F</div>
+                <div>
+                  <h4 class="text-white font-display font-bold font-sans">Active Dispatcher Matrix</h4>
+                  <p class="text-muted text-[9px] font-mono uppercase tracking-wider">Airtable Operational Replica Live</p>
+                </div>
+              </div>
+              
+              <!-- Action triggers -->
+              <div class="flex items-center gap-2">
+                <input type="text" id="fp-search" oninput="filterFlowPilotCards(this.value)" placeholder="Filter jobs..." class="bg-background border border-white/10 rounded-xl px-3 py-2 text-xs text-white outline-none focus:border-amber-500 transition-colors w-40 sm:w-48" />
+                <button onclick="openFlowPilotModal()" class="px-4 py-2 bg-amber-500 hover:bg-amber-600 rounded-xl text-black font-mono text-[10px] font-bold uppercase tracking-wider transition-all">
+                  + Add Job Entry
+                </button>
+              </div>
+            </div>
+
+            <!-- Metrics -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 relative z-10">
+              <div class="bg-background/80 rounded-2xl p-4 border border-white/5 flex flex-col justify-center">
+                <span class="text-[9px] font-mono text-slate-500 uppercase tracking-wider">Total Active Jobs</span>
+                <span class="text-xl font-display font-extrabold text-white mt-1" id="fp-stat-total">6</span>
+              </div>
+              <div class="bg-background/80 rounded-2xl p-4 border border-white/5 flex flex-col justify-center">
+                <span class="text-[9px] font-mono text-slate-500 uppercase tracking-wider">Mean Webhook Latency</span>
+                <span class="text-xl font-display font-extrabold text-amber-400 mt-1">1.8 ms</span>
+              </div>
+              <div class="bg-background/80 rounded-2xl p-4 border border-white/5 flex flex-col justify-center">
+                <span class="text-[9px] font-mono text-slate-500 uppercase tracking-wider">Airtable Status Sync</span>
+                <span class="text-xl font-display font-extrabold text-white mt-1">100% Ok</span>
+              </div>
+              <div class="bg-background/80 rounded-2xl p-4 border border-white/5 flex flex-col justify-center">
+                <span class="text-[9px] font-mono text-slate-500 uppercase tracking-wider">Technicians Dispatched</span>
+                <span class="text-xl font-display font-extrabold text-emeraldAccent mt-1" id="fp-stat-booked">2</span>
+              </div>
+            </div>
+
+            <!-- Column structure -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative z-10">
+              <!-- Ingested -->
+              <div class="space-y-3">
+                <div class="flex justify-between items-center text-[10px] font-mono font-bold text-slate-500">
+                  <span>● NEW INQUIRIES</span>
+                  <span class="px-2 py-0.5 bg-white/5 border border-white/5 rounded" id="fp-count-new">1</span>
+                </div>
+                <div class="kanban-column bg-background/40 border border-white/5 rounded-2xl p-3 space-y-3" id="fp-col-new" ondragover="event.preventDefault(); this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="handleFlowPilotDrop(event, 'new')">
+                  <!-- Injected via app script -->
+                </div>
+              </div>
+
+              <!-- Contacted -->
+              <div class="space-y-3">
+                <div class="flex justify-between items-center text-[10px] font-mono font-bold text-slate-500">
+                  <span>● CONTACTED</span>
+                  <span class="px-2 py-0.5 bg-white/5 border border-white/5 rounded" id="fp-count-contacted">2</span>
+                </div>
+                <div class="kanban-column bg-background/40 border border-white/5 rounded-2xl p-3 space-y-3" id="fp-col-contacted" ondragover="event.preventDefault(); this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="handleFlowPilotDrop(event, 'contacted')">
+                  <!-- Injected via app script -->
+                </div>
+              </div>
+
+              <!-- Qualified -->
+              <div class="space-y-3">
+                <div class="flex justify-between items-center text-[10px] font-mono font-bold text-slate-500">
+                  <span>● ASSIGNED</span>
+                  <span class="px-2 py-0.5 bg-white/5 border border-white/5 rounded" id="fp-count-qualified">1</span>
+                </div>
+                <div class="kanban-column bg-background/40 border border-white/5 rounded-2xl p-3 space-y-3" id="fp-col-qualified" ondragover="event.preventDefault(); this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="handleFlowPilotDrop(event, 'qualified')">
+                  <!-- Injected via app script -->
+                </div>
+              </div>
+
+              <!-- Booked -->
+              <div class="space-y-3">
+                <div class="flex justify-between items-center text-[10px] font-mono font-bold text-slate-500">
+                  <span>● DISPATCHED &amp; SYNCED</span>
+                  <span class="px-2 py-0.5 bg-white/5 border border-white/5 rounded" id="fp-count-booked">2</span>
+                </div>
+                <div class="kanban-column bg-background/40 border border-white/5 rounded-2xl p-3 space-y-3" id="fp-col-booked" ondragover="event.preventDefault(); this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="handleFlowPilotDrop(event, 'booked')">
+                  <!-- Injected via app script -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Log feed -->
+            <div class="bg-background border border-white/5 rounded-2xl p-4 space-y-2 relative z-10">
+              <span class="text-[9px] font-mono text-slate-500 uppercase block tracking-wider">TRANSACTION AUDIT LOGS:</span>
+              <div class="h-20 overflow-y-auto custom-scroll font-mono text-[9px] text-slate-500 space-y-1.5 animate-fadeIn" id="fp-logs-box">
+                <div>[11:04:12] Pipeline system initialized. Synchronized 6 active dispatcher cards.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Add Job Entry Modal Popup -->
+    <div id="fp-modal" class="hidden fixed inset-0 bg-background/90 backdrop-blur-md z-50 flex items-center justify-center p-6">
+      <div class="bg-[#0a0c12] border border-white/5 rounded-3xl p-6 w-full max-w-md space-y-4 shadow-2xl animate-fadeIn">
+        <div class="flex justify-between items-center pb-3 border-b border-white/5">
+          <h4 class="text-white font-display font-bold">Inject Custom Dispatch Card</h4>
+          <button onclick="closeFlowPilotModal()" class="text-slate-400 hover:text-white font-mono font-bold">×</button>
+        </div>
+        <form id="fp-modal-form" onsubmit="submitFlowPilotLead(event)" class="space-y-3 text-xs">
+          <div>
+            <label class="block text-slate-400 mb-1">Customer Name / Address</label>
+            <input type="text" id="fp-form-name" required placeholder="e.g., Emily Carter (Southampton)" class="w-full bg-background border border-white/10 rounded-xl px-4 py-2.5 text-white outline-none focus:border-amber-500 transition-colors" />
+          </div>
+          <div>
+            <label class="block text-slate-400 mb-1">Inquiry Source</label>
+            <select id="fp-form-source" class="w-full bg-background border border-white/10 rounded-xl px-4 py-2.5 text-white outline-none focus:border-amber-500 transition-colors">
+              <option value="Website">Website Form</option>
+              <option value="Phone Call">Direct Phone Call</option>
+              <option value="AI Chat">AI Conversational Chat</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-slate-400 mb-1">Job Details &amp; Leak Assessment</label>
+            <textarea id="fp-form-msg" required rows="2" placeholder="e.g., Boiler replacement assessment required." class="w-full bg-background border border-white/10 rounded-xl px-4 py-2.5 text-white outline-none focus:border-amber-500 transition-colors resize-none"></textarea>
+          </div>
+          <button type="submit" class="w-full py-3 bg-amber-500 hover:bg-amber-600 rounded-xl text-black font-mono font-bold uppercase tracking-wider transition-all">
+            Deploy Lead Node →
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Main JS Operations Engine -->
     <script>
+      // Global System State Machine
+      const AppState = {
+          activePage: 'home',
+          telemetry: {
+              throughput: 12842,
+              logs: [
+                  { time: '11:04:12', type: 'AI-INBOX', msg: 'Lead response agent active. Inbox monitoring standby.' },
+                  { time: '11:05:30', type: 'WEBHOOK', msg: 'ClientBridge portal authentication checked successfully.' },
+                  { time: '11:07:05', type: 'SMS-DISPATCH', msg: 'Twilio dispatch trigger completed. Tracker links sent.' }
+              ]
+          },
+          auraCase: {
+              currentStep: 1,
+              selectedSymptom: null,
+              priority: 'routine',
+              mockDatabase: [
+                  { name: 'Alex Henderson', symptom: 'Routine Teeth Cleaning Request', priority: 'routine' },
+                  { name: 'Claire Morris', symptom: 'Extreme Throbbing Toothache / Swelling (Urgent)', priority: 'urgent' }
+              ]
+          },
+          clientBridge: {
+              isAuthenticated: false,
+              secureCode: 'ACME-2026',
+              files: [
+                  { name: 'financial_report_Q2.xlsx', status: 'VERIFIED' }
+              ]
+          },
+          flowPilot: {
+              leads: [
+                  { id: 'card-1', name: 'Alpha Heating Solutions', source: 'Website', detail: 'Boiler system pressure drop checks.', stage: 'new' },
+                  { id: 'card-2', name: 'Southampton Valve Co.', source: 'Phone Call', detail: 'Emergency pipe line repairs.', stage: 'contacted' },
+                  { id: 'card-3', name: 'Lakeside Care Clinic', source: 'AI Chat', detail: 'Emission compliance certification checks.', stage: 'contacted' },
+                  { id: 'card-4', name: 'Apex Logistics Onboarding', source: 'Website', detail: 'Warehouse boiler evaluation.', stage: 'qualified' },
+                  { id: 'card-5', name: 'Ember Hotel Group', source: 'Phone Call', detail: 'Commercial kitchen validation scheduling.', stage: 'booked' },
+                  { id: 'card-6', name: 'Delta Retail Center', source: 'AI Chat', detail: 'Emergency pipeline blockage dispatch.', stage: 'booked' }
+              ]
+          },
+          neuralNexus: {
+              templates: {
+                  booking: `Hi Rohith, can we reschedule our teeth cleaning appointment that was set for Wednesday afternoon? Sarah Mitchell cannot make it due to school hours. Let me know if Thursday morning works instead. Thanks!`,
+                  pricing: `Hey, I saw your plumbing listing online. We have a leaking kitchen sink. Do you charge flat fees or hourly rates to send an engineer to Southampton central? Thanks, Peter.`
+              }
+          }
+      };
+
       // =========================================================================
-      // 1. Mobile Menu Controllers
+      // 1. Navigation & Frame Routing
       // =========================================================================
+      function navigateTo(pageId) {
+          // Hide all page frames
+          document.querySelectorAll('.app-page').forEach(page => {
+              page.classList.add('hidden');
+          });
+          
+          // Display targeted case/home container
+          const targetPage = document.getElementById(`page-${pageId}`);
+          if (targetPage) {
+              targetPage.classList.remove('hidden');
+              AppState.activePage = pageId;
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+      }
+
+      function scrollToSection(sectionId) {
+          const element = document.getElementById(sectionId);
+          if (element) {
+              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+      }
+
       document.addEventListener('DOMContentLoaded', () => {
           const openBtn = document.getElementById('mobile-open');
           const closeBtn = document.getElementById('mobile-close');
@@ -773,9 +1493,10 @@
               closeBtn.addEventListener('click', () => menuOverlay.classList.add('hidden'));
           }
 
-          // Force Footer Year update
-          const yearBox = document.getElementById('footer-year');
-          if (yearBox) yearBox.textContent = new Date().getFullYear();
+          // Initial Operations Setup
+          initTelemetryEngine();
+          renderFlowPilotBoard();
+          updateFooterYear();
       });
 
       function closeMobileMenu() {
@@ -783,7 +1504,7 @@
           if (menuOverlay) menuOverlay.classList.add('hidden');
       }
 
-      // Fixed Navbar Translucency on Scroll
+      // Translucent navbar adjustment on scroll
       window.addEventListener('scroll', () => {
           const navbar = document.getElementById('navbar');
           if (navbar) {
@@ -799,107 +1520,482 @@
           }
       });
 
+      function updateFooterYear() {
+          const yearBox = document.getElementById('footer-year');
+          if (yearBox) yearBox.textContent = new Date().getFullYear();
+      }
+
       // =========================================================================
-      // 2. Playgrounds Interface Switching Logic
+      // 2. Real-Time Telemetry HUD Simulation (Hero Section Component)
+      // =========================================================================
+      function initTelemetryEngine() {
+          const throughputLabel = document.getElementById('telemetry-throughput');
+          const logsFeed = document.getElementById('telemetry-logs-feed');
+          const triggerBtn = document.getElementById('btn-trigger-log');
+
+          if (logsFeed) {
+              logsFeed.innerHTML = AppState.telemetry.logs.map(log => 
+                  `<div class="text-slate-500">[${log.time}] <span class="text-indigo-400 font-bold">${log.type}</span>: ${log.msg}</div>`
+              ).join('');
+          }
+
+          if (triggerBtn) {
+              triggerBtn.addEventListener('click', () => {
+                  injectTelemetryLog('AI-AGENT', 'Incoming email matched: "Urgent boiler repair needed" - auto-drafting reply.');
+                  triggerBtn.textContent = '✔️';
+                  setTimeout(() => { triggerBtn.textContent = '⚡'; }, 1000);
+              });
+          }
+      }
+
+      function injectTelemetryLog(type, message) {
+          const logsFeed = document.getElementById('telemetry-logs-feed');
+          if (!logsFeed) return;
+
+          const now = new Date();
+          const timestamp = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
+
+          const logElement = document.createElement('div');
+          logElement.className = "text-slate-400 opacity-0 transition-opacity duration-300";
+          logElement.innerHTML = `[${timestamp}] <span class="text-indigo-400 font-bold">${type}</span>: ${message}`;
+
+          logsFeed.appendChild(logElement);
+          if (logsFeed.children.length > 5) {
+              logsFeed.removeChild(logsFeed.firstChild);
+          }
+
+          setTimeout(() => { logElement.classList.remove('opacity-0'); }, 50);
+      }
+
+      // =========================================================================
+      // 3. Case Study 01 Sandbox: Aura Progressive Intake & Triage
+      // =========================================================================
+      function auraNextStep(stepNumber) {
+          AppState.auraCase.currentStep = stepNumber;
+
+          // Toggle visibility of step elements
+          document.querySelectorAll('.aura-step-section').forEach(section => {
+              section.classList.add('hidden');
+          });
+
+          const activeSection = document.querySelector(`.aura-step-section[data-step="${stepNumber}"]`);
+          if (activeSection) activeSection.classList.remove('hidden');
+
+          // Synchronize stepper dot indices
+          const dots = document.querySelectorAll('#aura-step-dots span');
+          dots.forEach((dot, idx) => {
+              if (idx + 1 === stepNumber) {
+                  dot.className = "w-1.5 h-1.5 rounded-full bg-emeraldAccent ring-4 ring-emerald-500/20";
+              } else if (idx + 1 < stepNumber) {
+                  dot.className = "w-1.5 h-1.5 rounded-full bg-emerald-800";
+              } else {
+                  dot.className = "w-1.5 h-1.5 rounded-full bg-white/10";
+              }
+          });
+      }
+
+      function toggleAuraSymptom(element, symptomLabel, priorityRank) {
+          // Clear active sibling classes
+          document.querySelectorAll('#aura-symptoms-grid button').forEach(btn => {
+              btn.classList.remove('border-emeraldAccent', 'bg-emerald-500/5');
+              btn.classList.add('border-white/10', 'bg-background');
+          });
+
+          // Focus target element
+          element.classList.remove('border-white/10', 'bg-background');
+          element.classList.add('border-emeraldAccent', 'bg-emerald-500/5');
+
+          AppState.auraCase.selectedSymptom = symptomLabel;
+          AppState.auraCase.priority = priorityRank;
+
+          // Update router status preview panel
+          const routerLog = document.getElementById('aura-ai-action-text');
+          if (routerLog) {
+              if (priorityRank === 'urgent') {
+                  routerLog.innerHTML = `<span class="text-rose-400 font-bold">🚨 [EMERGENCY DETECTED]</span>: Symptom: "${symptomLabel}". Bypassing calendar queue lines...`;
+              } else {
+                  routerLog.innerHTML = `<span class="text-indigo-400 font-bold">✅ [STANDARD APPOINTMENT]</span>: Symptom: "${symptomLabel}". Scheduled into next calendar slot.`;
+              }
+          }
+      }
+
+      function submitAuraForm() {
+          const nameInput = document.getElementById('aura-patient-name').value.trim() || 'Jane Doe';
+          const symptomSelected = AppState.auraCase.selectedSymptom || 'Routine Scaling / Check-up Request';
+          const calculatedPriority = AppState.auraCase.priority;
+
+          // Inbound registration stack insert
+          AppState.auraCase.mockDatabase.unshift({
+              name: nameInput,
+              symptom: symptomSelected,
+              priority: calculatedPriority
+          });
+
+          // Re-render local database table view
+          const viewContainer = document.getElementById('aura-db-view');
+          if (viewContainer) {
+              viewContainer.innerHTML = AppState.auraCase.mockDatabase.map(row => `
+                  <div class="p-3 bg-panel border border-white/5 rounded-lg flex justify-between items-center transition-all duration-300">
+                      <div>
+                          <div class="text-white font-bold font-sans">${row.name}</div>
+                          <div class="text-slate-400">${row.symptom}</div>
+                      </div>
+                      <span class="px-2 py-0.5 text-[8px] rounded font-bold uppercase ${
+                          row.priority === 'urgent' 
+                          ? 'bg-rose-500/10 text-rose-400 border border-rose-500/10 animate-pulse' 
+                          : 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/10'
+                      }">${row.priority === 'urgent' ? 'Urgent' : 'Standard'}</span>
+                  </div>
+              `).join('');
+          }
+
+          // Complete diagnostic feedback
+          const consoleBox = document.getElementById('aura-ai-generation-box');
+          const feedbackMsg = document.getElementById('aura-ai-action-text');
+          if (consoleBox && feedbackMsg) {
+              if (calculatedPriority === 'urgent') {
+                  consoleBox.className = "p-3.5 bg-rose-950/20 border border-rose-500/20 rounded-xl space-y-2";
+                  feedbackMsg.innerHTML = `<strong>[AI ALARM DETECTED]</strong> Twilio alert pushed. Clinical on-call team alerted via SMS regarding patient <strong>${nameInput}</strong>.`;
+              } else {
+                  consoleBox.className = "p-3.5 bg-indigo-950/20 border border-indigo-500/20 rounded-xl space-y-2";
+                  feedbackMsg.innerHTML = `<strong>[SCHEDULER SUCCESS]</strong> Booking details synced. Auto-confirmation email dispatched to <strong>${nameInput}</strong>.`;
+              }
+          }
+
+          // Clean input states
+          document.getElementById('aura-patient-name').value = '';
+          document.getElementById('aura-patient-email').value = '';
+          document.getElementById('aura-patient-phone').value = '';
+
+          document.querySelectorAll('#aura-symptoms-grid button').forEach(btn => {
+              btn.classList.remove('border-emeraldAccent', 'bg-emerald-500/5');
+              btn.classList.add('border-white/10', 'bg-background');
+          });
+
+          AppState.auraCase.selectedSymptom = null;
+          AppState.auraCase.priority = 'routine';
+
+          auraNextStep(1);
+      }
+
+      // =========================================================================
+      // 4. Case Study 02 Sandbox: ClientBridge Secure Portal
+      // =========================================================================
+      function submitClientBridgeLogin() {
+          const passValue = document.getElementById('cb-passcode').value.trim();
+          const errorMsg = document.getElementById('cb-login-error');
+
+          if (passValue.toUpperCase() === AppState.clientBridge.secureCode) {
+              if (errorMsg) errorMsg.classList.add('hidden');
+              document.getElementById('cb-login-screen').classList.add('hidden');
+              document.getElementById('cb-dashboard-screen').classList.remove('hidden');
+              AppState.clientBridge.isAuthenticated = true;
+          } else {
+              if (errorMsg) errorMsg.classList.remove('hidden');
+          }
+      }
+
+      function triggerMockUpload() {
+          const progContainer = document.getElementById('cb-upload-progress-box');
+          const progBar = document.getElementById('cb-progress-bar');
+          const progLabel = document.getElementById('cb-progress-percent');
+
+          if (!progContainer || !progBar || !progLabel) return;
+
+          progContainer.classList.remove('hidden');
+          let progValue = 0;
+
+          const progressInterval = setInterval(() => {
+              progValue += 10;
+              progBar.style.width = `${progValue}%`;
+              progLabel.textContent = `${progValue}% verified`;
+
+              if (progValue >= 100) {
+                  clearInterval(progressInterval);
+                  setTimeout(() => {
+                      progContainer.classList.add('hidden');
+                      progBar.style.width = '0%';
+
+                      const docName = `Cap_Table_Acme_${Math.floor(100 + Math.random() * 900)}.xlsx`;
+                      AppState.clientBridge.files.push({ name: docName, status: 'VERIFIED' });
+
+                      // Re-render documents lists
+                      const list = document.getElementById('cb-files-list');
+                      if (list) {
+                          list.innerHTML = AppState.clientBridge.files.map(f => `
+                              <div class="p-3 bg-panel border border-white/5 rounded-xl flex justify-between items-center animate-fadeIn">
+                                  <div class="flex items-center gap-2 font-sans">
+                                      <span>📄</span>
+                                      <span class="text-slate-300">${f.name}</span>
+                                  </div>
+                                  <span class="text-purple-400 font-mono tracking-wider text-[8px] border border-purple-500/20 bg-purple-500/10 px-1.5 py-0.5 rounded">VERIFIED</span>
+                              </div>
+                          `).join('');
+                      }
+
+                      // Unlock dependency milestone tracker indicators
+                      document.getElementById('cb-timeline-progress').style.height = '100%';
+                      document.getElementById('cb-portal-percent-badge').textContent = '100% COMPLETED';
+                      document.getElementById('cb-portal-percent-badge').className = "text-[9px] font-mono bg-emerald-500/10 text-emeraldAccent border border-emerald-500/15 px-2 py-0.5 rounded font-bold";
+
+                      const mDot = document.getElementById('cb-milestone-dot-3');
+                      const mTitle = document.getElementById('cb-milestone-title-3');
+
+                      if (mDot) mDot.className = "absolute -left-5 w-3 h-3 rounded-full bg-purple-500 border-4 border-background ring-4 ring-purple-500/20";
+                      if (mTitle) mTitle.className = "text-white font-bold transition-colors font-sans";
+
+                      const chat = document.getElementById('cb-chat-box');
+                      if (chat) {
+                          chat.innerHTML += `<div class="text-emeraldAccent"><strong class="font-sans text-emerald-400">System update:</strong> File checked. Milestone 3 verified. All onboarding requirements complete.</div>`;
+                          chat.scrollTop = chat.scrollHeight;
+                      }
+
+                  }, 300);
+              }
+          }, 100);
+      }
+
+      function postClientBridgeMessage() {
+          const input = document.getElementById('cb-chat-input');
+          const box = document.getElementById('cb-chat-box');
+
+          if (!input || !box || !input.value.trim()) return;
+
+          const msgText = input.value.trim();
+          box.innerHTML += `<div class="text-slate-300"><strong class="font-sans text-purple-400">Founder Acme:</strong> ${msgText}</div>`;
+          input.value = '';
+          box.scrollTop = box.scrollHeight;
+
+          // Auto response simulation
+          setTimeout(() => {
+              box.innerHTML += `<div class="text-slate-500"><strong class="font-sans text-indigo-400">Onboarding Manager:</strong> Understood. CRM parameters successfully updated.</div>`;
+              box.scrollTop = box.scrollHeight;
+          }, 1200);
+      }
+
+      // =========================================================================
+      // 5. Case Study 03 Sandbox: FlowPilot Kanban Board
+      // =========================================================================
+      function renderFlowPilotBoard() {
+          const colElements = {
+              new: document.getElementById('fp-col-new'),
+              contacted: document.getElementById('fp-col-contacted'),
+              qualified: document.getElementById('fp-col-qualified'),
+              booked: document.getElementById('fp-col-booked')
+          };
+
+          if (!colElements.new) return;
+
+          // Clear elements inside columns
+          Object.keys(colElements).forEach(key => {
+              if (colElements[key]) colElements[key].innerHTML = '';
+          });
+
+          let stageCounts = { new: 0, contacted: 0, qualified: 0, booked: 0 };
+
+          AppState.flowPilot.leads.forEach(lead => {
+              stageCounts[lead.stage]++;
+              const card = document.createElement('div');
+              card.className = "bg-panel/90 p-4 rounded-xl border border-white/5 space-y-2 cursor-grab active:cursor-grabbing hover:border-white/10 transition-all shadow-md group relative overflow-hidden";
+              card.draggable = true;
+              card.id = lead.id;
+              card.setAttribute('ondragstart', 'handleFlowPilotDragStart(event)');
+
+              card.innerHTML = `
+                  <div class="flex justify-between items-start">
+                      <span class="text-white font-display font-bold text-xs group-hover:text-amberAccent transition-colors font-sans">${lead.name}</span>
+                      <span class="text-[8px] font-mono font-medium tracking-wide bg-white/5 text-slate-400 px-1.5 py-0.5 rounded border border-white/5 uppercase">${lead.source}</span>
+                  </div>
+                  <p class="text-[10px] text-slate-400 leading-relaxed font-light font-sans">${lead.detail}</p>
+                  <div class="pt-2 flex justify-end gap-1 px-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <button onclick="shiftFlowPilotCard('${lead.id}', 'backward')" class="text-[9px] font-mono font-bold bg-white/5 px-1.5 py-0.5 rounded hover:bg-amber-500 hover:text-black transition-all">←</button>
+                      <button onclick="shiftFlowPilotCard('${lead.id}', 'forward')" class="text-[9px] font-mono font-bold bg-white/5 px-1.5 py-0.5 rounded hover:bg-amber-500 hover:text-black transition-all">→</button>
+                  </div>
+              `;
+
+              if (colElements[lead.stage]) {
+                  colElements[lead.stage].appendChild(card);
+              }
+          });
+
+          // Sync text labels counts indicators
+          document.getElementById('fp-count-new').textContent = stageCounts.new;
+          document.getElementById('fp-count-contacted').textContent = stageCounts.contacted;
+          document.getElementById('fp-count-qualified').textContent = stageCounts.qualified;
+          document.getElementById('fp-count-booked').textContent = stageCounts.booked;
+
+          document.getElementById('fp-stat-total').textContent = AppState.flowPilot.leads.length;
+          document.getElementById('fp-stat-booked').textContent = stageCounts.booked;
+      }
+
+      function handleFlowPilotDragStart(event) {
+          event.dataTransfer.setData("text/plain", event.target.id);
+      }
+
+      function handleFlowPilotDrop(event, targetStage) {
+          event.preventDefault();
+          const colElement = document.getElementById(`fp-col-${targetStage}`);
+          if (colElement) colElement.classList.remove('drag-over');
+
+          const cardId = event.dataTransfer.getData("text/plain");
+          const matchedCard = AppState.flowPilot.leads.find(l => l.id === cardId);
+
+          if (matchedCard && matchedCard.stage !== targetStage) {
+              const previousStage = matchedCard.stage;
+              matchedCard.stage = targetStage;
+              renderFlowPilotBoard();
+              logFlowPilotEvent(matchedCard.name, previousStage, targetStage);
+          }
+      }
+
+      function shiftFlowPilotCard(cardId, direction) {
+          const columnsArray = ['new', 'contacted', 'qualified', 'booked'];
+          const targetCard = AppState.flowPilot.leads.find(l => l.id === cardId);
+          if (!targetCard) return;
+
+          const currentIdx = columnsArray.indexOf(targetCard.stage);
+          let targetIdx = direction === 'forward' ? currentIdx + 1 : currentIdx - 1;
+
+          if (targetIdx >= 0 && targetIdx < columnsArray.length) {
+              const previousStage = targetCard.stage;
+              targetCard.stage = columnsArray[targetIdx];
+              renderFlowPilotBoard();
+              logFlowPilotEvent(targetCard.name, previousStage, columnsArray[targetIdx]);
+          }
+      }
+
+      function logFlowPilotEvent(name, fromStage, toStage) {
+          const logBox = document.getElementById('fp-logs-box');
+          if (!logBox) return;
+
+          const now = new Date();
+          const timeStr = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
+
+          let webhookNote = '';
+          if (toStage === 'booked') {
+              webhookNote = ` <span class="text-emeraldAccent font-bold">[TWILIO OUT] -> Sending dispatch route text alert to technician on-call! Syncing Airtable invoice draft.</span>`;
+          } else if (toStage === 'qualified') {
+              webhookNote = ` <span class="text-indigo-400 font-bold">[AIRTABLE SYNC] -> Updated pipeline record status to "Assigned". Calendar block pre-filled.</span>`;
+          }
+
+          logBox.innerHTML += `<div>[${timeStr}] Job card "${name}" moved from <span class="uppercase font-bold font-mono text-amber-500">${fromStage}</span> to <span class="uppercase font-bold font-mono text-emeraldAccent">${toStage}</span>.${webhookNote}</div>`;
+          logBox.scrollTop = logBox.scrollHeight;
+      }
+
+      function openFlowPilotModal() { document.getElementById('fp-modal').classList.remove('hidden'); }
+      function closeFlowPilotModal() { document.getElementById('fp-modal').classList.add('hidden'); }
+
+      function submitFlowPilotLead(event) {
+          event.preventDefault();
+          const name = document.getElementById('fp-form-name').value.trim();
+          const source = document.getElementById('fp-form-source').value.trim();
+          const detail = document.getElementById('fp-form-msg').value.trim();
+
+          if (!name || !source || !detail) return;
+
+          const uniqueId = `card-${Date.now()}`;
+          AppState.flowPilot.leads.unshift({ id: uniqueId, name, source, detail, stage: 'new' });
+
+          renderFlowPilotBoard();
+          logFlowPilotEvent(name, 'INGESTED DIRECT API', 'new');
+
+          document.getElementById('fp-modal-form').reset();
+          closeFlowPilotModal();
+      }
+
+      function filterFlowPilotCards(query) {
+          const cleanQuery = query.toLowerCase().trim();
+          AppState.flowPilot.leads.forEach(lead => {
+              const element = document.getElementById(lead.id);
+              if (!element) return;
+
+              const matches = lead.name.toLowerCase().includes(cleanQuery) ||
+                              lead.source.toLowerCase().includes(cleanQuery) ||
+                              lead.detail.toLowerCase().includes(cleanQuery);
+
+              if (matches || cleanQuery === '') {
+                  element.classList.remove('hidden');
+              } else {
+                  element.classList.add('hidden');
+              }
+          });
+      }
+
+      // =========================================================================
+      // 6. Interactive Playground Modules: Dynamic Actions
       // =========================================================================
       function switchPlaygroundTab(tabId) {
-          // Reset button states
           document.querySelectorAll('.tab-btn').forEach(btn => {
               btn.className = "tab-btn px-4 py-2 hover:bg-white/5 text-slate-400 rounded-full font-mono text-xs transition-all";
           });
 
-          // Set active button
-          const targetBtn = document.getElementById(`tab-btn-${tabId}`);
-          if (targetBtn) {
-              let accentColor = 'emerald';
-              if (tabId === 'webhook') accentColor = 'teal';
-              if (tabId === 'ai-reply') accentColor = 'indigo';
+          const activeBtn = document.getElementById(`tab-btn-${tabId}`);
+          if (activeBtn) {
+              let tabColor = 'indigo';
+              if (tabId === 'webhook') tabColor = 'emerald';
+              if (tabId === 'ai-reply') tabColor = 'indigo';
 
-              targetBtn.className = `tab-btn active px-4 py-2 bg-${accentColor}-500/10 text-${accentColor}-400 border border-${accentColor}-500/30 rounded-full font-mono text-xs font-bold transition-all`;
+              activeBtn.className = `tab-btn active px-4 py-2 bg-${tabColor}-500/10 text-${tabColor}-400 border border-${tabColor}-500/30 rounded-full font-mono text-xs font-bold transition-all`;
           }
 
-          // Hide/Show tab panes
           document.querySelectorAll('.playground-tab-pane').forEach(pane => {
               pane.classList.add('hidden');
           });
+
           const targetPane = document.getElementById(`play-${tabId}`);
           if (targetPane) targetPane.classList.remove('hidden');
       }
 
-      // =========================================================================
-      // 3. Playground Demo 1: Aura Triage Engine Simulator
-      // =========================================================================
-      const triageDatabaseMock = [
-          { name: 'John Doe', symptom: 'Routine Cleaning Checkup', urgency: 'Routine' },
-          { name: 'Priya Patel', symptom: 'Severe Trauma (Bleeding)', urgency: 'Urgent Bypass' }
-      ];
-
       function submitPlaygroundTriage() {
           const nameInput = document.getElementById('triage-name');
           const emailInput = document.getElementById('triage-email');
-          const triageSelect = document.getElementById('triage-type');
-          const logTextBox = document.getElementById('triage-log-text');
-          const dbView = document.getElementById('triage-dashboard-view');
+          const selector = document.getElementById('triage-type');
+          const logBox = document.getElementById('triage-log-text');
+          const list = document.getElementById('triage-dashboard-view');
 
-          if (!nameInput || !emailInput || !triageSelect || !dbView || !logTextBox) return;
+          if (!nameInput || !emailInput || !selector || !logBox || !list) return;
 
-          const name = nameInput.value.trim() || 'Anonymous Client';
-          const email = emailInput.value.trim() || 'operator@server.com';
-          const selectedOptionText = triageSelect.options[triageSelect.selectedIndex].text;
-          const urgencyValue = triageSelect.value;
+          const nVal = nameInput.value.trim() || 'Sarah Mitchell';
+          const eVal = emailInput.value.trim() || 'sarah@example.com';
+          const symLabel = selector.options[selector.selectedIndex].text;
+          const urgencyKey = selector.value;
 
-          let urgencyLabel = 'Routine';
-          if (urgencyValue === 'emergency') {
-              urgencyLabel = 'Urgent Bypass';
-          }
+          let rankLabel = 'Standard Queue';
+          if (urgencyKey === 'emergency') rankLabel = 'Emergency Triage';
 
-          // Add to mock data stack
-          triageDatabaseMock.unshift({ name, symptom: selectedOptionText, urgency: urgencyLabel });
-
-          // Render database replica
-          dbView.innerHTML = triageDatabaseMock.map(item => `
-              <div class="p-3 bg-panel border ${
-                  item.urgency === 'Urgent Bypass' ? 'border-rose-500/20' : 'border-white/5'
-              } rounded-xl flex justify-between items-center transition-all duration-300">
-                  <div>
-                      <div class="text-white font-bold">${item.name}</div>
-                      <div class="${item.urgency === 'Urgent Bypass' ? 'text-rose-400' : 'text-slate-400'}">${item.symptom}</div>
-                  </div>
-                  <span class="px-2 py-0.5 rounded font-bold uppercase tracking-wider text-[8px] ${
-                      item.urgency === 'Urgent Bypass' 
-                      ? 'bg-rose-500/10 text-rose-400 border border-rose-500/20 animate-pulse' 
-                      : 'bg-slate-500/10 text-slate-400 border border-white/5'
-                  }">${item.urgency}</span>
+          // Inject to local replica stream
+          const item = document.createElement('div');
+          item.className = `p-3 bg-panel border ${urgencyKey === 'emergency' ? 'border-rose-500/20' : 'border-white/5'} rounded-xl flex justify-between items-center transition-all animate-fadeIn`;
+          item.innerHTML = `
+              <div>
+                  <div class="text-white font-bold font-sans">${nVal}</div>
+                  <div class="${urgencyKey === 'emergency' ? 'text-rose-400' : 'text-slate-400'}">${symLabel}</div>
               </div>
-          `).join('');
+              <span class="px-2 py-0.5 rounded font-bold uppercase text-[8px] ${urgencyKey === 'emergency' ? 'bg-rose-500/10 text-rose-400 border border-rose-500/20 animate-pulse' : 'bg-slate-500/10 text-slate-400 border border-white/5'}">${rankLabel}</span>
+          `;
 
-          // Update System Log Text
-          if (urgencyLabel === 'Urgent Bypass') {
-              logTextBox.innerHTML = `<span class="text-rose-400 font-bold">🚨 [URGENT FILTER TRIPPED]:</span> Payload parsed for <strong>${name}</strong>. Bypassed scheduling queues and dispatched priority alerts directly to administrative staff's Whatsapp channels.`;
+          list.insertBefore(item, list.firstChild);
+
+          if (urgencyKey === 'emergency') {
+              logBox.innerHTML = `<span class="text-rose-400 font-bold">🚨 [CRITICAL INTENT DETECTED]:</span> Symptom categorized as URGENT. Dispatched Twilio SMS notification to on-call clinical technicians.`;
           } else {
-              logTextBox.innerHTML = `<span class="text-emerald-400 font-bold">✅ [ROUTINE CAPTURE]:</span> Enquired details logged successfully for <strong>${name}</strong>. Synchronized details down to regular clinic calendar pipeline.`;
+              logBox.innerHTML = `<span class="text-emeraldAccent font-bold">✅ [ROUTINE INTENT]:</span> Logged successfully for <strong>${nVal}</strong>. Pre-populated calendar schedule buffer.`;
           }
 
-          // Clear form fields
           nameInput.value = '';
           emailInput.value = '';
-          triageSelect.selectedIndex = 0;
+          selector.selectedIndex = 0;
       }
 
-      // =========================================================================
-      // 4. Playground Demo 2: Make.com Webhook Simulator
-      // =========================================================================
-      function triggerWebhookRun(scenarioType) {
-          const consoleBox = document.getElementById('webhook-console');
-          const badge = document.getElementById('webhook-state-badge');
-          
+      function triggerWebhookRun(type) {
           const step1 = document.getElementById('step-node-1');
           const step2 = document.getElementById('step-node-2');
           const step3 = document.getElementById('step-node-3');
+          const consoleBox = document.getElementById('webhook-console');
+          const badge = document.getElementById('webhook-state-badge');
 
-          if (!consoleBox || !badge || !step1 || !step2 || !step3) return;
+          if (!step1 || !step2 || !step3 || !consoleBox || !badge) return;
 
-          // Reset step layouts
           step1.className = "flex items-center gap-3 text-slate-500 transition-colors";
           step2.className = "flex items-center gap-3 text-slate-500 transition-colors";
           step3.className = "flex items-center gap-3 text-slate-500 transition-colors";
@@ -907,97 +2003,84 @@
           badge.textContent = "Processing";
           badge.className = "text-[9px] font-mono bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-0.5 rounded font-bold uppercase";
 
-          consoleBox.innerHTML = `[CONNECTING]: Webhook trigger detected. Scenario payload matching configuration: "${scenarioType}"...`;
+          consoleBox.innerHTML = `[CONNECTING]: Webhook trigger caught. Ingesting scenario: "${type}"...`;
 
-          // Step 1: Webhook catch
           setTimeout(() => {
-              step1.className = "flex items-center gap-3 text-teal-400 font-bold transition-colors";
-              consoleBox.innerHTML = `[STEP 1 SUCCESS]: Webhook router caught incoming payload envelope successfully from source: "${scenarioType}".`;
-          }, 400);
+              step1.className = "flex items-center gap-3 text-emeraldAccent font-bold transition-colors";
+              consoleBox.innerHTML = `[NODE 1 SUCCESS]: Captured JSON database row for scenario "${type}". Schema parameters verified.`;
+          }, 300);
 
-          // Step 2: Airtable write
           setTimeout(() => {
-              step2.className = "flex items-center gap-3 text-teal-400 font-bold transition-colors";
-              consoleBox.innerHTML = `[STEP 2 SUCCESS]: Airtable connection validated. Appended raw customer attributes securely inside row index: #${Math.floor(100 + Math.random() * 900)}.`;
-          }, 900);
+              step2.className = "flex items-center gap-3 text-emeraldAccent font-bold transition-colors";
+              consoleBox.innerHTML = `[NODE 2 SUCCESS]: Airtable linked successfully. Updated record metrics inside table row ID: #${Math.floor(100 + Math.random() * 900)}.`;
+          }, 750);
 
-          // Step 3: SMS alert
           setTimeout(() => {
-              step3.className = "flex items-center gap-3 text-teal-400 font-bold transition-colors";
-              consoleBox.innerHTML = `[STEP 3 SUCCESS]: Dispatching alert webhook to admin WhatsApp loop. CRM synced successfully. Operational cycle complete.`;
-              badge.textContent = "Fulfillment Success";
-              badge.className = "text-[9px] font-mono bg-teal-500/10 text-teal-400 border border-teal-500/20 px-2 py-0.5 rounded font-bold uppercase";
-          }, 1400);
+              step3.className = "flex items-center gap-3 text-emeraldAccent font-bold transition-colors";
+              consoleBox.innerHTML = `[NODE 3 SUCCESS]: Triggered automated Twilio SMS integration. Scheduled details sent. Pipeline complete.`;
+              badge.textContent = "Complete";
+              badge.className = "text-[9px] font-mono bg-emerald-500/10 text-emeraldAccent border border-emerald-500/20 px-2 py-0.5 rounded font-bold uppercase";
+          }, 1200);
       }
-
-      // =========================================================================
-      // 5. Playground Demo 3: AI Reply Generator
-      // =========================================================================
-      const replyTemplatesMock = {
-          booking: `Hi Rohith, can we reschedule our dentist appointment that was set for Wednesday afternoon? Sarah Mitchell cannot make it due to school hours. Let me know if Thursday morning works instead. Thanks!`,
-          pricing: `Hey, I saw your plumbing listing. We have a leaking kitchen sink. Do you charge flat fees or hourly rates to send an engineer to Southampton central? Thanks, Peter.`
-      };
 
       function loadReplyTemplate(type) {
           const textarea = document.getElementById('ai-input-message');
-          if (textarea && replyTemplatesMock[type]) {
-              textarea.value = replyTemplatesMock[type];
+          if (textarea && AppState.neuralNexus.templates[type]) {
+              textarea.value = AppState.neuralNexus.templates[type];
           }
       }
 
       function generateAIReply() {
-          const inputField = document.getElementById('ai-input-message');
-          const outputBox = document.getElementById('ai-draft-box');
+          const textarea = document.getElementById('ai-input-message');
+          const output = document.getElementById('ai-draft-box');
 
-          if (!inputField || !outputBox) return;
+          if (!textarea || !output) return;
 
-          const text = inputField.value.trim();
+          const text = textarea.value.trim();
           if (!text) {
-              outputBox.textContent = "Write or load a client message in the input box first!";
+              output.textContent = "Please pick a template or type custom message text above first.";
               return;
           }
 
-          outputBox.textContent = "Interpreting intent, structuring conversational tone with AI context matrices... Draft generating...";
+          output.textContent = "AI parsing customer email structure... Drafting smart response in < 1s...";
 
           setTimeout(() => {
-              let draftContent = "";
+              let responseDraft = "";
               if (text.includes("Sarah Mitchell") || text.includes("dentist")) {
-                  draftContent = `Hi Sarah,\n\nThanks for reaching out! We can absolutely change that schedule for you. Thursday morning (between 9 AM and 11:30 AM) is wide open. \n\nLet us know if that slot works and our automated booking system will block it out and text your calendar confirmation link right away.\n\nBest,\nDental Support Team`;
+                  responseDraft = `Hi Sarah,\n\nThanks for reaching out! We can absolutely reschedule that teeth cleaning appointment for you. Thursday morning (between 9:00 AM and 11:30 AM) is wide open. \n\nLet us know if that works and our automated system will lock the slot and send your booking confirmation text right away!\n\nBest,\nClinic Support Team`;
               } else if (text.includes("Southampton") || text.includes("plumbing")) {
-                  draftContent = `Hi Peter,\n\nThanks for contacting us about the leaking kitchen sink! For straightforward central Southampton repair dispatches, we charge a flat call-out fee of £85 which covers the first hour of engineering assessment.\n\nWe have a technician local to central Southampton tomorrow afternoon. Let me know if we should book you in!\n\nBest,\nSouthampton Plumbing Dispatch`;
+                  responseDraft = `Hi Peter,\n\nThanks for reaching out about the leaking kitchen sink! For trade call-outs in central Southampton, we charge a flat fee of £85 which covers the first hour of engineering assessment.\n\nWe have an engineer near you tomorrow afternoon. Reply to this email and our AI system will automatically reserve the slot for you!\n\nWarm regards,\nSouthampton Dispatch Core`;
               } else {
-                  draftContent = `Hi there,\n\nThank you for getting in touch with us! We have received your query regarding your process setup. \n\nOne of our operational leads is looking over the details now and will get back to you with a direct path forward within 24 hours.\n\nWarm regards,\nService Operations Team`;
+                  responseDraft = `Hi there,\n\nThanks for getting in touch with us! We have received your query regarding your process setup. \n\nOne of our team members is reviewing your details right now and will get back to you with a direct path forward within 24 hours.\n\nWarm regards,\nCustomer Operations Team`;
               }
 
-              outputBox.innerHTML = draftContent.replace(/\n/g, "<br>");
-          }, 800);
+              output.innerHTML = responseDraft.replace(/\n/g, "<br>");
+          }, 500);
       }
 
       function copyAIDraft() {
-          const draftText = document.getElementById('ai-draft-box');
-          if (!draftText) return;
+          const draftBox = document.getElementById('ai-draft-box');
+          if (!draftBox) return;
 
-          // Process and write content safely to clipboard
-          const plainText = draftText.innerText || draftText.textContent;
-          const dummy = document.createElement("textarea");
-          document.body.appendChild(dummy);
-          dummy.value = plainText;
-          dummy.select();
+          const plainText = draftBox.innerText || draftBox.textContent;
+          const dummyArea = document.createElement("textarea");
+          document.body.appendChild(dummyArea);
+          dummyArea.value = plainText;
+          dummyArea.select();
           document.execCommand("copy");
-          document.body.removeChild(dummy);
+          document.body.removeChild(dummyArea);
 
-          const alertElement = document.createElement("div");
-          alertElement.className = "fixed bottom-5 right-5 bg-emerald-500 text-slate-950 px-4 py-2 rounded-xl text-xs font-bold shadow-lg font-mono z-50";
-          alertElement.textContent = "Draft copied to clipboard!";
-          document.body.appendChild(alertElement);
-          
-          setTimeout(() => {
-              alertElement.remove();
-          }, 1500);
+          // In-app alert notification callback
+          const alertNode = document.createElement("div");
+          alertNode.className = "fixed bottom-5 right-5 bg-indigo-600 text-white px-4 py-2 rounded-xl text-xs font-bold shadow-lg font-mono z-50 animate-fadeIn";
+          alertNode.textContent = "Reply draft copied!";
+          document.body.appendChild(alertNode);
+
+          setTimeout(() => { alertNode.remove(); }, 1500);
       }
 
       // =========================================================================
-      // 6. Main Client Form Validation
+      // 7. General Web Form Validation
       // =========================================================================
       document.getElementById('portfolio-contact-form').addEventListener('submit', function(e) {
           e.preventDefault();
