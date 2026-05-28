@@ -34,12 +34,10 @@
               mono: ["JetBrains Mono", "monospace"],
             },
             colors: {
-              background: "#FFFFFF",
-              panel: "#F9FAFB",
-              panelHover: "#F3F4F6",
-              primary: "#000000",
-              muted: "#6B7280",
-              borderLine: "#E5E7EB"
+              background: "#0A0B0D", /* Deep dark slate luxury background */
+              primary: "#FFFFFF",
+              muted: "#9CA3AF",
+              borderLine: "rgba(255, 255, 255, 0.08)"
             }
           },
         },
@@ -48,50 +46,75 @@
 
     <style>
       body {
-        background-color: #FFFFFF;
-        color: #000000;
+        background-color: #0A0B0D;
+        color: #FFFFFF;
       }
-      .premium-card {
-        background: #F9FAFB;
-        border: 1px solid #E5E7EB;
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      /* Pure Minimalist Glassmorphism Utility classes */
+      .glass-nav {
+        background: rgba(10, 11, 13, 0.75);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
       }
-      .premium-card:hover {
-        border-color: #000000;
-        background: #FFFFFF;
+      .glass-card {
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .glass-card:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.15);
         transform: translateY(-2px);
-        box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+      .glass-badge {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .glass-input {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .glass-input:focus {
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(255, 255, 255, 0.3);
       }
       .custom-scroll::-webkit-scrollbar {
         width: 4px;
       }
       .custom-scroll::-webkit-scrollbar-thumb {
-        background: #000000;
+        background: rgba(255, 255, 255, 0.2);
       }
     </style>
   </head>
   
-  <body class="selection:bg-black selection:text-white relative antialiased custom-scroll">
+  <body class="selection:bg-white selection:text-black relative antialiased custom-scroll">
+
+    <!-- Abstract Minimal Background Highlights to catch the glass blur -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-white/[0.015] rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/[0.015] rounded-full blur-[120px] pointer-events-none"></div>
 
     <!-- Header Navigation -->
-    <nav class="fixed w-full z-40 top-0 transition-all duration-300 border-b border-borderLine bg-white/80 backdrop-blur-md py-4" id="navbar">
+    <nav class="fixed w-full z-40 top-0 glass-nav py-4">
       <div class="max-w-7xl mx-auto px-6 md:px-10 flex justify-between items-center">
         <!-- Logo -->
         <a href="#home" class="flex items-center gap-3 group">
-          <div class="w-9 h-9 bg-black flex items-center justify-center">
-            <span class="text-xs font-mono font-bold text-white">RD</span>
+          <div class="w-9 h-9 bg-white flex items-center justify-center">
+            <span class="text-xs font-mono font-bold text-black">RD</span>
           </div>
           <div class="flex flex-col">
-            <span class="text-xs font-display font-bold text-black tracking-tight">Rohith Dhanala</span>
+            <span class="text-xs font-display font-bold text-white tracking-tight">Rohith Dhanala</span>
             <span class="text-[9px] font-mono text-muted tracking-widest leading-none uppercase">AI Automation Architect</span>
           </div>
         </a>
 
         <!-- Menu Links -->
         <div class="hidden md:flex items-center gap-2">
-          <a href="#about" class="text-[10px] tracking-wider uppercase text-muted hover:text-black px-4 py-2 font-bold transition-colors">Our Strategy</a>
-          <a href="#projects" class="text-[10px] tracking-wider uppercase text-muted hover:text-black px-4 py-2 font-bold transition-colors">Shipped Tools</a>
-          <a href="#contact" class="text-[10px] tracking-wider uppercase text-black border border-black px-4 py-2 font-bold hover:bg-black hover:text-white transition-all">Let's Talk</a>
+          <a href="#about" class="text-[10px] tracking-wider uppercase text-muted hover:text-white px-4 py-2 font-bold transition-colors">Our Strategy</a>
+          <a href="#projects" class="text-[10px] tracking-wider uppercase text-muted hover:text-white px-4 py-2 font-bold transition-colors">Shipped Tools</a>
+          <a href="#contact" class="text-[10px] tracking-wider uppercase text-white glass-badge px-4 py-2 font-bold hover:bg-white hover:text-black transition-all">Let's Talk</a>
         </div>
       </div>
     </nav>
@@ -102,12 +125,12 @@
         
         <!-- Left Hero Context -->
         <div class="lg:col-span-8 text-left space-y-8">
-          <div class="inline-flex items-center gap-2 px-3 py-1 border border-black bg-white">
-            <span class="w-1.5 h-1.5 bg-black rounded-full"></span>
-            <span class="text-[9px] uppercase tracking-widest text-black font-mono font-bold">Accepting Retainer Projects &amp; Custom Agent Builds</span>
+          <div class="inline-flex items-center gap-2 px-3 py-1 glass-badge">
+            <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+            <span class="text-[9px] uppercase tracking-widest text-white font-mono font-bold">Accepting Retainer Projects &amp; Custom Agent Builds</span>
           </div>
 
-          <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-black leading-[1.1] tracking-tight">
+          <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white leading-[1.1] tracking-tight">
             I design digital products <br />
             <span class="text-muted font-light italic">and automate them with AI agents.</span>
           </h1>
@@ -117,10 +140,10 @@
           </p>
 
           <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-            <a href="#contact" class="px-8 py-4 bg-black hover:bg-gray-900 text-white text-xs font-bold uppercase tracking-wider transition-all text-center">
+            <a href="#contact" class="px-8 py-4 bg-white hover:bg-gray-100 text-black text-xs font-bold uppercase tracking-wider transition-all text-center">
               Claim Free Operations Audit &rarr;
             </a>
-            <a href="#projects" class="px-8 py-4 border border-borderLine hover:border-black transition-all text-xs font-bold uppercase tracking-wider text-black text-center">
+            <a href="#projects" class="px-8 py-4 glass-badge hover:border-white/30 transition-all text-xs font-bold uppercase tracking-wider text-white text-center">
               Explore Shipped Agents
             </a>
           </div>
@@ -128,16 +151,16 @@
 
         <!-- Right Hero Minimal Feature Grid -->
         <div class="lg:col-span-4 grid grid-cols-1 gap-4 font-mono text-[11px]">
-          <div class="border border-borderLine p-5 space-y-2">
-            <div class="text-black font-bold">01 / CAPABILITY</div>
+          <div class="glass-card p-5 space-y-2">
+            <div class="text-white font-bold">01 / CAPABILITY</div>
             <p class="text-muted font-sans text-xs">High-converting visual front-ends built to establish immediate B2B or consumer authority.</p>
           </div>
-          <div class="border border-borderLine p-5 space-y-2">
-            <div class="text-black font-bold">02 / AGENTICS</div>
+          <div class="glass-card p-5 space-y-2">
+            <div class="text-white font-bold">02 / AGENTICS</div>
             <p class="text-muted font-sans text-xs">Intelligent AI nodes that intercept unstructured data, evaluate urgency, and trigger actions.</p>
           </div>
-          <div class="border border-borderLine p-5 space-y-2">
-            <div class="text-black font-bold">03 / PIPELINES</div>
+          <div class="glass-card p-5 space-y-2">
+            <div class="text-white font-bold">03 / PIPELINES</div>
             <p class="text-muted font-sans text-xs">End-to-end data processing loops connecting consumer spaces, secure storage, and invoices.</p>
           </div>
         </div>
@@ -146,12 +169,12 @@
     </section>
 
     <!-- Strategy & Philosophy Section -->
-    <section id="about" class="py-24 px-6 md:px-10 border-t border-borderLine bg-panel">
+    <section id="about" class="py-24 px-6 md:px-10 border-t border-borderLine bg-white/[0.01]">
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
         
         <div class="lg:col-span-5 space-y-6">
           <span class="text-xs font-mono tracking-widest text-muted uppercase font-bold block">// The Strategy</span>
-          <h2 class="text-3xl font-display font-extrabold text-black leading-tight">
+          <h2 class="text-3xl font-display font-extrabold text-white leading-tight">
             Minimal Architecture.<br />Autonomous Core.
           </h2>
           <div class="space-y-4 text-muted text-sm font-light leading-relaxed">
@@ -165,23 +188,23 @@
         </div>
 
         <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div class="premium-card p-6">
-            <div class="text-xs font-mono text-black font-bold uppercase mb-2">01 / High-Converting Front-Ends</div>
+          <div class="glass-card p-6">
+            <div class="text-xs font-mono text-white font-bold uppercase mb-2">01 / High-Converting Front-Ends</div>
             <p class="text-xs text-muted font-light leading-relaxed">Highly responsive storefronts built explicitly around conversion psychology. Elegant typography and friction-free user flows designed to build instant trust and capture elite leads.</p>
           </div>
 
-          <div class="premium-card p-6">
-            <div class="text-xs font-mono text-black font-bold uppercase mb-2">02 / Leak-Proof Inbound Triage</div>
+          <div class="glass-card p-6">
+            <div class="text-xs font-mono text-white font-bold uppercase mb-2">02 / Leak-Proof Inbound Triage</div>
             <p class="text-xs text-muted font-light leading-relaxed">Intelligent AI nodes that intercept incoming customer messages, cross-reference scheduling tokens, draft responses, and escalate urgent actions straight to you.</p>
           </div>
 
-          <div class="premium-card p-6">
-            <div class="text-xs font-mono text-black font-bold uppercase mb-2">03 / Automated Client Portals</div>
+          <div class="glass-card p-6">
+            <div class="text-xs font-mono text-white font-bold uppercase mb-2">03 / Automated Client Portals</div>
             <p class="text-xs text-muted font-light leading-relaxed">Beautiful, token-secured workspaces where clients can check project milestones, upload data files for schema validation, and access payment checkouts seamlessly.</p>
           </div>
 
-          <div class="premium-card p-6">
-            <div class="text-xs font-mono text-black font-bold uppercase mb-2">04 / Pipeline Engineering</div>
+          <div class="glass-card p-6">
+            <div class="text-xs font-mono text-white font-bold uppercase mb-2">04 / Pipeline Engineering</div>
             <p class="text-xs text-muted font-light leading-relaxed">Connect your entire business infrastructure behind the scenes. Sync calendar changes, customer ledger states, CRM statuses, and billing sheets automatically.</p>
           </div>
         </div>
@@ -190,77 +213,77 @@
     </section>
 
     <!-- Shipped Products / AI Tools Section -->
-    <section id="projects" class="py-24 px-6 md:px-10 relative border-t border-borderLine bg-white">
+    <section id="projects" class="py-24 px-6 md:px-10 relative border-t border-borderLine bg-background">
       <div class="max-w-7xl mx-auto space-y-16">
         
         <div class="space-y-4 max-w-3xl">
           <span class="text-xs font-mono tracking-widest text-muted uppercase font-bold block">// Shipped Production Assets</span>
-          <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-black">Real AI Tools &amp; Automation Engines</h2>
+          <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">Real AI Tools &amp; Automation Engines</h2>
           <p class="text-muted text-sm leading-relaxed font-light">
             I build custom, multi-step validation infrastructure and browser workflows that capture raw data variables and process them into live operational performance.
           </p>
         </div>
 
-        <!-- Premium Minimal Layout for the 3 Real AI Tools -->
+        <!-- Premium Glass Layout for the 3 Real AI Tools -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
           <!-- Tool 1 Card -->
-          <div class="premium-card p-8 flex flex-col justify-between min-h-[420px]">
+          <div class="glass-card p-8 flex flex-col justify-between min-h-[420px]">
             <div class="space-y-6">
               <div class="flex justify-between items-center font-mono text-[10px]">
-                <span class="text-black font-bold uppercase">AGENT 01 / ACQUISITION</span>
-                <span class="px-2 py-0.5 border border-black bg-black text-white font-bold text-[8px] uppercase">LIVE ENGINE</span>
+                <span class="text-white font-bold uppercase">AGENT 01 / ACQUISITION</span>
+                <span class="px-2 py-0.5 bg-white text-black font-bold text-[8px] uppercase">LIVE ENGINE</span>
               </div>
               <div class="space-y-3">
-                <h3 class="text-xl font-display font-bold text-black">Autonomous Client Lead Extraction Agent</h3>
+                <h3 class="text-xl font-display font-bold text-white">Autonomous Client Lead Extraction Agent</h3>
                 <p class="text-xs text-muted leading-relaxed font-light">
                   An autonomous lead acquisition node configured utilizing advanced browser control scripts. The engine crawls deep target vertical criteria natively, evaluates market placement indicators, bypasses unguided gatekeepers, and compiles verified decision-maker information variables directly into backend database schemas without manual tracking entry.
                 </p>
               </div>
             </div>
             <div class="border-t border-borderLine pt-6 font-mono text-[11px] space-y-1 text-muted">
-              <div><span class="text-black font-bold">Stack:</span> Perplexity Browser Agents, Cursor AI</div>
-              <div><span class="text-black font-bold">Status:</span> Live Operational Sprint Node</div>
+              <div><span class="text-white font-bold">Stack:</span> Perplexity Browser Agents, Cursor AI</div>
+              <div><span class="text-white font-bold">Status:</span> Live Operational Sprint Node</div>
             </div>
           </div>
 
           <!-- Tool 2 Card -->
-          <div class="premium-card p-8 flex flex-col justify-between min-h-[420px]">
+          <div class="glass-card p-8 flex flex-col justify-between min-h-[420px]">
             <div class="space-y-6">
               <div class="flex justify-between items-center font-mono text-[10px]">
-                <span class="text-black font-bold uppercase">AGENT 02 / OUTREACH</span>
-                <span class="px-2 py-0.5 border border-borderLine text-black font-bold text-[8px] uppercase">STAGING</span>
+                <span class="text-white font-bold uppercase">AGENT 02 / OUTREACH</span>
+                <span class="px-2 py-0.5 glass-badge text-white font-bold text-[8px] uppercase">STAGING</span>
               </div>
               <div class="space-y-3">
-                <h3 class="text-xl font-display font-bold text-black">End-to-End Cold Video Outreach Pipeline</h3>
+                <h3 class="text-xl font-display font-bold text-white">End-to-End Cold Video Outreach Pipeline</h3>
                 <p class="text-xs text-muted leading-relaxed font-light">
                   A high-velocity transaction engine designed to scale conversion loops. The automation framework monitors incoming target directory rows, feeds variables directly to programmatic media rendering infrastructure, generates custom-tailored personalized video pitches, and triggers outreach email hooks natively, compressing client acquisition speed down to zero manual overhead.
                 </p>
               </div>
             </div>
             <div class="border-t border-borderLine pt-6 font-mono text-[11px] space-y-1 text-muted">
-              <div><span class="text-black font-bold">Stack:</span> Make.com, Airtable SDK, SMTP Relays</div>
-              <div><span class="text-black font-bold">Status:</span> Shipped to Local Staging Loop</div>
+              <div><span class="text-white font-bold">Stack:</span> Make.com, Airtable SDK, SMTP Relays</div>
+              <div><span class="text-white font-bold">Status:</span> Shipped to Local Staging Loop</div>
             </div>
           </div>
 
           <!-- Tool 3 Card -->
-          <div class="premium-card p-8 flex flex-col justify-between min-h-[420px]">
+          <div class="glass-card p-8 flex flex-col justify-between min-h-[420px]">
             <div class="space-y-6">
               <div class="flex justify-between items-center font-mono text-[10px]">
-                <span class="text-black font-bold uppercase">AGENT 03 / ENTERPRISE TRIAGE</span>
-                <span class="px-2 py-0.5 border border-borderLine text-black font-bold text-[8px] uppercase">PROTOTYPE</span>
+                <span class="text-white font-bold uppercase">AGENT 03 / ENTERPRISE TRIAGE</span>
+                <span class="px-2 py-0.5 glass-badge text-white font-bold text-[8px] uppercase">PROTOTYPE</span>
               </div>
               <div class="space-y-3">
-                <h3 class="text-xl font-display font-bold text-black">Progressive Clinical Intake &amp; CRM Hub</h3>
+                <h3 class="text-xl font-display font-bold text-white">Progressive Clinical Intake &amp; CRM Hub</h3>
                 <p class="text-xs text-muted leading-relaxed font-light">
                   A bespoke, client-facing intake portal developed for premium clinical frameworks (such as dental clinic structures). The frontend environment ingests unstructured user text strings, instantly categorizes intent indicators via background LLM prompt wrappers, resolves priority treatment paths, and hooks parameters cleanly into internal corporate databases.
                 </p>
               </div>
             </div>
             <div class="border-t border-borderLine pt-6 font-mono text-[11px] space-y-1 text-muted">
-              <div><span class="text-black font-bold">Stack:</span> Vanilla JS, OpenAI API, Airtable Matrix</div>
-              <div><span class="text-black font-bold">Status:</span> Final Verification Stage</div>
+              <div><span class="text-white font-bold">Stack:</span> Vanilla JS, OpenAI API, Airtable Matrix</div>
+              <div><span class="text-white font-bold">Status:</span> Final Verification Stage</div>
             </div>
           </div>
 
@@ -270,63 +293,63 @@
     </section>
 
     <!-- Procurement & Contact Section -->
-    <section id="contact" class="py-24 px-6 md:px-10 border-t border-borderLine bg-panel">
+    <section id="contact" class="py-24 px-6 md:px-10 border-t border-borderLine bg-white/[0.01]">
       <div class="max-w-4xl mx-auto space-y-12">
         
         <div class="text-center space-y-4">
           <span class="text-xs font-mono tracking-widest text-muted uppercase font-bold block">// Procurement</span>
-          <h2 class="text-3xl font-display font-extrabold text-black">Let's Build Your Automation Machine</h2>
+          <h2 class="text-3xl font-display font-extrabold text-white">Let's Build Your Automation Machine</h2>
           <p class="text-muted text-sm max-w-xl mx-auto leading-relaxed font-light">
             Secure an elegant visual interface that anchors your consumer presence, backed by autonomous systems that execute your custom operational rules seamlessly.
           </p>
         </div>
 
-        <!-- The 14-Day Velocity Guarantee Block -->
-        <div class="border border-black bg-white p-8 text-center relative shadow-sm">
+        <!-- The 14-Day Velocity Guarantee Block (Stark White Contrast Glass) -->
+        <div class="glass-card bg-white/[0.03] border border-white/10 p-8 text-center relative shadow-sm">
           <div class="space-y-3">
-            <span class="inline-block px-3 py-1 bg-black text-white text-[9px] font-mono font-bold uppercase tracking-widest">The 14-Day Execution Guarantee</span>
-            <p class="text-base text-black font-display font-medium leading-relaxed max-w-2xl mx-auto italic">
+            <span class="inline-block px-3 py-1 bg-white text-black text-[9px] font-mono font-bold uppercase tracking-widest">The 14-Day Execution Guarantee</span>
+            <p class="text-base text-white font-display font-medium leading-relaxed max-w-2xl mx-auto italic">
               "Fast-scaling startups and premium trade systems cannot afford long corporate engineering delays. Because I build using advanced, AI-assisted deployment pipelines (Cursor AI), your custom interface and automated operational matrix goes from initial strategy architecture call to live production inside a 14-day window—or you don't pay a single penny."
             </p>
           </div>
         </div>
 
         <!-- Form Panel -->
-        <div class="bg-white border border-borderLine p-6 sm:p-8 space-y-6 relative max-w-2xl mx-auto">
-          <h3 class="text-black font-display font-bold text-base text-center">Request a Free Operations &amp; Automation Audit</h3>
+        <div class="glass-card p-6 sm:p-8 space-y-6 relative max-w-2xl mx-auto">
+          <h3 class="text-white font-display font-bold text-base text-center">Request a Free Operations &amp; Automation Audit</h3>
           
           <form id="portfolio-contact-form" class="space-y-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input type="text" id="contact-name" placeholder="Your Name" required class="bg-panel border border-borderLine px-4 py-3 text-xs text-black outline-none focus:border-black transition-colors" />
-              <input type="email" id="contact-email" placeholder="Corporate Email Address" required class="bg-panel border border-borderLine px-4 py-3 text-xs text-black outline-none focus:border-black transition-colors" />
+              <input type="text" id="contact-name" placeholder="Your Name" required class="glass-input px-4 py-3 text-xs text-white outline-none transition-colors" />
+              <input type="email" id="contact-email" placeholder="Corporate Email Address" required class="glass-input px-4 py-3 text-xs text-white outline-none transition-colors" />
             </div>
             <div>
-              <textarea id="contact-msg" rows="4" placeholder="Describe briefly where your operation experiences repetitive manual backlogs (e.g., lead triage checks, manual CRM re-keying, data copying latency)..." required class="w-full bg-panel border border-borderLine px-4 py-3 text-xs text-black outline-none focus:border-black transition-colors resize-none"></textarea>
+              <textarea id="contact-msg" rows="4" placeholder="Describe briefly where your operation experiences repetitive manual backlogs (e.g., lead triage checks, manual CRM re-keying, data copying latency)..." required class="w-full glass-input px-4 py-3 text-xs text-white outline-none transition-colors resize-none"></textarea>
             </div>
-            <button type="submit" class="w-full py-3 bg-black hover:bg-gray-900 text-white text-xs font-bold uppercase tracking-wider transition-all">
+            <button type="submit" class="w-full py-3 bg-white hover:bg-gray-100 text-black text-xs font-bold uppercase tracking-wider transition-all">
               Transmit Parameters &amp; Claim Audit
             </button>
           </form>
 
           <div id="contact-feedback" class="hidden text-center py-6 space-y-2">
             <span class="text-2xl">🚀</span>
-            <h4 class="text-black font-display font-bold text-sm">System Parameters Logged</h4>
+            <h4 class="text-white font-display font-bold text-sm">System Parameters Logged</h4>
             <p class="text-xs text-muted font-light leading-relaxed">Your workflow bounds have successfully updated. I will audit your structural constraints and map an optimization path within 24 hours.</p>
           </div>
         </div>
 
         <!-- Quick Access Direct Channels -->
         <div class="flex flex-wrap justify-center gap-8 text-xs font-mono font-bold uppercase tracking-wider pt-4 border-t border-borderLine">
-          <a href="mailto:rodhanala@gmail.com" class="underline hover:text-muted transition-colors">Email Desk</a>
-          <a href="https://wa.me/447311470011" target="_blank" rel="noopener noreferrer" class="underline hover:text-muted transition-colors">WhatsApp Direct</a>
-          <a href="https://www.linkedin.com/in/rohith-dhanala-35715b162/" target="_blank" rel="noopener noreferrer" class="underline hover:text-muted transition-colors">LinkedIn</a>
+          <a href="mailto:rodhanala@gmail.com" class="underline hover:text-white transition-colors">Email Desk</a>
+          <a href="https://wa.me/447311470011" target="_blank" rel="noopener noreferrer" class="underline hover:text-white transition-colors">WhatsApp Direct</a>
+          <a href="https://www.linkedin.com/in/rohith-dhanala-35715b162/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white transition-colors">LinkedIn</a>
         </div>
 
       </div>
     </section>
 
     <!-- Footer Metadata -->
-    <footer class="py-12 border-t border-borderLine text-center space-y-2 font-mono text-[10px] text-muted uppercase tracking-wider bg-white">
+    <footer class="py-12 border-t border-borderLine text-center space-y-2 font-mono text-[10px] text-muted uppercase tracking-wider bg-background">
       <div>&copy; 2026 Rohith Dhanala. Premium Digital Products &amp; AI Automations.</div>
       <div>Southampton, United Kingdom • Supporting Operations Globally.</div>
     </footer>
