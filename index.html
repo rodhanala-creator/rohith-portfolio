@@ -1,414 +1,51 @@
-<!doctype html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rohith Dhanala | AI Systems, Automation & Digital Operations</title>
-    <meta
-      name="description"
-      content="Rohith Dhanala is a systems automation architect focused on AI workflows, digital operations, product thinking, and automation-led business systems."
+<form
+  id="portfolio-contact-form"
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  class="space-y-5"
+>
+  <!-- Replace with your real Web3Forms access key -->
+  <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE" />
+
+  <!-- Optional settings -->
+  <input type="hidden" name="subject" value="New message from rohithdhanala.com" />
+  <input type="hidden" name="from_name" value="Rohith Dhanala Portfolio" />
+  <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <input
+      type="text"
+      id="contact-name"
+      name="name"
+      placeholder="Your Name"
+      required
+      class="glass-input-node px-4 py-3.5 text-xs text-white outline-none rounded-xl w-full"
     />
-
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="Rohith Dhanala" />
-    <link rel="canonical" href="https://rohithdhanala.com/" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Rohith Dhanala | AI Systems, Automation & Digital Operations" />
-    <meta
-      property="og:description"
-      content="I help businesses reduce manual operational work through better systems, automation, and product thinking."
+    <input
+      type="email"
+      id="contact-email"
+      name="email"
+      placeholder="Your Email"
+      required
+      class="glass-input-node px-4 py-3.5 text-xs text-white outline-none rounded-xl w-full"
     />
+  </div>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+  <div>
+    <textarea
+      id="contact-msg"
+      name="message"
+      rows="4"
+      placeholder="Tell me about the role, project, collaboration, or workflow challenge you want to discuss..."
+      required
+      class="w-full glass-input-node px-4 py-3.5 text-xs text-white outline-none rounded-xl resize-none"
+    ></textarea>
+  </div>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Plus Jakarta Sans", "sans-serif"],
-              display: ["Bricolage Grotesque", "sans-serif"],
-              mono: ["JetBrains Mono", "monospace"],
-            },
-            colors: {
-              background: "#08090C",
-              surface: "#12141C",
-              muted: "#8A8F98"
-            }
-          },
-        },
-      };
-    </script>
-
-    <style>
-      body {
-        background-color: #08090C;
-        color: #FFFFFF;
-      }
-
-      .apple-glass-panel {
-        background: rgba(255, 255, 255, 0.02);
-        backdrop-filter: blur(30px) saturate(210%);
-        -webkit-backdrop-filter: blur(30px) saturate(210%);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        box-shadow:
-          inset 0 1px 0px 0px rgba(255, 255, 255, 0.12),
-          0 1px 3px rgba(0, 0, 0, 0.4),
-          0 16px 40px -12px rgba(0, 0, 0, 0.7);
-        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      .apple-glass-panel:hover {
-        background: rgba(255, 255, 255, 0.04);
-        border-color: rgba(255, 255, 255, 0.14);
-        box-shadow:
-          inset 0 1px 0px 0px rgba(255, 255, 255, 0.25),
-          0 24px 60px -8px rgba(0, 0, 0, 0.9);
-        transform: translateY(-4px);
-      }
-
-      .apple-island-nav {
-        background: rgba(14, 16, 22, 0.6);
-        backdrop-filter: blur(20px) saturate(160%);
-        -webkit-backdrop-filter: blur(20px) saturate(160%);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        box-shadow:
-          inset 0 1px 1px rgba(255, 255, 255, 0.1),
-          0 10px 30px rgba(0, 0, 0, 0.5);
-      }
-
-      .glass-input-node {
-        background: rgba(0, 0, 0, 0.35);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6);
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      .glass-input-node:focus {
-        background: rgba(0, 0, 0, 0.5);
-        border-color: rgba(255, 255, 255, 0.3);
-        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.7), 0 0 0 4px rgba(255, 255, 255, 0.02);
-      }
-
-      .custom-scroll::-webkit-scrollbar {
-        width: 5px;
-      }
-
-      .custom-scroll::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-      }
-    </style>
-  </head>
-
-  <body class="selection:bg-white selection:text-black relative antialiased custom-scroll overflow-x-hidden font-sans">
-
-    <div class="absolute top-0 inset-x-0 h-[1200px] bg-gradient-to-b from-[#181A20] via-[#08090C] to-transparent -z-10 opacity-70"></div>
-    <div class="absolute top-[8%] left-[-20%] w-[800px] h-[800px] bg-[#2C2F38]/15 rounded-full blur-[160px] pointer-events-none -z-10"></div>
-    <div class="absolute top-[35%] right-[-20%] w-[700px] h-[700px] bg-[#1B1D24]/40 rounded-full blur-[140px] pointer-events-none -z-10"></div>
-    <div class="absolute bottom-[15%] left-[-10%] w-[600px] h-[600px] bg-[#22252E]/10 rounded-full blur-[150px] pointer-events-none -z-10"></div>
-
-    <div class="fixed w-full z-50 top-6 px-4 flex justify-center items-center pointer-events-none">
-      <nav class="w-full max-w-4xl apple-island-nav py-2.5 px-3 rounded-full flex justify-between items-center pointer-events-auto">
-        <a href="#home" class="flex items-center gap-2.5 pl-2 group">
-          <div class="w-7 h-7 bg-white flex items-center justify-center rounded-full transition-transform group-hover:scale-105">
-            <span class="text-[11px] font-mono font-bold text-black">RD</span>
-          </div>
-          <div class="flex flex-col">
-            <span class="text-xs font-bold text-white tracking-tight">Rohith Dhanala</span>
-          </div>
-        </a>
-
-        <div class="hidden sm:flex items-center gap-1">
-          <a href="#about" class="text-[10px] tracking-wider uppercase text-muted hover:text-white px-3 py-1.5 font-semibold transition-colors">About</a>
-          <a href="#experience" class="text-[10px] tracking-wider uppercase text-muted hover:text-white px-3 py-1.5 font-semibold transition-colors">Experience</a>
-          <a href="#building" class="text-[10px] tracking-wider uppercase text-muted hover:text-white px-3 py-1.5 font-semibold transition-colors">Now Building</a>
-        </div>
-
-        <a href="#contact" class="text-[10px] tracking-wider uppercase text-black bg-white px-4 py-2 font-bold hover:bg-gray-200 transition-all rounded-full shadow-sm">
-          Contact
-        </a>
-      </nav>
-    </div>
-
-    <section id="home" class="min-h-screen flex items-center pt-36 pb-24 px-6 md:px-12">
-      <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-
-        <div class="lg:col-span-8 text-left space-y-8">
-          <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/[0.03] border border-white/[0.06] rounded-full shadow-inner">
-            <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full shadow-[0_0_8px_rgba(52,211,153,0.5)]"></span>
-            <span class="text-[9px] uppercase tracking-widest text-gray-400 font-mono font-medium">Open to remote roles, freelance systems work, and AI automation collaborations</span>
-          </div>
-
-          <h1 class="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl text-white leading-[1.05] tracking-tight">
-            I design digital systems <br />
-            <span class="text-muted font-light italic">that reduce manual work and support better operations.</span>
-          </h1>
-
-          <p class="text-base sm:text-lg text-muted font-light leading-relaxed max-w-2xl">
-            I work at the intersection of digital operations, product thinking, and AI automation. My background combines systems transformation, growth automation, interface design, and workflow analysis—helping teams simplify repetitive work and move toward smarter, more scalable processes.
-          </p>
-
-          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-            <a href="#contact" class="px-8 py-4 bg-white hover:bg-gray-200 text-black text-xs font-bold uppercase tracking-wider transition-all text-center rounded-full shadow-md">
-              Work With Me &rarr;
-            </a>
-            <a href="#experience" class="px-8 py-4 bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.05] hover:border-white/20 transition-all text-xs font-bold uppercase tracking-wider text-white text-center rounded-full">
-              View Experience
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-4 grid grid-cols-1 gap-4 font-mono text-[11px]">
-          <div class="apple-glass-panel p-6 rounded-2xl">
-            <div class="text-white font-bold mb-1.5 tracking-wider">01 / SYSTEMS</div>
-            <p class="text-muted font-sans text-xs leading-relaxed">Workflow mapping, operational friction analysis, and practical automation thinking shaped by real delivery experience.</p>
-          </div>
-          <div class="apple-glass-panel p-6 rounded-2xl">
-            <div class="text-white font-bold mb-1.5 tracking-wider">02 / AI + OPS</div>
-            <p class="text-muted font-sans text-xs leading-relaxed">Focused on AI workflows, agent-led processes, and automation systems that help teams reduce repetitive operational tasks.</p>
-          </div>
-          <div class="apple-glass-panel p-6 rounded-2xl">
-            <div class="text-white font-bold mb-1.5 tracking-wider">03 / DIRECTION</div>
-            <p class="text-muted font-sans text-xs leading-relaxed">Building toward digital products and entrepreneurship while supporting businesses through systems, interfaces, and operational design.</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="about" class="py-28 px-6 md:px-12 border-t border-white/[0.03] bg-white/[0.005]">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-
-        <div class="lg:col-span-5 space-y-6">
-          <span class="text-xs font-mono tracking-widest text-muted uppercase font-bold block">// About</span>
-          <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white leading-tight">
-            Systems thinking.<br />Product mindset.
-          </h2>
-          <div class="space-y-4 text-muted text-sm font-light leading-relaxed">
-            <p>
-              My background combines Computer Science with Business Management, which shapes the way I approach digital systems: not just as interfaces or automations, but as operational environments that need to work clearly for both teams and users.
-            </p>
-            <p>
-              I have worked across healthcare systems transformation, growth automation, and digital product delivery. Today, I am moving deeper into AI workflows, agent-led operations, and digital products that can evolve into long-term business assets.
-            </p>
-          </div>
-        </div>
-
-        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div class="apple-glass-panel p-6 rounded-2xl">
-            <div class="text-xs font-mono text-white font-bold uppercase mb-2">01 / Operational Analysis</div>
-            <p class="text-xs text-muted font-light leading-relaxed">I look at how work actually moves inside a business, where teams lose time, and where digital systems create unnecessary manual effort.</p>
-          </div>
-
-          <div class="apple-glass-panel p-6 rounded-2xl">
-            <div class="text-xs font-mono text-white font-bold uppercase mb-2">02 / Automation Direction</div>
-            <p class="text-xs text-muted font-light leading-relaxed">My focus is on practical automation and AI-enabled workflows that improve coordination, response speed, and process clarity.</p>
-          </div>
-
-          <div class="apple-glass-panel p-6 rounded-2xl">
-            <div class="text-xs font-mono text-white font-bold uppercase mb-2">03 / Interface Thinking</div>
-            <p class="text-xs text-muted font-light leading-relaxed">I care about the front-end layer too—how systems feel, how users move through them, and how digital experiences support trust and action.</p>
-          </div>
-
-          <div class="apple-glass-panel p-6 rounded-2xl">
-            <div class="text-xs font-mono text-white font-bold uppercase mb-2">04 / Founder Trajectory</div>
-            <p class="text-xs text-muted font-light leading-relaxed">My long-term direction is entrepreneurship: building useful digital products while taking on roles and freelance work that strengthen that path.</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="experience" class="py-28 px-6 md:px-12 relative border-t border-white/[0.03]">
-      <div class="max-w-7xl mx-auto space-y-16">
-
-        <div class="space-y-4 max-w-3xl">
-          <span class="text-xs font-mono tracking-widest text-muted uppercase font-bold block">// Experience</span>
-          <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight">Selected professional background</h2>
-          <p class="text-muted text-sm sm:text-base leading-relaxed font-light">
-            My experience is rooted in real delivery across systems transformation, digital growth, and product-oriented design. This is the foundation I now bring into AI automation and future product building.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div class="apple-glass-panel p-8 flex flex-col justify-between min-h-[420px] rounded-3xl relative overflow-hidden">
-            <div class="space-y-6">
-              <div class="flex justify-between items-center font-mono text-[10px]">
-                <span class="text-white font-bold uppercase tracking-wider">2022 — 2026</span>
-                <span class="px-2 py-0.5 bg-white/[0.06] border border-white/[0.1] text-white font-bold text-[8px] rounded-full uppercase">Healthcare Systems</span>
-              </div>
-              <div class="space-y-3">
-                <h3 class="text-xl font-display font-bold text-white tracking-tight">University Hospital Southampton NHS FT</h3>
-                <p class="text-xs uppercase tracking-widest text-muted font-mono">Digital Project Manager · Systems Transformation</p>
-                <p class="text-xs text-muted leading-relaxed font-light">
-                  Led digital change across software systems and data compliance workflows inside a major healthcare environment. My work included identifying operational bottlenecks, improving coordination across technical and executive teams, and helping shape cleaner data and interface processes.
-                </p>
-              </div>
-            </div>
-            <div class="border-t border-white/[0.06] pt-4 font-mono text-[11px] text-muted">
-              <span class="text-white font-bold">Focus:</span> systems delivery, workflow review, digital transformation
-            </div>
-          </div>
-
-          <div class="apple-glass-panel p-8 flex flex-col justify-between min-h-[420px] rounded-3xl relative overflow-hidden">
-            <div class="space-y-6">
-              <div class="flex justify-between items-center font-mono text-[10px]">
-                <span class="text-white font-bold uppercase tracking-wider">2021 — 2022</span>
-                <span class="px-2 py-0.5 bg-white/[0.06] border border-white/[0.1] text-white font-bold text-[8px] rounded-full uppercase">Growth Automation</span>
-              </div>
-              <div class="space-y-3">
-                <h3 class="text-xl font-display font-bold text-white tracking-tight">Let's Get Coffee</h3>
-                <p class="text-xs uppercase tracking-widest text-muted font-mono">Digital Project Manager · Growth Automation</p>
-                <p class="text-xs text-muted leading-relaxed font-light">
-                  Worked across digital growth systems, feature coordination, and customer-acquisition infrastructure. I supported automated internal notification loops, platform triggers, and landing experience improvements designed to reduce manual follow-up and support better conversion journeys.
-                </p>
-              </div>
-            </div>
-            <div class="border-t border-white/[0.06] pt-4 font-mono text-[11px] text-muted">
-              <span class="text-white font-bold">Focus:</span> automation flows, growth systems, customer journey improvements
-            </div>
-          </div>
-
-          <div class="apple-glass-panel p-8 flex flex-col justify-between min-h-[420px] rounded-3xl relative overflow-hidden">
-            <div class="space-y-6">
-              <div class="flex justify-between items-center font-mono text-[10px]">
-                <span class="text-white font-bold uppercase tracking-wider">2019 — 2021</span>
-                <span class="px-2 py-0.5 bg-white/[0.06] border border-white/[0.1] text-white font-bold text-[8px] rounded-full uppercase">Studio / Founder</span>
-              </div>
-              <div class="space-y-3">
-                <h3 class="text-xl font-display font-bold text-white tracking-tight">Maxcreepers Studio Pvt. Ltd.</h3>
-                <p class="text-xs uppercase tracking-widest text-muted font-mono">Founder & Lead Systems Designer</p>
-                <p class="text-xs text-muted leading-relaxed font-light">
-                  Built digital products and interface systems for client work, translating requirements into usable design and delivery structures. This period shaped my interest in product building, user flow design, and creating digital assets that can scale into long-term businesses.
-                </p>
-              </div>
-            </div>
-            <div class="border-t border-white/[0.06] pt-4 font-mono text-[11px] text-muted">
-              <span class="text-white font-bold">Focus:</span> interfaces, digital products, founder-led delivery
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="building" class="py-28 px-6 md:px-12 border-t border-white/[0.03] bg-white/[0.005]">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-
-        <div class="lg:col-span-5 space-y-6">
-          <span class="text-xs font-mono tracking-widest text-muted uppercase font-bold block">// Now Building</span>
-          <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white leading-tight">
-            What I am focused on now.
-          </h2>
-          <div class="space-y-4 text-muted text-sm font-light leading-relaxed">
-            <p>
-              I am currently positioning myself around AI systems, workflow automation, and digital products that can eventually grow into founder-led businesses. This part of the site is intentionally transparent: it reflects what I am actively exploring and building toward, rather than overstating finished products.
-            </p>
-            <p>
-              I am especially interested in AI agents, operational tooling, process simplification, and lightweight product ideas that help teams reduce repetitive administrative work.
-            </p>
-          </div>
-        </div>
-
-        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div class="apple-glass-panel p-6 rounded-2xl">
-            <div class="text-xs font-mono text-white font-bold uppercase mb-2">01 / AI Workflows</div>
-            <p class="text-xs text-muted font-light leading-relaxed">Exploring agent-led workflows, automation logic, prompt-based systems, and practical ways AI can support operations across small teams and digital businesses.</p>
-          </div>
-
-          <div class="apple-glass-panel p-6 rounded-2xl">
-            <div class="text-xs font-mono text-white font-bold uppercase mb-2">02 / Product Concepts</div>
-            <p class="text-xs text-muted font-light leading-relaxed">Developing product ideas around operational dashboards, internal tools, and simple automation-first interfaces that can evolve into real software businesses over time.</p>
-          </div>
-
-          <div class="apple-glass-panel p-6 rounded-2xl">
-            <div class="text-xs font-mono text-white font-bold uppercase mb-2">03 / Freelance Direction</div>
-            <p class="text-xs text-muted font-light leading-relaxed">Available for freelance and contract work where businesses need systems thinking, workflow cleanup, AI automation direction, or stronger digital operations.</p>
-          </div>
-
-          <div class="apple-glass-panel p-6 rounded-2xl">
-            <div class="text-xs font-mono text-white font-bold uppercase mb-2">04 / Long-Term Goal</div>
-            <p class="text-xs text-muted font-light leading-relaxed">My long-term goal is entrepreneurship: building digital products and service systems that create independence, recurring value, and real business leverage.</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="contact" class="py-28 px-6 md:px-12 border-t border-white/[0.03]">
-      <div class="max-w-4xl mx-auto space-y-14">
-
-        <div class="text-center space-y-4">
-          <span class="text-xs font-mono tracking-widest text-muted uppercase font-bold block">// Contact</span>
-          <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white tracking-tight">Open to roles, freelance work, and collaborations</h2>
-          <p class="text-muted text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-light">
-            I am currently open to remote opportunities, freelance projects, and conversations around AI systems, workflow automation, digital operations, and product-oriented work.
-          </p>
-        </div>
-
-        <div class="apple-glass-panel p-8 sm:p-10 text-center relative rounded-3xl">
-          <div class="space-y-4">
-            <span class="inline-block px-3 py-1 bg-white text-black text-[9px] font-mono font-bold uppercase tracking-widest rounded-full shadow-sm">Current Focus</span>
-            <p class="text-base sm:text-lg text-white font-display font-medium leading-relaxed max-w-2xl mx-auto italic">
-              “I am building toward a future as an entrepreneur in AI and digital products. In the meantime, I am looking for the right remote role, freelance collaboration, or systems-focused opportunity where I can create value while continuing to grow.”
-            </p>
-          </div>
-        </div>
-
-        <div class="apple-glass-panel p-6 sm:p-10 space-y-8 relative max-w-2xl mx-auto rounded-3xl">
-          <h3 class="text-white font-display font-bold text-lg text-center tracking-tight">Start a conversation</h3>
-
-          <form id="portfolio-contact-form" class="space-y-5">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input type="text" id="contact-name" placeholder="Your Name" required class="glass-input-node px-4 py-3.5 text-xs text-white outline-none rounded-xl w-full" />
-              <input type="email" id="contact-email" placeholder="Your Email" required class="glass-input-node px-4 py-3.5 text-xs text-white outline-none rounded-xl w-full" />
-            </div>
-            <div>
-              <textarea id="contact-msg" rows="4" placeholder="Tell me about the role, project, collaboration, or workflow challenge you want to discuss..." required class="w-full glass-input-node px-4 py-3.5 text-xs text-white outline-none rounded-xl resize-none"></textarea>
-            </div>
-            <button type="submit" class="w-full py-4 bg-white hover:bg-gray-200 text-black text-xs font-bold uppercase tracking-wider transition-all rounded-xl shadow-md">
-              Send Message
-            </button>
-          </form>
-
-          <div id="contact-feedback" class="hidden text-center py-6 space-y-2">
-            <span class="text-2xl">✓</span>
-            <h4 class="text-white font-display font-bold text-sm">Message received</h4>
-            <p class="text-xs text-muted font-light leading-relaxed">Thanks for reaching out. I will get back to you as soon as possible.</p>
-          </div>
-        </div>
-
-        <div class="flex flex-wrap justify-center gap-8 text-xs font-mono font-bold uppercase tracking-wider pt-4 border-t border-white/[0.03]">
-          <a href="mailto:rodhanala@gmail.com" class="underline hover:text-white transition-colors">Email</a>
-          <a href="https://wa.me/447311470011" target="_blank" rel="noopener noreferrer" class="underline hover:text-white transition-colors">WhatsApp</a>
-          <a href="https://www.linkedin.com/in/rohith-dhanala-35715b162/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white transition-colors">LinkedIn</a>
-          <a href="https://rohithdhanala.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-white transition-colors">Portfolio</a>
-        </div>
-
-      </div>
-    </section>
-
-    <footer class="py-14 border-t border-white/[0.03] text-center space-y-2 font-mono text-[10px] text-muted uppercase tracking-wider bg-background">
-      <div>&copy; 2026 Rohith Dhanala. AI systems, digital operations, and product-focused work.</div>
-      <div>Based in Southampton, working globally.</div>
-    </footer>
-
-    <script>
-      document.getElementById('portfolio-contact-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        this.classList.add('hidden');
-        const feedback = document.getElementById('contact-feedback');
-        if (feedback) feedback.classList.remove('hidden');
-      });
-    </script>
-  </body>
-</html>
+  <button
+    type="submit"
+    class="w-full py-4 bg-white hover:bg-gray-200 text-black text-xs font-bold uppercase tracking-wider transition-all rounded-xl shadow-md"
+  >
+    Send Message
+  </button>
+</form>
