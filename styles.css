@@ -1,101 +1,126 @@
 /* ==========================================================================
-   ROHITH DHANALA PORTFOLIO - CORE STYLING SYSTEM
-   Bespoke Vanilla CSS Extensions for Tailwind CSS Core Layouts
+   ROHITH DHANALA PORTFOLIO - CLEAN RESPONSIVE EXTENSIONS
    ========================================================================== */
 
-/* Custom Variables & Root Settings */
 :root {
-  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-display: 'Bricolage Grotesque', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  
-  --bg-color: #050508;
-  --panel-color: rgba(11, 12, 16, 0.65);
-  --panel-border: rgba(255, 255, 255, 0.04);
-  --panel-border-hover: rgba(255, 255, 255, 0.09);
-  
-  --color-primary: #FFFFFF;
-  --color-muted: #8A94A6;
-  --color-accent: #4F46E5;
-  --color-accent-glow: #8B5CF6;
-  --color-emerald: #10B981;
-  --color-amber: #F59E0B;
-  --color-rose: #F43F5E;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --bg-color: #08090c;
+  --panel-color: rgba(11, 12, 16, 0.58);
+  --panel-border: rgba(255, 255, 255, 0.05);
+  --panel-border-hover: rgba(255, 255, 255, 0.12);
+
+  --color-primary: #ffffff;
+  --color-muted: #8a8f98;
+  --color-accent: #4f46e5;
+  --color-emerald: #10b981;
 }
 
-/* Global resets & overrides */
 html {
   scroll-behavior: smooth;
   background-color: var(--bg-color);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   background-color: var(--bg-color);
-  color: #F3F4F6;
+  color: #f3f4f6;
   font-family: var(--font-sans);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Noise overlay for high-end organic grain texture */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  touch-action: manipulation;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .noise-overlay {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 99;
-  opacity: 0.015;
+  z-index: 1;
+  opacity: 0.012;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* Engineering Blueprint Grid Background */
 .bg-grid {
   background-size: 40px 40px;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.012) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
 }
 
-/* Ambient Glow Orbs */
 .glow-orb {
-  filter: blur(140px);
-  opacity: 0.14;
+  filter: blur(120px);
+  opacity: 0.12;
   pointer-events: none;
   will-change: transform, opacity;
 }
 
-/* Luxury Glassmorphism Container */
 .glass-card {
   background: var(--panel-color);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
   border: 1px solid var(--panel-border);
   box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.7);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card:hover {
   border-color: var(--panel-border-hover);
   transform: translateY(-2px);
-  box-shadow: 0 24px 48px -15px rgba(79, 70, 229, 0.2);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.55);
 }
 
-/* Elegant custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: #050508;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #1E202B;
+  background: #1e202b;
   border-radius: 99px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #313547;
 }
 
-/* Animations */
 .animate-scanline {
   animation: scanline 8s linear infinite;
 }
@@ -105,11 +130,12 @@ body {
   100% { transform: translateY(100%); }
 }
 
-/* Reveal classes for intersection observer */
 .reveal {
   opacity: 0;
   transform: translateY(16px);
-  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.active {
@@ -117,27 +143,24 @@ body {
   transform: translateY(0);
 }
 
-/* --------------------------------------------------------------------------
-   INTERACTIVE PROTOTYPES CUSTOM UI
-   -------------------------------------------------------------------------- */
-
-/* Custom styled scroll area for terminal logs */
 .custom-scroll {
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
 }
+
 .custom-scroll::-webkit-scrollbar {
   width: 4px;
 }
+
 .custom-scroll::-webkit-scrollbar-track {
   background: transparent;
 }
+
 .custom-scroll::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
 }
 
-/* Sparkline Animation */
 #chart-line-path {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
@@ -161,10 +184,9 @@ body {
   }
 }
 
-/* Kanban Drag and Drop Styles */
 .kanban-column {
   min-height: 250px;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .kanban-column.drag-over {
@@ -189,9 +211,8 @@ body {
   border-color: var(--color-accent);
 }
 
-/* ClientBridge timeline styles */
 .timeline-line {
-  background: linear-gradient(to bottom, #1E1B4B 0%, #1E1B4B 100%);
+  background: linear-gradient(to bottom, #1e1b4b 0%, #1e1b4b 100%);
 }
 
 .timeline-line-fill {
@@ -199,7 +220,6 @@ body {
   transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Terminals and Editors */
 .terminal-window {
   box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.8);
 }
@@ -217,7 +237,6 @@ body {
   to { visibility: hidden; }
 }
 
-/* Success Animations */
 .success-checkmark {
   width: 80px;
   height: 80px;
@@ -234,12 +253,11 @@ body {
 }
 
 .success-checkmark .check-icon::after {
-  content: '';
+  content: "";
   position: absolute;
   background: transparent;
 }
 
-/* App page transitions for single page routing */
 .app-page {
   transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
@@ -249,4 +267,90 @@ body {
   display: none !important;
   opacity: 0;
   transform: translateY(12px);
+}
+
+/* ==========================================================================
+   MOBILE + RESPONSIVE SAFETY
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .glow-orb {
+    filter: blur(90px);
+    opacity: 0.09;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .noise-overlay {
+    opacity: 0.008;
+  }
+
+  .bg-grid {
+    background-size: 28px 28px;
+  }
+
+  .glow-orb {
+    filter: blur(72px);
+    opacity: 0.07;
+  }
+
+  .glass-card:hover {
+    transform: none;
+    box-shadow: 0 10px 24px -12px rgba(0, 0, 0, 0.55);
+  }
+
+  .reveal {
+    transform: translateY(10px);
+  }
+
+  .terminal-window {
+    box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.65);
+  }
+
+  .kanban-column {
+    min-height: 180px;
+  }
+
+  .success-checkmark,
+  .success-checkmark .check-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .reveal.active,
+  .glass-card:hover,
+  .kanban-card:active {
+    transform: none !important;
+  }
 }
