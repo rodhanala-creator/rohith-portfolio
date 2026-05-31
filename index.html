@@ -2,7 +2,7 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Rohith Dhanala | AI Systems, Automation & Digital Operations</title>
     <meta
       name="description"
@@ -109,13 +109,14 @@
     </style>
   </head>
 
-  <body class="selection:bg-white selection:text-black relative antialiased custom-scroll overflow-x-hidden font-sans">
+  <body class="selection:bg-white selection:text-black relative antialiased custom-scroll overflow-x-hidden font-sans w-full max-w-[100vw]">
 
-    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
-      <div class="absolute top-0 inset-x-0 h-[1200px] bg-gradient-to-b from-[#181A20] via-[#08090C] to-transparent opacity-70"></div>
-      <div class="absolute top-[8%] left-[-20%] w-[800px] h-[800px] bg-[#2C2F38]/15 rounded-full blur-[160px]"></div>
-      <div class="absolute top-[35%] right-[-20%] w-[700px] h-[700px] bg-[#1B1D24]/40 rounded-full blur-[140px]"></div>
-      <div class="absolute bottom-[15%] left-[-10%] w-[600px] h-[600px] bg-[#22252E]/10 rounded-full blur-[150px]"></div>
+    <!-- Backgrounds with absolute pixel widths changed to responsive widths to prevent iOS horizontal stretching -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10 w-full">
+      <div class="absolute top-0 inset-x-0 h-full bg-gradient-to-b from-[#181A20] via-[#08090C] to-transparent opacity-70"></div>
+      <div class="absolute top-[8%] left-[-20%] w-[150vw] md:w-[800px] h-[150vw] md:h-[800px] bg-[#2C2F38]/15 rounded-full blur-[100px] md:blur-[160px]"></div>
+      <div class="absolute top-[35%] right-[-20%] w-[150vw] md:w-[700px] h-[150vw] md:h-[700px] bg-[#1B1D24]/40 rounded-full blur-[100px] md:blur-[140px]"></div>
+      <div class="absolute bottom-[15%] left-[-10%] w-[150vw] md:w-[600px] h-[150vw] md:h-[600px] bg-[#22252E]/10 rounded-full blur-[100px] md:blur-[150px]"></div>
     </div>
 
     <div class="fixed w-full z-50 top-6 px-4 flex justify-center items-center pointer-events-none">
