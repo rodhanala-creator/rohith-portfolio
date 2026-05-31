@@ -1,612 +1,782 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rohith Dhanala | AI Systems, Automation & Digital Operations</title>
-    <meta
-      name="description"
-      content="Rohith Dhanala is a systems-focused digital operations professional working across AI workflows, automation, product thinking, and operational improvement."
-    />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="Rohith Dhanala" />
-    <link rel="canonical" href="https://rohithdhanala.com/" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Rohith Dhanala | AI Systems, Automation & Digital Operations" />
-    <meta
-      property="og:description"
-      content="I help businesses reduce manual operational work through better systems, automation, and product thinking."
-    />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Plus Jakarta Sans", "sans-serif"],
-              display: ["Bricolage Grotesque", "sans-serif"],
-              mono: ["JetBrains Mono", "monospace"],
-            },
-            colors: {
-              background: "#08090C",
-              surface: "#12141C",
-              muted: "#8A8F98"
-            }
-          },
-        },
-      };
-    </script>
-
-    <style>
-      html, body {
-        max-width: 100%;
-        overflow-x: hidden;
-      }
-
-      body {
-        background-color: #08090C;
-        color: #FFFFFF;
-      }
-
-      .apple-glass-panel {
-        background: rgba(255, 255, 255, 0.02);
-        backdrop-filter: blur(30px) saturate(210%);
-        -webkit-backdrop-filter: blur(30px) saturate(210%);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        box-shadow:
-          inset 0 1px 0px 0px rgba(255, 255, 255, 0.12),
-          0 1px 3px rgba(0, 0, 0, 0.4),
-          0 16px 40px -12px rgba(0, 0, 0, 0.7);
-        transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      .apple-glass-panel:hover {
-        background: rgba(255, 255, 255, 0.04);
-        border-color: rgba(255, 255, 255, 0.14);
-        box-shadow:
-          inset 0 1px 0px 0px rgba(255, 255, 255, 0.25),
-          0 24px 60px -8px rgba(0, 0, 0, 0.9);
-        transform: translateY(-4px);
-      }
-
-      .apple-island-nav {
-        background: rgba(14, 16, 22, 0.72);
-        backdrop-filter: blur(20px) saturate(160%);
-        -webkit-backdrop-filter: blur(20px) saturate(160%);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        box-shadow:
-          inset 0 1px 1px rgba(255, 255, 255, 0.1),
-          0 10px 30px rgba(0, 0, 0, 0.5);
-      }
-
-      .glass-input-node {
-        background: rgba(0, 0, 0, 0.35);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6);
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      .glass-input-node:focus {
-        background: rgba(0, 0, 0, 0.5);
-        border-color: rgba(255, 255, 255, 0.3);
-        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.7), 0 0 0 4px rgba(255, 255, 255, 0.02);
-      }
-
-      .custom-scroll::-webkit-scrollbar {
-        width: 5px;
-      }
-
-      .custom-scroll::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-      }
-
-      .mobile-menu-panel {
-        background: rgba(12, 14, 20, 0.94);
-        backdrop-filter: blur(24px) saturate(180%);
-        -webkit-backdrop-filter: blur(24px) saturate(180%);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
-      }
-
-      .mobile-nav-link {
-        min-height: 48px;
-      }
-
-      @media (max-width: 768px) {
-        .apple-glass-panel:hover {
-          transform: none;
-        }
-      }
-    </style>
-  </head>
-
-  <body class="selection:bg-white selection:text-black relative antialiased custom-scroll overflow-x-hidden font-sans w-full max-w-[100vw]">
-    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10 w-full">
-      <div class="absolute top-0 inset-x-0 h-full bg-gradient-to-b from-[#181A20] via-[#08090C] to-transparent opacity-70"></div>
-      <div class="absolute top-[8%] left-[-20%] w-[150vw] md:w-[800px] h-[150vw] md:h-[800px] bg-[#2C2F38]/15 rounded-full blur-[100px] md:blur-[160px]"></div>
-      <div class="absolute top-[35%] right-[-20%] w-[150vw] md:w-[700px] h-[150vw] md:h-[700px] bg-[#1B1D24]/40 rounded-full blur-[100px] md:blur-[140px]"></div>
-      <div class="absolute bottom-[15%] left-[-10%] w-[150vw] md:w-[600px] h-[150vw] md:h-[600px] bg-[#22252E]/10 rounded-full blur-[100px] md:blur-[150px]"></div>
-    </div>
-
-    <div class="fixed w-full z-50 top-4 sm:top-6 px-3 sm:px-4 flex justify-center items-center pointer-events-none">
-      <nav class="w-full max-w-4xl apple-island-nav py-2.5 px-3 rounded-full pointer-events-auto">
-        <div class="flex justify-between items-center gap-3">
-          <a href="#home" class="flex items-center gap-2.5 pl-1 sm:pl-2 group min-w-0">
-            <div class="w-8 h-8 bg-white flex items-center justify-center rounded-full transition-transform group-hover:scale-105 shrink-0">
-              <span class="text-[11px] font-mono font-bold text-black">RD</span>
-            </div>
-            <div class="flex flex-col min-w-0">
-              <span class="text-xs font-bold text-white tracking-tight truncate">Rohith Dhanala</span>
-            </div>
-          </a>
-
-          <div class="hidden md:flex items-center gap-1">
-            <a href="#about" class="text-[10px] tracking-wider uppercase text-muted hover:text-white px-3 py-1.5 font-semibold transition-colors">About</a>
-            <a href="#experience" class="text-[10px] tracking-wider uppercase text-muted hover:text-white px-3 py-1.5 font-semibold transition-colors">Experience</a>
-            <a href="#building" class="text-[10px] tracking-wider uppercase text-muted hover:text-white px-3 py-1.5 font-semibold transition-colors">Now Building</a>
-            <a href="#cv" class="text-[10px] tracking-wider uppercase text-muted hover:text-white px-3 py-1.5 font-semibold transition-colors">CV</a>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rohith Dhanala | AI Orchestrator</title>
+  <meta name="description" content="Rohith Dhanala is an AI Orchestrator who designs and deploys multi-agent systems for B2B businesses — lead gen, ops automation, and web + AI bundles." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Rohith Dhanala" />
+  <link rel="canonical" href="https://rohithdhanala.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rohith Dhanala | AI Orchestrator" />
+  <meta property="og:description" content="I design multi-agent AI systems that automate your most important workflows — lead gen, ops, and support — built to run, not just demo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --text-xs:clamp(0.75rem,0.7rem + 0.25vw,0.875rem);
+      --text-sm:clamp(0.875rem,0.8rem + 0.35vw,1rem);
+      --text-base:clamp(1rem,0.95rem + 0.25vw,1.125rem);
+      --text-lg:clamp(1.125rem,1rem + 0.75vw,1.5rem);
+      --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
+      --text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
+      --text-3xl:clamp(2.5rem,1rem + 4vw,5rem);
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;
+      --space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;
+      --space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;
+      --radius-sm:.375rem;--radius-md:.5rem;--radius-lg:.75rem;
+      --radius-xl:1rem;--radius-2xl:1.5rem;--radius-full:9999px;
+      --transition-interactive:180ms cubic-bezier(0.16,1,0.3,1);
+      --font-display:'Bricolage Grotesque',sans-serif;
+      --font-body:'Plus Jakarta Sans',sans-serif;
+      --font-mono:'JetBrains Mono',monospace;
+      --content-narrow:640px;--content-default:960px;--content-wide:1200px;
+    }
+    :root,[data-theme="dark"] {
+      --color-bg:#08090C;--color-surface:#10121A;--color-surface-2:#161922;
+      --color-surface-offset:#1C2030;--color-divider:rgba(255,255,255,.06);
+      --color-border:rgba(255,255,255,.08);--color-text:#F0F0F5;
+      --color-text-muted:#8A8F9E;--color-text-faint:#4A4F60;
+      --color-primary:#4FC3F7;--color-primary-hover:#81D4FA;
+      --color-primary-glow:rgba(79,195,247,.15);--color-accent:#7C83FF;
+      --color-success:#4ADE80;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.4);--shadow-md:0 4px 16px rgba(0,0,0,.5);
+      --shadow-lg:0 12px 40px rgba(0,0,0,.65);
+    }
+    [data-theme="light"] {
+      --color-bg:#F5F6FA;--color-surface:#FFFFFF;--color-surface-2:#F8F9FC;
+      --color-surface-offset:#EEF0F6;--color-divider:rgba(0,0,0,.06);
+      --color-border:rgba(0,0,0,.09);--color-text:#0F1117;
+      --color-text-muted:#5A6070;--color-text-faint:#A0A8BB;
+      --color-primary:#0284C7;--color-primary-hover:#0369A1;
+      --color-primary-glow:rgba(2,132,199,.12);--color-accent:#5B5FD9;
+      --color-success:#16A34A;
+      --shadow-sm:0 1px 3px rgba(0,0,0,.07);--shadow-md:0 4px 16px rgba(0,0,0,.09);
+      --shadow-lg:0 12px 40px rgba(0,0,0,.12);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+      scroll-behavior:smooth;scroll-padding-top:5rem}
+    body{min-height:100dvh;font-family:var(--font-body);font-size:var(--text-base);
+      color:var(--color-text);background:var(--color-bg);overflow-x:hidden;
+      line-height:1.6;transition:background .35s,color .35s}
+    img,picture,video,canvas,svg{display:block;max-width:100%;height:auto}
+    input,button,textarea,select{font:inherit;color:inherit}
+    h1,h2,h3,h4,h5,h6{text-wrap:balance;line-height:1.15}
+    p,li{text-wrap:pretty}
+    button{cursor:pointer;background:none;border:none}
+    a{color:inherit;text-decoration:none}
+    ::selection{background:var(--color-primary-glow);color:var(--color-text)}
+    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+    .container{max-width:var(--content-wide);margin-inline:auto;padding-inline:var(--space-6)}
+    .container--narrow{max-width:var(--content-narrow);margin-inline:auto;padding-inline:var(--space-6)}
+    .section{padding-block:clamp(var(--space-16),8vw,var(--space-24))}
+    body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.025;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+    .glow-bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+    .glow-bg__orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.07}
+    .glow-bg__orb--1{width:60vw;height:60vw;background:var(--color-primary);top:-15%;left:-15%}
+    .glow-bg__orb--2{width:50vw;height:50vw;background:var(--color-accent);bottom:10%;right:-15%}
+    .nav{position:fixed;top:var(--space-4);left:50%;transform:translateX(-50%);z-index:100;
+      width:calc(100% - var(--space-8));max-width:900px;
+      background:rgba(8,9,12,.72);backdrop-filter:blur(20px) saturate(160%);
+      -webkit-backdrop-filter:blur(20px) saturate(160%);
+      border:1px solid var(--color-border);border-radius:var(--radius-full);
+      padding:var(--space-2) var(--space-4);
+      box-shadow:0 8px 30px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.08);
+      transition:box-shadow .3s}
+    [data-theme="light"] .nav{background:rgba(255,255,255,.82)}
+    .nav__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4)}
+    .nav__brand{display:flex;align-items:center;gap:var(--space-3)}
+    .nav__logo{width:32px;height:32px;border-radius:var(--radius-full);background:var(--color-text);
+      color:var(--color-bg);display:flex;align-items:center;justify-content:center;
+      font-family:var(--font-mono);font-size:11px;font-weight:700;flex-shrink:0}
+    .nav__name{font-size:var(--text-xs);font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+    .nav__badge{font-size:9px;font-family:var(--font-mono);font-weight:700;text-transform:uppercase;
+      letter-spacing:.08em;color:var(--color-primary);background:var(--color-primary-glow);
+      padding:2px 8px;border-radius:var(--radius-full);border:1px solid rgba(79,195,247,.2)}
+    .nav__links{display:flex;align-items:center;gap:var(--space-1)}
+    .nav__link{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;
+      color:var(--color-text-muted);padding:var(--space-1) var(--space-3);border-radius:var(--radius-full);
+      transition:color var(--transition-interactive),background var(--transition-interactive)}
+    .nav__link:hover{color:var(--color-text);background:rgba(255,255,255,.05)}
+    .nav__cta{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+      background:var(--color-text);color:var(--color-bg);
+      padding:var(--space-2) var(--space-4);border-radius:var(--radius-full);
+      transition:opacity var(--transition-interactive),transform var(--transition-interactive);
+      white-space:nowrap}
+    .nav__cta:hover{opacity:.85;transform:translateY(-1px)}
+    .nav__right{display:flex;align-items:center;gap:var(--space-2)}
+    .theme-toggle{width:36px;height:36px;border-radius:var(--radius-full);display:flex;
+      align-items:center;justify-content:center;color:var(--color-text-muted);
+      border:1px solid var(--color-border);
+      transition:color var(--transition-interactive),background var(--transition-interactive)}
+    .theme-toggle:hover{color:var(--color-text);background:rgba(255,255,255,.05)}
+    .mobile-toggle{display:none;width:40px;height:40px;border-radius:var(--radius-full);
+      align-items:center;justify-content:center;border:1px solid var(--color-border);color:var(--color-text)}
+    .mobile-menu{display:none;flex-direction:column;gap:var(--space-2);
+      padding-top:var(--space-3);border-top:1px solid var(--color-divider);margin-top:var(--space-2)}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{font-size:var(--text-sm);font-weight:600;color:var(--color-text-muted);
+      padding:var(--space-3) var(--space-4);border-radius:var(--radius-lg);
+      transition:color var(--transition-interactive),background var(--transition-interactive)}
+    .mobile-menu a:hover{color:var(--color-text);background:rgba(255,255,255,.04)}
+    .mobile-menu a.cta-link{background:var(--color-text);color:var(--color-bg);
+      text-align:center;text-transform:uppercase;letter-spacing:.08em;font-size:11px}
+    @media(max-width:768px){.nav__links,.nav__cta{display:none}.mobile-toggle{display:flex}}
+    .hero{position:relative;z-index:1;min-height:100svh;display:flex;flex-direction:column;
+      justify-content:center;padding-top:7rem;padding-bottom:var(--space-16)}
+    .hero__label{display:inline-flex;align-items:center;gap:var(--space-2);
+      font-family:var(--font-mono);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.1em;
+      color:var(--color-text-muted);background:rgba(255,255,255,.03);border:1px solid var(--color-border);
+      padding:var(--space-1) var(--space-3);border-radius:var(--radius-full);margin-bottom:var(--space-8)}
+    .hero__label-dot{width:7px;height:7px;border-radius:50%;background:var(--color-success);
+      box-shadow:0 0 8px rgba(74,222,128,.6);animation:pulse 2.5s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.85)}}
+    .hero__layout{display:grid;grid-template-columns:1fr;gap:var(--space-12);align-items:start}
+    @media(min-width:900px){.hero__layout{grid-template-columns:1fr 340px;align-items:center}}
+    .hero__heading{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:800;
+      line-height:1.05;letter-spacing:-.03em;color:var(--color-text);margin-bottom:var(--space-6)}
+    .hero__heading em{font-style:normal;color:var(--color-text-muted);font-weight:400}
+    .hero__sub{font-size:var(--text-base);color:var(--color-text-muted);line-height:1.7;
+      max-width:55ch;margin-bottom:var(--space-10)}
+    .hero__actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-bottom:var(--space-10)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);
+      font-size:var(--text-sm);font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+      padding:var(--space-3) var(--space-6);border-radius:var(--radius-full);min-height:48px;
+      white-space:nowrap;transition:transform var(--transition-interactive),
+        box-shadow var(--transition-interactive),opacity var(--transition-interactive),
+        background var(--transition-interactive),border-color var(--transition-interactive)}
+    .btn:hover{transform:translateY(-2px)}
+    .btn:active{transform:translateY(0)}
+    .btn--primary{background:var(--color-text);color:var(--color-bg);box-shadow:var(--shadow-sm)}
+    .btn--primary:hover{box-shadow:var(--shadow-md);opacity:.9}
+    .btn--ghost{background:rgba(255,255,255,.03);color:var(--color-text);border:1px solid var(--color-border)}
+    .btn--ghost:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2)}
+    .btn--outline-primary{background:var(--color-primary-glow);color:var(--color-primary);
+      border:1px solid rgba(79,195,247,.25)}
+    .btn--outline-primary:hover{background:rgba(79,195,247,.2)}
+    .hero__stack{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+    .stack-chip{font-family:var(--font-mono);font-size:10px;font-weight:500;
+      color:var(--color-text-faint);background:rgba(255,255,255,.02);border:1px solid var(--color-divider);
+      padding:4px var(--space-3);border-radius:var(--radius-full)}
+    .hero__cards{display:flex;flex-direction:column;gap:var(--space-4)}
+    .hero__card{background:rgba(255,255,255,.025);backdrop-filter:blur(30px);
+      border:1px solid var(--color-border);border-radius:var(--radius-2xl);padding:var(--space-5);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.08),var(--shadow-sm);
+      transition:transform var(--transition-interactive),box-shadow var(--transition-interactive),border-color var(--transition-interactive)}
+    .hero__card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(255,255,255,.14)}
+    .hero__card-label{font-family:var(--font-mono);font-size:9px;font-weight:700;text-transform:uppercase;
+      letter-spacing:.12em;color:var(--color-primary);margin-bottom:var(--space-2)}
+    .hero__card-text{font-size:var(--text-xs);color:var(--color-text-muted);line-height:1.6}
+    .divider{border:none;border-top:1px solid var(--color-divider)}
+    .section-label{font-family:var(--font-mono);font-size:var(--text-xs);font-weight:700;
+      text-transform:uppercase;letter-spacing:.12em;color:var(--color-text-faint);margin-bottom:var(--space-4)}
+    .section-title{font-family:var(--font-display);font-weight:800;font-size:var(--text-2xl);
+      letter-spacing:-.03em;color:var(--color-text);line-height:1.1}
+    .section-sub{font-size:var(--text-base);color:var(--color-text-muted);line-height:1.7;max-width:60ch}
+    .glass-card{background:rgba(255,255,255,.025);border:1px solid var(--color-border);
+      border-radius:var(--radius-2xl);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.07),var(--shadow-sm);
+      transition:transform var(--transition-interactive),box-shadow var(--transition-interactive),border-color var(--transition-interactive)}
+    .glass-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:rgba(255,255,255,.14)}
+    [data-theme="light"] .glass-card{background:var(--color-surface)}
+    .about__grid{display:grid;grid-template-columns:1fr;gap:var(--space-12)}
+    @media(min-width:900px){.about__grid{grid-template-columns:1fr 1fr}}
+    .about__feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)}
+    @media(max-width:600px){.about__feature-grid{grid-template-columns:1fr}}
+    .feature-card{padding:var(--space-5)}
+    .feature-card__title{font-family:var(--font-mono);font-size:10px;font-weight:700;
+      text-transform:uppercase;letter-spacing:.1em;color:var(--color-text);margin-bottom:var(--space-2)}
+    .feature-card__text{font-size:var(--text-xs);color:var(--color-text-muted);line-height:1.65}
+    .services__grid{display:grid;grid-template-columns:1fr;gap:var(--space-6)}
+    @media(min-width:640px){.services__grid{grid-template-columns:1fr 1fr}}
+    @media(min-width:1024px){.services__grid{grid-template-columns:repeat(3,1fr)}}
+    .service-card{padding:var(--space-8);display:flex;flex-direction:column;min-height:320px}
+    .service-card__icon{width:44px;height:44px;border-radius:var(--radius-xl);
+      background:var(--color-primary-glow);border:1px solid rgba(79,195,247,.2);
+      display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-6);flex-shrink:0}
+    .service-card__icon svg{color:var(--color-primary)}
+    .service-card__num{font-family:var(--font-mono);font-size:9px;font-weight:700;text-transform:uppercase;
+      letter-spacing:.12em;color:var(--color-text-faint);margin-bottom:var(--space-3)}
+    .service-card__title{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;
+      color:var(--color-text);margin-bottom:var(--space-4);line-height:1.2}
+    .service-card__desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;
+      flex:1;margin-bottom:var(--space-6)}
+    .service-card__tags{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:auto}
+    .tag{font-family:var(--font-mono);font-size:9px;font-weight:500;color:var(--color-text-faint);
+      background:rgba(255,255,255,.03);border:1px solid var(--color-divider);
+      padding:3px 8px;border-radius:var(--radius-full)}
+    .case-grid{display:grid;grid-template-columns:1fr;gap:var(--space-6)}
+    @media(min-width:768px){.case-grid{grid-template-columns:1fr 1fr}}
+    .case-card{padding:var(--space-8);position:relative;overflow:hidden}
+    .case-card__niche{font-family:var(--font-mono);font-size:9px;font-weight:700;text-transform:uppercase;
+      letter-spacing:.12em;color:var(--color-primary);margin-bottom:var(--space-3)}
+    .case-card__title{font-family:var(--font-display);font-size:var(--text-xl);font-weight:800;
+      color:var(--color-text);margin-bottom:var(--space-4);letter-spacing:-.02em;line-height:1.15}
+    .case-card__problem{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;margin-bottom:var(--space-6)}
+    .case-card__pipeline{background:rgba(0,0,0,.25);border:1px solid var(--color-divider);
+      border-radius:var(--radius-lg);padding:var(--space-4);margin-bottom:var(--space-6);overflow-x:auto}
+    [data-theme="light"] .case-card__pipeline{background:var(--color-surface-2)}
+    .pipeline{display:flex;align-items:center;gap:var(--space-2);white-space:nowrap;
+      font-family:var(--font-mono);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+    .pipeline__node{padding:4px var(--space-3);border-radius:var(--radius-full);
+      background:rgba(79,195,247,.08);border:1px solid rgba(79,195,247,.2);color:var(--color-primary)}
+    .pipeline__arrow{color:var(--color-text-faint);font-size:14px}
+    .case-card__results{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3);margin-bottom:var(--space-6)}
+    .result-stat{background:rgba(255,255,255,.02);border:1px solid var(--color-divider);
+      border-radius:var(--radius-lg);padding:var(--space-4)}
+    .result-stat__value{font-family:var(--font-display);font-size:var(--text-xl);font-weight:800;color:var(--color-text)}
+    .result-stat__label{font-size:10px;color:var(--color-text-faint);font-family:var(--font-mono);
+      text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
+    .case-card__tools{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+    .process__steps{display:grid;grid-template-columns:1fr;gap:var(--space-4)}
+    @media(min-width:640px){.process__steps{grid-template-columns:1fr 1fr}}
+    @media(min-width:1024px){.process__steps{grid-template-columns:repeat(4,1fr)}}
+    .process-step{padding:var(--space-6)}
+    .process-step__num{font-family:var(--font-mono);font-size:var(--text-2xl);font-weight:800;
+      color:var(--color-text-faint);line-height:1;margin-bottom:var(--space-4);opacity:.3}
+    .process-step__title{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;
+      color:var(--color-text);margin-bottom:var(--space-3)}
+    .process-step__text{font-size:var(--text-xs);color:var(--color-text-muted);line-height:1.65}
+    .exp__grid{display:grid;grid-template-columns:1fr;gap:var(--space-6)}
+    @media(min-width:768px){.exp__grid{grid-template-columns:repeat(3,1fr)}}
+    .exp-card{padding:var(--space-8);display:flex;flex-direction:column;min-height:320px}
+    .exp-card__meta{display:flex;justify-content:space-between;align-items:center;
+      margin-bottom:var(--space-6);flex-wrap:wrap;gap:var(--space-2)}
+    .exp-card__period{font-family:var(--font-mono);font-size:10px;font-weight:700;
+      text-transform:uppercase;letter-spacing:.1em;color:var(--color-text)}
+    .exp-card__badge{font-size:8px;font-family:var(--font-mono);font-weight:700;text-transform:uppercase;
+      letter-spacing:.08em;background:rgba(255,255,255,.05);border:1px solid var(--color-border);
+      color:var(--color-text-muted);padding:3px 8px;border-radius:var(--radius-full)}
+    .exp-card__company{font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;
+      color:var(--color-text);margin-bottom:var(--space-2);line-height:1.2}
+    .exp-card__role{font-family:var(--font-mono);font-size:9px;text-transform:uppercase;
+      letter-spacing:.1em;color:var(--color-text-muted);margin-bottom:var(--space-4)}
+    .exp-card__desc{font-size:var(--text-xs);color:var(--color-text-muted);line-height:1.65;flex:1}
+    .exp-card__focus{border-top:1px solid var(--color-divider);padding-top:var(--space-4);
+      margin-top:var(--space-6);font-family:var(--font-mono);font-size:10px;color:var(--color-text-faint)}
+    .exp-card__focus strong{color:var(--color-text-muted)}
+    .stack__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:var(--space-3)}
+    .stack-item{display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:var(--space-2);padding:var(--space-4);text-align:center;
+      background:rgba(255,255,255,.025);border:1px solid var(--color-border);border-radius:var(--radius-xl);
+      transition:transform var(--transition-interactive),border-color var(--transition-interactive),background var(--transition-interactive)}
+    .stack-item:hover{transform:translateY(-2px);background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.15)}
+    .stack-item img{width:28px;height:28px;object-fit:contain}
+    .stack-item__name{font-family:var(--font-mono);font-size:9px;font-weight:700;text-transform:uppercase;
+      letter-spacing:.06em;color:var(--color-text-muted)}
+    .stack-item__cat{font-size:8px;color:var(--color-text-faint);letter-spacing:.05em;text-transform:uppercase}
+    .cv-banner{padding:var(--space-10)}
+    .cv-banner__inner{display:grid;grid-template-columns:1fr;gap:var(--space-8);align-items:center}
+    @media(min-width:768px){.cv-banner__inner{grid-template-columns:1fr auto}}
+    .contact__grid{display:grid;grid-template-columns:1fr;gap:var(--space-8)}
+    @media(min-width:768px){.contact__grid{grid-template-columns:1fr 1fr}}
+    .contact__info{display:flex;flex-direction:column;gap:var(--space-6)}
+    .contact__quote{background:rgba(255,255,255,.02);border:1px solid var(--color-border);
+      border-radius:var(--radius-2xl);padding:var(--space-8)}
+    .contact__quote p{font-family:var(--font-display);font-size:var(--text-lg);font-weight:500;
+      color:var(--color-text);line-height:1.5;font-style:italic}
+    .contact__links{display:flex;flex-wrap:wrap;gap:var(--space-3)}
+    .contact__link-btn{display:inline-flex;align-items:center;gap:var(--space-2);
+      font-family:var(--font-mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+      color:var(--color-text-muted);border:1px solid var(--color-border);
+      padding:var(--space-2) var(--space-4);border-radius:var(--radius-full);
+      transition:color var(--transition-interactive),border-color var(--transition-interactive),background var(--transition-interactive)}
+    .contact__link-btn:hover{color:var(--color-text);border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.04)}
+    .contact__form-wrap{padding:var(--space-8)}
+    .form-group{margin-bottom:var(--space-5)}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)}
+    @media(max-width:480px){.form-row{grid-template-columns:1fr}}
+    .form-label{display:block;font-family:var(--font-mono);font-size:9px;font-weight:700;
+      text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-faint);margin-bottom:var(--space-2)}
+    .form-input{width:100%;background:rgba(0,0,0,.3);border:1px solid var(--color-border);
+      border-radius:var(--radius-lg);padding:var(--space-3) var(--space-4);font-size:var(--text-sm);
+      color:var(--color-text);outline:none;
+      transition:border-color var(--transition-interactive),box-shadow var(--transition-interactive)}
+    .form-input::placeholder{color:var(--color-text-faint)}
+    .form-input:focus{border-color:var(--color-primary);box-shadow:0 0 0 3px var(--color-primary-glow)}
+    [data-theme="light"] .form-input{background:var(--color-surface-2)}
+    textarea.form-input{resize:vertical;min-height:120px}
+    .footer{border-top:1px solid var(--color-divider);padding:var(--space-10) 0;text-align:center}
+    .footer p{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-text-faint)}
+    .fade-in{opacity:1}
+    @supports(animation-timeline:scroll()){
+      .fade-in{opacity:0;animation:reveal-fade linear both;
+        animation-timeline:view();animation-range:entry 0% entry 80%}
+    }
+    @keyframes reveal-fade{to{opacity:1}}
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:10px}
+    .pos-relative{position:relative;z-index:1}
+    .hidden{display:none!important}
+    .feedback-msg{display:none;text-align:center;padding:var(--space-8)}
+    .feedback-msg.show{display:block}
+    .mb-6{margin-bottom:var(--space-6)}
+  </style>
+</head>
+<body>
+  <div class="glow-bg" aria-hidden="true">
+    <div class="glow-bg__orb glow-bg__orb--1"></div>
+    <div class="glow-bg__orb glow-bg__orb--2"></div>
+  </div>
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav__inner">
+        <a href="#home" class="nav__brand">
+          <div class="nav__logo" aria-hidden="true">RD</div>
+          <div>
+            <div class="nav__name">Rohith Dhanala</div>
+            <div class="nav__badge">AI Orchestrator</div>
           </div>
-
-          <div class="hidden md:block">
-            <a href="#contact" class="text-[10px] tracking-wider uppercase text-black bg-white px-4 py-2 font-bold hover:bg-gray-200 transition-all rounded-full shadow-sm inline-flex items-center justify-center min-h-[40px]">
-              Contact
-            </a>
-          </div>
-
-          <button
-            id="mobile-menu-button"
-            type="button"
-            class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border border-white/10 bg-white/[0.03] text-white"
-            aria-label="Open menu"
-            aria-expanded="false"
-            aria-controls="mobile-menu"
-          >
-            <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
-            </svg>
-            <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18" />
-            </svg>
+        </a>
+        <div class="nav__links" role="list">
+          <a href="#about"      class="nav__link" role="listitem">About</a>
+          <a href="#services"   class="nav__link" role="listitem">Services</a>
+          <a href="#work"       class="nav__link" role="listitem">Work</a>
+          <a href="#experience" class="nav__link" role="listitem">Experience</a>
+          <a href="#stack"      class="nav__link" role="listitem">Stack</a>
+        </div>
+        <div class="nav__right">
+          <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <a href="#contact" class="nav__cta">Book a Call</a>
+          <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Open menu" aria-expanded="false">
+            <svg id="icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            <svg id="icon-close" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
           </button>
         </div>
-
-        <div id="mobile-menu" class="md:hidden hidden pt-3">
-          <div class="mobile-menu-panel rounded-3xl p-3 mt-2 space-y-2">
-            <a href="#about" class="mobile-nav-link flex items-center rounded-2xl px-4 py-3 text-sm font-semibold text-white/90 hover:bg-white/[0.04]">About</a>
-            <a href="#experience" class="mobile-nav-link flex items-center rounded-2xl px-4 py-3 text-sm font-semibold text-white/90 hover:bg-white/[0.04]">Experience</a>
-            <a href="#building" class="mobile-nav-link flex items-center rounded-2xl px-4 py-3 text-sm font-semibold text-white/90 hover:bg-white/[0.04]">Now Building</a>
-            <a href="#cv" class="mobile-nav-link flex items-center rounded-2xl px-4 py-3 text-sm font-semibold text-white/90 hover:bg-white/[0.04]">CV</a>
-            <a href="#contact" class="mobile-nav-link flex items-center justify-center rounded-2xl px-4 py-3 text-sm font-bold uppercase tracking-wider text-black bg-white hover:bg-gray-200 mt-2">
-              Contact
-            </a>
-          </div>
-        </div>
-      </nav>
-    </div>
-
-    <section id="home" class="min-h-screen flex items-center pt-32 sm:pt-36 lg:pt-36 pb-16 lg:pb-24 px-4 sm:px-6 md:px-12">
-      <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-16 items-center">
-        <div class="lg:col-span-8 text-left space-y-6 sm:space-y-8 mt-10 lg:mt-0 min-w-0">
-          <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/[0.03] border border-white/[0.06] rounded-full shadow-inner max-w-full">
-            <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full shadow-[0_0_8px_rgba(52,211,153,0.5)] shrink-0"></span>
-            <span class="text-[9px] uppercase tracking-widest text-gray-400 font-mono font-medium">Open to remote roles & collaborations</span>
-          </div>
-
-          <h1 class="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl text-white leading-[1.06] lg:leading-[1.05] tracking-tight max-w-4xl">
-            I design digital systems <br />
-            <span class="text-muted font-light italic">that reduce manual work and support better operations.</span>
-          </h1>
-
-          <p class="text-base sm:text-lg text-muted font-light leading-relaxed max-w-2xl">
-            I work at the intersection of digital operations, product thinking, and AI automation. My background combines systems transformation, growth automation, interface design, and workflow analysis—helping teams simplify repetitive work and move toward smarter, more scalable processes.
-          </p>
-
-          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2 sm:pt-4">
-            <a href="#contact" class="px-6 sm:px-8 py-4 bg-white hover:bg-gray-200 text-black text-xs font-bold uppercase tracking-wider transition-all text-center rounded-full shadow-md min-h-[48px] inline-flex items-center justify-center">
-              Work With Me &rarr;
-            </a>
-            <a href="#experience" class="px-6 sm:px-8 py-4 bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.05] hover:border-white/20 transition-all text-xs font-bold uppercase tracking-wider text-white text-center rounded-full min-h-[48px] inline-flex items-center justify-center">
-              View Experience
-            </a>
-            <a href="./ROHITH-DHANALA-CV.pdf" download class="px-6 sm:px-8 py-4 bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.05] hover:border-white/20 transition-all text-xs font-bold uppercase tracking-wider text-white text-center rounded-full min-h-[48px] inline-flex items-center justify-center">
-              Download CV
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-4 grid grid-cols-1 gap-4 font-mono text-[11px]">
-          <div class="apple-glass-panel p-5 sm:p-6 rounded-2xl">
-            <div class="text-white font-bold mb-1.5 tracking-wider">01 / SYSTEMS</div>
-            <p class="text-muted font-sans text-xs leading-relaxed">Workflow mapping, operational friction analysis, and practical automation thinking shaped by real delivery experience.</p>
-          </div>
-          <div class="apple-glass-panel p-5 sm:p-6 rounded-2xl">
-            <div class="text-white font-bold mb-1.5 tracking-wider">02 / AI + OPS</div>
-            <p class="text-muted font-sans text-xs leading-relaxed">Focused on AI workflows, agent-led processes, and automation systems that help teams reduce repetitive operational tasks.</p>
-          </div>
-          <div class="apple-glass-panel p-5 sm:p-6 rounded-2xl">
-            <div class="text-white font-bold mb-1.5 tracking-wider">03 / DIRECTION</div>
-            <p class="text-muted font-sans text-xs leading-relaxed">Building toward digital products and entrepreneurship while supporting businesses through systems, interfaces, and operational design.</p>
-          </div>
-        </div>
       </div>
-    </section>
-
-    <section id="about" class="py-16 lg:py-28 px-4 sm:px-6 md:px-12 border-t border-white/[0.03] bg-white/[0.005]">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-16 items-start">
-        <div class="lg:col-span-5 space-y-6 min-w-0">
-          <span class="text-xs font-mono tracking-widest text-muted uppercase font-bold block">// About</span>
-          <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white leading-tight">
-            Systems thinking.<br />Product mindset.
-          </h2>
-          <div class="space-y-4 text-muted text-sm font-light leading-relaxed">
-            <p>
-              My background combines Computer Science with Business Management, which shapes the way I approach digital systems: not just as interfaces or automations, but as operational environments that need to work clearly for both teams and users.
-            </p>
-            <p>
-              I have worked across systems transformation, growth automation, and digital product delivery. Today, I am focused on AI workflows, automation systems, product thinking, and operational tooling that reduce repetitive work and improve business efficiency.
-            </p>
-          </div>
-        </div>
-
-        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-          <div class="apple-glass-panel p-5 sm:p-6 rounded-2xl">
-            <div class="text-xs font-mono text-white font-bold uppercase mb-2">01 / Operational Analysis</div>
-            <p class="text-xs text-muted font-light leading-relaxed">I look at how work actually moves inside a business, where teams lose time, and where digital systems create unnecessary manual effort.</p>
-          </div>
-
-          <div class="apple-glass-panel p-5 sm:p-6 rounded-2xl">
-            <div class="text-xs font-mono text-white font-bold uppercase mb-2">02 / Automation Direction</div>
-            <p class="text-xs text-muted font-light leading-relaxed">My focus is on practical automation and AI-enabled workflows that improve coordination, response speed, and process clarity.</p>
-          </div>
-
-          <div class="apple-glass-panel p-5 sm:p-6 rounded-2xl">
-            <div class="text-xs font-mono text-white font-bold uppercase mb-2">03 / Interface Thinking</div>
-            <p class="text-xs text-muted font-light leading-relaxed">I care about the front-end layer too—how systems feel, how users move through them, and how digital experiences support trust and action.</p>
-          </div>
-
-          <div class="apple-glass-panel p-5 sm:p-6 rounded-2xl">
-            <div class="text-xs font-mono text-white font-bold uppercase mb-2">04 / Founder Trajectory</div>
-            <p class="text-xs text-muted font-light leading-relaxed">My long-term direction is entrepreneurship: building useful digital products while taking on roles and freelance work that strengthen that path.</p>
-          </div>
-        </div>
+      <div class="mobile-menu" id="mobile-menu" role="list">
+        <a href="#about"      role="listitem">About</a>
+        <a href="#services"   role="listitem">Services</a>
+        <a href="#work"       role="listitem">Work</a>
+        <a href="#experience" role="listitem">Experience</a>
+        <a href="#stack"      role="listitem">Stack</a>
+        <a href="#contact" class="cta-link" role="listitem">Book a Call &#8594;</a>
       </div>
-    </section>
-
-    <section id="experience" class="py-16 lg:py-28 px-4 sm:px-6 md:px-12 relative border-t border-white/[0.03]">
-      <div class="max-w-7xl mx-auto space-y-12 lg:space-y-16">
-        <div class="space-y-4 max-w-3xl">
-          <span class="text-xs font-mono tracking-widest text-muted uppercase font-bold block">// Experience</span>
-          <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight">Selected professional background</h2>
-          <p class="text-muted text-sm sm:text-base leading-relaxed font-light">
-            My experience is rooted in real delivery across systems transformation, digital growth, and product-oriented design. This is the foundation I now bring into AI automation and future product building.
-          </p>
+    </nav>
+  </header>
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero pos-relative">
+      <div class="container">
+        <div class="hero__label">
+          <span class="hero__label-dot" aria-hidden="true"></span>
+          Open to freelance projects &amp; contracts
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          <div class="apple-glass-panel p-6 sm:p-8 flex flex-col justify-between min-h-[340px] lg:min-h-[420px] rounded-3xl relative overflow-hidden">
-            <div class="space-y-6">
-              <div class="flex justify-between items-center font-mono text-[10px] gap-3">
-                <span class="text-white font-bold uppercase tracking-wider">2022 — 2026</span>
-                <span class="px-2 py-0.5 bg-white/[0.06] border border-white/[0.1] text-white font-bold text-[8px] rounded-full uppercase text-right">Healthcare Systems</span>
-              </div>
-              <div class="space-y-3">
-                <h3 class="text-xl font-display font-bold text-white tracking-tight">University Hospital Southampton NHS FT</h3>
-                <p class="text-xs uppercase tracking-widest text-muted font-mono">Digital Project Manager · Systems Transformation</p>
-                <p class="text-xs text-muted leading-relaxed font-light">
-                  Led digital change initiatives across software systems and data compliance workflows within a major healthcare environment. My work included identifying operational bottlenecks, improving coordination across technical and executive teams, and helping shape cleaner data and interface processes.
-                </p>
-              </div>
+        <div class="hero__layout">
+          <div>
+            <h1 class="hero__heading">
+              I orchestrate AI agents<br/>
+              <em>that run your business<br/>while you sleep.</em>
+            </h1>
+            <p class="hero__sub">Multi-agent systems for B2B teams &#8212; lead gen, ops automation, and support copilots built to production, not just demo. I design the pipeline, deploy the agents, and hand you a system that works.</p>
+            <div class="hero__actions">
+              <a href="#work"     class="btn btn--primary">View Case Studies &#8594;</a>
+              <a href="#services" class="btn btn--ghost">See Services</a>
+              <a href="./ROHITH-DHANALA-CV.pdf" download class="btn btn--ghost">Download CV</a>
             </div>
-            <div class="border-t border-white/[0.06] pt-4 font-mono text-[11px] text-muted mt-6">
-              <span class="text-white font-bold">Focus:</span> systems delivery, workflow review, digital transformation
-            </div>
-          </div>
-
-          <div class="apple-glass-panel p-6 sm:p-8 flex flex-col justify-between min-h-[340px] lg:min-h-[420px] rounded-3xl relative overflow-hidden">
-            <div class="space-y-6">
-              <div class="flex justify-between items-center font-mono text-[10px] gap-3">
-                <span class="text-white font-bold uppercase tracking-wider">2021 — 2022</span>
-                <span class="px-2 py-0.5 bg-white/[0.06] border border-white/[0.1] text-white font-bold text-[8px] rounded-full uppercase text-right">Growth Automation</span>
-              </div>
-              <div class="space-y-3">
-                <h3 class="text-xl font-display font-bold text-white tracking-tight">Let’s Get Coffee</h3>
-                <p class="text-xs uppercase tracking-widest text-muted font-mono">Digital Project Manager · Growth Automation</p>
-                <p class="text-xs text-muted leading-relaxed font-light">
-                  Supported digital growth systems, customer-acquisition infrastructure, and platform improvements designed to improve operational efficiency and user conversion. I worked on automated internal notification loops, asynchronous triggers, and conversion-focused digital updates.
-                </p>
-              </div>
-            </div>
-            <div class="border-t border-white/[0.06] pt-4 font-mono text-[11px] text-muted mt-6">
-              <span class="text-white font-bold">Focus:</span> automation flows, growth systems, customer journey improvements
+            <div class="hero__stack" aria-label="Technology stack">
+              <span class="stack-chip">n8n</span><span class="stack-chip">LangGraph</span>
+              <span class="stack-chip">CrewAI</span><span class="stack-chip">Make.com</span>
+              <span class="stack-chip">OpenAI API</span><span class="stack-chip">Claude API</span>
+              <span class="stack-chip">Next.js</span><span class="stack-chip">Python</span>
             </div>
           </div>
-
-          <div class="apple-glass-panel p-6 sm:p-8 flex flex-col justify-between min-h-[340px] lg:min-h-[420px] rounded-3xl relative overflow-hidden">
-            <div class="space-y-6">
-              <div class="flex justify-between items-center font-mono text-[10px] gap-3">
-                <span class="text-white font-bold uppercase tracking-wider">2019 — 2021</span>
-                <span class="px-2 py-0.5 bg-white/[0.06] border border-white/[0.1] text-white font-bold text-[8px] rounded-full uppercase text-right">Studio / Founder</span>
-              </div>
-              <div class="space-y-3">
-                <h3 class="text-xl font-display font-bold text-white tracking-tight">Maxcreepers Studio Pvt. Ltd.</h3>
-                <p class="text-xs uppercase tracking-widest text-muted font-mono">Founder & Lead Systems Designer</p>
-                <p class="text-xs text-muted leading-relaxed font-light">
-                  Founded and led a digital products and interface studio, translating client requirements into practical design and delivery systems. This shaped my interest in product building, user flow design, and digital assets that can scale into long-term businesses.
-                </p>
-              </div>
+          <div class="hero__cards">
+            <div class="hero__card fade-in">
+              <div class="hero__card-label">01 / Orchestration</div>
+              <p class="hero__card-text">Multi-agent pipelines that coordinate LLMs, APIs, and data across the full task &#8212; not just one step.</p>
             </div>
-            <div class="border-t border-white/[0.06] pt-4 font-mono text-[11px] text-muted mt-6">
-              <span class="text-white font-bold">Focus:</span> interfaces, digital products, founder-led delivery
+            <div class="hero__card fade-in">
+              <div class="hero__card-label">02 / Automation</div>
+              <p class="hero__card-text">Lead gen, support triage, internal ops &#8212; systems that eliminate the repetitive work your team shouldn&#39;t be doing.</p>
+            </div>
+            <div class="hero__card fade-in">
+              <div class="hero__card-label">03 / Full-Stack + AI</div>
+              <p class="hero__card-text">Web portals with embedded agent workflows &#8212; intake, qualification, CRM sync, and follow-up in one delivery.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <section id="building" class="py-16 lg:py-28 px-4 sm:px-6 md:px-12 border-t border-white/[0.03] bg-white/[0.005]">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-16 items-start">
-        <div class="lg:col-span-5 space-y-6">
-          <span class="text-xs font-mono tracking-widest text-muted uppercase font-bold block">// Now Building</span>
-          <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white leading-tight">
-            What I am focused on now.
-          </h2>
-          <div class="space-y-4 text-muted text-sm font-light leading-relaxed">
-            <p>
-              I am currently focused on AI workflows, automation systems, product thinking, and operational tooling that reduce repetitive work and improve business efficiency.
-            </p>
-            <p>
-              My long-term direction is to build founder-led digital products while continuing to work across remote roles, freelance systems work, and practical automation-focused opportunities.
-            </p>
-          </div>
-        </div>
-
-        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-          <div class="apple-glass-panel p-5 sm:p-6 rounded-2xl">
-            <div class="text-xs font-mono text-white font-bold uppercase mb-2">01 / AI Workflows</div>
-            <p class="text-xs text-muted font-light leading-relaxed">Exploring agent-led workflows, automation logic, prompt-based systems, and practical ways AI can support operations across small teams and digital businesses.</p>
-          </div>
-
-          <div class="apple-glass-panel p-5 sm:p-6 rounded-2xl">
-            <div class="text-xs font-mono text-white font-bold uppercase mb-2">02 / Product Concepts</div>
-            <p class="text-xs text-muted font-light leading-relaxed">Developing product ideas around operational dashboards, internal tools, and simple automation-first interfaces that can evolve into real software businesses over time.</p>
-          </div>
-
-          <div class="apple-glass-panel p-5 sm:p-6 rounded-2xl">
-            <div class="text-xs font-mono text-white font-bold uppercase mb-2">03 / Freelance Direction</div>
-            <p class="text-xs text-muted font-light leading-relaxed">Available for freelance and contract work where businesses need systems thinking, workflow cleanup, AI automation direction, or stronger digital operations.</p>
-          </div>
-
-          <div class="apple-glass-panel p-5 sm:p-6 rounded-2xl">
-            <div class="text-xs font-mono text-white font-bold uppercase mb-2">04 / Long-Term Goal</div>
-            <p class="text-xs text-muted font-light leading-relaxed">My long-term goal is entrepreneurship: building digital products and service systems that create independence, recurring value, and real business leverage.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="cv" class="py-16 lg:py-28 px-4 sm:px-6 md:px-12 border-t border-white/[0.03]">
-      <div class="max-w-5xl mx-auto">
-        <div class="apple-glass-panel p-6 sm:p-8 lg:p-10 rounded-3xl">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div class="lg:col-span-8 space-y-4">
-              <span class="text-xs font-mono tracking-widest text-muted uppercase font-bold block">// CV</span>
-              <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white tracking-tight">
-                Download my updated CV
-              </h2>
-              <p class="text-muted text-sm sm:text-base leading-relaxed font-light max-w-2xl">
-                My CV reflects my current positioning across digital operations, systems transformation, growth automation, product support, and AI workflow-focused work. It also includes my education in Computer Science and Business Management, along with the practical skills I bring into remote roles and freelance opportunities.
-              </p>
-              <div class="flex flex-wrap gap-3 pt-2">
-                <span class="px-3 py-1 bg-white/[0.04] border border-white/[0.06] rounded-full text-[10px] uppercase tracking-widest font-mono text-muted">Digital Operations</span>
-                <span class="px-3 py-1 bg-white/[0.04] border border-white/[0.06] rounded-full text-[10px] uppercase tracking-widest font-mono text-muted">Systems Transformation</span>
-                <span class="px-3 py-1 bg-white/[0.04] border border-white/[0.06] rounded-full text-[10px] uppercase tracking-widest font-mono text-muted">Growth Automation</span>
-                <span class="px-3 py-1 bg-white/[0.04] border border-white/[0.06] rounded-full text-[10px] uppercase tracking-widest font-mono text-muted">AI Workflows</span>
-              </div>
+    <hr class="divider"/>
+    <!-- ABOUT -->
+    <section id="about" class="section pos-relative">
+      <div class="container">
+        <div class="about__grid">
+          <div>
+            <p class="section-label">// About</p>
+            <h2 class="section-title mb-6">Systems thinking.<br/>AI that ships.</h2>
+            <div style="display:flex;flex-direction:column;gap:var(--space-4);color:var(--color-text-muted);font-size:var(--text-sm);line-height:1.75">
+              <p>My background combines Computer Science with Business Management &#8212; which means I think about AI systems both as technical architectures and as operational environments that need to work for real businesses.</p>
+              <p>I&#39;ve worked across digital transformation, growth automation, and product delivery. Today, I&#39;m focused entirely on AI orchestration: designing multi-agent pipelines that connect LLMs, APIs, and business data into systems that run end-to-end &#8212; not just the first step.</p>
+              <p>Most AI tools stay as demos. Mine go to production.</p>
             </div>
-
-            <div class="lg:col-span-4">
-              <div class="apple-glass-panel p-6 rounded-2xl">
-                <div class="space-y-4">
-                  <div class="text-xs font-mono text-white font-bold uppercase">Resume File</div>
-                  <p class="text-xs text-muted leading-relaxed font-light">
-                    PDF format for recruiters, hiring managers, clients, and collaborators.
-                  </p>
-                  <a
-                    href="./ROHITH-DHANALA-CV.pdf"
-                    download
-                    class="w-full inline-flex items-center justify-center px-6 py-4 bg-white hover:bg-gray-200 text-black text-xs font-bold uppercase tracking-wider transition-all rounded-xl shadow-md min-h-[48px]"
-                  >
-                    Download CV
-                  </a>
-                </div>
-              </div>
+          </div>
+          <div class="about__feature-grid">
+            <div class="glass-card feature-card fade-in">
+              <div class="feature-card__title">Agent Architecture</div>
+              <p class="feature-card__text">Designing multi-step agent workflows where each agent has a defined role, tool access, and handoff condition.</p>
+            </div>
+            <div class="glass-card feature-card fade-in">
+              <div class="feature-card__title">Workflow Automation</div>
+              <p class="feature-card__text">n8n and Make.com pipelines that connect SaaS tools, APIs, webhooks, and CRMs into one automated flow.</p>
+            </div>
+            <div class="glass-card feature-card fade-in">
+              <div class="feature-card__title">LLM Integration</div>
+              <p class="feature-card__text">Prompt engineering, RAG pipelines, tool-calling, and memory for GPT-4o and Claude-based agents.</p>
+            </div>
+            <div class="glass-card feature-card fade-in">
+              <div class="feature-card__title">Full-Stack Web</div>
+              <p class="feature-card__text">Custom portals and dashboards in Next.js and React that surface AI agent outputs for real business users.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <section id="contact" class="py-16 lg:py-28 px-4 sm:px-6 md:px-12 border-t border-white/[0.03]">
-      <div class="max-w-4xl mx-auto space-y-12 lg:space-y-14">
-        <div class="text-center space-y-4">
-          <span class="text-xs font-mono tracking-widest text-muted uppercase font-bold block">// Contact</span>
-          <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white tracking-tight">Open to roles, freelance work, and collaborations</h2>
-          <p class="text-muted text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-light">
-            I am currently open to remote opportunities, freelance projects, and conversations around AI systems, workflow automation, digital operations, and product-oriented work.
-          </p>
+    <hr class="divider"/>
+    <!-- SERVICES -->
+    <section id="services" class="section pos-relative">
+      <div class="container">
+        <div style="max-width:600px;margin-bottom:var(--space-12)">
+          <p class="section-label">// Services</p>
+          <h2 class="section-title mb-6">Three systems.<br/>One orchestrator.</h2>
+          <p class="section-sub">Productized offerings &#8212; each delivered as a complete, running system with documentation and optional maintenance retainer.</p>
         </div>
-
-        <div class="apple-glass-panel p-6 sm:p-8 text-center relative rounded-3xl">
-          <div class="space-y-4">
-            <span class="inline-block px-3 py-1 bg-white text-black text-[9px] font-mono font-bold uppercase tracking-widest rounded-full shadow-sm">Current Focus</span>
-            <p class="text-base sm:text-lg text-white font-display font-medium leading-relaxed max-w-2xl mx-auto italic">
-              “I am building toward a future as an entrepreneur in AI and digital products. In the meantime, I am looking for the right remote role, freelance collaboration, or systems-focused opportunity where I can create value while continuing to grow.”
-            </p>
+        <div class="services__grid">
+          <div class="glass-card service-card fade-in">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="service-card__num">Service 01</div>
+            <h3 class="service-card__title">AI Lead Gen System</h3>
+            <p class="service-card__desc">A multi-agent outbound pipeline: prospect research &#8594; LinkedIn enrichment &#8594; personalised outreach sequence &#8594; CRM sync &#8594; automated follow-up. Runs 24/7 without manual input. Ideal for B2B coaches, consultants, and agencies.</p>
+            <div class="service-card__tags">
+              <span class="tag">n8n</span><span class="tag">Apollo / Clay</span><span class="tag">OpenAI</span><span class="tag">HubSpot / Airtable</span>
+            </div>
+          </div>
+          <div class="glass-card service-card fade-in">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div class="service-card__num">Service 02</div>
+            <h3 class="service-card__title">Ops &amp; Support Copilot</h3>
+            <p class="service-card__desc">Agent system that classifies incoming requests, drafts responses, escalates edge cases, and logs everything to your CRM or Notion. Cuts manual ops by up to 60%. Built for SaaS startups, agencies, and service businesses.</p>
+            <div class="service-card__tags">
+              <span class="tag">LangGraph</span><span class="tag">Claude</span><span class="tag">Make.com</span><span class="tag">Slack / Notion</span>
+            </div>
+          </div>
+          <div class="glass-card service-card fade-in">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <div class="service-card__num">Service 03</div>
+            <h3 class="service-card__title">Web App + Agent Bundle</h3>
+            <p class="service-card__desc">A full-stack portal with embedded AI agent workflows &#8212; client intake, lead qualification, scheduling, automated follow-up, and CRM sync &#8212; delivered as one complete system. One price, one hand-off.</p>
+            <div class="service-card__tags">
+              <span class="tag">Next.js</span><span class="tag">CrewAI</span><span class="tag">Supabase</span><span class="tag">OpenAI</span>
+            </div>
           </div>
         </div>
-
-        <div class="apple-glass-panel p-6 sm:p-10 space-y-8 relative max-w-2xl mx-auto rounded-3xl">
-          <h3 class="text-white font-display font-bold text-lg text-center tracking-tight">Start a conversation</h3>
-
-          <form id="portfolio-contact-form" class="space-y-5">
-            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE" />
-            <input type="hidden" name="subject" value="New message from rohithdhanala.com" />
-            <input type="hidden" name="from_name" value="Rohith Dhanala Portfolio" />
-            <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input
-                type="text"
-                id="contact-name"
-                name="name"
-                placeholder="Your Name"
-                required
-                class="glass-input-node px-4 py-3.5 text-sm text-white outline-none rounded-xl w-full"
-              />
-              <input
-                type="email"
-                id="contact-email"
-                name="email"
-                placeholder="Your Email"
-                required
-                class="glass-input-node px-4 py-3.5 text-sm text-white outline-none rounded-xl w-full"
-              />
+        <div style="margin-top:var(--space-10);text-align:center">
+          <a href="#contact" class="btn btn--outline-primary">Discuss Your Project &#8594;</a>
+        </div>
+      </div>
+    </section>
+    <hr class="divider"/>
+    <!-- CASE STUDIES -->
+    <section id="work" class="section pos-relative">
+      <div class="container">
+        <div style="max-width:600px;margin-bottom:var(--space-12)">
+          <p class="section-label">// Case Studies</p>
+          <h2 class="section-title mb-6">Systems built.<br/>Results delivered.</h2>
+          <p class="section-sub">Every project documented with the real problem, the agent architecture, and the measurable outcome.</p>
+        </div>
+        <div class="case-grid">
+          <div class="glass-card case-card fade-in">
+            <p class="case-card__niche">B2B Coaching / Outbound</p>
+            <h3 class="case-card__title">FlowPilot OS &#8212; AI Outbound Orchestration</h3>
+            <p class="case-card__problem"><strong style="color:var(--color-text-muted)">Problem:</strong> Manual outreach was taking 3+ hours per day &#8212; prospect research, writing personalised messages, and follow-up tracking all done by hand with no scalable system.</p>
+            <div class="case-card__pipeline" aria-label="Agent pipeline">
+              <div class="pipeline">
+                <span class="pipeline__node">Prospect Agent</span>
+                <span class="pipeline__arrow">&#8594;</span>
+                <span class="pipeline__node">Enrich Agent</span>
+                <span class="pipeline__arrow">&#8594;</span>
+                <span class="pipeline__node">Copy Agent</span>
+                <span class="pipeline__arrow">&#8594;</span>
+                <span class="pipeline__node">Send + Log</span>
+              </div>
+            </div>
+            <div class="case-card__results">
+              <div class="result-stat"><div class="result-stat__value">3hrs</div><div class="result-stat__label">Saved daily</div></div>
+              <div class="result-stat"><div class="result-stat__value">4&#215;</div><div class="result-stat__label">Outreach volume</div></div>
+              <div class="result-stat"><div class="result-stat__value">100%</div><div class="result-stat__label">CRM auto-synced</div></div>
+              <div class="result-stat"><div class="result-stat__value">24/7</div><div class="result-stat__label">Always running</div></div>
+            </div>
+            <div class="case-card__tools">
+              <span class="tag">n8n</span><span class="tag">OpenAI GPT-4o</span><span class="tag">Apollo.io</span><span class="tag">Airtable</span><span class="tag">Gmail API</span>
+            </div>
+          </div>
+          <div class="glass-card case-card fade-in">
+            <p class="case-card__niche">SaaS / Support Automation</p>
+            <h3 class="case-card__title">Support Triage Copilot &#8212; Zero Manual Sorting</h3>
+            <p class="case-card__problem"><strong style="color:var(--color-text-muted)">Problem:</strong> Customer support inbox was unmanaged &#8212; emails sat unread for 12+ hours, tickets weren&#39;t categorised, team spending 2 hours per day on manual triage before writing any replies.</p>
+            <div class="case-card__pipeline" aria-label="Agent pipeline">
+              <div class="pipeline">
+                <span class="pipeline__node">Inbox Agent</span>
+                <span class="pipeline__arrow">&#8594;</span>
+                <span class="pipeline__node">Classify</span>
+                <span class="pipeline__arrow">&#8594;</span>
+                <span class="pipeline__node">Draft Reply</span>
+                <span class="pipeline__arrow">&#8594;</span>
+                <span class="pipeline__node">Escalate / Log</span>
+              </div>
+            </div>
+            <div class="case-card__results">
+              <div class="result-stat"><div class="result-stat__value">2hrs</div><div class="result-stat__label">Saved per day</div></div>
+              <div class="result-stat"><div class="result-stat__value">&lt;5min</div><div class="result-stat__label">First response</div></div>
+              <div class="result-stat"><div class="result-stat__value">80%</div><div class="result-stat__label">Auto-handled</div></div>
+              <div class="result-stat"><div class="result-stat__value">0</div><div class="result-stat__label">Missed tickets</div></div>
+            </div>
+            <div class="case-card__tools">
+              <span class="tag">LangGraph</span><span class="tag">Claude 3.5</span><span class="tag">Make.com</span><span class="tag">Notion</span><span class="tag">Slack</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr class="divider"/>
+    <!-- PROCESS -->
+    <section class="section pos-relative" style="background:rgba(255,255,255,.008)">
+      <div class="container">
+        <div style="max-width:600px;margin-bottom:var(--space-12)">
+          <p class="section-label">// Process</p>
+          <h2 class="section-title mb-6">From problem to running system.</h2>
+        </div>
+        <div class="process__steps">
+          <div class="glass-card process-step fade-in">
+            <div class="process-step__num">01</div>
+            <h3 class="process-step__title">Discovery Call</h3>
+            <p class="process-step__text">I map your workflow, identify the biggest manual bottleneck, and confirm whether an AI system can solve it &#8212; before any work starts.</p>
+          </div>
+          <div class="glass-card process-step fade-in">
+            <div class="process-step__num">02</div>
+            <h3 class="process-step__title">System Architecture</h3>
+            <p class="process-step__text">I design the full agent pipeline &#8212; which agents, what tools, how they hand off, and what the output looks like. You review and approve before build.</p>
+          </div>
+          <div class="glass-card process-step fade-in">
+            <div class="process-step__num">03</div>
+            <h3 class="process-step__title">Build &amp; Test</h3>
+            <p class="process-step__text">Deploy with real data. I iterate until the system runs end-to-end reliably &#8212; not just in a happy-path demo.</p>
+          </div>
+          <div class="glass-card process-step fade-in">
+            <div class="process-step__num">04</div>
+            <h3 class="process-step__title">Handover &amp; Support</h3>
+            <p class="process-step__text">Full documentation, a walkthrough video, and an optional monthly maintenance retainer to keep the system running and improving.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr class="divider"/>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section pos-relative">
+      <div class="container">
+        <div style="max-width:600px;margin-bottom:var(--space-12)">
+          <p class="section-label">// Experience</p>
+          <h2 class="section-title mb-6">Professional background.</h2>
+          <p class="section-sub">Real delivery across systems transformation, digital growth, and product-oriented design &#8212; the foundation that informs every AI system I build.</p>
+        </div>
+        <div class="exp__grid">
+          <div class="glass-card exp-card fade-in">
+            <div class="exp-card__meta">
+              <span class="exp-card__period">2025 &#8212; Present</span>
+              <span class="exp-card__badge">AI Orchestration</span>
+            </div>
+            <h3 class="exp-card__company">AI Orchestrator<br/>&amp; Freelance Developer</h3>
+            <p class="exp-card__role">Self-employed &#183; Southampton, UK</p>
+            <p class="exp-card__desc">Designing and deploying multi-agent AI systems for B2B clients &#8212; lead gen pipelines, support copilots, and web + AI bundles. Built FlowPilot OS as the flagship orchestration system. Stack: n8n, LangGraph, CrewAI, OpenAI, Claude, Next.js, Supabase.</p>
+            <div class="exp-card__focus"><strong>Focus:</strong> agent architecture, workflow automation, full-stack delivery</div>
+          </div>
+          <div class="glass-card exp-card fade-in">
+            <div class="exp-card__meta">
+              <span class="exp-card__period">2022 &#8212; 2026</span>
+              <span class="exp-card__badge">Healthcare Systems</span>
+            </div>
+            <h3 class="exp-card__company">University Hospital Southampton NHS FT</h3>
+            <p class="exp-card__role">Digital Project Manager &#183; Systems Transformation</p>
+            <p class="exp-card__desc">Led digital change initiatives across software systems and data compliance workflows within a major healthcare environment. Identified operational bottlenecks, improved coordination across technical and executive teams, and shaped cleaner data and interface processes.</p>
+            <div class="exp-card__focus"><strong>Focus:</strong> systems delivery, workflow review, digital transformation</div>
+          </div>
+          <div class="glass-card exp-card fade-in">
+            <div class="exp-card__meta">
+              <span class="exp-card__period">2019 &#8212; 2022</span>
+              <span class="exp-card__badge">Studio / Founder</span>
+            </div>
+            <h3 class="exp-card__company">Maxcreepers Studio Pvt. Ltd.</h3>
+            <p class="exp-card__role">Founder &amp; Lead Systems Designer</p>
+            <p class="exp-card__desc">Founded and led a digital products and interface studio, translating client requirements into practical design and delivery systems. Shaped my product thinking, user flow design, and approach to building digital assets that scale.</p>
+            <div class="exp-card__focus"><strong>Focus:</strong> interfaces, digital products, founder-led delivery</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr class="divider"/>
+    <!-- STACK -->
+    <section id="stack" class="section pos-relative" style="background:rgba(255,255,255,.008)">
+      <div class="container">
+        <div style="max-width:600px;margin-bottom:var(--space-12)">
+          <p class="section-label">// Tech Stack</p>
+          <h2 class="section-title mb-6">Tools I deploy<br/>in production.</h2>
+        </div>
+        <div class="stack__grid">
+          <div class="stack-item fade-in"><img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n" width="28" height="28" loading="lazy"/><span class="stack-item__name">n8n</span><span class="stack-item__cat">Orchestration</span></div>
+          <div class="stack-item fade-in"><img src="https://cdn.simpleicons.org/make/6D00CC" alt="Make.com" width="28" height="28" loading="lazy"/><span class="stack-item__name">Make.com</span><span class="stack-item__cat">Automation</span></div>
+          <div class="stack-item fade-in"><img src="https://cdn.simpleicons.org/openai/FFFFFF" alt="OpenAI" width="28" height="28" loading="lazy"/><span class="stack-item__name">OpenAI</span><span class="stack-item__cat">LLM</span></div>
+          <div class="stack-item fade-in"><img src="https://cdn.simpleicons.org/anthropic/D4A27F" alt="Claude" width="28" height="28" loading="lazy"/><span class="stack-item__name">Claude</span><span class="stack-item__cat">LLM</span></div>
+          <div class="stack-item fade-in"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" width="28" height="28" loading="lazy"/><span class="stack-item__name">Python</span><span class="stack-item__cat">Dev</span></div>
+          <div class="stack-item fade-in"><img src="https://cdn.simpleicons.org/nextdotjs/FFFFFF" alt="Next.js" width="28" height="28" loading="lazy"/><span class="stack-item__name">Next.js</span><span class="stack-item__cat">Frontend</span></div>
+          <div class="stack-item fade-in"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript" width="28" height="28" loading="lazy"/><span class="stack-item__name">TypeScript</span><span class="stack-item__cat">Dev</span></div>
+          <div class="stack-item fade-in"><img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase" width="28" height="28" loading="lazy"/><span class="stack-item__name">Supabase</span><span class="stack-item__cat">Database</span></div>
+          <div class="stack-item fade-in"><img src="https://cdn.simpleicons.org/vercel/FFFFFF" alt="Vercel" width="28" height="28" loading="lazy"/><span class="stack-item__name">Vercel</span><span class="stack-item__cat">Deploy</span></div>
+          <div class="stack-item fade-in"><img src="https://cdn.simpleicons.org/github/FFFFFF" alt="GitHub" width="28" height="28" loading="lazy"/><span class="stack-item__name">GitHub</span><span class="stack-item__cat">Version Control</span></div>
+          <div class="stack-item fade-in"><img src="https://cdn.simpleicons.org/notion/FFFFFF" alt="Notion" width="28" height="28" loading="lazy"/><span class="stack-item__name">Notion</span><span class="stack-item__cat">Integration</span></div>
+          <div class="stack-item fade-in"><img src="https://cdn.simpleicons.org/airtable/18BFFF" alt="Airtable" width="28" height="28" loading="lazy"/><span class="stack-item__name">Airtable</span><span class="stack-item__cat">Integration</span></div>
+        </div>
+      </div>
+    </section>
+    <hr class="divider"/>
+    <!-- CV -->
+    <section id="cv" class="section pos-relative">
+      <div class="container--narrow">
+        <div class="glass-card cv-banner">
+          <div class="cv-banner__inner">
+            <div>
+              <p class="section-label">// CV</p>
+              <h2 class="section-title" style="font-size:var(--text-xl);margin-bottom:var(--space-4)">Download my CV</h2>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;max-width:45ch;margin-bottom:var(--space-6)">AI Orchestrator &#183; Full-Stack Developer &#183; Systems Automation. Computer Science &amp; Business Management background.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2)">
+                <span class="tag">AI Orchestration</span><span class="tag">Multi-Agent Systems</span>
+                <span class="tag">n8n &#183; LangGraph &#183; CrewAI</span><span class="tag">Full-Stack Dev</span>
+              </div>
+            </div>
+            <a href="./ROHITH-DHANALA-CV.pdf" download class="btn btn--primary" style="white-space:nowrap">Download CV &#8595;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr class="divider"/>
+    <!-- CONTACT -->
+    <section id="contact" class="section pos-relative">
+      <div class="container">
+        <div style="text-align:center;max-width:520px;margin:0 auto var(--space-12)">
+          <p class="section-label">// Contact</p>
+          <h2 class="section-title mb-6">Tell me your bottleneck.</h2>
+          <p class="section-sub" style="margin-inline:auto">I&#39;ll tell you if an AI system can solve it. No fluff &#8212; just an honest 20-minute conversation about what&#39;s possible.</p>
+        </div>
+        <div class="contact__grid">
+          <div class="contact__info">
+            <div class="contact__quote">
+              <p>&#8220;I help B2B teams go from manual workflows to automated AI pipelines &#8212; orchestrated agents that handle the work start to finish, not just the first step.&#8221;</p>
             </div>
             <div>
-              <textarea
-                id="contact-msg"
-                name="message"
-                rows="4"
-                placeholder="Tell me about the role, project, collaboration, or workflow challenge you want to discuss..."
-                required
-                class="w-full glass-input-node px-4 py-3.5 text-sm text-white outline-none rounded-xl resize-none"
-              ></textarea>
+              <p class="section-label" style="margin-bottom:var(--space-4)">// Reach me directly</p>
+              <div class="contact__links">
+                <a href="mailto:rodhanala@gmail.com" class="contact__link-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  Email
+                </a>
+                <a href="https://wa.me/447311470011" target="_blank" rel="noopener noreferrer" class="contact__link-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                  WhatsApp
+                </a>
+                <a href="https://www.linkedin.com/in/rohith-dhanala-35715b162/" target="_blank" rel="noopener noreferrer" class="contact__link-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  LinkedIn
+                </a>
+              </div>
             </div>
-            <button
-              type="submit"
-              class="w-full py-4 bg-white hover:bg-gray-200 text-black text-xs font-bold uppercase tracking-wider transition-all rounded-xl shadow-md min-h-[48px]"
-            >
-              Send Message
-            </button>
-          </form>
-
-          <div id="contact-feedback" class="hidden text-center py-6 space-y-2">
-            <span class="text-2xl">✓</span>
-            <h4 class="text-white font-display font-bold text-sm">Message received</h4>
-            <p class="text-xs text-muted font-light leading-relaxed">Thanks for reaching out. Your message has been sent successfully.</p>
           </div>
-        </div>
-
-        <div class="flex flex-wrap justify-center gap-5 sm:gap-8 text-xs font-mono font-bold uppercase tracking-wider pt-4 border-t border-white/[0.03]">
-          <a href="mailto:rodhanala@gmail.com" class="underline hover:text-white transition-colors">Email</a>
-          <a href="https://wa.me/447311470011" target="_blank" rel="noopener noreferrer" class="underline hover:text-white transition-colors">WhatsApp</a>
-          <a href="https://www.linkedin.com/in/rohith-dhanala-35715b162/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white transition-colors">LinkedIn</a>
-          <a href="./ROHITH-DHANALA-CV.pdf" download class="underline hover:text-white transition-colors">Download CV</a>
+          <div class="glass-card contact__form-wrap">
+            <h3 style="font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);color:var(--color-text);margin-bottom:var(--space-6)">Start a conversation</h3>
+            <form id="contact-form" novalidate>
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE"/>
+              <input type="hidden" name="subject" value="New message from rohithdhanala.com"/>
+              <input type="hidden" name="from_name" value="Rohith Dhanala Portfolio"/>
+              <input type="checkbox" name="botcheck" style="display:none" aria-hidden="true"/>
+              <div class="form-group form-row">
+                <div>
+                  <label class="form-label" for="f-name">Name</label>
+                  <input class="form-input" type="text" id="f-name" name="name" placeholder="Your name" required/>
+                </div>
+                <div>
+                  <label class="form-label" for="f-email">Email</label>
+                  <input class="form-input" type="email" id="f-email" name="email" placeholder="your@email.com" required/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-msg">Tell me about your bottleneck</label>
+                <textarea class="form-input" id="f-msg" name="message" rows="4" placeholder="What&#39;s the manual task taking the most time? What does your current workflow look like?" required></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary" style="width:100%">Send Message &#8594;</button>
+            </form>
+            <div id="form-feedback" class="feedback-msg">
+              <div style="font-size:2rem;margin-bottom:var(--space-3);color:var(--color-success)">&#10003;</div>
+              <h4 style="font-family:var(--font-display);font-weight:700;color:var(--color-text);margin-bottom:var(--space-2)">Message received</h4>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted)">Thanks for reaching out. I&#39;ll be in touch within 24 hours.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-
-    <footer class="py-10 lg:py-14 border-t border-white/[0.03] text-center space-y-2 font-mono text-[10px] text-muted uppercase tracking-wider bg-background px-4">
-      <div>&copy; 2026 Rohith Dhanala. AI systems, digital operations, and product-focused work.</div>
-      <div>Based in the United Kingdom, working globally.</div>
-    </footer>
-
-    <script>
-      const mobileMenuButton = document.getElementById("mobile-menu-button");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const menuIconOpen = document.getElementById("menu-icon-open");
-      const menuIconClose = document.getElementById("menu-icon-close");
-      const mobileMenuLinks = mobileMenu.querySelectorAll("a");
-
-      mobileMenuButton.addEventListener("click", function () {
-        const isOpen = !mobileMenu.classList.contains("hidden");
-        mobileMenu.classList.toggle("hidden");
-        menuIconOpen.classList.toggle("hidden");
-        menuIconClose.classList.toggle("hidden");
-        mobileMenuButton.setAttribute("aria-expanded", String(!isOpen));
-        document.body.classList.toggle("overflow-hidden", !isOpen);
-      });
-
-      mobileMenuLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.add("hidden");
-          menuIconOpen.classList.remove("hidden");
-          menuIconClose.classList.add("hidden");
-          mobileMenuButton.setAttribute("aria-expanded", "false");
-          document.body.classList.remove("overflow-hidden");
-        });
-      });
-
-      const form = document.getElementById("portfolio-contact-form");
-      const feedback = document.getElementById("contact-feedback");
-
-      form.addEventListener("submit", async function (e) {
+  </main>
+  <footer class="footer pos-relative">
+    <div class="container">
+      <p>&#169; 2026 Rohith Dhanala &#183; AI Orchestrator &#183; Southampton, UK &#183; Working globally</p>
+      <p style="margin-top:var(--space-2)">n8n &#183; LangGraph &#183; CrewAI &#183; Make.com &#183; OpenAI &#183; Full-Stack Web Development</p>
+    </div>
+  </footer>
+  <script>
+    (function(){
+      var html=document.documentElement,btn=document.querySelector("[data-theme-toggle]"),theme="dark";
+      html.setAttribute("data-theme",theme);
+      function setIcon(t){if(!btn)return;btn.innerHTML=t==="dark"?'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>':'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';btn.setAttribute("aria-label","Switch to "+(t==="dark"?"light":"dark")+" mode");}
+      setIcon(theme);
+      if(btn){btn.addEventListener("click",function(){theme=theme==="dark"?"light":"dark";html.setAttribute("data-theme",theme);setIcon(theme);});}
+    })();
+    (function(){
+      var tb=document.getElementById("mobile-toggle-btn"),mm=document.getElementById("mobile-menu"),im=document.getElementById("icon-menu"),ic=document.getElementById("icon-close");
+      if(!tb)return;
+      tb.addEventListener("click",function(){var o=mm.classList.contains("open");mm.classList.toggle("open");im.classList.toggle("hidden",!o);ic.classList.toggle("hidden",o);tb.setAttribute("aria-expanded",String(!o));document.body.style.overflow=o?"":"hidden";});
+      mm.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){mm.classList.remove("open");im.classList.remove("hidden");ic.classList.add("hidden");tb.setAttribute("aria-expanded","false");document.body.style.overflow="";});});
+    })();
+    (function(){
+      var form=document.getElementById("contact-form"),fb=document.getElementById("form-feedback");
+      if(!form)return;
+      form.addEventListener("submit",async function(e){
         e.preventDefault();
-
-        const formData = new FormData(form);
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
-
-        const button = form.querySelector("button[type='submit']");
-        const originalButtonText = button.innerText;
-
-        button.disabled = true;
-        button.innerText = "Sending...";
-
-        feedback.classList.add("hidden");
-
-        try {
-          const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "Accept": "application/json"
-            },
-            body: json
-          });
-
-          const result = await response.json();
-
-          if (response.status === 200 && result.success) {
-            form.classList.add("hidden");
-            feedback.classList.remove("hidden");
-            feedback.innerHTML = `
-              <span class="text-2xl text-emerald-400">✓</span>
-              <h4 class="text-white font-display font-bold text-sm">Message received</h4>
-              <p class="text-xs text-muted font-light leading-relaxed">Thanks for reaching out. Your message has been sent successfully.</p>
-            `;
-            form.reset();
-          } else {
-            feedback.classList.remove("hidden");
-            feedback.innerHTML = `
-              <span class="text-2xl text-red-400">!</span>
-              <h4 class="text-white font-display font-bold text-sm">Something went wrong</h4>
-              <p class="text-xs text-muted font-light leading-relaxed">${result.message || "Please check your access key and try again."}</p>
-            `;
-          }
-        } catch (error) {
-          feedback.classList.remove("hidden");
-          feedback.innerHTML = `
-            <span class="text-2xl text-red-400">!</span>
-            <h4 class="text-white font-display font-bold text-sm">Submission failed</h4>
-            <p class="text-xs text-muted font-light leading-relaxed">There was a network or configuration issue. Please try again.</p>
-          `;
-        } finally {
-          button.disabled = false;
-          button.innerText = originalButtonText;
-        }
+        var btn=form.querySelector("button[type='submit']"),orig=btn.innerHTML;
+        btn.disabled=true;btn.innerHTML="Sending&#8230;";
+        try{
+          var data=Object.fromEntries(new FormData(form));
+          var res=await fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(data)});
+          var r=await res.json();
+          if(res.ok&&r.success){form.style.display="none";fb.classList.add("show");}
+          else{alert(r.message||"Something went wrong. Please try again.");}
+        }catch(err){alert("Network error. Please try again.");}
+        finally{btn.disabled=false;btn.innerHTML=orig;}
       });
-    </script>
-  </body>
+    })();
+    (function(){
+      var nav=document.querySelector(".nav");
+      window.addEventListener("scroll",function(){nav.style.boxShadow=window.scrollY>40?"0 8px 30px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.08)":"0 8px 30px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.08)";},{passive:true});
+    })();
+  </script>
+</body>
 </html>
