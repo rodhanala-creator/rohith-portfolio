@@ -78,43 +78,58 @@
     <div class="ambient-orb orb-1"></div>
     <div class="ambient-orb orb-2"></div>
 
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-4xl z-50 glass-panel rounded-full px-6 py-3 flex justify-between items-center transition-all duration-300">
-        <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center font-mono text-xs font-bold">RD</div>
+    <nav class="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 w-[95%] md:w-[90%] max-w-4xl z-50 glass-panel rounded-full px-4 md:px-6 py-3 flex justify-between items-center transition-all duration-300">
+        <div class="flex items-center gap-3 z-50 relative">
+            <div class="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center font-mono text-xs font-bold shrink-0">RD</div>
             <div class="hidden sm:block">
                 <div class="text-xs font-bold tracking-tight">Rohith Dhanala</div>
                 <div class="text-[9px] font-mono text-emerald-400 uppercase tracking-widest">AI Orchestrator</div>
             </div>
         </div>
-        <div class="flex items-center gap-6 text-xs font-semibold uppercase tracking-widest text-slate-400">
+
+        <div class="hidden md:flex items-center gap-6 text-xs font-semibold uppercase tracking-widest text-slate-400">
             <a href="#philosophy" class="hover:text-white transition-colors">Philosophy</a>
             <a href="#orchestrations" class="hover:text-white transition-colors">Orchestrations</a>
             <a href="#contact" class="px-5 py-2 bg-white text-black rounded-full hover:bg-slate-200 transition-colors tracking-widest font-bold">Book Call</a>
         </div>
+
+        <div class="flex md:hidden items-center gap-3 z-50 relative">
+            <a href="#contact" class="px-4 py-1.5 text-[10px] bg-white text-black rounded-full font-bold uppercase tracking-widest">Book Call</a>
+            <button id="mobile-menu-btn" class="text-white p-1 focus:outline-none" aria-label="Toggle Menu">
+                <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
     </nav>
 
-    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-32 pb-20 relative z-10">
-        <div class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-slate-400 glass-panel px-4 py-2 rounded-full mb-8">
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-[#050507]/95 backdrop-blur-xl flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300 flex">
+        <a href="#philosophy" class="mobile-link text-xl font-mono uppercase tracking-widest text-slate-300 hover:text-white transition-colors">Philosophy</a>
+        <a href="#orchestrations" class="mobile-link text-xl font-mono uppercase tracking-widest text-slate-300 hover:text-white transition-colors">Orchestrations</a>
+        <a href="#contact" class="mobile-link text-xl font-mono uppercase tracking-widest text-emerald-400 hover:text-emerald-300 transition-colors">Book Call</a>
+    </div>
+
+    <section class="min-h-[100svh] flex flex-col justify-center items-center text-center px-6 pt-32 pb-20 relative z-10">
+        <div class="inline-flex items-center gap-2 font-mono text-[10px] md:text-xs uppercase tracking-widest text-slate-400 glass-panel px-4 py-2 rounded-full mb-8">
             <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse"></span>
             Available for remote projects
         </div>
         
-        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 leading-[1.1]">
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 leading-[1.1]">
             Digital Project Manager <br/>
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">
                 & AI Orchestrator.
             </span>
         </h1>
         
-        <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
+        <p class="text-base md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
             I don't just manage tasks or list software tools. I use vibe coding to direct AI, architect agentic workflows, and build systems that run your business while you sleep.
         </p>
         
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="#orchestrations" class="px-8 py-4 bg-white text-black font-bold rounded-xl hover:scale-105 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+        <div class="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto">
+            <a href="#orchestrations" class="px-8 py-4 bg-white text-black font-bold rounded-xl hover:scale-105 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.1)] w-full sm:w-auto">
                 View Case Studies →
             </a>
-            <a href="#contact" class="px-8 py-4 glass-panel font-bold rounded-xl hover:scale-105 transition-transform text-white">
+            <a href="#contact" class="px-8 py-4 glass-panel font-bold rounded-xl hover:scale-105 transition-transform text-white w-full sm:w-auto">
                 Discuss a Bottleneck
             </a>
         </div>
@@ -126,19 +141,19 @@
             <h2 class="text-3xl md:text-4xl font-bold mb-12">Systems thinking.<br/>AI that actually ships.</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="glass-panel p-8 rounded-2xl transition-all duration-300">
+                <div class="glass-panel p-6 md:p-8 rounded-2xl transition-all duration-300">
                     <h3 class="font-mono text-sm font-bold text-white mb-3 uppercase tracking-wider">Vibe Coding</h3>
                     <p class="text-sm text-slate-400 leading-relaxed">
                         Directing large language models to architect production-ready code. I focus on business logic, system architecture, and outcomes rather than memorizing syntax.
                     </p>
                 </div>
-                <div class="glass-panel p-8 rounded-2xl transition-all duration-300">
+                <div class="glass-panel p-6 md:p-8 rounded-2xl transition-all duration-300">
                     <h3 class="font-mono text-sm font-bold text-white mb-3 uppercase tracking-wider">Agent Architecture</h3>
                     <p class="text-sm text-slate-400 leading-relaxed">
                         Designing multi-step workflows where each AI agent has a defined role, tool access, and handoff condition. Moving beyond single-prompt demos to true automation.
                     </p>
                 </div>
-                <div class="glass-panel p-8 rounded-2xl transition-all duration-300">
+                <div class="glass-panel p-6 md:p-8 rounded-2xl transition-all duration-300">
                     <h3 class="font-mono text-sm font-bold text-white mb-3 uppercase tracking-wider">End-to-End Delivery</h3>
                     <p class="text-sm text-slate-400 leading-relaxed">
                         Building the full pipeline. From the Next.js web portal your clients see, down to the automated CRM sync and email dispatch agents working in the background.
@@ -154,63 +169,67 @@
             <h2 class="text-3xl md:text-4xl font-bold mb-12">Systems built. Results delivered.</h2>
 
             <div class="space-y-8">
-                <div class="glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden group">
+                <div class="glass-panel p-6 md:p-12 rounded-3xl relative overflow-hidden group">
                     <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                        <svg class="w-48 h-48 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        <svg class="w-32 h-32 md:w-48 md:h-48 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                     </div>
                     
-                    <p class="font-mono text-[10px] font-bold text-emerald-400 uppercase tracking-widest mb-3">B2B Coaching / Outbound</p>
-                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">FlowPilot OS — AI Outbound</h3>
-                    <p class="text-sm text-slate-300 mb-8 max-w-2xl leading-relaxed">
-                        <strong class="text-white font-semibold">The Bottleneck:</strong> Manual outreach was taking 3+ hours per day — prospect research, writing personalized messages, and follow-up tracking all done by hand with no scalable system.
-                    </p>
+                    <div class="relative z-10">
+                        <p class="font-mono text-[10px] font-bold text-emerald-400 uppercase tracking-widest mb-3">B2B Coaching / Outbound</p>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">FlowPilot OS — AI Outbound</h3>
+                        <p class="text-sm text-slate-300 mb-8 max-w-2xl leading-relaxed">
+                            <strong class="text-white font-semibold">The Bottleneck:</strong> Manual outreach was taking 3+ hours per day — prospect research, writing personalized messages, and follow-up tracking all done by hand with no scalable system.
+                        </p>
 
-                    <div class="mb-8">
-                        <p class="font-mono text-xs text-slate-500 uppercase tracking-wider mb-3">Agent Pipeline Architecture</p>
-                        <div class="flex flex-wrap items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-widest">
-                            <span class="pipeline-node px-3 py-1.5 rounded-full">Prospect Agent</span>
-                            <span class="text-slate-600">→</span>
-                            <span class="pipeline-node px-3 py-1.5 rounded-full">Enrich Agent</span>
-                            <span class="text-slate-600">→</span>
-                            <span class="pipeline-node px-3 py-1.5 rounded-full">Copy Agent</span>
-                            <span class="text-slate-600">→</span>
-                            <span class="pipeline-node px-3 py-1.5 rounded-full">Send + Log</span>
+                        <div class="mb-8">
+                            <p class="font-mono text-xs text-slate-500 uppercase tracking-wider mb-3">Agent Pipeline Architecture</p>
+                            <div class="flex flex-wrap items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-widest">
+                                <span class="pipeline-node px-3 py-1.5 rounded-full mb-1">Prospect Agent</span>
+                                <span class="text-slate-600 mb-1">→</span>
+                                <span class="pipeline-node px-3 py-1.5 rounded-full mb-1">Enrich Agent</span>
+                                <span class="text-slate-600 mb-1">→</span>
+                                <span class="pipeline-node px-3 py-1.5 rounded-full mb-1">Copy Agent</span>
+                                <span class="text-slate-600 mb-1">→</span>
+                                <span class="pipeline-node px-3 py-1.5 rounded-full mb-1">Send + Log</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-white/10 pt-8 mt-4">
-                        <div><div class="text-2xl font-bold text-white">3hrs</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Saved Daily</div></div>
-                        <div><div class="text-2xl font-bold text-white">4x</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Outreach Volume</div></div>
-                        <div><div class="text-2xl font-bold text-white">100%</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">CRM Auto-Sync</div></div>
-                        <div><div class="text-2xl font-bold text-emerald-400">24/7</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Always Running</div></div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-white/10 pt-8 mt-4">
+                            <div><div class="text-2xl font-bold text-white">3hrs</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Saved Daily</div></div>
+                            <div><div class="text-2xl font-bold text-white">4x</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Outreach Volume</div></div>
+                            <div><div class="text-2xl font-bold text-white">100%</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">CRM Auto-Sync</div></div>
+                            <div><div class="text-2xl font-bold text-emerald-400">24/7</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Always Running</div></div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden group">
-                    <p class="font-mono text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-3">SaaS / Support Automation</p>
-                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Support Triage Copilot</h3>
-                    <p class="text-sm text-slate-300 mb-8 max-w-2xl leading-relaxed">
-                        <strong class="text-white font-semibold">The Bottleneck:</strong> Customer support inbox was unmanaged. Emails sat unread for 12+ hours, tickets weren't categorized, and the team spent 2 hours per day on manual triage before writing a single reply.
-                    </p>
+                <div class="glass-panel p-6 md:p-12 rounded-3xl relative overflow-hidden group">
+                    <div class="relative z-10">
+                        <p class="font-mono text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-3">SaaS / Support Automation</p>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Support Triage Copilot</h3>
+                        <p class="text-sm text-slate-300 mb-8 max-w-2xl leading-relaxed">
+                            <strong class="text-white font-semibold">The Bottleneck:</strong> Customer support inbox was unmanaged. Emails sat unread for 12+ hours, tickets weren't categorized, and the team spent 2 hours per day on manual triage before writing a single reply.
+                        </p>
 
-                    <div class="mb-8">
-                        <p class="font-mono text-xs text-slate-500 uppercase tracking-wider mb-3">Agent Pipeline Architecture</p>
-                        <div class="flex flex-wrap items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-widest">
-                            <span class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400">Inbox Agent</span>
-                            <span class="text-slate-600">→</span>
-                            <span class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400">Classify</span>
-                            <span class="text-slate-600">→</span>
-                            <span class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400">Draft Reply</span>
-                            <span class="text-slate-600">→</span>
-                            <span class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400">Escalate / Log</span>
+                        <div class="mb-8">
+                            <p class="font-mono text-xs text-slate-500 uppercase tracking-wider mb-3">Agent Pipeline Architecture</p>
+                            <div class="flex flex-wrap items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-widest">
+                                <span class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 mb-1">Inbox Agent</span>
+                                <span class="text-slate-600 mb-1">→</span>
+                                <span class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 mb-1">Classify</span>
+                                <span class="text-slate-600 mb-1">→</span>
+                                <span class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 mb-1">Draft Reply</span>
+                                <span class="text-slate-600 mb-1">→</span>
+                                <span class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 mb-1">Escalate / Log</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-white/10 pt-8 mt-4">
-                        <div><div class="text-2xl font-bold text-white">2hrs</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Saved Daily</div></div>
-                        <div><div class="text-2xl font-bold text-white"><5min</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">First Response</div></div>
-                        <div><div class="text-2xl font-bold text-white">80%</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Auto-Handled</div></div>
-                        <div><div class="text-2xl font-bold text-blue-400">0</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Missed Tickets</div></div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-white/10 pt-8 mt-4">
+                            <div><div class="text-2xl font-bold text-white">2hrs</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Saved Daily</div></div>
+                            <div><div class="text-2xl font-bold text-white"><5min</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">First Response</div></div>
+                            <div><div class="text-2xl font-bold text-white">80%</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Auto-Handled</div></div>
+                            <div><div class="text-2xl font-bold text-blue-400">0</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Missed Tickets</div></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -219,10 +238,10 @@
 
     <section id="contact" class="py-24 px-6 relative z-10">
         <div class="max-w-3xl mx-auto">
-            <div class="glass-panel p-8 md:p-12 rounded-3xl text-center">
+            <div class="glass-panel p-6 md:p-12 rounded-3xl text-center">
                 <p class="font-mono text-xs text-emerald-400 uppercase tracking-widest mb-4">// Direct Access</p>
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">Tell me your bottleneck.</h2>
-                <p class="text-slate-400 mb-10 max-w-lg mx-auto">
+                <p class="text-slate-400 mb-10 max-w-lg mx-auto text-sm md:text-base">
                     I'll tell you if an AI system can solve it. No fluff — just an honest 20-minute conversation about what's possible for your workflow.
                 </p>
                 
@@ -254,7 +273,7 @@
         </div>
     </section>
 
-    <footer class="border-t border-white/5 py-8 text-center relative z-10">
+    <footer class="border-t border-white/5 py-8 text-center relative z-10 px-6">
         <div class="flex items-center justify-center gap-4 mb-4">
             <a href="https://www.linkedin.com/in/rohith-dhanala-35715b162/" target="_blank" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:bg-white/10 transition-colors">
                 <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
@@ -267,6 +286,41 @@
     </footer>
 
     <script>
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            } else {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        
+        // Close menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if(isMenuOpen) toggleMenu();
+            });
+        });
+
+        // Form Submission Logic
         const form = document.getElementById("contact-form");
         const feedback = document.getElementById("form-feedback");
         
