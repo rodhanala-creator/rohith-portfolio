@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rohith Dhanala | AI Consultant & Orchestrator</title>
-    <meta name="description" content="I audit business bottlenecks and design multi-agent AI systems to automate your most important workflows." />
+    <title>Rohith Dhanala | Digital & AI Consultant</title>
+    <meta name="description" content="I audit business bottlenecks, design tailored digital tools, and build multi-agent AI systems to automate your operations." />
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,10 +20,21 @@
                         mono: ['"JetBrains Mono"', 'monospace'],
                     },
                     colors: {
-                        glass: {
-                            100: 'rgba(255, 255, 255, 0.03)',
-                            200: 'rgba(255, 255, 255, 0.05)',
-                            300: 'rgba(255, 255, 255, 0.1)',
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981', /* Emerald representing automation */
+                            600: '#059669',
+                            900: '#064e3b',
+                        },
+                        accent: {
+                            500: '#3b82f6', /* Corporate Blue */
+                            600: '#2563eb',
+                        },
+                        dark: {
+                            900: '#030712',
+                            800: '#0b0f19',
+                            700: '#1f2937',
                         }
                     }
                 }
@@ -32,335 +43,642 @@
     </script>
 
     <style>
-        body { background-color: #050507; color: #f8fafc; overflow-x: hidden; }
+        body { 
+            background-color: #030712; 
+            color: #f3f4f6; 
+            overflow-x: hidden; 
+        }
         
         .glass-panel {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(11, 15, 25, 0.7);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         }
 
-        .glass-panel:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.15);
+        .glass-panel-hover:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(16, 185, 129, 0.2);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.05);
         }
 
         .ambient-orb {
             position: fixed;
             border-radius: 50%;
-            filter: blur(100px);
+            filter: blur(120px);
             z-index: -1;
-            opacity: 0.4;
-            animation: float 20s ease-in-out infinite alternate;
-        }
-        .orb-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: rgba(16, 185, 129, 0.15); }
-        .orb-2 { bottom: -10%; right: -10%; width: 60vw; height: 60vw; background: rgba(59, 130, 246, 0.15); animation-delay: -10s; }
-
-        @keyframes float {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(5%, 5%) scale(1.1); }
+            opacity: 0.25;
+            pointer-events: none;
         }
 
-        .pipeline-node {
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            color: #34d399;
+        @keyframes float-slow {
+            0%, 100% { transform: scale(1) translate(0px, 0px); opacity: 0.2; }
+            50% { transform: scale(1.1) translate(20px, -20px); opacity: 0.3; }
+        }
+
+        .animate-float-slow {
+            animation: float-slow 15s ease-in-out infinite alternate;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030712;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
         }
     </style>
 </head>
-<body class="antialiased selection:bg-emerald-500/30 selection:text-emerald-200">
+<body class="antialiased selection:bg-brand-500/30 selection:text-brand-100">
 
-    <div class="ambient-orb orb-1"></div>
-    <div class="ambient-orb orb-2"></div>
+    <!-- Ambient glowing backgrounds to establish tech depth -->
+    <div class="fixed top-0 inset-x-0 h-screen w-screen overflow-hidden -z-10 pointer-events-none">
+        <div class="ambient-orb animate-float-slow bg-brand-500 w-[500px] h-[500px] top-[-10%] left-[-10%]"></div>
+        <div class="ambient-orb animate-float-slow bg-accent-500 w-[600px] h-[600px] bottom-[-10%] right-[-10%]" style="animation-delay: -5s;"></div>
+    </div>
 
-    <!-- Navigation -->
-    <nav class="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 w-[95%] md:w-[90%] max-w-4xl z-50 glass-panel rounded-full px-4 md:px-6 py-3 flex justify-between items-center transition-all duration-300">
-        <div class="flex items-center gap-3 z-50 relative">
-            <div class="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center font-mono text-xs font-bold shrink-0">RD</div>
-            <div class="hidden sm:block">
-                <div class="text-xs font-bold tracking-tight">Rohith Dhanala</div>
-                <div class="text-[9px] font-mono text-emerald-400 uppercase tracking-widest">AI Consultant</div>
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-8">
+        <div class="max-w-5xl mx-auto flex justify-between items-center glass-panel rounded-full px-6 py-3 border border-white/10 transition-all duration-300">
+            <!-- Brand Logo -->
+            <a href="#hero" class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-500 to-accent-500 text-dark-900 font-bold flex items-center justify-center text-sm tracking-tight shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                    RD
+                </span>
+                <div>
+                    <span class="text-sm font-bold tracking-tight block text-white">Rohith Dhanala</span>
+                    <span class="text-[10px] font-mono text-brand-500 tracking-wider uppercase block">Digital &amp; AI Consultant</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-xs font-mono tracking-widest uppercase">
+                <a href="#about" class="text-slate-400 hover:text-white transition-colors">About</a>
+                <a href="#philosophy" class="text-slate-400 hover:text-white transition-colors">Consulting Process</a>
+                <a href="#orchestrations" class="text-slate-400 hover:text-white transition-colors">AI Systems</a>
+            </nav>
+
+            <!-- CTA Actions -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="#contact" class="px-5 py-2.5 rounded-full text-xs font-mono tracking-widest uppercase font-bold text-dark-900 bg-gradient-to-r from-brand-500 to-accent-500 hover:from-brand-100 hover:to-white transition-all duration-300 shadow-[0_4px_20px_rgba(16,185,129,0.15)] hover:scale-105 transform">
+                    Request Strategy Audit
+                </a>
             </div>
-        </div>
 
-        <div class="hidden md:flex items-center gap-6 text-xs font-semibold uppercase tracking-widest text-slate-400">
-            <a href="#philosophy" class="hover:text-white transition-colors">Philosophy</a>
-            <a href="#orchestrations" class="hover:text-white transition-colors">Orchestrations</a>
-            <a href="#contact" class="px-5 py-2 bg-emerald-500 text-black rounded-full hover:bg-emerald-400 transition-colors tracking-widest font-bold shadow-[0_0_15px_rgba(16,185,129,0.3)]">Book Free Audit</a>
-        </div>
-
-        <div class="flex md:hidden items-center gap-3 z-50 relative">
-            <a href="#contact" class="px-4 py-1.5 text-[10px] bg-emerald-500 text-black rounded-full font-bold uppercase tracking-widest">Free Audit</a>
-            <button id="mobile-menu-btn" class="text-white p-1 focus:outline-none" aria-label="Toggle Menu">
-                <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="flex md:hidden flex-col gap-1.5 p-2 text-white focus:outline-none" aria-label="Toggle Menu">
+                <span class="w-6 h-0.5 bg-white transition-transform duration-300" id="bar-1"></span>
+                <span class="w-6 h-0.5 bg-white transition-opacity duration-300" id="bar-2"></span>
+                <span class="w-6 h-0.5 bg-white transition-transform duration-300" id="bar-3"></span>
             </button>
         </div>
-    </nav>
+    </header>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 z-40 bg-[#050507]/95 backdrop-blur-xl flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300 flex">
-        <a href="#philosophy" class="mobile-link text-xl font-mono uppercase tracking-widest text-slate-300 hover:text-white transition-colors">Philosophy</a>
-        <a href="#orchestrations" class="mobile-link text-xl font-mono uppercase tracking-widest text-slate-300 hover:text-white transition-colors">Orchestrations</a>
-        <a href="#contact" class="mobile-link text-xl font-mono uppercase tracking-widest text-emerald-400 hover:text-emerald-300 transition-colors">Book Free Audit</a>
+    <!-- Mobile Navigation Overlay Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-dark-900/95 backdrop-blur-2xl z-40 flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-all duration-300">
+        <a href="#about" class="mobile-link text-2xl font-semibold hover:text-brand-500 transition-colors">About</a>
+        <a href="#philosophy" class="mobile-link text-2xl font-semibold hover:text-brand-500 transition-colors">Consulting Process</a>
+        <a href="#orchestrations" class="mobile-link text-2xl font-semibold hover:text-brand-500 transition-colors">AI Systems</a>
+        <a href="#contact" class="mobile-link px-6 py-3 rounded-full text-sm font-mono tracking-widest uppercase font-bold text-dark-900 bg-white hover:bg-brand-500 transition-all duration-300">
+            Request Strategy Audit
+        </a>
     </div>
 
     <!-- Hero Section -->
-    <section class="min-h-[100svh] flex flex-col justify-center items-center text-center px-6 pt-32 pb-20 relative z-10">
-        <div class="inline-flex items-center gap-2 font-mono text-[10px] md:text-xs uppercase tracking-widest text-slate-400 glass-panel px-4 py-2 rounded-full mb-8">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse"></span>
-            Accepting New Audits
-        </div>
-        
-        <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 leading-[1.1]">
-            AI Consultant <br/>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">
-                & Orchestrator.
-            </span>
-        </h1>
-        
-        <p class="text-base md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
-            I audit your business to find hidden bottlenecks, consult on the right AI strategy, and build the agentic workflows that execute the work while you sleep.
-        </p>
-        
-        <div class="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto">
-            <a href="#contact" class="px-8 py-4 bg-white text-black font-bold rounded-xl hover:scale-105 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.1)] w-full sm:w-auto">
-                Get a Free AI Audit →
-            </a>
-            <a href="#orchestrations" class="px-8 py-4 glass-panel font-bold rounded-xl hover:scale-105 transition-transform text-white w-full sm:w-auto">
-                View Case Studies
-            </a>
-        </div>
-    </section>
-
-    <!-- Philosophy -->
-    <section id="philosophy" class="py-24 px-6 relative z-10">
-        <div class="max-w-5xl mx-auto">
-            <p class="font-mono text-xs text-emerald-400 uppercase tracking-widest mb-4">// The Consulting Process</p>
-            <h2 class="text-3xl md:text-4xl font-bold mb-12">Strategic insight.<br/>Systems that actually ship.</h2>
+    <section id="hero" class="min-h-[100svh] flex items-center justify-center relative px-6 pt-24">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="glass-panel p-6 md:p-8 rounded-2xl transition-all duration-300">
-                    <div class="text-emerald-400 mb-4 font-mono text-xl">01</div>
-                    <h3 class="font-mono text-sm font-bold text-white mb-3 uppercase tracking-wider">AI Auditing</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Analyzing your current operations to uncover hours of wasted manual effort. I identify exactly where AI tools and integrations can generate the highest ROI for your team.
-                    </p>
+            <!-- Left Narrative -->
+            <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-brand-500/20 text-xs text-brand-500 font-mono tracking-wider uppercase mx-auto lg:mx-0">
+                    <span class="w-2.5 h-2.5 rounded-full bg-brand-500 animate-pulse shadow-[0_0_12px_rgba(16,185,129,0.8)]"></span>
+                    Available for Audits &amp; Advisory
                 </div>
-                <div class="glass-panel p-6 md:p-8 rounded-2xl transition-all duration-300">
-                    <div class="text-blue-400 mb-4 font-mono text-xl">02</div>
-                    <h3 class="font-mono text-sm font-bold text-white mb-3 uppercase tracking-wider">Agent Architecture</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Designing robust, multi-step workflows. Moving beyond generic ChatGPT prompts to build automated systems where AI agents handle specific roles, tools, and handoffs seamlessly.
-                    </p>
-                </div>
-                <div class="glass-panel p-6 md:p-8 rounded-2xl transition-all duration-300">
-                    <div class="text-purple-400 mb-4 font-mono text-xl">03</div>
-                    <h3 class="font-mono text-sm font-bold text-white mb-3 uppercase tracking-wider">Full-Stack Implementation</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Turning the architecture into a reality. Utilizing vibe coding and modern web frameworks to deploy production-ready digital products and automated integrations.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Orchestrations -->
-    <section id="orchestrations" class="py-24 px-6 relative z-10">
-        <div class="max-w-5xl mx-auto">
-            <p class="font-mono text-xs text-blue-400 uppercase tracking-widest mb-4">// Proven Implementations</p>
-            <h2 class="text-3xl md:text-4xl font-bold mb-12">Audits executed. Results delivered.</h2>
-
-            <div class="space-y-8">
-                <!-- Project 1 -->
-                <div class="glass-panel p-6 md:p-12 rounded-3xl relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                        <svg class="w-32 h-32 md:w-48 md:h-48 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                    </div>
-                    
-                    <div class="relative z-10">
-                        <p class="font-mono text-[10px] font-bold text-emerald-400 uppercase tracking-widest mb-3">B2B Coaching / Outbound Automation</p>
-                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">FlowPilot OS — AI Outbound</h3>
-                        <p class="text-sm text-slate-300 mb-8 max-w-2xl leading-relaxed">
-                            <strong class="text-white font-semibold">The Bottleneck:</strong> Manual outreach was taking 3+ hours per day — prospect research, writing personalized messages, and follow-up tracking all done by hand with no scalable system.
-                        </p>
-
-                        <div class="mb-8">
-                            <p class="font-mono text-xs text-slate-500 uppercase tracking-wider mb-3">Agent Pipeline Architecture</p>
-                            <div class="flex flex-wrap items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-widest">
-                                <span class="pipeline-node px-3 py-1.5 rounded-full mb-1">Prospect Agent</span>
-                                <span class="text-slate-600 mb-1">→</span>
-                                <span class="pipeline-node px-3 py-1.5 rounded-full mb-1">Enrich Agent</span>
-                                <span class="text-slate-600 mb-1">→</span>
-                                <span class="pipeline-node px-3 py-1.5 rounded-full mb-1">Copy Agent</span>
-                                <span class="text-slate-600 mb-1">→</span>
-                                <span class="pipeline-node px-3 py-1.5 rounded-full mb-1">Send + Log</span>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-white/10 pt-8 mt-4">
-                            <div><div class="text-2xl font-bold text-white">3hrs</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Saved Daily</div></div>
-                            <div><div class="text-2xl font-bold text-white">4x</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Outreach Volume</div></div>
-                            <div><div class="text-2xl font-bold text-white">100%</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">CRM Auto-Sync</div></div>
-                            <div><div class="text-2xl font-bold text-emerald-400">24/7</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Always Running</div></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="glass-panel p-6 md:p-12 rounded-3xl relative overflow-hidden group">
-                    <div class="relative z-10">
-                        <p class="font-mono text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-3">SaaS / Support Triage</p>
-                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Support Triage Copilot</h3>
-                        <p class="text-sm text-slate-300 mb-8 max-w-2xl leading-relaxed">
-                            <strong class="text-white font-semibold">The Bottleneck:</strong> Customer support inbox was unmanaged. Emails sat unread for 12+ hours, tickets weren't categorized, and the team spent 2 hours per day on manual triage before writing a single reply.
-                        </p>
-
-                        <div class="mb-8">
-                            <p class="font-mono text-xs text-slate-500 uppercase tracking-wider mb-3">Agent Pipeline Architecture</p>
-                            <div class="flex flex-wrap items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-widest">
-                                <span class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 mb-1">Inbox Agent</span>
-                                <span class="text-slate-600 mb-1">→</span>
-                                <span class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 mb-1">Classify</span>
-                                <span class="text-slate-600 mb-1">→</span>
-                                <span class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 mb-1">Draft Reply</span>
-                                <span class="text-slate-600 mb-1">→</span>
-                                <span class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 mb-1">Escalate / Log</span>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-white/10 pt-8 mt-4">
-                            <div><div class="text-2xl font-bold text-white">2hrs</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Saved Daily</div></div>
-                            <div><div class="text-2xl font-bold text-white"><5min</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">First Response</div></div>
-                            <div><div class="text-2xl font-bold text-white">80%</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Auto-Handled</div></div>
-                            <div><div class="text-2xl font-bold text-blue-400">0</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Missed Tickets</div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact / Audit Form -->
-    <section id="contact" class="py-24 px-6 relative z-10">
-        <div class="max-w-3xl mx-auto">
-            <div class="glass-panel p-6 md:p-12 rounded-3xl text-center">
-                <p class="font-mono text-xs text-emerald-400 uppercase tracking-widest mb-4">// Direct Access</p>
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Claim Your Free AI Audit.</h2>
-                <p class="text-slate-400 mb-10 max-w-lg mx-auto text-sm md:text-base">
-                    Let's find your biggest bottleneck. Book a 20-minute audit to see exactly how a custom AI workflow can buy your team their time back.
+                
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05] max-w-4xl">
+                    Scaling operations with 
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-emerald-400 to-accent-500">
+                        Management &amp; AI.
+                    </span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                    I bridge the gap between organizational leadership and digital systems. I analyze complex operational workflows, identify human-resource bottlenecks, and deploy automated agentic solutions that buy your team’s hours back.
                 </p>
                 
-                <form id="contact-form" class="max-w-md mx-auto text-left space-y-4" novalidate>
-                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE"/>
-                    <input type="hidden" name="subject" value="New Free Audit Request from Portfolio"/>
-                    
-                    <div>
-                        <label class="block font-mono text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Name</label>
-                        <input type="text" name="name" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-400 transition-colors placeholder-slate-600" placeholder="John Doe">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#contact" class="px-8 py-4 bg-gradient-to-r from-brand-500 to-accent-500 text-dark-900 font-bold rounded-xl hover:shadow-[0_4px_35px_rgba(16,185,129,0.3)] hover:scale-105 transform transition-all duration-300 text-center">
+                        Request Strategy Audit →
+                    </a>
+                    <a href="#orchestrations" class="px-8 py-4 glass-panel border border-white/10 hover:border-brand-500/30 text-white font-bold rounded-xl transition-all duration-300 hover:scale-105 transform text-center">
+                        Explore Orchestrated Systems
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Visual Dashboard Card -->
+            <div class="lg:col-span-5 relative w-full max-w-md mx-auto">
+                <div class="absolute -inset-1.5 bg-gradient-to-tr from-brand-500 to-accent-500 rounded-3xl blur opacity-20 transition duration-1000"></div>
+                <div class="relative glass-panel p-6 md:p-8 rounded-3xl border border-white/10 space-y-6">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-3.5 h-3.5 rounded-full bg-red-500/60 block"></span>
+                            <span class="w-3.5 h-3.5 rounded-full bg-yellow-500/60 block"></span>
+                            <span class="w-3.5 h-3.5 rounded-full bg-emerald-500/60 block"></span>
+                        </div>
+                        <span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Consulting Framework</span>
                     </div>
-                    <div>
-                        <label class="block font-mono text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Email</label>
-                        <input type="email" name="email" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-400 transition-colors placeholder-slate-600" placeholder="john@company.com">
+
+                    <div class="space-y-4 font-mono text-xs">
+                        <div class="p-3 bg-white/5 rounded-lg border border-white/5 flex items-center justify-between hover:border-brand-500/20 transition-all">
+                            <span class="text-slate-400">Operational Strategy:</span>
+                            <span class="text-emerald-400 font-bold uppercase">Process Auditing</span>
+                        </div>
+                        <div class="p-3 bg-white/5 rounded-lg border border-white/5 flex items-center justify-between hover:border-brand-500/20 transition-all">
+                            <span class="text-slate-400">Project Methodology:</span>
+                            <span class="text-accent-500 font-bold uppercase">Agile Alignment</span>
+                        </div>
+                        <div class="p-3 bg-white/5 rounded-lg border border-white/5 flex items-center justify-between hover:border-brand-500/20 transition-all">
+                            <span class="text-slate-400">Automated Pipelines:</span>
+                            <span class="text-purple-400 font-bold uppercase">Multi-Agent Systems</span>
+                        </div>
+                        <div class="p-3 bg-white/5 rounded-lg border border-white/5 flex items-center justify-between hover:border-brand-500/20 transition-all">
+                            <span class="text-slate-400">Digital Deliverables:</span>
+                            <span class="text-blue-400 font-bold uppercase">Custom AI Integrations</span>
+                        </div>
                     </div>
-                    <div>
-                        <label class="block font-mono text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">The Bottleneck</label>
-                        <textarea name="message" rows="4" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-400 transition-colors placeholder-slate-600" placeholder="Briefly describe the manual task draining your team's time..."></textarea>
+
+                    <div class="p-4 bg-brand-500/10 border border-brand-500/20 rounded-2xl flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-500/20 flex items-center justify-center text-brand-500 shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Strategic Mission</p>
+                            <p class="text-xs font-semibold text-white">Replacing manual administrative bottlenecks with reliable, automated business processes.</p>
+                        </div>
                     </div>
-                    <button type="submit" class="w-full py-4 bg-emerald-500 text-black font-bold rounded-xl hover:bg-emerald-400 transition-colors mt-4 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
-                        Request Free Audit →
-                    </button>
-                    
-                    <div id="form-feedback" class="hidden text-center p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 mt-4">
-                        <p class="text-emerald-400 font-bold text-sm">Audit request received. I'll be in touch within 24 hours.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-24 px-6 relative z-10 border-t border-white/5 bg-dark-800/20">
+        <div class="max-w-5xl mx-auto space-y-16">
+            <div class="text-center space-y-4">
+                <p class="font-mono text-xs text-brand-500 tracking-widest uppercase">// Professional Background</p>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">About Me</h2>
+                <p class="text-base md:text-lg text-slate-400 max-w-2xl mx-auto">
+                    A management consultant and operations architect leveraging a deep technical foundation to deliver organizational transformation.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <!-- Left Story Column -->
+                <div class="space-y-6 text-slate-300 leading-relaxed text-sm md:text-base">
+                    <p>
+                        I work at the crucial intersection of human operations, business strategy, and modern automation systems. Rather than viewing technology as isolated tools, I look at organizations holistically—finding where administrative drag and manual handoffs stall institutional growth.
+                    </p>
+                    <p>
+                        By combining a <strong class="text-white">Master of Arts in Business Management</strong> (Middlesex University) with a <strong class="text-white">Bachelor of Engineering in Computer Science</strong> (MVJ College of Engineering), I translate complex business hurdles into highly organized, automated system workflows. I speak both languages: high-level corporate parameters and low-level system structures.
+                    </p>
+                    <p>
+                        Whether diagnosing bottlenecks in high-stakes clinical settings, optimizing delivery pipelines for fast-moving startups, or deploying multi-agent networks for scaling businesses, my goal is always the same: streamlining the path to growth.
+                    </p>
+                </div>
+
+                <!-- Right Experience Stats & Pillars Column -->
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="glass-panel p-6 rounded-2xl border border-white/5 space-y-4">
+                        <div class="flex items-center gap-3 text-brand-500">
+                            <span class="p-2 rounded-lg bg-brand-500/10 border border-brand-500/20">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                            </span>
+                            <h4 class="font-bold text-white text-base">Process Assurance &amp; Integrity</h4>
+                        </div>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            I ensure all automation structures respect rigorous corporate guidelines, institutional frameworks, and stringent data security standards.
+                        </p>
                     </div>
-                </form>
+
+                    <div class="glass-panel p-6 rounded-2xl border border-white/5 space-y-4">
+                        <div class="flex items-center gap-3 text-accent-500">
+                            <span class="p-2 rounded-lg bg-accent-500/10 border border-accent-500/20">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </span>
+                            <h4 class="font-bold text-white text-base">Speed-to-Value Delivery</h4>
+                        </div>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            I bypass heavy, traditional development delays. By utilizing advanced AI orchestration platforms and rapid tool compilation, I deliver functional operations systems in a fraction of the time.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-2xl border border-white/5 space-y-4">
+                        <div class="flex items-center gap-3 text-purple-400">
+                            <span class="p-2 rounded-lg bg-purple-500/10 border border-purple-500/20">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                            </span>
+                            <h4 class="font-bold text-white text-base">Human-Centric Design</h4>
+                        </div>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Technology is only as effective as its adoption rate. I design intuitive visual front-end interfaces, simplified database modules, and clear dashboards that non-technical teams love to use.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="border-t border-white/5 py-8 text-center relative z-10 px-6">
-        <div class="flex items-center justify-center gap-4 mb-4">
-            <a href="https://www.linkedin.com/in/rohith-dhanala-35715b162/" target="_blank" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:bg-white/10 transition-colors">
-                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            </a>
-            <a href="mailto:rodhanala@gmail.com" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:bg-white/10 transition-colors">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            </a>
+    <!-- Strategic Process Section -->
+    <section id="philosophy" class="py-24 px-6 relative z-10 border-t border-white/5">
+        <div class="max-w-5xl mx-auto space-y-16">
+            <div class="text-center space-y-4">
+                <p class="font-mono text-xs text-brand-500 tracking-widest uppercase">// Strategic Philosophy</p>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
+                    The Modern Operations Blueprint
+                </h2>
+                <p class="text-base md:text-lg text-slate-400 max-w-2xl mx-auto">
+                    Growth occurs when human process engineering is seamlessly linked with autonomous digital pipelines.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="glass-panel p-8 rounded-2xl border border-white/5 hover:border-brand-500/20 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-500 mb-6 group-hover:scale-110 transform transition-all">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Structured Project Delivery</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Leveraging robust Agile and Change Management methodologies to align diverse teams, manage timelines, map workflows, and safely guide systems through transitions.
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="glass-panel p-8 rounded-2xl border border-white/5 hover:border-brand-500/20 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-500 mb-6 group-hover:scale-110 transform transition-all">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Autonomous AI Orchestration</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Deploying advanced multi-agent architectures, visual data integrations, and API pipelines (such as n8n and Make.com) that function autonomously around the clock.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="glass-panel p-8 rounded-2xl border border-white/5 hover:border-brand-500/20 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-500 mb-6 group-hover:scale-110 transform transition-all">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a2 2 0 002 2h3a2 2 0 012 2v3a2 2 0 002 2h1a2 2 0 110 4h-1a2 2 0 00-2 2v3a2 2 0 01-2 2h-3a2 2 0 00-2 2v1a2 2 0 11-4 0v-1a2 2 0 00-2-2H7a2 2 0 01-2-2v-3a2 2 0 00-2-2H3a2 2 0 110-4h1a2 2 0 002-2V7a2 2 0 012-2h3a2 2 0 002-2V4z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Modern Digital Prototyping</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Translating complex requirements into visual, functional digital tools rapidly. Utilizing low-code structures and clean API assets to launch operational platforms in record time.
+                    </p>
+                </div>
+            </div>
         </div>
-        <p class="font-mono text-[10px] text-slate-500 uppercase tracking-widest">© 2026 Rohith Dhanala. AI Consultant.</p>
+    </section>
+
+    <!-- AI Systems & Orchestrations Section -->
+    <section id="orchestrations" class="py-24 px-6 relative z-10 border-t border-white/5">
+        <div class="max-w-5xl mx-auto space-y-16">
+            <div class="text-center space-y-4">
+                <p class="font-mono text-xs text-accent-500 tracking-widest uppercase">// System Architectures &amp; Orchestrations</p>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">Built AI Systems</h2>
+                <p class="text-base md:text-lg text-slate-400 max-w-2xl mx-auto">
+                    Real-world examples of outdated manual operations modernized through tailored digital tools and agentic pipelines.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Project Card 1 -->
+                <div class="glass-panel rounded-3xl p-8 border border-white/5 space-y-8 flex flex-col justify-between hover:border-brand-500/25 transition-all duration-300">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start gap-4">
+                            <span class="px-3.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-widest bg-brand-500/10 border border-brand-500/20 text-brand-500">
+                                B2B Outbound System
+                            </span>
+                            <span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Active System</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-white">FlowPilot OS — AI Outbound</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            <strong class="text-white font-medium">The Bottleneck:</strong> A client team was spending over 3 hours daily on manual data entry, unstructured outreach research, and administrative CRM updates.
+                        </p>
+                        
+                        <!-- Visual Pipeline Node Visualization -->
+                        <div class="space-y-2 border-t border-b border-white/5 py-4">
+                            <p class="text-[10px] font-mono text-slate-500 uppercase tracking-wider">Node Architecture</p>
+                            <div class="flex flex-wrap items-center gap-2 font-mono text-[9px] font-bold uppercase tracking-widest">
+                                <span class="px-2.5 py-1.5 rounded-md bg-white/5 border border-white/10 text-white">Lead Ingestion</span>
+                                <span class="text-slate-600">→</span>
+                                <span class="px-2.5 py-1.5 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-500">n8n Controller</span>
+                                <span class="text-slate-600">→</span>
+                                <span class="px-2.5 py-1.5 rounded-md bg-accent-500/10 border border-accent-500/20 text-accent-500">Claude Agent</span>
+                                <span class="text-slate-600">→</span>
+                                <span class="px-2.5 py-1.5 rounded-md bg-white/5 border border-white/10 text-white">Auto-CRM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-white/5 pt-6 text-center">
+                        <div>
+                            <span class="text-xl font-extrabold text-white block">15+ hrs</span>
+                            <span class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">Saved Weekly</span>
+                        </div>
+                        <div>
+                            <span class="text-xl font-extrabold text-white block">100%</span>
+                            <span class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">Autonomous</span>
+                        </div>
+                        <div>
+                            <span class="text-xl font-extrabold text-white block">10x</span>
+                            <span class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">Execution Speed</span>
+                        </div>
+                        <div>
+                            <span class="text-xl font-extrabold text-brand-500 block">Zero</span>
+                            <span class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">Errors</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="glass-panel rounded-3xl p-8 border border-white/5 space-y-8 flex flex-col justify-between hover:border-brand-500/25 transition-all duration-300">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start gap-4">
+                            <span class="px-3.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-widest bg-accent-500/10 border border-accent-500/20 text-accent-500">
+                                Support &amp; Operations Triage
+                            </span>
+                            <span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Active System</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-white">Support Triage Copilot</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            <strong class="text-white font-medium">The Bottleneck:</strong> A high-volume ticket inbox was suffering from lack of prioritization and operational classification. Teams spent hours sorting incoming logs manually.
+                        </p>
+                        
+                        <!-- Visual Pipeline Node Visualization -->
+                        <div class="space-y-2 border-t border-b border-white/5 py-4">
+                            <p class="text-[10px] font-mono text-slate-500 uppercase tracking-wider">Node Architecture</p>
+                            <div class="flex flex-wrap items-center gap-2 font-mono text-[9px] font-bold uppercase tracking-widest">
+                                <span class="px-2.5 py-1.5 rounded-md bg-white/5 border border-white/10 text-white">Webhook Ingest</span>
+                                <span class="text-slate-600">→</span>
+                                <span class="px-2.5 py-1.5 rounded-md bg-accent-500/10 border border-accent-500/20 text-accent-500">Parsing Engine</span>
+                                <span class="text-slate-600">→</span>
+                                <span class="px-2.5 py-1.5 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-500">Triage Agent</span>
+                                <span class="text-slate-600">→</span>
+                                <span class="px-2.5 py-1.5 rounded-md bg-white/5 border border-white/10 text-white">Auto-Draft</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-white/5 pt-6 text-center">
+                        <div>
+                            <span class="text-xl font-extrabold text-white block">10+ hrs</span>
+                            <span class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">Saved Weekly</span>
+                        </div>
+                        <div>
+                            <span class="text-xl font-extrabold text-white block">&lt; 5m</span>
+                            <span class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">Reaction SLA</span>
+                        </div>
+                        <div>
+                            <span class="text-xl font-extrabold text-white block">80%</span>
+                            <span class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">Auto-Routed</span>
+                        </div>
+                        <div>
+                            <span class="text-xl font-extrabold text-accent-500 block">None</span>
+                            <span class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">Missed Tickets</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Direct Booking & Audit Request Form -->
+    <section id="contact" class="py-24 px-6 relative z-10 border-t border-white/5">
+        <div class="max-w-3xl mx-auto">
+            <div class="glass-panel p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 opacity-[0.03] pointer-events-none">
+                    <svg class="w-48 h-48 text-brand-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                </div>
+                
+                <div class="space-y-4 text-center max-w-xl mx-auto mb-10">
+                    <p class="font-mono text-xs text-brand-500 tracking-widest uppercase">// Operations Optimization</p>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Book an Audit</h2>
+                    <p class="text-sm md:text-base text-slate-400">
+                        Let's uncover administrative bottleneck points in your current workflows. Claim a free, tailored 20-minute operational analysis.
+                    </p>
+                </div>
+
+                <form id="contact-form" class="space-y-6 max-w-md mx-auto" novalidate>
+                    <!-- Web3Forms Access Key Integration -->
+                    <input type="hidden" name="access_key" value="98fbda6f-3158-485a-83b6-17b51b3fc144"/>
+                    <input type="hidden" name="subject" value="New Strategist Audit Requested — Rohith Dhanala"/>
+                    
+                    <div class="grid grid-cols-1 gap-6">
+                        <!-- Name Field -->
+                        <div class="space-y-2">
+                            <label class="block font-mono text-[10px] font-bold uppercase tracking-widest text-slate-400">Name</label>
+                            <input type="text" name="name" required class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors placeholder-slate-600" placeholder="John Doe">
+                        </div>
+                        
+                        <!-- Email Field -->
+                        <div class="space-y-2">
+                            <label class="block font-mono text-[10px] font-bold uppercase tracking-widest text-slate-400">Email Address</label>
+                            <input type="email" name="email" required class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors placeholder-slate-600" placeholder="john@yourcompany.com">
+                        </div>
+                        
+                        <!-- Bottleneck Description -->
+                        <div class="space-y-2">
+                            <label class="block font-mono text-[10px] font-bold uppercase tracking-widest text-slate-400">Operational Bottleneck Description</label>
+                            <textarea name="message" rows="4" required class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors placeholder-slate-600 resize-none" placeholder="Describe the manual process or admin headache you want optimized or automated..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="submit-btn" class="w-full py-4 bg-gradient-to-r from-brand-500 to-accent-500 hover:from-brand-100 hover:to-white text-dark-900 font-bold rounded-xl transition-all duration-300 shadow-[0_4px_25px_rgba(16,185,129,0.2)] hover:scale-105 transform">
+                        Send Audit Request
+                    </button>
+                </form>
+
+                <!-- Custom feedback state container -->
+                <div id="form-feedback" class="hidden max-w-md mx-auto mt-6 p-4 rounded-xl bg-brand-500/10 border border-brand-500/20 text-center text-brand-100 space-y-2">
+                    <p class="text-sm font-bold">✓ Audit Request Logged Successfully</p>
+                    <p class="text-xs text-slate-400">Thank you for reaching out, Rohith. I will analyze your manual task descriptions and reply back within 24 working hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="border-t border-white/5 py-12 px-6 relative z-10 bg-dark-900">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <!-- Brand Info -->
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-brand-500/20 text-brand-500 font-bold flex items-center justify-center text-xs">
+                    RD
+                </span>
+                <div>
+                    <span class="text-xs font-bold text-white block">Rohith Dhanala</span>
+                    <span class="text-[9px] font-mono text-slate-500 tracking-wider uppercase block">Digital &amp; AI Consultant</span>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex items-center gap-4">
+                <a href="https://linkedin.com/in/rohith-dhanala-35715b162" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center border border-white/5 hover:border-brand-500/20 hover:text-brand-500 text-slate-400 transition-all duration-300" aria-label="LinkedIn Profile">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="mailto:rodhanala@gmail.com" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center border border-white/5 hover:border-brand-500/20 hover:text-brand-500 text-slate-400 transition-all duration-300" aria-label="Send Email">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </a>
+            </div>
+
+            <!-- Copyright statement -->
+            <p class="font-mono text-[9px] text-slate-600 uppercase tracking-widest text-center md:text-right">
+                © 2026 Rohith Dhanala. All Rights Reserved.
+            </p>
+        </div>
     </footer>
+
+    <!-- Custom Notification Modal (to safely replace native browser alerts) -->
+    <div id="custom-modal" class="fixed inset-0 z-50 flex items-center justify-center px-4 bg-dark-900/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="glass-panel max-w-sm w-full p-6 rounded-2xl border border-white/10 text-center space-y-4">
+            <div id="modal-icon" class="w-12 h-12 rounded-full mx-auto flex items-center justify-center"></div>
+            <h4 id="modal-title" class="text-lg font-bold text-white">Notification</h4>
+            <p id="modal-desc" class="text-xs text-slate-400 leading-relaxed"></p>
+            <button onclick="closeCustomModal()" class="w-full py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-lg font-mono text-xs tracking-wider uppercase font-bold transition-all">
+                Dismiss Notice
+            </button>
+        </div>
+    </div>
 
     <!-- Logic Script -->
     <script>
+        // Custom Modal Controller Utility
+        function showCustomModal(type, title, desc) {
+            const modal = document.getElementById('custom-modal');
+            const modalIcon = document.getElementById('modal-icon');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDesc = document.getElementById('modal-desc');
+
+            modalTitle.innerText = title;
+            modalDesc.innerText = desc;
+
+            if (type === 'success') {
+                modalIcon.className = 'w-12 h-12 rounded-full mx-auto flex items-center justify-center bg-brand-500/10 border border-brand-500/20 text-brand-500';
+                modalIcon.innerHTML = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>`;
+            } else {
+                modalIcon.className = 'w-12 h-12 rounded-full mx-auto flex items-center justify-center bg-red-500/10 border border-red-500/20 text-red-500';
+                modalIcon.innerHTML = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>`;
+            }
+
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeCustomModal() {
+            const modal = document.getElementById('custom-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        // Header and mobile navigation logic handler
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        const closeIcon = document.getElementById('close-icon');
+        const bar1 = document.getElementById('bar-1');
+        const bar2 = document.getElementById('bar-2');
+        const bar3 = document.getElementById('bar-3');
         const mobileLinks = document.querySelectorAll('.mobile-link');
-        let isMenuOpen = false;
+        let isMobileOpen = false;
 
-        function toggleMenu() {
-            isMenuOpen = !isMenuOpen;
-            if (isMenuOpen) {
+        function toggleMobileMenu() {
+            isMobileOpen = !isMobileOpen;
+            if (isMobileOpen) {
                 mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
                 mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
-                menuIcon.classList.add('hidden');
-                closeIcon.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; 
+                bar1.style.transform = 'translateY(8px) rotate(45deg)';
+                bar2.style.opacity = '0';
+                bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+                document.body.style.overflow = 'hidden';
             } else {
                 mobileMenu.classList.add('opacity-0', 'pointer-events-none');
                 mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
-                menuIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
-                document.body.style.overflow = ''; 
+                bar1.style.transform = '';
+                bar2.style.opacity = '';
+                bar3.style.transform = '';
+                document.body.style.overflow = '';
             }
         }
 
-        menuBtn.addEventListener('click', toggleMenu);
-        
+        menuBtn.addEventListener('click', toggleMobileMenu);
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
-                if(isMenuOpen) toggleMenu();
+                if (isMobileOpen) toggleMobileMenu();
             });
         });
 
-        const form = document.getElementById("contact-form");
-        const feedback = document.getElementById("form-feedback");
-        
-        if(form) {
-            form.addEventListener("submit", async function(e) {
-                e.preventDefault();
-                const btn = form.querySelector("button[type='submit']");
-                const originalText = btn.innerHTML;
-                btn.disabled = true;
-                btn.innerHTML = "Sending...";
+        // Contact Form Submission logic (Web3Forms API Integration)
+        const contactForm = document.getElementById('contact-form');
+        const feedbackBlock = document.getElementById('form-feedback');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(event) {
+                event.preventDefault();
                 
+                const submitBtn = document.getElementById('submit-btn');
+                const origButtonText = submitBtn.innerText;
+                
+                // Read and validate input fields
+                const nameInput = contactForm.querySelector('input[name="name"]').value.trim();
+                const emailInput = contactForm.querySelector('input[name="email"]').value.trim();
+                const descInput = contactForm.querySelector('textarea[name="message"]').value.trim();
+                
+                if (!nameInput || !emailInput || !descInput) {
+                    showCustomModal('error', 'Form Incomplete', 'Please provide a value for all required audit details.');
+                    return;
+                }
+
+                // Simple email verification criteria
+                const validEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!validEmailRegex.test(emailInput)) {
+                    showCustomModal('error', 'Invalid Email Format', 'Please enter a structurally valid work email address.');
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                submitBtn.innerText = "Transmitting Details...";
+
                 try {
-                    const data = Object.fromEntries(new FormData(form));
-                    const res = await fetch("https://api.web3forms.com/submit", {
+                    const submissionData = Object.fromEntries(new FormData(contactForm));
+                    const serverResponse = await fetch("https://api.web3forms.com/submit", {
                         method: "POST",
                         headers: { "Content-Type": "application/json", "Accept": "application/json" },
-                        body: JSON.stringify(data)
+                        body: JSON.stringify(submissionData)
                     });
-                    const result = await res.json();
-                    if(res.ok && result.success) {
-                        form.reset();
-                        btn.style.display = "none";
-                        feedback.classList.remove("hidden");
+                    
+                    const serverResult = await serverResponse.json();
+                    
+                    if (serverResponse.ok && serverResult.success) {
+                        contactForm.reset();
+                        submitBtn.classList.add('hidden');
+                        feedbackBlock.classList.remove('hidden');
+                        showCustomModal('success', 'Audit Requested', 'Your details have been registered. I will examine your operational bottlenecks shortly.');
                     } else {
-                        alert(result.message || "Something went wrong. Please try again.");
+                        showCustomModal('error', 'Transmission Failed', serverResult.message || 'Something went wrong. Please check your connection and retry.');
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = origButtonText;
                     }
-                } catch(err) {
-                    alert("Network error. Please try again.");
-                } finally {
-                    if(!btn.style.display) {
-                        btn.disabled = false;
-                        btn.innerHTML = originalText;
-                    }
+                } catch (catchError) {
+                    showCustomModal('error', 'Connection Interrupted', 'Failed to connect to transmission gateway. Check your network settings.');
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = origButtonText;
                 }
             });
         }
