@@ -96,13 +96,11 @@
 </head>
 <body class="antialiased selection:bg-brand-500/30 selection:text-brand-100">
 
-    <!-- Ambient glowing backgrounds -->
     <div class="fixed top-0 inset-x-0 h-screen w-screen overflow-hidden -z-10 pointer-events-none">
         <div class="ambient-orb animate-float-slow bg-brand-500 w-[500px] h-[500px] top-[-10%] left-[-10%]"></div>
         <div class="ambient-orb animate-float-slow bg-accent-500 w-[600px] h-[600px] bottom-[-10%] right-[-10%]" style="animation-delay: -5s;"></div>
     </div>
 
-    <!-- Navigation Header -->
     <header class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-8">
         <div class="max-w-6xl mx-auto flex justify-between items-center glass-panel rounded-full px-6 py-3 border border-white/10">
             <a href="index.html" class="flex items-center gap-3">
@@ -122,7 +120,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="min-h-[90svh] flex flex-col justify-center relative px-6 pt-32 pb-12">
         <div class="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="space-y-8 animate-fade-in-up stagger-1">
@@ -131,12 +128,12 @@
                     Available for Consulting
                 </div>
                 
-              <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05] max-w-4xl">
-    I Build, I Fail <br class="hidden md:block" />
-    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-emerald-400 to-accent-500">
-        I Learn, I Ship.
-    </span>
-</h1>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05] max-w-4xl">
+                    Scaling operations with <br class="hidden md:block" />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-emerald-400 to-accent-500">
+                        Management &amp; AI.
+                    </span>
+                </h1>
                 
                 <p class="text-lg text-slate-400 leading-relaxed max-w-lg">
                     A management consultant turned builder. I audit business bottlenecks, design digital tools, and engineer multi-agent AI systems to automate operations.
@@ -154,7 +151,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="py-24 px-6 relative z-10 border-t border-white/5 bg-dark-800/30">
         <div class="max-w-6xl mx-auto space-y-16">
             <div class="space-y-4 animate-fade-in-up stagger-2">
@@ -164,15 +160,12 @@
 
             <div class="space-y-12">
                 
-                <!-- PROJECT 1: DIGI HYDERABADI -->
                 <div class="group relative rounded-3xl glass-panel border border-white/10 overflow-hidden flex flex-col lg:flex-row transition-all duration-500 hover:border-brand-500/40 hover:shadow-[0_0_40px_rgba(16,185,129,0.1)] animate-fade-in-up stagger-3">
                     
-                    <!-- Content Side -->
                     <div class="lg:w-1/2 p-8 md:p-12 flex flex-col justify-center space-y-6 z-10 relative">
                         <div class="flex items-center gap-3">
                             <span class="px-3 py-1 bg-brand-500/10 text-brand-500 text-[10px] font-mono uppercase font-bold rounded-full border border-brand-500/20">Live & Launched</span>
-                            <!-- PLACEHOLDER: PROJECT LOGO -->
-                            <!-- <img src="path/to/digi-logo.png" alt="Digi Hyderabadi Logo" class="h-6"> -->
+                            <img src="DigiH-logo.png" alt="Digi Hyderabadi Logo" class="h-6 object-contain">
                         </div>
                         
                         <h3 class="text-4xl font-bold text-white">Digi Hyderabadi</h3>
@@ -191,29 +184,18 @@
                         </div>
                     </div>
 
-                    <!-- Image/Screenshot Side -->
                     <div class="lg:w-1/2 relative min-h-[300px] lg:min-h-full bg-dark-900 border-t lg:border-t-0 lg:border-l border-white/5 overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-500/20 to-transparent mix-blend-overlay z-10"></div>
+                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-500/20 to-transparent mix-blend-overlay z-10 pointer-events-none"></div>
                         
-                        <!-- PLACEHOLDER: PROJECT SCREENSHOT -->
-                        <!-- Replace the div below with your actual image tag once you have the screenshots -->
-                        <!-- <img src="path/to/digi-screenshot.png" alt="Digi Hyderabadi Interface" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"> -->
-                        
-                        <div class="w-full h-full flex items-center justify-center text-slate-600 font-mono text-xs border-dashed border-2 border-slate-800 m-8 rounded-xl bg-dark-800 transform group-hover:scale-[1.02] transition-transform duration-700 ease-in-out">
-                            [ Screenshot Placeholder ]
-                        </div>
+                        <img src="Digi-SC.png" alt="Digi Hyderabadi Interface" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out">
                     </div>
                 </div>
 
-                <!-- PROJECT 2: NAVIPARKA -->
                 <div class="group relative rounded-3xl glass-panel border border-white/10 overflow-hidden flex flex-col lg:flex-row-reverse transition-all duration-500 hover:border-accent-500/40 hover:shadow-[0_0_40px_rgba(139,92,246,0.1)] animate-fade-in-up stagger-3" style="animation-delay: 400ms;">
                     
-                    <!-- Content Side -->
                     <div class="lg:w-1/2 p-8 md:p-12 flex flex-col justify-center space-y-6 z-10 relative">
                         <div class="flex items-center gap-3">
                             <span class="px-3 py-1 bg-accent-500/10 text-accent-500 text-[10px] font-mono uppercase font-bold rounded-full border border-accent-500/20">In Development</span>
-                            <!-- PLACEHOLDER: PROJECT LOGO -->
-                            <!-- <img src="path/to/naviparka-logo.png" alt="NAVIPARKA Logo" class="h-6"> -->
                         </div>
                         
                         <h3 class="text-4xl font-bold text-white">NAVIPARKA</h3>
@@ -229,16 +211,13 @@
                         </div>
                     </div>
 
-                    <!-- Image/Screenshot Side -->
-                    <div class="lg:w-1/2 relative min-h-[300px] lg:min-h-full bg-dark-900 border-t lg:border-t-0 lg:border-r border-white/5 overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-accent-500/20 to-transparent mix-blend-overlay z-10"></div>
+                    <div class="lg:w-1/2 relative min-h-[300px] lg:min-h-full bg-dark-900 border-t lg:border-t-0 lg:border-r border-white/5 overflow-hidden flex items-center justify-center p-8">
+                        <div class="absolute inset-0 bg-gradient-to-br from-accent-500/20 to-transparent mix-blend-overlay z-10 pointer-events-none"></div>
                         
-                        <!-- PLACEHOLDER: PROJECT SCREENSHOT -->
-                        <!-- Replace the div below with your actual image tag once you have the screenshots -->
-                        <!-- <img src="path/to/naviparka-wireframes.png" alt="NAVIPARKA App Interface" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out opacity-80"> -->
-                        
-                        <div class="w-full h-full flex items-center justify-center text-slate-600 font-mono text-xs border-dashed border-2 border-slate-800 m-8 rounded-xl bg-dark-800 transform group-hover:scale-[1.02] transition-transform duration-700 ease-in-out">
-                            [ Wireframe / App Mockup Placeholder ]
+                        <div class="relative z-20 w-full h-full flex flex-col items-center justify-center text-slate-500 border-dashed border-2 border-slate-700 rounded-2xl bg-dark-800/50 transform group-hover:scale-[1.02] transition-transform duration-700 ease-in-out min-h-[250px]">
+                            <svg class="w-10 h-10 mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                            <span class="font-mono text-base font-bold tracking-widest uppercase text-white">Coming Soon</span>
+                            <span class="font-mono text-xs mt-2 opacity-75">Currently in active development</span>
                         </div>
                     </div>
                 </div>
@@ -247,7 +226,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="py-24 px-6 relative z-10 border-t border-white/5">
         <div class="max-w-3xl mx-auto">
             <div class="glass-panel p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden animate-fade-in-up" style="animation-delay: 500ms;">
@@ -297,7 +275,6 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
     <footer class="border-t border-white/5 py-12 px-6 relative z-10 bg-dark-900">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="flex items-center gap-3">
@@ -313,7 +290,7 @@
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
                 <a href="mailto:rodhanala@gmail.com" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center border border-white/5 hover:border-brand-500/50 hover:text-brand-500 text-slate-400 transition-all">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 </a>
             </div>
         </div>
