@@ -27,7 +27,7 @@
                             500: '#8b5cf6', 
                         },
                         dark: {
-                            900: '#060913', /* Rich deep background */
+                            900: '#060913', 
                             800: '#0d1326',
                             700: '#151e3b',
                         }
@@ -53,7 +53,6 @@
             overflow-x: hidden; 
         }
         
-        /* Modern Glassmorphism Navigation */
         .glass-nav {
             background: rgba(6, 9, 19, 0.6);
             backdrop-filter: blur(20px);
@@ -61,7 +60,6 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Sleek Project Cards */
         .premium-card {
             background: linear-gradient(180deg, rgba(13, 19, 38, 0.4) 0%, rgba(6, 9, 19, 0.8) 100%);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -74,7 +72,6 @@
             transform: translateY(-4px);
         }
 
-        /* Ambient Glowing Orbs to remove the 'boring' flat look */
         .ambient-glow {
             position: absolute;
             border-radius: 50%;
@@ -122,7 +119,7 @@
         </div>
     </header>
 
-    <!-- Hero Section (Matched exactly to your screenshot) -->
+    <!-- Hero Section -->
     <section class="min-h-[100svh] flex flex-col justify-center relative px-6 pt-32 pb-12">
         <div class="max-w-6xl mx-auto w-full flex flex-col items-start">
             
@@ -139,8 +136,9 @@
                     I learn & I <span class="text-slate-400">Ship.</span>
                 </h1>
                 
+                <!-- Narrative Text -->
                 <p class="text-lg text-slate-400 leading-relaxed max-w-xl font-light">
-                   My path wasn't linear—it’s paved with design studios, failed startups, and corporate management. Today, I fuse a decade of UI/UX, business strategy, and AI engineering to build digital tools that solve real bottlenecks.
+                    My path wasn't linear—it’s paved with design studios, failed startups, and corporate management. Today, I fuse a decade of UI/UX, business strategy, and AI engineering to build digital tools that solve real bottlenecks.
                 </p>
                 
                 <!-- Action Buttons -->
@@ -170,7 +168,7 @@
                 <!-- PROJECT 1: DIGI HYDERABADI -->
                 <div class="premium-card rounded-[2.5rem] p-8 md:p-12 flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-16 animate-fade-in-up stagger-3 group">
                     
-                    <!-- Content Side (NO LOGO) -->
+                    <!-- Content Side -->
                     <div class="w-full lg:w-5/12 space-y-8 relative z-10">
                         <div class="flex items-center gap-3">
                             <span class="px-3 py-1 bg-brand-500/10 text-brand-500 text-[10px] font-mono uppercase font-bold rounded-full border border-brand-500/20">Live & Launched</span>
@@ -205,7 +203,7 @@
                 <!-- PROJECT 2: NAVIPARKA -->
                 <div class="premium-card rounded-[2.5rem] p-8 md:p-12 flex flex-col-reverse lg:flex-row-reverse items-center gap-10 lg:gap-16 animate-fade-in-up stagger-3" style="animation-delay: 400ms;">
                     
-                    <!-- Content Side (NO LOGO) -->
+                    <!-- Content Side -->
                     <div class="w-full lg:w-5/12 space-y-8 relative z-10">
                         <div class="flex items-center gap-3">
                             <span class="px-3 py-1 bg-accent-500/10 text-accent-500 text-[10px] font-mono uppercase font-bold rounded-full border border-accent-500/20">In Development</span>
@@ -316,7 +314,22 @@
         </div>
     </footer>
 
+    <!-- Premium Floating Audio Player -->
+    <div class="fixed bottom-8 right-8 z-50">
+        <audio id="bg-music" loop preload="auto">
+            <source src="Who's Ro.mp3" type="audio/mpeg">
+        </audio>
+        
+        <button id="audio-toggle" class="w-12 h-12 rounded-full glass-nav flex items-center justify-center border border-white/10 text-slate-400 hover:text-white hover:bg-white/10 transition-all duration-300 shadow-2xl hover:scale-105 backdrop-blur-xl group" aria-label="Toggle Audio">
+            <!-- Play Icon -->
+            <svg id="icon-play" class="w-5 h-5 ml-1 transition-all group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <!-- Pause Icon -->
+            <svg id="icon-pause" class="w-5 h-5 hidden transition-all group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+    </div>
+
     <script>
+        // Contact Form Logic
         const contactForm = document.getElementById('contact-form');
         const feedbackBlock = document.getElementById('form-feedback');
 
@@ -350,6 +363,29 @@
                     submitBtn.disabled = false;
                     submitBtn.innerText = origButtonText;
                 }
+            });
+        }
+
+        // Audio Player Logic
+        const bgMusic = document.getElementById('bg-music');
+        const audioToggle = document.getElementById('audio-toggle');
+        const iconPlay = document.getElementById('icon-play');
+        const iconPause = document.getElementById('icon-pause');
+        let isPlaying = false;
+
+        if (audioToggle && bgMusic) {
+            bgMusic.volume = 0.3; // Sets volume to 30%
+            audioToggle.addEventListener('click', () => {
+                if (isPlaying) {
+                    bgMusic.pause();
+                    iconPlay.classList.remove('hidden');
+                    iconPause.classList.add('hidden');
+                } else {
+                    bgMusic.play();
+                    iconPlay.classList.add('hidden');
+                    iconPause.classList.remove('hidden');
+                }
+                isPlaying = !isPlaying;
             });
         }
     </script>
