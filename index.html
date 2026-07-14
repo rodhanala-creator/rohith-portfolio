@@ -27,18 +27,17 @@
                             500: '#8b5cf6', 
                         },
                         dark: {
-                            900: '#050505', /* True black for premium feel */
-                            800: '#0a0a0a',
-                            700: '#111111',
+                            900: '#060913', /* Rich deep background */
+                            800: '#0d1326',
+                            700: '#151e3b',
                         }
                     },
                     animation: {
-                        'fade-in-up': 'fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
                     },
                     keyframes: {
                         fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
                         }
                     }
@@ -49,109 +48,108 @@
 
     <style>
         body { 
-            background-color: #050505; 
+            background-color: #060913; 
             color: #f3f4f6; 
             overflow-x: hidden; 
         }
         
-        /* Premium subtle grain texture */
-        .grain-overlay {
-            position: fixed;
-            top: 0; left: 0; w: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-
+        /* Modern Glassmorphism Navigation */
         .glass-nav {
-            background: rgba(10, 10, 10, 0.4);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(6, 9, 19, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
+        /* Sleek Project Cards */
         .premium-card {
-            background: #0a0a0a;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02), 0 20px 40px rgba(0, 0, 0, 0.8);
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            background: linear-gradient(180deg, rgba(13, 19, 38, 0.4) 0%, rgba(6, 9, 19, 0.8) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            transition: all 0.5s ease;
         }
 
         .premium-card:hover {
             border-color: rgba(255, 255, 255, 0.1);
             transform: translateY(-4px);
         }
+
+        /* Ambient Glowing Orbs to remove the 'boring' flat look */
+        .ambient-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            z-index: -1;
+            opacity: 0.4;
+            pointer-events: none;
+        }
         
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #050505; }
-        ::-webkit-scrollbar-thumb { background: #222; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #333; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #060913; }
+        ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #374151; }
 
         .stagger-1 { animation-delay: 100ms; opacity: 0; }
         .stagger-2 { animation-delay: 200ms; opacity: 0; }
         .stagger-3 { animation-delay: 300ms; opacity: 0; }
-        
-        /* Subtle glow spots */
-        .glow-spot {
-            position: absolute;
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0) 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: -1;
-        }
     </style>
 </head>
-<body class="antialiased selection:bg-white/20 selection:text-white">
+<body class="antialiased selection:bg-brand-500/30 selection:text-white relative">
 
-    <div class="grain-overlay w-full h-full"></div>
-    
-    <div class="fixed top-0 left-1/4 glow-spot"></div>
+    <!-- Premium Background Glows -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+        <div class="ambient-glow bg-brand-500/20 w-[600px] h-[600px] top-[-10%] left-[-10%]"></div>
+        <div class="ambient-glow bg-accent-500/10 w-[800px] h-[800px] bottom-[-20%] right-[-10%]"></div>
+    </div>
 
-    <header class="fixed top-0 left-0 w-full z-50 px-4 py-6 md:px-8 transition-all duration-300">
-        <div class="max-w-7xl mx-auto flex justify-between items-center glass-nav rounded-full px-6 py-3">
-            <a href="index.html" class="flex items-center gap-4 group">
-                <span class="w-10 h-10 rounded-full bg-white text-dark-900 font-bold flex items-center justify-center text-sm tracking-tight transition-transform duration-500 group-hover:scale-105">RD</span>
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 w-full z-50 px-4 py-6 md:px-8">
+        <div class="max-w-6xl mx-auto flex justify-between items-center glass-nav rounded-full px-6 py-3">
+            <a href="index.html" class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-full bg-white text-dark-900 font-bold flex items-center justify-center text-sm tracking-tight">RD</span>
                 <div>
                     <span class="text-sm font-bold tracking-tight block text-white">Rohith Dhanala</span>
-                    <span class="text-[9px] font-mono text-slate-500 tracking-widest uppercase block">Digital & AI Consultant</span>
+                    <span class="text-[9px] font-mono text-slate-400 tracking-widest uppercase block">Digital & AI Consultant</span>
                 </div>
             </a>
-            <nav class="hidden md:flex items-center gap-10 text-xs font-mono tracking-widest uppercase">
-                <a href="#projects" class="text-slate-400 hover:text-white transition-colors duration-300">Projects</a>
-                <a href="story.html" class="text-slate-400 hover:text-white transition-colors duration-300">My Story</a>
+            <nav class="hidden md:flex items-center gap-8 text-xs font-mono tracking-widest uppercase text-slate-400">
+                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                <a href="story.html" class="hover:text-white transition-colors">My Story</a>
             </nav>
             <div class="hidden sm:flex items-center gap-4">
-                <a href="#contact" class="px-6 py-2.5 rounded-full text-xs font-mono tracking-widest uppercase font-bold text-dark-900 bg-white hover:bg-gray-200 transition-all duration-300 hover:scale-105">Let's Talk</a>
+                <a href="#contact" class="px-6 py-2.5 rounded-full text-xs font-mono tracking-widest uppercase font-bold text-dark-900 bg-white hover:bg-gray-200 transition-all duration-300">Let's Talk</a>
             </div>
         </div>
     </header>
 
+    <!-- Hero Section (Matched exactly to your screenshot) -->
     <section class="min-h-[100svh] flex flex-col justify-center relative px-6 pt-32 pb-12">
-        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="max-w-6xl mx-auto w-full flex flex-col items-start">
             
-            <div class="lg:col-span-8 space-y-10 animate-fade-in-up stagger-1 pl-2 md:pl-4">
-                <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-[#0a0a0a] text-xs text-white font-mono tracking-widest uppercase shadow-xl">
-                    <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse-slow"></span>
+            <div class="space-y-8 animate-fade-in-up stagger-1 max-w-3xl">
+                <!-- Status Pill -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[10px] text-white font-mono tracking-widest uppercase">
+                    <span class="w-2 h-2 rounded-full bg-brand-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
                     Available for Consulting
                 </div>
                 
-                <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-extrabold tracking-tighter text-white leading-[1.05]">
+                <!-- Main Typography -->
+                <h1 class="text-6xl sm:text-7xl md:text-8xl font-extrabold tracking-tighter text-white leading-[1.05]">
                     I Build, I Fail,<br/>
-                    I learn & I <span class="text-transparent bg-clip-text bg-gradient-to-br from-slate-300 to-slate-600">Ship.</span>
+                    I learn & I <span class="text-slate-400">Ship.</span>
                 </h1>
                 
-                <p class="text-lg md:text-xl text-slate-400 leading-relaxed max-w-xl font-light">
+                <p class="text-lg text-slate-400 leading-relaxed max-w-xl font-light">
                     A management consultant turned builder. I audit business bottlenecks, design digital tools, and engineer multi-agent AI systems to automate operations.
                 </p>
                 
-                <div class="flex flex-wrap items-center gap-4 pt-4">
-                    <a href="#projects" class="px-8 py-4 bg-white text-dark-900 font-bold rounded-xl transition-all duration-500 hover:scale-[1.02] hover:bg-gray-200">
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#projects" class="px-8 py-4 bg-white text-dark-900 font-bold rounded-xl transition-all duration-300 hover:scale-105">
                         View My Work
                     </a>
-                    <a href="story.html" class="px-8 py-4 bg-transparent border border-white/10 text-white font-bold rounded-xl transition-all duration-500 flex items-center gap-3 hover:bg-white/5 hover:border-white/20">
-                        Read My Story <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    <a href="story.html" class="px-8 py-4 bg-transparent border border-white/10 text-white font-bold rounded-xl transition-all duration-300 flex items-center gap-2 hover:bg-white/5">
+                        Read My Story <span class="text-xl leading-none ml-1">→</span>
                     </a>
                 </div>
             </div>
@@ -159,84 +157,88 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects" class="py-32 px-6 relative z-10 border-t border-white/5">
-        <div class="max-w-7xl mx-auto space-y-24">
-            
-            <div class="space-y-4 animate-fade-in-up stagger-2 pl-2 md:pl-4">
-                <p class="font-mono text-xs text-slate-500 tracking-widest uppercase">// Portoflio & Ventures</p>
+        <div class="max-w-6xl mx-auto space-y-20">
+            <div class="space-y-4 animate-fade-in-up stagger-2">
+                <p class="font-mono text-xs text-brand-500 tracking-widest uppercase">// Portoflio & Ventures</p>
                 <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Built & Shipped</h2>
             </div>
 
-            <div class="space-y-12">
+            <div class="space-y-16">
                 
-                <div class="premium-card rounded-[2rem] p-6 md:p-10 lg:p-12 flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-16 animate-fade-in-up stagger-3 group">
+                <!-- PROJECT 1: DIGI HYDERABADI -->
+                <div class="premium-card rounded-[2.5rem] p-8 md:p-12 flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-16 animate-fade-in-up stagger-3 group">
                     
+                    <!-- Content Side (NO LOGO) -->
                     <div class="w-full lg:w-5/12 space-y-8 relative z-10">
-                        <div class="flex flex-col items-start gap-8">
-                            <div class="px-3 py-1.5 border border-white/10 text-white text-[10px] font-mono uppercase font-bold rounded-full flex items-center gap-2 tracking-widest">
-                                <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span> Live & Launched
-                            </div>
+                        <div class="flex items-center gap-3">
+                            <span class="px-3 py-1 bg-brand-500/10 text-brand-500 text-[10px] font-mono uppercase font-bold rounded-full border border-brand-500/20">Live & Launched</span>
                         </div>
                         
                         <div class="space-y-4">
-                            <img src="DigiH-logo.png" alt="Digi Hyderabadi Logo" class="h-8 object-contain mb-6">
-                            
-                            <h3 class="text-3xl lg:text-4xl font-bold text-white tracking-tight hidden">Digi Hyderabadi</h3>
+                            <h3 class="text-4xl font-bold text-white tracking-tight">Digi Hyderabadi</h3>
                             <p class="text-base text-slate-400 leading-relaxed font-light">
                                 A comprehensive platform launched to the public. Built from the ground up to solve localized digital bottlenecks, featuring a fully realized brand identity and smooth, scalable architecture. A testament to breaking the analysis-paralysis loop and shipping fast.
                             </p>
                         </div>
                         
-                        <div class="flex flex-wrap items-center gap-6 pt-4">
+                        <div class="flex flex-wrap items-center gap-4 pt-4">
                             <a href="https://digihyderabadi.com" target="_blank" class="px-7 py-3.5 bg-white text-dark-900 text-sm font-bold rounded-xl transition-all hover:bg-gray-200 hover:scale-[1.02] flex items-center gap-2">
                                 Visit Platform 
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                             </a>
-                            <span class="text-xs font-mono text-slate-600 uppercase tracking-widest">Case Study Soon</span>
+                            <span class="text-xs font-mono text-slate-500 uppercase tracking-widest">Case Study Soon</span>
                         </div>
                     </div>
 
-                    <div class="w-full lg:w-7/12 rounded-3xl overflow-hidden relative flex items-center justify-center p-4 md:p-12">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent blur-3xl opacity-50 rounded-full pointer-events-none transition-all duration-700 group-hover:from-white/10"></div>
+                    <!-- Encapsulated Image Side (Floating Mockup over subtle glow) -->
+                    <div class="w-full lg:w-7/12 relative flex items-center justify-center p-4">
+                        <!-- Soft background glow for the image to float over -->
+                        <div class="absolute inset-0 bg-brand-500/10 blur-3xl rounded-full opacity-50 group-hover:opacity-70 transition-opacity duration-700 pointer-events-none"></div>
                         
-                        <img src="Digi-SC.png" alt="Digi Hyderabadi Interface" class="relative z-10 w-full h-auto max-h-[450px] object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] transform transition-transform duration-700 ease-out group-hover:scale-[1.02] group-hover:-translate-y-2">
+                        <!-- The Screenshot File -->
+                        <img src="Digi-SC.png" alt="Digi Hyderabadi Interface" class="relative z-10 w-full h-auto max-h-[450px] object-contain drop-shadow-2xl transform transition-transform duration-700 ease-out group-hover:scale-[1.03] group-hover:-translate-y-2">
                     </div>
                 </div>
 
-                <div class="premium-card rounded-[2rem] p-6 md:p-10 lg:p-12 flex flex-col-reverse lg:flex-row-reverse items-center gap-10 lg:gap-16 animate-fade-in-up stagger-3" style="animation-delay: 400ms;">
+                <!-- PROJECT 2: NAVIPARKA -->
+                <div class="premium-card rounded-[2.5rem] p-8 md:p-12 flex flex-col-reverse lg:flex-row-reverse items-center gap-10 lg:gap-16 animate-fade-in-up stagger-3" style="animation-delay: 400ms;">
                     
+                    <!-- Content Side (NO LOGO) -->
                     <div class="w-full lg:w-5/12 space-y-8 relative z-10">
-                        <div class="flex flex-col items-start gap-8">
-                            <div class="px-3 py-1.5 border border-white/10 text-white text-[10px] font-mono uppercase font-bold rounded-full flex items-center gap-2 tracking-widest">
-                                <span class="w-1.5 h-1.5 rounded-full bg-slate-500 animate-pulse-slow"></span> In Development
-                            </div>
+                        <div class="flex items-center gap-3">
+                            <span class="px-3 py-1 bg-accent-500/10 text-accent-500 text-[10px] font-mono uppercase font-bold rounded-full border border-accent-500/20">In Development</span>
                         </div>
                         
                         <div class="space-y-4">
-                            <h3 class="text-3xl lg:text-4xl font-bold text-white tracking-tight">NAVIPARKA</h3>
+                            <h3 class="text-4xl font-bold text-white tracking-tight">NAVIPARKA</h3>
                             <p class="text-base text-slate-400 leading-relaxed font-light">
                                 An application engineered to eliminate the stress of urban parking. Designed to give users the confidence of leaving their vehicle without the fear of getting a ticket. Launching strategically across the UK, beginning with Southampton and London.
                             </p>
                         </div>
                         
                         <div class="flex flex-wrap gap-3 pt-2">
-                            <span class="px-4 py-2 rounded-xl border border-white/5 bg-[#111] text-xs font-mono text-slate-400">App Dev</span>
-                            <span class="px-4 py-2 rounded-xl border border-white/5 bg-[#111] text-xs font-mono text-slate-400">UX Design</span>
-                            <span class="px-4 py-2 rounded-xl border border-white/5 bg-[#111] text-xs font-mono text-slate-400">UK Market</span>
+                            <span class="px-4 py-2 rounded-xl border border-white/5 bg-white/5 text-xs font-mono text-slate-300">App Development</span>
+                            <span class="px-4 py-2 rounded-xl border border-white/5 bg-white/5 text-xs font-mono text-slate-300">UX Design</span>
+                            <span class="px-4 py-2 rounded-xl border border-white/5 bg-white/5 text-xs font-mono text-slate-300">UK Market</span>
                         </div>
                     </div>
 
-                    <div class="w-full lg:w-7/12 rounded-3xl overflow-hidden relative flex items-center justify-center p-8 md:p-12 min-h-[300px] lg:min-h-[450px] border border-white/5 bg-[#0a0a0a]">
-                        <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 20px 20px;"></div>
+                    <!-- Encapsulated Image Side (Wireframe Placeholder) -->
+                    <div class="w-full lg:w-7/12 relative flex items-center justify-center p-8 min-h-[300px] lg:min-h-[400px] rounded-[2rem] border border-white/5 bg-dark-900/50">
+                        <!-- Inner abstract element -->
+                        <div class="absolute inset-0 flex items-center justify-center overflow-hidden rounded-[2rem]">
+                            <div class="w-[300px] h-[300px] border border-white/5 rounded-full absolute opacity-20"></div>
+                            <div class="w-[450px] h-[450px] border border-white/5 rounded-full absolute opacity-10"></div>
+                        </div>
                         
-                        <div class="relative z-20 flex flex-col items-center text-center space-y-5">
-                            <div class="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center text-slate-500 bg-[#050505]">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        <div class="relative z-20 flex flex-col items-center text-center space-y-4">
+                            <div class="w-16 h-16 rounded-2xl bg-dark-800 border border-white/10 flex items-center justify-center text-slate-400 mb-2 shadow-lg">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
                             </div>
-                            <div>
-                                <h4 class="font-mono text-sm font-bold tracking-widest uppercase text-white">Coming Soon</h4>
-                                <p class="font-mono text-[10px] text-slate-500 mt-2 uppercase tracking-widest">Active Development</p>
-                            </div>
+                            <h4 class="font-mono text-lg font-bold tracking-widest uppercase text-white">Coming Soon</h4>
+                            <p class="font-mono text-xs text-slate-500">Currently in active development</p>
                         </div>
                     </div>
                 </div>
@@ -245,12 +247,13 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="py-32 px-6 relative z-10 border-t border-white/5">
         <div class="max-w-4xl mx-auto">
-            <div class="premium-card p-8 md:p-16 rounded-[2rem] relative overflow-hidden animate-fade-in-up" style="animation-delay: 500ms;">
+            <div class="premium-card p-8 md:p-16 rounded-[2.5rem] relative overflow-hidden animate-fade-in-up" style="animation-delay: 500ms;">
                 
                 <div class="space-y-4 text-center max-w-xl mx-auto mb-14">
-                    <p class="font-mono text-[10px] text-slate-500 tracking-widest uppercase">// Let's Connect</p>
+                    <p class="font-mono text-xs text-brand-500 tracking-widest uppercase">// Let's Connect</p>
                     <h2 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">Book an Audit</h2>
                     <p class="text-base text-slate-400 font-light">
                         Whether you want to discuss a new digital product or need to automate a struggling workflow, let's talk.
@@ -263,49 +266,50 @@
                     
                     <div class="grid grid-cols-1 gap-6">
                         <div class="space-y-2">
-                            <label class="block font-mono text-[10px] font-bold uppercase tracking-widest text-slate-500">Name</label>
-                            <input type="text" name="name" required class="w-full bg-[#050505] border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-white/30 transition-colors placeholder-slate-800" placeholder="John Doe">
+                            <label class="block font-mono text-[10px] font-bold uppercase tracking-widest text-slate-400">Name</label>
+                            <input type="text" name="name" required class="w-full bg-dark-900 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-white/30 transition-colors placeholder-slate-700 shadow-inner" placeholder="John Doe">
                         </div>
                         
                         <div class="space-y-2">
-                            <label class="block font-mono text-[10px] font-bold uppercase tracking-widest text-slate-500">Email Address</label>
-                            <input type="email" name="email" required class="w-full bg-[#050505] border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-white/30 transition-colors placeholder-slate-800" placeholder="john@company.com">
+                            <label class="block font-mono text-[10px] font-bold uppercase tracking-widest text-slate-400">Email Address</label>
+                            <input type="email" name="email" required class="w-full bg-dark-900 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-white/30 transition-colors placeholder-slate-700 shadow-inner" placeholder="john@company.com">
                         </div>
                         
                         <div class="space-y-2">
-                            <label class="block font-mono text-[10px] font-bold uppercase tracking-widest text-slate-500">How can I help?</label>
-                            <textarea name="message" rows="4" required class="w-full bg-[#050505] border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-white/30 transition-colors placeholder-slate-800 resize-none" placeholder="Describe the process you want optimized..."></textarea>
+                            <label class="block font-mono text-[10px] font-bold uppercase tracking-widest text-slate-400">How can I help?</label>
+                            <textarea name="message" rows="4" required class="w-full bg-dark-900 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-white/30 transition-colors placeholder-slate-700 resize-none shadow-inner" placeholder="Describe the process you want optimized..."></textarea>
                         </div>
                     </div>
 
-                    <button type="submit" id="submit-btn" class="w-full py-4 bg-white text-dark-900 font-bold rounded-xl transition-all duration-300 hover:bg-gray-200 hover:scale-[1.02] transform mt-4">
+                    <button type="submit" id="submit-btn" class="w-full py-4 bg-white text-dark-900 font-bold rounded-xl transition-all duration-300 hover:bg-gray-200 hover:scale-[1.02] transform shadow-lg mt-4">
                         Send Message
                     </button>
                 </form>
 
                 <div id="form-feedback" class="hidden max-w-md mx-auto mt-6 p-4 rounded-xl bg-white/5 border border-white/10 text-center text-white space-y-2">
-                    <p class="text-sm font-bold">✓ Message Sent</p>
+                    <p class="text-sm font-bold">✓ Message Sent Successfully</p>
                     <p class="text-xs text-slate-400">Thanks for reaching out. I'll get back to you shortly.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 px-6 relative z-10 border-t border-white/5">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <!-- Footer Section -->
+    <footer class="py-12 px-6 relative z-10 border-t border-white/5 bg-dark-900/50">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="flex items-center gap-4">
                 <span class="w-8 h-8 rounded-full bg-white text-dark-900 font-bold flex items-center justify-center text-xs">RD</span>
                 <div>
                     <span class="text-xs font-bold text-white block">Rohith Dhanala</span>
-                    <span class="text-[9px] font-mono text-slate-600 tracking-widest uppercase block">Digital & AI Consultant</span>
+                    <span class="text-[9px] font-mono text-slate-500 tracking-widest uppercase block">Digital & AI Consultant</span>
                 </div>
             </div>
 
             <div class="flex items-center gap-4">
-                <a href="https://linkedin.com/in/rohith-dhanala-35715b162" target="_blank" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-dark-900 text-slate-500 transition-all duration-300">
+                <a href="https://linkedin.com/in/rohith-dhanala-35715b162" target="_blank" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-dark-900 text-slate-400 transition-all duration-300">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
-                <a href="mailto:rodhanala@gmail.com" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-dark-900 text-slate-500 transition-all duration-300">
+                <a href="mailto:rodhanala@gmail.com" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-dark-900 text-slate-400 transition-all duration-300">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 </a>
             </div>
