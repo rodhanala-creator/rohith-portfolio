@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="theme-color" content="#090b0b"/>
 <title>Rohith Dhanala — I Build, I Fail, I Learn & I Ship</title>
-<meta name="description" content="Rohith Dhanala builds and ships AI products — Digi Hyderabadi (live), NaviParka (in development). A decade of design studios, failed startups and corporate systems, now shipping in public."/>
+<meta name="description" content="Rohith Dhanala builds and ships AI products — Digi Hyderabadi is live and NaviParka, an AI parking-sign scanner for UK drivers, is in development."/>
 
 <link rel="icon" href="favicon.png" type="image/png"/>
 <link rel="apple-touch-icon" href="favicon-180.png"/>
@@ -203,43 +203,74 @@ button{color:inherit}
 .section-lede{max-width:620px;margin-top:20px;color:var(--muted);font-size:16px}
 
 /* PROJECTS */
-.projects{display:grid;gap:28px}
+.projects{display:grid;gap:38px}
 .project{
-  position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,.85fr) minmax(420px,1.15fr);
-  min-height:560px;border:1px solid var(--line);border-radius:36px;
-  background:linear-gradient(135deg,rgba(19,23,22,.94),rgba(10,12,12,.96));
-  box-shadow:0 22px 80px rgba(0,0,0,.18);transition:transform .45s cubic-bezier(.16,1,.3,1),border-color .35s;
+  --mx:50%;--my:40%;
+  position:relative;isolation:isolate;overflow:hidden;
+  border:1px solid var(--line);border-radius:38px;
+  background:linear-gradient(145deg,rgba(20,24,23,.96),rgba(8,10,10,.98));
+  box-shadow:0 28px 100px rgba(0,0,0,.25);
+  transition:transform .5s cubic-bezier(.16,1,.3,1),border-color .35s,box-shadow .35s;
 }
-.project:hover{transform:translateY(-7px);border-color:var(--line-strong)}
-.project::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent)}
-.project-content{position:relative;z-index:2;padding:58px 54px;display:flex;flex-direction:column;justify-content:center}
-.project-index{position:absolute;right:28px;top:22px;color:rgba(236,233,223,.06);font:300 86px/1 var(--mono)}
+.project::before{
+  content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;
+  background:radial-gradient(620px circle at var(--mx) var(--my),rgba(183,255,90,.11),transparent 43%);
+  opacity:.72;transition:opacity .35s;
+}
+.project.np-project::before{background:radial-gradient(620px circle at var(--mx) var(--my),rgba(255,184,92,.12),transparent 43%)}
+.project::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(255,255,255,.025),transparent);transform:translateX(-110%);transition:transform .9s cubic-bezier(.16,1,.3,1)}
+.project:hover{transform:translateY(-8px);border-color:var(--line-strong);box-shadow:0 38px 120px rgba(0,0,0,.38)}
+.project:hover::after{transform:translateX(110%)}
+.project-top{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:24px 28px;border-bottom:1px solid var(--line)}
+.project-number{color:var(--muted-2);font:400 10px var(--mono);letter-spacing:.14em;text-transform:uppercase}
 .tag{display:inline-flex;align-items:center;gap:8px;width:max-content;padding:8px 12px;border:1px solid;border-radius:999px;font:400 9px var(--mono);letter-spacing:.11em;text-transform:uppercase}
 .tag-live{color:var(--green);border-color:rgba(183,255,90,.27);background:var(--green-soft)}
 .tag-dev{color:var(--amber);border-color:rgba(255,184,92,.28);background:var(--amber-soft)}
-.project h3{margin-top:25px;font:500 clamp(42px,5vw,64px)/1 var(--serif);letter-spacing:-.04em}
-.project p{margin-top:22px;color:var(--muted);font-size:15px;line-height:1.75}
-.project-actions{display:flex;align-items:center;gap:18px;margin-top:30px;flex-wrap:wrap}
+.project-grid{display:grid;grid-template-columns:minmax(0,.78fr) minmax(520px,1.22fr);min-height:620px}
+.project-copy{padding:56px 54px 50px;display:flex;flex-direction:column;justify-content:center}
+.project-kicker{color:var(--muted-2);font:400 9px var(--mono);letter-spacing:.15em;text-transform:uppercase}
+.project h3{margin-top:16px;font:500 clamp(50px,6vw,80px)/.9 var(--serif);letter-spacing:-.055em}
+.project-summary{margin-top:26px;color:var(--paper-soft);font-size:16px;line-height:1.78}
+.project-summary strong{color:var(--paper);font-weight:600}
+.project-actions{display:flex;align-items:center;gap:18px;margin-top:32px;flex-wrap:wrap}
 .project-note{color:var(--muted-2);font:400 9px var(--mono);letter-spacing:.11em;text-transform:uppercase}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
-.chip{padding:8px 12px;border:1px solid var(--line);border-radius:9px;background:rgba(255,255,255,.022);color:var(--paper-soft);font:400 10px var(--mono)}
-.project-visual{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:480px;border-left:1px solid var(--line);background:#0c0f0e}
-.project-visual::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 44%,rgba(183,255,90,.11),transparent 40%)}
-.project-visual::after{content:"";position:absolute;inset:20px;border:1px solid rgba(255,255,255,.04);border-radius:26px;pointer-events:none}
-.project-visual img{position:relative;z-index:2;width:min(88%,680px);max-height:470px;object-fit:contain;filter:drop-shadow(0 35px 45px rgba(0,0,0,.55));transition:transform .65s cubic-bezier(.16,1,.3,1)}
-.project:hover .project-visual img{transform:translateY(-9px) scale(1.018)}
-.visual-browser{position:relative;z-index:2;width:min(86%,660px);overflow:hidden;border:1px solid var(--line-strong);border-radius:18px;background:#111414;box-shadow:0 30px 70px rgba(0,0,0,.55);transform:perspective(1000px) rotateY(-5deg) rotateX(2deg)}
-.browser-top{height:34px;display:flex;align-items:center;gap:5px;padding:0 12px;border-bottom:1px solid var(--line);background:#171a1a}
-.browser-top i{width:6px;height:6px;border-radius:50%;background:var(--muted-2)}
-.visual-browser img{width:100%;max-height:none;filter:none}
-
-.np-visual::before{background:radial-gradient(circle at 50% 44%,rgba(255,184,92,.10),transparent 41%)}
-.kerb-device{position:relative;z-index:2;width:min(75%,360px);padding:9px;border:1px solid var(--line-strong);border-radius:38px;background:#050706;box-shadow:0 35px 85px rgba(0,0,0,.58);transform:rotate(2deg);transition:transform .65s cubic-bezier(.16,1,.3,1)}
-.project:hover .kerb-device{transform:rotate(0deg) translateY(-8px)}
-.kerb-screen{position:relative;overflow:hidden;aspect-ratio:.83;border-radius:31px;background:#0b100e}
+.project-features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:34px}
+.feature-card{padding:16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.022);transition:background .25s,border-color .25s,transform .25s}
+.feature-card:hover{transform:translateY(-2px);border-color:var(--line-strong);background:rgba(255,255,255,.04)}
+.feature-card span{display:block;color:var(--green);font:500 9px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.np-project .feature-card span{color:var(--amber)}
+.feature-card b{display:block;margin-top:8px;color:var(--paper-soft);font-size:12px;font-weight:600;line-height:1.45}
+.project-stage{position:relative;overflow:hidden;display:grid;place-items:center;min-height:620px;border-left:1px solid var(--line);background:linear-gradient(145deg,#0c100e,#080a09)}
+.project-stage::before{content:"";position:absolute;width:430px;height:430px;border:1px solid rgba(183,255,90,.12);border-radius:50%;box-shadow:0 0 0 75px rgba(183,255,90,.018),0 0 0 150px rgba(183,255,90,.008)}
+.np-project .project-stage::before{border-color:rgba(255,184,92,.15);box-shadow:0 0 0 75px rgba(255,184,92,.018),0 0 0 150px rgba(255,184,92,.008)}
+.stage-label{position:absolute;z-index:5;color:var(--muted-2);font:400 8px var(--mono);letter-spacing:.13em;text-transform:uppercase}
+.stage-label.tl{top:26px;left:28px}.stage-label.br{right:28px;bottom:26px}
+.browser-scene{position:relative;z-index:2;width:min(84%,720px);transform:perspective(1200px) rotateY(-7deg) rotateX(2deg);transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.project:hover .browser-scene{transform:perspective(1200px) rotateY(-2deg) rotateX(0) translateY(-9px)}
+.visual-browser{overflow:hidden;border:1px solid var(--line-strong);border-radius:20px;background:#111414;box-shadow:0 38px 85px rgba(0,0,0,.62)}
+.browser-top{height:38px;display:flex;align-items:center;gap:6px;padding:0 14px;border-bottom:1px solid var(--line);background:#171a1a}
+.browser-top i{width:7px;height:7px;border-radius:50%;background:var(--muted-2)}
+.browser-address{margin-left:8px;flex:1;height:17px;border-radius:999px;background:#0e1110;display:flex;align-items:center;padding:0 9px;color:var(--muted-2);font:400 7px var(--mono)}
+.visual-browser img{width:100%;max-height:490px;object-fit:cover;object-position:top}
+.float-card{position:absolute;z-index:4;padding:13px 15px;border:1px solid var(--line-strong);border-radius:15px;background:rgba(12,15,14,.82);backdrop-filter:blur(15px);box-shadow:0 16px 40px rgba(0,0,0,.35)}
+.float-card small{display:block;color:var(--muted-2);font:400 7px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.float-card strong{display:block;margin-top:5px;color:var(--paper);font-size:11px}
+.float-one{left:-28px;top:18%}.float-two{right:-24px;bottom:13%}
+.phone-scene{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;width:min(88%,620px);min-height:520px}
+.phone-glow{position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,184,92,.16),transparent 65%);filter:blur(10px)}
+.kerb-device{position:relative;z-index:2;width:min(58%,340px);padding:9px;border:1px solid var(--line-strong);border-radius:40px;background:#050706;box-shadow:0 40px 95px rgba(0,0,0,.65);transform:rotate(3deg);transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.project:hover .kerb-device{transform:rotate(0deg) translateY(-9px)}
+.kerb-screen{position:relative;overflow:hidden;aspect-ratio:.83;border-radius:32px;background:#0b100e}
 .device-bar{position:absolute;z-index:4;top:11px;left:50%;width:82px;height:20px;transform:translateX(-50%);border-radius:999px;background:#050706}
 .kerb-screen svg{width:100%;height:100%}
-.map-label{position:absolute;left:22px;right:22px;bottom:22px;z-index:3;padding:14px 16px;border:1px solid var(--line-strong);border-radius:15px;background:rgba(9,11,11,.78);backdrop-filter:blur(12px);color:var(--paper-soft);font:400 9px var(--mono);letter-spacing:.1em;text-align:center;text-transform:uppercase}
+.phone-step{position:absolute;z-index:4;display:flex;align-items:center;gap:10px;width:190px;padding:12px 13px;border:1px solid var(--line-strong);border-radius:15px;background:rgba(12,15,14,.86);backdrop-filter:blur(15px);box-shadow:0 16px 40px rgba(0,0,0,.35)}
+.phone-step i{width:28px;height:28px;display:grid;place-items:center;flex:0 0 auto;border-radius:50%;background:var(--amber-soft);color:var(--amber);font:500 9px var(--mono);font-style:normal}
+.phone-step b{display:block;color:var(--paper);font-size:10px}.phone-step span{display:block;margin-top:2px;color:var(--muted);font-size:8px}
+.step-one{left:0;top:24%}.step-two{right:0;top:47%}.step-three{left:4%;bottom:9%}
+.project-foot{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.project-stat{padding:19px 24px;border-right:1px solid var(--line)}.project-stat:last-child{border-right:0}
+.project-stat small{display:block;color:var(--muted-2);font:400 8px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.project-stat strong{display:block;margin-top:5px;color:var(--paper-soft);font-size:12px;font-weight:600}
 
 /* CHANGELOG */
 .story-layout{display:grid;grid-template-columns:310px minmax(0,1fr);gap:72px;align-items:start}
@@ -340,9 +371,19 @@ footer{padding:50px 0 110px;border-top:1px solid var(--line)}
 @media(max-width:860px){
   .shell{width:min(100% - 36px,720px)}
   .section{padding:100px 0}
+  .site-header{background:rgba(9,11,11,.92);border-color:var(--line);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+  .site-header .shell{width:100%;max-width:none;padding-inline:16px}
+  .nav{width:100%;gap:12px}
+  .brand{min-width:0;flex:1;overflow:hidden}
+  .brand-copy{min-width:0}.brand-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .nav-centre,.nav>.nav-cta{display:none}
-  .menu-toggle{display:block}
-  .mobile-menu{position:absolute;left:18px;right:18px;top:76px;display:grid;gap:6px;padding:13px;border:1px solid var(--line-strong);border-radius:20px;background:rgba(14,17,16,.96);box-shadow:var(--shadow);backdrop-filter:blur(20px);opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s}
+  .menu-toggle{display:grid;place-items:center;position:relative;z-index:102;flex:0 0 44px;margin-left:auto}
+  .menu-toggle span{position:absolute;margin:0}
+  .menu-toggle span:first-child{transform:translateY(-4px)}
+  .menu-toggle span:last-child{transform:translateY(4px)}
+  .menu-toggle[aria-expanded="true"] span:first-child{transform:rotate(45deg)}
+  .menu-toggle[aria-expanded="true"] span:last-child{transform:rotate(-45deg)}
+  .mobile-menu{position:fixed;left:14px;right:14px;top:78px;display:grid;gap:6px;padding:13px;border:1px solid var(--line-strong);border-radius:20px;background:rgba(14,17,16,.98);box-shadow:var(--shadow);backdrop-filter:blur(20px);opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s}
   .mobile-menu.open{opacity:1;visibility:visible;transform:none}
   .mobile-menu a{padding:13px 14px;border-radius:12px;color:var(--paper-soft);font:400 11px var(--mono);letter-spacing:.08em;text-transform:uppercase}
   .mobile-menu a:hover{background:rgba(255,255,255,.05);color:var(--paper)}
@@ -355,8 +396,10 @@ footer{padding:50px 0 110px;border-top:1px solid var(--line)}
   .hero-meta{grid-template-columns:1fr}
   .meta-item{border-right:0;border-bottom:1px solid var(--line)}.meta-item:last-child{border-bottom:0}
   .section-head{grid-template-columns:1fr;gap:14px;margin-bottom:42px}.eyebrow{padding-top:0}
-  .project{grid-template-columns:1fr;min-height:0}
-  .project-visual{order:-1;min-height:420px;border-left:0;border-bottom:1px solid var(--line)}
+  .project-grid{grid-template-columns:1fr}
+  .project-stage{order:-1;min-height:500px;border-left:0;border-bottom:1px solid var(--line)}
+  .project-copy{padding:48px 40px}
+  .phone-scene{width:min(92%,620px)}
   .story-layout{grid-template-columns:1fr;gap:40px}.story-aside{position:static}.story-aside .big-note{max-width:620px}
   .consult-panel{grid-template-columns:1fr}.consult-copy{border-right:0;border-bottom:1px solid var(--line)}
   .footer-grid{grid-template-columns:1fr;justify-items:center;text-align:center}.foot-line{justify-self:center}
@@ -375,9 +418,19 @@ footer{padding:50px 0 110px;border-top:1px solid var(--line)}
   .hero-meta{margin-top:5px}.meta-item{padding:15px 10px}
   .section{padding:82px 0}
   .section-title{font-size:clamp(41px,13vw,58px)}
-  .project{border-radius:26px}.project-content{padding:36px 26px}.project-index{font-size:62px;right:18px}.project h3{font-size:44px}
-  .project-visual{min-height:310px}.project-visual::after{inset:12px;border-radius:19px}.visual-browser{width:89%;transform:none}.kerb-device{width:min(72%,290px)}
+  .project{border-radius:26px}
+  .project-top{padding:18px 18px;align-items:flex-start}.project-number{max-width:48%;line-height:1.55}
+  .project-stage{min-height:390px}.stage-label{display:none}
+  .project-copy{padding:36px 24px 34px}.project h3{font-size:54px}
+  .project-summary{font-size:14px;margin-top:22px}
+  .project-features{grid-template-columns:1fr}.feature-card{padding:14px}
+  .browser-scene{width:91%;transform:none}.project:hover .browser-scene{transform:translateY(-5px)}
+  .float-card{padding:10px 11px}.float-one{left:-5px;top:11%}.float-two{right:-5px;bottom:9%}
+  .phone-scene{min-height:370px;width:100%}.kerb-device{width:min(58%,235px)}
+  .phone-step{width:145px;padding:9px}.phone-step i{width:24px;height:24px}.phone-step span{display:none}
+  .step-one{left:2%;top:19%}.step-two{right:1%;top:46%}.step-three{left:3%;bottom:7%}
   .project-actions{align-items:flex-start;flex-direction:column}.project-actions .btn{width:100%}
+  .project-foot{grid-template-columns:1fr}.project-stat{border-right:0;border-bottom:1px solid var(--line);padding:15px 20px}.project-stat:last-child{border-bottom:0}
   .story-timeline::before{left:10px}.log-item{padding-left:38px}.log-node{left:1px;width:18px;height:18px}.log-card{padding:25px 22px;border-radius:20px}.log-card:hover{transform:none}
   .consult-panel{border-radius:26px}.consult-copy{padding:40px 26px}.consult-copy h2{font-size:50px}.form-wrap{padding:20px}.form-card{padding:23px}
   footer{padding-bottom:98px}.footer-grid .brand{justify-content:center}
@@ -430,7 +483,7 @@ footer{padding:50px 0 110px;border-top:1px solid var(--line)}
   <section class="hero">
     <div class="shell hero-grid">
       <div class="hero-main rv">
-        <div class="hero-kicker"><span class="live-dot"></span>Now building · NaviParka — Southampton, UK</div>
+        <div class="hero-kicker"><span class="live-dot"></span>Now building · NaviParka — United Kingdom</div>
         <h1 class="hero-title">
           <span class="line">I <span class="word-build">Build</span>, I <span class="word-fail">Fail</span>,</span>
           <span class="line">I <span class="word-learn">Learn</span> &amp; I <span class="word-ship">Ship</span>.</span>
@@ -485,76 +538,118 @@ footer{padding:50px 0 110px;border-top:1px solid var(--line)}
       </header>
 
       <div class="projects">
-        <article class="project rv">
-          <div class="project-content">
-            <span class="project-index" aria-hidden="true">01</span>
+        <article class="project digi-project rv" data-project-card>
+          <div class="project-top">
+            <span class="project-number">Product 01 · Hyderabad, India</span>
             <span class="tag tag-live">● Live &amp; launched</span>
-            <h3>Digi Hyderabadi</h3>
-            <p>
-              A discovery and marketplace platform built for Hyderabad’s growing startup and business
-              ecosystem. It brings local startups, products, founders, launches and businesses for sale
-              into one searchable place, helping people discover new ideas, support local builders and
-              explore verified opportunities. I built the product end to end — from its positioning and
-              visual identity to the platform architecture, workflows and public launch.
-            </p>
-            <div class="project-actions">
-              <a class="btn btn-primary" href="https://digihyderabadi.com" target="_blank" rel="noopener">Visit platform <span class="arrow" aria-hidden="true">↗</span></a>
-              <span class="project-note">Case study soon</span>
+          </div>
+          <div class="project-grid">
+            <div class="project-copy">
+              <span class="project-kicker">Local discovery · Business marketplace</span>
+              <h3>Digi<br/>Hyderabadi</h3>
+              <p class="project-summary">
+                A discovery and marketplace platform for Hyderabad’s startup and business ecosystem.
+                It brings <strong>local startups, products, founders, launches and businesses for sale</strong>
+                into one searchable place — helping people discover what is being built locally and explore
+                verified business opportunities. I shaped and built the product end to end, from positioning
+                and identity to its architecture, workflows and public launch.
+              </p>
+              <div class="project-features" aria-label="Digi Hyderabadi features">
+                <div class="feature-card"><span>Discover</span><b>Startups, products, founders and launches</b></div>
+                <div class="feature-card"><span>Marketplace</span><b>Verified businesses available for acquisition</b></div>
+                <div class="feature-card"><span>Community</span><b>Support and surface Hyderabad’s builders</b></div>
+                <div class="feature-card"><span>Built by me</span><b>Brand, UX, architecture and launch</b></div>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn-primary" href="https://digihyderabadi.com" target="_blank" rel="noopener">Explore live platform <span class="arrow" aria-hidden="true">↗</span></a>
+                <span class="project-note">Case study in progress</span>
+              </div>
+            </div>
+            <div class="project-stage">
+              <span class="stage-label tl">Live product · Desktop experience</span>
+              <span class="stage-label br">Built and shipped in public</span>
+              <div class="browser-scene">
+                <div class="visual-browser">
+                  <div class="browser-top" aria-hidden="true"><i></i><i></i><i></i><span class="browser-address">digihyderabadi.com</span></div>
+                  <img src="Digi-SC.png" alt="Digi Hyderabadi platform interface"/>
+                </div>
+                <div class="float-card float-one"><small>Platform type</small><strong>Discovery ecosystem</strong></div>
+                <div class="float-card float-two"><small>Status</small><strong>Live and growing</strong></div>
+              </div>
             </div>
           </div>
-          <div class="project-visual">
-            <div class="visual-browser">
-              <div class="browser-top" aria-hidden="true"><i></i><i></i><i></i></div>
-              <img src="Digi-SC.png" alt="Digi Hyderabadi interface"/>
-            </div>
+          <div class="project-foot" aria-label="Digi Hyderabadi project summary">
+            <div class="project-stat"><small>Role</small><strong>Founder · Product · Design · Build</strong></div>
+            <div class="project-stat"><small>Market</small><strong>Hyderabad ecosystem</strong></div>
+            <div class="project-stat"><small>Release</small><strong>Live product</strong></div>
           </div>
         </article>
 
-        <article class="project rv">
-          <div class="project-content">
-            <span class="project-index" aria-hidden="true">02</span>
-            <span class="tag tag-dev">◐ In development</span>
-            <h3>NaviParka</h3>
-            <p>
-              A mobile parking assistant that helps drivers understand confusing UK parking signs before
-              they leave the car. The MVP uses AI to scan a sign, explain its restrictions in plain English,
-              and tell the driver whether parking is allowed, free or paid. Once parked, the driver can start
-              an in-app timer to track the session and avoid overstaying. Launching in UK.
-            </p>
-            <div class="chips">
-              <span class="chip">Android</span>
-              <span class="chip">AI sign scanner</span>
-              <span class="chip">Free or paid guidance</span>
-              <span class="chip">Parking timer</span>
-              <span class="chip">United Kingdom</span>
-            </div>
+        <article class="project np-project rv" data-project-card>
+          <div class="project-top">
+            <span class="project-number">Product 02 · United Kingdom</span>
+            <span class="tag tag-dev">◐ MVP in development</span>
           </div>
-          <div class="project-visual np-visual">
-            <div class="kerb-device" role="img" aria-label="NaviParka sign scanner showing parking guidance and a session timer">
-              <div class="kerb-screen">
-                <span class="device-bar" aria-hidden="true"></span>
-                <svg viewBox="0 0 320 390" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <rect width="320" height="390" fill="#0B100E"/>
-                  <text x="28" y="40" fill="#ECE9DF" font-family="Arial, sans-serif" font-size="15" font-weight="700">Scan parking sign</text>
-                  <rect x="28" y="60" width="264" height="145" rx="18" fill="#111915" stroke="#2A352F"/>
-                  <rect x="77" y="78" width="166" height="108" rx="8" fill="#ECE9DF"/>
-                  <circle cx="160" cy="111" r="22" fill="#2F68B5"/>
-                  <path d="M145 111H175" stroke="#ECE9DF" stroke-width="5" stroke-linecap="round"/>
-                  <text x="112" y="153" fill="#1B211E" font-family="Arial, sans-serif" font-size="11" font-weight="700">MON–SAT 8AM–6PM</text>
-                  <path d="M42 76H62M42 76V96M278 76H258M278 76V96M42 189H62M42 189V169M278 189H258M278 189V169" stroke="#B7FF5A" stroke-width="3" stroke-linecap="round"/>
-                  <rect x="28" y="224" width="264" height="86" rx="16" fill="#151D19" stroke="#29342E"/>
-                  <circle cx="52" cy="250" r="11" fill="#B7FF5A"/>
-                  <path d="M47 250L51 254L58 246" stroke="#090B0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <text x="72" y="247" fill="#B7FF5A" font-family="Arial, sans-serif" font-size="13" font-weight="700">Parking allowed</text>
-                  <text x="72" y="268" fill="#A7AEA9" font-family="Arial, sans-serif" font-size="11">Paid parking · max stay 2 hours</text>
-                  <rect x="44" y="280" width="232" height="18" rx="9" fill="#202A25"/>
-                  <rect x="44" y="280" width="134" height="18" rx="9" fill="#B7FF5A"/>
-                  <rect x="28" y="328" width="264" height="42" rx="13" fill="#B7FF5A"/>
-                  <text x="112" y="354" fill="#090B0B" font-family="Arial, sans-serif" font-size="13" font-weight="700">Start parking timer</text>
-                </svg>
-                <span class="map-label">Scan · understand · park · time</span>
+          <div class="project-grid">
+            <div class="project-copy">
+              <span class="project-kicker">AI sign scanner · Parking timer</span>
+              <h3>Navi<br/>Parka</h3>
+              <p class="project-summary">
+                A mobile parking assistant being built for drivers across the <strong>whole UK</strong>.
+                The first MVP lets a driver scan a parking sign and receive a clear explanation of its rules,
+                including whether they can park, whether the space is free or paid, and any time restrictions.
+                Once parked, they can start an in-app timer to keep track of the session and avoid overstaying.
+              </p>
+              <div class="project-features" aria-label="NaviParka MVP features">
+                <div class="feature-card"><span>01 · Scan</span><b>Capture a UK roadside parking sign</b></div>
+                <div class="feature-card"><span>02 · Understand</span><b>Translate restrictions into plain English</b></div>
+                <div class="feature-card"><span>03 · Decide</span><b>Know whether parking is allowed, free or paid</b></div>
+                <div class="feature-card"><span>04 · Time</span><b>Start and track a parking session in-app</b></div>
+              </div>
+              <div class="project-actions">
+                <span class="btn btn-secondary" aria-label="NaviParka is currently in development">Building the first MVP</span>
+                <span class="project-note">Launching across the UK</span>
               </div>
             </div>
+            <div class="project-stage">
+              <span class="stage-label tl">MVP workflow · Four clear steps</span>
+              <span class="stage-label br">Designed for UK parking signs</span>
+              <div class="phone-scene">
+                <div class="phone-glow" aria-hidden="true"></div>
+                <div class="phone-step step-one"><i>01</i><div><b>Scan the sign</b><span>Point the camera at the restriction plate</span></div></div>
+                <div class="phone-step step-two"><i>02</i><div><b>Get a clear answer</b><span>Allowed, free, paid and time limits</span></div></div>
+                <div class="phone-step step-three"><i>03</i><div><b>Start the timer</b><span>Track the active parking session</span></div></div>
+                <div class="kerb-device" role="img" aria-label="NaviParka sign scanner showing parking guidance and a session timer">
+                  <div class="kerb-screen">
+                    <span class="device-bar" aria-hidden="true"></span>
+                    <svg viewBox="0 0 320 390" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <rect width="320" height="390" fill="#0B100E"/>
+                      <text x="28" y="40" fill="#ECE9DF" font-family="Arial, sans-serif" font-size="15" font-weight="700">Scan parking sign</text>
+                      <rect x="28" y="60" width="264" height="145" rx="18" fill="#111915" stroke="#2A352F"/>
+                      <rect x="77" y="78" width="166" height="108" rx="8" fill="#ECE9DF"/>
+                      <circle cx="160" cy="111" r="22" fill="#2F68B5"/>
+                      <path d="M145 111H175" stroke="#ECE9DF" stroke-width="5" stroke-linecap="round"/>
+                      <text x="112" y="153" fill="#1B211E" font-family="Arial, sans-serif" font-size="11" font-weight="700">MON–SAT 8AM–6PM</text>
+                      <path d="M42 76H62M42 76V96M278 76H258M278 76V96M42 189H62M42 189V169M278 189H258M278 189V169" stroke="#FFB85C" stroke-width="3" stroke-linecap="round"/>
+                      <rect x="28" y="224" width="264" height="86" rx="16" fill="#151D19" stroke="#29342E"/>
+                      <circle cx="52" cy="250" r="11" fill="#B7FF5A"/>
+                      <path d="M47 250L51 254L58 246" stroke="#090B0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <text x="72" y="247" fill="#B7FF5A" font-family="Arial, sans-serif" font-size="13" font-weight="700">You can park here</text>
+                      <text x="72" y="268" fill="#A7AEA9" font-family="Arial, sans-serif" font-size="11">Paid · maximum stay 2 hours</text>
+                      <rect x="44" y="280" width="232" height="18" rx="9" fill="#202A25"/>
+                      <rect x="44" y="280" width="134" height="18" rx="9" fill="#FFB85C"/>
+                      <rect x="28" y="328" width="264" height="42" rx="13" fill="#B7FF5A"/>
+                      <text x="112" y="354" fill="#090B0B" font-family="Arial, sans-serif" font-size="13" font-weight="700">Start parking timer</text>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-foot" aria-label="NaviParka project summary">
+            <div class="project-stat"><small>Release</small><strong>First MVP</strong></div>
+            <div class="project-stat"><small>Coverage</small><strong>Whole United Kingdom</strong></div>
+            <div class="project-stat"><small>Core value</small><strong>Understand signs before parking</strong></div>
           </div>
         </article>
       </div>
@@ -735,6 +830,7 @@ footer{padding:50px 0 110px;border-top:1px solid var(--line)}
       menuToggle.setAttribute('aria-expanded', 'false');
       menuToggle.setAttribute('aria-label', 'Open navigation');
       mobileMenu.classList.remove('open');
+      document.body.classList.remove('menu-open');
     };
 
     menuToggle.addEventListener('click', () => {
@@ -742,12 +838,14 @@ footer{padding:50px 0 110px;border-top:1px solid var(--line)}
       menuToggle.setAttribute('aria-expanded', String(!isOpen));
       menuToggle.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
       mobileMenu.classList.toggle('open', !isOpen);
+      document.body.classList.toggle('menu-open', !isOpen);
     });
 
     mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape') closeMenu();
     });
+    window.addEventListener('resize', () => { if (window.innerWidth > 860) closeMenu(); });
     document.addEventListener('click', event => {
       if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) closeMenu();
     });
@@ -822,6 +920,14 @@ footer{padding:50px 0 110px;border-top:1px solid var(--line)}
     });
     music.addEventListener('ended', () => updateAudioUI(false));
   }
+
+  document.querySelectorAll('[data-project-card]').forEach(card => {
+    card.addEventListener('pointermove', event => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--mx', `${event.clientX - rect.left}px`);
+      card.style.setProperty('--my', `${event.clientY - rect.top}px`);
+    });
+  });
 
   const revealItems = document.querySelectorAll('.rv');
   if ('IntersectionObserver' in window) {
